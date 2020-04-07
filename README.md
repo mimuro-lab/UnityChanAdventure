@@ -6,9 +6,9 @@
 &emsp;これを使用するにあたってソリューション名を変更したい場合があると想定される。以下にソリューション名の変更手順を示しておく。
 （参考：[http://masatoy.hatenablog.jp/entry/2017/05/09/235033](http://masatoy.hatenablog.jp/entry/2017/05/09/235033)
 
-1,　visual studio上のソリューションエクスプローラーからソリューション名とプロジェクト名を任意の名前に変更
-2,　ソリューションエクスプローラーのフォルダビューを.slnからStartDxGameに変更
-3,　StartDxGame.vcxproj、StartDxGame.vcxproj.filters、StartDxGame.vcxproj.userを拡張子を変えずに任意の名前に変更
+1,　visual studio上のソリューションエクスプローラーからソリューション名とプロジェクト名を任意の名前に変更;
+2,　ソリューションエクスプローラーのフォルダビューを.slnからStartDxGameに変更;
+3,　StartDxGame.vcxproj、StartDxGame.vcxproj.filters、StartDxGame.vcxproj.userを拡張子を変えずに任意の名前に変更;
 
 例：
 |変更前|変更後|
