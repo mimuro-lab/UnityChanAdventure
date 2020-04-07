@@ -8,7 +8,7 @@
 
 1,　visual studio上のソリューションエクスプローラーからソリューション名とプロジェクト名を任意の名前に変更
 
-2,　ソリューションエクスプローラーのフォルダビューを.slnからStartDxGameに変更
+2,　ソリューションエクスプローラーのフォルダビューを.slnからStartDxGameに変更し、すべてのファイルを表示させる
 
 3,　StartDxGame.vcxproj、StartDxGame.vcxproj.filters、StartDxGame.vcxproj.userを拡張子を変えずに任意の名前に変更
 
@@ -18,4 +18,9 @@
 |StartDxGame.vcxproj|new.vcxproj|
 |StartDxGame.vcxproj.filters|new.vcxproj.filters|
 |StartDxGame.vcxproj.user|new.vcxproj.user|
+
+4,　.slnファイルをテキストエディタ等で開く
+
+5,　Projectと書いてある行（4行あたり）の"StartDxGame"と"StartDxGame.vcxproj"を3で変更した名前に変える
+
 
