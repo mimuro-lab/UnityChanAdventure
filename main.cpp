@@ -1,13 +1,23 @@
 #include <DxLib.h>
+#include "SystemOwner.h"
+#include <memory>
+using namespace std;
 
 /*!
 @brief プロジェクトのメイン関数
 @date 2020/04/14/11:03
 @author mimuro
 */
+
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	DxLib_Init();	// DXライブラリ初期化処理
-	WaitKey();	// キー入力待ち
-	DxLib_End();	// DXライブラリ終了処理
+
+	shared_ptr<SystemOwner> owner = make_shared<SystemOwner>();
+
+	if (owner->initialize()) {
+		owner->main();
+	}
+
+	owner->finalize();
+
 	return 0;
 }
