@@ -15,7 +15,7 @@ bool SystemOwner::initialize() const
 	ChangeWindowMode(TRUE);						//ウィンドウモードに変更
 //	SetWindowSizeExtendRate(1.0);				//ウィンドウサイズを変更したい時はここに倍率を指定する
 	const int COLOR_BIT = 32;					//色のbit数。通常32で良いが軽くするなら16にする
-	//SetGraphMode(Define::WIN_W, Define::WIN_H, COLOR_BIT);		//ゲーム画面の解像度を設定する
+	SetGraphMode(Define::WIN_W, Define::WIN_H, COLOR_BIT);		//ゲーム画面の解像度を設定する
 	if (DxLib_Init()) {							//DXライブラリ初期化処理
 		return false;							//異常終了したら即座にやめる
 	}
@@ -41,5 +41,6 @@ bool SystemOwner::finalize() const
 */
 bool SystemOwner::main() const
 {
+
 	return true;
 }

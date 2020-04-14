@@ -1,5 +1,6 @@
 #pragma once
 #include <DxLib.h>
+#include "Define.h"
 
 /*!
 @brief 初期化処理や終了処理全般を担うクラス
