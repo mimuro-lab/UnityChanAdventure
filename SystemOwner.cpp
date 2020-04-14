@@ -41,6 +41,6 @@ bool SystemOwner::finalize() const
 */
 bool SystemOwner::main() const
 {
-
+	WaitKey();
 	return true;
 }

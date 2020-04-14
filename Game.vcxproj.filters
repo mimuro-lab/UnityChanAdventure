@@ -9,6 +9,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Define">
+      <UniqueIdentifier>{5e8edb43-12c5-4477-b0fd-e4de969d4320}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -18,13 +21,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Define.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Define</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SystemOwner.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Define.h" />
+    <ClInclude Include="Define.h">
+      <Filter>ソース ファイル\Define</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
