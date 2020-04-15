@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Document: C:/Users/mimur/source/repos/NewGame/SystemOwner.h ソースファイル</title>
+<title>Document: C:/Users/mimur/source/repos/NewGame/SystemLooper.h ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,31 +62,25 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">C:/Users/mimur/source/repos/NewGame/SystemOwner.h</div>  </div>
+<div class="title">C:/Users/mimur/source/repos/NewGame/SystemLooper.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Define.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;SystemLooper.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_system_owner.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_system_owner.html">SystemOwner</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_system_owner.html">SystemOwner</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ~<a class="code" href="class_system_owner.html">SystemOwner</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> initialize() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> finalize() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> main() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_system_looper.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_system_looper.html">SystemLooper</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_system_looper.html">SystemLooper</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    ~<a class="code" href="class_system_looper.html">SystemLooper</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_system_looper.html#a5de7b78a07772205025fd5eab5165321">Error</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907">scrProcess</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_system_owner_html"><div class="ttname"><a href="class_system_owner.html">SystemOwner</a></div><div class="ttdoc">初期化処理や終了処理全般を担うクラス</div><div class="ttdef"><b>Definition:</b> SystemOwner.h:15</div></div>
+<div class="ttc" id="aclass_system_looper_html"><div class="ttname"><a href="class_system_looper.html">SystemLooper</a></div><div class="ttdoc">ループする処理の中心を担うクラス</div><div class="ttdef"><b>Definition:</b> SystemLooper.h:9</div></div>
+<div class="ttc" id="aclass_system_looper_html_ad2a0c8d8fa20ab1116c489a258295907"><div class="ttname"><a href="class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907">SystemLooper::scrProcess</a></div><div class="ttdeci">bool scrProcess() const</div><div class="ttdoc">表画面・裏画面処理、メッセージ処理などを行う関数。</div><div class="ttdef"><b>Definition:</b> SystemLooper.cpp:18</div></div>
+<div class="ttc" id="aclass_system_looper_html_a5de7b78a07772205025fd5eab5165321"><div class="ttname"><a href="class_system_looper.html#a5de7b78a07772205025fd5eab5165321">SystemLooper::Error</a></div><div class="ttdeci">bool Error() const</div><div class="ttdoc">SystemLooperクラスのエラー処理</div><div class="ttdef"><b>Definition:</b> SystemLooper.cpp:8</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">
