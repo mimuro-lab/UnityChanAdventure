@@ -1,6 +1,10 @@
 #pragma once
 #include <DxLib.h>
 #include "Define.h"
+#include "SystemLooper.h"
+#include <memory>
+
+using namespace std;
 
 /*!
 @brief 初期化処理や終了処理全般を担うクラス

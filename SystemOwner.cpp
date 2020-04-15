@@ -41,6 +41,12 @@ bool SystemOwner::finalize() const
 */
 bool SystemOwner::main() const
 {
-	WaitKey();
+	
+	shared_ptr<SystemLooper> looper = make_shared<SystemLooper>();
+
+	while (!looper->Error()) {
+		looper->scrProcess();
+	}
+
 	return true;
 }

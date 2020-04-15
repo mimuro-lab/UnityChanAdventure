@@ -86,10 +86,12 @@
   <ItemGroup>
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SystemLooper.cpp" />
     <ClCompile Include="SystemOwner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h" />
+    <ClInclude Include="SystemLooper.h" />
     <ClInclude Include="SystemOwner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
