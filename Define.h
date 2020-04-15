@@ -1,6 +1,16 @@
 #pragma once
 
 /*!
+@brief シーンの定義
+@date 2020/04/15/16:47
+@author mimuro
+*/
+enum eScene {
+	Menu,
+	Config,
+};
+
+/*!
 @brief あらゆるパラメータの定義を保持するクラス
 @date 2020/04/15/0:19
 @author mimuro

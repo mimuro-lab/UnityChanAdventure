@@ -12,6 +12,9 @@
     <Filter Include="ソース ファイル\Define">
       <UniqueIdentifier>{5e8edb43-12c5-4477-b0fd-e4de969d4320}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{b88aa691-bd1e-44a5-bfa7-77a5d57ef909}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,6 +29,9 @@
     <ClCompile Include="SystemLooper.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="AbstractScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SystemOwner.h">
@@ -36,6 +42,12 @@
     </ClInclude>
     <ClInclude Include="SystemLooper.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractScene.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ISceneChanger.h">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

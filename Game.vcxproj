@@ -84,13 +84,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SystemLooper.cpp" />
     <ClCompile Include="SystemOwner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="SystemLooper.h" />
     <ClInclude Include="SystemOwner.h" />
   </ItemGroup>

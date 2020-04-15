@@ -26,3 +26,8 @@ bool SystemLooper::scrProcess() const
 
 	return true;
 }
+
+void SystemLooper::changeScene(eScene Next) const
+{
+
+}
