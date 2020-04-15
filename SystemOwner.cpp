@@ -44,9 +44,13 @@ bool SystemOwner::main() const
 	
 	shared_ptr<SystemLooper> looper = make_shared<SystemLooper>();
 
+	if (!looper->Initialize())
+		return false;
+
 	while (!looper->Error()) {
 		if (!looper->scrProcess())
 			break;
+		looper->loop();
 	}
 
 	return true;

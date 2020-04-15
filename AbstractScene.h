@@ -1,4 +1,4 @@
-#pragma onces
+#pragma once
 #include "ISceneChanger.h"
 #include <memory>
 
@@ -9,12 +9,14 @@ using namespace std;
 @date 2020/04/14/16:00
 @author mimuro
 */
-
 class AbstractScene
 {
-	shared_ptr<ISceneChanger> changer = make_shared<ISceneChanger>();
+	shared_ptr<ISceneChanger> changer;
 public:
-	AbstractScene() = default;
+	AbstractScene(
+		shared_ptr<ISceneChanger> _changer
+	) 
+		: changer(_changer){};
 	~AbstractScene() = default;
 	virtual void draw() = 0;
 	virtual void update() = 0;

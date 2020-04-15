@@ -6,8 +6,8 @@
 @author mimuro
 */
 enum eScene {
-	Menu,
-	Config,
+	eMenu,
+	eConfig,
 };
 
 /*!
