@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: C:/Users/mimur/source/repos/NewGame/SystemLooper.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/mimur/source/repos/NewGame/SystemLooper.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_system_looper_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_system_looper_8h.html">SystemLooper.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_system_looper.html#a100ad6bd4ea0ff7399c532cff8534177">   16</a></span>&#160;<a class="code" href="class_system_looper.html#a100ad6bd4ea0ff7399c532cff8534177">SystemLooper::SystemLooper</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_system_looper.html#ad98afeb6aad94ec553935febc6c013bc">   25</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_system_looper.html#ad98afeb6aad94ec553935febc6c013bc">SystemLooper::Initialize</a>()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">scene</a>.push(make_shared&lt;Menu&gt;(shared_from_this()));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_system_looper.html#a5de7b78a07772205025fd5eab5165321">   36</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_system_looper.html#a5de7b78a07772205025fd5eab5165321">SystemLooper::Error</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907">   46</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907">SystemLooper::scrProcess</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (ScreenFlip() != 0)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (ProcessMessage() != 0)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (ClearDrawScreen() != 0)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_system_looper.html#a20c8a684ed5d0dc408ba19b302f83492">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_system_looper.html#a20c8a684ed5d0dc408ba19b302f83492">SystemLooper::loop</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">scene</a>.top()-&gt;update();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">scene</a>.top()-&gt;draw();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_system_looper.html#a1a433b0a514e42a1c80ceaf84e8757ef">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_system_looper.html#a1a433b0a514e42a1c80ceaf84e8757ef">SystemLooper::changeScene</a>(<a class="code" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a> Next)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_system_looper_html_a20c8a684ed5d0dc408ba19b302f83492"><div class="ttname"><a href="class_system_looper.html#a20c8a684ed5d0dc408ba19b302f83492">SystemLooper::loop</a></div><div class="ttdeci">void loop() const</div><div class="ttdoc">メインの繰り返し処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8cpp_source.html#l00063">SystemLooper.cpp:63</a></div></div>
+<div class="ttc" id="a_system_looper_8h_html"><div class="ttname"><a href="_system_looper_8h.html">SystemLooper.h</a></div><div class="ttdoc">SystemLooperクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_system_looper_html_ad98afeb6aad94ec553935febc6c013bc"><div class="ttname"><a href="class_system_looper.html#ad98afeb6aad94ec553935febc6c013bc">SystemLooper::Initialize</a></div><div class="ttdeci">bool Initialize()</div><div class="ttdoc">初期化処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8cpp_source.html#l00025">SystemLooper.cpp:25</a></div></div>
+<div class="ttc" id="aclass_system_looper_html_ad2a0c8d8fa20ab1116c489a258295907"><div class="ttname"><a href="class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907">SystemLooper::scrProcess</a></div><div class="ttdeci">bool scrProcess() const</div><div class="ttdoc">画面処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8cpp_source.html#l00046">SystemLooper.cpp:46</a></div></div>
+<div class="ttc" id="aclass_system_looper_html_a5de7b78a07772205025fd5eab5165321"><div class="ttname"><a href="class_system_looper.html#a5de7b78a07772205025fd5eab5165321">SystemLooper::Error</a></div><div class="ttdeci">bool Error() const</div><div class="ttdoc">エラー処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8cpp_source.html#l00036">SystemLooper.cpp:36</a></div></div>
+<div class="ttc" id="aclass_system_looper_html_a100ad6bd4ea0ff7399c532cff8534177"><div class="ttname"><a href="class_system_looper.html#a100ad6bd4ea0ff7399c532cff8534177">SystemLooper::SystemLooper</a></div><div class="ttdeci">SystemLooper()</div><div class="ttdoc">初期化処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8cpp_source.html#l00016">SystemLooper.cpp:16</a></div></div>
+<div class="ttc" id="aclass_system_looper_html_a2a686ed2995385156509519dc306079a"><div class="ttname"><a href="class_system_looper.html#a2a686ed2995385156509519dc306079a">SystemLooper::scene</a></div><div class="ttdeci">stack&lt; shared_ptr&lt; AbstractScene &gt; &gt; scene</div><div class="ttdoc">シーンを管理する変数。各要素がshred_ptr&lt;AbstractScene&gt;型のstack型を使用する。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8h_source.html#l00029">SystemLooper.h:29</a></div></div>
+<div class="ttc" id="a_define_8h_html_a3b8b68fb63a52ce96c3014adee47b625"><div class="ttname"><a href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a></div><div class="ttdeci">eScene</div><div class="ttdoc">シーンの定義、クラス名と被らないようにシーンの頭に'e'を付けるようにする。</div><div class="ttdef"><b>Definition:</b> <a href="_define_8h_source.html#l00016">Define.h:16</a></div></div>
+<div class="ttc" id="aclass_system_looper_html_a1a433b0a514e42a1c80ceaf84e8757ef"><div class="ttname"><a href="class_system_looper.html#a1a433b0a514e42a1c80ceaf84e8757ef">SystemLooper::changeScene</a></div><div class="ttdeci">void changeScene(eScene NextScene) const override</div><div class="ttdoc">シーン替えを行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8cpp_source.html#l00074">SystemLooper.cpp:74</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

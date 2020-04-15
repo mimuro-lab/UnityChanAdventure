@@ -6,5 +6,7 @@
 ２、Wizeard/Projectウィンドウでそのドキュメントの名前を入力し、ドキュメントを生成したい対象のソースコードがあるディレクトリを参照する。
 
 ３、Export/ProjectウィンドウでOUTPUT_LANGUAGEをJapaneseにし、Export/InputウィンドウでINPUT_ENCODINGをCP932に変更する。
+また、Export/buildウィンドウでEXTRACT_PRIVATEにチェックを入れる（privateなメンバも出力する為）
+
 
 ４、RunウィンドウのRun doxygenをクリックする。

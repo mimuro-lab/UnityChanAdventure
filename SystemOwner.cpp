@@ -1,7 +1,15 @@
+
+/*!
+@file SystemOwner.cpp
+@brief SystemOwnerクラスのメンバ類の定義を行うCPPファイル
+@date 2020/04/16/3:41
+@author mimuro
+*/
+
 #include "SystemOwner.h"
 
 /*!
-@brief あらゆる初期化を行う
+@brief DxLib上の初期処理を行う。主にウィンドウや描画に関する処理である。
 @date 2020/04/14/23:54
 @author mimuro
 */
@@ -24,7 +32,7 @@ bool SystemOwner::initialize() const
 }
 
 /*!
-@brief あらゆる終了処理を行う
+@brief DxLibの終了処理を行う。
 @date 2020/04/14/23:54
 @author mimuro
 */
@@ -35,7 +43,7 @@ bool SystemOwner::finalize() const
 }
 
 /*!
-@brief アプリの中心となる関数
+@brief SystemLooperクラスのオブジェクトを生成し、処理を管理する。
 @date 2020/04/14/23:54
 @author mimuro
 */

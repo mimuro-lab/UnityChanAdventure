@@ -12,15 +12,12 @@
 \doxysubsection*{公開メンバ関数}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_system_owner_ab7366ef399e0dbdc98b43161105ff892}\label{class_system_owner_ab7366ef399e0dbdc98b43161105ff892}} 
-\mbox{\hyperlink{class_system_owner_ab7366ef399e0dbdc98b43161105ff892}{System\+Owner}} ()=default
-\begin{DoxyCompactList}\small\item\em コンストラクタをdefault宣言する理由はhttp\+://www.linktracktool.\+com/cpp/default-\/ctor.html参照 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_system_owner_ab75711e431693c8a83f962df849a8f6b}{initialize}} () const
-\begin{DoxyCompactList}\small\item\em あらゆる初期化を行う \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 初期化処理を行う関数。 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_system_owner_af3cf341bf96d84491f753f80bb358486}{finalize}} () const
-\begin{DoxyCompactList}\small\item\em あらゆる終了処理を行う \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 終了処理を行う関数。 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_system_owner_a138299e6d03ce3cc8a1a327dd19793f5}{main}} () const
-\begin{DoxyCompactList}\small\item\em アプリの中心となる関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 実行の中心処理を担う関数。初期化処理が成功した場合で実行される。 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{詳解}
@@ -34,6 +31,10 @@ mimuro
 \end{DoxyAuthor}
 
 
+ System\+Owner.\+h の 24 行目に定義があります。
+
+
+
 \doxysubsection{関数詳解}
 \mbox{\Hypertarget{class_system_owner_af3cf341bf96d84491f753f80bb358486}\label{class_system_owner_af3cf341bf96d84491f753f80bb358486}} 
 \index{SystemOwner@{SystemOwner}!finalize@{finalize}}
@@ -43,7 +44,9 @@ mimuro
 
 
 
-あらゆる終了処理を行う 
+終了処理を行う関数。 
+
+Dx\+Libの終了処理を行う。
 
 \begin{DoxyDate}{日付}
 2020/04/14/23\+:54 
@@ -51,6 +54,10 @@ mimuro
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
+
+
+ System\+Owner.\+cpp の 39 行目に定義があります。
+
 \mbox{\Hypertarget{class_system_owner_ab75711e431693c8a83f962df849a8f6b}\label{class_system_owner_ab75711e431693c8a83f962df849a8f6b}} 
 \index{SystemOwner@{SystemOwner}!initialize@{initialize}}
 \index{initialize@{initialize}!SystemOwner@{SystemOwner}}
@@ -59,7 +66,9 @@ mimuro
 
 
 
-あらゆる初期化を行う 
+初期化処理を行う関数。 
+
+Dx\+Lib上の初期処理を行う。主にウィンドウや描画に関する処理である。
 
 \begin{DoxyDate}{日付}
 2020/04/14/23\+:54 
@@ -67,6 +76,10 @@ mimuro
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
+
+
+ System\+Owner.\+cpp の 16 行目に定義があります。
+
 \mbox{\Hypertarget{class_system_owner_a138299e6d03ce3cc8a1a327dd19793f5}\label{class_system_owner_a138299e6d03ce3cc8a1a327dd19793f5}} 
 \index{SystemOwner@{SystemOwner}!main@{main}}
 \index{main@{main}!SystemOwner@{SystemOwner}}
@@ -75,7 +88,9 @@ mimuro
 
 
 
-アプリの中心となる関数 
+実行の中心処理を担う関数。初期化処理が成功した場合で実行される。 
+
+System\+Looperクラスのオブジェクトを生成し、処理を管理する。
 
 \begin{DoxyDate}{日付}
 2020/04/14/23\+:54 
@@ -85,7 +100,11 @@ mimuro
 \end{DoxyAuthor}
 
 
+ System\+Owner.\+cpp の 50 行目に定義があります。
+
+
+
 このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/mimur/source/repos/\+New\+Game/System\+Owner.\+h\item 
-C\+:/\+Users/mimur/source/repos/\+New\+Game/System\+Owner.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_system_owner_8h}{System\+Owner.\+h}}\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_system_owner_8cpp}{System\+Owner.\+cpp}}\end{DoxyCompactItemize}

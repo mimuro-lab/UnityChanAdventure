@@ -76,24 +76,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ab7366ef399e0dbdc98b43161105ff892"><td class="memItemLeft" align="right" valign="top"><a id="ab7366ef399e0dbdc98b43161105ff892"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_owner.html#ab7366ef399e0dbdc98b43161105ff892">SystemOwner</a> ()=default</td></tr>
-<tr class="memdesc:ab7366ef399e0dbdc98b43161105ff892"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタをdefault宣言する理由はhttp://www.linktracktool.com/cpp/default-ctor.html参照 <br /></td></tr>
-<tr class="separator:ab7366ef399e0dbdc98b43161105ff892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75711e431693c8a83f962df849a8f6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_owner.html#ab75711e431693c8a83f962df849a8f6b">initialize</a> () const</td></tr>
-<tr class="memdesc:ab75711e431693c8a83f962df849a8f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">あらゆる初期化を行う  <a href="class_system_owner.html#ab75711e431693c8a83f962df849a8f6b">[詳解]</a><br /></td></tr>
+<tr class="memdesc:ab75711e431693c8a83f962df849a8f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化処理を行う関数。  <a href="class_system_owner.html#ab75711e431693c8a83f962df849a8f6b">[詳解]</a><br /></td></tr>
 <tr class="separator:ab75711e431693c8a83f962df849a8f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3cf341bf96d84491f753f80bb358486"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_owner.html#af3cf341bf96d84491f753f80bb358486">finalize</a> () const</td></tr>
-<tr class="memdesc:af3cf341bf96d84491f753f80bb358486"><td class="mdescLeft">&#160;</td><td class="mdescRight">あらゆる終了処理を行う  <a href="class_system_owner.html#af3cf341bf96d84491f753f80bb358486">[詳解]</a><br /></td></tr>
+<tr class="memdesc:af3cf341bf96d84491f753f80bb358486"><td class="mdescLeft">&#160;</td><td class="mdescRight">終了処理を行う関数。  <a href="class_system_owner.html#af3cf341bf96d84491f753f80bb358486">[詳解]</a><br /></td></tr>
 <tr class="separator:af3cf341bf96d84491f753f80bb358486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a138299e6d03ce3cc8a1a327dd19793f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">main</a> () const</td></tr>
-<tr class="memdesc:a138299e6d03ce3cc8a1a327dd19793f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">アプリの中心となる関数  <a href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a138299e6d03ce3cc8a1a327dd19793f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">実行の中心処理を担う関数。初期化処理が成功した場合で実行される。  <a href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">[詳解]</a><br /></td></tr>
 <tr class="separator:a138299e6d03ce3cc8a1a327dd19793f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>初期化処理や終了処理全般を担うクラス </p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/14/23:43 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+<p class="definition"> <a class="el" href="_system_owner_8h_source.html">SystemOwner.h</a> の <a class="el" href="_system_owner_8h_source.html#l00024">24</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="af3cf341bf96d84491f753f80bb358486"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3cf341bf96d84491f753f80bb358486">&#9670;&nbsp;</a></span>finalize()</h2>
@@ -110,9 +108,12 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>あらゆる終了処理を行う </p>
+<p>終了処理を行う関数。 </p>
+<p>DxLibの終了処理を行う。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/14/23:54 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+<p class="definition"> <a class="el" href="_system_owner_8cpp_source.html">SystemOwner.cpp</a> の <a class="el" href="_system_owner_8cpp_source.html#l00039">39</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -131,9 +132,12 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>あらゆる初期化を行う </p>
+<p>初期化処理を行う関数。 </p>
+<p>DxLib上の初期処理を行う。主にウィンドウや描画に関する処理である。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/14/23:54 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+<p class="definition"> <a class="el" href="_system_owner_8cpp_source.html">SystemOwner.cpp</a> の <a class="el" href="_system_owner_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -152,15 +156,18 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>アプリの中心となる関数 </p>
+<p>実行の中心処理を担う関数。初期化処理が成功した場合で実行される。 </p>
+<p>SystemLooperクラスのオブジェクトを生成し、処理を管理する。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/14/23:54 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+<p class="definition"> <a class="el" href="_system_owner_8cpp_source.html">SystemOwner.cpp</a> の <a class="el" href="_system_owner_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/source/repos/NewGame/<a class="el" href="_system_owner_8h_source.html">SystemOwner.h</a></li>
-<li>C:/Users/mimur/source/repos/NewGame/SystemOwner.cpp</li>
+<li>C:/Users/mimur/source/repos/NewGame/<a class="el" href="_system_owner_8cpp_source.html">SystemOwner.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

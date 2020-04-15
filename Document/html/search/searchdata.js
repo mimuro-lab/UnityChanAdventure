@@ -1,21 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "defims",
-  1: "ds",
-  2: "efims"
+  0: "acdefilmpsuw",
+  1: "adims",
+  2: "adims",
+  3: "acdefilmsuw",
+  4: "cpsw",
+  5: "e"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions"
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "enums"
 };
 
 var indexSectionLabels =
 {
   0: "全て",
   1: "クラス",
-  2: "関数"
+  2: "ファイル",
+  3: "関数",
+  4: "変数",
+  5: "列挙型"
 };
 

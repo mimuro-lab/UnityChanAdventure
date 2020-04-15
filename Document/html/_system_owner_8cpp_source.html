@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: C:/Users/mimur/source/repos/NewGame/SystemOwner.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/mimur/source/repos/NewGame/SystemOwner.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_system_owner_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_system_owner_8h.html">SystemOwner.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_system_owner.html#ab75711e431693c8a83f962df849a8f6b">   16</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_system_owner.html#ab75711e431693c8a83f962df849a8f6b">SystemOwner::initialize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    SetAlwaysRunFlag(TRUE);                     <span class="comment">//ウィンドウがノンアクティブでも実行</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    SetWindowSizeChangeEnableFlag(TRUE);        <span class="comment">//ウィンドウサイズを自由に変更できるようにする</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SetOutApplicationLogValidFlag(FALSE);       <span class="comment">//ログ出力しない</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    SetFullScreenResolutionMode(DX_FSRESOLUTIONMODE_DESKTOP);   <span class="comment">//フルスクリーン時に縦横比を維持する</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    SetWindowText(<span class="stringliteral">&quot;四聖龍神録2&quot;</span>);               <span class="comment">//ウィンドウタイトルを付ける</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ChangeWindowMode(TRUE);                     <span class="comment">//ウィンドウモードに変更</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//  SetWindowSizeExtendRate(1.0);               //ウィンドウサイズを変更したい時はここに倍率を指定する</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> COLOR_BIT = 32;                   <span class="comment">//色のbit数。通常32で良いが軽くするなら16にする</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    SetGraphMode(<a class="code" href="class_define.html#a4c592f02e8d7908b1b67403b88f3aad2">Define::WIN_W</a>, <a class="code" href="class_define.html#a327bf22ef5b30076112667f6c0be897a">Define::WIN_H</a>, COLOR_BIT);      <span class="comment">//ゲーム画面の解像度を設定する</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (DxLib_Init()) {                         <span class="comment">//DXライブラリ初期化処理</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;                           <span class="comment">//異常終了したら即座にやめる</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    SetDrawScreen(DX_SCREEN_BACK);              <span class="comment">//裏画面処理を設定する</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_system_owner.html#af3cf341bf96d84491f753f80bb358486">   39</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_system_owner.html#af3cf341bf96d84491f753f80bb358486">SystemOwner::finalize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    DxLib_End();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">   50</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">SystemOwner::main</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    shared_ptr&lt;SystemLooper&gt; looper = make_shared&lt;SystemLooper&gt;();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (!looper-&gt;Initialize())</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">while</span> (!looper-&gt;Error()) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (!looper-&gt;scrProcess())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        looper-&gt;loop();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_system_owner_8h_html"><div class="ttname"><a href="_system_owner_8h.html">SystemOwner.h</a></div><div class="ttdoc">SystemOwnerクラスが定義されているヘッダファイル。</div></div>
+<div class="ttc" id="aclass_define_html_a4c592f02e8d7908b1b67403b88f3aad2"><div class="ttname"><a href="class_define.html#a4c592f02e8d7908b1b67403b88f3aad2">Define::WIN_W</a></div><div class="ttdeci">const static int WIN_W</div><div class="ttdoc">ウィンドウサイズ横</div><div class="ttdef"><b>Definition:</b> <a href="_define_8h_source.html#l00030">Define.h:30</a></div></div>
+<div class="ttc" id="aclass_system_owner_html_ab75711e431693c8a83f962df849a8f6b"><div class="ttname"><a href="class_system_owner.html#ab75711e431693c8a83f962df849a8f6b">SystemOwner::initialize</a></div><div class="ttdeci">bool initialize() const</div><div class="ttdoc">初期化処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_owner_8cpp_source.html#l00016">SystemOwner.cpp:16</a></div></div>
+<div class="ttc" id="aclass_system_owner_html_a138299e6d03ce3cc8a1a327dd19793f5"><div class="ttname"><a href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">SystemOwner::main</a></div><div class="ttdeci">bool main() const</div><div class="ttdoc">実行の中心処理を担う関数。初期化処理が成功した場合で実行される。</div><div class="ttdef"><b>Definition:</b> <a href="_system_owner_8cpp_source.html#l00050">SystemOwner.cpp:50</a></div></div>
+<div class="ttc" id="aclass_system_owner_html_af3cf341bf96d84491f753f80bb358486"><div class="ttname"><a href="class_system_owner.html#af3cf341bf96d84491f753f80bb358486">SystemOwner::finalize</a></div><div class="ttdeci">bool finalize() const</div><div class="ttdoc">終了処理を行う関数。</div><div class="ttdef"><b>Definition:</b> <a href="_system_owner_8cpp_source.html#l00039">SystemOwner.cpp:39</a></div></div>
+<div class="ttc" id="aclass_define_html_a327bf22ef5b30076112667f6c0be897a"><div class="ttname"><a href="class_define.html#a327bf22ef5b30076112667f6c0be897a">Define::WIN_H</a></div><div class="ttdeci">const static int WIN_H</div><div class="ttdoc">ウィンドウサイズ縦</div><div class="ttdef"><b>Definition:</b> <a href="_define_8h_source.html#l00033">Define.h:33</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

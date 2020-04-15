@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: C:/Users/mimur/source/repos/NewGame/Menu.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/mimur/source/repos/NewGame/Menu.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_menu_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_abstract_scene_8h.html">AbstractScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_menu.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_menu.html">Menu</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_scene.html">AbstractScene</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_menu.html#a4efafcccbff65b5aa1dc2676a4be5326">   26</a></span>&#160;    <a class="code" href="class_menu.html#a4efafcccbff65b5aa1dc2676a4be5326">Menu</a>(shared_ptr&lt;ISceneChanger&gt; _changer)  : <a class="code" href="class_abstract_scene.html">AbstractScene</a>(_changer) {};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ~<a class="code" href="class_menu.html">Menu</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> update() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> draw()  <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_abstract_scene_html"><div class="ttname"><a href="class_abstract_scene.html">AbstractScene</a></div><div class="ttdoc">シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。</div><div class="ttdef"><b>Definition:</b> <a href="_abstract_scene_8h_source.html#l00021">AbstractScene.h:21</a></div></div>
+<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。メニュー画面を担当する。</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00022">Menu.h:22</a></div></div>
+<div class="ttc" id="aclass_menu_html_a4efafcccbff65b5aa1dc2676a4be5326"><div class="ttname"><a href="class_menu.html#a4efafcccbff65b5aa1dc2676a4be5326">Menu::Menu</a></div><div class="ttdeci">Menu(shared_ptr&lt; ISceneChanger &gt; _changer)</div><div class="ttdoc">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00026">Menu.h:26</a></div></div>
+<div class="ttc" id="a_abstract_scene_8h_html"><div class="ttname"><a href="_abstract_scene_8h.html">AbstractScene.h</a></div><div class="ttdoc">AbstractSceneクラスが定義されているヘッダファイル。</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

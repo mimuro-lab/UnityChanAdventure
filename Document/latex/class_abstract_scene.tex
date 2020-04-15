@@ -1,0 +1,55 @@
+\hypertarget{class_abstract_scene}{}\doxysection{Abstract\+Scene クラス}
+\label{class_abstract_scene}\index{AbstractScene@{AbstractScene}}
+
+
+シーンを管理するクラス、\+System\+Looperで使用。各シーンクラスはこのクラスを継承する。  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Scene.\+h$>$}
+
+Abstract\+Scene の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstract_scene}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_scene_aff61f06e8b99e84898aedb6177df5819}\label{class_abstract_scene_aff61f06e8b99e84898aedb6177df5819}} 
+\mbox{\hyperlink{class_abstract_scene_aff61f06e8b99e84898aedb6177df5819}{Abstract\+Scene}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_scene_changer}{I\+Scene\+Changer}} $>$ \+\_\+changer)
+\begin{DoxyCompactList}\small\item\em コンストラクタ呼び出し時にshared\+\_\+ptr$<$\+I\+Scene\+Changer$>$型のオブジェクトを受け取り、changerに代入する。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_scene_abe79ffa848ca69665381786b622adadb}\label{class_abstract_scene_abe79ffa848ca69665381786b622adadb}} 
+virtual void \mbox{\hyperlink{class_abstract_scene_abe79ffa848ca69665381786b622adadb}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em 継承先のシーンクラスでは必ずupdate()関数を作る事を約束する。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_scene_a5970420b544d9cbdb19fdb22ba48b619}\label{class_abstract_scene_a5970420b544d9cbdb19fdb22ba48b619}} 
+virtual void \mbox{\hyperlink{class_abstract_scene_a5970420b544d9cbdb19fdb22ba48b619}{draw}} ()=0
+\begin{DoxyCompactList}\small\item\em 継承先のシーンクラスでは必ずdraw()関数を作る事を約束する。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_scene_adb810bc89fc8c19ef720555c4361ea26}\label{class_abstract_scene_adb810bc89fc8c19ef720555c4361ea26}} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_scene_changer}{I\+Scene\+Changer}} $>$ \mbox{\hyperlink{class_abstract_scene_adb810bc89fc8c19ef720555c4361ea26}{changer}}
+\begin{DoxyCompactList}\small\item\em 全てのシーンクラスで\+I\+Scne\+Changer型のオブジェクトを持たせる。\+System\+Looperクラスのchange\+Sceneメンバ関数を呼び出すため。いわゆるコールバックというやつ。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+シーンを管理するクラス、\+System\+Looperで使用。各シーンクラスはこのクラスを継承する。 
+
+\begin{DoxyDate}{日付}
+2020/04/14/16\+:00 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+ Abstract\+Scene.\+h の 21 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_abstract_scene_8h}{Abstract\+Scene.\+h}}\end{DoxyCompactItemize}

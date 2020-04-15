@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scrprocess_5',['scrProcess',['../class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907',1,'SystemLooper']]],
-  ['systemlooper_6',['SystemLooper',['../class_system_looper.html',1,'']]],
-  ['systemowner_7',['SystemOwner',['../class_system_owner.html',1,'SystemOwner'],['../class_system_owner.html#ab7366ef399e0dbdc98b43161105ff892',1,'SystemOwner::SystemOwner()']]]
+  ['initialize_11',['Initialize',['../class_system_looper.html#ad98afeb6aad94ec553935febc6c013bc',1,'SystemLooper::Initialize()'],['../class_system_owner.html#ab75711e431693c8a83f962df849a8f6b',1,'SystemOwner::initialize()']]],
+  ['iscenechanger_12',['ISceneChanger',['../class_i_scene_changer.html',1,'']]],
+  ['iscenechanger_2eh_13',['ISceneChanger.h',['../_i_scene_changer_8h.html',1,'']]]
 ];

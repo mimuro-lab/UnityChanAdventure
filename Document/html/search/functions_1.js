@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['finalize_12',['finalize',['../class_system_owner.html#af3cf341bf96d84491f753f80bb358486',1,'SystemOwner']]]
+  ['changescene_51',['changeScene',['../class_i_scene_changer.html#afcf687a6319c00869b1d4089f7496e9b',1,'ISceneChanger::changeScene()'],['../class_system_looper.html#a1a433b0a514e42a1c80ceaf84e8757ef',1,'SystemLooper::changeScene()']]]
 ];
