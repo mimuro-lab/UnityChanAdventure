@@ -10,7 +10,7 @@
 
 void Menu::update()
 {
-	changer->changeScene(eConfig);
+	changer->changeScene(eConfig, false);
 }
 
 void Menu::draw()

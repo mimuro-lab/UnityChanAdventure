@@ -2,7 +2,7 @@
 
 void Config::update()
 {
-	changer->changeScene(eMenu);
+	changer->changeScene(eMenu, true);
 }
 
 void Config::draw()

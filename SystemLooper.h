@@ -46,6 +46,6 @@ public:
 	void loop() const;
 
 	//! シーン替えを行う関数。
-	void changeScene(eScene NextScene) override;
+	void changeScene(eScene NextScene, const bool stackClear) override;
 };
 

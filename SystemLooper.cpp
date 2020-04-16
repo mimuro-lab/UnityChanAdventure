@@ -73,7 +73,7 @@ void SystemLooper::loop() const
 @date 2020/04/16/14:29
 @author mimuro
 */
-void SystemLooper::changeScene(eScene Next)
+void SystemLooper::changeScene(eScene Next, const bool stackClear)
 {
 	
 	switch (Next) {
