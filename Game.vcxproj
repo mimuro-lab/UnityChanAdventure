@@ -97,6 +97,7 @@
     <ClInclude Include="Define.h" />
     <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="SystemLooper.h" />
     <ClInclude Include="SystemOwner.h" />
   </ItemGroup>

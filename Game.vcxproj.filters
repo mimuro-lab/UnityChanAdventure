@@ -18,6 +18,9 @@
     <Filter Include="ソース ファイル\System">
       <UniqueIdentifier>{4785744f-f410-4625-b16d-03a896c42766}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Resource">
+      <UniqueIdentifier>{c28408a6-c001-4c79-87ca-3ac67d330093}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,6 +63,9 @@
     </ClInclude>
     <ClInclude Include="ISceneChanger.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
