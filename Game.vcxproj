@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Define.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="SystemLooper.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="ISceneChanger.h" />
+    <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SystemLooper.h" />
