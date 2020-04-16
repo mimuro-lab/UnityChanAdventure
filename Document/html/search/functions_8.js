@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scrprocess_59',['scrProcess',['../class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907',1,'SystemLooper']]],
-  ['systemlooper_60',['SystemLooper',['../class_system_looper.html#a100ad6bd4ea0ff7399c532cff8534177',1,'SystemLooper']]]
+  ['main_98',['main',['../class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5',1,'SystemOwner']]],
+  ['menuscene_99',['MenuScene',['../class_menu_scene.html#a66a80456a09b5a4ed12265eab35d1b2b',1,'MenuScene']]]
 ];

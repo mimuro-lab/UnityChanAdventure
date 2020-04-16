@@ -70,39 +70,45 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_scene_changer_8h.html">ISceneChanger.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_abstract_scene_8h.html">AbstractScene.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_8h.html">Menu.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_system_looper.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_system_looper.html">SystemLooper</a> : <span class="keyword">public</span> <a class="code" href="class_i_scene_changer.html">ISceneChanger</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">public</span> enable_shared_from_this&lt;SystemLooper&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{   </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">   29</a></span>&#160;    stack &lt;shared_ptr&lt;AbstractScene&gt;&gt; <a class="code" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">scene</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_system_looper.html">SystemLooper</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ~<a class="code" href="class_system_looper.html">SystemLooper</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> Initialize();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_start_scene_8h.html">StartScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_menu_scene_8h.html">MenuScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_config_scene_8h.html">ConfigScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_scene_8h.html">GameScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_system_looper.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_system_looper.html">SystemLooper</a> : <span class="keyword">public</span> <a class="code" href="class_i_scene_changer.html">ISceneChanger</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span> enable_shared_from_this&lt;SystemLooper&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{   </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">   32</a></span>&#160;    stack &lt;shared_ptr&lt;AbstractScene&gt;&gt; <a class="code" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">scene</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_system_looper.html">SystemLooper</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ~<a class="code" href="class_system_looper.html">SystemLooper</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> Error() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> Initialize();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> scrProcess() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> Error() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> loop() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> scrProcess() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> changeScene(<a class="code" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a> NextScene) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> loop() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> changeScene(<a class="code" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a> NextScene, <span class="keyword">const</span> <span class="keywordtype">bool</span> stackClear) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_system_looper_html"><div class="ttname"><a href="class_system_looper.html">SystemLooper</a></div><div class="ttdoc">ループする処理の中心を担うクラス</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8h_source.html#l00025">SystemLooper.h:25</a></div></div>
-<div class="ttc" id="aclass_i_scene_changer_html"><div class="ttname"><a href="class_i_scene_changer.html">ISceneChanger</a></div><div class="ttdoc">SystemLooperクラスが持つchangeSceneメンバ関数を外部クラスで使用する為のインターフェース。</div><div class="ttdef"><b>Definition:</b> <a href="_i_scene_changer_8h_source.html#l00015">ISceneChanger.h:15</a></div></div>
-<div class="ttc" id="a_menu_8h_html"><div class="ttname"><a href="_menu_8h.html">Menu.h</a></div><div class="ttdoc">Menuクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_system_looper_html"><div class="ttname"><a href="class_system_looper.html">SystemLooper</a></div><div class="ttdoc">ループする処理の中心を担うクラス</div><div class="ttdef"><b>Definition:</b> SystemLooper.h:28</div></div>
+<div class="ttc" id="aclass_i_scene_changer_html"><div class="ttname"><a href="class_i_scene_changer.html">ISceneChanger</a></div><div class="ttdoc">SystemLooperクラスが持つchangeSceneメンバ関数を外部クラスで使用する為のインターフェース。</div><div class="ttdef"><b>Definition:</b> ISceneChanger.h:15</div></div>
+<div class="ttc" id="a_start_scene_8h_html"><div class="ttname"><a href="_start_scene_8h.html">StartScene.h</a></div><div class="ttdoc">StartSceneクラスが定義されているヘッダファイル</div></div>
 <div class="ttc" id="a_i_scene_changer_8h_html"><div class="ttname"><a href="_i_scene_changer_8h.html">ISceneChanger.h</a></div><div class="ttdoc">ISceneChangerクラスが定義されているヘッダファイル。</div></div>
-<div class="ttc" id="aclass_system_looper_html_a2a686ed2995385156509519dc306079a"><div class="ttname"><a href="class_system_looper.html#a2a686ed2995385156509519dc306079a">SystemLooper::scene</a></div><div class="ttdeci">stack&lt; shared_ptr&lt; AbstractScene &gt; &gt; scene</div><div class="ttdoc">シーンを管理する変数。各要素がshred_ptr&lt;AbstractScene&gt;型のstack型を使用する。</div><div class="ttdef"><b>Definition:</b> <a href="_system_looper_8h_source.html#l00029">SystemLooper.h:29</a></div></div>
+<div class="ttc" id="aclass_system_looper_html_a2a686ed2995385156509519dc306079a"><div class="ttname"><a href="class_system_looper.html#a2a686ed2995385156509519dc306079a">SystemLooper::scene</a></div><div class="ttdeci">stack&lt; shared_ptr&lt; AbstractScene &gt; &gt; scene</div><div class="ttdoc">シーンを管理する変数。各要素がshred_ptr&lt;AbstractScene&gt;型のstack型を使用する。</div><div class="ttdef"><b>Definition:</b> SystemLooper.h:32</div></div>
+<div class="ttc" id="a_config_scene_8h_html"><div class="ttname"><a href="_config_scene_8h.html">ConfigScene.h</a></div><div class="ttdoc">ConfigSceneクラスが定義されているヘッダファイル。</div></div>
+<div class="ttc" id="a_menu_scene_8h_html"><div class="ttname"><a href="_menu_scene_8h.html">MenuScene.h</a></div><div class="ttdoc">MenuSceneクラスが定義されているヘッダファイル</div></div>
 <div class="ttc" id="a_abstract_scene_8h_html"><div class="ttname"><a href="_abstract_scene_8h.html">AbstractScene.h</a></div><div class="ttdoc">AbstractSceneクラスが定義されているヘッダファイル。</div></div>
-<div class="ttc" id="a_define_8h_html_a3b8b68fb63a52ce96c3014adee47b625"><div class="ttname"><a href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a></div><div class="ttdeci">eScene</div><div class="ttdoc">シーンの定義、クラス名と被らないようにシーンの頭に'e'を付けるようにする。</div><div class="ttdef"><b>Definition:</b> <a href="_define_8h_source.html#l00016">Define.h:16</a></div></div>
+<div class="ttc" id="a_game_scene_8h_html"><div class="ttname"><a href="_game_scene_8h.html">GameScene.h</a></div><div class="ttdoc">GameSceneクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="a_define_8h_html_a3b8b68fb63a52ce96c3014adee47b625"><div class="ttname"><a href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a></div><div class="ttdeci">eScene</div><div class="ttdoc">シーンの定義、クラス名と被らないようにシーンの頭に'e'を付けるようにする。</div><div class="ttdef"><b>Definition:</b> Define.h:16</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,0 +1,47 @@
+\hypertarget{class_config_scene}{}\doxysection{Config\+Scene クラス}
+\label{class_config_scene}\index{ConfigScene@{ConfigScene}}
+
+
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。設定画面を担当する。  
+
+
+
+
+{\ttfamily \#include $<$Config\+Scene.\+h$>$}
+
+Config\+Scene の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_config_scene}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_config_scene_ab9ac3cc1b70533c73becdfb6d0be6547}\label{class_config_scene_ab9ac3cc1b70533c73becdfb6d0be6547}} 
+\mbox{\hyperlink{class_config_scene_ab9ac3cc1b70533c73becdfb6d0be6547}{Config\+Scene}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_scene_changer}{I\+Scene\+Changer}} $>$ \+\_\+changer)
+\begin{DoxyCompactList}\small\item\em コンストラクタ呼び出し時にshared\+\_\+ptr$<$\+I\+Scene\+Changer$>$型のオブジェクトを受け取り、親の\+Abstract\+Sceneクラスのコンストラクタに代入する。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_config_scene_a186c456871ab3862c3b45d2c589c5414}\label{class_config_scene_a186c456871ab3862c3b45d2c589c5414}} 
+void \mbox{\hyperlink{class_config_scene_a186c456871ab3862c3b45d2c589c5414}{update}} () override
+\begin{DoxyCompactList}\small\item\em メニュー画面に必要な前処理を行う関数。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_config_scene_a0988975d308fef31f05d4bbd1bdd482a}\label{class_config_scene_a0988975d308fef31f05d4bbd1bdd482a}} 
+void \mbox{\hyperlink{class_config_scene_a0988975d308fef31f05d4bbd1bdd482a}{draw}} () override
+\begin{DoxyCompactList}\small\item\em メニュー画面の描画を行う関数。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。設定画面を担当する。 
+
+\begin{DoxyDate}{日付}
+2020/04/16/19\+:52 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_config_scene_8h}{Config\+Scene.\+h}}\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_config_scene_8cpp}{Config\+Scene.\+cpp}}\end{DoxyCompactItemize}

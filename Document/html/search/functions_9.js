@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['update_61',['update',['../class_abstract_scene.html#abe79ffa848ca69665381786b622adadb',1,'AbstractScene::update()'],['../class_menu.html#a0878f621aa4501fe0e8f388c2222ead6',1,'Menu::update()']]]
+  ['scrprocess_100',['scrProcess',['../class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907',1,'SystemLooper']]],
+  ['startscene_101',['StartScene',['../class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740',1,'StartScene']]],
+  ['systemlooper_102',['SystemLooper',['../class_system_looper.html#a100ad6bd4ea0ff7399c532cff8534177',1,'SystemLooper']]]
 ];

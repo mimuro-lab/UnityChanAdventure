@@ -1,22 +1,46 @@
-#pragma once
 
+/*!
+@file Keyboard.h
+@brief Keyboardクラスが定義されているヘッダファイル
+@date 2020/04/16/20:04
+@author mimuro
+*/
+
+#pragma once
 #include "Singleton.h"
 #include <array>
 
+/*!
+@class Keyboard
+@brief キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。
+@date 2020/04/16/20:00
+@author mimuro
+*/
 class Keyboard final : public Singleton<Keyboard> {
 
 	Keyboard() = default;
 	friend Singleton< Keyboard >;
 
 public:
-	bool update();	//更新
-	int getPressingCount(int keyCode);//keyCodeのキーが押されているフレーム数を取得
-	int getReleasingCount(int keyCode);//keyCodeのキーが離されているフレーム数を取得
+	//! 更新
+	bool update();	
+	
+	//! keyCodeのキーが押されているフレーム数を取得
+	int getPressingCount(int keyCode);
+
+	//! keyCodeのキーが離されているフレーム数を取得
+	int getReleasingCount(int keyCode);
 
 private:
-	static const int KEY_NUM = 256;	//キー総数
-	std::array<int, KEY_NUM> _pressingCount;//押されカウンタ
-	std::array<int, KEY_NUM> _releasingCount;//離されカウンタ
+	//! キーボードのキー総数
+	static const int KEY_NUM = 256;	
 
-	bool isAvailableCode(int keyCode);//keyCodeが有効なキー番号か問う
+	//! 押されカウンタ
+	std::array<int, KEY_NUM> _pressingCount;
+	
+	//! 離されカウンタ
+	std::array<int, KEY_NUM> _releasingCount;
+	
+	//! keyCodeが有効なキー番号か問う
+	bool isAvailableCode(int keyCode);
 };

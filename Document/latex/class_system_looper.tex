@@ -28,7 +28,7 @@ bool \mbox{\hyperlink{class_system_looper_ad2a0c8d8fa20ab1116c489a258295907}{scr
 \begin{DoxyCompactList}\small\item\em 画面処理を行う関数。 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_system_looper_a20c8a684ed5d0dc408ba19b302f83492}{loop}} () const
 \begin{DoxyCompactList}\small\item\em メインの繰り返し処理を行う関数。 \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_system_looper_a1a433b0a514e42a1c80ceaf84e8757ef}{change\+Scene}} (\mbox{\hyperlink{_define_8h_a3b8b68fb63a52ce96c3014adee47b625}{e\+Scene}} Next\+Scene) const override
+void \mbox{\hyperlink{class_system_looper_ab2a01b752b8926642ee8b6e3583f51f6}{change\+Scene}} (\mbox{\hyperlink{_define_8h_a3b8b68fb63a52ce96c3014adee47b625}{e\+Scene}} Next\+Scene, const bool stack\+Clear) override
 \begin{DoxyCompactList}\small\item\em シーン替えを行う関数。 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{非公開変数類}
 \begin{DoxyCompactItemize}
@@ -47,10 +47,6 @@ stack$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_scene}{Abstract\+Sce
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
-
-
- System\+Looper.\+h の 25 行目に定義があります。
-
 
 
 \doxysubsection{構築子と解体子}
@@ -74,16 +70,12 @@ mimuro
 \end{DoxyAuthor}
 
 
- System\+Looper.\+cpp の 16 行目に定義があります。
-
-
-
 \doxysubsection{関数詳解}
-\mbox{\Hypertarget{class_system_looper_a1a433b0a514e42a1c80ceaf84e8757ef}\label{class_system_looper_a1a433b0a514e42a1c80ceaf84e8757ef}} 
+\mbox{\Hypertarget{class_system_looper_ab2a01b752b8926642ee8b6e3583f51f6}\label{class_system_looper_ab2a01b752b8926642ee8b6e3583f51f6}} 
 \index{SystemLooper@{SystemLooper}!changeScene@{changeScene}}
 \index{changeScene@{changeScene}!SystemLooper@{SystemLooper}}
 \doxysubsubsection{\texorpdfstring{changeScene()}{changeScene()}}
-{\footnotesize\ttfamily void System\+Looper\+::change\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_define_8h_a3b8b68fb63a52ce96c3014adee47b625}{e\+Scene}}}]{Next }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void System\+Looper\+::change\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_define_8h_a3b8b68fb63a52ce96c3014adee47b625}{e\+Scene}}}]{Next,  }\item[{const bool}]{stack\+Clear }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -91,13 +83,15 @@ mimuro
 
 System\+Looperクラスではシーンをメンバ変数sceneで管理するが、そのシーンの変更はこの関数で行う。
 
-この関数は\+I\+Scene\+Changerインターフェースクラスに記載されている関数であり、各シーンクラスから呼び出される。 
+この関数は\+I\+Scene\+Changerインターフェースクラスに記載されている関数であり、各シーンクラスから呼び出される。 \begin{DoxyDate}{日付}
+2020/04/16/14\+:29 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
 
-\mbox{\hyperlink{class_i_scene_changer_afcf687a6319c00869b1d4089f7496e9b}{I\+Scene\+Changer}}を実装しています。
 
-
-
- System\+Looper.\+cpp の 74 行目に定義があります。
+\mbox{\hyperlink{class_i_scene_changer_a48b8ff65e951a6d510d9e5f31a080d14}{I\+Scene\+Changer}}を実装しています。
 
 \mbox{\Hypertarget{class_system_looper_a5de7b78a07772205025fd5eab5165321}\label{class_system_looper_a5de7b78a07772205025fd5eab5165321}} 
 \index{SystemLooper@{SystemLooper}!Error@{Error}}
@@ -117,10 +111,6 @@ System\+Ownerクラスのメインのwhile分の引数で実行される関数�
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
-
-
- System\+Looper.\+cpp の 36 行目に定義があります。
-
 \mbox{\Hypertarget{class_system_looper_ad98afeb6aad94ec553935febc6c013bc}\label{class_system_looper_ad98afeb6aad94ec553935febc6c013bc}} 
 \index{SystemLooper@{SystemLooper}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!SystemLooper@{SystemLooper}}
@@ -139,10 +129,6 @@ privateなメンバ変数を変更するからconstをつけてはならない�
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
-
-
- System\+Looper.\+cpp の 25 行目に定義があります。
-
 \mbox{\Hypertarget{class_system_looper_a20c8a684ed5d0dc408ba19b302f83492}\label{class_system_looper_a20c8a684ed5d0dc408ba19b302f83492}} 
 \index{SystemLooper@{SystemLooper}!loop@{loop}}
 \index{loop@{loop}!SystemLooper@{SystemLooper}}
@@ -161,10 +147,6 @@ mimuro
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
-
-
- System\+Looper.\+cpp の 63 行目に定義があります。
-
 \mbox{\Hypertarget{class_system_looper_ad2a0c8d8fa20ab1116c489a258295907}\label{class_system_looper_ad2a0c8d8fa20ab1116c489a258295907}} 
 \index{SystemLooper@{SystemLooper}!scrProcess@{scrProcess}}
 \index{scrProcess@{scrProcess}!SystemLooper@{SystemLooper}}
@@ -183,10 +165,6 @@ mimuro
 \begin{DoxyAuthor}{著者}
 mimuro 
 \end{DoxyAuthor}
-
-
- System\+Looper.\+cpp の 46 行目に定義があります。
-
 
 
 このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}

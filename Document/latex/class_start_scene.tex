@@ -1,0 +1,47 @@
+\hypertarget{class_start_scene}{}\doxysection{Start\+Scene クラス}
+\label{class_start_scene}\index{StartScene@{StartScene}}
+
+
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。スタート画面を担当する。  
+
+
+
+
+{\ttfamily \#include $<$Start\+Scene.\+h$>$}
+
+Start\+Scene の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_start_scene}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_start_scene_a8f09c3883874f65fccbe7972cd73b740}\label{class_start_scene_a8f09c3883874f65fccbe7972cd73b740}} 
+\mbox{\hyperlink{class_start_scene_a8f09c3883874f65fccbe7972cd73b740}{Start\+Scene}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_scene_changer}{I\+Scene\+Changer}} $>$ \+\_\+changer)
+\begin{DoxyCompactList}\small\item\em コンストラクタ呼び出し時にshared\+\_\+ptr$<$\+I\+Scene\+Changer$>$型のオブジェクトを受け取り、親の\+Abstract\+Sceneクラスのコンストラクタに代入する。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_start_scene_a5ef13b44ea32ad5fee5bb59b18612855}\label{class_start_scene_a5ef13b44ea32ad5fee5bb59b18612855}} 
+void \mbox{\hyperlink{class_start_scene_a5ef13b44ea32ad5fee5bb59b18612855}{update}} () override
+\begin{DoxyCompactList}\small\item\em メニュー画面に必要な前処理を行う関数。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_start_scene_ab586b0bd7eb5d207bfe480ae9f87f62e}\label{class_start_scene_ab586b0bd7eb5d207bfe480ae9f87f62e}} 
+void \mbox{\hyperlink{class_start_scene_ab586b0bd7eb5d207bfe480ae9f87f62e}{draw}} () override
+\begin{DoxyCompactList}\small\item\em メニュー画面の描画を行う関数。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。スタート画面を担当する。 
+
+\begin{DoxyDate}{日付}
+2020/04/16/20\+:00 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_start_scene_8h}{Start\+Scene.\+h}}\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_start_scene_8cpp}{Start\+Scene.\+cpp}}\end{DoxyCompactItemize}

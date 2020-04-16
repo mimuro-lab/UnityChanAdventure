@@ -1,7 +1,21 @@
+
+/*!
+@file ConfigScene.h
+@brief ConfigSceneクラスが定義されているヘッダファイル。
+@date 2020/04/16/19:50
+@author mimuro
+*/
+
 #pragma once
 #include "AbstractScene.h"
 #include <DxLib.h>
 
+/*!
+@class ConfigScene
+@brief SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。
+@date 2020/04/16/19:52
+@author mimuro
+*/
 class ConfigScene : public AbstractScene
 {
 public:

@@ -1,0 +1,47 @@
+\hypertarget{class_game_scene}{}\doxysection{Game\+Scene クラス}
+\label{class_game_scene}\index{GameScene@{GameScene}}
+
+
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。ゲーム画面を担当する。  
+
+
+
+
+{\ttfamily \#include $<$Game\+Scene.\+h$>$}
+
+Game\+Scene の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_scene}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_scene_afa0340544d0b128bf949e43ab5766d83}\label{class_game_scene_afa0340544d0b128bf949e43ab5766d83}} 
+\mbox{\hyperlink{class_game_scene_afa0340544d0b128bf949e43ab5766d83}{Game\+Scene}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_scene_changer}{I\+Scene\+Changer}} $>$ \+\_\+changer)
+\begin{DoxyCompactList}\small\item\em コンストラクタ呼び出し時にshared\+\_\+ptr$<$\+I\+Scene\+Changer$>$型のオブジェクトを受け取り、親の\+Abstract\+Sceneクラスのコンストラクタに代入する。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a}\label{class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a}} 
+void \mbox{\hyperlink{class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a}{update}} () override
+\begin{DoxyCompactList}\small\item\em ゲーム画面に必要な前処理を行う関数。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_scene_a153a91652690799750f744263e12840a}\label{class_game_scene_a153a91652690799750f744263e12840a}} 
+void \mbox{\hyperlink{class_game_scene_a153a91652690799750f744263e12840a}{draw}} () override
+\begin{DoxyCompactList}\small\item\em ゲーム画面の描画を行う関数。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。ゲーム画面を担当する。 
+
+\begin{DoxyDate}{日付}
+2020/04/16/19\+:56 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_game_scene_8h}{Game\+Scene.\+h}}\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_game_scene_8cpp}{Game\+Scene.\+cpp}}\end{DoxyCompactItemize}

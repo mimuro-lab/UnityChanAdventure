@@ -1,0 +1,45 @@
+\hypertarget{class_singleton}{}\doxysection{Singleton$<$ \+\_\+T $>$ クラステンプレート}
+\label{class_singleton}\index{Singleton$<$ \_T $>$@{Singleton$<$ \_T $>$}}
+
+
+オブジェクトが一つしかない事を約束するシングルトンクラス。public Singleton$<$class \+\_\+\+T$>$と継承すると継承元クラスがシングルトンになる。  
+
+
+
+
+{\ttfamily \#include $<$Singleton.\+h$>$}
+
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_singleton_a0f4c8ed3d6f686993eb5f904f4903bfa}\label{class_singleton_a0f4c8ed3d6f686993eb5f904f4903bfa}} 
+static \+\_\+T $\ast$ {\bfseries get\+Ins} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_singleton_a8b08da1165f1ff2dfa8f0b421809e1c9}\label{class_singleton_a8b08da1165f1ff2dfa8f0b421809e1c9}} 
+{\bfseries Singleton} (const \mbox{\hyperlink{class_singleton}{Singleton}} \&r)=default
+\item 
+\mbox{\Hypertarget{class_singleton_a2c06074fe16c8ef54cb8f37191b2a193}\label{class_singleton_a2c06074fe16c8ef54cb8f37191b2a193}} 
+\mbox{\hyperlink{class_singleton}{Singleton}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_singleton}{Singleton}} \&r)=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+\subsubsection*{template$<$typename \+\_\+T$>$\newline
+class Singleton$<$ \+\_\+\+T $>$}
+
+オブジェクトが一つしかない事を約束するシングルトンクラス。public Singleton$<$class \+\_\+\+T$>$と継承すると継承元クラスがシングルトンになる。 
+
+\begin{DoxyDate}{日付}
+2020/04/16/20\+:08 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_singleton_8h}{Singleton.\+h}}\end{DoxyCompactItemize}

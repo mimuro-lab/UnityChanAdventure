@@ -1,0 +1,47 @@
+\hypertarget{class_menu_scene}{}\doxysection{Menu\+Scene クラス}
+\label{class_menu_scene}\index{MenuScene@{MenuScene}}
+
+
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。メニュー画面を担当する。  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Scene.\+h$>$}
+
+Menu\+Scene の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_menu_scene}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_scene_a66a80456a09b5a4ed12265eab35d1b2b}\label{class_menu_scene_a66a80456a09b5a4ed12265eab35d1b2b}} 
+\mbox{\hyperlink{class_menu_scene_a66a80456a09b5a4ed12265eab35d1b2b}{Menu\+Scene}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_scene_changer}{I\+Scene\+Changer}} $>$ \+\_\+changer)
+\begin{DoxyCompactList}\small\item\em コンストラクタ呼び出し時にshared\+\_\+ptr$<$\+I\+Scene\+Changer$>$型のオブジェクトを受け取り、親の\+Abstract\+Sceneクラスのコンストラクタに代入する。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_scene_a3f8c1a2a91f22dcb9202567f1ac59e96}\label{class_menu_scene_a3f8c1a2a91f22dcb9202567f1ac59e96}} 
+void \mbox{\hyperlink{class_menu_scene_a3f8c1a2a91f22dcb9202567f1ac59e96}{update}} () override
+\begin{DoxyCompactList}\small\item\em メニュー画面に必要な前処理を行う関数。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_scene_aba8eb6eec1d3fdeddfddd0339eaac713}\label{class_menu_scene_aba8eb6eec1d3fdeddfddd0339eaac713}} 
+void \mbox{\hyperlink{class_menu_scene_aba8eb6eec1d3fdeddfddd0339eaac713}{draw}} () override
+\begin{DoxyCompactList}\small\item\em メニュー画面の描画を行う関数。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+System\+Looperクラスで生成されるシーンクラスの一つで\+Abstract\+Sceneを継承する。メニュー画面を担当する。 
+
+\begin{DoxyDate}{日付}
+2020/04/16/03\+:02 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_menu_scene_8h}{Menu\+Scene.\+h}}\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_menu_scene_8cpp}{Menu\+Scene.\+cpp}}\end{DoxyCompactItemize}

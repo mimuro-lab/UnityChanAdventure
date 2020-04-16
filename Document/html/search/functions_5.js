@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['initialize_55',['Initialize',['../class_system_looper.html#ad98afeb6aad94ec553935febc6c013bc',1,'SystemLooper::Initialize()'],['../class_system_owner.html#ab75711e431693c8a83f962df849a8f6b',1,'SystemOwner::initialize()']]]
+  ['gamescene_92',['GameScene',['../class_game_scene.html#afa0340544d0b128bf949e43ab5766d83',1,'GameScene']]],
+  ['getpressingcount_93',['getPressingCount',['../class_keyboard.html#ac10c13870ba471f267d5ced0f233a398',1,'Keyboard']]],
+  ['getreleasingcount_94',['getReleasingCount',['../class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e',1,'Keyboard']]]
 ];

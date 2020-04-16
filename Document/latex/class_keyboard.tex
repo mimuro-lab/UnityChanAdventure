@@ -1,0 +1,101 @@
+\hypertarget{class_keyboard}{}\doxysection{Keyboard クラス}
+\label{class_keyboard}\index{Keyboard@{Keyboard}}
+
+
+キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。\+Singleton型となっている。  
+
+
+
+
+{\ttfamily \#include $<$Keyboard.\+h$>$}
+
+Keyboard の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_keyboard}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_keyboard_afd8f963dbd5113fa9630e40b6c179eff}\label{class_keyboard_afd8f963dbd5113fa9630e40b6c179eff}} 
+bool \mbox{\hyperlink{class_keyboard_afd8f963dbd5113fa9630e40b6c179eff}{update}} ()
+\begin{DoxyCompactList}\small\item\em 更新 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_keyboard_ac10c13870ba471f267d5ced0f233a398}{get\+Pressing\+Count}} (int key\+Code)
+\begin{DoxyCompactList}\small\item\em key\+Codeのキーが押されているフレーム数を取得 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_keyboard_a0c6cbe2c73c4aa8be1e15c5dd1874e0e}{get\+Releasing\+Count}} (int key\+Code)
+\begin{DoxyCompactList}\small\item\em key\+Codeのキーが離されているフレーム数を取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{非公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_keyboard_a923c99cb4b95715ef26335e22b7c4e2f}{is\+Available\+Code}} (int key\+Code)
+\begin{DoxyCompactList}\small\item\em key\+Codeが有効なキー番号か問う \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_keyboard_a53fb548afaa0b76ddc50e5fe6ba76a64}\label{class_keyboard_a53fb548afaa0b76ddc50e5fe6ba76a64}} 
+friend {\bfseries Singleton$<$ Keyboard $>$}
+\item 
+\mbox{\Hypertarget{class_keyboard_a8afc0871cb3877bd5679cb6c4f2a4cec}\label{class_keyboard_a8afc0871cb3877bd5679cb6c4f2a4cec}} 
+std\+::array$<$ int, \mbox{\hyperlink{class_keyboard_abcb3bfc83cb0a5edd248068329c59966}{K\+E\+Y\+\_\+\+N\+UM}} $>$ \mbox{\hyperlink{class_keyboard_a8afc0871cb3877bd5679cb6c4f2a4cec}{\+\_\+pressing\+Count}}
+\begin{DoxyCompactList}\small\item\em 押されカウンタ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_keyboard_ab6951cbd106a9e4d056a879523697846}\label{class_keyboard_ab6951cbd106a9e4d056a879523697846}} 
+std\+::array$<$ int, \mbox{\hyperlink{class_keyboard_abcb3bfc83cb0a5edd248068329c59966}{K\+E\+Y\+\_\+\+N\+UM}} $>$ \mbox{\hyperlink{class_keyboard_ab6951cbd106a9e4d056a879523697846}{\+\_\+releasing\+Count}}
+\begin{DoxyCompactList}\small\item\em 離されカウンタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的非公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_keyboard_abcb3bfc83cb0a5edd248068329c59966}\label{class_keyboard_abcb3bfc83cb0a5edd248068329c59966}} 
+static const int \mbox{\hyperlink{class_keyboard_abcb3bfc83cb0a5edd248068329c59966}{K\+E\+Y\+\_\+\+N\+UM}} = 256
+\begin{DoxyCompactList}\small\item\em キーボードのキー総数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。\+Singleton型となっている。 
+
+\begin{DoxyDate}{日付}
+2020/04/16/20\+:00 
+\end{DoxyDate}
+\begin{DoxyAuthor}{著者}
+mimuro 
+\end{DoxyAuthor}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_keyboard_ac10c13870ba471f267d5ced0f233a398}\label{class_keyboard_ac10c13870ba471f267d5ced0f233a398}} 
+\index{Keyboard@{Keyboard}!getPressingCount@{getPressingCount}}
+\index{getPressingCount@{getPressingCount}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{getPressingCount()}{getPressingCount()}}
+{\footnotesize\ttfamily int Keyboard\+::get\+Pressing\+Count (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})}
+
+
+
+key\+Codeのキーが押されているフレーム数を取得 
+
+key\+Codeのキーが押されているフレーム数を返す \mbox{\Hypertarget{class_keyboard_a0c6cbe2c73c4aa8be1e15c5dd1874e0e}\label{class_keyboard_a0c6cbe2c73c4aa8be1e15c5dd1874e0e}} 
+\index{Keyboard@{Keyboard}!getReleasingCount@{getReleasingCount}}
+\index{getReleasingCount@{getReleasingCount}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{getReleasingCount()}{getReleasingCount()}}
+{\footnotesize\ttfamily int Keyboard\+::get\+Releasing\+Count (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})}
+
+
+
+key\+Codeのキーが離されているフレーム数を取得 
+
+key\+Codeのキーが離されているフレーム数を返す \mbox{\Hypertarget{class_keyboard_a923c99cb4b95715ef26335e22b7c4e2f}\label{class_keyboard_a923c99cb4b95715ef26335e22b7c4e2f}} 
+\index{Keyboard@{Keyboard}!isAvailableCode@{isAvailableCode}}
+\index{isAvailableCode@{isAvailableCode}!Keyboard@{Keyboard}}
+\doxysubsubsection{\texorpdfstring{isAvailableCode()}{isAvailableCode()}}
+{\footnotesize\ttfamily bool Keyboard\+::is\+Available\+Code (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+key\+Codeが有効なキー番号か問う 
+
+key\+Codeが有効な値か否かを返す 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_keyboard_8h}{Keyboard.\+h}}\item 
+C\+:/\+Users/mimur/source/repos/\+New\+Game/\mbox{\hyperlink{_keyboard_8cpp}{Keyboard.\+cpp}}\end{DoxyCompactItemize}

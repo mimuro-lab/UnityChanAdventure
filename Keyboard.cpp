@@ -1,3 +1,11 @@
+
+/*!
+@file Keyboard.cpp
+@brief Keyboardクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/04/16/20:06
+@author mimuro
+*/
+
 #include "Keyboard.h"
 #include <DxLib.h>
 
