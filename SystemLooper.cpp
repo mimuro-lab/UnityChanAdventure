@@ -24,7 +24,7 @@ SystemLooper::SystemLooper()
 */
 bool SystemLooper::Initialize()
 {
-	scene.push(make_shared<Menu>(shared_from_this()));
+	scene.push(make_shared<MenuScene>(shared_from_this()));
 	return true;
 }
 
@@ -77,12 +77,14 @@ void SystemLooper::changeScene(eScene Next, const bool stackClear)
 {
 	
 	switch (Next) {
-	case eMenu:
-		scene.push(make_shared<Menu>(shared_from_this()));
+	case eMenuScene:
+		scene.push(make_shared<MenuScene>(shared_from_this()));
 		break;
-	case eConfig:
-		scene.push(make_shared<Config>(shared_from_this()));
+	case eConfigScene:
+		scene.push(make_shared<ConfigScene>(shared_from_this()));
 		break;
+	case eGameScene:
+		scene.push(make_shared<GameScene>(shared_from_this()));
 	}
 	
 }

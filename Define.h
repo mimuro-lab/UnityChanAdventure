@@ -14,8 +14,9 @@
 @author mimuro
 */
 enum eScene {
-	eMenu,
-	eConfig,
+	eMenuScene,
+	eConfigScene,
+	eGameScene,
 };
 
 /*!
