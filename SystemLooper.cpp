@@ -70,8 +70,19 @@ void SystemLooper::loop() const
 /*!
 @brief SystemLooperクラスではシーンをメンバ変数sceneで管理するが、そのシーンの変更はこの関数で行う。
 @brief この関数はISceneChangerインターフェースクラスに記載されている関数であり、各シーンクラスから呼び出される。
+@date 2020/04/16/14:29
+@author mimuro
 */
-void SystemLooper::changeScene(eScene Next) const
+void SystemLooper::changeScene(eScene Next)
 {
-
+	
+	switch (Next) {
+	case eMenu:
+		scene.push(make_shared<Menu>(shared_from_this()));
+		break;
+	case eConfig:
+		scene.push(make_shared<Config>(shared_from_this()));
+		break;
+	}
+	
 }

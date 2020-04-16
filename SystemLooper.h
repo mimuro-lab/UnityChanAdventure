@@ -11,6 +11,7 @@
 #include "ISceneChanger.h"
 #include "AbstractScene.h"
 #include "Menu.h"
+#include "Config.h"
 #include <stack>
 #include <memory>
 
@@ -45,6 +46,6 @@ public:
 	void loop() const;
 
 	//! シーン替えを行う関数。
-	void changeScene(eScene NextScene) const override;
+	void changeScene(eScene NextScene) override;
 };
 

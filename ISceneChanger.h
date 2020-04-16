@@ -17,5 +17,5 @@ public:
 	ISceneChanger() = default;
 	~ISceneChanger() = default;
 	//! このクラスを継承したクラスは必ずこの関数を定義しなければならないように約束する。
-	virtual void changeScene(eScene Next) const = 0;
+	virtual void changeScene(eScene Next) = 0;
 };
