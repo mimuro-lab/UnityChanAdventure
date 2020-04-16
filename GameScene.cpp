@@ -2,7 +2,7 @@
 
 void GameScene::update()
 {
-	changer->changeScene(eMenuScene, true);
+	//changer->changeScene(eMenuScene, true);
 }
 
 void GameScene::draw()

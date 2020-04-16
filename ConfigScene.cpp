@@ -2,7 +2,7 @@
 
 void ConfigScene::update()
 {
-	changer->changeScene(eGameScene, true);
+	//changer->changeScene(eGameScene, true);
 }
 
 void ConfigScene::draw()

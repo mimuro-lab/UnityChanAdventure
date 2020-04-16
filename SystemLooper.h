@@ -10,6 +10,7 @@
 #include <DxLib.h>
 #include "ISceneChanger.h"
 #include "AbstractScene.h"
+#include "StartScene.h"
 #include "MenuScene.h"
 #include "ConfigScene.h"
 #include "GameScene.h"
