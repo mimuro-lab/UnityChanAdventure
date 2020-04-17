@@ -8,7 +8,7 @@
 */
 
 //!ウィンドウサイズ横
-const int   Define::WIN_W = 1280;
+const int   Define::WIN_W = 640;
 
 //!ウィンドウサイズ縦
 const int   Define::WIN_H = 480;		
