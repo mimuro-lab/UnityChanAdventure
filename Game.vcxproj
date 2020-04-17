@@ -85,8 +85,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractScene.cpp" />
+    <ClCompile Include="CalcUtils.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Define.cpp" />
+    <ClCompile Include="Fps.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
@@ -97,8 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
+    <ClInclude Include="CalcUtils.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Fps.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="imagePath.h" />
     <ClInclude Include="ISceneChanger.h" />

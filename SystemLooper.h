@@ -11,6 +11,7 @@
 #include <stack>
 #include <memory>
 #include "Keyboard.h"
+#include "Fps.h"
 #include "ISceneChanger.h"
 #include "AbstractScene.h"
 #include "StartScene.h"
@@ -31,6 +32,9 @@ class SystemLooper : public ISceneChanger,
 {	
 	//! シーンを管理する変数。各要素がshred_ptr<AbstractScene>型のstack型を使用する。
 	stack <shared_ptr<AbstractScene>> scene;
+
+	//! FPS処理を施すためのオブジェクト。
+	Fps _fps;
 public:
 	//! 初期化処理を行う関数。
 	SystemLooper();
@@ -46,7 +50,7 @@ public:
 	bool scrProcess() const;
 
 	//! メインの繰り返し処理を行う関数。
-	void loop() const;
+	void loop();
 
 	//! シーン替えを行う関数。
 	void changeScene(eScene NextScene, const bool stackClear) override;

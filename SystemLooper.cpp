@@ -60,9 +60,11 @@ bool SystemLooper::scrProcess() const
 @date 2020/04/15/17:31
 @author mimuro
 */
-void SystemLooper::loop() const
+void SystemLooper::loop()
 {
 	Keyboard::getIns()->update();
+	_fps.wait();
+	_fps.draw();
 	scene.top()->update();
 	scene.top()->draw();
 }

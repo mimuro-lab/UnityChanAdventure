@@ -21,6 +21,9 @@
     <Filter Include="ソース ファイル\Resource">
       <UniqueIdentifier>{c28408a6-c001-4c79-87ca-3ac67d330093}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Utils">
+      <UniqueIdentifier>{36281687-463a-4f26-949b-2b90fca8fa3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +55,12 @@
     </ClCompile>
     <ClCompile Include="AbstractScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Fps.cpp">
+      <Filter>ソース ファイル\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="CalcUtils.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +99,12 @@
     </ClInclude>
     <ClInclude Include="imagePath.h">
       <Filter>ソース ファイル\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Fps.h">
+      <Filter>ソース ファイル\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CalcUtils.h">
+      <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
