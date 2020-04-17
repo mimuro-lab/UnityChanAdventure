@@ -10,7 +10,7 @@
 #include <DxLib.h>
 #include <stack>
 #include <memory>
-#include "Keyboard.h"
+#include "Controller.h"
 #include "Fps.h"
 #include "ISceneChanger.h"
 #include "AbstractScene.h"

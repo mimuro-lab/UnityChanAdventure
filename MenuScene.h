@@ -8,6 +8,7 @@
 
 #pragma once
 #include "AbstractScene.h"
+#include "Controller.h"
 #include <DxLib.h>
 #include <memory>
 
@@ -21,6 +22,9 @@ using namespace std;
 */
 class MenuScene : public AbstractScene
 {
+	//! スタート画面から次のシーンを選択する。
+	void SelectScene();
+
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
 	MenuScene(shared_ptr<ISceneChanger> _changer)  : AbstractScene(_changer) {};

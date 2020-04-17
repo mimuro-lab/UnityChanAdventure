@@ -20,16 +20,16 @@ using namespace std;
 */
 class AbstractScene
 {
-	int unsigned counter_form_start = 0;
+	int unsigned steps_counter = 0;
 protected:
 	//! 全てのシーンクラスでIScneChanger型のオブジェクトを持たせる。SystemLooperクラスのchangeSceneメンバ関数を呼び出すため。いわゆるコールバックというやつ。
 	shared_ptr<ISceneChanger> changer;
 
-	//! 継承先の始まりからのコマ数をカウントする。
-	void counterUpdate() { counter_form_start++; };
+	//! 継承先の始まりからのステップ数をカウントする。
+	void counterUpdate() { steps_counter++; };
 
-	//! カウンターの値を獲得する。
-	const int getCounter() { return counter_form_start; };
+	//! ステップ数カウンターの値を獲得する。
+	const int getCounter() { return steps_counter; };
 
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、changerに代入する。

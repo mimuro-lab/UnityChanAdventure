@@ -8,7 +8,7 @@
 
 #pragma once
 #include "AbstractScene.h"
-#include "Keyboard.h"
+#include "Controller.h"
 #include <DxLib.h>
 #include "imagePath.h"
 

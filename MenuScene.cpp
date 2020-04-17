@@ -11,9 +11,17 @@
 void MenuScene::update()
 {
 	//changer->changeScene(eStartScene, false);
+	SelectScene();
 }
 
 void MenuScene::draw()
 {
 	DrawFormatString(10,30,GetColor(255,255,255), "MenuScene");
+}
+
+void MenuScene::SelectScene()
+{
+	if (Controller::getIns()->getStart()) {
+		changer->changeScene(eStartScene, false);
+	}
 }

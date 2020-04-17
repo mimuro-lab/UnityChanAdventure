@@ -20,13 +20,15 @@ void StartScene::draw()
 
 void StartScene::SelectScene()
 {
-	if (Keyboard::getIns()->getPressingCount(KEY_INPUT_C) == 1) {
+	
+	if (Controller::getIns()->getPush_A()) {
 		changer->changeScene(eConfigScene, false);
 	}
-	else if(Keyboard::getIns()->getPressingCount(KEY_INPUT_M) == 1) {
+	else if(Controller::getIns()->getPush_B()) {
 		changer->changeScene(eMenuScene, false);
 	}
-	else if (Keyboard::getIns()->getPressingCount(KEY_INPUT_G) == 1) {
+	else if (Controller::getIns()->getPush_X()) {
 		changer->changeScene(eGameScene, false);
 	}
+	
 }

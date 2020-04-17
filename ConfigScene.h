@@ -8,6 +8,7 @@
 
 #pragma once
 #include "AbstractScene.h"
+#include "Controller.h"
 #include <DxLib.h>
 
 /*!
@@ -18,6 +19,8 @@
 */
 class ConfigScene : public AbstractScene
 {
+	//! スタート画面から次のシーンを選択する。
+	void SelectScene();
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
 	ConfigScene(shared_ptr<ISceneChanger> _changer) : AbstractScene(_changer) {};

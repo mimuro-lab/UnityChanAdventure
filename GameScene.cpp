@@ -12,8 +12,6 @@ void GameScene::update()
 {
 	counterUpdate();
 	SelectScene();
-	if(!imagePath::getIns()->unityChan_BasicActions.empty())
-		DrawFormatString(100, 50, GetColor(255, 255, 255), "%s", imagePath::getIns()->unityChan_BasicActions[getCounter()].c_str());
 }
 
 void GameScene::draw()
@@ -23,7 +21,7 @@ void GameScene::draw()
 
 void GameScene::SelectScene()
 {
-	if (Keyboard::getIns()->getPressingCount(KEY_INPUT_S) == 1) {
+	if (Controller::getIns()->getStart()) {
 		changer->changeScene(eStartScene, false);
 	}
 }

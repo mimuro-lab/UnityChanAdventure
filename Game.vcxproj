@@ -87,6 +87,7 @@
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="CalcUtils.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="Fps.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -101,6 +102,7 @@
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="CalcUtils.h" />
     <ClInclude Include="ConfigScene.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Fps.h" />
     <ClInclude Include="GameScene.h" />

@@ -7,7 +7,6 @@
 */
 
 #pragma once
-#include "Singleton.h"
 #include <array>
 
 /*!
@@ -16,12 +15,9 @@
 @date 2020/04/16/20:00
 @author mimuro
 */
-class Keyboard final : public Singleton<Keyboard> {
+class Keyboard {
 
-	Keyboard() = default;
-	friend Singleton< Keyboard >;
-
-public:
+protected:
 	//! çXêV
 	bool update();	
 	
