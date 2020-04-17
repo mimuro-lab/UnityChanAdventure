@@ -16,7 +16,7 @@ void ConfigScene::update()
 
 void ConfigScene::draw()
 {
-	DrawFormatString(10, 10, GetColor(255, 255, 255), "ConfigScene");
+	DrawFormatString(10, 50, GetColor(255, 255, 255), "ConfigScene");
 }
 
 void ConfigScene::SelectScene()

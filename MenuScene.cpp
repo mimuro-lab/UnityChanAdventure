@@ -16,10 +16,9 @@ void MenuScene::update()
 
 void MenuScene::draw()
 {
-	DrawFormatString(10,30,GetColor(255,255,255), "MenuScene");
+	DrawFormatString(10, 50, GetColor(255,255,255), "MenuScene");
 }
 
 void MenuScene::SelectScene()
 {
-
 }

@@ -10,8 +10,7 @@
 
 void StartScene::update()
 {
-	if (!SelectScene())
-		;
+	SelectScene();
 
 	if (Controller::getIns()->getPush_A())
 		GoNextScene();
@@ -40,26 +39,20 @@ void StartScene::draw()
 }
 
 
-const bool StartScene::SelectScene()
+const void StartScene::SelectScene()
 {
 	if (Controller::getIns()->getDown()) {
-		nextSceneSelected++;
-		nextSceneSelected %= _end;
-		if (nextSceneSelected == none)
-			nextSceneSelected = none + 1;
+		if (nextSceneSelected < _end - 1)
+			nextSceneSelected++;
 	}
 	
 	if (Controller::getIns()->getUp()) {
-		nextSceneSelected--;
-		nextSceneSelected %= _end;
-		if (nextSceneSelected == none)
-			nextSceneSelected = _end - 1;
+		if (nextSceneSelected > none + 1)
+			nextSceneSelected--;
 	}
-
-	return true;	
 }
 
-const bool StartScene::GoNextScene()
+const void StartScene::GoNextScene()
 {
 	switch (nextSceneSelected) {
 	case game:
@@ -73,5 +66,4 @@ const bool StartScene::GoNextScene()
 		break;
 	}
 
-	return true;
 }

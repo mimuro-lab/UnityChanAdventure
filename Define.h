@@ -14,6 +14,7 @@
 @author mimuro
 */
 enum eScene {
+	eNone,
 	eStartScene,
 	eMenuScene,
 	eConfigScene,

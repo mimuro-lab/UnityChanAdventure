@@ -8,12 +8,14 @@ const bool SelectWindow::updateSelectWindow()
 	}
 
 	if (_IsSelected) {
-		if (Controller::getIns()->getRight() || Controller::getIns()->getLeft())
-			isReturn = !isReturn;
+		if (Controller::getIns()->getRight())
+			isReturn = false;
+		if (Controller::getIns()->getLeft())
+			isReturn = true;
 
 		if (Controller::getIns()->getPush_A()) {
 			if (isReturn)
-				changerInSelectWindow->changeScene(eStartScene, false);
+				changerInSelectWindow->changeScene(eNone, true);
 			else
 			{
 				isReturn = false;

@@ -76,12 +76,11 @@ void SystemLooper::loop()
 @date 2020/04/16/14:29
 @author mimuro
 */
-void SystemLooper::changeScene(eScene Next, const bool stackClear)
+void SystemLooper::changeScene(eScene Next, const bool stackPop)
 {
 	
-	if (stackClear)
-		while (!scene.empty())
-			scene.pop();
+	if (stackPop) 
+		scene.pop();
 
 	switch (Next) {
 	case eStartScene:
@@ -95,6 +94,8 @@ void SystemLooper::changeScene(eScene Next, const bool stackClear)
 		break;
 	case eGameScene:
 		scene.push(make_shared<GameScene>(shared_from_this()));
+		break;
+	default:
 		break;
 	}
 	
