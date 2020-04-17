@@ -62,6 +62,7 @@ bool SystemLooper::scrProcess() const
 */
 void SystemLooper::loop() const
 {
+	Keyboard::getIns()->update();
 	scene.top()->update();
 	scene.top()->draw();
 }

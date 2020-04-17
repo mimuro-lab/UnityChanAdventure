@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="imagePath.h" />
     <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="MenuScene.h" />

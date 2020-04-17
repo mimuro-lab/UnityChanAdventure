@@ -50,6 +50,9 @@
     <ClCompile Include="StartScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="AbstractScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -84,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="StartScene.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="imagePath.h">
+      <Filter>ソース ファイル\Define</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

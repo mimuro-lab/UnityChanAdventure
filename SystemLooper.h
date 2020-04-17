@@ -8,14 +8,15 @@
 
 #pragma once
 #include <DxLib.h>
+#include <stack>
+#include <memory>
+#include "Keyboard.h"
 #include "ISceneChanger.h"
 #include "AbstractScene.h"
 #include "StartScene.h"
 #include "MenuScene.h"
 #include "ConfigScene.h"
 #include "GameScene.h"
-#include <stack>
-#include <memory>
 
 using namespace std;
 
