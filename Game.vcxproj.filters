@@ -24,6 +24,9 @@
     <Filter Include="ソース ファイル\Utils">
       <UniqueIdentifier>{36281687-463a-4f26-949b-2b90fca8fa3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\SelectWindow">
+      <UniqueIdentifier>{4a507281-b7e3-48d3-8d44-2e719070a218}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -64,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="CalcUtils.cpp">
       <Filter>ソース ファイル\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectWindow.cpp">
+      <Filter>ソース ファイル\SelectWindow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +117,9 @@
     </ClInclude>
     <ClInclude Include="Controller.h">
       <Filter>ソース ファイル\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectWindow.h">
+      <Filter>ソース ファイル\SelectWindow</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

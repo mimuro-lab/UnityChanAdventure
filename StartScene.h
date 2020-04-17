@@ -19,8 +19,21 @@
 */
 class StartScene : public AbstractScene
 {
-	//! スタート画面から次のシーンを選択する。
-	void SelectScene();
+	//! スタート画面から次のシーンを選択する。変数nextSceneSelectedを更新する。
+	const bool SelectScene();
+
+	enum nextScene {
+		none,
+		game,
+		menu,
+		config,
+		_end,
+	};
+
+	char nextSceneSelected = 0;
+
+	//! 選択したシーンへ移動する。
+	const bool GoNextScene();
 
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。

@@ -5,13 +5,19 @@ void Controller::update()
 	Keyboard::update();
 	
 	// Sartボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_SPACE) == 1) {
-		start = !start;
-	}   
+	if (Keyboard::getPressingCount(KEY_INPUT_H) == 1) {
+		start = true;
+	}
+	else {
+		start = false;
+	}
 	
 	// Selectボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_LSHIFT) == 1) {
-		select = !select;
+	if (Keyboard::getPressingCount(KEY_INPUT_G) == 1) {
+		select = true;
+	}
+	else {
+		select = false;
 	}
 	
 	// Upボタンの更新
@@ -27,7 +33,7 @@ void Controller::update()
 		down = true;
 	}
 	else {
-		down = true;
+		down = false;
 	}
 
 	// Rightボタンの更新

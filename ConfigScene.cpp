@@ -10,7 +10,7 @@
 
 void ConfigScene::update()
 {
-	//changer->changeScene(eGameScene, true);
+	ValidSelectWindow();
 	SelectScene();
 }
 
@@ -21,7 +21,4 @@ void ConfigScene::draw()
 
 void ConfigScene::SelectScene()
 {
-	if (Controller::getIns()->getStart()) {
-		changer->changeScene(eStartScene, false);
-	}
 }

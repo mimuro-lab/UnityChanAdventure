@@ -10,7 +10,7 @@
 
 void MenuScene::update()
 {
-	//changer->changeScene(eStartScene, false);
+	ValidSelectWindow();
 	SelectScene();
 }
 
@@ -21,7 +21,5 @@ void MenuScene::draw()
 
 void MenuScene::SelectScene()
 {
-	if (Controller::getIns()->getStart()) {
-		changer->changeScene(eStartScene, false);
-	}
+
 }

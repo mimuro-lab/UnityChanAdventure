@@ -11,6 +11,7 @@
 void GameScene::update()
 {
 	counterUpdate();
+	ValidSelectWindow();
 	SelectScene();
 }
 
@@ -21,7 +22,4 @@ void GameScene::draw()
 
 void GameScene::SelectScene()
 {
-	if (Controller::getIns()->getStart()) {
-		changer->changeScene(eStartScene, false);
-	}
 }
