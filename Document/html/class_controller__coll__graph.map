@@ -1,5 +1,5 @@
 <map id="Controller" name="Controller">
-<area shape="rect" id="node1" title=" " alt="" coords="113,80,191,107"/>
+<area shape="rect" id="node1" title="ユーザからの入力情報を総括するクラス。" alt="" coords="113,80,191,107"/>
 <area shape="rect" id="node2" href="$class_singleton.html" title=" " alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node3" href="$class_keyboard.html" title="キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。" alt="" coords="184,5,261,32"/>
+<area shape="rect" id="node3" href="$class_keyboard.html" title="キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。" alt="" coords="184,5,261,32"/>
 </map>

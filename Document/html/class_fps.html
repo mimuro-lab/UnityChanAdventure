@@ -63,11 +63,18 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_fps-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">Fps クラス</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>SystemLooperクラスの一回当たりの処理の時間を一定にするFps制御を担うクラス。  
+ <a href="class_fps.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_fps_8h_source.html">Fps.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -77,10 +84,38 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> ()</td></tr>
 <tr class="memitem:aff094cda61e679874a91e8f5e2f488d2"><td class="memItemLeft" align="right" valign="top"><a id="aff094cda61e679874a91e8f5e2f488d2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> () const</td></tr>
 <tr class="separator:aff094cda61e679874a91e8f5e2f488d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4c208d7148ac41b366f9350a28bd59c0"><td class="memItemLeft" align="right" valign="top"><a id="a4c208d7148ac41b366f9350a28bd59c0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateAverage</b> ()</td></tr>
+<tr class="separator:a4c208d7148ac41b366f9350a28bd59c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af092ececdf55f86ecfb24030294cb694"><td class="memItemLeft" align="right" valign="top"><a id="af092ececdf55f86ecfb24030294cb694"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>regist</b> ()</td></tr>
+<tr class="separator:af092ececdf55f86ecfb24030294cb694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d5fb2da111a9015c333efea1b68b17"><td class="memItemLeft" align="right" valign="top"><a id="a42d5fb2da111a9015c333efea1b68b17"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>getWaitTime</b> () const</td></tr>
+<tr class="separator:a42d5fb2da111a9015c333efea1b68b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ae98c0a5c2a2c8bb208ce48b59ba7512c"><td class="memItemLeft" align="right" valign="top"><a id="ae98c0a5c2a2c8bb208ce48b59ba7512c"></a>
+std::list&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_list</b></td></tr>
+<tr class="separator:ae98c0a5c2a2c8bb208ce48b59ba7512c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c69b3c4370b40b8806c2706ff30724"><td class="memItemLeft" align="right" valign="top"><a id="ac3c69b3c4370b40b8806c2706ff30724"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>_fps</b></td></tr>
+<tr class="separator:ac3c69b3c4370b40b8806c2706ff30724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342027c45565fccfe3095462794d3aee"><td class="memItemLeft" align="right" valign="top"><a id="a342027c45565fccfe3095462794d3aee"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_counter</b></td></tr>
+<tr class="separator:a342027c45565fccfe3095462794d3aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>SystemLooperクラスの一回当たりの処理の時間を一定にするFps制御を担うクラス。 </p>
+<dl class="section date"><dt>日付</dt><dd>2020/04/18/23:03 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+</div><hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/source/repos/NewGame/<a class="el" href="_fps_8h_source.html">Fps.h</a></li>
-<li>C:/Users/mimur/source/repos/NewGame/Fps.cpp</li>
+<li>C:/Users/mimur/source/repos/NewGame/<a class="el" href="_fps_8cpp.html">Fps.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

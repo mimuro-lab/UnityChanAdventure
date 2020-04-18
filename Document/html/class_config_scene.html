@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="class_config_scene-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">ConfigScene クラス</div>  </div>
@@ -80,7 +81,7 @@ ConfigScene の継承関係図</div>
 <map name="_config_scene_inherit__map" id="_config_scene_inherit__map">
 <area shape="rect" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。" alt="" coords="77,80,172,107"/>
 <area shape="rect" href="class_abstract_scene.html" title="シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。" alt="" coords="5,5,113,32"/>
-<area shape="rect" href="class_select_window.html" title=" " alt="" coords="137,5,243,32"/>
+<area shape="rect" href="class_select_window.html" title="セレクト画面の処理を担うクラス。セレクト画面を有効にしたいシーンに継承させると使用できる。" alt="" coords="137,5,243,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <div class="dynheader">
@@ -90,7 +91,7 @@ ConfigScene 連携図</div>
 <map name="_config_scene_coll__map" id="_config_scene_coll__map">
 <area shape="rect" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。" alt="" coords="77,80,172,107"/>
 <area shape="rect" href="class_abstract_scene.html" title="シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。" alt="" coords="5,5,113,32"/>
-<area shape="rect" href="class_select_window.html" title=" " alt="" coords="137,5,243,32"/>
+<area shape="rect" href="class_select_window.html" title="セレクト画面の処理を担うクラス。セレクト画面を有効にしたいシーンに継承させると使用できる。" alt="" coords="137,5,243,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
@@ -113,6 +114,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_scene.html#aff61f06e8b99e84898aedb6177df5819">AbstractScene</a> (shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChanger</a> &gt; _changer)</td></tr>
 <tr class="memdesc:aff61f06e8b99e84898aedb6177df5819 inherit pub_methods_class_abstract_scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、changerに代入する。 <br /></td></tr>
 <tr class="separator:aff61f06e8b99e84898aedb6177df5819 inherit pub_methods_class_abstract_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a68aa62f718e7cd8c1781f14498f9d097"><td class="memItemLeft" align="right" valign="top"><a id="a68aa62f718e7cd8c1781f14498f9d097"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config_scene.html#a68aa62f718e7cd8c1781f14498f9d097">SelectScene</a> ()</td></tr>
+<tr class="memdesc:a68aa62f718e7cd8c1781f14498f9d097"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタート画面から次のシーンを選択する。 <br /></td></tr>
+<tr class="separator:a68aa62f718e7cd8c1781f14498f9d097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_select_window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_select_window')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_select_window.html">SelectWindow</a> に属する継承非公開メンバ関数</td></tr>
+<tr class="memitem:afb6af9d0efd147a9113b4e3e5f53060c inherit pub_methods_class_select_window"><td class="memItemLeft" align="right" valign="top"><a id="afb6af9d0efd147a9113b4e3e5f53060c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#afb6af9d0efd147a9113b4e3e5f53060c">SelectWindow</a> (std::shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChanger</a> &gt; _changer)</td></tr>
+<tr class="memdesc:afb6af9d0efd147a9113b4e3e5f53060c inherit pub_methods_class_select_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。 <br /></td></tr>
+<tr class="separator:afb6af9d0efd147a9113b4e3e5f53060c inherit pub_methods_class_select_window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b04bd3f2f5e21550b187ae9b079abd1 inherit pub_methods_class_select_window"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1">ValidSelectWindow</a> ()</td></tr>
+<tr class="memdesc:a8b04bd3f2f5e21550b187ae9b079abd1 inherit pub_methods_class_select_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウを有効にする為の関数。継承先のクラスはこの関数を呼び出すだけでセレクト画面が有効になる。  <a href="class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1">[詳解]</a><br /></td></tr>
+<tr class="separator:a8b04bd3f2f5e21550b187ae9b079abd1 inherit pub_methods_class_select_window"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6193dbd3c41f21450a565fc8d767802d inherit pub_methods_class_select_window"><td class="memItemLeft" align="right" valign="top"><a id="a6193dbd3c41f21450a565fc8d767802d"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a6193dbd3c41f21450a565fc8d767802d">IsSelected</a> () const</td></tr>
+<tr class="memdesc:a6193dbd3c41f21450a565fc8d767802d inherit pub_methods_class_select_window"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在セレクトウィンドウが有効になっているかどうかを確認するための関数。 <br /></td></tr>
+<tr class="separator:a6193dbd3c41f21450a565fc8d767802d inherit pub_methods_class_select_window"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>

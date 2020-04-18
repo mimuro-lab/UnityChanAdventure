@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_system_looper-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">SystemLooper クラス</div>  </div>
@@ -88,9 +89,10 @@ SystemLooper 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_system_looper__coll__graph.png" border="0" usemap="#_system_looper_coll__map" alt="Collaboration graph"/></div>
 <map name="_system_looper_coll__map" id="_system_looper_coll__map">
-<area shape="rect" title="ループする処理の中心を担うクラス" alt="" coords="86,95,193,121"/>
+<area shape="rect" title="ループする処理の中心を担うクラス" alt="" coords="166,109,273,136"/>
 <area shape="rect" href="class_i_scene_changer.html" title="SystemLooperクラスが持つchangeSceneメンバ関数を外部クラスで使用する為のインターフェース。" alt="" coords="5,13,116,39"/>
 <area shape="rect" title=" " alt="" coords="140,5,299,47"/>
+<area shape="rect" href="class_fps.html" title="SystemLooperクラスの一回当たりの処理の時間を一定にするFps制御を担うクラス。" alt="" coords="323,13,367,39"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
@@ -114,6 +116,17 @@ SystemLooper 連携図</div>
 <tr class="memitem:ab2a01b752b8926642ee8b6e3583f51f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_looper.html#ab2a01b752b8926642ee8b6e3583f51f6">changeScene</a> (<a class="el" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a> NextScene, const bool stackClear) override</td></tr>
 <tr class="memdesc:ab2a01b752b8926642ee8b6e3583f51f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーン替えを行う関数。  <a href="class_system_looper.html#ab2a01b752b8926642ee8b6e3583f51f6">[詳解]</a><br /></td></tr>
 <tr class="separator:ab2a01b752b8926642ee8b6e3583f51f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a2a686ed2995385156509519dc306079a"><td class="memItemLeft" align="right" valign="top"><a id="a2a686ed2995385156509519dc306079a"></a>
+stack&lt; shared_ptr&lt; <a class="el" href="class_abstract_scene.html">AbstractScene</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_looper.html#a2a686ed2995385156509519dc306079a">scene</a></td></tr>
+<tr class="memdesc:a2a686ed2995385156509519dc306079a"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーンを管理する変数。各要素がshred_ptr&lt;AbstractScene&gt;型のstack型を使用する。 <br /></td></tr>
+<tr class="separator:a2a686ed2995385156509519dc306079a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d3497c27473cebbfb97f8bfbf63dea"><td class="memItemLeft" align="right" valign="top"><a id="ab3d3497c27473cebbfb97f8bfbf63dea"></a>
+<a class="el" href="class_fps.html">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_system_looper.html#ab3d3497c27473cebbfb97f8bfbf63dea">_fps</a></td></tr>
+<tr class="memdesc:ab3d3497c27473cebbfb97f8bfbf63dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">FPS処理を施すためのオブジェクト。 <br /></td></tr>
+<tr class="separator:ab3d3497c27473cebbfb97f8bfbf63dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>ループする処理の中心を担うクラス </p>

@@ -65,6 +65,7 @@ $(function() {
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="#pro-methods">限定公開メンバ関数</a> &#124;
 <a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_abstract_scene-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">AbstractScene クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -120,6 +121,12 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChanger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_scene.html#adb810bc89fc8c19ef720555c4361ea26">changer</a></td></tr>
 <tr class="memdesc:adb810bc89fc8c19ef720555c4361ea26"><td class="mdescLeft">&#160;</td><td class="mdescRight">全てのシーンクラスでIScneChanger型のオブジェクトを持たせる。SystemLooperクラスのchangeSceneメンバ関数を呼び出すため。いわゆるコールバックというやつ。 <br /></td></tr>
 <tr class="separator:adb810bc89fc8c19ef720555c4361ea26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aa05f2a79c0c84f7a6e0a29a85b6c52aa"><td class="memItemLeft" align="right" valign="top"><a id="aa05f2a79c0c84f7a6e0a29a85b6c52aa"></a>
+int unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>steps_counter</b> = 0</td></tr>
+<tr class="separator:aa05f2a79c0c84f7a6e0a29a85b6c52aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。 </p>

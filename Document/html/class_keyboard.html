@@ -63,13 +63,16 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
 <a href="class_keyboard-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">Keyboard クラス</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。  
+<p>キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。  
  <a href="class_keyboard.html#details">[詳解]</a></p>
 
 <p><code>#include &lt;<a class="el" href="_keyboard_8h_source.html">Keyboard.h</a>&gt;</code></p>
@@ -78,8 +81,8 @@ Keyboard の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_keyboard__inherit__graph.png" border="0" usemap="#_keyboard_inherit__map" alt="Inheritance graph"/></div>
 <map name="_keyboard_inherit__map" id="_keyboard_inherit__map">
-<area shape="rect" title="キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。" alt="" coords="5,5,83,32"/>
-<area shape="rect" href="class_controller.html" title=" " alt="" coords="5,80,83,107"/>
+<area shape="rect" title="キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。" alt="" coords="5,5,83,32"/>
+<area shape="rect" href="class_controller.html" title="ユーザからの入力情報を総括するクラス。" alt="" coords="5,80,83,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,9 +98,33 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a0c6cbe2c73c4aa8be1e15c5dd1874e0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e">getReleasingCount</a> (int keyCode)</td></tr>
 <tr class="memdesc:a0c6cbe2c73c4aa8be1e15c5dd1874e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyCodeのキーが離されているフレーム数を取得  <a href="class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e">[詳解]</a><br /></td></tr>
 <tr class="separator:a0c6cbe2c73c4aa8be1e15c5dd1874e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a923c99cb4b95715ef26335e22b7c4e2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f">isAvailableCode</a> (int keyCode)</td></tr>
+<tr class="memdesc:a923c99cb4b95715ef26335e22b7c4e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyCodeが有効なキー番号か問う  <a href="class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f">[詳解]</a><br /></td></tr>
+<tr class="separator:a923c99cb4b95715ef26335e22b7c4e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8afc0871cb3877bd5679cb6c4f2a4cec"><td class="memItemLeft" align="right" valign="top"><a id="a8afc0871cb3877bd5679cb6c4f2a4cec"></a>
+std::array&lt; int, <a class="el" href="class_keyboard.html#abcb3bfc83cb0a5edd248068329c59966">KEY_NUM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keyboard.html#a8afc0871cb3877bd5679cb6c4f2a4cec">_pressingCount</a></td></tr>
+<tr class="memdesc:a8afc0871cb3877bd5679cb6c4f2a4cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">押されカウンタ <br /></td></tr>
+<tr class="separator:a8afc0871cb3877bd5679cb6c4f2a4cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6951cbd106a9e4d056a879523697846"><td class="memItemLeft" align="right" valign="top"><a id="ab6951cbd106a9e4d056a879523697846"></a>
+std::array&lt; int, <a class="el" href="class_keyboard.html#abcb3bfc83cb0a5edd248068329c59966">KEY_NUM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keyboard.html#ab6951cbd106a9e4d056a879523697846">_releasingCount</a></td></tr>
+<tr class="memdesc:ab6951cbd106a9e4d056a879523697846"><td class="mdescLeft">&#160;</td><td class="mdescRight">離されカウンタ <br /></td></tr>
+<tr class="separator:ab6951cbd106a9e4d056a879523697846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:abcb3bfc83cb0a5edd248068329c59966"><td class="memItemLeft" align="right" valign="top"><a id="abcb3bfc83cb0a5edd248068329c59966"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keyboard.html#abcb3bfc83cb0a5edd248068329c59966">KEY_NUM</a> = 256</td></tr>
+<tr class="memdesc:abcb3bfc83cb0a5edd248068329c59966"><td class="mdescLeft">&#160;</td><td class="mdescRight">キーボードのキー総数 <br /></td></tr>
+<tr class="separator:abcb3bfc83cb0a5edd248068329c59966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。 </p>
+<div class="textblock"><p>キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。 </p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/16/20:00 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
 </div><h2 class="groupheader">関数詳解</h2>
@@ -156,6 +183,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>keyCodeのキーが離されているフレーム数を取得 </p>
 <p>keyCodeのキーが離されているフレーム数を返す </p>
+
+</div>
+</div>
+<a id="a923c99cb4b95715ef26335e22b7c4e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923c99cb4b95715ef26335e22b7c4e2f">&#9670;&nbsp;</a></span>isAvailableCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Keyboard::isAvailableCode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>keyCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>keyCodeが有効なキー番号か問う </p>
+<p>keyCodeが有効な値か否かを返す </p>
 
 </div>
 </div>

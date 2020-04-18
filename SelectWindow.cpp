@@ -1,5 +1,19 @@
+
+/*!
+@file SelectWindow.cpp
+@brief SelectWindowクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/04/18/23:20
+@author mimuro
+*/
+
 #include "SelectWindow.h"
 
+/*!
+@brief セレクトボタンが押されたらセレクトウィンドウが有効になる。
+@brief 成功したらtrue、途中で失敗したらfalseを返す。
+@date 2020/04/18/23:22
+@author mimuro
+*/
 const bool SelectWindow::updateSelectWindow()
 {
 
@@ -27,6 +41,11 @@ const bool SelectWindow::updateSelectWindow()
 	return true;
 }
 
+/*!
+@brief セレクトウィンドウを表示する。関数内の変数の扱いはconstとする。
+@date 2020/04/18/23:23
+@author mimuro
+*/
 void SelectWindow::drawSelectWindw() const
 {
 	if (!_IsSelected)
@@ -46,8 +65,14 @@ void SelectWindow::drawSelectWindw() const
 
 }
 
+/*!
+@brief 継承先から直接呼び出される関数。updateSelectWindow()とdrawSelectWindw()を実行する。updateSelectWindow()に失敗したらreturnして抜け出す。
+@date 2020/04/18/23:23
+@author mimuro
+*/
 void SelectWindow::ValidSelectWindow() 
 {
-	updateSelectWindow();
+	if (!updateSelectWindow())
+		return;
 	drawSelectWindw();
 }

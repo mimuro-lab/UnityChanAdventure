@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['win_5fh_111',['WIN_H',['../class_define.html#a327bf22ef5b30076112667f6c0be897a',1,'Define']]],
-  ['win_5fw_112',['WIN_W',['../class_define.html#a4c592f02e8d7908b1b67403b88f3aad2',1,'Define']]]
+  ['left_198',['left',['../class_controller.html#a9cc46fa9877bdb11de6f468d77acf637',1,'Controller']]]
 ];

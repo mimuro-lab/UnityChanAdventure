@@ -1,5 +1,18 @@
+
+/*!
+@file Controller.cpp
+@brief Controllerクラスのメンバ類の定義を行うCPPファイル
+@date 2020/04/18/20:33
+@author mimuro
+*/
+
 #include "Controller.h"
 
+/*!
+@brief 各入力状態を更新する。押されているときのみtrue、話されるとfalse。状態保持などはこのクラスではしない。
+@date 2020/04/18/20:31
+@author mimuro
+*/
 void Controller::update()
 {
 	Keyboard::update();

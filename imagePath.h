@@ -1,3 +1,11 @@
+
+/*!
+@file imagePath.h
+@brief imagePathクラスが定義されているヘッダファイル
+@date 2020/04/18/23:09
+@author mimuro
+*/
+
 #pragma once
 #include "Singleton.h"
 #include <vector>
@@ -5,12 +13,17 @@
 
 using namespace std;
 
-class imagePath : public Singleton<imagePath>{
-
+/*!
+@class imagePath
+@brief 使用する画像のパスをまとめて管理するクラス。Singletonクラスになっている。
+@date 2020/04/16/20:00
+@author mimuro
+*/
+class imagePath : 
+	public Singleton<imagePath>
+{
 public:
-
-public:
-
+	//! unityChan_BasicActionの画像へのパスをまとめた変数。
 	vector<string> unityChan_BasicActions = {
 	"images/Unitychan/BasicActions/Unitychan_Brake_1.png",
 	"images/Unitychan/BasicActions/Unitychan_Brake_10.png",

@@ -63,6 +63,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_start_scene-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">StartScene クラス</div>  </div>
@@ -111,6 +114,36 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_scene.html#aff61f06e8b99e84898aedb6177df5819">AbstractScene</a> (shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChanger</a> &gt; _changer)</td></tr>
 <tr class="memdesc:aff61f06e8b99e84898aedb6177df5819 inherit pub_methods_class_abstract_scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、changerに代入する。 <br /></td></tr>
 <tr class="separator:aff61f06e8b99e84898aedb6177df5819 inherit pub_methods_class_abstract_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:aac672a091e0186dbd578608b7b99f9a1"><td class="memItemLeft" align="right" valign="top"><a id="aac672a091e0186dbd578608b7b99f9a1"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>nextScene</b> { <br />
+&#160;&#160;<b>none</b>, 
+<b>game</b>, 
+<b>menu</b>, 
+<b>config</b>, 
+<br />
+&#160;&#160;<b>_end</b>
+<br />
+ }</td></tr>
+<tr class="separator:aac672a091e0186dbd578608b7b99f9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2f5207464940edda31d51639e720f333"><td class="memItemLeft" align="right" valign="top"><a id="a2f5207464940edda31d51639e720f333"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_start_scene.html#a2f5207464940edda31d51639e720f333">SelectScene</a> ()</td></tr>
+<tr class="memdesc:a2f5207464940edda31d51639e720f333"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタート画面から次のシーンを選択する。変数nextSceneSelectedを更新する。 <br /></td></tr>
+<tr class="separator:a2f5207464940edda31d51639e720f333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22763032ddd78942d40ff8706fe74ad"><td class="memItemLeft" align="right" valign="top"><a id="ad22763032ddd78942d40ff8706fe74ad"></a>
+const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_start_scene.html#ad22763032ddd78942d40ff8706fe74ad">GoNextScene</a> ()</td></tr>
+<tr class="memdesc:ad22763032ddd78942d40ff8706fe74ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択したシーンへ移動する。 <br /></td></tr>
+<tr class="separator:ad22763032ddd78942d40ff8706fe74ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a5053dc4ab0b5ec4ee8e3d411d48cf2b2"><td class="memItemLeft" align="right" valign="top"><a id="a5053dc4ab0b5ec4ee8e3d411d48cf2b2"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>nextSceneSelected</b> = 0</td></tr>
+<tr class="separator:a5053dc4ab0b5ec4ee8e3d411d48cf2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>

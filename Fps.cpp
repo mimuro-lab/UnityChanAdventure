@@ -1,12 +1,22 @@
-#include "Fps.h"
 
+/*!
+@file Fps.cpp
+@brief Fpsクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/04/18/23:06
+@author mimuro
+*/
+
+#include "Fps.h"
 #include <DxLib.h>
 #include "Fps.h"
 #include "CalcUtils.h"
 
-const static int LIST_LEN_MAX = 120;	//最大120フレームで待機処理を計算する(2以上にする)
-const static int FPS = 60;		//FPS
-const static int UPINTVL = 60;		//60フレームに一度更新する
+//! 最大120フレームで待機処理を計算する(2以上にする)
+const static int LIST_LEN_MAX = 120;
+//! FPS
+const static int FPS = 60;		
+//! 60フレームに一度更新する
+const static int UPINTVL = 60;		
 
 Fps::Fps() :_counter(0), _fps(0) {}
 
