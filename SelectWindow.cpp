@@ -31,7 +31,7 @@ void SelectWindow::drawSelectWindw() const
 {
 	if (!_IsSelected)
 		return;
-	DrawFormatString(100, 100, GetColor(255, 255, 255), "SelectWindow\n return a previous scene?");
+	DrawFormatString(100, 100, GetColor(255, 255, 255), "SelectWindow\n return to a previous scene?");
 
 	unsigned int yesColor, noColor;
 	yesColor = noColor = GetColor(255, 255, 255);

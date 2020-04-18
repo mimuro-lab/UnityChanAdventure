@@ -67,41 +67,31 @@ $(function() {
 <div class="contents">
 <a href="_keyboard_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_singleton_8h.html">Singleton.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_keyboard.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_keyboard.html">Keyboard</a> final : <span class="keyword">public</span> <a class="code" href="class_singleton.html">Singleton</a>&lt;Keyboard&gt; {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_keyboard.html">Keyboard</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_singleton.html">Singleton&lt; Keyboard &gt;</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_keyboard.html#afd8f963dbd5113fa9630e40b6c179eff">update</a>();  </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_keyboard.html#ac10c13870ba471f267d5ced0f233a398">getPressingCount</a>(<span class="keywordtype">int</span> keyCode);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e">getReleasingCount</a>(<span class="keywordtype">int</span> keyCode);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_keyboard.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_keyboard.html">Keyboard</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_keyboard.html#afd8f963dbd5113fa9630e40b6c179eff">update</a>();  </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_keyboard.html#ac10c13870ba471f267d5ced0f233a398">getPressingCount</a>(<span class="keywordtype">int</span> keyCode);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e">getReleasingCount</a>(<span class="keywordtype">int</span> keyCode);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> KEY_NUM = 256; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_keyboard.html#abcb3bfc83cb0a5edd248068329c59966">   36</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_keyboard.html#abcb3bfc83cb0a5edd248068329c59966">KEY_NUM</a> = 256; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_keyboard.html#a8afc0871cb3877bd5679cb6c4f2a4cec">   39</a></span>&#160;    std::array&lt;int, KEY_NUM&gt; <a class="code" href="class_keyboard.html#a8afc0871cb3877bd5679cb6c4f2a4cec">_pressingCount</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_keyboard.html#ab6951cbd106a9e4d056a879523697846">   42</a></span>&#160;    std::array&lt;int, KEY_NUM&gt; <a class="code" href="class_keyboard.html#ab6951cbd106a9e4d056a879523697846">_releasingCount</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f">isAvailableCode</a>(<span class="keywordtype">int</span> keyCode);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::array&lt;int, KEY_NUM&gt; _pressingCount;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::array&lt;int, KEY_NUM&gt; _releasingCount;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> isAvailableCode(<span class="keywordtype">int</span> keyCode);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_keyboard_html_afd8f963dbd5113fa9630e40b6c179eff"><div class="ttname"><a href="class_keyboard.html#afd8f963dbd5113fa9630e40b6c179eff">Keyboard::update</a></div><div class="ttdeci">bool update()</div><div class="ttdoc">更新</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:12</div></div>
-<div class="ttc" id="aclass_keyboard_html_ab6951cbd106a9e4d056a879523697846"><div class="ttname"><a href="class_keyboard.html#ab6951cbd106a9e4d056a879523697846">Keyboard::_releasingCount</a></div><div class="ttdeci">std::array&lt; int, KEY_NUM &gt; _releasingCount</div><div class="ttdoc">離されカウンタ</div><div class="ttdef"><b>Definition:</b> Keyboard.h:42</div></div>
-<div class="ttc" id="aclass_keyboard_html_a923c99cb4b95715ef26335e22b7c4e2f"><div class="ttname"><a href="class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f">Keyboard::isAvailableCode</a></div><div class="ttdeci">bool isAvailableCode(int keyCode)</div><div class="ttdoc">keyCodeが有効なキー番号か問う</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:55</div></div>
-<div class="ttc" id="aclass_keyboard_html_a8afc0871cb3877bd5679cb6c4f2a4cec"><div class="ttname"><a href="class_keyboard.html#a8afc0871cb3877bd5679cb6c4f2a4cec">Keyboard::_pressingCount</a></div><div class="ttdeci">std::array&lt; int, KEY_NUM &gt; _pressingCount</div><div class="ttdoc">押されカウンタ</div><div class="ttdef"><b>Definition:</b> Keyboard.h:39</div></div>
-<div class="ttc" id="a_singleton_8h_html"><div class="ttname"><a href="_singleton_8h.html">Singleton.h</a></div><div class="ttdoc">Singletonクラスが定義されているヘッダファイル</div></div>
-<div class="ttc" id="aclass_singleton_html"><div class="ttname"><a href="class_singleton.html">Singleton</a></div><div class="ttdoc">オブジェクトが一つしかない事を約束するシングルトンクラス。public Singleton&lt;class _T&gt;と継承すると継承元クラスがシングルトンになる。</div><div class="ttdef"><b>Definition:</b> Singleton.h:19</div></div>
 <div class="ttc" id="aclass_keyboard_html_a0c6cbe2c73c4aa8be1e15c5dd1874e0e"><div class="ttname"><a href="class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e">Keyboard::getReleasingCount</a></div><div class="ttdeci">int getReleasingCount(int keyCode)</div><div class="ttdoc">keyCodeのキーが離されているフレーム数を取得</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:45</div></div>
-<div class="ttc" id="aclass_keyboard_html_abcb3bfc83cb0a5edd248068329c59966"><div class="ttname"><a href="class_keyboard.html#abcb3bfc83cb0a5edd248068329c59966">Keyboard::KEY_NUM</a></div><div class="ttdeci">static const int KEY_NUM</div><div class="ttdoc">キーボードのキー総数</div><div class="ttdef"><b>Definition:</b> Keyboard.h:36</div></div>
 <div class="ttc" id="aclass_keyboard_html_ac10c13870ba471f267d5ced0f233a398"><div class="ttname"><a href="class_keyboard.html#ac10c13870ba471f267d5ced0f233a398">Keyboard::getPressingCount</a></div><div class="ttdeci">int getPressingCount(int keyCode)</div><div class="ttdoc">keyCodeのキーが押されているフレーム数を取得</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:35</div></div>
-<div class="ttc" id="aclass_keyboard_html"><div class="ttname"><a href="class_keyboard.html">Keyboard</a></div><div class="ttdoc">キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。</div><div class="ttdef"><b>Definition:</b> Keyboard.h:19</div></div>
+<div class="ttc" id="aclass_keyboard_html"><div class="ttname"><a href="class_keyboard.html">Keyboard</a></div><div class="ttdoc">キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。Singleton型となっている。</div><div class="ttdef"><b>Definition:</b> Keyboard.h:18</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

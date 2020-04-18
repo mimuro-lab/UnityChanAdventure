@@ -68,27 +68,33 @@ $(function() {
 <a href="_game_scene_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_abstract_scene_8h.html">AbstractScene.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_game_scene.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game_scene.html">GameScene</a> :</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_abstract_scene.html">AbstractScene</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">   24</a></span>&#160;    <a class="code" href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">GameScene</a>(shared_ptr&lt;ISceneChanger&gt; _changer) : <a class="code" href="class_abstract_scene.html">AbstractScene</a>(_changer) {};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ~<a class="code" href="class_game_scene.html">GameScene</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a153a91652690799750f744263e12840a">draw</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Controller.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;SelectWindow.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;imagePath.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_game_scene.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game_scene.html">GameScene</a> :</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_abstract_scene.html">AbstractScene</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span> <a class="code" href="class_select_window.html">SelectWindow</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> SelectScene();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">   30</a></span>&#160;    <a class="code" href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">GameScene</a>(shared_ptr&lt;ISceneChanger&gt; _changer) : <a class="code" href="class_abstract_scene.html">AbstractScene</a>(_changer), <a class="code" href="class_select_window.html">SelectWindow</a>(_changer) {};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ~<a class="code" href="class_game_scene.html">GameScene</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_scene.html#a153a91652690799750f744263e12840a">draw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_game_scene_html"><div class="ttname"><a href="class_game_scene.html">GameScene</a></div><div class="ttdoc">SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。ゲーム画面を担当する。</div><div class="ttdef"><b>Definition:</b> GameScene.h:19</div></div>
-<div class="ttc" id="aclass_game_scene_html_a153a91652690799750f744263e12840a"><div class="ttname"><a href="class_game_scene.html#a153a91652690799750f744263e12840a">GameScene::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">ゲーム画面の描画を行う関数。</div><div class="ttdef"><b>Definition:</b> GameScene.cpp:16</div></div>
+<div class="ttc" id="aclass_game_scene_html"><div class="ttname"><a href="class_game_scene.html">GameScene</a></div><div class="ttdoc">SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。ゲーム画面を担当する。</div><div class="ttdef"><b>Definition:</b> GameScene.h:22</div></div>
+<div class="ttc" id="aclass_game_scene_html_a153a91652690799750f744263e12840a"><div class="ttname"><a href="class_game_scene.html#a153a91652690799750f744263e12840a">GameScene::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">ゲーム画面の描画を行う関数。</div><div class="ttdef"><b>Definition:</b> GameScene.cpp:18</div></div>
 <div class="ttc" id="aclass_abstract_scene_html"><div class="ttname"><a href="class_abstract_scene.html">AbstractScene</a></div><div class="ttdoc">シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。</div><div class="ttdef"><b>Definition:</b> AbstractScene.h:21</div></div>
+<div class="ttc" id="aclass_select_window_html"><div class="ttname"><a href="class_select_window.html">SelectWindow</a></div><div class="ttdef"><b>Definition:</b> SelectWindow.h:7</div></div>
 <div class="ttc" id="aclass_game_scene_html_a70464c5d4ccd05d39a9cb168e332c93a"><div class="ttname"><a href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">GameScene::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">ゲーム画面に必要な前処理を行う関数。</div><div class="ttdef"><b>Definition:</b> GameScene.cpp:11</div></div>
 <div class="ttc" id="a_abstract_scene_8h_html"><div class="ttname"><a href="_abstract_scene_8h.html">AbstractScene.h</a></div><div class="ttdoc">AbstractSceneクラスが定義されているヘッダファイル。</div></div>
-<div class="ttc" id="aclass_game_scene_html_afa0340544d0b128bf949e43ab5766d83"><div class="ttname"><a href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">GameScene::GameScene</a></div><div class="ttdeci">GameScene(shared_ptr&lt; ISceneChanger &gt; _changer)</div><div class="ttdoc">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。</div><div class="ttdef"><b>Definition:</b> GameScene.h:24</div></div>
+<div class="ttc" id="aclass_game_scene_html_afa0340544d0b128bf949e43ab5766d83"><div class="ttname"><a href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">GameScene::GameScene</a></div><div class="ttdeci">GameScene(shared_ptr&lt; ISceneChanger &gt; _changer)</div><div class="ttdoc">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。</div><div class="ttdef"><b>Definition:</b> GameScene.h:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

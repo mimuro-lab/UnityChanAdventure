@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamescene_57',['GameScene',['../class_game_scene.html',1,'']]]
+  ['fps_62',['Fps',['../class_fps.html',1,'']]]
 ];

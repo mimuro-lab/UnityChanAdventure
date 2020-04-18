@@ -1,0 +1,4 @@
+<map id="StartScene" name="StartScene">
+<area shape="rect" id="node1" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。スタート画面を担当する。" alt="" coords="16,80,103,107"/>
+<area shape="rect" id="node2" href="$class_abstract_scene.html" title="シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。" alt="" coords="5,5,113,32"/>
+</map>

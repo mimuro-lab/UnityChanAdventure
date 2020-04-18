@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iscenechanger_58',['ISceneChanger',['../class_i_scene_changer.html',1,'']]]
+  ['gamescene_63',['GameScene',['../class_game_scene.html',1,'']]]
 ];

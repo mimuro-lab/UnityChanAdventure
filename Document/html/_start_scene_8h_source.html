@@ -68,26 +68,41 @@ $(function() {
 <a href="_start_scene_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_abstract_scene_8h.html">AbstractScene.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_start_scene.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_start_scene.html">StartScene</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_scene.html">AbstractScene</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740">   23</a></span>&#160;    <a class="code" href="class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740">StartScene</a>(shared_ptr&lt;ISceneChanger&gt; _changer) : <a class="code" href="class_abstract_scene.html">AbstractScene</a>(_changer) {};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ~<a class="code" href="class_start_scene.html">StartScene</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_start_scene.html#a5ef13b44ea32ad5fee5bb59b18612855">update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_start_scene.html#ab586b0bd7eb5d207bfe480ae9f87f62e">draw</a>()  <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Controller.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_start_scene.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_start_scene.html">StartScene</a> : <span class="keyword">public</span> <a class="code" href="class_abstract_scene.html">AbstractScene</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> SelectScene();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">enum</span> nextScene {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        none,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        game,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        menu,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        config,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        _end,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span> nextSceneSelected = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> GoNextScene();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740">   40</a></span>&#160;    <a class="code" href="class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740">StartScene</a>(shared_ptr&lt;ISceneChanger&gt; _changer) : <a class="code" href="class_abstract_scene.html">AbstractScene</a>(_changer) {};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ~<a class="code" href="class_start_scene.html">StartScene</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_start_scene.html#a5ef13b44ea32ad5fee5bb59b18612855">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_start_scene.html#ab586b0bd7eb5d207bfe480ae9f87f62e">draw</a>()  <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_abstract_scene_html"><div class="ttname"><a href="class_abstract_scene.html">AbstractScene</a></div><div class="ttdoc">シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。</div><div class="ttdef"><b>Definition:</b> AbstractScene.h:21</div></div>
 <div class="ttc" id="aclass_start_scene_html_a5ef13b44ea32ad5fee5bb59b18612855"><div class="ttname"><a href="class_start_scene.html#a5ef13b44ea32ad5fee5bb59b18612855">StartScene::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">メニュー画面に必要な前処理を行う関数。</div><div class="ttdef"><b>Definition:</b> StartScene.cpp:11</div></div>
-<div class="ttc" id="aclass_start_scene_html_ab586b0bd7eb5d207bfe480ae9f87f62e"><div class="ttname"><a href="class_start_scene.html#ab586b0bd7eb5d207bfe480ae9f87f62e">StartScene::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">メニュー画面の描画を行う関数。</div><div class="ttdef"><b>Definition:</b> StartScene.cpp:16</div></div>
-<div class="ttc" id="aclass_start_scene_html"><div class="ttname"><a href="class_start_scene.html">StartScene</a></div><div class="ttdoc">SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。スタート画面を担当する。</div><div class="ttdef"><b>Definition:</b> StartScene.h:19</div></div>
+<div class="ttc" id="aclass_start_scene_html_ab586b0bd7eb5d207bfe480ae9f87f62e"><div class="ttname"><a href="class_start_scene.html#ab586b0bd7eb5d207bfe480ae9f87f62e">StartScene::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">メニュー画面の描画を行う関数。</div><div class="ttdef"><b>Definition:</b> StartScene.cpp:19</div></div>
+<div class="ttc" id="aclass_start_scene_html"><div class="ttname"><a href="class_start_scene.html">StartScene</a></div><div class="ttdoc">SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。スタート画面を担当する。</div><div class="ttdef"><b>Definition:</b> StartScene.h:20</div></div>
 <div class="ttc" id="a_abstract_scene_8h_html"><div class="ttname"><a href="_abstract_scene_8h.html">AbstractScene.h</a></div><div class="ttdoc">AbstractSceneクラスが定義されているヘッダファイル。</div></div>
-<div class="ttc" id="aclass_start_scene_html_a8f09c3883874f65fccbe7972cd73b740"><div class="ttname"><a href="class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740">StartScene::StartScene</a></div><div class="ttdeci">StartScene(shared_ptr&lt; ISceneChanger &gt; _changer)</div><div class="ttdoc">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。</div><div class="ttdef"><b>Definition:</b> StartScene.h:23</div></div>
+<div class="ttc" id="aclass_start_scene_html_a8f09c3883874f65fccbe7972cd73b740"><div class="ttname"><a href="class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740">StartScene::StartScene</a></div><div class="ttdeci">StartScene(shared_ptr&lt; ISceneChanger &gt; _changer)</div><div class="ttdoc">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。</div><div class="ttdef"><b>Definition:</b> StartScene.h:40</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

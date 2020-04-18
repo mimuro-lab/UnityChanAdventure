@@ -10,3 +10,12 @@
 
 
 ４、RunウィンドウのRun doxygenをクリックする。
+
+## Graphvizの設定
+[Doxygen+Graphvizでクラス図を自動生成する](http://gomi-box.hatenablog.com/entry/20090209/1234193014)を参考にしている。
+
+１、Graphvizを[公式ページ](https://graphviz.gitlab.io/download/)ダウンロードする。(WindowsのStable X.XX Windows install packagesからダウンロードする)
+
+２、Doxygenを立ち上げ、ExportウィンドウのDotのHAVE_DOTにチェックする。
+
+３、DOT_PATHをインストールしたGraphvizのbinフォルダに設定する。_

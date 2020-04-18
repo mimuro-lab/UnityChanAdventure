@@ -1,0 +1,5 @@
+<map id="ConfigScene" name="ConfigScene">
+<area shape="rect" id="node1" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。" alt="" coords="77,80,172,107"/>
+<area shape="rect" id="node2" href="$class_abstract_scene.html" title="シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。" alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node3" href="$class_select_window.html" title=" " alt="" coords="137,5,243,32"/>
+</map>

@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
 <a href="#pro-attribs">限定公開変数類</a> &#124;
 <a href="class_abstract_scene-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
@@ -77,15 +78,15 @@ $(function() {
 <div class="dynheader">
 AbstractScene の継承関係図</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_abstract_scene.png" usemap="#AbstractScene_map" alt=""/>
-  <map id="AbstractScene_map" name="AbstractScene_map">
-<area href="class_config_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。" alt="ConfigScene" shape="rect" coords="0,56,95,80"/>
-<area href="class_game_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。ゲーム画面を担当する。" alt="GameScene" shape="rect" coords="105,56,200,80"/>
-<area href="class_menu_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。メニュー画面を担当する。" alt="MenuScene" shape="rect" coords="210,56,305,80"/>
-<area href="class_start_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。スタート画面を担当する。" alt="StartScene" shape="rect" coords="315,56,410,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_abstract_scene__inherit__graph.png" border="0" usemap="#_abstract_scene_inherit__map" alt="Inheritance graph"/></div>
+<map name="_abstract_scene_inherit__map" id="_abstract_scene_inherit__map">
+<area shape="rect" title="シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。" alt="" coords="176,5,284,32"/>
+<area shape="rect" href="class_config_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。" alt="" coords="5,80,100,107"/>
+<area shape="rect" href="class_game_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。ゲーム画面を担当する。" alt="" coords="124,80,219,107"/>
+<area shape="rect" href="class_menu_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。メニュー画面を担当する。" alt="" coords="243,80,334,107"/>
+<area shape="rect" href="class_start_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。スタート画面を担当する。" alt="" coords="359,80,445,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -101,6 +102,17 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_scene.html#a5970420b544d9cbdb19fdb22ba48b619">draw</a> ()=0</td></tr>
 <tr class="memdesc:a5970420b544d9cbdb19fdb22ba48b619"><td class="mdescLeft">&#160;</td><td class="mdescRight">継承先のシーンクラスでは必ずdraw()関数を作る事を約束する。 <br /></td></tr>
 <tr class="separator:a5970420b544d9cbdb19fdb22ba48b619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae82529caa4a1d1338a8474685796b239"><td class="memItemLeft" align="right" valign="top"><a id="ae82529caa4a1d1338a8474685796b239"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_scene.html#ae82529caa4a1d1338a8474685796b239">counterUpdate</a> ()</td></tr>
+<tr class="memdesc:ae82529caa4a1d1338a8474685796b239"><td class="mdescLeft">&#160;</td><td class="mdescRight">継承先の始まりからのステップ数をカウントする。 <br /></td></tr>
+<tr class="separator:ae82529caa4a1d1338a8474685796b239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae2009d95758f4836f0df22f78314f5"><td class="memItemLeft" align="right" valign="top"><a id="a2ae2009d95758f4836f0df22f78314f5"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_scene.html#a2ae2009d95758f4836f0df22f78314f5">getCounter</a> ()</td></tr>
+<tr class="memdesc:a2ae2009d95758f4836f0df22f78314f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ステップ数カウンターの値を獲得する。 <br /></td></tr>
+<tr class="separator:a2ae2009d95758f4836f0df22f78314f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 限定公開変数類</h2></td></tr>

@@ -25,10 +25,9 @@ var menudata={children:[
 {text:"クラス",url:"annotated.html",children:[
 {text:"クラス一覧",url:"annotated.html"},
 {text:"クラス索引",url:"classes.html"},
-{text:"クラス階層",url:"hierarchy.html"},
+{text:"クラス階層",url:"inherits.html"},
 {text:"クラスメンバ",url:"functions.html",children:[
 {text:"全て",url:"functions.html",children:[
-{text:"_",url:"functions.html#index__5F"},
 {text:"a",url:"functions.html#index_a"},
 {text:"c",url:"functions.html#index_c"},
 {text:"d",url:"functions.html#index_d"},
@@ -36,7 +35,6 @@ var menudata={children:[
 {text:"f",url:"functions.html#index_f"},
 {text:"g",url:"functions.html#index_g"},
 {text:"i",url:"functions.html#index_i"},
-{text:"k",url:"functions.html#index_k"},
 {text:"l",url:"functions.html#index_l"},
 {text:"m",url:"functions.html#index_m"},
 {text:"p",url:"functions.html#index_p"},
