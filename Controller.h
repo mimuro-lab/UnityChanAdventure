@@ -10,6 +10,7 @@
 #include <DxLib.h>
 #include <vector>
 #include "Keyboard.h"
+#include "Gamepad.h"
 #include "Singleton.h"
 
 /*!
@@ -20,7 +21,8 @@
 */
 class Controller final:
 	public Singleton<Controller>,
-	private Keyboard
+	private Keyboard,
+	private Gamepad
 {
 	Controller() = default;
 	friend Singleton< Controller >;

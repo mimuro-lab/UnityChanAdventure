@@ -90,6 +90,7 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="Fps.cpp" />
+    <ClCompile Include="Gamepad.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
@@ -106,6 +107,7 @@
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Fps.h" />
+    <ClInclude Include="Gamepad.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="imagePath.h" />
     <ClInclude Include="ISceneChanger.h" />

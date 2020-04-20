@@ -17,8 +17,11 @@ void Controller::update()
 {
 	Keyboard::update();
 	
+	Gamepad::update();
+
 	// Sartボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_H) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_H) == 1 ||
+		Gamepad::get(Gamepad::ePad::start) == 1) {
 		start = true;
 	}
 	else {
@@ -26,7 +29,8 @@ void Controller::update()
 	}
 	
 	// Selectボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_G) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_G) == 1 ||
+		Gamepad::get(Gamepad::ePad::select) == 1) {
 		select = true;
 	}
 	else {
@@ -34,7 +38,8 @@ void Controller::update()
 	}
 	
 	// Upボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_E) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_E) == 1 ||
+		Gamepad::get(Gamepad::ePad::up) == 1) {
 		up = true;
 	}
 	else {
@@ -42,7 +47,8 @@ void Controller::update()
 	}
 
 	// Downボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_D) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_D) == 1 ||
+		Gamepad::get(Gamepad::ePad::down) == 1) {
 		down = true;
 	}
 	else {
@@ -50,7 +56,8 @@ void Controller::update()
 	}
 
 	// Rightボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_F) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_F) == 1 ||
+		Gamepad::get(Gamepad::ePad::right) == 1) {
 		right = true;
 	}
 	else {
@@ -58,7 +65,8 @@ void Controller::update()
 	}
 
 	// Leftボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_S) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_S) == 1 ||
+		Gamepad::get(Gamepad::ePad::left) == 1) {
 		left = true;
 	}
 	else {
@@ -66,7 +74,8 @@ void Controller::update()
 	}
 
 	// Aボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_L) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_L) == 1 ||
+		Gamepad::get(Gamepad::ePad::maru) == 1) {
 		push_A = true;
 	}
 	else {
@@ -74,7 +83,8 @@ void Controller::update()
 	}
 
 	// Bボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_K) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_K) == 1 ||
+		Gamepad::get(Gamepad::ePad::batu) == 1) {
 		push_B = true;
 	}
 	else {
@@ -82,7 +92,8 @@ void Controller::update()
 	}
 
 	// Xボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_I) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_I) == 1 ||
+		Gamepad::get(Gamepad::ePad::sankaku) == 1) {
 		push_X = true;
 	}
 	else {
@@ -90,7 +101,8 @@ void Controller::update()
 	}
 
 	// Yボタンの更新
-	if (Keyboard::getPressingCount(KEY_INPUT_J) == 1) {
+	if (Keyboard::getPressingCount(KEY_INPUT_J) == 1 ||
+		Gamepad::get(Gamepad::ePad::sikaku) == 1) {
 		push_Y = true;
 	}
 	else {

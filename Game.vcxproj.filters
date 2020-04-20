@@ -71,6 +71,9 @@
     <ClCompile Include="SelectWindow.cpp">
       <Filter>ソース ファイル\SelectWindow</Filter>
     </ClCompile>
+    <ClCompile Include="Gamepad.cpp">
+      <Filter>ソース ファイル\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -120,6 +123,9 @@
     </ClInclude>
     <ClInclude Include="SelectWindow.h">
       <Filter>ソース ファイル\SelectWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Gamepad.h">
+      <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
