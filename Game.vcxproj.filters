@@ -27,6 +27,12 @@
     <Filter Include="ソース ファイル\SelectWindow">
       <UniqueIdentifier>{4a507281-b7e3-48d3-8d44-2e719070a218}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Player">
+      <UniqueIdentifier>{3595bdeb-bd26-40ac-bb38-c3234a750dea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Enemy">
+      <UniqueIdentifier>{09cf713a-83ee-4f8f-93f7-fd92e051c645}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,14 +71,26 @@
     <ClCompile Include="Controller.cpp">
       <Filter>ソース ファイル\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="CalcUtils.cpp">
-      <Filter>ソース ファイル\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="SelectWindow.cpp">
       <Filter>ソース ファイル\SelectWindow</Filter>
     </ClCompile>
     <ClCompile Include="Gamepad.cpp">
       <Filter>ソース ファイル\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeUtils.cpp">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy1.cpp">
+      <Filter>ソース ファイル\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageDraw.cpp">
+      <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,9 +133,6 @@
     <ClInclude Include="Fps.h">
       <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="CalcUtils.h">
-      <Filter>ソース ファイル\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Controller.h">
       <Filter>ソース ファイル\Resource</Filter>
     </ClInclude>
@@ -126,6 +141,24 @@
     </ClInclude>
     <ClInclude Include="Gamepad.h">
       <Filter>ソース ファイル\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeUtils.h">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ソース ファイル\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy1.h">
+      <Filter>ソース ファイル\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageDraw.h">
+      <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

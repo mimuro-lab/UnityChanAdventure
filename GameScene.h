@@ -7,11 +7,15 @@
 */
 
 #pragma once
+#include <DxLib.h>
+#include <memory>
 #include "AbstractScene.h"
 #include "Controller.h"
 #include "SelectWindow.h"
-#include <DxLib.h>
 #include "imagePath.h"
+#include "TreeUtils.h"
+#include "Player.h"
+
 
 /*!
 @class GameScene
@@ -23,8 +27,9 @@ class GameScene :
 	public AbstractScene,
 	private SelectWindow
 {
-	//! スタート画面から次のシーンを選択する。
-	void SelectScene();
+	//! Playerの処理をになうオブジェクト
+	std::shared_ptr<Player> player = std::make_shared<Player>();
+
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
 	GameScene(shared_ptr<ISceneChanger> _changer) : AbstractScene(_changer), SelectWindow(_changer) {};

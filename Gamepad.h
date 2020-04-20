@@ -23,6 +23,7 @@ class Gamepad
 
 protected:
 
+	Gamepad();
 	//! ゲームパッドの配置の定義
 	enum ePad {
 		left,

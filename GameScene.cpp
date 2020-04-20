@@ -12,15 +12,16 @@ void GameScene::update()
 {
 	counterUpdate();
 	ValidSelectWindow();
-	SelectScene();
+
+	if (IsSelected())
+		return;	
+
+	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
+	player->update();
 }
 
 void GameScene::draw()
 {
 	DrawFormatString(10, 50, GetColor(255, 255, 255), "Game");
-}
-
-void GameScene::SelectScene()
-{
-
+	player->draw();
 }

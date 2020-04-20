@@ -85,39 +85,48 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractScene.cpp" />
-    <ClCompile Include="CalcUtils.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Define.cpp" />
+    <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Fps.cpp" />
     <ClCompile Include="Gamepad.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="ImageDraw.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScene.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="SystemLooper.cpp" />
     <ClCompile Include="SystemOwner.cpp" />
+    <ClCompile Include="TreeUtils.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
-    <ClInclude Include="CalcUtils.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Fps.h" />
     <ClInclude Include="Gamepad.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="ImageDraw.h" />
     <ClInclude Include="imagePath.h" />
     <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="MenuScene.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="SystemLooper.h" />
     <ClInclude Include="SystemOwner.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="TreeUtils.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
