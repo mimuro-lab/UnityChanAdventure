@@ -1,3 +1,11 @@
+
+/*!
+@file Gamepad.cpp
+@brief Gamepadクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/04/21/0:47
+@author mimuro
+*/
+
 #include "Gamepad.h"
 #include <DxLib.h>
 #include "Keyboard.h"
@@ -24,7 +32,7 @@ Gamepad::Gamepad()
 void Gamepad::update()
 {
     int padInput;
-    padInput = GetJoypadInputState(DX_INPUT_PAD1);//パッドの入力状態を取得
+    padInput = GetJoypadInputState(DX_INPUT_PAD1);
     for (int i = 0; i < 16; i++) {
         if (padInput & (1 << i)) {
             _pad[i]++;

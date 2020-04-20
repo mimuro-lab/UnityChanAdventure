@@ -1,10 +1,18 @@
-#pragma once
 
+/*!
+@file Gamepad.h
+@brief Gamepadクラスが定義されているヘッダファイル
+@date 2020/04/21/0:44
+@author mimuro
+*/
+
+#pragma once
 #include "Singleton.h"
 #include <array>
 
 class Gamepad
 {
+	//! ゲームパッドのキー総数
 	const static int PAD_KEY_NUM = 16;
 
 	//! どのボタンがどのボタンに割り当たっているかを示す
@@ -12,11 +20,10 @@ class Gamepad
 	
 	//! 16ボタンのpad入力状態格納
 	std::array<int, PAD_KEY_NUM> _pad = { 0 };
+
 protected:
 
-	Gamepad();
-	~Gamepad() = default;
-
+	//! ゲームパッドの配置の定義
 	enum ePad {
 		left,
 		right,
@@ -30,6 +37,7 @@ protected:
 		select
 	};
 
+	//! 更新
 	void update();
 
 	//! eIDのボタンの入力状態を取得

@@ -59,7 +59,8 @@ var menudata={children:[
 {text:"s",url:"functions_func.html#index_s"},
 {text:"u",url:"functions_func.html#index_u"},
 {text:"v",url:"functions_func.html#index_v"}]},
-{text:"変数",url:"functions_vars.html"}]}]},
+{text:"変数",url:"functions_vars.html"},
+{text:"列挙型",url:"functions_enum.html"}]}]},
 {text:"ファイル",url:"files.html",children:[
 {text:"ファイル一覧",url:"files.html"},
 {text:"ファイルメンバ",url:"globals.html",children:[
