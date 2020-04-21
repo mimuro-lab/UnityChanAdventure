@@ -37,9 +37,15 @@ void Player::update()
 			return;
 		}
 		
+		// 途中切り替えＮＧかつアニメーションが終了したら、さらに、同じアクションが入力され続けて、Crouch（しゃがむ）だったら、、、
+		// switchingAnimation()を実行せずに関数を終了。
+		if (IsAction == Crouch)
+			return;	
+		
 		// 同じアクションが入力され続けて、現在のアニメーションが終了したらとりあえずIdling状態にに設定
 		// 次のコマでの上記の処理"_next = getNextAction();"で再度その状態が更新されるので入力され続けられるアクションで更新。
 		if (animation->isEnd()) {
+
 			animation = switchingAnimation(Idle);
 			return;
 		}
@@ -61,11 +67,27 @@ void Player::draw()
 */
 Player::playerAction Player::getNextAction()
 {
+
+	// Brake
+	if (IsAction == Run) {
+		// R
+		if (playerStatus.directRight && !Controller::getIns()->getOnRight())
+			return Brake;
+		// L
+		if (!playerStatus.directRight && !Controller::getIns()->getOnLeft()) 
+			return Brake;
+	}
+
 	// Jump
 	if (Controller::getIns()->getOn_A()) {
 		return Jump_Up;
 	}
-	
+
+	// Crouch
+	if (Controller::getIns()->getOnDown()) {
+		return Crouch;
+	}
+
 	// Run R
 	if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnRight()) {
 		playerStatus.directRight = true;
@@ -109,7 +131,7 @@ std::shared_ptr<Animation> Player::switchingAnimation(playerAction next)
 		break;
 	case Crouch:
 		IsAction = Crouch;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, playerStatus);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, playerStatus, 6, 99, true);
 		break;
 	case Damage:
 		IsAction = Damage;

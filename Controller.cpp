@@ -65,8 +65,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::down) == 1) {
 		push_down = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_D) == 1 ||
-		Gamepad::get(Gamepad::ePad::down) == 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_D) >= 1 ||
+		Gamepad::get(Gamepad::ePad::down) >= 1) {
 		push_down = false;
 		on_down = true;
 	}
@@ -161,5 +161,5 @@ void Controller::update()
 	printfDx("push:%d%d%d%d%d%d%d%d%d%d on:%d%d%d%d%d%d%d%d%d%d\n"
 		, push_left, push_right, push_up, push_down, push_A, push_B, push_X, push_Y, push_select, push_start
 		, on_left, on_right, on_up, on_down, on_A, on_B, on_X, on_Y, on_select, on_start);
-	*/
+	//*/
 }
