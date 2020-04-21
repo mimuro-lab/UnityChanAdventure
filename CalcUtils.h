@@ -8,10 +8,10 @@
 
 #pragma once
 
-class Utils final
+class CalcUtils final
 {
 public:
-    Utils() = delete;
+    CalcUtils() = delete;
 
     //! floatŒ^‚Ì•Ï”‚Ì¬”“_ˆÈ‰º‚ğlÌŒÜ“ü‚·‚éŠÖ”B
     static float roundPoint(float val, int point);

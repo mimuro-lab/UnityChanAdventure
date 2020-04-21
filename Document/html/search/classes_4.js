@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gamepad_117',['Gamepad',['../class_gamepad.html',1,'']]],
-  ['gamescene_118',['GameScene',['../class_game_scene.html',1,'']]]
+  ['gamepad_145',['Gamepad',['../class_gamepad.html',1,'']]],
+  ['gamescene_146',['GameScene',['../class_game_scene.html',1,'']]]
 ];

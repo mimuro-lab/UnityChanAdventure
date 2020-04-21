@@ -1,0 +1,4 @@
+<map id="Enemy1" name="Enemy1">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,76,107"/>
+<area shape="rect" id="node2" href="$class_task.html" title="updateとdraw関数を必ず持つ様に設定するインターフェースクラス。" alt="" coords="15,5,66,32"/>
+</map>

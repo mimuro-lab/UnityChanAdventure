@@ -1,0 +1,11 @@
+<map id="C:/Users/mimur/Desktop/NewGame/Player.h" name="C:/Users/mimur/Desktop/NewGame/Player.h">
+<area shape="rect" id="node1" title="Playerクラスが定義されているヘッダファイル" alt="" coords="217,5,383,47"/>
+<area shape="rect" id="node2" href="$_game_scene_8h.html" title="GameSceneクラスが定義されているヘッダファイル" alt="" coords="117,95,291,136"/>
+<area shape="rect" id="node9" href="$_player_8cpp.html" title="Playerクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="315,95,480,136"/>
+<area shape="rect" id="node3" href="$_game_scene_8cpp.html" title="GameSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="5,184,192,225"/>
+<area shape="rect" id="node4" href="$_system_looper_8h.html" title="SystemLooperクラスが定義されているヘッダファイル" alt="" coords="217,184,402,225"/>
+<area shape="rect" id="node5" href="$_system_owner_8h.html" title="SystemOwnerクラスが定義されているヘッダファイル。" alt="" coords="111,273,294,315"/>
+<area shape="rect" id="node8" href="$_system_looper_8cpp.html" title="SystemLooperクラスのメンバ類の定義を行うCPPファイル" alt="" coords="318,273,517,315"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="プロジェクトのメイン関数が定義されているCPPファイル" alt="" coords="17,363,183,404"/>
+<area shape="rect" id="node7" href="$_system_owner_8cpp.html" title="SystemOwnerクラスのメンバ類の定義を行うCPPファイル" alt="" coords="207,363,404,404"/>
+</map>

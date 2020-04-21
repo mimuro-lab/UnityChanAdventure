@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: C:/Users/mimur/Desktop/NewGame/Player.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/mimur/Desktop/NewGame/Player.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_player_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_task_8h.html">Task.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="image_path_8h.html">imagePath.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_controller_8h.html">Controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_animation_8h.html">Animation.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_player.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_player.html">Player</a> :</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_task.html">Task</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_player.html#ad32c54ce654200c1012afec28cd36633">   28</a></span>&#160;    <a class="code" href="struct_define_1_1_status.html">Define::Status</a> <a class="code" href="class_player.html#ad32c54ce654200c1012afec28cd36633">playerStatus</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_player.html#a7ba657eb9fcffebf5b8dddf76a3c466a">   31</a></span>&#160;    std::shared_ptr&lt;Animation&gt; <a class="code" href="class_player.html#a7ba657eb9fcffebf5b8dddf76a3c466a">animation</a> = std::make_shared&lt;Animation&gt;(imagePath::getIns()-&gt;unityChan_Idle, 100,100);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_player.html">Player</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ~<a class="code" href="class_player.html">Player</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a6912bb6e48efb5845d59f0f4582827ef">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a7abe0fbf95b42b9ff4a2c0c7d334bc68">draw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_animation_8h_html"><div class="ttname"><a href="_animation_8h.html">Animation.h</a></div><div class="ttdoc">ImageDrawクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="a_controller_8h_html"><div class="ttname"><a href="_controller_8h.html">Controller.h</a></div><div class="ttdoc">Controllerクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="a_task_8h_html"><div class="ttname"><a href="_task_8h.html">Task.h</a></div><div class="ttdoc">Taskクラスが定義されているヘッダファイル。</div></div>
+<div class="ttc" id="aclass_task_html"><div class="ttname"><a href="class_task.html">Task</a></div><div class="ttdoc">updateとdraw関数を必ず持つ様に設定するインターフェースクラス。</div><div class="ttdef"><b>Definition:</b> Task.h:15</div></div>
+<div class="ttc" id="aimage_path_8h_html"><div class="ttname"><a href="image_path_8h.html">imagePath.h</a></div><div class="ttdoc">imagePathクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="a_define_8h_html"><div class="ttname"><a href="_define_8h.html">Define.h</a></div><div class="ttdoc">いろいろな定義をまとまる為のヘッダファイル</div></div>
+<div class="ttc" id="aclass_player_html_a7ba657eb9fcffebf5b8dddf76a3c466a"><div class="ttname"><a href="class_player.html#a7ba657eb9fcffebf5b8dddf76a3c466a">Player::animation</a></div><div class="ttdeci">std::shared_ptr&lt; Animation &gt; animation</div><div class="ttdoc">アニメーションの処理をまとめて行うオブジェクト。</div><div class="ttdef"><b>Definition:</b> Player.h:31</div></div>
+<div class="ttc" id="aclass_player_html_ad32c54ce654200c1012afec28cd36633"><div class="ttname"><a href="class_player.html#ad32c54ce654200c1012afec28cd36633">Player::playerStatus</a></div><div class="ttdeci">Define::Status playerStatus</div><div class="ttdoc">プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。</div><div class="ttdef"><b>Definition:</b> Player.h:28</div></div>
+<div class="ttc" id="aclass_player_html_a7abe0fbf95b42b9ff4a2c0c7d334bc68"><div class="ttname"><a href="class_player.html#a7abe0fbf95b42b9ff4a2c0c7d334bc68">Player::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">Playerオブジェクトの描画処理全般を行う関数。</div><div class="ttdef"><b>Definition:</b> Player.cpp:39</div></div>
+<div class="ttc" id="aclass_player_html_a6912bb6e48efb5845d59f0f4582827ef"><div class="ttname"><a href="class_player.html#a6912bb6e48efb5845d59f0f4582827ef">Player::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">Playerオブジェクトの前処理全般を行う関数。</div><div class="ttdef"><b>Definition:</b> Player.cpp:22</div></div>
+<div class="ttc" id="astruct_define_1_1_status_html"><div class="ttname"><a href="struct_define_1_1_status.html">Define::Status</a></div><div class="ttdoc">プレイヤーや敵のステータス管理の構造体</div><div class="ttdef"><b>Definition:</b> Define.h:42</div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Playerキャラの処理全般を担うクラス。</div><div class="ttdef"><b>Definition:</b> Player.h:24</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

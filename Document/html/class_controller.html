@@ -102,92 +102,162 @@ Controller 連携図</div>
 <tr class="memitem:a7d04c17913f04f99429aa29fa8505484"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7d04c17913f04f99429aa29fa8505484">update</a> ()</td></tr>
 <tr class="memdesc:a7d04c17913f04f99429aa29fa8505484"><td class="mdescLeft">&#160;</td><td class="mdescRight">全ての入力状態を更新する。  <a href="class_controller.html#a7d04c17913f04f99429aa29fa8505484">[詳解]</a><br /></td></tr>
 <tr class="separator:a7d04c17913f04f99429aa29fa8505484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad27a5639aaf864b0a121b6fe7044fff5"><td class="memItemLeft" align="right" valign="top"><a id="ad27a5639aaf864b0a121b6fe7044fff5"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad27a5639aaf864b0a121b6fe7044fff5">getRight</a> ()</td></tr>
-<tr class="memdesc:ad27a5639aaf864b0a121b6fe7044fff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向ボタン入力状態の取得 <br /></td></tr>
-<tr class="separator:ad27a5639aaf864b0a121b6fe7044fff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae024deca6a0cd8b4ba36790153cab6e3"><td class="memItemLeft" align="right" valign="top"><a id="ae024deca6a0cd8b4ba36790153cab6e3"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae024deca6a0cd8b4ba36790153cab6e3">getLeft</a> ()</td></tr>
-<tr class="memdesc:ae024deca6a0cd8b4ba36790153cab6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向ボタン入力状態の取得 <br /></td></tr>
-<tr class="separator:ae024deca6a0cd8b4ba36790153cab6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1f004f655c6df760aa3bb8fa72d5010"><td class="memItemLeft" align="right" valign="top"><a id="ac1f004f655c6df760aa3bb8fa72d5010"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac1f004f655c6df760aa3bb8fa72d5010">getUp</a> ()</td></tr>
-<tr class="memdesc:ac1f004f655c6df760aa3bb8fa72d5010"><td class="mdescLeft">&#160;</td><td class="mdescRight">上方向ボタン入力状態の取得 <br /></td></tr>
-<tr class="separator:ac1f004f655c6df760aa3bb8fa72d5010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca5064894078aebb22f9493eaa2f161"><td class="memItemLeft" align="right" valign="top"><a id="a8ca5064894078aebb22f9493eaa2f161"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8ca5064894078aebb22f9493eaa2f161">getDown</a> ()</td></tr>
-<tr class="memdesc:a8ca5064894078aebb22f9493eaa2f161"><td class="mdescLeft">&#160;</td><td class="mdescRight">下方向ボタン入力状態の取得 <br /></td></tr>
-<tr class="separator:a8ca5064894078aebb22f9493eaa2f161"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaf2192166c7b1b3295532495f0dcef1"><td class="memItemLeft" align="right" valign="top"><a id="aeaf2192166c7b1b3295532495f0dcef1"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aeaf2192166c7b1b3295532495f0dcef1">getStart</a> ()</td></tr>
-<tr class="memdesc:aeaf2192166c7b1b3295532495f0dcef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタートボタン入力状態の取得 <br /></td></tr>
-<tr class="separator:aeaf2192166c7b1b3295532495f0dcef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5000ca7bfa7ad9835a16f58e21d0143"><td class="memItemLeft" align="right" valign="top"><a id="ac5000ca7bfa7ad9835a16f58e21d0143"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac5000ca7bfa7ad9835a16f58e21d0143">getSelect</a> ()</td></tr>
-<tr class="memdesc:ac5000ca7bfa7ad9835a16f58e21d0143"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトボタン入力状態の取得 <br /></td></tr>
-<tr class="separator:ac5000ca7bfa7ad9835a16f58e21d0143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae064f15262a87d69fc36d81c659d247f"><td class="memItemLeft" align="right" valign="top"><a id="ae064f15262a87d69fc36d81c659d247f"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae064f15262a87d69fc36d81c659d247f">getPushRight</a> ()</td></tr>
+<tr class="memdesc:ae064f15262a87d69fc36d81c659d247f"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:ae064f15262a87d69fc36d81c659d247f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac63c7af0057d49dad38057653179d8"><td class="memItemLeft" align="right" valign="top"><a id="a2ac63c7af0057d49dad38057653179d8"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a2ac63c7af0057d49dad38057653179d8">getPushLeft</a> ()</td></tr>
+<tr class="memdesc:a2ac63c7af0057d49dad38057653179d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a2ac63c7af0057d49dad38057653179d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89832779b42093a9f8cb3f37fe3a344a"><td class="memItemLeft" align="right" valign="top"><a id="a89832779b42093a9f8cb3f37fe3a344a"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a89832779b42093a9f8cb3f37fe3a344a">getPushUp</a> ()</td></tr>
+<tr class="memdesc:a89832779b42093a9f8cb3f37fe3a344a"><td class="mdescLeft">&#160;</td><td class="mdescRight">上方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a89832779b42093a9f8cb3f37fe3a344a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802985cd7b81569fba47887b1b6a5ba0"><td class="memItemLeft" align="right" valign="top"><a id="a802985cd7b81569fba47887b1b6a5ba0"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a802985cd7b81569fba47887b1b6a5ba0">getPushDown</a> ()</td></tr>
+<tr class="memdesc:a802985cd7b81569fba47887b1b6a5ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">下方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a802985cd7b81569fba47887b1b6a5ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f8004b7f8290f0e71a61dd769bdcdf"><td class="memItemLeft" align="right" valign="top"><a id="a31f8004b7f8290f0e71a61dd769bdcdf"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a31f8004b7f8290f0e71a61dd769bdcdf">getPushStart</a> ()</td></tr>
+<tr class="memdesc:a31f8004b7f8290f0e71a61dd769bdcdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタートボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a31f8004b7f8290f0e71a61dd769bdcdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c34a9daa9078f0b0b07c62f806d1f9a"><td class="memItemLeft" align="right" valign="top"><a id="a0c34a9daa9078f0b0b07c62f806d1f9a"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0c34a9daa9078f0b0b07c62f806d1f9a">getPushSelect</a> ()</td></tr>
+<tr class="memdesc:a0c34a9daa9078f0b0b07c62f806d1f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a0c34a9daa9078f0b0b07c62f806d1f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c3b178a85a216586c9910647ecd6c32"><td class="memItemLeft" align="right" valign="top"><a id="a6c3b178a85a216586c9910647ecd6c32"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a6c3b178a85a216586c9910647ecd6c32">getPush_A</a> ()</td></tr>
-<tr class="memdesc:a6c3b178a85a216586c9910647ecd6c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ａ（〇）ボタン入力状態の取得 <br /></td></tr>
+<tr class="memdesc:a6c3b178a85a216586c9910647ecd6c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ａ（〇）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
 <tr class="separator:a6c3b178a85a216586c9910647ecd6c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c5c6d223b608d320387a0ba57cd43ed"><td class="memItemLeft" align="right" valign="top"><a id="a6c5c6d223b608d320387a0ba57cd43ed"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a6c5c6d223b608d320387a0ba57cd43ed">getPush_B</a> ()</td></tr>
-<tr class="memdesc:a6c5c6d223b608d320387a0ba57cd43ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｂ（×）ボタン入力状態の取得 <br /></td></tr>
+<tr class="memdesc:a6c5c6d223b608d320387a0ba57cd43ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｂ（×）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
 <tr class="separator:a6c5c6d223b608d320387a0ba57cd43ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c4aef38bf45c2e02272eb5c5e30229e"><td class="memItemLeft" align="right" valign="top"><a id="a5c4aef38bf45c2e02272eb5c5e30229e"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a5c4aef38bf45c2e02272eb5c5e30229e">getPush_X</a> ()</td></tr>
-<tr class="memdesc:a5c4aef38bf45c2e02272eb5c5e30229e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｘ（△）ボタン入力状態の取得 <br /></td></tr>
+<tr class="memdesc:a5c4aef38bf45c2e02272eb5c5e30229e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｘ（△）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
 <tr class="separator:a5c4aef38bf45c2e02272eb5c5e30229e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab35b99d1067726bf5e8eb5689f090d10"><td class="memItemLeft" align="right" valign="top"><a id="ab35b99d1067726bf5e8eb5689f090d10"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab35b99d1067726bf5e8eb5689f090d10">getPush_Y</a> ()</td></tr>
-<tr class="memdesc:ab35b99d1067726bf5e8eb5689f090d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｙ（□）ボタン入力状態の取得 <br /></td></tr>
+<tr class="memdesc:ab35b99d1067726bf5e8eb5689f090d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｙ（□）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
 <tr class="separator:ab35b99d1067726bf5e8eb5689f090d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab556114f81cbf3a6fc06a66ca49579f0"><td class="memItemLeft" align="right" valign="top"><a id="ab556114f81cbf3a6fc06a66ca49579f0"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0">getOnRight</a> ()</td></tr>
+<tr class="memdesc:ab556114f81cbf3a6fc06a66ca49579f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:ab556114f81cbf3a6fc06a66ca49579f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d9b2c6180dc1413b14c61285ebb251"><td class="memItemLeft" align="right" valign="top"><a id="aa6d9b2c6180dc1413b14c61285ebb251"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251">getOnLeft</a> ()</td></tr>
+<tr class="memdesc:aa6d9b2c6180dc1413b14c61285ebb251"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:aa6d9b2c6180dc1413b14c61285ebb251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae44268e891d237b01932c23b311d8dcf"><td class="memItemLeft" align="right" valign="top"><a id="ae44268e891d237b01932c23b311d8dcf"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae44268e891d237b01932c23b311d8dcf">getOnUp</a> ()</td></tr>
+<tr class="memdesc:ae44268e891d237b01932c23b311d8dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">上方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:ae44268e891d237b01932c23b311d8dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05e2a56f4dde6d7845e38fbe4812050"><td class="memItemLeft" align="right" valign="top"><a id="aa05e2a56f4dde6d7845e38fbe4812050"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa05e2a56f4dde6d7845e38fbe4812050">getOnDown</a> ()</td></tr>
+<tr class="memdesc:aa05e2a56f4dde6d7845e38fbe4812050"><td class="mdescLeft">&#160;</td><td class="mdescRight">下方向ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:aa05e2a56f4dde6d7845e38fbe4812050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab545ac730b6122486703cf0f63d53189"><td class="memItemLeft" align="right" valign="top"><a id="ab545ac730b6122486703cf0f63d53189"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab545ac730b6122486703cf0f63d53189">getOnStart</a> ()</td></tr>
+<tr class="memdesc:ab545ac730b6122486703cf0f63d53189"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタートボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:ab545ac730b6122486703cf0f63d53189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4f58c0cabcb9482dcc835b88fb9c7f"><td class="memItemLeft" align="right" valign="top"><a id="a0c4f58c0cabcb9482dcc835b88fb9c7f"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0c4f58c0cabcb9482dcc835b88fb9c7f">getOnSelect</a> ()</td></tr>
+<tr class="memdesc:a0c4f58c0cabcb9482dcc835b88fb9c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a0c4f58c0cabcb9482dcc835b88fb9c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d99c6589c00e1bfbf669a2d95a0d27"><td class="memItemLeft" align="right" valign="top"><a id="a68d99c6589c00e1bfbf669a2d95a0d27"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a68d99c6589c00e1bfbf669a2d95a0d27">getOn_A</a> ()</td></tr>
+<tr class="memdesc:a68d99c6589c00e1bfbf669a2d95a0d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ａ（〇）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a68d99c6589c00e1bfbf669a2d95a0d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbf957b10bebaca53ef068e5073713e"><td class="memItemLeft" align="right" valign="top"><a id="a3cbf957b10bebaca53ef068e5073713e"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a3cbf957b10bebaca53ef068e5073713e">getOn_B</a> ()</td></tr>
+<tr class="memdesc:a3cbf957b10bebaca53ef068e5073713e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｂ（×）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a3cbf957b10bebaca53ef068e5073713e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d328b8d7f0be416a5dfb48d53dc6261"><td class="memItemLeft" align="right" valign="top"><a id="a2d328b8d7f0be416a5dfb48d53dc6261"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a2d328b8d7f0be416a5dfb48d53dc6261">getOn_X</a> ()</td></tr>
+<tr class="memdesc:a2d328b8d7f0be416a5dfb48d53dc6261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｘ（△）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a2d328b8d7f0be416a5dfb48d53dc6261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89682d16b9bf3db6698134ffa8958e86"><td class="memItemLeft" align="right" valign="top"><a id="a89682d16b9bf3db6698134ffa8958e86"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a89682d16b9bf3db6698134ffa8958e86">getOn_Y</a> ()</td></tr>
+<tr class="memdesc:a89682d16b9bf3db6698134ffa8958e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｙ（□）ボタン入力状態の取得（押された瞬間） <br /></td></tr>
+<tr class="separator:a89682d16b9bf3db6698134ffa8958e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
 <tr class="memitem:a8085022b0bea6e0ff81fd66137ad9dc6"><td class="memItemLeft" align="right" valign="top"><a id="a8085022b0bea6e0ff81fd66137ad9dc6"></a>
 friend&#160;</td><td class="memItemRight" valign="bottom"><b>Singleton&lt; Controller &gt;</b></td></tr>
 <tr class="separator:a8085022b0bea6e0ff81fd66137ad9dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad36f22ace257bf758666c533f01943fb"><td class="memItemLeft" align="right" valign="top"><a id="ad36f22ace257bf758666c533f01943fb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad36f22ace257bf758666c533f01943fb">right</a> = false</td></tr>
-<tr class="memdesc:ad36f22ace257bf758666c533f01943fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向ボタン入力状態 <br /></td></tr>
-<tr class="separator:ad36f22ace257bf758666c533f01943fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc46fa9877bdb11de6f468d77acf637"><td class="memItemLeft" align="right" valign="top"><a id="a9cc46fa9877bdb11de6f468d77acf637"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9cc46fa9877bdb11de6f468d77acf637">left</a> = false</td></tr>
-<tr class="memdesc:a9cc46fa9877bdb11de6f468d77acf637"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向ボタン入力状態 <br /></td></tr>
-<tr class="separator:a9cc46fa9877bdb11de6f468d77acf637"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fafd38cd867069d1f905206bdd683bd"><td class="memItemLeft" align="right" valign="top"><a id="a9fafd38cd867069d1f905206bdd683bd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9fafd38cd867069d1f905206bdd683bd">up</a> = false</td></tr>
-<tr class="memdesc:a9fafd38cd867069d1f905206bdd683bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">上方向ボタン入力状態 <br /></td></tr>
-<tr class="separator:a9fafd38cd867069d1f905206bdd683bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2632dcc762f080f4299d4b877decb661"><td class="memItemLeft" align="right" valign="top"><a id="a2632dcc762f080f4299d4b877decb661"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a2632dcc762f080f4299d4b877decb661">down</a> = false</td></tr>
-<tr class="memdesc:a2632dcc762f080f4299d4b877decb661"><td class="mdescLeft">&#160;</td><td class="mdescRight">下方向ボタン入力状態 <br /></td></tr>
-<tr class="separator:a2632dcc762f080f4299d4b877decb661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88f5d72eb1841bc27606795cc5f055d1"><td class="memItemLeft" align="right" valign="top"><a id="a88f5d72eb1841bc27606795cc5f055d1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a88f5d72eb1841bc27606795cc5f055d1">start</a> = false</td></tr>
-<tr class="memdesc:a88f5d72eb1841bc27606795cc5f055d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタートボタン入力状態 <br /></td></tr>
-<tr class="separator:a88f5d72eb1841bc27606795cc5f055d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eceb1d562d17f6dbcfb55323e7e6326"><td class="memItemLeft" align="right" valign="top"><a id="a7eceb1d562d17f6dbcfb55323e7e6326"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7eceb1d562d17f6dbcfb55323e7e6326">select</a> = false</td></tr>
-<tr class="memdesc:a7eceb1d562d17f6dbcfb55323e7e6326"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトボタン入力状態 <br /></td></tr>
-<tr class="separator:a7eceb1d562d17f6dbcfb55323e7e6326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602eec56d0b1f6764575d14f2479d67a"><td class="memItemLeft" align="right" valign="top"><a id="a602eec56d0b1f6764575d14f2479d67a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a602eec56d0b1f6764575d14f2479d67a">push_right</a> = false</td></tr>
+<tr class="memdesc:a602eec56d0b1f6764575d14f2479d67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">右方向ボタン入力状態 <br /></td></tr>
+<tr class="separator:a602eec56d0b1f6764575d14f2479d67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19cc0b7a94c9932012076c827b1f45b1"><td class="memItemLeft" align="right" valign="top"><a id="a19cc0b7a94c9932012076c827b1f45b1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_right</b> = false</td></tr>
+<tr class="separator:a19cc0b7a94c9932012076c827b1f45b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484bcbce741ea8367c49514b52f1f8c2"><td class="memItemLeft" align="right" valign="top"><a id="a484bcbce741ea8367c49514b52f1f8c2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a484bcbce741ea8367c49514b52f1f8c2">push_left</a> = false</td></tr>
+<tr class="memdesc:a484bcbce741ea8367c49514b52f1f8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">左方向ボタン入力状態 <br /></td></tr>
+<tr class="separator:a484bcbce741ea8367c49514b52f1f8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3908ee5d47c78edbabb53ebada0cd5c5"><td class="memItemLeft" align="right" valign="top"><a id="a3908ee5d47c78edbabb53ebada0cd5c5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_left</b> = false</td></tr>
+<tr class="separator:a3908ee5d47c78edbabb53ebada0cd5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00efa600356143e69769547283c4265"><td class="memItemLeft" align="right" valign="top"><a id="aa00efa600356143e69769547283c4265"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa00efa600356143e69769547283c4265">push_up</a> = false</td></tr>
+<tr class="memdesc:aa00efa600356143e69769547283c4265"><td class="mdescLeft">&#160;</td><td class="mdescRight">上方向ボタン入力状態 <br /></td></tr>
+<tr class="separator:aa00efa600356143e69769547283c4265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8347f379686ebc0b41332497f0c630a4"><td class="memItemLeft" align="right" valign="top"><a id="a8347f379686ebc0b41332497f0c630a4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_up</b> = false</td></tr>
+<tr class="separator:a8347f379686ebc0b41332497f0c630a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ed7a8e23b6b0007918b76aadec5716"><td class="memItemLeft" align="right" valign="top"><a id="ad0ed7a8e23b6b0007918b76aadec5716"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad0ed7a8e23b6b0007918b76aadec5716">push_down</a> = false</td></tr>
+<tr class="memdesc:ad0ed7a8e23b6b0007918b76aadec5716"><td class="mdescLeft">&#160;</td><td class="mdescRight">下方向ボタン入力状態 <br /></td></tr>
+<tr class="separator:ad0ed7a8e23b6b0007918b76aadec5716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c0a496f3039c35888ddc71ab704fb3"><td class="memItemLeft" align="right" valign="top"><a id="a55c0a496f3039c35888ddc71ab704fb3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_down</b> = false</td></tr>
+<tr class="separator:a55c0a496f3039c35888ddc71ab704fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b90da6763955c2768a06680a855dbc"><td class="memItemLeft" align="right" valign="top"><a id="a16b90da6763955c2768a06680a855dbc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a16b90da6763955c2768a06680a855dbc">push_start</a> = false</td></tr>
+<tr class="memdesc:a16b90da6763955c2768a06680a855dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">スタートボタン入力状態 <br /></td></tr>
+<tr class="separator:a16b90da6763955c2768a06680a855dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a9a6c3bcfff8485f0bddc1a54999b9"><td class="memItemLeft" align="right" valign="top"><a id="ad1a9a6c3bcfff8485f0bddc1a54999b9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_start</b> = false</td></tr>
+<tr class="separator:ad1a9a6c3bcfff8485f0bddc1a54999b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac90528412ea28fa0351016100b9f2c0b"><td class="memItemLeft" align="right" valign="top"><a id="ac90528412ea28fa0351016100b9f2c0b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac90528412ea28fa0351016100b9f2c0b">push_select</a> = false</td></tr>
+<tr class="memdesc:ac90528412ea28fa0351016100b9f2c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトボタン入力状態 <br /></td></tr>
+<tr class="separator:ac90528412ea28fa0351016100b9f2c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa0ca3c960e2bcc6ddc00d6c39c2fbc"><td class="memItemLeft" align="right" valign="top"><a id="a3fa0ca3c960e2bcc6ddc00d6c39c2fbc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_select</b> = false</td></tr>
+<tr class="separator:a3fa0ca3c960e2bcc6ddc00d6c39c2fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a2a341962262d0d1bc2b2b1bf413f11"><td class="memItemLeft" align="right" valign="top"><a id="a4a2a341962262d0d1bc2b2b1bf413f11"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a4a2a341962262d0d1bc2b2b1bf413f11">push_A</a> = false</td></tr>
 <tr class="memdesc:a4a2a341962262d0d1bc2b2b1bf413f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ａ（〇）ボタン入力状態 <br /></td></tr>
 <tr class="separator:a4a2a341962262d0d1bc2b2b1bf413f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef716fce7b1a27e60de85671a3a631c"><td class="memItemLeft" align="right" valign="top"><a id="a6ef716fce7b1a27e60de85671a3a631c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_A</b> = false</td></tr>
+<tr class="separator:a6ef716fce7b1a27e60de85671a3a631c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66f3af0a357a310d897054269e999087"><td class="memItemLeft" align="right" valign="top"><a id="a66f3af0a357a310d897054269e999087"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a66f3af0a357a310d897054269e999087">push_B</a> = false</td></tr>
 <tr class="memdesc:a66f3af0a357a310d897054269e999087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｂ（×）ボタン入力状態 <br /></td></tr>
 <tr class="separator:a66f3af0a357a310d897054269e999087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f8a8cb2522aaba2c1d9aad90b876d43"><td class="memItemLeft" align="right" valign="top"><a id="a7f8a8cb2522aaba2c1d9aad90b876d43"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_B</b> = false</td></tr>
+<tr class="separator:a7f8a8cb2522aaba2c1d9aad90b876d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8ecaa01d6dfe0f008517437b378dbcb"><td class="memItemLeft" align="right" valign="top"><a id="ae8ecaa01d6dfe0f008517437b378dbcb"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae8ecaa01d6dfe0f008517437b378dbcb">push_X</a> = false</td></tr>
 <tr class="memdesc:ae8ecaa01d6dfe0f008517437b378dbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｘ（△）ボタン入力状態 <br /></td></tr>
 <tr class="separator:ae8ecaa01d6dfe0f008517437b378dbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2231c7ddd27248f75a35752a6f1946"><td class="memItemLeft" align="right" valign="top"><a id="a7b2231c7ddd27248f75a35752a6f1946"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_X</b> = false</td></tr>
+<tr class="separator:a7b2231c7ddd27248f75a35752a6f1946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9880cd3d813ce4e705c4cc42c4a94cfc"><td class="memItemLeft" align="right" valign="top"><a id="a9880cd3d813ce4e705c4cc42c4a94cfc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9880cd3d813ce4e705c4cc42c4a94cfc">push_Y</a> = false</td></tr>
 <tr class="memdesc:a9880cd3d813ce4e705c4cc42c4a94cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ｙ（□）ボタン入力状態 <br /></td></tr>
 <tr class="separator:a9880cd3d813ce4e705c4cc42c4a94cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e8ef04d878f02bcb24ea34104a555f"><td class="memItemLeft" align="right" valign="top"><a id="ad6e8ef04d878f02bcb24ea34104a555f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>on_Y</b> = false</td></tr>
+<tr class="separator:ad6e8ef04d878f02bcb24ea34104a555f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>

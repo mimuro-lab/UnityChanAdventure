@@ -41,12 +41,12 @@ void StartScene::draw()
 
 const void StartScene::SelectScene()
 {
-	if (Controller::getIns()->getDown()) {
+	if (Controller::getIns()->getPushDown()) {
 		if (nextSceneSelected < _end - 1)
 			nextSceneSelected++;
 	}
 	
-	if (Controller::getIns()->getUp()) {
+	if (Controller::getIns()->getPushUp()) {
 		if (nextSceneSelected > none + 1)
 			nextSceneSelected--;
 	}

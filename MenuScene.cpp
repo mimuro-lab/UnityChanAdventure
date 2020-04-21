@@ -10,7 +10,7 @@
 
 void MenuScene::update()
 {
-	ValidSelectWindow();
+	SelectWindow::ValidSelectWindow();
 	SelectScene();
 }
 
@@ -21,4 +21,5 @@ void MenuScene::draw()
 
 void MenuScene::SelectScene()
 {
+	SelectWindow::drawSelectWindow();
 }

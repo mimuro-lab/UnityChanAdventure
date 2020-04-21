@@ -1,3 +1,3 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$class_calc_utils.html" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node1" href="$class_animation.html" title="画像をコマ送り表示させたい時に使用するクラス。imagePathにある画像ハンドルのvectorを渡すとアニメーションの管理が行える。" alt="" coords="5,5,85,32"/>
 </map>

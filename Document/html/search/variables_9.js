@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unitychan_5fbasicactions_223',['unityChan_BasicActions',['../classimage_path.html#afcd2d2a0dbaa04e360aeb7965c25582c',1,'imagePath']]],
-  ['up_224',['up',['../class_controller.html#a9fafd38cd867069d1f905206bdd683bd',1,'Controller']]]
+  ['unitychan_5fbrake_282',['unityChan_Brake',['../classimage_path.html#ab6549ceadfb57bd98c651e64ee20d189',1,'imagePath']]]
 ];

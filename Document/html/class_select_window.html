@@ -94,8 +94,11 @@ SelectWindow の継承関係図</div>
 <tr class="memdesc:afb6af9d0efd147a9113b4e3e5f53060c"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。 <br /></td></tr>
 <tr class="separator:afb6af9d0efd147a9113b4e3e5f53060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b04bd3f2f5e21550b187ae9b079abd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1">ValidSelectWindow</a> ()</td></tr>
-<tr class="memdesc:a8b04bd3f2f5e21550b187ae9b079abd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウを有効にする為の関数。継承先のクラスはこの関数を呼び出すだけでセレクト画面が有効になる。  <a href="class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1">[詳解]</a><br /></td></tr>
+<tr class="memdesc:a8b04bd3f2f5e21550b187ae9b079abd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウを有効にする為の関数。  <a href="class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1">[詳解]</a><br /></td></tr>
 <tr class="separator:a8b04bd3f2f5e21550b187ae9b079abd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84817285155160c54e7c5a2e2add81c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a84817285155160c54e7c5a2e2add81c1">drawSelectWindow</a> () const</td></tr>
+<tr class="memdesc:a84817285155160c54e7c5a2e2add81c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウを表示する関数。  <a href="class_select_window.html#a84817285155160c54e7c5a2e2add81c1">[詳解]</a><br /></td></tr>
+<tr class="separator:a84817285155160c54e7c5a2e2add81c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6193dbd3c41f21450a565fc8d767802d"><td class="memItemLeft" align="right" valign="top"><a id="a6193dbd3c41f21450a565fc8d767802d"></a>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a6193dbd3c41f21450a565fc8d767802d">IsSelected</a> () const</td></tr>
 <tr class="memdesc:a6193dbd3c41f21450a565fc8d767802d"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在セレクトウィンドウが有効になっているかどうかを確認するための関数。 <br /></td></tr>
@@ -106,9 +109,6 @@ const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <tr class="memitem:aff1aea1d04e9ba0c17bbf72eb36c8e67"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#aff1aea1d04e9ba0c17bbf72eb36c8e67">updateSelectWindow</a> ()</td></tr>
 <tr class="memdesc:aff1aea1d04e9ba0c17bbf72eb36c8e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウを使用する為の前処理の関数。  <a href="class_select_window.html#aff1aea1d04e9ba0c17bbf72eb36c8e67">[詳解]</a><br /></td></tr>
 <tr class="separator:aff1aea1d04e9ba0c17bbf72eb36c8e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6b3c4de1513b97327af2c7a7aaf4cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a6c6b3c4de1513b97327af2c7a7aaf4cf">drawSelectWindw</a> () const</td></tr>
-<tr class="memdesc:a6c6b3c4de1513b97327af2c7a7aaf4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウを表示する関数。  <a href="class_select_window.html#a6c6b3c4de1513b97327af2c7a7aaf4cf">[詳解]</a><br /></td></tr>
-<tr class="separator:a6c6b3c4de1513b97327af2c7a7aaf4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
@@ -130,27 +130,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="section date"><dt>日付</dt><dd>2020/04/18/23:13 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="a6c6b3c4de1513b97327af2c7a7aaf4cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c6b3c4de1513b97327af2c7a7aaf4cf">&#9670;&nbsp;</a></span>drawSelectWindw()</h2>
+<a id="a84817285155160c54e7c5a2e2add81c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84817285155160c54e7c5a2e2add81c1">&#9670;&nbsp;</a></span>drawSelectWindow()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SelectWindow::drawSelectWindw </td>
+          <td class="memname">void SelectWindow::drawSelectWindow </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>セレクトウィンドウを表示する関数。 </p>
@@ -205,8 +197,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>セレクトウィンドウを有効にする為の関数。継承先のクラスはこの関数を呼び出すだけでセレクト画面が有効になる。 </p>
-<p>継承先から直接呼び出される関数。updateSelectWindow()とdrawSelectWindw()を実行する。updateSelectWindow()に失敗したらreturnして抜け出す。</p>
+<p>セレクトウィンドウを有効にする為の関数。 </p>
+<p>継承先から直接呼び出される関数。updateSelectWindow()し、updateSelectWindow()に失敗したらreturnして抜け出す。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/18/23:23 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
 

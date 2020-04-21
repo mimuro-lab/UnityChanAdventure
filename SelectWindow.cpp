@@ -17,14 +17,14 @@
 const bool SelectWindow::updateSelectWindow()
 {
 
-	if (Controller::getIns()->getSelect()) {
+	if (Controller::getIns()->getPushSelect()) {
 		_IsSelected = !_IsSelected;
 	}
 
 	if (_IsSelected) {
-		if (Controller::getIns()->getRight())
+		if (Controller::getIns()->getPushRight())
 			isReturn = false;
-		if (Controller::getIns()->getLeft())
+		if (Controller::getIns()->getPushLeft())
 			isReturn = true;
 
 		if (Controller::getIns()->getPush_A()) {
@@ -46,7 +46,7 @@ const bool SelectWindow::updateSelectWindow()
 @date 2020/04/18/23:23
 @author mimuro
 */
-void SelectWindow::drawSelectWindw() const
+void SelectWindow::drawSelectWindow() const
 {
 	if (!_IsSelected)
 		return;
@@ -66,7 +66,7 @@ void SelectWindow::drawSelectWindw() const
 }
 
 /*!
-@brief 継承先から直接呼び出される関数。updateSelectWindow()とdrawSelectWindw()を実行する。updateSelectWindow()に失敗したらreturnして抜け出す。
+@brief 継承先から直接呼び出される関数。updateSelectWindow()し、updateSelectWindow()に失敗したらreturnして抜け出す。
 @date 2020/04/18/23:23
 @author mimuro
 */
@@ -74,5 +74,4 @@ void SelectWindow::ValidSelectWindow()
 {
 	if (!updateSelectWindow())
 		return;
-	drawSelectWindw();
 }

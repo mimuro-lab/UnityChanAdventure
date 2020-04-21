@@ -10,13 +10,14 @@
 
 void ConfigScene::update()
 {
-	ValidSelectWindow();
+	SelectWindow::ValidSelectWindow();
 	SelectScene();
 }
 
 void ConfigScene::draw()
 {
 	DrawFormatString(10, 50, GetColor(255, 255, 255), "ConfigScene");
+	SelectWindow::drawSelectWindow();
 }
 
 void ConfigScene::SelectScene()

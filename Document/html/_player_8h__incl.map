@@ -1,0 +1,16 @@
+<map id="C:/Users/mimur/Desktop/NewGame/Player.h" name="C:/Users/mimur/Desktop/NewGame/Player.h">
+<area shape="rect" id="node1" title="Playerクラスが定義されているヘッダファイル" alt="" coords="436,5,601,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="283,169,349,196"/>
+<area shape="rect" id="node3" href="$_task_8h.html" title="Taskクラスが定義されているヘッダファイル。" alt="" coords="591,95,652,121"/>
+<area shape="rect" id="node4" href="$_define_8h.html" title="いろいろな定義をまとまる為のヘッダファイル" alt="" coords="676,95,745,121"/>
+<area shape="rect" id="node5" href="$image_path_8h.html" title="imagePathクラスが定義されているヘッダファイル" alt="" coords="471,95,566,121"/>
+<area shape="rect" id="node8" href="$_controller_8h.html" title="Controllerクラスが定義されているヘッダファイル" alt="" coords="193,95,281,121"/>
+<area shape="rect" id="node12" href="$_animation_8h.html" title="ImageDrawクラスが定義されているヘッダファイル" alt="" coords="356,95,447,121"/>
+<area shape="rect" id="node14" title=" " alt="" coords="769,95,839,121"/>
+<area shape="rect" id="node6" href="$_singleton_8h.html" title="Singletonクラスが定義されているヘッダファイル" alt="" coords="202,244,289,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="373,169,429,196"/>
+<area shape="rect" id="node9" href="$_keyboard_8h.html" title="Keyboardクラスが定義されているヘッダファイル" alt="" coords="5,169,93,196"/>
+<area shape="rect" id="node11" href="$_gamepad_8h.html" title="Gamepadクラスが定義されているヘッダファイル" alt="" coords="118,169,207,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="76,244,127,271"/>
+<area shape="rect" id="node13" title=" " alt="" coords="454,169,509,196"/>
+</map>

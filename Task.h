@@ -1,5 +1,17 @@
+
+/*!
+@file Task.h
+@brief Taskクラスが定義されているヘッダファイル。
+@date 2020/04/21/12:46
+*/
+
 #pragma once
 
+/*!
+@class Task
+@brief updateとdraw関数を必ず持つ様に設定するインターフェースクラス。
+@date 2020/04/21/12:46
+*/
 class Task {
 public:
     virtual ~Task() {}

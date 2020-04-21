@@ -29,12 +29,18 @@ enum eScene {
 */
 class Define final {
 public:
-	//!ウィンドウサイズ横
+	//! ウィンドウサイズ横
 	const static int WIN_W;
 
-	//!ウィンドウサイズ縦
+	//! ウィンドウサイズ縦
 	const static int WIN_H;
 	
-	//!円周率
+	//! 円周率
 	const static float PI;	
+
+	//! プレイヤーや敵のステータス管理の構造体
+	struct Status {
+		int _x;
+		int _y;
+	};
 };

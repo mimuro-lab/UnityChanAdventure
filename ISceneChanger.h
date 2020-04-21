@@ -7,6 +7,7 @@
 
 #pragma once
 #include "Define.h"
+
 /*!
 @class ISceneChanger
 @brief SystemLooperクラスが持つchangeSceneメンバ関数を外部クラスで使用する為のインターフェース。

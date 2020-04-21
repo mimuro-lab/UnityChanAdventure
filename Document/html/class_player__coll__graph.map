@@ -1,0 +1,5 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node1" title="Playerキャラの処理全般を担うクラス。" alt="" coords="52,95,111,121"/>
+<area shape="rect" id="node2" href="$class_task.html" title="updateとdraw関数を必ず持つ様に設定するインターフェースクラス。" alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node3" href="$struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="80,5,184,32"/>
+</map>

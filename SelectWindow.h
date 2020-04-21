@@ -31,16 +31,16 @@ class SelectWindow
 	//! セレクトウィンドウを使用する為の前処理の関数。
 	const bool updateSelectWindow();
 
-	//! セレクトウィンドウを表示する関数。
-	void drawSelectWindw() const;
-
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
 	SelectWindow(std::shared_ptr<ISceneChanger> _changer) : changerInSelectWindow(_changer) {};
 	~SelectWindow() = default;
 
-	//! セレクトウィンドウを有効にする為の関数。継承先のクラスはこの関数を呼び出すだけでセレクト画面が有効になる。
+	//! セレクトウィンドウを有効にする為の関数。
 	void ValidSelectWindow();
+
+	//! セレクトウィンドウを表示する関数。
+	void drawSelectWindow() const;
 
 	//! 現在セレクトウィンドウが有効になっているかどうかを確認するための関数。
 	bool const IsSelected() const { return _IsSelected; };

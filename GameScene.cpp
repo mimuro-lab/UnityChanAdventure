@@ -24,4 +24,7 @@ void GameScene::draw()
 {
 	DrawFormatString(10, 50, GetColor(255, 255, 255), "Game");
 	player->draw();
+
+	SelectWindow::drawSelectWindow();
+
 }
