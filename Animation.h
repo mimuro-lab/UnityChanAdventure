@@ -10,6 +10,7 @@
 #include <DxLib.h>
 #include <vector>
 #include <string>
+#include "Define.h"
 
 /*!
 @class Animation
@@ -33,8 +34,8 @@ class Animation
 	char DrawingSteps_counter = 0;
 	//! アニメーションが終わったかどうか。
 	bool IsEnd = false;
-	//! アニメーションさせる座標。
-	int pointX, pointY;
+	//! アニメーションさせる為のステータス。
+	Define::Status status;
 public:
 
 	/*!
@@ -42,18 +43,17 @@ public:
 	@date 2020/04/21/9:51
 	@author mimuro
 	*/
-	Animation(std::vector<int> _imageHandles, int initX, int initY , char _DrawingSteps = 6, char IndexEnd = 99) :
+	Animation(std::vector<int> _imageHandles, Define::Status _status , char _DrawingSteps = 6, char IndexEnd = 99) :
 		imageHandles(_imageHandles)
 		, NowDrawingImageHandle(_imageHandles[0])
-		, pointX(initX)
-		, pointY(initY)
+		, status(_status)
 		, DrawingIndexEnd(IndexEnd)
 		, DrawingSteps(_DrawingSteps)
 	{};
 	~Animation() = default;
 
 	//! 更新処理を担う関数。
-	void update(int x, int y);
+	void update(Define::Status _status);
 	//! 表示処理を担う関数。
 	void draw() const;
 	//! アニメーションが終わったかどうかを取得する。trueなら終了した。

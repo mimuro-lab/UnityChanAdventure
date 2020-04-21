@@ -55,7 +55,6 @@ public:
 
 	const vector<int> unityChan_Damage = {
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Damage_1.png"),
-
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Damage_2.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Damage_3.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Damage_4.png"),

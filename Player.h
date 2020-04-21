@@ -24,13 +24,44 @@
 class Player :
 	public Task
 {
+	//! プレイヤーオブジェクトの行動の分類。
+	enum playerAction {
+		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Run, Walk, _end
+	};
+
+	//! プレイヤーオブジェクトの現在の状態を管理。
+	playerAction IsAction;
+
+	//! アクション中に他のアクションに切り替え可能かどうか？（添え字がplayerActionに対応）
+	std::vector<bool> IsAction_canSwitching;
+
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
 	Define::Status playerStatus;
 
 	//! アニメーションの処理をまとめて行うオブジェクト。
-	std::shared_ptr<Animation> animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, 100,100);
+	std::shared_ptr<Animation> animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
+
+	//! アニメーションを切り替える関数。
+	std::shared_ptr<Animation> switchingAnimation(playerAction next);
+
+	//! コントローラの入力などに応じてステータスを更新する。
+	playerAction updateStatus();
 public:
-	Player();
+
+	Player() : 
+		IsAction(Idle)
+	{
+		// 初期情報の設定。
+		playerStatus._x = Define::WIN_W / 2;
+		playerStatus._y = Define::WIN_H / 2;
+		playerStatus.directRight = true;
+
+		// IsAction_canSwitchinの初期化。 Idle, Walk, Runの状態のときは切り替え可能の状態。
+		IsAction_canSwitching = std::vector<bool>(_end, false);
+		IsAction_canSwitching[Idle] = IsAction_canSwitching[Walk] = IsAction_canSwitching[Run] = true;
+
+	};
+
 	~Player() = default;
 
 	//! Playerオブジェクトの前処理全般を行う関数。

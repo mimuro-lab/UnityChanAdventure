@@ -42,5 +42,6 @@ public:
 	struct Status {
 		int _x;
 		int _y;
+		bool directRight = true;
 	};
 };
