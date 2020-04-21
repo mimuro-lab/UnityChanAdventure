@@ -15,22 +15,37 @@
 */
 void Player::update()
 {
-
+	// アニメーションの下処理を行う。
 	animation->update(playerStatus);
 
+	//// 次のアクションを現在の条件によって選択していく。
+	// 次のアクションを格納しておく変数。
 	playerAction _next;
 
+	// 今の状態が途中切り替えＯＫまたは、途中切り替えＮＧかつアニメーションが終了したら、、、アクション切り替えする可能性。
 	if (IsAction_canSwitching[IsAction] || 
 		(!IsAction_canSwitching[IsAction] && animation->isEnd())) {
-		_next = updateStatus();
+
+		// _nextへ次のシーンを取得する。
+		_next = getNextAction();
+
+		// 現在のアクションと異なるアクションが次のアクションだったら、、、
 		if (IsAction != _next) {
+
+			// アニメーションオブジェクトを更新し、終了。
 			animation = switchingAnimation(_next);
 			return;
 		}
+		
+		// 同じアクションが入力され続けて、現在のアニメーションが終了したらとりあえずIdling状態にに設定
+		// 次のコマでの上記の処理"_next = getNextAction();"で再度その状態が更新されるので入力され続けられるアクションで更新。
+		if (animation->isEnd()) {
+			animation = switchingAnimation(Idle);
+			return;
+		}
 	}
+			
 
-	if (animation->isEnd())
-		animation = switchingAnimation(Idle);
 	
 }
 
@@ -44,7 +59,7 @@ void Player::draw()
 @date 2020/04/21/18:30
 @author mimuro
 */
-Player::playerAction Player::updateStatus()
+Player::playerAction Player::getNextAction()
 {
 	// Jump
 	if (Controller::getIns()->getOn_A()) {

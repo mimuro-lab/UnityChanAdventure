@@ -1,0 +1,4 @@
+<map id="Animation" name="Animation">
+<area shape="rect" id="node1" title="画像をコマ送り表示させたい時に使用するクラス。imagePathにある画像ハンドルのvectorを渡すとアニメーションの管理が行える。" alt="" coords="17,95,97,121"/>
+<area shape="rect" id="node2" href="$struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="5,5,109,32"/>
+</map>

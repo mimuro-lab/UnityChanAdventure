@@ -1,24 +1,26 @@
 <map id="C:/Users/mimur/Desktop/NewGame/Define.h" name="C:/Users/mimur/Desktop/NewGame/Define.h">
-<area shape="rect" id="node1" title="いろいろな定義をまとまる為のヘッダファイル" alt="" coords="805,5,971,47"/>
-<area shape="rect" id="node2" href="$_i_scene_changer_8h.html" title="ISceneChangerクラスが定義されているヘッダファイル。" alt="" coords="524,95,713,136"/>
+<area shape="rect" id="node1" title="いろいろな定義をまとまる為のヘッダファイル" alt="" coords="937,5,1103,47"/>
+<area shape="rect" id="node2" href="$_i_scene_changer_8h.html" title="ISceneChangerクラスが定義されているヘッダファイル。" alt="" coords="576,95,765,136"/>
 <area shape="rect" id="node7" href="$_system_owner_8h.html" title="SystemOwnerクラスが定義されているヘッダファイル。" alt="" coords="99,452,282,493"/>
-<area shape="rect" id="node19" href="$_define_8cpp.html" title="Defineクラスのメンバ値の定義を実際に行う。" alt="" coords="995,95,1160,136"/>
-<area shape="rect" id="node20" href="$_gamepad_8cpp.html" title="Gamepadクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1184,95,1355,136"/>
-<area shape="rect" id="node21" href="$_player_8h.html" title="Playerクラスが定義されているヘッダファイル" alt="" coords="805,95,971,136"/>
-<area shape="rect" id="node3" href="$_abstract_scene_8h.html" title="AbstractSceneクラスが定義されているヘッダファイル。" alt="" coords="491,184,677,225"/>
+<area shape="rect" id="node19" href="$_animation_8h.html" title="ImageDrawクラスが定義されているヘッダファイル" alt="" coords="997,95,1163,136"/>
+<area shape="rect" id="node21" href="$_player_8h.html" title="Playerクラスが定義されているヘッダファイル" alt="" coords="997,184,1163,225"/>
+<area shape="rect" id="node23" href="$_define_8cpp.html" title="Defineクラスのメンバ値の定義を実際に行う。" alt="" coords="1187,95,1352,136"/>
+<area shape="rect" id="node24" href="$_gamepad_8cpp.html" title="Gamepadクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1376,95,1547,136"/>
+<area shape="rect" id="node3" href="$_abstract_scene_8h.html" title="AbstractSceneクラスが定義されているヘッダファイル。" alt="" coords="473,184,660,225"/>
 <area shape="rect" id="node6" href="$_system_looper_8h.html" title="SystemLooperクラスが定義されているヘッダファイル" alt="" coords="373,363,558,404"/>
-<area shape="rect" id="node17" href="$_select_window_8h.html" title="SelectWindowクラスが定義されているヘッダファイル" alt="" coords="701,184,885,225"/>
-<area shape="rect" id="node4" href="$_config_scene_8h.html" title="ConfigSceneクラスが定義されているヘッダファイル。" alt="" coords="503,273,678,315"/>
-<area shape="rect" id="node11" href="$_game_scene_8h.html" title="GameSceneクラスが定義されているヘッダファイル" alt="" coords="897,273,1071,315"/>
-<area shape="rect" id="node13" href="$_start_scene_8h.html" title="StartSceneクラスが定義されているヘッダファイル" alt="" coords="261,273,427,315"/>
-<area shape="rect" id="node15" href="$_menu_scene_8h.html" title="MenuSceneクラスが定義されているヘッダファイル" alt="" coords="703,273,873,315"/>
-<area shape="rect" id="node5" href="$_config_scene_8cpp.html" title="ConfigSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="582,363,770,404"/>
+<area shape="rect" id="node17" href="$_select_window_8h.html" title="SelectWindowクラスが定義されているヘッダファイル" alt="" coords="684,184,868,225"/>
+<area shape="rect" id="node4" href="$_config_scene_8h.html" title="ConfigSceneクラスが定義されているヘッダファイル。" alt="" coords="677,273,851,315"/>
+<area shape="rect" id="node11" href="$_game_scene_8h.html" title="GameSceneクラスが定義されているヘッダファイル" alt="" coords="1099,273,1272,315"/>
+<area shape="rect" id="node13" href="$_start_scene_8h.html" title="StartSceneクラスが定義されているヘッダファイル" alt="" coords="239,273,406,315"/>
+<area shape="rect" id="node15" href="$_menu_scene_8h.html" title="MenuSceneクラスが定義されているヘッダファイル" alt="" coords="481,273,652,315"/>
+<area shape="rect" id="node5" href="$_config_scene_8cpp.html" title="ConfigSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="791,363,979,404"/>
 <area shape="rect" id="node10" href="$_system_looper_8cpp.html" title="SystemLooperクラスのメンバ類の定義を行うCPPファイル" alt="" coords="366,452,565,493"/>
 <area shape="rect" id="node8" href="$main_8cpp.html" title="プロジェクトのメイン関数が定義されているCPPファイル" alt="" coords="5,541,171,583"/>
 <area shape="rect" id="node9" href="$_system_owner_8cpp.html" title="SystemOwnerクラスのメンバ類の定義を行うCPPファイル" alt="" coords="195,541,392,583"/>
-<area shape="rect" id="node12" href="$_game_scene_8cpp.html" title="GameSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1003,363,1189,404"/>
+<area shape="rect" id="node12" href="$_game_scene_8cpp.html" title="GameSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1092,363,1279,404"/>
 <area shape="rect" id="node14" href="$_start_scene_8cpp.html" title="StartSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="169,363,349,404"/>
-<area shape="rect" id="node16" href="$_menu_scene_8cpp.html" title="MenuSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="795,363,979,404"/>
-<area shape="rect" id="node18" href="$_select_window_8cpp.html" title="SelectWindowクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1095,273,1294,315"/>
-<area shape="rect" id="node22" href="$_player_8cpp.html" title="Playerクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="960,184,1125,225"/>
+<area shape="rect" id="node16" href="$_menu_scene_8cpp.html" title="MenuSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="583,363,767,404"/>
+<area shape="rect" id="node18" href="$_select_window_8cpp.html" title="SelectWindowクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="875,273,1074,315"/>
+<area shape="rect" id="node20" href="$_animation_8cpp.html" title="Animationクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1187,184,1360,225"/>
+<area shape="rect" id="node22" href="$_player_8cpp.html" title="Playerクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="1296,273,1461,315"/>
 </map>

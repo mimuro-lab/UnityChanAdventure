@@ -1,7 +1,8 @@
 <map id="C:/Users/mimur/Desktop/NewGame/Animation.cpp" name="C:/Users/mimur/Desktop/NewGame/Animation.cpp">
-<area shape="rect" id="node1" title="Animationクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="37,5,211,47"/>
-<area shape="rect" id="node2" href="$_animation_8h.html" title="ImageDrawクラスが定義されているヘッダファイル" alt="" coords="79,95,169,121"/>
+<area shape="rect" id="node1" title="Animationクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="77,5,251,47"/>
+<area shape="rect" id="node2" href="$_animation_8h.html" title="ImageDrawクラスが定義されているヘッダファイル" alt="" coords="119,95,209,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,72,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="96,169,152,196"/>
 <area shape="rect" id="node5" title=" " alt="" coords="177,169,231,196"/>
+<area shape="rect" id="node6" href="$_define_8h.html" title="いろいろな定義をまとまる為のヘッダファイル" alt="" coords="256,169,325,196"/>
 </map>

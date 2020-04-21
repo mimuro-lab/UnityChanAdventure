@@ -44,8 +44,8 @@ class Player :
 	//! アニメーションを切り替える関数。
 	std::shared_ptr<Animation> switchingAnimation(playerAction next);
 
-	//! コントローラの入力などに応じてステータスを更新する。
-	playerAction updateStatus();
+	//! コントローラの入力などに応じた次のアクションを取得する。
+	playerAction getNextAction();
 public:
 
 	Player() : 
