@@ -24,6 +24,12 @@
 class Player :
 	public Task
 {
+
+	//! 歩く速度
+	char speed_walk = 2;
+	//! 走る速度
+	char speed_run = 4;
+
 	//! プレイヤーオブジェクトの行動の分類。
 	enum playerAction {
 		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Run, Walk, _end
@@ -46,14 +52,21 @@ class Player :
 
 	//! コントローラの入力などに応じた次のアクションを取得する。
 	playerAction getNextAction();
+
+	//! プレイヤーオブジェクトのStatusの更新を行う。
+	Define::Status updateStatus(Define::Status _nowStatus);
 public:
 
 	Player() : 
 		IsAction(Idle)
 	{
 		// 初期情報の設定。
+		/*
 		playerStatus._x = Define::WIN_W / 2;
 		playerStatus._y = Define::WIN_H / 2;
+		*/
+		playerStatus._x = 200;
+		playerStatus._y = 100;
 		playerStatus.directRight = true;
 
 		// IsAction_canSwitchinの初期化。 Idle, Walk, Runの状態のときは切り替え可能の状態。

@@ -15,6 +15,9 @@
 */
 void Player::update()
 {
+	// Statusの更新処理を行う。
+	playerStatus = updateStatus(playerStatus);
+	
 	// アニメーションの下処理を行う。
 	animation->update(playerStatus);
 
@@ -50,14 +53,53 @@ void Player::update()
 			return;
 		}
 	}
-			
-
-	
 }
 
 void Player::draw()
 {
 	animation->draw();
+}
+
+/*!
+
+*/
+
+Define::Status Player::updateStatus(Define::Status _nowStatus)
+{
+	Define::Status _nextStatus = _nowStatus;
+
+	switch (IsAction) {
+	case Brake:
+		break;
+	case Crouch:
+		break;
+	case Damage:
+		break;
+	case Idle:
+		break;
+	case Jump_Fall:
+		break;
+	case Jump_Landing:
+		break;
+	case Jump_MidAir:
+		break;
+	case Jump_Up:
+		break;
+	case Run:
+		if (playerStatus.directRight)
+			_nextStatus._x += speed_run;
+		else
+			_nextStatus._x -= speed_run;
+		break;
+	case Walk:
+		if (playerStatus.directRight)
+			_nextStatus._x += speed_walk;
+		else
+			_nextStatus._x -= speed_walk;
+		break;
+	}
+
+	return _nextStatus;
 }
 
 /*!
@@ -67,7 +109,6 @@ void Player::draw()
 */
 Player::playerAction Player::getNextAction()
 {
-
 	// Brake
 	if (IsAction == Run) {
 		// R

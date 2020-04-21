@@ -83,6 +83,9 @@
     <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionDetect.cpp">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -143,6 +146,9 @@
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetect.h">
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
   </ItemGroup>

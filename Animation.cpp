@@ -43,5 +43,5 @@ void Animation::draw() const
 	if (IsEnd && !IsEndDrawing)
 		return;
 		
-	DrawRotaGraph2(status._x, status._y, status._x, status._y, 1.0, 0, NowDrawingImageHandle, true, !status.directRight);
+	DrawRotaGraph(status._x,status._y, 1.0, 0, NowDrawingImageHandle, true, !status.directRight);
 }
