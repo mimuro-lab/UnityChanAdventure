@@ -10,6 +10,12 @@
 #include "Singleton.h"
 #include <array>
 
+/*!
+@class Gamepad
+@brief ゲームコントローラ（PS3）にアクセスし、状態を入力方向のみで管理するクラス。
+@date 2020/04/21/0:44
+@author mimuro
+*/
 class Gamepad
 {
 	//! ゲームパッドのキー総数

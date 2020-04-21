@@ -1,4 +1,4 @@
 <map id="Gamepad" name="Gamepad">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node1" title="ゲームコントローラ（PS3）にアクセスし、状態を入力方向のみで管理するクラス。" alt="" coords="5,5,84,32"/>
 <area shape="rect" id="node2" href="$class_controller.html" title="ユーザからの入力情報を総括するクラス。" alt="" coords="6,80,83,107"/>
 </map>
