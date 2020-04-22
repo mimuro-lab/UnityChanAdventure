@@ -44,4 +44,14 @@ public:
 		int _y;
 		bool directRight = true;
 	};
+	
+	//! ステージのブロック一つ一つのステータス
+	struct BlockCell {
+		enum cellStatus {
+			none, block,
+		};
+		int x1, y1, x2, y2;
+		cellStatus _status;
+	};
+
 };

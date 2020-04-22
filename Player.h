@@ -7,12 +7,13 @@
 */
 
 #pragma once
-#include <DxLib.h>
-#include "Task.h"
+#include <DxLib.h>s
 #include "Define.h"
 #include "imagePath.h"
 #include "Controller.h"
 #include "Animation.h"
+#include "CollisionDetect.h"
+#include "Stage.h"
 #include <memory>
 
 /*!
@@ -21,8 +22,7 @@
 @date 2020/04/21/12:28
 @author mimuro
 */
-class Player :
-	public Task
+class Player
 {
 
 	//! 歩く速度
@@ -47,6 +47,9 @@ class Player :
 	//! アニメーションの処理をまとめて行うオブジェクト。
 	std::shared_ptr<Animation> animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
+	//! プレイヤーオブジェクトの当たり判定処理をまとめて行うオブジェクト。
+	std::shared_ptr<CollisionDetect> collision;
+
 	//! アニメーションを切り替える関数。
 	std::shared_ptr<Animation> switchingAnimation(playerAction next);
 
@@ -54,32 +57,31 @@ class Player :
 	playerAction getNextAction();
 
 	//! プレイヤーオブジェクトのStatusの更新を行う。
-	Define::Status updateStatus(Define::Status _nowStatus);
+	Define::Status updateStatus(Define::Status _nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 public:
 
-	Player() : 
+	Player(std::shared_ptr<Stage> _stage) : 
 		IsAction(Idle)
 	{
 		// 初期情報の設定。
-		/*
 		playerStatus._x = Define::WIN_W / 2;
 		playerStatus._y = Define::WIN_H / 2;
-		*/
-		playerStatus._x = 200;
-		playerStatus._y = 100;
+
 		playerStatus.directRight = true;
 
 		// IsAction_canSwitchinの初期化。 Idle, Walk, Runの状態のときは切り替え可能の状態。
 		IsAction_canSwitching = std::vector<bool>(_end, false);
 		IsAction_canSwitching[Idle] = IsAction_canSwitching[Walk] = IsAction_canSwitching[Run] = true;
 
+		collision = std::make_shared<CollisionDetect>(_stage);
+
 	};
 
 	~Player() = default;
 
 	//! Playerオブジェクトの前処理全般を行う関数。
-	void update() override;
+	void update(std::shared_ptr<Stage> _stage);
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
-	void draw() override;
+	void draw();
 };

@@ -13,10 +13,13 @@
 @date 2020/04/21/12:36
 @author mimuro
 */
-void Player::update()
+void Player::update(std::shared_ptr<Stage> _stage)
 {
+
+	collision->update(playerStatus, _stage);
+
 	// Statusの更新処理を行う。
-	playerStatus = updateStatus(playerStatus);
+	playerStatus = updateStatus(playerStatus, collision, _stage);
 	
 	// アニメーションの下処理を行う。
 	animation->update(playerStatus);
@@ -48,23 +51,25 @@ void Player::update()
 		// 同じアクションが入力され続けて、現在のアニメーションが終了したらとりあえずIdling状態にに設定
 		// 次のコマでの上記の処理"_next = getNextAction();"で再度その状態が更新されるので入力され続けられるアクションで更新。
 		if (animation->isEnd()) {
-
 			animation = switchingAnimation(Idle);
 			return;
 		}
 	}
+
+
 }
 
 void Player::draw()
 {
 	animation->draw();
+	collision->draw();
 }
 
 /*!
 
 */
 
-Define::Status Player::updateStatus(Define::Status _nowStatus)
+Define::Status Player::updateStatus(Define::Status _nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
 {
 	Define::Status _nextStatus = _nowStatus;
 
@@ -85,20 +90,41 @@ Define::Status Player::updateStatus(Define::Status _nowStatus)
 	case Jump_MidAir:
 		break;
 	case Jump_Up:
+
 		_nextStatus._y--;
 		break;
 	case Run:
-		if (playerStatus.directRight)
+		if (playerStatus.directRight) {
 			_nextStatus._x += speed_run;
-		else
+			collision->update(_nextStatus, _stage);
+			if (collision->getCollisionedSide().right)
+				return _nowStatus;
+			return _nextStatus;
+		}
+		else {
 			_nextStatus._x -= speed_run;
+			collision->update(_nextStatus, _stage);
+			if (collision->getCollisionedSide().left)
+				return _nowStatus;
+			return _nextStatus;
+		}
+
 		break;
 	case Walk:
-		if (playerStatus.directRight)
+		if (playerStatus.directRight) {
 			_nextStatus._x += speed_walk;
-		else
+			collision->update(_nextStatus, _stage);
+			if (collision->getCollisionedSide().right)
+				return _nowStatus;
+			return _nextStatus;
+		}
+		else {
 			_nextStatus._x -= speed_walk;
-		break;
+			collision->update(_nextStatus, _stage);
+			if (collision->getCollisionedSide().left)
+				return _nowStatus;
+			return _nextStatus;
+		}
 	}
 
 	return _nextStatus;

@@ -25,7 +25,7 @@ void GameScene::update()
 	stage->update();
 
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
-	player->update();
+	player->update(stage);
 }
 
 void GameScene::draw()
@@ -37,5 +37,4 @@ void GameScene::draw()
 	stage->draw();
 
 	SelectWindow::drawSelectWindow();
-
 }

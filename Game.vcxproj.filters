@@ -80,13 +80,13 @@
     <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionDetect.cpp">
-      <Filter>ソース ファイル\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
     <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDetect.cpp">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
   </ItemGroup>
@@ -148,13 +148,13 @@
     <ClInclude Include="Animation.h">
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionDetect.h">
-      <Filter>ソース ファイル\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="Stage.h">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetect.h">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
