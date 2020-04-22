@@ -21,6 +21,9 @@ void GameScene::update()
 	if(IsSelectWindow_Closed())
 		Controller::getIns()->update();
 	
+	// ステージ処理
+	stage->update();
+
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update();
 }
@@ -28,7 +31,10 @@ void GameScene::update()
 void GameScene::draw()
 {
 	DrawFormatString(10, 50, GetColor(255, 255, 255), "Game");
+	
 	player->draw();
+
+	stage->draw();
 
 	SelectWindow::drawSelectWindow();
 

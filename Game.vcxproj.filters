@@ -27,8 +27,8 @@
     <Filter Include="ソース ファイル\SelectWindow">
       <UniqueIdentifier>{4a507281-b7e3-48d3-8d44-2e719070a218}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Player">
-      <UniqueIdentifier>{3595bdeb-bd26-40ac-bb38-c3234a750dea}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\GameScene">
+      <UniqueIdentifier>{a2d5c696-7107-4cfb-8262-71218c4c41ed}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +74,6 @@
     <ClCompile Include="Gamepad.cpp">
       <Filter>ソース ファイル\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル\Player</Filter>
-    </ClCompile>
     <ClCompile Include="CalcUtils.cpp">
       <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
@@ -85,6 +82,12 @@
     </ClCompile>
     <ClCompile Include="CollisionDetect.cpp">
       <Filter>ソース ファイル\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,9 +142,6 @@
     <ClInclude Include="Task.h">
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ソース ファイル\Player</Filter>
-    </ClInclude>
     <ClInclude Include="CalcUtils.h">
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
@@ -150,6 +150,12 @@
     </ClInclude>
     <ClInclude Include="CollisionDetect.h">
       <Filter>ソース ファイル\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

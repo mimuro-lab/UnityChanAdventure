@@ -98,6 +98,7 @@
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="SystemLooper.cpp" />
     <ClCompile Include="SystemOwner.cpp" />
@@ -120,6 +121,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="SystemLooper.h" />
     <ClInclude Include="SystemOwner.h" />
