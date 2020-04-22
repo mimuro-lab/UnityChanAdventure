@@ -24,8 +24,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::start) == 1) {
 		push_start = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_H) >= 1 ||
-		Gamepad::get(Gamepad::ePad::start) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_H) > 1 ||
+		Gamepad::get(Gamepad::ePad::start) > 1) {
 		push_start = false;
 		on_start = true;
 	}
@@ -38,8 +38,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::select) == 1) {
 		push_select = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_G) >= 1 ||
-		Gamepad::get(Gamepad::ePad::select) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_G) > 1 ||
+		Gamepad::get(Gamepad::ePad::select) > 1) {
 		push_select = false;
 		on_select = true;
 	}
@@ -52,8 +52,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::up) == 1) {
 		push_up = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_E) >= 1 ||
-		Gamepad::get(Gamepad::ePad::up) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_E) > 1 ||
+		Gamepad::get(Gamepad::ePad::up) > 1) {
 		push_up = false;
 		on_up = true;
 	}else {
@@ -65,8 +65,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::down) == 1) {
 		push_down = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_D) >= 1 ||
-		Gamepad::get(Gamepad::ePad::down) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_D) > 1 ||
+		Gamepad::get(Gamepad::ePad::down) > 1) {
 		push_down = false;
 		on_down = true;
 	}
@@ -79,8 +79,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::right) == 1) {
 		push_right = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_F) >= 1 ||
-		Gamepad::get(Gamepad::ePad::right) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_F) > 1 ||
+		Gamepad::get(Gamepad::ePad::right) > 1) {
 		push_right = false;
 		on_right = true;
 	}else {
@@ -93,8 +93,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::left) == 1) {
 		push_left = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_S) >= 1 ||
-		Gamepad::get(Gamepad::ePad::left) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_S) > 1 ||
+		Gamepad::get(Gamepad::ePad::left) > 1) {
 		push_left = false;
 		on_left = true;
 	}else {
@@ -106,8 +106,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::maru) == 1) {
 		push_A = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_L) >= 1 ||
-		Gamepad::get(Gamepad::ePad::maru) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_L) > 1 ||
+		Gamepad::get(Gamepad::ePad::maru) > 1) {
 		push_A = false;
 		on_A = true;
 	}
@@ -120,8 +120,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::batu) == 1) {
 		push_B = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_K) >= 1 ||
-		Gamepad::get(Gamepad::ePad::batu) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_K) > 1 ||
+		Gamepad::get(Gamepad::ePad::batu) > 1) {
 		push_B = false;
 		on_B = true;
 	}
@@ -134,8 +134,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::sankaku) == 1) {
 		push_X = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_I) >= 1 ||
-		Gamepad::get(Gamepad::ePad::sankaku) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_I) > 1 ||
+		Gamepad::get(Gamepad::ePad::sankaku) > 1) {
 		push_X = false;
 		on_X = true;
 	}
@@ -148,8 +148,8 @@ void Controller::update()
 		Gamepad::get(Gamepad::ePad::sikaku) == 1) {
 		push_Y = true;
 	}
-	else if (Keyboard::getPressingCount(KEY_INPUT_J) >= 1 ||
-		Gamepad::get(Gamepad::ePad::sikaku) >= 1) {
+	else if (Keyboard::getPressingCount(KEY_INPUT_J) > 1 ||
+		Gamepad::get(Gamepad::ePad::sikaku) > 1) {
 		push_Y = false;
 		on_Y = true;
 	}

@@ -144,9 +144,21 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:aa86cada99b85850de6d5ed7acbda9c4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa86cada99b85850de6d5ed7acbda9c4b">getNextAction</a> ()</td></tr>
 <tr class="memdesc:aa86cada99b85850de6d5ed7acbda9c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">コントローラの入力などに応じた次のアクションを取得する。  <a href="class_player.html#aa86cada99b85850de6d5ed7acbda9c4b">[詳解]</a><br /></td></tr>
 <tr class="separator:aa86cada99b85850de6d5ed7acbda9c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4f282e8085824785469517846ff4df"><td class="memItemLeft" align="right" valign="top"><a id="a8e4f282e8085824785469517846ff4df"></a>
+<a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8e4f282e8085824785469517846ff4df">updateStatus</a> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus)</td></tr>
+<tr class="memdesc:a8e4f282e8085824785469517846ff4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトのStatusの更新を行う。 <br /></td></tr>
+<tr class="separator:a8e4f282e8085824785469517846ff4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
+<tr class="memitem:a9021a6b50ed269644ea9d74a27a6d060"><td class="memItemLeft" align="right" valign="top"><a id="a9021a6b50ed269644ea9d74a27a6d060"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9021a6b50ed269644ea9d74a27a6d060">speed_walk</a> = 2</td></tr>
+<tr class="memdesc:a9021a6b50ed269644ea9d74a27a6d060"><td class="mdescLeft">&#160;</td><td class="mdescRight">歩く速度 <br /></td></tr>
+<tr class="separator:a9021a6b50ed269644ea9d74a27a6d060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8395e0102227723919bfe8fb31177722"><td class="memItemLeft" align="right" valign="top"><a id="a8395e0102227723919bfe8fb31177722"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8395e0102227723919bfe8fb31177722">speed_run</a> = 4</td></tr>
+<tr class="memdesc:a8395e0102227723919bfe8fb31177722"><td class="mdescLeft">&#160;</td><td class="mdescRight">走る速度 <br /></td></tr>
+<tr class="separator:a8395e0102227723919bfe8fb31177722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab116b0f35f9d7398d5e280db75a6f95a"><td class="memItemLeft" align="right" valign="top"><a id="ab116b0f35f9d7398d5e280db75a6f95a"></a>
 <a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab116b0f35f9d7398d5e280db75a6f95a">IsAction</a></td></tr>
 <tr class="memdesc:ab116b0f35f9d7398d5e280db75a6f95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの現在の状態を管理。 <br /></td></tr>
@@ -256,8 +268,6 @@ std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;
 <p>プレイヤーオブジェクトの座標更新、アニメーションの処理などを行う。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/21/12:36 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
-<p>アニメーションの下処理を行う。</p>
-<p>次のアクションを現在の条件によって選択していく。</p>
 
 <p><a class="el" href="class_task.html#a552c8996b9db6be1ae519b9cdbdfaeca">Task</a>を実装しています。</p>
 

@@ -19,11 +19,17 @@
 */
 class SelectWindow
 {
+	//! ひとつ前のコマのセレクトウィンドウの状態。ウィンドウの立下りを検知するための変数。
+	bool _preIsSelected = false;
+
 	//! シーン変更のためのコールバック。SystemLooperのchangeScene関数を用いるために定義。
 	std::shared_ptr<ISceneChanger> changerInSelectWindow;
 
 	//! セレクトボタンが押されたかを保持する。以前の状態を保持する変数（イメージはフリップフロップ回路）
 	bool _IsSelected = false;
+
+	//! セレクトウィンドウが閉じられた瞬間を察知する。セレクトウィンドウが閉じた瞬間のみコントローラの更新が必要。
+	bool _IsClosed = false;
 
 	//! ひとつ前のシーンに戻るかを選択するための変数。
 	bool isReturn = false;
@@ -43,5 +49,8 @@ public:
 	void drawSelectWindow() const;
 
 	//! 現在セレクトウィンドウが有効になっているかどうかを確認するための関数。
-	bool const IsSelected() const { return _IsSelected; };
+	bool const IsSelected() const { return _IsSelected; }
+
+	//! セレクトウィンドウの立下りを確認するための関数。
+	bool const IsSelectWindow_Closed() const { return _IsClosed; }
 };

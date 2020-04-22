@@ -10,12 +10,17 @@
 
 void GameScene::update()
 {
-	counterUpdate();
+	
 	ValidSelectWindow();
+	counterUpdate();
 
 	if (IsSelected())
 		return;	
-
+	
+	// セレクトウィンドウが閉じた瞬間のみコントローラの更新を行う。この瞬間はコントローラのpush（押された瞬間の状態）は無視したい。
+	if(IsSelectWindow_Closed())
+		Controller::getIns()->update();
+	
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update();
 }

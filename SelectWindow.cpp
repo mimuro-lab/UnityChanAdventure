@@ -17,6 +17,8 @@
 const bool SelectWindow::updateSelectWindow()
 {
 
+	_preIsSelected = _IsSelected;
+
 	if (Controller::getIns()->getPushSelect()) {
 		_IsSelected = !_IsSelected;
 	}
@@ -37,6 +39,11 @@ const bool SelectWindow::updateSelectWindow()
 			}
 		}
 	}
+
+	if (_preIsSelected && !_IsSelected)
+		_IsClosed = true;
+	else 
+		_IsClosed = false;
 
 	return true;
 }

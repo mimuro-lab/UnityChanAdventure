@@ -1,3 +1,6 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$class_system_owner.html" title="初期化処理や終了処理全般を担うクラス" alt="" coords="5,5,109,32"/>
+<area shape="rect" id="node1" href="$class_gamepad.html" title="ゲームコントローラ（PS3）にアクセスし、状態を入力方向のみで管理するクラス。" alt="" coords="43,5,122,32"/>
+<area shape="rect" id="node2" href="$class_controller.html" title="ユーザからの入力情報を総括するクラス。" alt="" coords="208,56,285,83"/>
+<area shape="rect" id="node3" href="$class_keyboard.html" title="キーボードにアクセスし、キーボードの状態を入力方向のみで管理するクラス。" alt="" coords="44,56,121,83"/>
+<area shape="rect" id="node4" href="$class_singleton.html" title=" " alt="" coords="5,107,160,133"/>
 </map>

@@ -86,9 +86,9 @@ Animation 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a7b3d527639d5ab1a4fc6aa1fa4d49554"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation.html#a7b3d527639d5ab1a4fc6aa1fa4d49554">Animation</a> (std::vector&lt; int &gt; _imageHandles, <a class="el" href="struct_define_1_1_status.html">Define::Status</a> _status, char _DrawingSteps=6, char IndexEnd=99)</td></tr>
-<tr class="memdesc:a7b3d527639d5ab1a4fc6aa1fa4d49554"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションさせたい画像群と初期座標は必ず受け取る。それ以外は任意。  <a href="class_animation.html#a7b3d527639d5ab1a4fc6aa1fa4d49554">[詳解]</a><br /></td></tr>
-<tr class="separator:a7b3d527639d5ab1a4fc6aa1fa4d49554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af938e370e25c78b21a9d4e452889ac2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation.html#af938e370e25c78b21a9d4e452889ac2c">Animation</a> (std::vector&lt; int &gt; _imageHandles, <a class="el" href="struct_define_1_1_status.html">Define::Status</a> _status, char _DrawingSteps=6, char IndexEnd=99, bool _IsEndDrawing=false)</td></tr>
+<tr class="memdesc:af938e370e25c78b21a9d4e452889ac2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションさせたい画像群と初期座標は必ず受け取る。それ以外は任意。  <a href="class_animation.html#af938e370e25c78b21a9d4e452889ac2c">[詳解]</a><br /></td></tr>
+<tr class="separator:af938e370e25c78b21a9d4e452889ac2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaca7eca68d408aa739d92b6bdc57889d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation.html#aaca7eca68d408aa739d92b6bdc57889d">update</a> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> _status)</td></tr>
 <tr class="memdesc:aaca7eca68d408aa739d92b6bdc57889d"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理を担う関数。  <a href="class_animation.html#aaca7eca68d408aa739d92b6bdc57889d">[詳解]</a><br /></td></tr>
 <tr class="separator:aaca7eca68d408aa739d92b6bdc57889d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,6 +130,10 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation.html#acd6a31e5462288eb765f8a4a849177c5">IsEnd</a> = false</td></tr>
 <tr class="memdesc:acd6a31e5462288eb765f8a4a849177c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションが終わったかどうか。 <br /></td></tr>
 <tr class="separator:acd6a31e5462288eb765f8a4a849177c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c8a3b9df6edff098536ba8198dc7c2"><td class="memItemLeft" align="right" valign="top"><a id="aa4c8a3b9df6edff098536ba8198dc7c2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation.html#aa4c8a3b9df6edff098536ba8198dc7c2">IsEndDrawing</a> = false</td></tr>
+<tr class="memdesc:aa4c8a3b9df6edff098536ba8198dc7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーション終了時に画像を表示し続けるか？ <br /></td></tr>
+<tr class="separator:aa4c8a3b9df6edff098536ba8198dc7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83c0c506471fe6f54c9c7ae1f00d1eb9"><td class="memItemLeft" align="right" valign="top"><a id="a83c0c506471fe6f54c9c7ae1f00d1eb9"></a>
 <a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation.html#a83c0c506471fe6f54c9c7ae1f00d1eb9">status</a></td></tr>
 <tr class="memdesc:a83c0c506471fe6f54c9c7ae1f00d1eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションさせる為のステータス。 <br /></td></tr>
@@ -140,8 +144,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="section date"><dt>日付</dt><dd>2020/04/18/23:13 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a7b3d527639d5ab1a4fc6aa1fa4d49554"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b3d527639d5ab1a4fc6aa1fa4d49554">&#9670;&nbsp;</a></span>Animation()</h2>
+<a id="af938e370e25c78b21a9d4e452889ac2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af938e370e25c78b21a9d4e452889ac2c">&#9670;&nbsp;</a></span>Animation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +175,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>IndexEnd</em> = <code>99</code>&#160;</td>
+          <td class="paramname"><em>IndexEnd</em> = <code>99</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_IsEndDrawing</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

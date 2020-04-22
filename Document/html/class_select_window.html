@@ -103,6 +103,10 @@ SelectWindow の継承関係図</div>
 const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a6193dbd3c41f21450a565fc8d767802d">IsSelected</a> () const</td></tr>
 <tr class="memdesc:a6193dbd3c41f21450a565fc8d767802d"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在セレクトウィンドウが有効になっているかどうかを確認するための関数。 <br /></td></tr>
 <tr class="separator:a6193dbd3c41f21450a565fc8d767802d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4ad09cc0e693de353de6327461f075"><td class="memItemLeft" align="right" valign="top"><a id="a5f4ad09cc0e693de353de6327461f075"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a5f4ad09cc0e693de353de6327461f075">IsSelectWindow_Closed</a> () const</td></tr>
+<tr class="memdesc:a5f4ad09cc0e693de353de6327461f075"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウの立下りを確認するための関数。 <br /></td></tr>
+<tr class="separator:a5f4ad09cc0e693de353de6327461f075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
@@ -112,6 +116,10 @@ const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
+<tr class="memitem:ac332554673d956dd7dac69417da7b046"><td class="memItemLeft" align="right" valign="top"><a id="ac332554673d956dd7dac69417da7b046"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#ac332554673d956dd7dac69417da7b046">_preIsSelected</a> = false</td></tr>
+<tr class="memdesc:ac332554673d956dd7dac69417da7b046"><td class="mdescLeft">&#160;</td><td class="mdescRight">ひとつ前のコマのセレクトウィンドウの状態。ウィンドウの立下りを検知するための変数。 <br /></td></tr>
+<tr class="separator:ac332554673d956dd7dac69417da7b046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19bee20cead39fd40b8f19635e5bb9d"><td class="memItemLeft" align="right" valign="top"><a id="ab19bee20cead39fd40b8f19635e5bb9d"></a>
 std::shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChanger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#ab19bee20cead39fd40b8f19635e5bb9d">changerInSelectWindow</a></td></tr>
 <tr class="memdesc:ab19bee20cead39fd40b8f19635e5bb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーン変更のためのコールバック。SystemLooperのchangeScene関数を用いるために定義。 <br /></td></tr>
@@ -120,6 +128,10 @@ std::shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChange
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a6ae7d3ab6297552250b7b12d77d34572">_IsSelected</a> = false</td></tr>
 <tr class="memdesc:a6ae7d3ab6297552250b7b12d77d34572"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトボタンが押されたかを保持する。以前の状態を保持する変数（イメージはフリップフロップ回路） <br /></td></tr>
 <tr class="separator:a6ae7d3ab6297552250b7b12d77d34572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045e557f20b422221c8eee0538d68cd8"><td class="memItemLeft" align="right" valign="top"><a id="a045e557f20b422221c8eee0538d68cd8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a045e557f20b422221c8eee0538d68cd8">_IsClosed</a> = false</td></tr>
+<tr class="memdesc:a045e557f20b422221c8eee0538d68cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">セレクトウィンドウが閉じられた瞬間を察知する。セレクトウィンドウが閉じた瞬間のみコントローラの更新が必要。 <br /></td></tr>
+<tr class="separator:a045e557f20b422221c8eee0538d68cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ecf3c1defd0f92316af39e775f4eb08"><td class="memItemLeft" align="right" valign="top"><a id="a5ecf3c1defd0f92316af39e775f4eb08"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_select_window.html#a5ecf3c1defd0f92316af39e775f4eb08">isReturn</a> = false</td></tr>
 <tr class="memdesc:a5ecf3c1defd0f92316af39e775f4eb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">ひとつ前のシーンに戻るかを選択するための変数。 <br /></td></tr>

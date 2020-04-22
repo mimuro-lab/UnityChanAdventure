@@ -72,6 +72,7 @@ Define::Status Player::updateStatus(Define::Status _nowStatus)
 	case Brake:
 		break;
 	case Crouch:
+		_nextStatus._y++;
 		break;
 	case Damage:
 		break;
@@ -84,6 +85,7 @@ Define::Status Player::updateStatus(Define::Status _nowStatus)
 	case Jump_MidAir:
 		break;
 	case Jump_Up:
+		_nextStatus._y--;
 		break;
 	case Run:
 		if (playerStatus.directRight)
@@ -120,7 +122,7 @@ Player::playerAction Player::getNextAction()
 	}
 
 	// Jump
-	if (Controller::getIns()->getOn_A()) {
+	if (Controller::getIns()->getPush_A()) {
 		return Jump_Up;
 	}
 
