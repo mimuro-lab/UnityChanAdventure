@@ -16,6 +16,7 @@
 */
 void Animation::update(Define::Status _status)
 {
+
 	if (NowDraiwngImageIndex >= imageHandles.size()|| NowDraiwngImageIndex > DrawingIndexEnd) {
 		IsEnd = true;
 		return;
@@ -30,6 +31,13 @@ void Animation::update(Define::Status _status)
 	
 	if(DrawingSteps_counter == 0)
 		NowDraiwngImageIndex++;
+}
+
+void Animation::refreshing()
+{
+	NowDraiwngImageIndex = 0;
+	IsEnd = false;
+	DrawingSteps_counter = 0;
 }
 
 /*!

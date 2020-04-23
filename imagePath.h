@@ -87,6 +87,8 @@ public:
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Jump_Fall_2.png"),
 	};
 
+	const vector<int> unityChan_Fall = unityChan_Jump_Fall;
+
 	const vector<int> unityChan_Jump_Landing = {
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Jump_Landing.png"),
 	};

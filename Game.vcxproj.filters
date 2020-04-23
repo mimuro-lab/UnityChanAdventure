@@ -89,6 +89,9 @@
     <ClCompile Include="CollisionDetect.cpp">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
+    <ClCompile Include="AnimationMove.cpp">
+      <Filter>ソース ファイル\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -156,6 +159,9 @@
     </ClInclude>
     <ClInclude Include="CollisionDetect.h">
       <Filter>ソース ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationMove.h">
+      <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

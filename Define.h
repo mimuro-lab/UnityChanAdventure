@@ -54,4 +54,9 @@ public:
 		cellStatus _status;
 	};
 
+	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。
+	enum rollAction_Basic {
+		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk, _end
+	};
+
 };

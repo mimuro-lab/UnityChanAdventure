@@ -61,6 +61,8 @@ public:
 	void draw() const;
 	//! アニメーションが終わったかどうかを取得する。trueなら終了した。
 	const bool isEnd() const { return IsEnd; };
+	//! アニメーションを元に戻す関数。
+	void refreshing();
 
 };
 

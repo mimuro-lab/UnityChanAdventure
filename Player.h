@@ -7,11 +7,12 @@
 */
 
 #pragma once
-#include <DxLib.h>s
+#include <DxLib.h>
 #include "Define.h"
 #include "imagePath.h"
 #include "Controller.h"
 #include "Animation.h"
+#include "AnimationMove.h"
 #include "CollisionDetect.h"
 #include "Stage.h"
 #include <memory>
@@ -29,11 +30,13 @@ class Player
 	char speed_walk = 2;
 	//! 走る速度
 	char speed_run = 4;
+	//! Jump_Upの速度
+	char jump_up = 3;
+	//! Jump_MidAirの速度
+	char jump_midAir = 1;
 
 	//! プレイヤーオブジェクトの行動の分類。
-	enum playerAction {
-		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Run, Walk, _end
-	};
+	typedef Define::rollAction_Basic playerAction;
 
 	//! プレイヤーオブジェクトの現在の状態を管理。
 	playerAction IsAction;
@@ -47,6 +50,9 @@ class Player
 	//! アニメーションの処理をまとめて行うオブジェクト。
 	std::shared_ptr<Animation> animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
+	//! アニメーション時のStatusの座標の更新をするオブジェクト。
+	std::shared_ptr<AnimationMove> animationMove;
+
 	//! プレイヤーオブジェクトの当たり判定処理をまとめて行うオブジェクト。
 	std::shared_ptr<CollisionDetect> collision;
 
@@ -54,14 +60,14 @@ class Player
 	std::shared_ptr<Animation> switchingAnimation(playerAction next);
 
 	//! コントローラの入力などに応じた次のアクションを取得する。
-	playerAction getNextAction();
+	playerAction getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation);
 
 	//! プレイヤーオブジェクトのStatusの更新を行う。
 	Define::Status updateStatus(Define::Status _nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 public:
 
 	Player(std::shared_ptr<Stage> _stage) : 
-		IsAction(Idle)
+		IsAction(playerAction::Idle)
 	{
 		// 初期情報の設定。
 		playerStatus._x = Define::WIN_W / 2;
@@ -69,9 +75,13 @@ public:
 
 		playerStatus.directRight = true;
 
-		// IsAction_canSwitchinの初期化。 Idle, Walk, Runの状態のときは切り替え可能の状態。
-		IsAction_canSwitching = std::vector<bool>(_end, false);
-		IsAction_canSwitching[Idle] = IsAction_canSwitching[Walk] = IsAction_canSwitching[Run] = true;
+		// IsAction_canSwitchinの初期化。 Idle, Walk, Run, Fallの状態のときは切り替え可能の状態。
+		IsAction_canSwitching = std::vector<bool>(playerAction::_end, false);
+		IsAction_canSwitching[playerAction::Idle] = IsAction_canSwitching[playerAction::Walk] = IsAction_canSwitching[playerAction::Run]
+		= IsAction_canSwitching[playerAction::Fall] 
+		= true;
+
+		animationMove = std::make_shared<AnimationMove>(speed_walk, speed_run, jump_up, jump_midAir);
 
 		collision = std::make_shared<CollisionDetect>(_stage);
 

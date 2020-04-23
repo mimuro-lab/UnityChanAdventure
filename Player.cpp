@@ -15,7 +15,7 @@
 */
 void Player::update(std::shared_ptr<Stage> _stage)
 {
-
+	// Collisionの更新を行う。
 	collision->update(playerStatus, _stage);
 
 	// Statusの更新処理を行う。
@@ -33,7 +33,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 		(!IsAction_canSwitching[IsAction] && animation->isEnd())) {
 
 		// _nextへ次のシーンを取得する。
-		_next = getNextAction();
+		_next = getNextAction(collision, animation);
 
 		// 現在のアクションと異なるアクションが次のアクションだったら、、、
 		if (IsAction != _next) {
@@ -45,13 +45,13 @@ void Player::update(std::shared_ptr<Stage> _stage)
 		
 		// 途中切り替えＮＧかつアニメーションが終了したら、さらに、同じアクションが入力され続けて、Crouch（しゃがむ）だったら、、、
 		// switchingAnimation()を実行せずに関数を終了。
-		if (IsAction == Crouch)
+		if (IsAction == playerAction::Crouch)
 			return;	
 		
-		// 同じアクションが入力され続けて、現在のアニメーションが終了したらとりあえずIdling状態にに設定
-		// 次のコマでの上記の処理"_next = getNextAction();"で再度その状態が更新されるので入力され続けられるアクションで更新。
+		// 同じアクションが入力され続けて、現在のアニメーションが終了したら現在のアニメーションをリフレッシュする。
+		// また、次のコマでの上記の処理"_next = getNextAction();"で再度その状態が更新される。
 		if (animation->isEnd()) {
-			animation = switchingAnimation(Idle);
+			animation->refreshing();
 			return;
 		}
 	}
@@ -74,57 +74,38 @@ Define::Status Player::updateStatus(Define::Status _nowStatus, std::shared_ptr<C
 	Define::Status _nextStatus = _nowStatus;
 
 	switch (IsAction) {
-	case Brake:
+	case playerAction::Brake:
+		_nextStatus = animationMove->updateBrake(_nowStatus, _collision, _stage);
 		break;
-	case Crouch:
-		_nextStatus._y++;
+	case playerAction::Crouch:
+		_nextStatus = animationMove->updateCrouch(_nowStatus, _collision, _stage);
 		break;
-	case Damage:
+	case playerAction::Damage:
+		_nextStatus = animationMove->updateDamage(_nowStatus, _collision, _stage);
 		break;
-	case Idle:
+	case playerAction::Idle:
+		_nextStatus = animationMove->updateIdle(_nowStatus, _collision, _stage);
 		break;
-	case Jump_Fall:
+	case playerAction::Jump_Fall:
+		_nextStatus = animationMove->updateJump_Fall(_nowStatus, _collision, _stage);
 		break;
-	case Jump_Landing:
+	case playerAction::Jump_Landing:
+		_nextStatus = animationMove->updateJump_Landing(_nowStatus, _collision, _stage);
 		break;
-	case Jump_MidAir:
+	case playerAction::Jump_MidAir:
+		_nextStatus = animationMove->updateJump_MidAir(_nowStatus, _collision, _stage);
 		break;
-	case Jump_Up:
-
-		_nextStatus._y--;
+	case playerAction::Jump_Up:
+		_nextStatus = animationMove->updateJump_Up(_nowStatus, _collision, _stage);
 		break;
-	case Run:
-		if (playerStatus.directRight) {
-			_nextStatus._x += speed_run;
-			collision->update(_nextStatus, _stage);
-			if (collision->getCollisionedSide().right)
-				return _nowStatus;
-			return _nextStatus;
-		}
-		else {
-			_nextStatus._x -= speed_run;
-			collision->update(_nextStatus, _stage);
-			if (collision->getCollisionedSide().left)
-				return _nowStatus;
-			return _nextStatus;
-		}
-
+	case playerAction::Fall:
+		_nextStatus = animationMove->updateFall(_nowStatus, _collision, _stage);
 		break;
-	case Walk:
-		if (playerStatus.directRight) {
-			_nextStatus._x += speed_walk;
-			collision->update(_nextStatus, _stage);
-			if (collision->getCollisionedSide().right)
-				return _nowStatus;
-			return _nextStatus;
-		}
-		else {
-			_nextStatus._x -= speed_walk;
-			collision->update(_nextStatus, _stage);
-			if (collision->getCollisionedSide().left)
-				return _nowStatus;
-			return _nextStatus;
-		}
+	case playerAction::Run:
+		_nextStatus = animationMove->updateRun(_nowStatus, _collision, _stage);
+		break;
+	case playerAction::Walk:
+		_nextStatus = animationMove->updateWalk(_nowStatus, _collision, _stage);
 	}
 
 	return _nextStatus;
@@ -135,54 +116,70 @@ Define::Status Player::updateStatus(Define::Status _nowStatus, std::shared_ptr<C
 @date 2020/04/21/18:30
 @author mimuro
 */
-Player::playerAction Player::getNextAction()
+Player::playerAction Player::getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation)
 {
+	// Jump_MidAir
+	if (IsAction == playerAction::Jump_Up && animation->isEnd()) {
+		return playerAction::Jump_MidAir;
+	}
+
+	// Jump_Landing
+	if (IsAction == playerAction::Fall && _collision->getCollisionedSide().bottom) {
+		return playerAction::Jump_Landing;
+	}
+
+	// Fall
+	if (!_collision->getCollisionedSide().bottom) {
+		return playerAction::Fall;
+	}
+
 	// Brake
-	if (IsAction == Run) {
+	if (IsAction == playerAction::Run) {
 		// R
 		if (playerStatus.directRight && !Controller::getIns()->getOnRight())
-			return Brake;
+			return playerAction::Brake;
 		// L
 		if (!playerStatus.directRight && !Controller::getIns()->getOnLeft()) 
-			return Brake;
+			return playerAction::Brake;
 	}
 
 	// Jump
 	if (Controller::getIns()->getPush_A()) {
-		return Jump_Up;
+		return playerAction::Jump_Up;
 	}
+
 
 	// Crouch
 	if (Controller::getIns()->getOnDown()) {
-		return Crouch;
+		return playerAction::Crouch;
 	}
 
 	// Run R
 	if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnRight()) {
 		playerStatus.directRight = true;
-		return Run;
+		return playerAction::Run;
 	}
 	
 	// Run L
 	if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnLeft()) {
 		playerStatus.directRight = false;
-		return Run;
+		return playerAction::Run;
 	}
 
 	// Walk R
 	if (Controller::getIns()->getOnRight()) {
 		playerStatus.directRight = true;
-		return Walk;
+		return playerAction::Walk;
 	}
 
 	// Walk L
 	if (Controller::getIns()->getOnLeft()) {
 		playerStatus.directRight = false;
-		return Walk;
+		return playerAction::Walk;
 	}
 
 	// 何も入力されなければIdling状態にする。
-	return Idle;
+	return playerAction::Idle;
 
 }
 
@@ -193,47 +190,55 @@ Player::playerAction Player::getNextAction()
 */
 std::shared_ptr<Animation> Player::switchingAnimation(playerAction next)
 {
+
 	switch (next) {
-	case Brake:
-		IsAction = Brake;
+	case playerAction::Brake:
+		IsAction = playerAction::Brake;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Brake, playerStatus);
 		break;
-	case Crouch:
-		IsAction = Crouch;
+	case playerAction::Crouch:
+		IsAction = playerAction::Crouch;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, playerStatus, 6, 99, true);
 		break;
-	case Damage:
-		IsAction = Damage;
+	case playerAction::Damage:
+		IsAction = playerAction::Damage;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Damage, playerStatus);
 		break;
-	case Idle:
-		IsAction = Idle;
+	case playerAction::Idle:
+		IsAction = playerAction::Idle;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 		break;
-	case Jump_Fall:
-		IsAction = Jump_Fall;
+	case playerAction::Jump_Fall:
+		IsAction = playerAction::Jump_Fall;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Fall, playerStatus);
 		break;
-	case Jump_Landing:
-		IsAction = Jump_Landing;
+	case playerAction::Jump_Landing:
+		IsAction = playerAction::Jump_Landing;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Landing, playerStatus);
 		break;
-	case Jump_MidAir:
-		IsAction = Jump_MidAir;
+	case playerAction::Jump_MidAir:
+		IsAction = playerAction::Jump_MidAir;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, playerStatus);
 		break;
-	case Jump_Up:
-		IsAction = Jump_Up;
+	case playerAction::Jump_Up:
+		IsAction = playerAction::Jump_Up;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Up, playerStatus);
 		break;
-	case Run:
-		IsAction = Run;
+	case playerAction::Fall:
+		IsAction = playerAction::Fall;
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Fall, playerStatus);
+		break;
+	case playerAction::Run:
+		IsAction = playerAction::Run;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Run, playerStatus);
 		break;
-	case Walk:
-		IsAction = Walk;
+	case playerAction::Walk:
+		IsAction = playerAction::Walk;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Walk, playerStatus);
 		break;
 	}
+
+	// エラー処理、何も選択されなかったら取り合えずアイドリング状態にする。
+	return make_shared <Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 }
 

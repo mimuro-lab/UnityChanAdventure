@@ -15,7 +15,9 @@ Stage::Stage()
 			_stage[x][y].y2 = _stage[x][y].y1 + blockHeight;
 		}
 	}
-	_stage[5][5]._status = Define::BlockCell::cellStatus::block;
+	for (int x = 0; x < blockXNum; x++)
+		_stage[x][15]._status = Define::BlockCell::cellStatus::block;
+	_stage[5][14]._status = Define::BlockCell::cellStatus::block;
 }
 
 void Stage::update()
