@@ -28,11 +28,10 @@ public:
 	void update();
 	void draw();
 
-	const std::vector<std::vector<Define::BlockCell>> const getStage() { return _stage; }
-
-	const char const getPointLeftUpX() { return pointLeftUp_x; }
-	const char const getPointLeftUpY() { return pointLeftUp_y; }
-	const char const getBlockWidth() { return blockWidth; }
-	const char const getBlockHeight() { return blockHeight; }
+	const std::vector<std::vector<Define::BlockCell>> getStage() { return _stage; }
+	const char getPointLeftUpX() { return pointLeftUp_x; }
+	const char getPointLeftUpY() { return pointLeftUp_y; }
+	const char getBlockWidth() { return blockWidth; }
+	const char getBlockHeight() { return blockHeight; }
 
 };

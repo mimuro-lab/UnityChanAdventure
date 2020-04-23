@@ -114,7 +114,9 @@ bool CollisionDetect::IsDetectedStage(int x, int y)
 		return true;
 
 	// もし、x, yにあるステージの要素がblockだったら衝突と判定。
-	if (_stage->getStage()[_CellXNum][_CellYNum]._status == Define::BlockCell::cellStatus::block) {
+	if (_stage->getStage()[_CellXNum][_CellYNum]._status 
+		== 
+		Define::BlockCell::cellStatus::block) {
 		return true;
 	}
 

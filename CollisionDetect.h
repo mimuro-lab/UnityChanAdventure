@@ -61,6 +61,6 @@ public:
 	void update(Define::Status _nowStatus, std::shared_ptr<Stage> _stage);
 	void draw();
 
-	const Collision const getCollisionedSide() { return collisionedSide; }
+	const Collision getCollisionedSide() { return collisionedSide; }
 
 };

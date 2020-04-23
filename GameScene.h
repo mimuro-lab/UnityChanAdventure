@@ -27,14 +27,19 @@ class GameScene :
 	private SelectWindow
 {
 	//! 背景のStageの処理を行うオブジェクト
-	std::shared_ptr<Stage> stage = std::make_shared<Stage>();
+	std::shared_ptr<Stage> stage;
 
 	//! Playerの処理をになうオブジェクト
-	std::shared_ptr<Player> player = std::make_shared<Player>(stage);
+	std::shared_ptr<Player> player;
 
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
-	GameScene(shared_ptr<ISceneChanger> _changer) : AbstractScene(_changer), SelectWindow(_changer) {};
+	GameScene(shared_ptr<ISceneChanger> _changer) : 
+		AbstractScene(_changer), 
+		SelectWindow(_changer), 
+		stage(std::make_shared<Stage>()), 
+		player(std::make_shared<Player>(stage)) 
+	{};
 	~GameScene() = default;
 
 	//! ゲーム画面に必要な前処理を行う関数。

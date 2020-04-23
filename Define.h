@@ -40,8 +40,8 @@ public:
 
 	//! プレイヤーや敵のステータス管理の構造体
 	struct Status {
-		int _x;
-		int _y;
+		int _x = 0;
+		int _y = 0;
 		bool directRight = true;
 	};
 	
@@ -55,7 +55,7 @@ public:
 	};
 
 	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。
-	enum rollAction_Basic {
+	enum class rollAction_Basic {
 		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk, _end
 	};
 

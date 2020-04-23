@@ -35,13 +35,10 @@ class Player
 	//! Jump_MidAirの速度
 	char jump_midAir = 1;
 
-	//! プレイヤーオブジェクトの行動の分類。
-	typedef Define::rollAction_Basic playerAction;
-
 	//! プレイヤーオブジェクトの現在の状態を管理。
-	playerAction IsAction;
+	Define::rollAction_Basic IsAction;
 
-	//! アクション中に他のアクションに切り替え可能かどうか？（添え字がplayerActionに対応）
+	//! アクション中に他のアクションに切り替え可能かどうか？（添え字がDefine::rollAction_Basicに対応）
 	std::vector<bool> IsAction_canSwitching;
 
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
@@ -57,17 +54,17 @@ class Player
 	std::shared_ptr<CollisionDetect> collision;
 
 	//! アニメーションを切り替える関数。
-	std::shared_ptr<Animation> switchingAnimation(playerAction next);
+	std::shared_ptr<Animation> switchingAnimation(Define::rollAction_Basic next);
 
 	//! コントローラの入力などに応じた次のアクションを取得する。
-	playerAction getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation);
+	Define::rollAction_Basic getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation);
 
 	//! プレイヤーオブジェクトのStatusの更新を行う。
 	Define::Status updateStatus(Define::Status _nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 public:
 
 	Player(std::shared_ptr<Stage> _stage) : 
-		IsAction(playerAction::Idle)
+		IsAction(Define::rollAction_Basic::Idle)
 	{
 		// 初期情報の設定。
 		playerStatus._x = Define::WIN_W / 2;
@@ -76,10 +73,13 @@ public:
 		playerStatus.directRight = true;
 
 		// IsAction_canSwitchinの初期化。 Idle, Walk, Run, Fallの状態のときは切り替え可能の状態。
-		IsAction_canSwitching = std::vector<bool>(playerAction::_end, false);
-		IsAction_canSwitching[playerAction::Idle] = IsAction_canSwitching[playerAction::Walk] = IsAction_canSwitching[playerAction::Run]
-		= IsAction_canSwitching[playerAction::Fall] 
-		= true;
+		IsAction_canSwitching = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
+
+		IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Idle)]
+			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Walk)]
+			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Run)]
+			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Fall)]
+			= true;
 
 		animationMove = std::make_shared<AnimationMove>(speed_walk, speed_run, jump_up, jump_midAir);
 

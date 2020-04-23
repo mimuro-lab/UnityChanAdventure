@@ -23,7 +23,7 @@ class Animation
 	//! アニメーションさせたい画像群の画像ハンドルを格納する変数。
 	std::vector<int> imageHandles;
 	//! update(x, y)を呼び出した時点の画像インデックス。０から始まる。
-	char NowDraiwngImageIndex = 0;
+	unsigned char NowDraiwngImageIndex = 0;
 	//! update(x, y)を呼び出した時点の画像ハンドル。
 	int NowDrawingImageHandle = 0;
 	//! アニメーションを途中で終了した時に終わりのインデックスをこれに設定する。設定したインデックスは表示されない。２とした場合、０・１番目のみ表示。
