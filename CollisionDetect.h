@@ -60,8 +60,18 @@ public:
 	~CollisionDetect() = default;
 
 	void update(Define::Status _nowStatus, std::shared_ptr<Stage> _stage);
+
+	enum class toShiftDirect{
+		right, left, head, bottom,
+	};
+	unsigned char _calcRange = 0;
+	bool calcShitingCollisionedSide(toShiftDirect _to, unsigned char _range);
+
 	void draw();
 
 	const Collision getCollisionedSide() { return collisionedSide; }
+
+	const char getToBottom() { return toBottom; }
+	const char getToHead() { return toHead; }
 
 };

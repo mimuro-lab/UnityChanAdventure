@@ -8,10 +8,10 @@
 */
 
 //!ウィンドウサイズ横
-const int   Define::WIN_W = 640;
+//const int   Define::WIN_W = 640;
 
 //!ウィンドウサイズ縦
-const int   Define::WIN_H = 640;
+//const int   Define::WIN_H = 640;
 
 //!円周率
-const float Define::PI = 3.141592654f;	
+//const float Define::PI = 3.141592654f;	

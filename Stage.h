@@ -17,12 +17,12 @@ private:
 	char blockXNum = 20;
 	char blockYNum = 20;
 
-	char blockWidth = 30;
-	char blockHeight = 30;
-
 public:
+	
+	unsigned char blockWidth;
+	unsigned char blockHeight;
 
-	Stage();
+	Stage(unsigned char blockWidth, unsigned char blockHeight);
 	~Stage() = default;
 
 	void update();
@@ -33,5 +33,9 @@ public:
 	const char getPointLeftUpY() { return pointLeftUp_y; }
 	const char getBlockWidth() { return blockWidth; }
 	const char getBlockHeight() { return blockHeight; }
+	const char getBlockXNum() { return blockXNum; }
+	const char getBlockYNum() { return blockYNum; }
+
+	const Define::BlockCell getBlockCell(int x, int y);
 
 };

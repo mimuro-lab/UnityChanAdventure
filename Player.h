@@ -31,9 +31,9 @@ class Player
 	//! 走る速度
 	char speed_run = 4;
 	//! Jump_Upの速度
-	char jump_up = 3;
+	char jump_up = 4;
 	//! Jump_MidAirの速度
-	char jump_midAir = 1;
+	char jump_midAir = jump_up;
 
 	//! プレイヤーオブジェクトの現在の状態を管理。
 	Define::rollAction_Basic IsAction;

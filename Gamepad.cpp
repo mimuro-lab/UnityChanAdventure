@@ -41,7 +41,6 @@ void Gamepad::update()
             _pad[i] = 0;
         }
     }
-    printfDx("\n");
 }
 
 /*!

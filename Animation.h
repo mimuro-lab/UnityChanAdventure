@@ -64,5 +64,8 @@ public:
 	//! アニメーションを元に戻す関数。
 	void refreshing();
 
+	const char getDrawingSteps() { return DrawingSteps; }
+	const int getImagesSize() { return imageHandles.size(); }
+
 };
 

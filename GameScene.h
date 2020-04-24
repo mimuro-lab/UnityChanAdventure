@@ -37,7 +37,7 @@ public:
 	GameScene(shared_ptr<ISceneChanger> _changer) : 
 		AbstractScene(_changer), 
 		SelectWindow(_changer), 
-		stage(std::make_shared<Stage>()), 
+		stage(std::make_shared<Stage>(Define::blockWidth, Define::blockHeight)), 
 		player(std::make_shared<Player>(stage)) 
 	{};
 	~GameScene() = default;

@@ -1,7 +1,11 @@
 #include "Stage.h"
 
-Stage::Stage()
+Stage::Stage(unsigned char _blockWidth, unsigned char _blockHeight)
 {
+
+	blockWidth = _blockWidth;
+	blockHeight = _blockHeight;
+
 	// _stageÇÃèâä˙âª
 	initCell.x1 = initCell.y1 = initCell.x2 = initCell.y2 = 0;
 	initCell._status = Define::BlockCell::cellStatus::none;
@@ -38,4 +42,15 @@ void Stage::draw()
 			
 		}
 	}
+}
+
+const Define::BlockCell Stage::getBlockCell(int x, int y)
+{
+	int _CellXNum = (x - pointLeftUp_x) / blockWidth;
+	int _CellYNum = (y - pointLeftUp_x) / blockHeight;
+
+	DrawBox(_stage[_CellXNum][_CellYNum].x1, _stage[_CellXNum][_CellYNum].y1, _stage[_CellXNum][_CellYNum].x2, _stage[_CellXNum][_CellYNum].y2, GetColor(0,0,255), true);
+
+	return _stage[_CellXNum][_CellYNum];
+
 }

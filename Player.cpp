@@ -15,11 +15,14 @@
 */
 void Player::update(std::shared_ptr<Stage> _stage)
 {
-	// Collisionの更新を行う。
-	collision->update(playerStatus, _stage);
+
+	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
 
 	// Statusの更新処理を行う。
-	playerStatus = updateStatus(playerStatus, collision, _stage);
+	playerStatus = updateStatus(playerStatus, collision, _stage);	
+	
+	// Collisionの更新を行う。
+	collision->update(playerStatus, _stage);
 	
 	// アニメーションの下処理を行う。
 	animation->update(playerStatus);
@@ -62,7 +65,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 void Player::draw()
 {
 	animation->draw();
-	collision->draw();
+	//collision->draw();
 }
 
 /*!
@@ -93,13 +96,13 @@ Define::Status Player::updateStatus(Define::Status _nowStatus, std::shared_ptr<C
 		_nextStatus = animationMove->updateJump_Landing(_nowStatus, _collision, _stage);
 		break;
 	case Define::rollAction_Basic::Jump_MidAir:
-		_nextStatus = animationMove->updateJump_MidAir(_nowStatus, _collision, _stage);
+		_nextStatus = animationMove->updateJump_MidAir(_nowStatus, _collision, _stage, animation->getDrawingSteps());
 		break;
 	case Define::rollAction_Basic::Jump_Up:
-		_nextStatus = animationMove->updateJump_Up(_nowStatus, _collision, _stage);
+		_nextStatus = animationMove->updateJump_Up(_nowStatus, _collision, _stage, animation);
 		break;
 	case Define::rollAction_Basic::Fall:
-		_nextStatus = animationMove->updateFall(_nowStatus, _collision, _stage);
+		_nextStatus = animationMove->updateFall(_nowStatus, _collision, _stage, animation->getDrawingSteps());
 		break;
 	case Define::rollAction_Basic::Run:
 		_nextStatus = animationMove->updateRun(_nowStatus, _collision, _stage);

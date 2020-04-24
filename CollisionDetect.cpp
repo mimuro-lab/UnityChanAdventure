@@ -108,18 +108,66 @@ bool CollisionDetect::IsDetectedStage(int x, int y)
 	// x, y座標がステージのどのインデックスに値するか？
 	char _CellXNum = (x - _stage->getPointLeftUpX()) / _stage->getBlockWidth();
 	char _CellYNum = (y - _stage->getPointLeftUpY()) / _stage->getBlockHeight();
-	
+
 	//ステージ台からはみ出るなら壁に衝突したということ。
-	if (_CellXNum < 0 || _CellYNum < 0)
-		return true;
+	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= _stage->getBlockXNum() || _CellYNum >= _stage->getBlockYNum()) {
+		DrawCircle(x, y, 30, GetColor(0, 255, 255), false);
+		return false;
+	}
 
 	// もし、x, yにあるステージの要素がblockだったら衝突と判定。
-	if (_stage->getStage()[_CellXNum][_CellYNum]._status 
-		== 
-		Define::BlockCell::cellStatus::block) {
+	if (_stage->getStage()[_CellXNum][_CellYNum]._status == Define::BlockCell::cellStatus::block) {
 		return true;
 	}
 
 	// どこにも衝突しなければfalseを返す。
 	return false;
+}
+
+bool CollisionDetect::calcShitingCollisionedSide(toShiftDirect _to, unsigned char _range)
+{
+
+	_calcRange = _range;
+
+	if (_calcRange == 0)
+		return false;
+
+
+	if (_to == CollisionDetect::toShiftDirect::bottom || _to == CollisionDetect::toShiftDirect::head) {
+		if (_range > _stage->blockHeight)
+			_calcRange = _stage->blockHeight;
+	}
+	else if (_to == CollisionDetect::toShiftDirect::right || _to == CollisionDetect::toShiftDirect::left) {
+		if (_range > _stage->blockWidth)
+			_calcRange = _stage->blockWidth;
+	}
+	switch (_to) {
+	case toShiftDirect::right:
+		return IsDetectedStage(nowStatus._x + _calcRange, nowStatus._y);
+		break;
+	case toShiftDirect::left:
+		return IsDetectedStage(nowStatus._x - _calcRange, nowStatus._y);
+		break;
+	case toShiftDirect::head:
+		for (int i = 0; i < rightPoints; i++) {
+			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+			int y = nowStatus._y - toBottom - _calcRange;
+			if (IsDetectedStage(x, y))
+				return true;
+		}
+		return false;
+		break;
+	case toShiftDirect::bottom:
+		for (int i = 0; i < rightPoints; i++) {
+			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+			int y = nowStatus._y + toBottom + _calcRange;
+			if (IsDetectedStage(x, y))
+				return true;
+		}
+		return false;
+		break;
+	}
+	
+	//エラー処理、とりあえずぶつかっている事にする。
+	return true;
 }

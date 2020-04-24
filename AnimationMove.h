@@ -3,10 +3,11 @@
 #include <memory>
 #include "Define.h"
 #include "CollisionDetect.h"
+#include "Animation.h"
 
 class AnimationMove
 {
-	struct Velocity {
+	struct VelocityDEF {
 		struct Basic {
 			unsigned char walk = 0;
 			unsigned char run = 0;
@@ -16,14 +17,65 @@ class AnimationMove
 		Basic basicAction;
 	};
 
-	Velocity  velocity;
+
+	class PysicalQTY {
+	public:
+		char x_vel = 0;
+		char x_acc = 0;
+
+		char y_vel = 0;
+		char y_acc = 0;
+
+		unsigned short int time = 0;
+			
+		PysicalQTY() = default;
+		~PysicalQTY() = default;
+
+		Define::Status update(Define::Status _nowStatus , char _x_acc, char _y_acc) {
+
+			time++;
+
+			Define::Status nextStatus = _nowStatus;
+
+			x_vel += _x_acc;
+			y_vel += _y_acc;
+
+			nextStatus._x += x_vel;
+			nextStatus._y += y_vel;
+
+			return nextStatus;
+		}
+
+		Define::Status setPoint(Define::Status _nowStatus, int x, int y) {
+			time++;
+			Define::Status nextStatus = _nowStatus;
+			nextStatus._x = x;
+			nextStatus._y = y;
+			return nextStatus;
+		}
+
+		void refresh() {
+			x_vel = y_vel = x_acc = y_acc = 0;
+		}
+
+	};
+
+	VelocityDEF  velDef;
+
+	PysicalQTY pysicQty;
+
+	unsigned char acc_gravity = 1;
+	unsigned char div_acc_gravity = 3;
+	unsigned char div_acc_gravity_counter = 0;
+
+	unsigned char counter = 0;
 
 public:
 	AnimationMove(char _walk, char _run, char _jumpUp, char _jumpMidAir){
-		velocity.basicAction.walk = _walk;
-		velocity.basicAction.run = _run;
-		velocity.basicAction.jump_up = _jumpUp;
-		velocity.basicAction.jump_midAir= _jumpMidAir;
+		velDef.basicAction.walk = _walk;
+		velDef.basicAction.run = _run;
+		velDef.basicAction.jump_up = _jumpUp;
+		velDef.basicAction.jump_midAir= _jumpMidAir;
 	};
 	~AnimationMove() = default;
 
@@ -35,9 +87,9 @@ public:
 	Define::Status updateIdle(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 	Define::Status updateJump_Fall(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 	Define::Status updateJump_Landing(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
-	Define::Status updateJump_MidAir(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
-	Define::Status updateJump_Up(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
-	Define::Status updateFall(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+	Define::Status updateJump_MidAir(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage, char steps);
+	Define::Status updateJump_Up(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage, std::shared_ptr<Animation> _animation);
+	Define::Status updateFall(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage,char steps); 
 	Define::Status updateRun(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 	Define::Status updateWalk(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 

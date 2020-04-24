@@ -27,16 +27,17 @@ enum class eScene {
 @date 2020/04/15/0:19
 @author mimuro
 */
-class Define final {
-public:
+#pragma once
+namespace Define{
+
 	//! ウィンドウサイズ横
-	const static int WIN_W;
+	const static int WIN_W = 640;
 
 	//! ウィンドウサイズ縦
-	const static int WIN_H;
+	const static int WIN_H = 640;
 	
 	//! 円周率
-	const static float PI;	
+	const static float PI = 3.141592654f; 
 
 	//! プレイヤーや敵のステータス管理の構造体
 	struct Status {
@@ -45,6 +46,10 @@ public:
 		bool directRight = true;
 	};
 	
+	//! ステージのブロックのサイズ
+	unsigned static char blockWidth = 30;
+	unsigned static char blockHeight = 30;
+
 	//! ステージのブロック一つ一つのステータス
 	struct BlockCell {
 		enum cellStatus {
