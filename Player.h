@@ -45,7 +45,7 @@ class Player
 	Define::Status playerStatus;
 
 	//! アニメーションの処理をまとめて行うオブジェクト。
-	std::shared_ptr<Animation> animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
+	std::shared_ptr<Animation> animation;
 
 	//! アニメーション時のStatusの座標の更新をするオブジェクト。
 	std::shared_ptr<AnimationMove> animationMove;
@@ -81,9 +81,11 @@ public:
 			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Fall)]
 			= true;
 
+		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
+
 		animationMove = std::make_shared<AnimationMove>(speed_walk, speed_run, jump_up, jump_midAir);
 
-		collision = std::make_shared<CollisionDetect>(_stage);
+		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
 
 	};
 

@@ -13,7 +13,7 @@
 @date 2020/04/15/16:47
 @author mimuro
 */
-enum eScene {
+enum class eScene {
 	eNone,
 	eStartScene,
 	eMenuScene,

@@ -31,7 +31,7 @@ const bool SelectWindow::updateSelectWindow()
 
 		if (Controller::getIns()->getPush_A()) {
 			if (isReturn)
-				changerInSelectWindow->changeScene(eNone, true);
+				changerInSelectWindow->changeScene(eScene::eNone, true);
 			else
 			{
 				isReturn = false;

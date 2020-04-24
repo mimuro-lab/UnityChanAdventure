@@ -83,16 +83,16 @@ void SystemLooper::changeScene(eScene Next, const bool stackPop)
 		scene.pop();
 
 	switch (Next) {
-	case eStartScene:
+	case eScene::eStartScene:
 		scene.push(make_shared<StartScene>(shared_from_this()));
 		break;
-	case eMenuScene:
+	case eScene::eMenuScene:
 		scene.push(make_shared<MenuScene>(shared_from_this()));
 		break;
-	case eConfigScene:
+	case eScene::eConfigScene:
 		scene.push(make_shared<ConfigScene>(shared_from_this()));
 		break;
-	case eGameScene:
+	case eScene::eGameScene:
 		scene.push(make_shared<GameScene>(shared_from_this()));
 		break;
 	default:

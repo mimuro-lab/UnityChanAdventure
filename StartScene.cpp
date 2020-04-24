@@ -56,13 +56,13 @@ const void StartScene::GoNextScene()
 {
 	switch (nextSceneSelected) {
 	case game:
-		changer->changeScene(eGameScene, false);
+		changer->changeScene(eScene::eGameScene, false);
 		break;
 	case menu:
-		changer->changeScene(eMenuScene, false);
+		changer->changeScene(eScene::eMenuScene, false);
 		break;
 	case config:
-		changer->changeScene(eConfigScene, false);
+		changer->changeScene(eScene::eConfigScene, false);
 		break;
 	}
 

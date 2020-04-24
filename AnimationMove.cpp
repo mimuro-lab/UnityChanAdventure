@@ -34,14 +34,14 @@ Define::Status AnimationMove::updateJump_Landing(Define::Status nowStatus, std::
 Define::Status AnimationMove::updateJump_MidAir(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
 {
 	Define::Status _nextStatus = nowStatus;
-	_nextStatus._y -= jump_midAir;
+	_nextStatus._y -= velocity.basicAction.jump_midAir;
 	return _nextStatus;
 }
 
 Define::Status AnimationMove::updateJump_Up(Define::Status nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
 {
 	Define::Status _nextStatus = nowStatus;
-	_nextStatus._y -= jump_up;
+	_nextStatus._y -= velocity.basicAction.jump_up;
 	return _nextStatus;
 }
 
@@ -59,14 +59,14 @@ Define::Status AnimationMove::updateRun(Define::Status nowStatus, std::shared_pt
 {
 	Define::Status _nextStatus = nowStatus;
 	if (nowStatus.directRight) {
-		_nextStatus._x += speed_run;
+		_nextStatus._x += velocity.basicAction.run;
 		_collision->update(_nextStatus, _stage);
 		if (_collision->getCollisionedSide().right)
 			return nowStatus;
 		return _nextStatus;
 	}
 	else {
-		_nextStatus._x -= speed_run;
+		_nextStatus._x -= velocity.basicAction.run;
 		_collision->update(_nextStatus, _stage);
 		if (_collision->getCollisionedSide().left)
 			return nowStatus;
@@ -79,14 +79,14 @@ Define::Status AnimationMove::updateWalk(Define::Status nowStatus, std::shared_p
 {
 	Define::Status _nextStatus = nowStatus;
 	if (nowStatus.directRight) {
-		_nextStatus._x += speed_walk;
+		_nextStatus._x += velocity.basicAction.walk;
 		_collision->update(_nextStatus, _stage);
 		if (_collision->getCollisionedSide().right)
 			return nowStatus;
 		return _nextStatus;
 	}
 	else {
-		_nextStatus._x -= speed_walk;
+		_nextStatus._x -= velocity.basicAction.walk;
 		_collision->update(_nextStatus, _stage);
 		if (_collision->getCollisionedSide().left)
 			return nowStatus;

@@ -49,12 +49,13 @@ class CollisionDetect
 	bool detectLeft();
 
 public:
-	CollisionDetect(std::shared_ptr<Stage> __stage) {
+	CollisionDetect(std::shared_ptr<Stage> __stage, Define::Status _status) {
 		collisionedSide.head = false;
 		collisionedSide.bottom = false;
 		collisionedSide.right = false;
 		collisionedSide.left = false;
 		_stage = __stage;
+		nowStatus = _status;
 	};
 	~CollisionDetect() = default;
 

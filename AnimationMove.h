@@ -6,21 +6,24 @@
 
 class AnimationMove
 {
-	//! 歩く速度
-	char speed_walk = 0;
-	//! 走る速度
-	char speed_run = 0;
-	//! Jump_Upの速度
-	char jump_up = 0;
-	//! Jump_MidAirの速度
-	char jump_midAir = 0;
+	struct Velocity {
+		struct Basic {
+			unsigned char walk = 0;
+			unsigned char run = 0;
+			unsigned char jump_up = 0;
+			unsigned char jump_midAir = 0;
+		};
+		Basic basicAction;
+	};
+
+	Velocity  velocity;
 
 public:
 	AnimationMove(char _walk, char _run, char _jumpUp, char _jumpMidAir){
-		speed_walk = _walk;
-		speed_run = _run;
-		jump_up = _jumpUp;
-		jump_midAir = _jumpMidAir;
+		velocity.basicAction.walk = _walk;
+		velocity.basicAction.run = _run;
+		velocity.basicAction.jump_up = _jumpUp;
+		velocity.basicAction.jump_midAir= _jumpMidAir;
 	};
 	~AnimationMove() = default;
 
