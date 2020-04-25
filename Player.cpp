@@ -19,8 +19,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
 
 	// Statusの更新処理を行う。
-	playerStatus = animationMove->update(playerStatus,IsAction, collision, _stage, animation);
-
+	playerStatus = animationMove->update(playerStatus, IsAction, collision, _stage, animation);
 
 	// Collisionの更新を行う。
 	collision->update(playerStatus, _stage);
@@ -59,8 +58,6 @@ void Player::update(std::shared_ptr<Stage> _stage)
 			return;
 		}
 	}
-
-
 }
 
 void Player::draw()
@@ -76,14 +73,19 @@ void Player::draw()
 */
 Define::rollAction_Basic Player::getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation)
 {
-	// Jump_MidAir
+	bool a = animation->isEnd();
+	// Jump_Up to Jump_MidAir
 	if (IsAction == Define::rollAction_Basic::Jump_Up && animation->isEnd()) {
 		return Define::rollAction_Basic::Jump_MidAir;
 	}
 
+	// Jump_MidAir to Fall
+	if (IsAction == Define::rollAction_Basic::Jump_MidAir && animation->isEnd()) {
+		return Define::rollAction_Basic::Fall;
+	}
+
 	// Jump_Landing
-	if ((IsAction == Define::rollAction_Basic::Fall || IsAction == Define::rollAction_Basic::Jump_MidAir)
-		&& _collision->getCollisionedSide().bottom) {
+	if (IsAction == Define::rollAction_Basic::Fall	&& _collision->getCollisionedSide().bottom) {
 		return Define::rollAction_Basic::Jump_Landing;
 	}
 
@@ -157,7 +159,7 @@ std::shared_ptr<Animation> Player::switchingAnimation(Define::rollAction_Basic n
 		break;
 	case Define::rollAction_Basic::Crouch:
 		IsAction = Define::rollAction_Basic::Crouch;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, playerStatus, 6, 99, true);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, playerStatus);
 		break;
 	case Define::rollAction_Basic::Damage:
 		IsAction = Define::rollAction_Basic::Damage;

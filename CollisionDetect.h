@@ -65,7 +65,7 @@ public:
 		right, left, head, bottom, _vertical, _holizen, _none
 	};
 	unsigned char _calcRange = 0;
-	bool calcShitingCollisionedSide(toShiftDirect _to, unsigned char _range);
+	bool calcShitingCollisionedSideVertical(toShiftDirect _to, unsigned char _range);
 
 	void draw();
 

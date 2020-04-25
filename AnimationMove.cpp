@@ -12,11 +12,14 @@ Define::Status AnimationMove::update(
 
 	CollisionDetect::toShiftDirect _to = getToShift(_isAction);
 	
-	if (getSwitchAction(_isAction))
+	// 条件の見直しが必要！！
+	if (getSwitchAction(_isAction) && _isAction != Define::rollAction_Basic::Fall)
 		pysicQty.refresh(true, false);
 
 	// 次のコマで、y方向にその速度で動いて大丈夫か？もし障壁があったら、、、
-	if (_collision->calcShitingCollisionedSide(_to, pysicQty.y_vel) && !getForwardCollisionedSide(_to, _collision))
+	bool a = _collision->calcShitingCollisionedSideVertical(_to, pysicQty.y_vel);
+	bool b = !getForwardCollisionedSide(_to, _collision);
+	if (_collision->calcShitingCollisionedSideVertical(_to, pysicQty.y_vel) && !getForwardCollisionedSide(_to, _collision))
 	{
 		//bottom辺の1ブロック上のブロックの下辺座標に移動する。
 		int x = nowStatus._x;

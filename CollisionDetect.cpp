@@ -125,7 +125,7 @@ bool CollisionDetect::IsDetectedStage(int x, int y)
 }
 
 // rangeï™Ç≥Ç´Ç…è·ï«Ç™Ç†Ç¡ÇΩÇÁtrue
-bool CollisionDetect::calcShitingCollisionedSide(toShiftDirect _to, unsigned char _range)
+bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, unsigned char _range)
 {
 	_calcRange = _range;
 
@@ -167,18 +167,24 @@ bool CollisionDetect::calcShitingCollisionedSide(toShiftDirect _to, unsigned cha
 		}
 		return false;
 		break;
-	case toShiftDirect::_vertical://è„â∫ÇµÇÁÇ◊ÇÈ
-		for (int i = 0; i < rightPoints; i++) {
-			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-			int y = nowStatus._y + toBottom + _calcRange;
-			if (IsDetectedStage(x, y))
-				return true;
+	case toShiftDirect::_vertical://ë¨ìxÇ…ÇÊÇ¡ÇƒÅAè„Ç©â∫Çí≤Ç◊ÇÈ
+		if (_range < 0) {
+			for (int i = 0; i < rightPoints; i++) {
+				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+				int y = nowStatus._y - toBottom - _calcRange;
+				if (IsDetectedStage(x, y))
+					return true;
+			}
+			return false;
 		}
-		for (int i = 0; i < rightPoints; i++) {
-			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-			int y = nowStatus._y - toBottom - _calcRange;
-			if (IsDetectedStage(x, y))
-				return true;
+		if (_range > 0) {
+			for (int i = 0; i < rightPoints; i++) {
+				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+				int y = nowStatus._y + toBottom + _calcRange;
+				if (IsDetectedStage(x, y))
+					return true;
+			}
+			return false;
 		}
 		return false;
 		break;

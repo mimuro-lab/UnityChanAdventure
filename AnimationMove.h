@@ -174,7 +174,7 @@ public:
 		_validGravityAction= std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
 		_validGravityAction[static_cast<int>(Define::rollAction_Basic::Fall)]
 			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
+			//= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
 			= true;
 	};
 	~AnimationMove() = default;

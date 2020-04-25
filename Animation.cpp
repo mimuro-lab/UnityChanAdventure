@@ -16,7 +16,7 @@
 */
 void Animation::update(Define::Status _status)
 {
-
+	
 	if (NowDraiwngImageIndex >= imageHandles.size()|| NowDraiwngImageIndex > DrawingIndexEnd) {
 		IsEnd = true;
 		return;
@@ -50,6 +50,6 @@ void Animation::draw() const
 	
 	if (IsEnd && !IsEndDrawing)
 		return;
-		
+	//printfDx("%d\n", NowDraiwngImageIndex);
 	DrawRotaGraph(status._x,status._y, 1.0, 0, NowDrawingImageHandle, true, !status.directRight);
 }
