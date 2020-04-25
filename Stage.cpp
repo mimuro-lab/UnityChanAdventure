@@ -34,11 +34,11 @@ void Stage::draw()
 		for (char y = 0; y < blockYNum; y++) {
 			unsigned int color = GetColor(0, 0, 0);
 			if (_stage[x][y]._status == Define::BlockCell::cellStatus::none)
-				color = GetColor(0, 0, 0);
-			if (_stage[x][y]._status == Define::BlockCell::cellStatus::block) {
+				color = GetColor(255, 255, 255);
+			if (_stage[x][y]._status == Define::BlockCell::cellStatus::block)
 				color = GetColor(255, 0, 0);
-				DrawBox(_stage[x][y].x1, _stage[x][y].y1, _stage[x][y].x2, _stage[x][y].y2, color, true);
-			}
+			DrawBox(_stage[x][y].x1, _stage[x][y].y1, _stage[x][y].x2, _stage[x][y].y2, color, false);
+			
 			
 		}
 	}

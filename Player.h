@@ -31,9 +31,9 @@ class Player
 	//! 走る速度
 	char speed_run = 4;
 	//! Jump_Upの速度
-	char jump_up = 4;
+	char jump_up = 15;
 	//! Jump_MidAirの速度
-	char jump_midAir = jump_up;
+	char jump_midAir = 3;
 
 	//! プレイヤーオブジェクトの現在の状態を管理。
 	Define::rollAction_Basic IsAction;
@@ -59,8 +59,6 @@ class Player
 	//! コントローラの入力などに応じた次のアクションを取得する。
 	Define::rollAction_Basic getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation);
 
-	//! プレイヤーオブジェクトのStatusの更新を行う。
-	Define::Status updateStatus(Define::Status _nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 public:
 
 	Player(std::shared_ptr<Stage> _stage) : 

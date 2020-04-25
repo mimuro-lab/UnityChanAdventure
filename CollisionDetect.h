@@ -62,7 +62,7 @@ public:
 	void update(Define::Status _nowStatus, std::shared_ptr<Stage> _stage);
 
 	enum class toShiftDirect{
-		right, left, head, bottom,
+		right, left, head, bottom, _vertical, _holizen, _none
 	};
 	unsigned char _calcRange = 0;
 	bool calcShitingCollisionedSide(toShiftDirect _to, unsigned char _range);
@@ -73,5 +73,6 @@ public:
 
 	const char getToBottom() { return toBottom; }
 	const char getToHead() { return toHead; }
+	const char getRange(toShiftDirect _to, int y_vel = 0, int x_vel = 0);
 
 };

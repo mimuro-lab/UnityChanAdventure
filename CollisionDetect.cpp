@@ -124,16 +124,16 @@ bool CollisionDetect::IsDetectedStage(int x, int y)
 	return false;
 }
 
+// range分さきに障壁があったらtrue
 bool CollisionDetect::calcShitingCollisionedSide(toShiftDirect _to, unsigned char _range)
 {
-
 	_calcRange = _range;
 
 	if (_calcRange == 0)
 		return false;
 
 
-	if (_to == CollisionDetect::toShiftDirect::bottom || _to == CollisionDetect::toShiftDirect::head) {
+	if (_to == CollisionDetect::toShiftDirect::bottom || _to == CollisionDetect::toShiftDirect::head || _to == CollisionDetect::toShiftDirect::_vertical) {
 		if (_range > _stage->blockHeight)
 			_calcRange = _stage->blockHeight;
 	}
@@ -141,6 +141,7 @@ bool CollisionDetect::calcShitingCollisionedSide(toShiftDirect _to, unsigned cha
 		if (_range > _stage->blockWidth)
 			_calcRange = _stage->blockWidth;
 	}
+
 	switch (_to) {
 	case toShiftDirect::right:
 		return IsDetectedStage(nowStatus._x + _calcRange, nowStatus._y);
@@ -166,8 +167,52 @@ bool CollisionDetect::calcShitingCollisionedSide(toShiftDirect _to, unsigned cha
 		}
 		return false;
 		break;
+	case toShiftDirect::_vertical://上下しらべる
+		for (int i = 0; i < rightPoints; i++) {
+			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+			int y = nowStatus._y + toBottom + _calcRange;
+			if (IsDetectedStage(x, y))
+				return true;
+		}
+		for (int i = 0; i < rightPoints; i++) {
+			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+			int y = nowStatus._y - toBottom - _calcRange;
+			if (IsDetectedStage(x, y))
+				return true;
+		}
+		return false;
+		break;
 	}
 	
 	//エラー処理、とりあえずぶつかっている事にする。
 	return true;
+}
+
+const char CollisionDetect::getRange(toShiftDirect _to, int y_vel, int x_vel)
+{
+	switch (_to) {
+	case toShiftDirect::head:
+		return toHead;
+		break;
+	case toShiftDirect::bottom:
+		return toBottom;
+		break;
+	case toShiftDirect::right:
+		return toRight;
+		break;
+	case toShiftDirect::left:
+		return toLeft;
+		break;
+	case toShiftDirect::_vertical://垂直だったら座標がどっちに動いているかで判断（速度０はどっちでも構わないが上に合わせる）
+		if (y_vel <= 0)
+			return toHead;
+		else
+			return toBottom;
+		
+	case toShiftDirect::_none:
+		return 0;
+		break;
+	}
+
+	return 0;
 }

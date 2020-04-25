@@ -19,8 +19,9 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
 
 	// Statusの更新処理を行う。
-	playerStatus = updateStatus(playerStatus, collision, _stage);	
-	
+	playerStatus = animationMove->update(playerStatus,IsAction, collision, _stage, animation);
+
+
 	// Collisionの更新を行う。
 	collision->update(playerStatus, _stage);
 	
@@ -65,53 +66,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 void Player::draw()
 {
 	animation->draw();
-	//collision->draw();
-}
-
-/*!
-
-*/
-
-Define::Status Player::updateStatus(Define::Status _nowStatus, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
-{
-	Define::Status _nextStatus = _nowStatus;
-
-	switch (IsAction) {
-	case Define::rollAction_Basic::Brake:
-		_nextStatus = animationMove->updateBrake(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Crouch:
-		_nextStatus = animationMove->updateCrouch(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Damage:
-		_nextStatus = animationMove->updateDamage(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Idle:
-		_nextStatus = animationMove->updateIdle(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Jump_Fall:
-		_nextStatus = animationMove->updateJump_Fall(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Jump_Landing:
-		_nextStatus = animationMove->updateJump_Landing(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Jump_MidAir:
-		_nextStatus = animationMove->updateJump_MidAir(_nowStatus, _collision, _stage, animation->getDrawingSteps());
-		break;
-	case Define::rollAction_Basic::Jump_Up:
-		_nextStatus = animationMove->updateJump_Up(_nowStatus, _collision, _stage, animation);
-		break;
-	case Define::rollAction_Basic::Fall:
-		_nextStatus = animationMove->updateFall(_nowStatus, _collision, _stage, animation->getDrawingSteps());
-		break;
-	case Define::rollAction_Basic::Run:
-		_nextStatus = animationMove->updateRun(_nowStatus, _collision, _stage);
-		break;
-	case Define::rollAction_Basic::Walk:
-		_nextStatus = animationMove->updateWalk(_nowStatus, _collision, _stage);
-	}
-
-	return _nextStatus;
+	collision->draw();
 }
 
 /*!
@@ -127,7 +82,8 @@ Define::rollAction_Basic Player::getNextAction(std::shared_ptr<CollisionDetect> 
 	}
 
 	// Jump_Landing
-	if (IsAction == Define::rollAction_Basic::Fall && _collision->getCollisionedSide().bottom) {
+	if ((IsAction == Define::rollAction_Basic::Fall || IsAction == Define::rollAction_Basic::Jump_MidAir)
+		&& _collision->getCollisionedSide().bottom) {
 		return Define::rollAction_Basic::Jump_Landing;
 	}
 

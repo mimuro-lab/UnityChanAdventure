@@ -28,7 +28,7 @@ class Animation
 	int NowDrawingImageHandle = 0;
 	//! アニメーションを途中で終了した時に終わりのインデックスをこれに設定する。設定したインデックスは表示されない。２とした場合、０・１番目のみ表示。
 	char DrawingIndexEnd = 99;
-	//! 一つの画像を表示させるステップ数。例）６に設定すると１秒間に１０枚の画像が切り替わる。
+	//! 一つの画像を表示させるステップ数。例）１２に設定すると１秒間に５枚の画像が切り替わる。（６０fpsで、１２ステップで１枚更新）
 	char DrawingSteps;
 	//! DrawingStepsを数えるためのカウンター。
 	char DrawingSteps_counter = 0;

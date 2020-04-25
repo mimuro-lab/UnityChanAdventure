@@ -17,16 +17,16 @@ using namespace std;
 
 Gamepad::Gamepad()
 {
-    _idArray[ePad::down] = 0;
-    _idArray[ePad::left] = 1;
-    _idArray[ePad::right] = 2;
-    _idArray[ePad::up] = 3;
-    _idArray[ePad::maru] = 5;
-    _idArray[ePad::sankaku] = 4;
-    _idArray[ePad::sikaku] = 7;
-    _idArray[ePad::batu] = 6;
-    _idArray[ePad::select] = 13;
-    _idArray[ePad::start] = 12;
+    _idArray[static_cast<int>(ePad::down)] = 0;
+    _idArray[static_cast<int>(ePad::left)] = 1;
+    _idArray[static_cast<int>(ePad::right)] = 2;
+    _idArray[static_cast<int>(ePad::up)] = 3;
+    _idArray[static_cast<int>(ePad::maru)] = 5;
+    _idArray[static_cast<int>(ePad::sankaku)] = 4;
+    _idArray[static_cast<int>(ePad::sikaku)] = 7;
+    _idArray[static_cast<int>(ePad::batu)] = 6;
+    _idArray[static_cast<int>(ePad::select)] = 13;
+    _idArray[static_cast<int>(ePad::start)] = 12;
 }
 
 void Gamepad::update()
@@ -48,5 +48,5 @@ void Gamepad::update()
 */
 int Gamepad::get(ePad eID) const
 {
-    return _pad[_idArray[eID]];
+    return _pad[_idArray[static_cast<int>(eID)]];
 }
