@@ -37,12 +37,14 @@ public:
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_9.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_10.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_11.png"),
+		/*
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_12.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_13.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_14.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_15.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_16.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_17.png"),
+		*/
 	};
 
 	const vector<int> unityChan_Crouch = {

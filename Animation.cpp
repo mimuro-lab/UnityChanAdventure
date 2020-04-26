@@ -16,13 +16,12 @@
 */
 void Animation::update(Define::Status _status)
 {
-	
+	status = _status;
+
 	if (NowDraiwngImageIndex >= imageHandles.size()|| NowDraiwngImageIndex > DrawingIndexEnd) {
 		IsEnd = true;
 		return;
 	}
-
-	status = _status;
 
 	NowDrawingImageHandle = imageHandles[NowDraiwngImageIndex];
 	

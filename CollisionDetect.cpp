@@ -237,8 +237,8 @@ const char CollisionDetect::getRange(toShiftDirect _to, int y_vel, int x_vel)
 		else
 			return toBottom;
 		
-	case toShiftDirect::_none:
-		return 0;
+	case toShiftDirect::_none://’â~ó‘Ô‚Å‚ ‚é‚×‚«‚Í‰º‚ÌƒuƒƒbƒN‚É‡‚í‚¹‚é
+		return toBottom;
 		break;
 	}
 

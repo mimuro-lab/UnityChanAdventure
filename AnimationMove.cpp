@@ -10,21 +10,36 @@ Define::Status AnimationMove::update(
 {
 	Define::Status _nextStatus = nowStatus;
 
-	CollisionDetect::toShiftDirect _to = getToShift(_isAction);
+	_nextStatus._y_speed = pysicQty.y_vel;
+	_nextStatus._x_speed = pysicQty.x_vel;
+
+	// 状態がBrakeだったらpysicQtyのリセットを行い、終了
+	if (_isAction == Define::rollAction_Basic::Brake) {
+		pysicQty.refreshVel(true, true, true);
+		return nowStatus;
+	}
+
+	CollisionDetect::toShiftDirect _to = getToShift(_isAction, nowStatus);
 	
 	// 条件の見直しが必要！！（2020/04/26）
-	if (getSwitchAction(_isAction) && _isAction != Define::rollAction_Basic::Fall)
-		pysicQty.refresh(true, false);
+	if (getSwitchAction(_isAction) &&
+		_isAction != Define::rollAction_Basic::Fall &&
+		_isAction != Define::rollAction_Basic::Idle &&
+		_isAction != Define::rollAction_Basic::Run &&
+		_isAction != Define::rollAction_Basic::Walk)
+		pysicQty.refreshVel(true, false);
 
 	// 次のコマで、y方向にその速度で動いて大丈夫か？もし障壁があったら、、、
-	if (_collision->calcShitingCollisionedSideVertical(_to, pysicQty.y_vel) && !getForwardCollisionedSide(_to, _collision))
+	bool cannotShift = _collision->calcShitingCollisionedSideVertical(_to, std::abs(pysicQty.y_vel));
+	bool isCollision = !getForwardCollisionedSide(_to, _collision);
+	if (cannotShift && isCollision)
 	{
 		//bottom辺の一番近いブロック上のブロックの下辺座標に移動する。
 		int x = nowStatus._x;
 		int Forward_Block_nearSideY = getForwardBlockNearSide(nowStatus, _to, pysicQty, _collision, _stage);
 		int y = Forward_Block_nearSideY + getRangeOfNearBlock(_to, pysicQty, _collision);
 		_collision->update(pysicQty.setPoint(nowStatus, x, y), _stage);
-		pysicQty.refresh(true, true);
+		pysicQty.refreshVel(true, false);
 		return pysicQty.setPoint(nowStatus, x, y);
 	}
 
@@ -36,10 +51,13 @@ Define::Status AnimationMove::update(
 	if (forwardCollision && pysicShifting) {
 		return pysicQty.update(
 				nowStatus,
-				getAcc(nowStatus, _isAction)[0],
-				getAcc(nowStatus, _isAction)[1], 
-				_isInitFroce[static_cast<int>(_isAction)], 
-				_validGravityAction[static_cast<int>(_isAction)]
+				getAcc(nowStatus, _isAction, pysicQty)[0],
+				getAcc(nowStatus, _isAction, pysicQty)[1], 
+				_isInitFroce[static_cast<int>(_isAction)],
+				getUptoVelHorizon(nowStatus, _isAction),
+				0,
+				_validGravityAction[static_cast<int>(_isAction)],
+				_validStoppingAction[static_cast<int>(_isAction)]
 			);
 	}
 	
@@ -67,12 +85,15 @@ int AnimationMove::getForwardBlockNearSide(
 			return _stage->getBlockCell(nowStatus._x, nowStatus._y - _collision->getRange(_to, _pysic.y_vel) - Define::blockHeight).y2;
 		else
 			return _stage->getBlockCell(nowStatus._x, nowStatus._y + _collision->getRange(_to, _pysic.y_vel) + Define::blockHeight).y1;
+	case CollisionDetect::toShiftDirect::_none://停止状態であるべき時は下のブロックに合わせる
+		return _stage->getBlockCell(nowStatus._x, nowStatus._y + _collision->getRange(_to)).y1;
+
 	}
 	return 0;
 }
 
 //  _isActionの状態でどの方向に動くアクションなのかを計算する。
-CollisionDetect::toShiftDirect AnimationMove::getToShift(Define::rollAction_Basic _isAction)
+CollisionDetect::toShiftDirect AnimationMove::getToShift(Define::rollAction_Basic _isAction, Define::Status nowStatus)
 {
 	
 	switch (_isAction) {
@@ -104,10 +125,16 @@ CollisionDetect::toShiftDirect AnimationMove::getToShift(Define::rollAction_Basi
 		return CollisionDetect::toShiftDirect::bottom;
 		break;
 	case Define::rollAction_Basic::Run:
-		return CollisionDetect::toShiftDirect::_none;
+		if (nowStatus.directRight)
+			return CollisionDetect::toShiftDirect::right;
+		else
+			return CollisionDetect::toShiftDirect::left;
 		break;
 	case Define::rollAction_Basic::Walk:
-		return CollisionDetect::toShiftDirect::_none;
+		if (nowStatus.directRight)
+			return CollisionDetect::toShiftDirect::right;
+		else
+			return CollisionDetect::toShiftDirect::left;
 		break;
 	}
 	
@@ -147,24 +174,67 @@ int AnimationMove::getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, Pysic
 		else
 			return -_collision->getRange(CollisionDetect::toShiftDirect::bottom);
 		break;
+	case CollisionDetect::toShiftDirect::_none:
+		return -_collision->getRange(CollisionDetect::toShiftDirect::bottom);
+		break;
 	}
 	return 0;
 }
 
-std::vector<char> AnimationMove::getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction)
+std::vector<char> AnimationMove::getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction, PysicalQTY _pysic)
 {
 	std::vector<char> retPoint(2, 0);
 	switch (_isAction) {
 	case Define::rollAction_Basic::Jump_MidAir:
-
 		break;
 	case Define::rollAction_Basic::Jump_Up:
-		
 		break;
 	case Define::rollAction_Basic::Fall:
-		
+		break;
+	case Define::rollAction_Basic::Walk:
+		if (nowStatus.directRight)
+			retPoint[0] = 1;
+		else
+			retPoint[0] = -1;
+		break;
+	case Define::rollAction_Basic::Run:
+		if (nowStatus.directRight)
+			retPoint[0] = 1;
+		else
+			retPoint[0] = -1;
+		break;
+	case Define::rollAction_Basic::Idle:
+		if (nowStatus.directRight && pysicQty.x_vel > 0)
+			retPoint[0] = -1;
+		else if(!nowStatus.directRight && pysicQty.x_vel < 0)
+			retPoint[0] = 1;
 		break;
 	}
 	return retPoint;
 }
 
+char AnimationMove::getUptoVelHorizon(Define::Status nowStatus, Define::rollAction_Basic _isAction)
+{
+	switch (_isAction) {
+	case Define::rollAction_Basic::Walk:
+		if (nowStatus.directRight)
+			return uptoVel_walk;
+		else
+			return -uptoVel_walk;
+		break;
+	case Define::rollAction_Basic::Run:
+		if (nowStatus.directRight)
+			return uptoVel_run;
+		else
+			return -uptoVel_run;
+		break;
+	case Define::rollAction_Basic::Idle:
+		if (nowStatus.directRight)
+			return 0;
+		else
+			return 0;
+		break;
+	}
+
+	return 0;
+}

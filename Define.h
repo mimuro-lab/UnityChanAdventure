@@ -43,6 +43,8 @@ namespace Define{
 	struct Status {
 		int _x = 0;
 		int _y = 0;
+		int _y_speed = 0;
+		int _x_speed = 0;
 		bool directRight = true;
 	};
 	

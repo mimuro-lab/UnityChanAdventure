@@ -27,13 +27,13 @@ class Player
 {
 
 	//! 歩く速度
-	char speed_walk = 2;
+	char speed_walk = 1;
 	//! 走る速度
-	char speed_run = 4;
+	char speed_run = 1;
 	//! Jump_Upの初速度
-	char jumpUp_initSpeed = 70;
+	char jumpUp_initSpeed = 20;
 	//! Jump_MidAirの初速度
-	char jumpMid_initSpeed = 5;
+	char jumpMid_initSpeed = 15;
 
 	//! プレイヤーオブジェクトの現在の状態を管理。
 	Define::rollAction_Basic IsAction;

@@ -30,6 +30,16 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	//// 次のアクションを現在の条件によって選択していく。
 	// 次のアクションを格納しておく変数。
 	Define::rollAction_Basic _next;
+	
+	// walkとrunの状態で速度の方向と、プレイヤーの向きが異なるならIsActionを強制的にbrakeに設定し、速度を0にする。
+	if (IsAction == Define::rollAction_Basic::Walk) {
+		// 右向きに進んでいて、左を向いたら
+		if (playerStatus._x_speed > 0 && !playerStatus.directRight || playerStatus._x_speed < 0 && playerStatus.directRight) {
+			animation = switchingAnimation(Define::rollAction_Basic::Brake);
+			playerStatus._x_speed = 0;
+			return;
+		}
+	}
 
 	// 今の状態が途中切り替えＯＫまたは、途中切り替えＮＧかつアニメーションが終了したら、、、アクション切り替えする可能性。
 	if (IsAction_canSwitching[static_cast<int>(IsAction)] ||
@@ -37,10 +47,12 @@ void Player::update(std::shared_ptr<Stage> _stage)
 
 		// _nextへ次のシーンを取得する。
 		_next = getNextAction(collision, animation);
-
+		
 		// 現在のアクションと異なるアクションが次のアクションだったら、、、
 		if (IsAction != _next) {
-
+			//Jump_MidAirの時は、速度上向きの間はアニメーションを切り替えない。
+			if (IsAction == Define::rollAction_Basic::Jump_MidAir && playerStatus._y_speed <= 0)
+				return;
 			// アニメーションオブジェクトを更新し、終了。
 			animation = switchingAnimation(_next);
 			return;
@@ -48,7 +60,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 		
 		// 途中切り替えＮＧかつアニメーションが終了したら、さらに、同じアクションが入力され続けて、Crouch（しゃがむ）だったら、、、
 		// switchingAnimation()を実行せずに関数を終了。
-		if (IsAction == Define::rollAction_Basic::Crouch)
+		if (IsAction == Define::rollAction_Basic::Crouch || IsAction == Define::rollAction_Basic::Jump_MidAir)
 			return;	
 		
 		// 同じアクションが入力され続けて、現在のアニメーションが終了したら現在のアニメーションをリフレッシュする。
@@ -76,19 +88,19 @@ Define::rollAction_Basic Player::getNextAction(std::shared_ptr<CollisionDetect> 
 	bool a = animation->isEnd();
 	// Jump_Up to Jump_MidAir
 	if (IsAction == Define::rollAction_Basic::Jump_Up && animation->isEnd()) {
-		printfDx("JumpUp to JumpMidAir\n");
+		//printfDx("JumpUp to JumpMidAir\n");
 		return Define::rollAction_Basic::Jump_MidAir;
 	}
 
 	// Jump_MidAir to Fall
 	if (IsAction == Define::rollAction_Basic::Jump_MidAir && animation->isEnd()) {
-		printfDx("JumpMidAir to Fall\n");
+		//printfDx("JumpMidAir to Fall\n");
 		return Define::rollAction_Basic::Fall;
 	}
 
 	// Jump_Landing
 	if (IsAction == Define::rollAction_Basic::Fall	&& _collision->getCollisionedSide().bottom) {
-		printfDx("Fall to Jump_Landing\n");
+		//printfDx("Fall to Jump_Landing\n");
 		return Define::rollAction_Basic::Jump_Landing;
 	}
 
@@ -182,7 +194,7 @@ std::shared_ptr<Animation> Player::switchingAnimation(Define::rollAction_Basic n
 		break;
 	case Define::rollAction_Basic::Jump_MidAir:
 		IsAction = Define::rollAction_Basic::Jump_MidAir;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, playerStatus, 3);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, playerStatus, 3, 99, true);
 		break;
 	case Define::rollAction_Basic::Jump_Up:
 		IsAction = Define::rollAction_Basic::Jump_Up;
