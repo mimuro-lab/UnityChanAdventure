@@ -30,10 +30,10 @@ class Player
 	char speed_walk = 2;
 	//! 走る速度
 	char speed_run = 4;
-	//! Jump_Upの速度
-	char jump_up = 20;
-	//! Jump_MidAirの速度
-	char jump_midAir = 5;
+	//! Jump_Upの初速度
+	char jumpUp_initSpeed = 70;
+	//! Jump_MidAirの初速度
+	char jumpMid_initSpeed = 5;
 
 	//! プレイヤーオブジェクトの現在の状態を管理。
 	Define::rollAction_Basic IsAction;
@@ -81,7 +81,7 @@ public:
 
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
-		animationMove = std::make_shared<AnimationMove>(speed_walk, speed_run, jump_up, jump_midAir);
+		animationMove = std::make_shared<AnimationMove>(speed_walk, speed_run, jumpUp_initSpeed, jumpMid_initSpeed);
 
 		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
 

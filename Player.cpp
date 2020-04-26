@@ -76,16 +76,19 @@ Define::rollAction_Basic Player::getNextAction(std::shared_ptr<CollisionDetect> 
 	bool a = animation->isEnd();
 	// Jump_Up to Jump_MidAir
 	if (IsAction == Define::rollAction_Basic::Jump_Up && animation->isEnd()) {
+		printfDx("JumpUp to JumpMidAir\n");
 		return Define::rollAction_Basic::Jump_MidAir;
 	}
 
 	// Jump_MidAir to Fall
 	if (IsAction == Define::rollAction_Basic::Jump_MidAir && animation->isEnd()) {
+		printfDx("JumpMidAir to Fall\n");
 		return Define::rollAction_Basic::Fall;
 	}
 
 	// Jump_Landing
 	if (IsAction == Define::rollAction_Basic::Fall	&& _collision->getCollisionedSide().bottom) {
+		printfDx("Fall to Jump_Landing\n");
 		return Define::rollAction_Basic::Jump_Landing;
 	}
 
@@ -179,7 +182,7 @@ std::shared_ptr<Animation> Player::switchingAnimation(Define::rollAction_Basic n
 		break;
 	case Define::rollAction_Basic::Jump_MidAir:
 		IsAction = Define::rollAction_Basic::Jump_MidAir;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, playerStatus);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, playerStatus, 3);
 		break;
 	case Define::rollAction_Basic::Jump_Up:
 		IsAction = Define::rollAction_Basic::Jump_Up;

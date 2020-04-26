@@ -12,19 +12,16 @@ Define::Status AnimationMove::update(
 
 	CollisionDetect::toShiftDirect _to = getToShift(_isAction);
 	
-	// 条件の見直しが必要！！
+	// 条件の見直しが必要！！（2020/04/26）
 	if (getSwitchAction(_isAction) && _isAction != Define::rollAction_Basic::Fall)
 		pysicQty.refresh(true, false);
 
 	// 次のコマで、y方向にその速度で動いて大丈夫か？もし障壁があったら、、、
-	bool a = _collision->calcShitingCollisionedSideVertical(_to, pysicQty.y_vel);
-	bool b = !getForwardCollisionedSide(_to, _collision);
 	if (_collision->calcShitingCollisionedSideVertical(_to, pysicQty.y_vel) && !getForwardCollisionedSide(_to, _collision))
 	{
-		//bottom辺の1ブロック上のブロックの下辺座標に移動する。
+		//bottom辺の一番近いブロック上のブロックの下辺座標に移動する。
 		int x = nowStatus._x;
 		int Forward_Block_nearSideY = getForwardBlockNearSide(nowStatus, _to, pysicQty, _collision, _stage);
-		DrawBox(0, Forward_Block_nearSideY - 1, 1000, Forward_Block_nearSideY + 1, GetColor(255, 0, 0), true);
 		int y = Forward_Block_nearSideY + getRangeOfNearBlock(_to, pysicQty, _collision);
 		_collision->update(pysicQty.setPoint(nowStatus, x, y), _stage);
 		pysicQty.refresh(true, true);
@@ -39,8 +36,8 @@ Define::Status AnimationMove::update(
 	if (forwardCollision && pysicShifting) {
 		return pysicQty.update(
 				nowStatus,
-				0, 
-				getAcc(nowStatus, _isAction), 
+				getAcc(nowStatus, _isAction)[0],
+				getAcc(nowStatus, _isAction)[1], 
 				_isInitFroce[static_cast<int>(_isAction)], 
 				_validGravityAction[static_cast<int>(_isAction)]
 			);
@@ -63,7 +60,7 @@ int AnimationMove::getForwardBlockNearSide(
 		return _stage->getBlockCell(nowStatus._x, nowStatus._y - _collision->getRange(_to) - Define::blockHeight).y2;
 		break;
 	case CollisionDetect::toShiftDirect::bottom:
-		return _stage->getBlockCell(nowStatus._x, nowStatus._y + _collision->getRange(_to) + Define::blockHeight).y1;
+		return _stage->getBlockCell(nowStatus._x, nowStatus._y + _collision->getRange(_to) + _collision->collisionSideRange.bottom).y1;
 		break;
 	case CollisionDetect::toShiftDirect::_vertical://垂直だったら座標がどっちに動いているかで判断（速度０はどっちでも構わないが上に合わせる）
 		if(_pysic.y_vel <= 0)
@@ -154,19 +151,20 @@ int AnimationMove::getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, Pysic
 	return 0;
 }
 
-char AnimationMove::getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction)
+std::vector<char> AnimationMove::getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction)
 {
+	std::vector<char> retPoint(2, 0);
 	switch (_isAction) {
 	case Define::rollAction_Basic::Jump_MidAir:
-		return 0;
+
 		break;
 	case Define::rollAction_Basic::Jump_Up:
-		return 0;
+		
 		break;
 	case Define::rollAction_Basic::Fall:
-		return 0;
+		
 		break;
 	}
-	return 0;
+	return retPoint;
 }
 

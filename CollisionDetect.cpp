@@ -132,10 +132,15 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, unsi
 	if (_calcRange == 0)
 		return false;
 
+	collisionSideRange.bottom = collisionSideRange.head = collisionSideRange.right = collisionSideRange.left = 0;
+	
+	// _rangeがブロックの幅を超えてしまっていたら、プレイヤーオブジェクトのBottonから_stage->blockHeight分ずつ壁の有無を調べる。
+
+	unsigned char BlocksIn_range = 0;//_rangeの中にいくつのブロックが入るか？
 
 	if (_to == CollisionDetect::toShiftDirect::bottom || _to == CollisionDetect::toShiftDirect::head || _to == CollisionDetect::toShiftDirect::_vertical) {
 		if (_range > _stage->blockHeight)
-			_calcRange = _stage->blockHeight;
+			BlocksIn_range = _range / _stage->blockHeight;
 	}
 	else if (_to == CollisionDetect::toShiftDirect::right || _to == CollisionDetect::toShiftDirect::left) {
 		if (_range > _stage->blockWidth)
@@ -159,11 +164,28 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, unsi
 		return false;
 		break;
 	case toShiftDirect::bottom:
-		for (int i = 0; i < rightPoints; i++) {
+
+		// _rangeの中に障壁がないか調べる。BlocksIn_rangeを用いる。
+		for(int block = 0; block < BlocksIn_range; block++)
+			for (int i = 0; i < rightPoints; i++) {
+				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+				int y = nowStatus._y + toBottom + block * _stage->blockHeight; 
+				DrawCircle(x, y, 3, GetColor(0, 255, 0), false);
+				if (IsDetectedStage(x, y)) {
+					collisionSideRange.bottom = block * _stage->blockHeight;
+					return true;
+				}
+			}
+
+		DrawBox(nowStatus._x - 20, nowStatus._y - 40, nowStatus._x + 20, nowStatus._y + 40, GetColor(255, 0, 0), false);
+		for (int i = 0; i < rightPoints; i++) {	
 			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 			int y = nowStatus._y + toBottom + _calcRange;
-			if (IsDetectedStage(x, y))
+			DrawCircle(x, y, 3, GetColor(255, 0, 0), false);
+			if (IsDetectedStage(x, y)) {
+				collisionSideRange.bottom = _calcRange;
 				return true;
+			}
 		}
 		return false;
 		break;

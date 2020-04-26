@@ -35,7 +35,7 @@ class AnimationMove
 
 		unsigned short int time = 0;
 
-		unsigned char acc_gravity = 1;
+		unsigned char acc_gravity = 3;
 			
 		PysicalQTY() = default;
 		~PysicalQTY() = default;
@@ -148,7 +148,8 @@ class AnimationMove
 
 	int getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision);
 
-	char getAcc(Define::Status nowStatus, Define::rollAction_Basic _isActtion);
+	// [0]‚ªx,[1]‚ªy
+	std::vector<char> getAcc(Define::Status nowStatus, Define::rollAction_Basic _isActtion);
 
 	//	“®‚«‚ªØ‚è‘Ö‚í‚Á‚½uŠÔ‚ğæ“¾‚·‚éŠÖ”
 	Define::rollAction_Basic preIsAction = Define::rollAction_Basic::Idle;

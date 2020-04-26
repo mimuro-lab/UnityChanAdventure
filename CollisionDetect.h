@@ -15,7 +15,16 @@ class CollisionDetect
 		bool left;
 	};
 
+	struct Collision_range {
+		unsigned char head = 0;
+		unsigned char bottom = 0;
+		unsigned char right = 0;
+		unsigned char left = 0;
+	};
+
 	Collision collisionedSide;
+
+
 
 	// プレイヤーオブジェクトの中心点を基準にする。
 	char toRight = 20;
@@ -59,6 +68,8 @@ public:
 	};
 	~CollisionDetect() = default;
 
+	Collision_range collisionSideRange;
+
 	void update(Define::Status _nowStatus, std::shared_ptr<Stage> _stage);
 
 	enum class toShiftDirect{
@@ -71,8 +82,6 @@ public:
 
 	const Collision getCollisionedSide() { return collisionedSide; }
 
-	const char getToBottom() { return toBottom; }
-	const char getToHead() { return toHead; }
 	const char getRange(toShiftDirect _to, int y_vel = 0, int x_vel = 0);
 
 };
