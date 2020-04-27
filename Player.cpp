@@ -23,24 +23,14 @@ void Player::update(std::shared_ptr<Stage> _stage)
 
 	// Collisionの更新を行う。
 	collision->update(playerStatus, _stage);
-	
-	// アニメーションの下処理を行う。
-	animation->update(playerStatus);
 
 	//// 次のアクションを現在の条件によって選択していく。
 	// 次のアクションを格納しておく変数。
 	Define::rollAction_Basic _next;
-	
-	// walkとrunの状態で速度の方向と、プレイヤーの向きが異なるならIsActionを強制的にbrakeに設定し、速度を0にする。
-	if (IsAction == Define::rollAction_Basic::Walk) {
-		// 右向きに進んでいて、左を向いたら
-		if (playerStatus._x_speed > 0 && !playerStatus.directRight || playerStatus._x_speed < 0 && playerStatus.directRight) {
-			animation = switchingAnimation(Define::rollAction_Basic::Brake);
-			playerStatus._x_speed = 0;
-			return;
-		}
-	}
 
+	// アニメーションの下処理を行う。
+	animation->update(playerStatus);
+	
 	// 今の状態が途中切り替えＯＫまたは、途中切り替えＮＧかつアニメーションが終了したら、、、アクション切り替えする可能性。
 	if (IsAction_canSwitching[static_cast<int>(IsAction)] ||
 		(!IsAction_canSwitching[static_cast<int>(IsAction)] && animation->isEnd())) {

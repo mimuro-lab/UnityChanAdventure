@@ -18,8 +18,8 @@ class AnimationMove
 		Basic basicAction;
 	};
 
-	char uptoVel_walk = 5;
-	char uptoVel_run = 10;
+	char uptoVel_walk = 0;
+	char uptoVel_run = 0;
 
 	std::vector<char> _isInitFroce;
 	std::vector<bool> _validGravityAction;
@@ -72,7 +72,13 @@ class AnimationMove
 					x_vel = _x_vel_upto;
 			}
 			
-			if (_validStopping) {
+			// _validStoppingはnowStatusの速度方向とオブジェクト向きが等しいときのみ有効。
+			if (_validStopping
+				//&&(
+				//((0 > _nowStatus._x_speed) && _nowStatus.directRight)) ||
+				//((_nowStatus._x_speed < 0) && !_nowStatus.directRight)
+				)
+				{
 				//右方向に進んでいたら
 				if (x_vel > 0) {
 					if (_x_vel_upto <= x_vel + x_acc)
@@ -88,12 +94,21 @@ class AnimationMove
 						x_vel = _x_vel_upto;
 				}
 			}
+			//速度方向とオブジェクト向きが異なるときは強制的に水平方向の速度・加速度をゼロにする。
+			if (
+				((_nowStatus._x_speed > 0) && !_nowStatus.directRight) ||
+				((_nowStatus._x_speed < 0) && _nowStatus.directRight)
+				) {
+				x_vel = x_acc = 0;
+				//nextStatus._x_speed = 0;
+			}
 
 			y_vel += y_acc;
 
 			nextStatus._x += x_vel;
 			nextStatus._y += y_vel;
 
+			nextStatus._x_speed = x_vel;
 			nextStatus._y_speed = y_vel;
 			
 			time++;
@@ -203,8 +218,8 @@ class AnimationMove
 
 public:
 	AnimationMove(char _walk, char _run, char _jumpUp, char _jumpMidAir){
-		velDef.basicAction.walk = _walk;
-		velDef.basicAction.run = _run;
+		velDef.basicAction.walk = uptoVel_walk = _walk;
+		velDef.basicAction.run = uptoVel_run = _run;
 		velDef.basicAction.jump_up = _jumpUp;
 		velDef.basicAction.jump_midAir= _jumpMidAir;
 		

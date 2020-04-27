@@ -27,9 +27,9 @@ class Player
 {
 
 	//! 歩く速度
-	char speed_walk = 1;
+	char maxSpeed_walk = 5;
 	//! 走る速度
-	char speed_run = 1;
+	char maxSpeed_run = 10;
 	//! Jump_Upの初速度
 	char jumpUp_initSpeed = 20;
 	//! Jump_MidAirの初速度
@@ -81,7 +81,7 @@ public:
 
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
-		animationMove = std::make_shared<AnimationMove>(speed_walk, speed_run, jumpUp_initSpeed, jumpMid_initSpeed);
+		animationMove = std::make_shared<AnimationMove>(maxSpeed_walk, maxSpeed_run, jumpUp_initSpeed, jumpMid_initSpeed);
 
 		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
 

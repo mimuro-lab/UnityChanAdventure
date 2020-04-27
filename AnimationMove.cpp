@@ -14,9 +14,16 @@ Define::Status AnimationMove::update(
 	_nextStatus._x_speed = pysicQty.x_vel;
 
 	// 状態がBrakeだったらpysicQtyのリセットを行い、終了
+	// または、プレイヤーオブジェクトの向くべき方向と速度方向が異なる場合は水平方向のリフレッシュを行う。
 	if (_isAction == Define::rollAction_Basic::Brake) {
 		pysicQty.refreshVel(true, true, true);
-		return nowStatus;
+	}// または、プレイヤーオブジェクトの向くべき方向と速度方向が異なる場合は水平方向のリフレッシュを行う。
+	// ※walk→idlingと切り替わった後、速度が残っている状態で、逆方向に歩こうとしたときこの条件を満たす。
+	else if (
+		(nowStatus.directRight && nowStatus._x_speed < 0) ||
+		(!nowStatus.directRight && nowStatus._x_speed > 0)
+		) {
+		pysicQty.refreshVel(false, true, true);
 	}
 
 	CollisionDetect::toShiftDirect _to = getToShift(_isAction, nowStatus);

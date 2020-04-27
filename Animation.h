@@ -45,7 +45,7 @@ public:
 	@date 2020/04/21/9:51
 	@author mimuro
 	*/
-	Animation(std::vector<int> _imageHandles, Define::Status _status , char _DrawingSteps = 6, char IndexEnd = 99, bool _IsEndDrawing = false) :
+	Animation(std::vector<int> _imageHandles, Define::Status _status , char _DrawingSteps = 6, char IndexEnd = 99, bool _IsEndDrawing = true) :
 		imageHandles(_imageHandles)
 		, NowDrawingImageHandle(_imageHandles[0])
 		, status(_status)
