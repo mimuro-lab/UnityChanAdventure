@@ -17,7 +17,8 @@ void Player::update(std::shared_ptr<Stage> _stage)
 {
 
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
-
+		// Collisionの更新を行う。
+	collision->update(playerStatus, _stage);
 	// Statusの更新処理を行う。
 	playerStatus = animationMove->update(playerStatus, IsAction, collision, _stage, animation);
 

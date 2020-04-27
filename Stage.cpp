@@ -41,7 +41,6 @@ void Stage::draw()
 				color = GetColor(255, 0, 0);
 			DrawBox(_stage[x][y].x1, _stage[x][y].y1, _stage[x][y].x2, _stage[x][y].y2, color, false);
 			
-			
 		}
 	}
 }

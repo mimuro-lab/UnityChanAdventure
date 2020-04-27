@@ -24,8 +24,6 @@ class CollisionDetect
 
 	Collision collisionedSide;
 
-
-
 	// プレイヤーオブジェクトの中心点を基準にする。
 	char toRight = 20;
 	char toLeft = 20;
@@ -75,13 +73,18 @@ public:
 	enum class toShiftDirect{
 		right, left, head, bottom, _vertical, _holizen, _none
 	};
-	unsigned char _calcRange = 0;
-	bool calcShitingCollisionedSideVertical(toShiftDirect _to, unsigned char _range);
+
+
+
+	bool calcShitingCollisionedSideVertical(toShiftDirect _to, char _range);
+	bool calcShitingCollisionedSideHorizon(toShiftDirect _to, char _range);
 
 	void draw();
 
-	const Collision getCollisionedSide() { return collisionedSide; }
+	const Collision getCollisionedSide() { 
+		return collisionedSide; 
+	}
 
-	const char getRange(toShiftDirect _to, int y_vel = 0, int x_vel = 0);
+	const char getRange(toShiftDirect _to, int x_vel, int y_vel);
 
 };

@@ -73,11 +73,7 @@ class AnimationMove
 			}
 			
 			// _validStoppingはnowStatusの速度方向とオブジェクト向きが等しいときのみ有効。
-			if (_validStopping
-				//&&(
-				//((0 > _nowStatus._x_speed) && _nowStatus.directRight)) ||
-				//((_nowStatus._x_speed < 0) && !_nowStatus.directRight)
-				)
+			if (_validStopping)
 				{
 				//右方向に進んでいたら
 				if (x_vel > 0) {
@@ -95,13 +91,14 @@ class AnimationMove
 				}
 			}
 			//速度方向とオブジェクト向きが異なるときは強制的に水平方向の速度・加速度をゼロにする。
+			/*
 			if (
 				((_nowStatus._x_speed > 0) && !_nowStatus.directRight) ||
 				((_nowStatus._x_speed < 0) && _nowStatus.directRight)
 				) {
 				x_vel = x_acc = 0;
 				//nextStatus._x_speed = 0;
-			}
+			}*/
 
 			y_vel += y_acc;
 
@@ -116,11 +113,13 @@ class AnimationMove
 			return nextStatus;
 		}
 
-		Define::Status setPoint(Define::Status _nowStatus, int x, int y) {
+		Define::Status setPoint(Define::Status _nowStatus, PysicalQTY _pysic, int x, int y) {
 			time++;
 			Define::Status nextStatus = _nowStatus;
 			nextStatus._x = x;
 			nextStatus._y = y;
+			nextStatus._x_speed = _pysic.x_vel;
+			nextStatus._y_speed = _pysic.y_vel;
 			return nextStatus;
 		}
 
@@ -195,11 +194,15 @@ class AnimationMove
 
 	CollisionDetect::toShiftDirect getToShift(Define::rollAction_Basic _isAction, Define::Status nowStatus);
 
-	int getForwardBlockNearSide(Define::Status nowStatus, CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+	int getForwardBlockNearSideVertical(Define::Status nowStatus, CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+
+	int getForwardBlockNearSideHorizon(Define::Status nowStatus, CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 
 	bool getForwardCollisionedSide(CollisionDetect::toShiftDirect _to, std::shared_ptr<CollisionDetect> _collision);
 
 	int getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision);
+
+	int getRangeOfNearBlockHorizon(CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision);
 
 	// [0]がx,[1]がy
 	std::vector<char> getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction, PysicalQTY _pysic);
