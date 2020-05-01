@@ -1,0 +1,9 @@
+<map id="SystemLooper::loop" name="SystemLooper::loop">
+<area shape="rect" id="node1" title="メインの繰り返し処理を行う関数。" alt="" coords="5,81,144,108"/>
+<area shape="rect" id="node2" href="$class_controller.html#a7d04c17913f04f99429aa29fa8505484" title="全ての入力状態を更新する。" alt="" coords="192,81,316,108"/>
+<area shape="rect" id="node3" href="$class_gamepad.html#a13a79098ac5816113aac9819514a465f" title="eIDのボタンの入力状態を取得" alt="" coords="406,5,510,32"/>
+<area shape="rect" id="node4" href="$class_keyboard.html#ac10c13870ba471f267d5ced0f233a398" title="keyCodeのキーが押されているフレーム数を取得" alt="" coords="364,56,552,83"/>
+<area shape="rect" id="node6" href="$class_keyboard.html#afd8f963dbd5113fa9630e40b6c179eff" title="更新" alt="" coords="396,107,520,133"/>
+<area shape="rect" id="node7" href="$class_gamepad.html#ae37f83a954aabbf634e9d6f37697ae58" title="更新" alt="" coords="395,157,521,184"/>
+<area shape="rect" id="node5" href="$class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f" title="keyCodeが有効なキー番号か問う" alt="" coords="600,56,776,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Player::update" name="Player::update">
+<area shape="rect" id="node1" title="Playerオブジェクトの前処理全般を行う関数。" alt="" coords="5,56,112,83"/>
+<area shape="rect" id="node2" href="$class_player.html#a6b307d6c920677ec94da952543580fa7" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="175,31,324,57"/>
+<area shape="rect" id="node5" href="$class_player.html#a2ca2669da1c8ef16efbb8cefe1398e65" title="アニメーションを切り替える関数。" alt="" coords="160,81,339,108"/>
+<area shape="rect" id="node3" href="$class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251" title="左方向ボタン入力状態の取得（押された瞬間）" alt="" coords="391,5,533,32"/>
+<area shape="rect" id="node4" href="$class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0" title="右方向ボタン入力状態の取得（押された瞬間）" alt="" coords="387,56,537,83"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$class_singleton.html" title="オブジェクトが一つしかない事を約束するシングルトンクラス。public Singleton&lt;class _T&gt;と継承すると継承元クラスがシングルトンになる。" alt="" coords="5,5,120,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Player::getNextAction" name="Player::getNextAction">
+<area shape="rect" id="node1" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="160,5,309,32"/>
+<area shape="rect" id="node2" href="$class_player.html#ad1ad81e5e3564dc1b4f7ba720c717025" title="Playerオブジェクトの前処理全般を行う関数。" alt="" coords="5,5,112,32"/>
+</map>

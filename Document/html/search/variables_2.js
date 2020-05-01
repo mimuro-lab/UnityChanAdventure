@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['changer_276',['changer',['../class_abstract_scene.html#adb810bc89fc8c19ef720555c4361ea26',1,'AbstractScene']]],
-  ['changerinselectwindow_277',['changerInSelectWindow',['../class_select_window.html#ab19bee20cead39fd40b8f19635e5bb9d',1,'SelectWindow']]]
+  ['blockwidth_304',['blockWidth',['../class_define.html#a9b17f40bb23ddafae06371ec07cf778d',1,'Define']]]
 ];

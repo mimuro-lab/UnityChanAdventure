@@ -67,7 +67,7 @@ $(function() {
 <div class="contents">
 <a href="_define_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">   16</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">   16</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    eNone,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    eStartScene,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    eMenuScene,</div>
@@ -75,27 +75,50 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    eGameScene,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_define.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_define.html">Define</a> final {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_define.html#a4c592f02e8d7908b1b67403b88f3aad2">   33</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_define.html#a4c592f02e8d7908b1b67403b88f3aad2">WIN_W</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_define.html#a327bf22ef5b30076112667f6c0be897a">   36</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_define.html#a327bf22ef5b30076112667f6c0be897a">WIN_H</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_define.html#a2cd0062e248c412ad0966936720624fd">   39</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_define.html#a2cd0062e248c412ad0966936720624fd">PI</a>;  </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_define_1_1_status.html">   42</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_define_1_1_status.html">Status</a> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">int</span> _x;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> _y;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">bool</span> directRight = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="class_define.html">Define</a>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_define.html#a6f40fd03b839930e9ff175a822bc4765">   34</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_define.html#a6f40fd03b839930e9ff175a822bc4765">WIN_W</a> = 640;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_define.html#a2c7206af42bbb584a64fcf70fe7662b8">   37</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_define.html#a2c7206af42bbb584a64fcf70fe7662b8">WIN_H</a> = 640;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_define.html#a7bbc81bbd04228df2149d0deaa2e4ea2">   40</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_define.html#a7bbc81bbd04228df2149d0deaa2e4ea2">PI</a> = 3.141592654f; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct_define_1_1_status.html">   43</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_define_1_1_status.html">Status</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> _x = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> _y = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">int</span> _y_speed = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">int</span> _x_speed = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">bool</span> directRight = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_define.html#a9b17f40bb23ddafae06371ec07cf778d">   52</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="class_define.html#a9b17f40bb23ddafae06371ec07cf778d">blockWidth</a> = 30;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keyword">static</span> <span class="keywordtype">char</span> blockHeight = 30;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_define_1_1_block_cell.html">   56</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_define_1_1_block_cell.html">BlockCell</a> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">enum</span> cellStatus {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            none, block,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> x1, y1, x2, y2;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        cellStatus _status;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">   65</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk, _end</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_define_html_a4c592f02e8d7908b1b67403b88f3aad2"><div class="ttname"><a href="class_define.html#a4c592f02e8d7908b1b67403b88f3aad2">Define::WIN_W</a></div><div class="ttdeci">const static int WIN_W</div><div class="ttdoc">ウィンドウサイズ横</div><div class="ttdef"><b>Definition:</b> Define.h:33</div></div>
-<div class="ttc" id="aclass_define_html_a2cd0062e248c412ad0966936720624fd"><div class="ttname"><a href="class_define.html#a2cd0062e248c412ad0966936720624fd">Define::PI</a></div><div class="ttdeci">const static float PI</div><div class="ttdoc">円周率</div><div class="ttdef"><b>Definition:</b> Define.h:39</div></div>
-<div class="ttc" id="aclass_define_html"><div class="ttname"><a href="class_define.html">Define</a></div><div class="ttdoc">あらゆるパラメータの定義を保持するクラス</div><div class="ttdef"><b>Definition:</b> Define.h:30</div></div>
+<div class="ttc" id="aclass_define_html_a7bbc81bbd04228df2149d0deaa2e4ea2"><div class="ttname"><a href="class_define.html#a7bbc81bbd04228df2149d0deaa2e4ea2">Define::PI</a></div><div class="ttdeci">const static float PI</div><div class="ttdoc">円周率</div><div class="ttdef"><b>Definition:</b> Define.h:40</div></div>
+<div class="ttc" id="a_define_8h_html"><div class="ttname"><a href="_define_8h.html">Define.h</a></div><div class="ttdoc">いろいろな定義をまとまる為のヘッダファイル</div></div>
+<div class="ttc" id="astruct_define_1_1_block_cell_html"><div class="ttname"><a href="struct_define_1_1_block_cell.html">Define::BlockCell</a></div><div class="ttdoc">ステージのブロック一つ一つのステータス</div><div class="ttdef"><b>Definition:</b> Define.h:56</div></div>
+<div class="ttc" id="aclass_define_html_a9b17f40bb23ddafae06371ec07cf778d"><div class="ttname"><a href="class_define.html#a9b17f40bb23ddafae06371ec07cf778d">Define::blockWidth</a></div><div class="ttdeci">static unsigned char blockWidth</div><div class="ttdoc">ステージのブロックのサイズ</div><div class="ttdef"><b>Definition:</b> Define.h:52</div></div>
+<div class="ttc" id="aclass_define_html_a2c7206af42bbb584a64fcf70fe7662b8"><div class="ttname"><a href="class_define.html#a2c7206af42bbb584a64fcf70fe7662b8">Define::WIN_H</a></div><div class="ttdeci">const static int WIN_H</div><div class="ttdoc">ウィンドウサイズ縦</div><div class="ttdef"><b>Definition:</b> Define.h:37</div></div>
+<div class="ttc" id="aclass_define_html_a6f40fd03b839930e9ff175a822bc4765"><div class="ttname"><a href="class_define.html#a6f40fd03b839930e9ff175a822bc4765">Define::WIN_W</a></div><div class="ttdeci">const static int WIN_W</div><div class="ttdoc">ウィンドウサイズ横</div><div class="ttdef"><b>Definition:</b> Define.h:34</div></div>
+<div class="ttc" id="aclass_define_html"><div class="ttname"><a href="class_define.html">Define</a></div><div class="ttdoc">あらゆるパラメータの定義を保持するクラス</div></div>
 <div class="ttc" id="a_define_8h_html_a3b8b68fb63a52ce96c3014adee47b625"><div class="ttname"><a href="_define_8h.html#a3b8b68fb63a52ce96c3014adee47b625">eScene</a></div><div class="ttdeci">eScene</div><div class="ttdoc">シーンの定義、クラス名と被らないようにシーンの頭に'e'を付けるようにする。</div><div class="ttdef"><b>Definition:</b> Define.h:16</div></div>
-<div class="ttc" id="astruct_define_1_1_status_html"><div class="ttname"><a href="struct_define_1_1_status.html">Define::Status</a></div><div class="ttdoc">プレイヤーや敵のステータス管理の構造体</div><div class="ttdef"><b>Definition:</b> Define.h:42</div></div>
-<div class="ttc" id="aclass_define_html_a327bf22ef5b30076112667f6c0be897a"><div class="ttname"><a href="class_define.html#a327bf22ef5b30076112667f6c0be897a">Define::WIN_H</a></div><div class="ttdeci">const static int WIN_H</div><div class="ttdoc">ウィンドウサイズ縦</div><div class="ttdef"><b>Definition:</b> Define.h:36</div></div>
+<div class="ttc" id="astruct_define_1_1_status_html"><div class="ttname"><a href="struct_define_1_1_status.html">Define::Status</a></div><div class="ttdoc">プレイヤーや敵のステータス管理の構造体</div><div class="ttdef"><b>Definition:</b> Define.h:43</div></div>
+<div class="ttc" id="aclass_define_html_a049aeb1a697932e5e887a0b4afa36cf7"><div class="ttname"><a href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a></div><div class="ttdeci">rollAction_Basic</div><div class="ttdoc">プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。</div><div class="ttdef"><b>Definition:</b> Define.h:65</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

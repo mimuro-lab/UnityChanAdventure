@@ -1,7 +1,25 @@
 var searchData=
 [
-  ['unitychan_5fbrake_143',['unityChan_Brake',['../classimage_path.html#ab6549ceadfb57bd98c651e64ee20d189',1,'imagePath']]],
-  ['update_144',['update',['../class_abstract_scene.html#abe79ffa848ca69665381786b622adadb',1,'AbstractScene::update()'],['../class_animation.html#aaca7eca68d408aa739d92b6bdc57889d',1,'Animation::update()'],['../class_config_scene.html#a186c456871ab3862c3b45d2c589c5414',1,'ConfigScene::update()'],['../class_controller.html#a7d04c17913f04f99429aa29fa8505484',1,'Controller::update()'],['../class_gamepad.html#ae37f83a954aabbf634e9d6f37697ae58',1,'Gamepad::update()'],['../class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a',1,'GameScene::update()'],['../class_keyboard.html#afd8f963dbd5113fa9630e40b6c179eff',1,'Keyboard::update()'],['../class_menu_scene.html#a3f8c1a2a91f22dcb9202567f1ac59e96',1,'MenuScene::update()'],['../class_player.html#a6912bb6e48efb5845d59f0f4582827ef',1,'Player::update()'],['../class_start_scene.html#a5ef13b44ea32ad5fee5bb59b18612855',1,'StartScene::update()'],['../class_task.html#a552c8996b9db6be1ae519b9cdbdfaeca',1,'Task::update()']]],
-  ['updateselectwindow_145',['updateSelectWindow',['../class_select_window.html#aff1aea1d04e9ba0c17bbf72eb36c8e67',1,'SelectWindow']]],
-  ['updatestatus_146',['updateStatus',['../class_player.html#a8e4f282e8085824785469517846ff4df',1,'Player']]]
+  ['scene_134',['scene',['../class_system_looper.html#a2a686ed2995385156509519dc306079a',1,'SystemLooper']]],
+  ['scrprocess_135',['scrProcess',['../class_system_looper.html#ad2a0c8d8fa20ab1116c489a258295907',1,'SystemLooper']]],
+  ['selectscene_136',['SelectScene',['../class_config_scene.html#a68aa62f718e7cd8c1781f14498f9d097',1,'ConfigScene::SelectScene()'],['../class_menu_scene.html#a5b94fc3fddd9b5b1e6ce8ecc5c5963c4',1,'MenuScene::SelectScene()'],['../class_start_scene.html#a2f5207464940edda31d51639e720f333',1,'StartScene::SelectScene()']]],
+  ['selectwindow_137',['SelectWindow',['../class_select_window.html',1,'SelectWindow'],['../class_select_window.html#afb6af9d0efd147a9113b4e3e5f53060c',1,'SelectWindow::SelectWindow()']]],
+  ['selectwindow_2ecpp_138',['SelectWindow.cpp',['../_select_window_8cpp.html',1,'']]],
+  ['selectwindow_2eh_139',['SelectWindow.h',['../_select_window_8h.html',1,'']]],
+  ['singleton_140',['Singleton',['../class_singleton.html',1,'']]],
+  ['singleton_2eh_141',['Singleton.h',['../_singleton_8h.html',1,'']]],
+  ['singleton_3c_20controller_20_3e_142',['Singleton&lt; Controller &gt;',['../class_singleton.html',1,'']]],
+  ['singleton_3c_20imagepath_20_3e_143',['Singleton&lt; imagePath &gt;',['../class_singleton.html',1,'']]],
+  ['stage_144',['Stage',['../class_stage.html',1,'Stage'],['../class_game_scene.html#abb5ae63ac56033d6e497e8fc2857d5d3',1,'GameScene::stage()']]],
+  ['startscene_145',['StartScene',['../class_start_scene.html',1,'StartScene'],['../class_start_scene.html#a8f09c3883874f65fccbe7972cd73b740',1,'StartScene::StartScene()']]],
+  ['startscene_2ecpp_146',['StartScene.cpp',['../_start_scene_8cpp.html',1,'']]],
+  ['startscene_2eh_147',['StartScene.h',['../_start_scene_8h.html',1,'']]],
+  ['status_148',['Status',['../struct_define_1_1_status.html',1,'Define::Status'],['../class_animation.html#a83c0c506471fe6f54c9c7ae1f00d1eb9',1,'Animation::status()']]],
+  ['switchinganimation_149',['switchingAnimation',['../class_player.html#a2ca2669da1c8ef16efbb8cefe1398e65',1,'Player']]],
+  ['systemlooper_150',['SystemLooper',['../class_system_looper.html',1,'SystemLooper'],['../class_system_looper.html#a100ad6bd4ea0ff7399c532cff8534177',1,'SystemLooper::SystemLooper()']]],
+  ['systemlooper_2ecpp_151',['SystemLooper.cpp',['../_system_looper_8cpp.html',1,'']]],
+  ['systemlooper_2eh_152',['SystemLooper.h',['../_system_looper_8h.html',1,'']]],
+  ['systemowner_153',['SystemOwner',['../class_system_owner.html',1,'']]],
+  ['systemowner_2ecpp_154',['SystemOwner.cpp',['../_system_owner_8cpp.html',1,'']]],
+  ['systemowner_2eh_155',['SystemOwner.h',['../_system_owner_8h.html',1,'']]]
 ];

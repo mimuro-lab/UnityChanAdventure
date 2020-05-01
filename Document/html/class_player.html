@@ -63,7 +63,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#pri-types">非公開型</a> &#124;
 <a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_player-members.html">全メンバ一覧</a>  </div>
@@ -77,112 +76,87 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_player_8h_source.html">Player.h</a>&gt;</code></p>
 <div class="dynheader">
-Player の継承関係図</div>
-<div class="dyncontent">
-<div class="center"><img src="class_player__inherit__graph.png" border="0" usemap="#_player_inherit__map" alt="Inheritance graph"/></div>
-<map name="_player_inherit__map" id="_player_inherit__map">
-<area shape="rect" title="Playerキャラの処理全般を担うクラス。" alt="" coords="5,80,64,107"/>
-<area shape="rect" href="class_task.html" title="updateとdraw関数を必ず持つ様に設定するインターフェースクラス。" alt="" coords="9,5,60,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
-<div class="dynheader">
 Player 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player__coll__graph.png" border="0" usemap="#_player_coll__map" alt="Collaboration graph"/></div>
 <map name="_player_coll__map" id="_player_coll__map">
-<area shape="rect" title="Playerキャラの処理全般を担うクラス。" alt="" coords="52,95,111,121"/>
-<area shape="rect" href="class_task.html" title="updateとdraw関数を必ず持つ様に設定するインターフェースクラス。" alt="" coords="5,5,56,32"/>
-<area shape="rect" href="struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="80,5,184,32"/>
+<area shape="rect" title="Playerキャラの処理全般を担うクラス。" alt="" coords="28,95,87,121"/>
+<area shape="rect" href="struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="5,5,109,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a6912bb6e48efb5845d59f0f4582827ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6912bb6e48efb5845d59f0f4582827ef">update</a> () override</td></tr>
-<tr class="memdesc:a6912bb6e48efb5845d59f0f4582827ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Playerオブジェクトの前処理全般を行う関数。  <a href="class_player.html#a6912bb6e48efb5845d59f0f4582827ef">[詳解]</a><br /></td></tr>
-<tr class="separator:a6912bb6e48efb5845d59f0f4582827ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7abe0fbf95b42b9ff4a2c0c7d334bc68"><td class="memItemLeft" align="right" valign="top"><a id="a7abe0fbf95b42b9ff4a2c0c7d334bc68"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7abe0fbf95b42b9ff4a2c0c7d334bc68">draw</a> () override</td></tr>
-<tr class="memdesc:a7abe0fbf95b42b9ff4a2c0c7d334bc68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Playerオブジェクトの描画処理全般を行う関数。 <br /></td></tr>
-<tr class="separator:a7abe0fbf95b42b9ff4a2c0c7d334bc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_task"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_task')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_task.html">Task</a> に属する継承公開メンバ関数</td></tr>
-<tr class="memitem:a67d2fc513405c60abad92c5168a11021 inherit pub_methods_class_task"><td class="memItemLeft" align="right" valign="top"><a id="a67d2fc513405c60abad92c5168a11021"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#a67d2fc513405c60abad92c5168a11021">initialize</a> ()</td></tr>
-<tr class="memdesc:a67d2fc513405c60abad92c5168a11021 inherit pub_methods_class_task"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化処理は実装してもしなくてもいい <br /></td></tr>
-<tr class="separator:a67d2fc513405c60abad92c5168a11021 inherit pub_methods_class_task"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b4dd44c71ffc5a6577dc75808c9f1a inherit pub_methods_class_task"><td class="memItemLeft" align="right" valign="top"><a id="ae1b4dd44c71ffc5a6577dc75808c9f1a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#ae1b4dd44c71ffc5a6577dc75808c9f1a">finalize</a> ()</td></tr>
-<tr class="memdesc:ae1b4dd44c71ffc5a6577dc75808c9f1a inherit pub_methods_class_task"><td class="mdescLeft">&#160;</td><td class="mdescRight">終了処理は実装してもしなくてもいい <br /></td></tr>
-<tr class="separator:ae1b4dd44c71ffc5a6577dc75808c9f1a inherit pub_methods_class_task"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
-非公開型</h2></td></tr>
-<tr class="memitem:a783782660224e880831d316ceed5075c"><td class="memItemLeft" align="right" valign="top"><a id="a783782660224e880831d316ceed5075c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a> { <br />
-&#160;&#160;<b>Brake</b>, 
-<b>Crouch</b>, 
-<b>Damage</b>, 
-<b>Idle</b>, 
-<br />
-&#160;&#160;<b>Jump_Fall</b>, 
-<b>Jump_Landing</b>, 
-<b>Jump_MidAir</b>, 
-<b>Jump_Up</b>, 
-<br />
-&#160;&#160;<b>Run</b>, 
-<b>Walk</b>, 
-<b>_end</b>
-<br />
- }</td></tr>
-<tr class="memdesc:a783782660224e880831d316ceed5075c"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの行動の分類。 <br /></td></tr>
-<tr class="separator:a783782660224e880831d316ceed5075c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751deabd39c1bd384c8169f9e0b76aec"><td class="memItemLeft" align="right" valign="top"><a id="a751deabd39c1bd384c8169f9e0b76aec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Player</b> (std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="separator:a751deabd39c1bd384c8169f9e0b76aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ad81e5e3564dc1b4f7ba720c717025"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad1ad81e5e3564dc1b4f7ba720c717025">update</a> (std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="memdesc:ad1ad81e5e3564dc1b4f7ba720c717025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Playerオブジェクトの前処理全般を行う関数。  <a href="class_player.html#ad1ad81e5e3564dc1b4f7ba720c717025">[詳解]</a><br /></td></tr>
+<tr class="separator:ad1ad81e5e3564dc1b4f7ba720c717025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18c9d30d2997765321c62030a4b20b7"><td class="memItemLeft" align="right" valign="top"><a id="ac18c9d30d2997765321c62030a4b20b7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac18c9d30d2997765321c62030a4b20b7">draw</a> ()</td></tr>
+<tr class="memdesc:ac18c9d30d2997765321c62030a4b20b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Playerオブジェクトの描画処理全般を行う関数。 <br /></td></tr>
+<tr class="separator:ac18c9d30d2997765321c62030a4b20b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:afc35ea801a792803e7505e6f951d55fc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afc35ea801a792803e7505e6f951d55fc">switchingAnimation</a> (<a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a> next)</td></tr>
-<tr class="memdesc:afc35ea801a792803e7505e6f951d55fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションを切り替える関数。  <a href="class_player.html#afc35ea801a792803e7505e6f951d55fc">[詳解]</a><br /></td></tr>
-<tr class="separator:afc35ea801a792803e7505e6f951d55fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa86cada99b85850de6d5ed7acbda9c4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa86cada99b85850de6d5ed7acbda9c4b">getNextAction</a> ()</td></tr>
-<tr class="memdesc:aa86cada99b85850de6d5ed7acbda9c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">コントローラの入力などに応じた次のアクションを取得する。  <a href="class_player.html#aa86cada99b85850de6d5ed7acbda9c4b">[詳解]</a><br /></td></tr>
-<tr class="separator:aa86cada99b85850de6d5ed7acbda9c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4f282e8085824785469517846ff4df"><td class="memItemLeft" align="right" valign="top"><a id="a8e4f282e8085824785469517846ff4df"></a>
-<a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8e4f282e8085824785469517846ff4df">updateStatus</a> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus)</td></tr>
-<tr class="memdesc:a8e4f282e8085824785469517846ff4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトのStatusの更新を行う。 <br /></td></tr>
-<tr class="separator:a8e4f282e8085824785469517846ff4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca2669da1c8ef16efbb8cefe1398e65"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2ca2669da1c8ef16efbb8cefe1398e65">switchingAnimation</a> (<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> next)</td></tr>
+<tr class="memdesc:a2ca2669da1c8ef16efbb8cefe1398e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションを切り替える関数。  <a href="class_player.html#a2ca2669da1c8ef16efbb8cefe1398e65">[詳解]</a><br /></td></tr>
+<tr class="separator:a2ca2669da1c8ef16efbb8cefe1398e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b307d6c920677ec94da952543580fa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6b307d6c920677ec94da952543580fa7">getNextAction</a> (std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; _animation)</td></tr>
+<tr class="memdesc:a6b307d6c920677ec94da952543580fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">コントローラの入力などに応じた次のアクションを取得する。  <a href="class_player.html#a6b307d6c920677ec94da952543580fa7">[詳解]</a><br /></td></tr>
+<tr class="separator:a6b307d6c920677ec94da952543580fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:a9021a6b50ed269644ea9d74a27a6d060"><td class="memItemLeft" align="right" valign="top"><a id="a9021a6b50ed269644ea9d74a27a6d060"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9021a6b50ed269644ea9d74a27a6d060">speed_walk</a> = 2</td></tr>
-<tr class="memdesc:a9021a6b50ed269644ea9d74a27a6d060"><td class="mdescLeft">&#160;</td><td class="mdescRight">歩く速度 <br /></td></tr>
-<tr class="separator:a9021a6b50ed269644ea9d74a27a6d060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8395e0102227723919bfe8fb31177722"><td class="memItemLeft" align="right" valign="top"><a id="a8395e0102227723919bfe8fb31177722"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a8395e0102227723919bfe8fb31177722">speed_run</a> = 4</td></tr>
-<tr class="memdesc:a8395e0102227723919bfe8fb31177722"><td class="mdescLeft">&#160;</td><td class="mdescRight">走る速度 <br /></td></tr>
-<tr class="separator:a8395e0102227723919bfe8fb31177722"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab116b0f35f9d7398d5e280db75a6f95a"><td class="memItemLeft" align="right" valign="top"><a id="ab116b0f35f9d7398d5e280db75a6f95a"></a>
-<a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab116b0f35f9d7398d5e280db75a6f95a">IsAction</a></td></tr>
-<tr class="memdesc:ab116b0f35f9d7398d5e280db75a6f95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの現在の状態を管理。 <br /></td></tr>
-<tr class="separator:ab116b0f35f9d7398d5e280db75a6f95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a381cd8d4681d6bdaf660d1320ed52f"><td class="memItemLeft" align="right" valign="top"><a id="a2a381cd8d4681d6bdaf660d1320ed52f"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2a381cd8d4681d6bdaf660d1320ed52f">maxSpeed_walk</a> = 5</td></tr>
+<tr class="memdesc:a2a381cd8d4681d6bdaf660d1320ed52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">歩く速度 <br /></td></tr>
+<tr class="separator:a2a381cd8d4681d6bdaf660d1320ed52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fc91b2441114b1e1f0b5b8e97e5689"><td class="memItemLeft" align="right" valign="top"><a id="ad5fc91b2441114b1e1f0b5b8e97e5689"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad5fc91b2441114b1e1f0b5b8e97e5689">maxSpeed_run</a> = 10</td></tr>
+<tr class="memdesc:ad5fc91b2441114b1e1f0b5b8e97e5689"><td class="mdescLeft">&#160;</td><td class="mdescRight">走る速度 <br /></td></tr>
+<tr class="separator:ad5fc91b2441114b1e1f0b5b8e97e5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47cbe3b1069be5bf260d9cf4f2c4ee67"><td class="memItemLeft" align="right" valign="top"><a id="a47cbe3b1069be5bf260d9cf4f2c4ee67"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a47cbe3b1069be5bf260d9cf4f2c4ee67">jumpUp_initSpeed</a> = 20</td></tr>
+<tr class="memdesc:a47cbe3b1069be5bf260d9cf4f2c4ee67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jump_Upの初速度 <br /></td></tr>
+<tr class="separator:a47cbe3b1069be5bf260d9cf4f2c4ee67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa835d26228aae7623d52a2d7e26dd2f8"><td class="memItemLeft" align="right" valign="top"><a id="aa835d26228aae7623d52a2d7e26dd2f8"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa835d26228aae7623d52a2d7e26dd2f8">jumpMid_initSpeed</a> = 15</td></tr>
+<tr class="memdesc:aa835d26228aae7623d52a2d7e26dd2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jump_MidAirの初速度 <br /></td></tr>
+<tr class="separator:aa835d26228aae7623d52a2d7e26dd2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94067193d305b8a77ee36acc5550ead0"><td class="memItemLeft" align="right" valign="top"><a id="a94067193d305b8a77ee36acc5550ead0"></a>
+<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a94067193d305b8a77ee36acc5550ead0">IsAction</a></td></tr>
+<tr class="memdesc:a94067193d305b8a77ee36acc5550ead0"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの現在の状態を管理。 <br /></td></tr>
+<tr class="separator:a94067193d305b8a77ee36acc5550ead0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2c204ace948846e91947639ba464977"><td class="memItemLeft" align="right" valign="top"><a id="ab2c204ace948846e91947639ba464977"></a>
 std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab2c204ace948846e91947639ba464977">IsAction_canSwitching</a></td></tr>
-<tr class="memdesc:ab2c204ace948846e91947639ba464977"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション中に他のアクションに切り替え可能かどうか？（添え字がplayerActionに対応） <br /></td></tr>
+<tr class="memdesc:ab2c204ace948846e91947639ba464977"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション中に他のアクションに切り替え可能かどうか？（添え字がDefine::rollAction_Basicに対応） <br /></td></tr>
 <tr class="separator:ab2c204ace948846e91947639ba464977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad32c54ce654200c1012afec28cd36633"><td class="memItemLeft" align="right" valign="top"><a id="ad32c54ce654200c1012afec28cd36633"></a>
 <a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad32c54ce654200c1012afec28cd36633">playerStatus</a></td></tr>
 <tr class="memdesc:ad32c54ce654200c1012afec28cd36633"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。 <br /></td></tr>
 <tr class="separator:ad32c54ce654200c1012afec28cd36633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba657eb9fcffebf5b8dddf76a3c466a"><td class="memItemLeft" align="right" valign="top"><a id="a7ba657eb9fcffebf5b8dddf76a3c466a"></a>
-std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7ba657eb9fcffebf5b8dddf76a3c466a">animation</a> = std::make_shared&lt;<a class="el" href="class_animation.html">Animation</a>&gt;(imagePath::getIns()-&gt;unityChan_Idle, <a class="el" href="class_player.html#ad32c54ce654200c1012afec28cd36633">playerStatus</a>)</td></tr>
+std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7ba657eb9fcffebf5b8dddf76a3c466a">animation</a></td></tr>
 <tr class="memdesc:a7ba657eb9fcffebf5b8dddf76a3c466a"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションの処理をまとめて行うオブジェクト。 <br /></td></tr>
 <tr class="separator:a7ba657eb9fcffebf5b8dddf76a3c466a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad287140e21fe52d7b547e5acaa388a0e"><td class="memItemLeft" align="right" valign="top"><a id="ad287140e21fe52d7b547e5acaa388a0e"></a>
+std::shared_ptr&lt; <a class="el" href="class_animation_move.html">AnimationMove</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad287140e21fe52d7b547e5acaa388a0e">animationMove</a></td></tr>
+<tr class="memdesc:ad287140e21fe52d7b547e5acaa388a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーション時のStatusの座標の更新をするオブジェクト。 <br /></td></tr>
+<tr class="separator:ad287140e21fe52d7b547e5acaa388a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b73f659ed3978dfccc553ea0214119e"><td class="memItemLeft" align="right" valign="top"><a id="a3b73f659ed3978dfccc553ea0214119e"></a>
+std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3b73f659ed3978dfccc553ea0214119e">collision</a></td></tr>
+<tr class="memdesc:a3b73f659ed3978dfccc553ea0214119e"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの当たり判定処理をまとめて行うオブジェクト。 <br /></td></tr>
+<tr class="separator:a3b73f659ed3978dfccc553ea0214119e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>Playerキャラの処理全般を担うクラス。 </p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/21/12:28 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
 </div><h2 class="groupheader">関数詳解</h2>
-<a id="aa86cada99b85850de6d5ed7acbda9c4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa86cada99b85850de6d5ed7acbda9c4b">&#9670;&nbsp;</a></span>getNextAction()</h2>
+<a id="a6b307d6c920677ec94da952543580fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b307d6c920677ec94da952543580fa7">&#9670;&nbsp;</a></span>getNextAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,10 +165,21 @@ std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">Player::playerAction</a> Player::getNextAction </td>
+          <td class="memname"><a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> Player::getNextAction </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>_animation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -207,11 +192,30 @@ std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;
 <p>コントローラの入力などに応じた次のアクションを取得する。 </p>
 <p>@biref コントローラの入力状態によって次のアクション状態を取得する。playerStatusの更新はここでは行わない。状態を決定する処理だけ。 </p><dl class="section date"><dt>日付</dt><dd>2020/04/21/18:30 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_player_a6b307d6c920677ec94da952543580fa7_cgraph.png" border="0" usemap="#class_player_a6b307d6c920677ec94da952543580fa7_cgraph" alt=""/></div>
+<map name="class_player_a6b307d6c920677ec94da952543580fa7_cgraph" id="class_player_a6b307d6c920677ec94da952543580fa7_cgraph">
+<area shape="rect" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="5,31,155,57"/>
+<area shape="rect" href="class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251" title="左方向ボタン入力状態の取得（押された瞬間）" alt="" coords="207,5,349,32"/>
+<area shape="rect" href="class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0" title="右方向ボタン入力状態の取得（押された瞬間）" alt="" coords="203,56,353,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_player_a6b307d6c920677ec94da952543580fa7_icgraph.png" border="0" usemap="#class_player_a6b307d6c920677ec94da952543580fa7_icgraph" alt=""/></div>
+<map name="class_player_a6b307d6c920677ec94da952543580fa7_icgraph" id="class_player_a6b307d6c920677ec94da952543580fa7_icgraph">
+<area shape="rect" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="160,5,309,32"/>
+<area shape="rect" href="class_player.html#ad1ad81e5e3564dc1b4f7ba720c717025" title="Playerオブジェクトの前処理全般を行う関数。" alt="" coords="5,5,112,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="afc35ea801a792803e7505e6f951d55fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc35ea801a792803e7505e6f951d55fc">&#9670;&nbsp;</a></span>switchingAnimation()</h2>
+<a id="a2ca2669da1c8ef16efbb8cefe1398e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca2669da1c8ef16efbb8cefe1398e65">&#9670;&nbsp;</a></span>switchingAnimation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +226,7 @@ std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;
         <tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; Player::switchingAnimation </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_player.html#a783782660224e880831d316ceed5075c">playerAction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a>&#160;</td>
           <td class="paramname"><em>next</em></td><td>)</td>
           <td></td>
         </tr>
@@ -238,38 +242,50 @@ std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;
 <p>IsActionを更新して、次のアクションのAnimation型のオブジェクトを返す。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/21/18:33 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_player_a2ca2669da1c8ef16efbb8cefe1398e65_icgraph.png" border="0" usemap="#class_player_a2ca2669da1c8ef16efbb8cefe1398e65_icgraph" alt=""/></div>
+<map name="class_player_a2ca2669da1c8ef16efbb8cefe1398e65_icgraph" id="class_player_a2ca2669da1c8ef16efbb8cefe1398e65_icgraph">
+<area shape="rect" title="アニメーションを切り替える関数。" alt="" coords="160,5,339,32"/>
+<area shape="rect" href="class_player.html#ad1ad81e5e3564dc1b4f7ba720c717025" title="Playerオブジェクトの前処理全般を行う関数。" alt="" coords="5,5,112,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a6912bb6e48efb5845d59f0f4582827ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6912bb6e48efb5845d59f0f4582827ef">&#9670;&nbsp;</a></span>update()</h2>
+<a id="ad1ad81e5e3564dc1b4f7ba720c717025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ad81e5e3564dc1b4f7ba720c717025">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Player::update </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Playerオブジェクトの前処理全般を行う関数。 </p>
 <p>プレイヤーオブジェクトの座標更新、アニメーションの処理などを行う。</p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/21/12:36 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
-
-<p><a class="el" href="class_task.html#a552c8996b9db6be1ae519b9cdbdfaeca">Task</a>を実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_player_ad1ad81e5e3564dc1b4f7ba720c717025_cgraph.png" border="0" usemap="#class_player_ad1ad81e5e3564dc1b4f7ba720c717025_cgraph" alt=""/></div>
+<map name="class_player_ad1ad81e5e3564dc1b4f7ba720c717025_cgraph" id="class_player_ad1ad81e5e3564dc1b4f7ba720c717025_cgraph">
+<area shape="rect" title="Playerオブジェクトの前処理全般を行う関数。" alt="" coords="5,56,112,83"/>
+<area shape="rect" href="class_player.html#a6b307d6c920677ec94da952543580fa7" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="175,31,324,57"/>
+<area shape="rect" href="class_player.html#a2ca2669da1c8ef16efbb8cefe1398e65" title="アニメーションを切り替える関数。" alt="" coords="160,81,339,108"/>
+<area shape="rect" href="class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251" title="左方向ボタン入力状態の取得（押された瞬間）" alt="" coords="391,5,533,32"/>
+<area shape="rect" href="class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0" title="右方向ボタン入力状態の取得（押された瞬間）" alt="" coords="387,56,537,83"/>
+</map>
+</div>
 
 </div>
 </div>

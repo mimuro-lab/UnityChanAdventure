@@ -91,14 +91,6 @@ class AnimationMove
 				}
 			}
 			//速度方向とオブジェクト向きが異なるときは強制的に水平方向の速度・加速度をゼロにする。
-			/*
-			if (
-				((_nowStatus._x_speed > 0) && !_nowStatus.directRight) ||
-				((_nowStatus._x_speed < 0) && _nowStatus.directRight)
-				) {
-				x_vel = x_acc = 0;
-				//nextStatus._x_speed = 0;
-			}*/
 
 			y_vel += y_acc;
 
@@ -240,6 +232,7 @@ public:
 		_validStoppingAction[static_cast<int>(Define::rollAction_Basic::Idle)]
 			= true;
 	};
+
 	~AnimationMove() = default;
 
 	Define::Status update(Define::Status nowStatus, Define::rollAction_Basic _isAction, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage, std::shared_ptr<Animation> _animation);

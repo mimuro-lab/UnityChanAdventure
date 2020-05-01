@@ -13,7 +13,9 @@
 #include "Controller.h"
 #include "Animation.h"
 #include "AnimationMove.h"
+#include "AnimationSwitch.h"
 #include "CollisionDetect.h"
+#include "PlayerDirect.h"
 #include "Stage.h"
 #include <memory>
 
@@ -35,12 +37,6 @@ class Player
 	//! Jump_MidAirの初速度
 	char jumpMid_initSpeed = 15;
 
-	//! プレイヤーオブジェクトの現在の状態を管理。
-	Define::rollAction_Basic IsAction;
-
-	//! アクション中に他のアクションに切り替え可能かどうか？（添え字がDefine::rollAction_Basicに対応）
-	std::vector<bool> IsAction_canSwitching;
-
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
 	Define::Status playerStatus;
 
@@ -53,16 +49,15 @@ class Player
 	//! プレイヤーオブジェクトの当たり判定処理をまとめて行うオブジェクト。
 	std::shared_ptr<CollisionDetect> collision;
 
-	//! アニメーションを切り替える関数。
-	std::shared_ptr<Animation> switchingAnimation(Define::rollAction_Basic next);
+	//! アクション状態を切り替える処理をまとめて行うオブジェクト。
+	std::shared_ptr<AnimationSwitch> animationSwitch;
 
-	//! コントローラの入力などに応じた次のアクションを取得する。
-	Define::rollAction_Basic getNextAction(std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Animation> _animation);
+	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
+	std::shared_ptr<PlayerDirect> playerDirect;
 
 public:
 
-	Player(std::shared_ptr<Stage> _stage) : 
-		IsAction(Define::rollAction_Basic::Idle)
+	Player(std::shared_ptr<Stage> _stage)
 	{
 		// 初期情報の設定。
 		playerStatus._x = Define::WIN_W / 2;
@@ -70,20 +65,15 @@ public:
 
 		playerStatus.directRight = true;
 
-		// IsAction_canSwitchinの初期化。 Idle, Walk, Run, Fallの状態のときは切り替え可能の状態。
-		IsAction_canSwitching = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
-
-		IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Idle)]
-			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Walk)]
-			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Run)]
-			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Fall)]
-			= true;
-
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
 		animationMove = std::make_shared<AnimationMove>(maxSpeed_walk, maxSpeed_run, jumpUp_initSpeed, jumpMid_initSpeed);
 
 		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
+
+		animationSwitch = std::make_shared<AnimationSwitch>(collision, animation);
+
+		playerDirect = std::make_shared<PlayerDirect>();
 
 	};
 

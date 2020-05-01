@@ -1,0 +1,8 @@
+<map id="Keyboard::isAvailableCode" name="Keyboard::isAvailableCode">
+<area shape="rect" id="node1" title="keyCodeが有効なキー番号か問う" alt="" coords="609,56,785,83"/>
+<area shape="rect" id="node2" href="$class_keyboard.html#ac10c13870ba471f267d5ced0f233a398" title="keyCodeのキーが押されているフレーム数を取得" alt="" coords="370,31,558,57"/>
+<area shape="rect" id="node6" href="$class_keyboard.html#a0c6cbe2c73c4aa8be1e15c5dd1874e0e" title="keyCodeのキーが離されているフレーム数を取得" alt="" coords="367,81,561,108"/>
+<area shape="rect" id="node3" href="$class_controller.html#a7d04c17913f04f99429aa29fa8505484" title="全ての入力状態を更新する。" alt="" coords="195,31,319,57"/>
+<area shape="rect" id="node4" href="$class_system_looper.html#a035b323c4e9d1163c3fc13d4a8bbdffd" title="メインの繰り返し処理を行う関数。" alt="" coords="7,5,145,32"/>
+<area shape="rect" id="node5" href="$class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a" title="ゲーム画面に必要な前処理を行う関数。" alt="" coords="5,56,147,83"/>
+</map>

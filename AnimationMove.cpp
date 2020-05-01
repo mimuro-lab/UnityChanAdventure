@@ -14,6 +14,11 @@ Define::Status AnimationMove::update(
 	_nextStatus._x_speed = pysicQty.x_vel;
 
 
+	if (_isAction == Define::rollAction_Basic::Fall) {
+		_nextStatus._y++;
+		_nextStatus._y_speed = 1;
+	}
+
 
 	// 状態がBrakeだったらpysicQtyのリセットを行い、終了
 	// または、プレイヤーオブジェクトの向くべき方向と速度方向が異なる場合は水平方向のリフレッシュを行う。

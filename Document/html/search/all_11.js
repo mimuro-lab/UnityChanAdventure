@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['validselectwindow_147',['ValidSelectWindow',['../class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1',1,'SelectWindow']]]
+  ['task_156',['Task',['../class_task.html',1,'']]],
+  ['task_2eh_157',['Task.h',['../_task_8h.html',1,'']]]
 ];

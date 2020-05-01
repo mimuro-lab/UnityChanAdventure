@@ -63,7 +63,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-types">公開型</a> &#124;
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_collision_detect-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
@@ -75,36 +78,127 @@ CollisionDetect 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_collision_detect__coll__graph.png" border="0" usemap="#_collision_detect_coll__map" alt="Collaboration graph"/></div>
 <map name="_collision_detect_coll__map" id="_collision_detect_coll__map">
-<area shape="rect" title=" " alt="" coords="32,109,141,136"/>
-<area shape="rect" href="struct_collision_detect_1_1_collition_points.html" title=" " alt="" coords="5,5,168,47"/>
+<area shape="rect" title=" " alt="" coords="225,109,334,136"/>
+<area shape="rect" href="struct_collision_detect_1_1_collision__range.html" title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect" href="struct_collision_detect_1_1_collision.html" title=" " alt="" coords="196,13,363,39"/>
+<area shape="rect" href="struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="387,13,491,39"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_collision_detect_1_1_collition_points.html">CollitionPoints</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_collision_detect_1_1_collision__range.html">Collision_range</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a19970d5fade410c01d7bf057760255d2"><td class="memItemLeft" align="right" valign="top"><a id="a19970d5fade410c01d7bf057760255d2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>toShiftDirect</b> { <br />
+&#160;&#160;<b>right</b>, 
+<b>left</b>, 
+<b>head</b>, 
+<b>bottom</b>, 
+<br />
+&#160;&#160;<b>_vertical</b>, 
+<b>_holizen</b>, 
+<b>_none</b>
+<br />
+ }</td></tr>
+<tr class="separator:a19970d5fade410c01d7bf057760255d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a4d5acc2c466af4c7e5242901ee762db3"><td class="memItemLeft" align="right" valign="top"><a id="a4d5acc2c466af4c7e5242901ee762db3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionDetect</b> (int headPoints, int bottomPoints, int rightPoints, int leftPoints)</td></tr>
-<tr class="separator:a4d5acc2c466af4c7e5242901ee762db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ea6a8b43ae70f2b431204d9f2f86f39"><td class="memItemLeft" align="right" valign="top"><a id="a7ea6a8b43ae70f2b431204d9f2f86f39"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus)</td></tr>
-<tr class="separator:a7ea6a8b43ae70f2b431204d9f2f86f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316b3004ccd115df86c39e39e1061f90"><td class="memItemLeft" align="right" valign="top"><a id="a316b3004ccd115df86c39e39e1061f90"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionDetect</b> (std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; __stage, <a class="el" href="struct_define_1_1_status.html">Define::Status</a> _status)</td></tr>
+<tr class="separator:a316b3004ccd115df86c39e39e1061f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6d4684061df08343ea8d4bcdb5c2f2"><td class="memItemLeft" align="right" valign="top"><a id="a5e6d4684061df08343ea8d4bcdb5c2f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="separator:a5e6d4684061df08343ea8d4bcdb5c2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d29495bc9aa07af6f113255989e0077"><td class="memItemLeft" align="right" valign="top"><a id="a4d29495bc9aa07af6f113255989e0077"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>calcShitingCollisionedSideVertical</b> (toShiftDirect _to, char _range)</td></tr>
+<tr class="separator:a4d29495bc9aa07af6f113255989e0077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a278c3218aa57c23e6d42493dbeb967e9"><td class="memItemLeft" align="right" valign="top"><a id="a278c3218aa57c23e6d42493dbeb967e9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>calcShitingCollisionedSideHorizon</b> (toShiftDirect _to, char _range)</td></tr>
+<tr class="separator:a278c3218aa57c23e6d42493dbeb967e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13771062daf4866267ab57f77e7f77bc"><td class="memItemLeft" align="right" valign="top"><a id="a13771062daf4866267ab57f77e7f77bc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> ()</td></tr>
 <tr class="separator:a13771062daf4866267ab57f77e7f77bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb33c300cc6aa634743f1b4bfbd407b3"><td class="memItemLeft" align="right" valign="top"><a id="aeb33c300cc6aa634743f1b4bfbd407b3"></a>
+const <a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getCollisionedSide</b> ()</td></tr>
+<tr class="separator:aeb33c300cc6aa634743f1b4bfbd407b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa360a570c0a4058e5e5a882e80e13e"><td class="memItemLeft" align="right" valign="top"><a id="a5aa360a570c0a4058e5e5a882e80e13e"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>getRange</b> (toShiftDirect _to, int x_vel, int y_vel)</td></tr>
+<tr class="separator:a5aa360a570c0a4058e5e5a882e80e13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a2a81346c194560e6675475c44a1ba4b4"><td class="memItemLeft" align="right" valign="top"><a id="a2a81346c194560e6675475c44a1ba4b4"></a>
+<a class="el" href="struct_collision_detect_1_1_collision__range.html">Collision_range</a>&#160;</td><td class="memItemRight" valign="bottom"><b>collisionSideRange</b></td></tr>
+<tr class="separator:a2a81346c194560e6675475c44a1ba4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a012f3e3608857edf547ec71940df2abc"><td class="memItemLeft" align="right" valign="top"><a id="a012f3e3608857edf547ec71940df2abc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc">IsDetectedStage</a> (int x, int y)</td></tr>
+<tr class="memdesc:a012f3e3608857edf547ec71940df2abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">(x, y)座標は何かに当たっているかどうか <br /></td></tr>
+<tr class="separator:a012f3e3608857edf547ec71940df2abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="memItemLeft" align="right" valign="top"><a id="acb0bbbb1dacab2e1f61a1bf65feb9a0e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e">detectHead</a> ()</td></tr>
+<tr class="memdesc:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">head部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="separator:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac83775d1f852ab21a38177776b30ce5a"><td class="memItemLeft" align="right" valign="top"><a id="ac83775d1f852ab21a38177776b30ce5a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a">detectRight</a> ()</td></tr>
+<tr class="memdesc:ac83775d1f852ab21a38177776b30ce5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">right部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="separator:ac83775d1f852ab21a38177776b30ce5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f529df0fa1b3d02f5831f6571b5093"><td class="memItemLeft" align="right" valign="top"><a id="aa1f529df0fa1b3d02f5831f6571b5093"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093">detectBottom</a> ()</td></tr>
+<tr class="memdesc:aa1f529df0fa1b3d02f5831f6571b5093"><td class="mdescLeft">&#160;</td><td class="mdescRight">bottom部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="separator:aa1f529df0fa1b3d02f5831f6571b5093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="memItemLeft" align="right" valign="top"><a id="a9c09cbad48b6d7c76a345dc7d53301aa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa">detectLeft</a> ()</td></tr>
+<tr class="memdesc:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">left部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="separator:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:a99a931d0e270cd1209f4fabd77c2942d"><td class="memItemLeft" align="right" valign="top"><a id="a99a931d0e270cd1209f4fabd77c2942d"></a>
-<a class="el" href="struct_collision_detect_1_1_collition_points.html">CollitionPoints</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_collition</b></td></tr>
-<tr class="separator:a99a931d0e270cd1209f4fabd77c2942d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad181d4a57cbfe4fde2404f2da80e9d40"><td class="memItemLeft" align="right" valign="top"><a id="ad181d4a57cbfe4fde2404f2da80e9d40"></a>
+<a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><b>collisionedSide</b></td></tr>
+<tr class="separator:ad181d4a57cbfe4fde2404f2da80e9d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53925555791974720ae58c594375de2"><td class="memItemLeft" align="right" valign="top"><a id="ab53925555791974720ae58c594375de2"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>toRight</b> = 20</td></tr>
+<tr class="separator:ab53925555791974720ae58c594375de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca12d63698f74f77f94c440f7e82bc1"><td class="memItemLeft" align="right" valign="top"><a id="aeca12d63698f74f77f94c440f7e82bc1"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>toLeft</b> = 20</td></tr>
+<tr class="separator:aeca12d63698f74f77f94c440f7e82bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661a425aed7be9aa770c1cc525f79ee3"><td class="memItemLeft" align="right" valign="top"><a id="a661a425aed7be9aa770c1cc525f79ee3"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>toHead</b> = 40</td></tr>
+<tr class="separator:a661a425aed7be9aa770c1cc525f79ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af11543afaaa60b9f284be2eb0160f724"><td class="memItemLeft" align="right" valign="top"><a id="af11543afaaa60b9f284be2eb0160f724"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>toBottom</b> = 40</td></tr>
+<tr class="separator:af11543afaaa60b9f284be2eb0160f724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae96b36fdc196b9980efeb9fe32a8ee6"><td class="memItemLeft" align="right" valign="top"><a id="aae96b36fdc196b9980efeb9fe32a8ee6"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>rightPoints</b> = 10</td></tr>
+<tr class="separator:aae96b36fdc196b9980efeb9fe32a8ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60934197c2987e26be0edb5a641e5dbd"><td class="memItemLeft" align="right" valign="top"><a id="a60934197c2987e26be0edb5a641e5dbd"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>leftPoints</b> = 10</td></tr>
+<tr class="separator:a60934197c2987e26be0edb5a641e5dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74cf0271bdba760562129fb7dee902a"><td class="memItemLeft" align="right" valign="top"><a id="aa74cf0271bdba760562129fb7dee902a"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>headPoints</b> = 10</td></tr>
+<tr class="separator:aa74cf0271bdba760562129fb7dee902a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a4e4f46d698c26ccfde062c94fa305"><td class="memItemLeft" align="right" valign="top"><a id="af3a4e4f46d698c26ccfde062c94fa305"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>bottomPoints</b> = 10</td></tr>
+<tr class="separator:af3a4e4f46d698c26ccfde062c94fa305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ee951a67ab67850ffc57f4df796951"><td class="memItemLeft" align="right" valign="top"><a id="ab6ee951a67ab67850ffc57f4df796951"></a>
+<a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nowStatus</b></td></tr>
+<tr class="separator:ab6ee951a67ab67850ffc57f4df796951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d40652f73257c3196d9ae973928244"><td class="memItemLeft" align="right" valign="top"><a id="a42d40652f73257c3196d9ae973928244"></a>
+std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_stage</b></td></tr>
+<tr class="separator:a42d40652f73257c3196d9ae973928244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_collision_detect_8h_source.html">CollisionDetect.h</a></li>
+<li>C:/Users/mimur/Desktop/NewGame/CollisionDetect.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

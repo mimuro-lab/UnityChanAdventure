@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="AnimationMove.cpp" />
+    <ClCompile Include="AnimationSwitch.cpp" />
     <ClCompile Include="CollisionDetect.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
@@ -98,6 +99,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerDirect.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -108,6 +110,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="AnimationMove.h" />
+    <ClInclude Include="AnimationSwitch.h" />
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Controller.h" />
@@ -121,6 +124,7 @@
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerDirect.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stage.h" />

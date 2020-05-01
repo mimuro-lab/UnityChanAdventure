@@ -8,6 +8,12 @@
 
 #include "GameScene.h"
 
+/*!
+@brief プレイヤーオブジェクトの座標更新、アニメーションの処理などを行う。nnnnnnnnnnn
+@date 2020/04/21/12:36
+@author mimuro
+@callgraph
+*/
 void GameScene::update()
 {
 	

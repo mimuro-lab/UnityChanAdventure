@@ -1,0 +1,4 @@
+<map id="Keyboard::getPressingCount" name="Keyboard::getPressingCount">
+<area shape="rect" id="node1" title="keyCodeのキーが押されているフレーム数を取得" alt="" coords="5,5,193,32"/>
+<area shape="rect" id="node2" href="$class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f" title="keyCodeが有効なキー番号か問う" alt="" coords="241,5,417,32"/>
+</map>

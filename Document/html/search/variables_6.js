@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nowdraiwngimageindex_288',['NowDraiwngImageIndex',['../class_animation.html#a45f95802482a81d0b24080ab2895e95f',1,'Animation']]],
-  ['nowdrawingimagehandle_289',['NowDrawingImageHandle',['../class_animation.html#a90c4dc84f159217d31ce0cbb5c3b5588',1,'Animation']]]
+  ['jumpmid_5finitspeed_317',['jumpMid_initSpeed',['../class_player.html#aa835d26228aae7623d52a2d7e26dd2f8',1,'Player']]],
+  ['jumpup_5finitspeed_318',['jumpUp_initSpeed',['../class_player.html#a47cbe3b1069be5bf260d9cf4f2c4ee67',1,'Player']]]
 ];

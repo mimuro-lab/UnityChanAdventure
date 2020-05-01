@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['roundpoint_117',['roundPoint',['../class_calc_utils.html#af9996379c05c1b802ab32c41ec3aee0c',1,'CalcUtils']]]
+  ['nowdraiwngimageindex_112',['NowDraiwngImageIndex',['../class_animation.html#a45085f714394347223428332d4919cc0',1,'Animation']]],
+  ['nowdrawingimagehandle_113',['NowDrawingImageHandle',['../class_animation.html#a90c4dc84f159217d31ce0cbb5c3b5588',1,'Animation']]]
 ];

@@ -1,0 +1,8 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$class_abstract_scene.html" title="シーンを管理するクラス、SystemLooperで使用。各シーンクラスはこのクラスを継承する。" alt="" coords="5,107,113,133"/>
+<area shape="rect" id="node2" href="$class_config_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。設定画面を担当する。" alt="" coords="161,5,256,32"/>
+<area shape="rect" id="node3" href="$class_game_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。ゲーム画面を担当する。" alt="" coords="161,56,256,83"/>
+<area shape="rect" id="node4" href="$class_menu_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。メニュー画面を担当する。" alt="" coords="163,107,254,133"/>
+<area shape="rect" id="node5" href="$class_start_scene.html" title="SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。スタート画面を担当する。" alt="" coords="165,157,252,184"/>
+<area shape="rect" id="node6" href="$class_select_window.html" title="セレクト画面の処理を担うクラス。セレクト画面を有効にしたいシーンに継承させると使用できる。" alt="" coords="7,56,112,83"/>
+</map>

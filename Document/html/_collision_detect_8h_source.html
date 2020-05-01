@@ -68,37 +68,99 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_collision_detect.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_collision_detect.html">CollisionDetect</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct_collision_detect_1_1_collition_points.html">    8</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_collision_detect_1_1_collition_points.html">CollitionPoints</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        std::vector&lt;bool&gt; head;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        std::vector&lt;bool&gt; bottom;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        std::vector&lt;bool&gt; right;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        std::vector&lt;bool&gt; left;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    };</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="struct_collision_detect_1_1_collition_points.html">CollitionPoints</a> _collition;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_collision_detect.html">CollisionDetect</a>(<span class="keywordtype">int</span> headPoints, <span class="keywordtype">int</span> bottomPoints, <span class="keywordtype">int</span> rightPoints, <span class="keywordtype">int</span> leftPoints) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        _collition.head = std::vector&lt;bool&gt;(headPoints, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        _collition.bottom = std::vector&lt;bool&gt;(bottomPoints, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        _collition.right = std::vector&lt;bool&gt;(rightPoints, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        _collition.left = std::vector&lt;bool&gt;(leftPoints, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;DxLib.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Stage.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_collision_detect.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_collision_detect.html">CollisionDetect</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_collision_detect_1_1_collision.html">   11</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_collision_detect_1_1_collision.html">Collision</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">bool</span> head;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">bool</span> bottom;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">bool</span> right;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">bool</span> left;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    };</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_collision_detect_1_1_collision__range.html">   18</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_collision_detect_1_1_collision__range.html">Collision_range</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> head = 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> bottom = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> right = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> left = 0;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ~<a class="code" href="class_collision_detect.html">CollisionDetect</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> update(<a class="code" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> draw();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="struct_collision_detect_1_1_collision.html">Collision</a> collisionedSide;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// プレイヤーオブジェクトの中心点を基準にする。</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">char</span> toRight = 20;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span> toLeft = 20;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">char</span> toHead = 40;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">char</span> toBottom = 40;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// 当たり判定の点の数</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">char</span> rightPoints = 10;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">char</span> leftPoints = 10;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">char</span> headPoints = 10;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">char</span> bottomPoints = 10;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="struct_define_1_1_status.html">Define::Status</a> nowStatus;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::shared_ptr&lt;Stage&gt; _stage;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc">IsDetectedStage</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e">detectHead</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a">detectRight</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093">detectBottom</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa">detectLeft</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="class_collision_detect.html">CollisionDetect</a>(std::shared_ptr&lt;Stage&gt; __stage, <a class="code" href="struct_define_1_1_status.html">Define::Status</a> _status) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        collisionedSide.head = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        collisionedSide.bottom = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        collisionedSide.right = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        collisionedSide.left = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        _stage = __stage;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        nowStatus = _status;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ~<a class="code" href="class_collision_detect.html">CollisionDetect</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Collision_range collisionSideRange;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> update(<a class="code" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus, std::shared_ptr&lt;Stage&gt; _stage);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">enum class</span> toShiftDirect{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        right, left, head, bottom, _vertical, _holizen, _none</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> calcShitingCollisionedSideVertical(toShiftDirect _to, <span class="keywordtype">char</span> _range);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span> calcShitingCollisionedSideHorizon(toShiftDirect _to, <span class="keywordtype">char</span> _range);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> draw();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">const</span> Collision getCollisionedSide() { </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> collisionedSide; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> getRange(toShiftDirect _to, <span class="keywordtype">int</span> x_vel, <span class="keywordtype">int</span> y_vel);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_collision_detect_html_aa1f529df0fa1b3d02f5831f6571b5093"><div class="ttname"><a href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093">CollisionDetect::detectBottom</a></div><div class="ttdeci">bool detectBottom()</div><div class="ttdoc">bottom部分の衝突の有無を確認する。</div><div class="ttdef"><b>Definition:</b> CollisionDetect.cpp:40</div></div>
+<div class="ttc" id="astruct_collision_detect_1_1_collision_html"><div class="ttname"><a href="struct_collision_detect_1_1_collision.html">CollisionDetect::Collision</a></div><div class="ttdef"><b>Definition:</b> CollisionDetect.h:11</div></div>
 <div class="ttc" id="a_define_8h_html"><div class="ttname"><a href="_define_8h.html">Define.h</a></div><div class="ttdoc">いろいろな定義をまとまる為のヘッダファイル</div></div>
-<div class="ttc" id="astruct_collision_detect_1_1_collition_points_html"><div class="ttname"><a href="struct_collision_detect_1_1_collition_points.html">CollisionDetect::CollitionPoints</a></div><div class="ttdef"><b>Definition:</b> CollisionDetect.h:8</div></div>
-<div class="ttc" id="astruct_define_1_1_status_html"><div class="ttname"><a href="struct_define_1_1_status.html">Define::Status</a></div><div class="ttdoc">プレイヤーや敵のステータス管理の構造体</div><div class="ttdef"><b>Definition:</b> Define.h:42</div></div>
-<div class="ttc" id="aclass_collision_detect_html"><div class="ttname"><a href="class_collision_detect.html">CollisionDetect</a></div><div class="ttdef"><b>Definition:</b> CollisionDetect.h:6</div></div>
+<div class="ttc" id="astruct_collision_detect_1_1_collision__range_html"><div class="ttname"><a href="struct_collision_detect_1_1_collision__range.html">CollisionDetect::Collision_range</a></div><div class="ttdef"><b>Definition:</b> CollisionDetect.h:18</div></div>
+<div class="ttc" id="aclass_collision_detect_html_a012f3e3608857edf547ec71940df2abc"><div class="ttname"><a href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc">CollisionDetect::IsDetectedStage</a></div><div class="ttdeci">bool IsDetectedStage(int x, int y)</div><div class="ttdoc">(x, y)座標は何かに当たっているかどうか</div><div class="ttdef"><b>Definition:</b> CollisionDetect.cpp:106</div></div>
+<div class="ttc" id="astruct_define_1_1_status_html"><div class="ttname"><a href="struct_define_1_1_status.html">Define::Status</a></div><div class="ttdoc">プレイヤーや敵のステータス管理の構造体</div><div class="ttdef"><b>Definition:</b> Define.h:43</div></div>
+<div class="ttc" id="aclass_collision_detect_html_acb0bbbb1dacab2e1f61a1bf65feb9a0e"><div class="ttname"><a href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e">CollisionDetect::detectHead</a></div><div class="ttdeci">bool detectHead()</div><div class="ttdoc">head部分の衝突の有無を確認する。</div><div class="ttdef"><b>Definition:</b> CollisionDetect.cpp:18</div></div>
+<div class="ttc" id="aclass_collision_detect_html_ac83775d1f852ab21a38177776b30ce5a"><div class="ttname"><a href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a">CollisionDetect::detectRight</a></div><div class="ttdeci">bool detectRight()</div><div class="ttdoc">right部分の衝突の有無を確認する。</div><div class="ttdef"><b>Definition:</b> CollisionDetect.cpp:29</div></div>
+<div class="ttc" id="aclass_collision_detect_html_a9c09cbad48b6d7c76a345dc7d53301aa"><div class="ttname"><a href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa">CollisionDetect::detectLeft</a></div><div class="ttdeci">bool detectLeft()</div><div class="ttdoc">left部分の衝突の有無を確認する。</div><div class="ttdef"><b>Definition:</b> CollisionDetect.cpp:51</div></div>
+<div class="ttc" id="aclass_collision_detect_html"><div class="ttname"><a href="class_collision_detect.html">CollisionDetect</a></div><div class="ttdef"><b>Definition:</b> CollisionDetect.h:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 構築: &#160;<a href="http://www.doxygen.org/index.html">

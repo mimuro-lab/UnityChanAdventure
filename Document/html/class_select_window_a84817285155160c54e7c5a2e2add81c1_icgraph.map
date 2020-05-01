@@ -1,0 +1,7 @@
+<map id="SelectWindow::drawSelectWindow" name="SelectWindow::drawSelectWindow">
+<area shape="rect" id="node1" title="セレクトウィンドウを表示する関数。" alt="" coords="413,49,591,90"/>
+<area shape="rect" id="node2" href="$class_config_scene.html#a0988975d308fef31f05d4bbd1bdd482a" title="メニュー画面の描画を行う関数。" alt="" coords="213,5,344,32"/>
+<area shape="rect" id="node3" href="$class_game_scene.html#a153a91652690799750f744263e12840a" title="ゲーム画面の描画を行う関数。" alt="" coords="214,56,343,83"/>
+<area shape="rect" id="node4" href="$class_menu_scene.html#a5b94fc3fddd9b5b1e6ce8ecc5c5963c4" title="スタート画面から次のシーンを選択する。" alt="" coords="192,107,365,133"/>
+<area shape="rect" id="node5" href="$class_menu_scene.html#a3f8c1a2a91f22dcb9202567f1ac59e96" title="メニュー画面に必要な前処理を行う関数。" alt="" coords="5,107,144,133"/>
+</map>

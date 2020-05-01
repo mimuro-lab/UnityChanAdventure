@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loop_92',['loop',['../class_system_looper.html#a035b323c4e9d1163c3fc13d4a8bbdffd',1,'SystemLooper']]]
+  ['jumpmid_5finitspeed_98',['jumpMid_initSpeed',['../class_player.html#aa835d26228aae7623d52a2d7e26dd2f8',1,'Player']]],
+  ['jumpup_5finitspeed_99',['jumpUp_initSpeed',['../class_player.html#a47cbe3b1069be5bf260d9cf4f2c4ee67',1,'Player']]]
 ];

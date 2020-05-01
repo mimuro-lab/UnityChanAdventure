@@ -101,9 +101,8 @@ GameScene 連携図</div>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#afa0340544d0b128bf949e43ab5766d83">GameScene</a> (shared_ptr&lt; <a class="el" href="class_i_scene_changer.html">ISceneChanger</a> &gt; _changer)</td></tr>
 <tr class="memdesc:afa0340544d0b128bf949e43ab5766d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ呼び出し時にshared_ptr&lt;ISceneChanger&gt;型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。 <br /></td></tr>
 <tr class="separator:afa0340544d0b128bf949e43ab5766d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70464c5d4ccd05d39a9cb168e332c93a"><td class="memItemLeft" align="right" valign="top"><a id="a70464c5d4ccd05d39a9cb168e332c93a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">update</a> () override</td></tr>
-<tr class="memdesc:a70464c5d4ccd05d39a9cb168e332c93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲーム画面に必要な前処理を行う関数。 <br /></td></tr>
+<tr class="memitem:a70464c5d4ccd05d39a9cb168e332c93a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">update</a> () override</td></tr>
+<tr class="memdesc:a70464c5d4ccd05d39a9cb168e332c93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲーム画面に必要な前処理を行う関数。  <a href="class_game_scene.html#a70464c5d4ccd05d39a9cb168e332c93a">[詳解]</a><br /></td></tr>
 <tr class="separator:a70464c5d4ccd05d39a9cb168e332c93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a153a91652690799750f744263e12840a"><td class="memItemLeft" align="right" valign="top"><a id="a153a91652690799750f744263e12840a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a153a91652690799750f744263e12840a">draw</a> () override</td></tr>
@@ -117,8 +116,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
+<tr class="memitem:abb5ae63ac56033d6e497e8fc2857d5d3"><td class="memItemLeft" align="right" valign="top"><a id="abb5ae63ac56033d6e497e8fc2857d5d3"></a>
+std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#abb5ae63ac56033d6e497e8fc2857d5d3">stage</a></td></tr>
+<tr class="memdesc:abb5ae63ac56033d6e497e8fc2857d5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">背景のStageの処理を行うオブジェクト <br /></td></tr>
+<tr class="separator:abb5ae63ac56033d6e497e8fc2857d5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a200232cde8fffa79c977b7ba036e6543"><td class="memItemLeft" align="right" valign="top"><a id="a200232cde8fffa79c977b7ba036e6543"></a>
-std::shared_ptr&lt; <a class="el" href="class_player.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a200232cde8fffa79c977b7ba036e6543">player</a> = std::make_shared&lt;<a class="el" href="class_player.html">Player</a>&gt;()</td></tr>
+std::shared_ptr&lt; <a class="el" href="class_player.html">Player</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_scene.html#a200232cde8fffa79c977b7ba036e6543">player</a></td></tr>
 <tr class="memdesc:a200232cde8fffa79c977b7ba036e6543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Playerの処理をになうオブジェクト <br /></td></tr>
 <tr class="separator:a200232cde8fffa79c977b7ba036e6543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -162,7 +165,59 @@ const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <div class="textblock"><p>SystemLooperクラスで生成されるシーンクラスの一つでAbstractSceneを継承する。ゲーム画面を担当する。 </p>
 <dl class="section date"><dt>日付</dt><dd>2020/04/16/19:56 </dd></dl>
 <dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
-</div><hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a70464c5d4ccd05d39a9cb168e332c93a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70464c5d4ccd05d39a9cb168e332c93a">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameScene::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ゲーム画面に必要な前処理を行う関数。 </p>
+<p>プレイヤーオブジェクトの座標更新、アニメーションの処理などを行う。nnnnnnnnnnn</p>
+<dl class="section date"><dt>日付</dt><dd>2020/04/21/12:36 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+<p><a class="el" href="class_abstract_scene.html#abe79ffa848ca69665381786b622adadb">AbstractScene</a>を実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a_cgraph.png" border="0" usemap="#class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a_cgraph" alt=""/></div>
+<map name="class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a_cgraph" id="class_game_scene_a70464c5d4ccd05d39a9cb168e332c93a_cgraph">
+<area shape="rect" title="ゲーム画面に必要な前処理を行う関数。" alt="" coords="5,115,147,141"/>
+<area shape="rect" href="class_abstract_scene.html#ae82529caa4a1d1338a8474685796b239" title="継承先の始まりからのステップ数をカウントする。" alt="" coords="198,5,398,32"/>
+<area shape="rect" href="class_select_window.html#a6193dbd3c41f21450a565fc8d767802d" title="現在セレクトウィンドウが有効になっているかどうかを確認するための関数。" alt="" coords="211,56,385,83"/>
+<area shape="rect" href="class_select_window.html#a5f4ad09cc0e693de353de6327461f075" title="セレクトウィンドウの立下りを確認するための関数。" alt="" coords="195,107,401,149"/>
+<area shape="rect" href="class_controller.html#a7d04c17913f04f99429aa29fa8505484" title="全ての入力状態を更新する。" alt="" coords="236,173,360,200"/>
+<area shape="rect" href="class_select_window.html#a8b04bd3f2f5e21550b187ae9b079abd1" title="セレクトウィンドウを有効にする為の関数。" alt="" coords="209,250,387,291"/>
+<area shape="rect" href="class_gamepad.html#a13a79098ac5816113aac9819514a465f" title="eIDのボタンの入力状態を取得" alt="" coords="492,72,596,99"/>
+<area shape="rect" href="class_keyboard.html#ac10c13870ba471f267d5ced0f233a398" title="keyCodeのキーが押されているフレーム数を取得" alt="" coords="450,123,638,149"/>
+<area shape="rect" href="class_keyboard.html#afd8f963dbd5113fa9630e40b6c179eff" title="更新" alt="" coords="482,173,606,200"/>
+<area shape="rect" href="class_gamepad.html#ae37f83a954aabbf634e9d6f37697ae58" title="更新" alt="" coords="481,224,607,251"/>
+<area shape="rect" href="class_keyboard.html#a923c99cb4b95715ef26335e22b7c4e2f" title="keyCodeが有効なキー番号か問う" alt="" coords="687,123,863,149"/>
+<area shape="rect" href="class_select_window.html#aff1aea1d04e9ba0c17bbf72eb36c8e67" title="セレクトウィンドウを使用する為の前処理の関数。" alt="" coords="449,275,639,317"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_game_scene_8h_source.html">GameScene.h</a></li>
 <li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_game_scene_8cpp.html">GameScene.cpp</a></li>
 </ul>
