@@ -30,6 +30,9 @@
     <Filter Include="ソース ファイル\GameScene">
       <UniqueIdentifier>{a2d5c696-7107-4cfb-8262-71218c4c41ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameScene\Pysical">
+      <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -97,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="PlayerDirect.cpp">
       <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Pysical.cpp">
+      <Filter>ソース ファイル\GameScene\Pysical</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +180,9 @@
     </ClInclude>
     <ClInclude Include="PlayerDirect.h">
       <Filter>ソース ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Pysical.h">
+      <Filter>ソース ファイル\GameScene\Pysical</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

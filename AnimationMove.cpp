@@ -2,7 +2,7 @@
 
 Define::Status AnimationMove::update(
 	Define::Status nowStatus, 
-	Define::rollAction_Basic _isAction, 
+	Define::rollAction_Basic nowAction, 
 	std::shared_ptr<CollisionDetect> _collision, 
 	std::shared_ptr<Stage> _stage, 
 	std::shared_ptr<Animation> _animation
@@ -10,42 +10,42 @@ Define::Status AnimationMove::update(
 {
 	Define::Status _nextStatus = nowStatus;
 
-	_nextStatus._y_speed = pysicQty.y_vel;
-	_nextStatus._x_speed = pysicQty.x_vel;
+	_nextStatus._y_speed = pysic.y_vel;
+	_nextStatus._x_speed = pysic.x_vel;
 
 
-	if (_isAction == Define::rollAction_Basic::Fall) {
+	if (nowAction == Define::rollAction_Basic::Fall) {
 		_nextStatus._y++;
 		_nextStatus._y_speed = 1;
 	}
 
 
-	// 状態がBrakeだったらpysicQtyのリセットを行い、終了
+	// 状態がBrakeだったらpysicのリセットを行い、終了
 	// または、プレイヤーオブジェクトの向くべき方向と速度方向が異なる場合は水平方向のリフレッシュを行う。
-	if (_isAction == Define::rollAction_Basic::Brake) {
-		pysicQty.refreshVel(true, true, true);
+	if (nowAction == Define::rollAction_Basic::Brake) {
+		pysic.refreshVel(true, true, true);
 	}// または、プレイヤーオブジェクトの向くべき方向と速度方向が異なる場合は水平方向のリフレッシュを行う。
 	// ※walk→idlingと切り替わった後、速度が残っている状態で、逆方向に歩こうとしたときこの条件を満たす。
 	else if (
 		(nowStatus.directRight && nowStatus._x_speed < 0) ||
 		(!nowStatus.directRight && nowStatus._x_speed > 0)
 		) {
-		pysicQty.refreshVel(false, true, true);
+		pysic.refreshVel(false, true, true);
 	}
 
-	CollisionDetect::toShiftDirect _to = getToShift(_isAction, nowStatus);
+	CollisionDetect::toShiftDirect _to = getToShift(nowAction, nowStatus);
 	
 	// 条件の見直しが必要！！（2020/04/26）
-	if (getSwitchAction(_isAction) &&
-		_isAction != Define::rollAction_Basic::Fall &&
-		_isAction != Define::rollAction_Basic::Idle &&
-		_isAction != Define::rollAction_Basic::Run &&
-		_isAction != Define::rollAction_Basic::Walk)
-		pysicQty.refreshVel(true, false);
+	if (getSwitchAction(nowAction) &&
+		nowAction != Define::rollAction_Basic::Fall &&
+		nowAction != Define::rollAction_Basic::Idle &&
+		nowAction != Define::rollAction_Basic::Run &&
+		nowAction != Define::rollAction_Basic::Walk)
+		pysic.refreshVel(true, false);
 
 	// 次のコマで、y方向にその速度で動いて大丈夫か？もし障壁があったら、、、
-	bool cannotShiftVertical = _collision->calcShitingCollisionedSideVertical(_to, std::abs(pysicQty.y_vel));//_rangeはとりあえず絶対値を渡す（エラー:2020/04/27）
-	bool cannotShiftHorizon = _collision->calcShitingCollisionedSideHorizon(_to, pysicQty.x_vel);
+	bool cannotShiftVertical = _collision->calcShitingCollisionedSideVertical(_to, std::abs(pysic.y_vel));//_rangeはとりあえず絶対値を渡す（エラー:2020/04/27）
+	bool cannotShiftHorizon = _collision->calcShitingCollisionedSideHorizon(_to, pysic.x_vel);
 	bool isCollision = !getForwardCollisionedSide(_to, _collision);
 	if (isCollision)
 	{
@@ -53,44 +53,44 @@ Define::Status AnimationMove::update(
 		if (cannotShiftVertical) {
 			//bottom辺の一番近いブロック上のブロックの下辺座標に移動する。
 			int x = nowStatus._x;
-			int Forward_Block_nearSideY = getForwardBlockNearSideVertical(nowStatus, _to, pysicQty, _collision, _stage);
-			int y = Forward_Block_nearSideY + getRangeOfNearBlock(_to, pysicQty, _collision);
-			_collision->update(pysicQty.setPoint(nowStatus, pysicQty, x, y), _stage);
-			pysicQty.refreshVel(true, false);
-			return pysicQty.setPoint(nowStatus, pysicQty, x, y);
+			int Forward_Block_nearSideY = getForwardBlockNearSideVertical(nowStatus, _to, pysic, _collision, _stage);
+			int y = Forward_Block_nearSideY + getRangeOfNearBlock(_to, pysic, _collision);
+			_collision->update(pysic.setPoint(nowStatus, pysic, x, y), _stage);
+			pysic.refreshVel(true, false);
+			return pysic.setPoint(nowStatus, pysic, x, y);
 		}
 		// 水平方向に動くことができないなら
-		if (cannotShiftHorizon && _isAction != Define::rollAction_Basic::Idle) {
+		if (cannotShiftHorizon && nowAction != Define::rollAction_Basic::Idle) {
 			//bottom辺の一番近いブロック上のブロックの下辺座標に移動する。
 			//int x = nowStatus._x;
-			//int Forward_Block_nearSideY = getForwardBlockNearSide(nowStatus, _to, pysicQty, _collision, _stage);
-			//int y = Forward_Block_nearSideY + getRangeOfNearBlock(_to, pysicQty, _collision);
+			//int Forward_Block_nearSideY = getForwardBlockNearSide(nowStatus, _to, pysic, _collision, _stage);
+			//int y = Forward_Block_nearSideY + getRangeOfNearBlock(_to, pysic, _collision);
 			int y = nowStatus._y;
-			int Forward_Block_nearSide = getForwardBlockNearSideHorizon(nowStatus, _to, pysicQty, _collision, _stage);
-			int x = Forward_Block_nearSide + getRangeOfNearBlockHorizon(_to, pysicQty, _collision);
-			_collision->update(pysicQty.setPoint(nowStatus, pysicQty, x, y), _stage);
-			pysicQty.refreshVel(false, true);
-			return pysicQty.setPoint(nowStatus, pysicQty, x, y);
+			int Forward_Block_nearSide = getForwardBlockNearSideHorizon(nowStatus, _to, pysic, _collision, _stage);
+			int x = Forward_Block_nearSide + getRangeOfNearBlockHorizon(_to, pysic, _collision);
+			_collision->update(pysic.setPoint(nowStatus, pysic, x, y), _stage);
+			pysic.refreshVel(false, true);
+			return pysic.setPoint(nowStatus, pysic, x, y);
 		}
 
-		//pysicQty.refreshVel(true, true, true);
+		//pysic.refreshVel(true, true, true);
 	}
 
-	// 速度の方向に障壁が何もなかったらpysicQtyの更新を行う。
+	// 速度の方向に障壁が何もなかったらpysicの更新を行う。
 	
 	// _toの方向に何もない、かつ、_toの方向に座標が移動しているなら更新
 	bool forwardCollision = !getForwardCollisionedSide(_to, _collision);
-	bool pysicShifting = pysicQty.getShifting(_to, _isAction);
+	bool pysicShifting = pysic.getShifting(_to, nowAction);
 	if (forwardCollision && pysicShifting) {
-		return pysicQty.update(
+		return pysic.update(
 				nowStatus,
-				getAcc(nowStatus, _isAction, pysicQty)[0],
-				getAcc(nowStatus, _isAction, pysicQty)[1], 
-				_isInitFroce[static_cast<int>(_isAction)],
-				getUptoVelHorizon(nowStatus, _isAction),
+				getAcc(nowStatus, nowAction, pysic)[0],
+				getAcc(nowStatus, nowAction, pysic)[1], 
+				_isInitFroce[static_cast<int>(nowAction)],
+				getUptoVelHorizon(nowStatus, nowAction),
 				0,
-				_validGravityAction[static_cast<int>(_isAction)],
-				_validStoppingAction[static_cast<int>(_isAction)]
+				_validGravityAction[static_cast<int>(nowAction)],
+				_validStoppingAction[static_cast<int>(nowAction)]
 			);
 	}
 	
@@ -101,7 +101,7 @@ Define::Status AnimationMove::update(
 int AnimationMove::getForwardBlockNearSideVertical(
 	Define::Status nowStatus, 
 	CollisionDetect::toShiftDirect _to, 
-	PysicalQTY _pysic,
+	Pysical _pysic,
 	std::shared_ptr<CollisionDetect> _collision, 
 	std::shared_ptr<Stage> _stage
 )
@@ -128,7 +128,7 @@ int AnimationMove::getForwardBlockNearSideVertical(
 int AnimationMove::getForwardBlockNearSideHorizon(
 	Define::Status nowStatus,
 	CollisionDetect::toShiftDirect _to,
-	PysicalQTY _pysic,
+	Pysical _pysic,
 	std::shared_ptr<CollisionDetect> _collision,
 	std::shared_ptr<Stage> _stage
 )
@@ -231,7 +231,7 @@ bool AnimationMove::getForwardCollisionedSide(CollisionDetect::toShiftDirect _to
 }
 
 // プレイヤーオブジェクトの中心座標からプレイヤーオブジェクトの当たり判定までの距離 toHeadとかtoRight
-int AnimationMove::getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision)
+int AnimationMove::getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, Pysical _pysic, std::shared_ptr<CollisionDetect> _collision)
 {
 	switch (_to) {
 	case CollisionDetect::toShiftDirect::head://上のレンガに合わせられるので下向き。
@@ -267,7 +267,7 @@ int AnimationMove::getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, Pysic
 }
 
 // プレイヤーオブジェクトの中心座標からプレイヤーオブジェクトの当たり判定までの距離 toHeadとかtoRight
-int AnimationMove::getRangeOfNearBlockHorizon(CollisionDetect::toShiftDirect _to, PysicalQTY _pysic, std::shared_ptr<CollisionDetect> _collision)
+int AnimationMove::getRangeOfNearBlockHorizon(CollisionDetect::toShiftDirect _to, Pysical _pysic, std::shared_ptr<CollisionDetect> _collision)
 {
 	switch (_to) {
 	case CollisionDetect::toShiftDirect::right://上のレンガに合わせられるので下向き。
@@ -289,7 +289,7 @@ int AnimationMove::getRangeOfNearBlockHorizon(CollisionDetect::toShiftDirect _to
 	return 0;
 }
 
-std::vector<char> AnimationMove::getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction, PysicalQTY _pysic)
+std::vector<char> AnimationMove::getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction, Pysical _pysic)
 {
 	std::vector<char> retPoint(2, 0);
 	switch (_isAction) {
@@ -312,9 +312,9 @@ std::vector<char> AnimationMove::getAcc(Define::Status nowStatus, Define::rollAc
 			retPoint[0] = -1;
 		break;
 	case Define::rollAction_Basic::Idle:
-		if (nowStatus.directRight && pysicQty.x_vel > 0)
+		if (nowStatus.directRight && pysic.x_vel > 0)
 			retPoint[0] = -1;
-		else if(!nowStatus.directRight && pysicQty.x_vel < 0)
+		else if(!nowStatus.directRight && pysic.x_vel < 0)
 			retPoint[0] = 1;
 		break;
 	}
