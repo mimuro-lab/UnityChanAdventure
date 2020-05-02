@@ -30,7 +30,7 @@
     <Filter Include="ソース ファイル\GameScene">
       <UniqueIdentifier>{a2d5c696-7107-4cfb-8262-71218c4c41ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameScene\Pysical">
+    <Filter Include="ソース ファイル\GameScene\AnimationMove">
       <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -92,9 +92,6 @@
     <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationMove.cpp">
-      <Filter>ソース ファイル\GameScene</Filter>
-    </ClCompile>
     <ClCompile Include="AnimationSwitch.cpp">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
@@ -102,7 +99,13 @@
       <Filter>ソース ファイル\GameScene</Filter>
     </ClCompile>
     <ClCompile Include="Pysical.cpp">
-      <Filter>ソース ファイル\GameScene\Pysical</Filter>
+      <Filter>ソース ファイル\GameScene\AnimationMove</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationMove.cpp">
+      <Filter>ソース ファイル\GameScene\AnimationMove</Filter>
+    </ClCompile>
+    <ClCompile Include="PredictPoint.cpp">
+      <Filter>ソース ファイル\GameScene\AnimationMove</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,9 +175,6 @@
     <ClInclude Include="Animation.h">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationMove.h">
-      <Filter>ソース ファイル\GameScene</Filter>
-    </ClInclude>
     <ClInclude Include="AnimationSwitch.h">
       <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
@@ -182,7 +182,13 @@
       <Filter>ソース ファイル\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="Pysical.h">
-      <Filter>ソース ファイル\GameScene\Pysical</Filter>
+      <Filter>ソース ファイル\GameScene\AnimationMove</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationMove.h">
+      <Filter>ソース ファイル\GameScene\AnimationMove</Filter>
+    </ClInclude>
+    <ClInclude Include="PredictPoint.h">
+      <Filter>ソース ファイル\GameScene\AnimationMove</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -45,7 +45,7 @@ class AnimationSwitch
 
 public:
 	AnimationSwitch(std::shared_ptr<CollisionDetect> __collision, std::shared_ptr<Animation> __animation
-	) : _collision(__collision), _animation(__animation) 
+	) :_animation(__animation) 
 	{ 
 
 		nowAction = Define::rollAction_Basic::Idle;

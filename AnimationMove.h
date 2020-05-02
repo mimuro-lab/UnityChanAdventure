@@ -6,71 +6,33 @@
 #include "CollisionDetect.h"
 #include "Animation.h"
 #include "Pysical.h"
+#include "PredictPoint.h"
+
+using namespace Define;
 
 class AnimationMove
 {
-
-	char uptoVel_walk = 0;
-	char uptoVel_run = 0;
-
-	std::vector<char> _isInitFroce;
-	std::vector<bool> _validGravityAction;
-	std::vector<bool> _validStoppingAction;
-
-	VelocityDEF  velDef;
-
-	Pysical pysic;
-
 	Pysical pysical;
 
+	PredictPoint predictPoint;
 
-	CollisionDetect::toShiftDirect getToShift(Define::rollAction_Basic _isAction, Define::Status nowStatus);
+	// 現在の速度（当たり判定により、これがそのまま有効になるとは限らない）
+	Dimention nowVelocity;
 
-	int getForwardBlockNearSideVertical(Define::Status nowStatus, CollisionDetect::toShiftDirect _to, Pysical _pysic, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+	// 実際に有効になる速度
+	Dimention validVelocity;
 
-	int getForwardBlockNearSideHorizon(Define::Status nowStatus, CollisionDetect::toShiftDirect _to, Pysical _pysic, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+	// 今の座標（更新される前の座標）
+	Dimention nowPoint;
 
-	bool getForwardCollisionedSide(CollisionDetect::toShiftDirect _to, std::shared_ptr<CollisionDetect> _collision);
-
-	int getRangeOfNearBlock(CollisionDetect::toShiftDirect _to, Pysical _pysic, std::shared_ptr<CollisionDetect> _collision);
-
-	int getRangeOfNearBlockHorizon(CollisionDetect::toShiftDirect _to, Pysical _pysic, std::shared_ptr<CollisionDetect> _collision);
-
-	// [0]がx,[1]がy
-	std::vector<char> getAcc(Define::Status nowStatus, Define::rollAction_Basic _isAction, Pysical _pysic);
-
-	char getUptoVelHorizon(Define::Status nowStatus, Define::rollAction_Basic _isAction);
-
-	//	動きが切り替わった瞬間を取得する関数
-	Define::rollAction_Basic preIsAction = Define::rollAction_Basic::Idle;
-	bool getSwitchAction(Define::rollAction_Basic _isAction) {
-		bool ret = false;
-		if (_isAction != preIsAction)	ret = true;
-		else							ret = false;
-		preIsAction = _isAction;
-		return ret;
-	}
+	// 次の座標
+	Dimention nextPoint;
 
 public:
 	AnimationMove(char _walk, char _run, char _jumpUp, char _jumpMidAir){
-		velDef.basicAction.walk = uptoVel_walk = _walk;
-		velDef.basicAction.run = uptoVel_run = _run;
-		velDef.basicAction.jump_up = _jumpUp;
-		velDef.basicAction.jump_midAir= _jumpMidAir;
-		
-		_isInitFroce = std::vector<char>(static_cast<int>(Define::rollAction_Basic::_end), 0);
-		_isInitFroce[static_cast<int>(Define::rollAction_Basic::Jump_Up)] = -_jumpUp;
-		_isInitFroce[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)] = -_jumpMidAir;
 
-		_validGravityAction= std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
-		_validGravityAction[static_cast<int>(Define::rollAction_Basic::Fall)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
-			= true;
+		nowVelocity.x = nowVelocity.y = 0;
 
-		_validStoppingAction = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
-		_validStoppingAction[static_cast<int>(Define::rollAction_Basic::Idle)]
-			= true;
 	};
 
 	~AnimationMove() = default;

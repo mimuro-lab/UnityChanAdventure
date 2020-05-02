@@ -101,13 +101,13 @@ Define::rollAction_Basic AnimationSwitch::getNextAction(
 	}
 
 	// Jump_Landing
-	if (nowAction == Define::rollAction_Basic::Fall && _collision->getCollisionedSide().bottom) {
+	if (nowAction == Define::rollAction_Basic::Fall && collision->getCollisionedSide().bottom) {
 		//printfDx("Fall to Jump_Landing\n");
 		return Define::rollAction_Basic::Jump_Landing;
 	}
 
 	// Fall
-	if (!_collision->getCollisionedSide().bottom) {
+	if (!collision->getCollisionedSide().bottom) {
 		return Define::rollAction_Basic::Fall;
 	}
 

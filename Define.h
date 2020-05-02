@@ -66,4 +66,10 @@ namespace Define{
 		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk, _end
 	};
 
+	//! À•W‚ğæ‚èˆµ‚¤‚ÌŸŒ³‚Ì’è‹`
+	struct Dimention {
+		int x = 0;
+		int y = 0;
+	};
+
 };

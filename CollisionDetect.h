@@ -74,8 +74,6 @@ public:
 		right, left, head, bottom, _vertical, _holizen, _none
 	};
 
-
-
 	bool calcShitingCollisionedSideVertical(toShiftDirect _to, char _range);
 	bool calcShitingCollisionedSideHorizon(toShiftDirect _to, char _range);
 
@@ -85,6 +83,6 @@ public:
 		return collisionedSide; 
 	}
 
-	const char getRange(toShiftDirect _to, int x_vel, int y_vel);
+	const char getRange(toShiftDirect _to, int x_vel = 0, int y_vel = 0);
 
 };

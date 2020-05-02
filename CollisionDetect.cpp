@@ -171,6 +171,7 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 			for (int i = 0; i < bottomPoints; i++) {
 				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 				int y = nowStatus._y + toBottom + block * _stage->blockHeight; 
+				DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
 				if (IsDetectedStage(x, y)) {
 					collisionSideRange.bottom = block * _stage->blockHeight;
 					return true;
@@ -181,7 +182,7 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 		for (int i = 0; i < rightPoints; i++) {	
 			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 			int y = nowStatus._y + toBottom + _range;
-			DrawCircle(x, y, 3, GetColor(255, 0, 0), false);
+			
 			if (IsDetectedStage(x, y)) {
 				collisionSideRange.bottom = _range;
 				return true;
