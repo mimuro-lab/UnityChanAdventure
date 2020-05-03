@@ -14,8 +14,9 @@ Status AnimationMove::update(
 	nowPoint.y = nowStatus._y;
 
 	nowVelocity = pysical.update(nowAction, nowStatus.directRight);
+	nowVelocity = pysical.resetVector(nowVelocity, _collision);
 
-	nextPoint = predictPoint.update(nowPoint ,nowVelocity, _collision);
+	nextPoint = predictPoint.update(nowPoint ,nowVelocity, _collision, _stage);
 
 	_nextStatus._x = nextPoint.x;
 	_nextStatus._y = nextPoint.y;

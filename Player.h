@@ -71,7 +71,7 @@ public:
 
 		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
 
-		animationSwitch = std::make_shared<AnimationSwitch>(collision, animation);
+		animationSwitch = std::make_shared<AnimationSwitch>();
 
 		playerDirect = std::make_shared<PlayerDirect>();
 

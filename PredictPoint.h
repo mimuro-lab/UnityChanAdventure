@@ -17,9 +17,23 @@ class PredictPoint
 
 	Dimention calcPredictPoint(Dimention nowPoint, Dimention nowVelocity);
 
-	int fittingPointHorizon(int nowX, int predictX, std::shared_ptr<CollisionDetect> _collision);
+	int fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 
-	int fittingPointVertical(int nowY, int predictY, std::shared_ptr<CollisionDetect> _collision);
+	int fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+
+	int getForwardBlockNearSideVertical(
+		Dimention nowPoint,
+		int predictRange,
+		std::shared_ptr<CollisionDetect> _collision,
+		std::shared_ptr<Stage> _stage
+	);
+
+	int getForwardBlockNearSideHorizon(
+		Dimention nowPoint,
+		int predictRange,
+		std::shared_ptr<CollisionDetect> _collision,
+		std::shared_ptr<Stage> _stage
+	);
 
 public:
 	PredictPoint() {
@@ -28,6 +42,6 @@ public:
 	}
 	~PredictPoint() = default;
 
-	Dimention update(Dimention nowPoint, Dimention nowVelocity, std::shared_ptr<CollisionDetect> _collision);
+	Dimention update(Dimention nowPoint, Dimention nowVelocity, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 
 };

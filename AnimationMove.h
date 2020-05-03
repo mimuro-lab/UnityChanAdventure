@@ -16,17 +16,16 @@ class AnimationMove
 
 	PredictPoint predictPoint;
 
-	// 現在の速度（当たり判定により、これがそのまま有効になるとは限らない）
+	// 現在の速度
 	Dimention nowVelocity;
-
-	// 実際に有効になる速度
-	Dimention validVelocity;
 
 	// 今の座標（更新される前の座標）
 	Dimention nowPoint;
 
 	// 次の座標
 	Dimention nextPoint;
+
+
 
 public:
 	AnimationMove(char _walk, char _run, char _jumpUp, char _jumpMidAir){

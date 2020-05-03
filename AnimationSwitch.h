@@ -9,7 +9,6 @@
 
 class AnimationSwitch
 {
-	std::shared_ptr<CollisionDetect> _collision;
 
 	std::shared_ptr<Animation> _animation;
 
@@ -44,11 +43,9 @@ class AnimationSwitch
 	std::shared_ptr<Animation> switchingAnimation(Define::rollAction_Basic next, Define::Status _playerStatus);
 
 public:
-	AnimationSwitch(std::shared_ptr<CollisionDetect> __collision, std::shared_ptr<Animation> __animation
-	) :_animation(__animation) 
+	AnimationSwitch()
 	{ 
-
-		nowAction = Define::rollAction_Basic::Idle;
+		nowAction = Define::rollAction_Basic::Fall;
 		
 		// IsAction_canSwitchinÇÃèâä˙âªÅB Idle, Walk, Run, FallÇÃèÛë‘ÇÃÇ∆Ç´ÇÕêÿÇËë÷Ç¶â¬î\ÇÃèÛë‘ÅB
 		IsAction_canSwitching = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
@@ -57,6 +54,8 @@ public:
 			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Walk)]
 			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Run)]
 			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Fall)]
+			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
+			= IsAction_canSwitching[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
 			= true;
 	};
 	~AnimationSwitch() = default;

@@ -12,17 +12,31 @@ class Pysical {
 	// Action中の時間、Actionが切り替わると０にリセットされる。
 	unsigned short int time = 0;
 
+	// moveNコマに一回加速度を加える。
+	unsigned char addAccN = 2;
+	unsigned char addAccCounter = 0;
+
+	// 重力の値
 	unsigned char acc_gravity = 1;
 
+	// 摩擦力の値
+	unsigned char acc_friction = 1;
+
+	// Actionごとの加速度の大きさと速度の限界値
 	unsigned char acc_brake = 1;
 
 	unsigned char acc_walk = 2;
+	unsigned char limVel_walk = 6;
 
 	unsigned char acc_run = 3;
+	unsigned char limVel_run = 9;
+
+	unsigned char initVel_jumpUp = 12;
+	unsigned char initVel_jumpMidAir = 3;
 
 	std::vector<Dimention> _isInitVelocity;
 	std::vector<bool> _validGravityAction;
-	std::vector<bool> _validBrakingAction;
+	std::vector<bool> _validFrictionAction;
 
 	// 対象の速度に対し、初速度をさらに与える。
 	Dimention affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned char nowTime);
@@ -31,16 +45,22 @@ class Pysical {
 	Dimention affectGravity(Dimention affectedAcc, rollAction_Basic nowAction);
 
 	// affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。
-	Dimention affectBraking(Dimention affectedAcc, rollAction_Basic nowAction);
+	Dimention affectFriction(Dimention affectedAcc, rollAction_Basic nowAction, bool isDireRight);
 
 	// アクション状態とその方向から加速度を得る。
 	Dimention getForceFromAction(rollAction_Basic nowAction, bool isDireRight);
 
+	// アクション状態とその方向から速度の限界値を得る。
+	Dimention getLimitVelFromAction(rollAction_Basic nowAction, bool isDireRight);
+	
 	// 加速度から速度を計算する。
-	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc);
+	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, rollAction_Basic nowAction, bool isDireRight);
 
 	// 向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）
 	Dimention matchingVelAndDireHorizon(Dimention affectedVel, bool isDireRight);
+
+	// 速度を当たり判定によりリセットする。
+	Dimention resetByCollision(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);
 
 	// Actionが切り替わった瞬間を取得する関数
 	rollAction_Basic preIsAction = rollAction_Basic::Idle;
@@ -62,17 +82,21 @@ public:
 		Dimention initVel;
 		initVel.x = initVel.y = 0;
 		_isInitVelocity = std::vector<Dimention>(static_cast<int>(Define::rollAction_Basic::_end), initVel);
-		_isInitVelocity[static_cast<int>(Define::rollAction_Basic::Jump_Up)].y = - 10;
-		_isInitVelocity[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)].y = -5;
+		_isInitVelocity[static_cast<int>(Define::rollAction_Basic::Jump_Up)].y = - initVel_jumpUp;
+		_isInitVelocity[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)].y = -initVel_jumpMidAir;
 
 		_validGravityAction = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
 		_validGravityAction[static_cast<int>(Define::rollAction_Basic::Fall)]
 			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
 			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
+			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Brake)]
+			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Crouch)]
 			= true;
 
-		_validBrakingAction = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
-		_validBrakingAction[static_cast<int>(Define::rollAction_Basic::Idle)]
+		_validFrictionAction = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
+		_validFrictionAction[static_cast<int>(Define::rollAction_Basic::Idle)]
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Brake)]
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Crouch)]
 			= true;
 	};
 	~Pysical() = default;
@@ -81,4 +105,6 @@ public:
 	// アクション状態とその方向により速度と加速度を更新し、速度を返す。
 	Dimention update(rollAction_Basic nowAction, bool isDireRight);
 
+	// 座標をセットした後、適切に速度をリセットする。
+	Dimention resetVector(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);
 };

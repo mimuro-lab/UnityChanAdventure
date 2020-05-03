@@ -79,7 +79,7 @@ public:
 
 	void draw();
 
-	const Collision getCollisionedSide() { 
+	Collision getCollisionedSide() { 
 		return collisionedSide; 
 	}
 

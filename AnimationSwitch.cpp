@@ -7,7 +7,8 @@ std::shared_ptr<Animation> AnimationSwitch::update(
 {
 
 	// アニメーションを切り替えてもよいなら、
-	if (acceptSwitching(animation, nowAction)) {
+	if (acceptSwitching(animation, nowAction)) 
+	{
 		// _nextへ次のシーンを取得する。
 		nextAction = getNextAction(collision, animation, playerStatus, nowAction);
 		if(acceptNextAction(nowAction, nextAction, playerStatus)) {
@@ -88,6 +89,11 @@ Define::rollAction_Basic AnimationSwitch::getNextAction(
 	Define::rollAction_Basic nowAction)
 {
 
+	// Brakeが終わったら強制的にアイドリング状態に変更する
+	if (nowAction == Define::rollAction_Basic::Brake && animation->isEnd()) {
+		return Define::rollAction_Basic::Idle;
+	}
+
 	// Jump_Up to Jump_MidAir
 	if (nowAction == Define::rollAction_Basic::Jump_Up && animation->isEnd()) {
 		//printfDx("JumpUp to JumpMidAir\n");
@@ -100,15 +106,28 @@ Define::rollAction_Basic AnimationSwitch::getNextAction(
 		return Define::rollAction_Basic::Fall;
 	}
 
+	// ジャンプ中に頭上に障壁があったらFallに強制変更
+	if (nowAction == Define::rollAction_Basic::Jump_Up || nowAction == Define::rollAction_Basic::Jump_MidAir) {
+		if(collision->getCollisionedSide().head)
+			return Define::rollAction_Basic::Jump_Fall;
+	}
+
 	// Jump_Landing
 	if (nowAction == Define::rollAction_Basic::Fall && collision->getCollisionedSide().bottom) {
 		//printfDx("Fall to Jump_Landing\n");
 		return Define::rollAction_Basic::Jump_Landing;
 	}
 
-	// Fall
-	if (!collision->getCollisionedSide().bottom) {
-		return Define::rollAction_Basic::Fall;
+	// ジャンプで浮き上がっているとき以外で、足元に障壁が無ければFallに強制変更
+	if (nowAction != Define::rollAction_Basic::Jump_Up && nowAction != Define::rollAction_Basic::Jump_MidAir) {
+		if (!collision->getCollisionedSide().bottom) {
+			return Define::rollAction_Basic::Fall;
+		}
+	}
+
+	// Crouch
+	if (Controller::getIns()->getOnDown()) {
+		return Define::rollAction_Basic::Crouch;
 	}
 
 	// Brake
@@ -126,38 +145,38 @@ Define::rollAction_Basic AnimationSwitch::getNextAction(
 		return Define::rollAction_Basic::Jump_Up;
 	}
 
+	/// 足元が地面についている状態で、ジャンプで地面をけり上げた瞬間出ない時
+	if (collision->getCollisionedSide().bottom && nowAction != Define::rollAction_Basic::Jump_Up) {
+		// Run R
+		if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnRight()) {
+			playerStatus.directRight = true;
+			return Define::rollAction_Basic::Run;
+		}
 
-	// Crouch
-	if (Controller::getIns()->getOnDown()) {
-		return Define::rollAction_Basic::Crouch;
+		// Run L
+		if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnLeft()) {
+			playerStatus.directRight = false;
+			return Define::rollAction_Basic::Run;
+		}
+
+		// Walk R
+		if (Controller::getIns()->getOnRight()) {
+			playerStatus.directRight = true;
+			return Define::rollAction_Basic::Walk;
+		}
+
+		// Walk L
+		if (Controller::getIns()->getOnLeft()) {
+			playerStatus.directRight = false;
+			return Define::rollAction_Basic::Walk;
+		}
 	}
-
-	// Run R
-	if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnRight()) {
-		playerStatus.directRight = true;
-		return Define::rollAction_Basic::Run;
-	}
-
-	// Run L
-	if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnLeft()) {
-		playerStatus.directRight = false;
-		return Define::rollAction_Basic::Run;
-	}
-
-	// Walk R
-	if (Controller::getIns()->getOnRight()) {
-		playerStatus.directRight = true;
-		return Define::rollAction_Basic::Walk;
-	}
-
-	// Walk L
-	if (Controller::getIns()->getOnLeft()) {
-		playerStatus.directRight = false;
-		return Define::rollAction_Basic::Walk;
-	}
-
 	// 何も入力されなければIdling状態にする。
-	return Define::rollAction_Basic::Idle;
+
+	if(nowAction != Define::rollAction_Basic::Jump_Up && nowAction != Define::rollAction_Basic::Jump_MidAir)
+		return Define::rollAction_Basic::Idle;
+
+	return nowAction;
 
 }
 
