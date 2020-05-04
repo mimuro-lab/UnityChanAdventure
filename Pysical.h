@@ -61,7 +61,7 @@ class Pysical {
 	std::vector<bool> _validFrictionAction;
 
 	//! 対象の速度に対し、初速度をさらに与える関数。
-	Dimention affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned char nowTime);
+	Dimention affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned short nowTime);
 
 	//! affectGravity（対象の加速度）に対し、重力を加える。
 	Dimention affectGravity(Dimention affectedAcc, rollAction_Basic nowAction);

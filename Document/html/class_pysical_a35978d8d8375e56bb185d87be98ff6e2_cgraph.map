@@ -1,0 +1,4 @@
+<map id="Pysical::resetVelocity" name="Pysical::resetVelocity">
+<area shape="rect" id="node1" title="座標をセットした後、適切に速度をリセットする。" alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$class_pysical.html#a05606a7b882dd81dea5abc0c996b6959" title="速度を当たり判定によりリセットする。" alt="" coords="203,5,369,32"/>
+</map>

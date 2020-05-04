@@ -38,7 +38,7 @@ bool CollisionDetect::detectHead()
 {
 	for (int i = 0; i < headPoints; i++) {
 		// ブロックは0 ～ blockHeight - 1単位で生成されるので、左側を調べる際は-1する
-		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
 		int y = nowStatus._y - toHead - 1;
 		if (IsDetectedStage(x, y))
 			return true;
@@ -70,7 +70,7 @@ bool CollisionDetect::detectRight()
 bool CollisionDetect::detectBottom()
 {
 	for (int i = 0; i < rightPoints; i++) {
-		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
 		int y = nowStatus._y + toBottom;
 		if (IsDetectedStage(x, y)) 
 			return true;
@@ -104,7 +104,7 @@ void CollisionDetect::draw()
 {
 	// head
 	for (int i = 0; i < headPoints; i++) {
-		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
 		int y = nowStatus._y - toHead - 1;
 		unsigned int color = GetColor(255, 255, 255);
 		if (IsDetectedStage(x, y))
@@ -114,7 +114,7 @@ void CollisionDetect::draw()
 
 	// bottom
 	for (int i = 0; i < bottomPoints; i++) {
-		int x = nowStatus._x - toLeft + ((toLeft + toRight) / bottomPoints) * i;
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / bottomPoints) * i + (toLeft + toRight) / (2 * headPoints);
 		int y = nowStatus._y + toBottom;
 		unsigned int color = GetColor(255, 255, 255);
 		if (IsDetectedStage(x, y))

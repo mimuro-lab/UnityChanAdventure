@@ -1,0 +1,11 @@
+<map id="Pysical::update" name="Pysical::update">
+<area shape="rect" id="node1" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="5,165,117,192"/>
+<area shape="rect" id="node2" href="$class_pysical.html#a0026c6422f633a3e21ffc8d514794868" title="affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。" alt="" coords="187,5,334,32"/>
+<area shape="rect" id="node3" href="$class_pysical.html#a3482a5b82f97f24575658a76030a58fe" title="affectGravity（対象の加速度）に対し、重力を加える。" alt="" coords="189,56,333,83"/>
+<area shape="rect" id="node4" href="$class_pysical.html#af735f2a457cc36966c487192423c0bb2" title="対象の速度に対し、初速度をさらに与える関数。" alt="" coords="177,107,345,133"/>
+<area shape="rect" id="node5" href="$class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842" title="加速度から速度を計算する。" alt="" coords="173,158,348,199"/>
+<area shape="rect" id="node7" href="$class_pysical.html#a16d74602604563dd215172b852aaac2e" title="アクション状態とその方向から加速度を得る。" alt="" coords="165,224,356,251"/>
+<area shape="rect" id="node8" href="$class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5" title="Actionが切り替わった瞬間を取得する関数" alt="" coords="191,275,330,301"/>
+<area shape="rect" id="node9" href="$class_pysical.html#ae06ef96bccc4c278817b781510a59c80" title="向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）" alt="" coords="165,326,356,367"/>
+<area shape="rect" id="node6" href="$class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4" title="アクション状態とその方向から速度の限界値を得る。" alt="" coords="404,158,572,199"/>
+</map>

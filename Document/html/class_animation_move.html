@@ -82,7 +82,7 @@ AnimationMove 連携図</div>
 <area shape="rect" title="プレイヤーオブジェクトの座標位置を計算するクラス。" alt="" coords="86,216,197,243"/>
 <area shape="rect" href="class_predict_point.html" title="座標が適切かどうかを判断するためのクラス。" alt="" coords="95,118,188,145"/>
 <area shape="rect" href="struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="80,5,204,32"/>
-<area shape="rect" href="class_pysical.html" title=" " alt="" coords="213,118,278,145"/>
+<area shape="rect" href="class_pysical.html" title="物理演算に置いて速度の演算を担うクラス。" alt="" coords="213,118,278,145"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
@@ -173,12 +173,23 @@ AnimationMove 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph.png" border="0" usemap="#class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph" alt=""/></div>
 <map name="class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph" id="class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph">
-<area shape="rect" title="更新を行う関数。" alt="" coords="5,46,163,73"/>
-<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,46,351,73"/>
-<area shape="rect" href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
-<area shape="rect" href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,71,561,112"/>
-<area shape="rect" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724" title="水平方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="609,5,775,47"/>
-<area shape="rect" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="609,71,775,112"/>
+<area shape="rect" title="更新を行う関数。" alt="" coords="5,111,163,137"/>
+<area shape="rect" href="class_pysical.html#a35978d8d8375e56bb185d87be98ff6e2" title="座標をセットした後、適切に速度をリセットする。" alt="" coords="211,24,360,51"/>
+<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="215,111,355,137"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="229,319,341,345"/>
+<area shape="rect" href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959" title="速度を当たり判定によりリセットする。" alt="" coords="420,5,587,32"/>
+<area shape="rect" href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="422,57,585,98"/>
+<area shape="rect" href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="422,122,585,163"/>
+<area shape="rect" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724" title="水平方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="648,57,813,98"/>
+<area shape="rect" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="648,122,813,163"/>
+<area shape="rect" href="class_pysical.html#a0026c6422f633a3e21ffc8d514794868" title="affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。" alt="" coords="430,188,577,215"/>
+<area shape="rect" href="class_pysical.html#a3482a5b82f97f24575658a76030a58fe" title="affectGravity（対象の加速度）に対し、重力を加える。" alt="" coords="431,239,575,265"/>
+<area shape="rect" href="class_pysical.html#af735f2a457cc36966c487192423c0bb2" title="対象の速度に対し、初速度をさらに与える関数。" alt="" coords="419,289,587,316"/>
+<area shape="rect" href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842" title="加速度から速度を計算する。" alt="" coords="416,341,591,382"/>
+<area shape="rect" href="class_pysical.html#a16d74602604563dd215172b852aaac2e" title="アクション状態とその方向から加速度を得る。" alt="" coords="408,407,599,433"/>
+<area shape="rect" href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5" title="Actionが切り替わった瞬間を取得する関数" alt="" coords="434,457,573,484"/>
+<area shape="rect" href="class_pysical.html#ae06ef96bccc4c278817b781510a59c80" title="向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）" alt="" coords="408,509,599,550"/>
+<area shape="rect" href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4" title="アクション状態とその方向から速度の限界値を得る。" alt="" coords="647,341,815,382"/>
 </map>
 </div>
 

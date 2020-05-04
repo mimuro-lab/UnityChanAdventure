@@ -1,4 +1,4 @@
 <map id="Pysical" name="Pysical">
-<area shape="rect" id="node1" title=" " alt="" coords="35,109,100,136"/>
+<area shape="rect" id="node1" title="物理演算に置いて速度の演算を担うクラス。" alt="" coords="35,109,100,136"/>
 <area shape="rect" id="node2" href="$struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="5,5,129,32"/>
 </map>

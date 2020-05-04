@@ -70,64 +70,74 @@ $(function() {
 <div class="title">Pysical クラス</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>物理演算に置いて速度の演算を担うクラス。  
+ <a href="class_pysical.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_pysical_8h_source.html">Pysical.h</a>&gt;</code></p>
 <div class="dynheader">
 Pysical 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pysical__coll__graph.png" border="0" usemap="#_pysical_coll__map" alt="Collaboration graph"/></div>
 <map name="_pysical_coll__map" id="_pysical_coll__map">
-<area shape="rect" title=" " alt="" coords="35,109,100,136"/>
+<area shape="rect" title="物理演算に置いて速度の演算を担うクラス。" alt="" coords="35,109,100,136"/>
 <area shape="rect" href="struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="5,5,129,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ae5bad8b4869d1de252995a6289862938"><td class="memItemLeft" align="right" valign="top"><a id="ae5bad8b4869d1de252995a6289862938"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memitem:ae5bad8b4869d1de252995a6289862938"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938">update</a> (rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memdesc:ae5bad8b4869d1de252995a6289862938"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション状態とその方向により速度と加速度を更新し、速度を返す。  <a href="class_pysical.html#ae5bad8b4869d1de252995a6289862938">[詳解]</a><br /></td></tr>
 <tr class="separator:ae5bad8b4869d1de252995a6289862938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1feef7042ab893c5941d5474bbb0b5b4"><td class="memItemLeft" align="right" valign="top"><a id="a1feef7042ab893c5941d5474bbb0b5b4"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>resetVector</b> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision)</td></tr>
-<tr class="separator:a1feef7042ab893c5941d5474bbb0b5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35978d8d8375e56bb185d87be98ff6e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a35978d8d8375e56bb185d87be98ff6e2">resetVelocity</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision)</td></tr>
+<tr class="memdesc:a35978d8d8375e56bb185d87be98ff6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標をセットした後、適切に速度をリセットする。  <a href="class_pysical.html#a35978d8d8375e56bb185d87be98ff6e2">[詳解]</a><br /></td></tr>
+<tr class="separator:a35978d8d8375e56bb185d87be98ff6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:ac77b5b97c469c7019d75e6a9b051308c"><td class="memItemLeft" align="right" valign="top"><a id="ac77b5b97c469c7019d75e6a9b051308c"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>affectInitVelocity</b> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, rollAction_Basic nowAction, unsigned char nowTime)</td></tr>
-<tr class="separator:ac77b5b97c469c7019d75e6a9b051308c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3482a5b82f97f24575658a76030a58fe"><td class="memItemLeft" align="right" valign="top"><a id="a3482a5b82f97f24575658a76030a58fe"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>affectGravity</b> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, rollAction_Basic nowAction)</td></tr>
+<tr class="memitem:af735f2a457cc36966c487192423c0bb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#af735f2a457cc36966c487192423c0bb2">affectInitVelocity</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, rollAction_Basic nowAction, unsigned short nowTime)</td></tr>
+<tr class="memdesc:af735f2a457cc36966c487192423c0bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">対象の速度に対し、初速度をさらに与える関数。  <a href="class_pysical.html#af735f2a457cc36966c487192423c0bb2">[詳解]</a><br /></td></tr>
+<tr class="separator:af735f2a457cc36966c487192423c0bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3482a5b82f97f24575658a76030a58fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a3482a5b82f97f24575658a76030a58fe">affectGravity</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, rollAction_Basic nowAction)</td></tr>
+<tr class="memdesc:a3482a5b82f97f24575658a76030a58fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">affectGravity（対象の加速度）に対し、重力を加える。  <a href="class_pysical.html#a3482a5b82f97f24575658a76030a58fe">[詳解]</a><br /></td></tr>
 <tr class="separator:a3482a5b82f97f24575658a76030a58fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0026c6422f633a3e21ffc8d514794868"><td class="memItemLeft" align="right" valign="top"><a id="a0026c6422f633a3e21ffc8d514794868"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>affectFriction</b> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memitem:a0026c6422f633a3e21ffc8d514794868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a0026c6422f633a3e21ffc8d514794868">affectFriction</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memdesc:a0026c6422f633a3e21ffc8d514794868"><td class="mdescLeft">&#160;</td><td class="mdescRight">affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。  <a href="class_pysical.html#a0026c6422f633a3e21ffc8d514794868">[詳解]</a><br /></td></tr>
 <tr class="separator:a0026c6422f633a3e21ffc8d514794868"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d74602604563dd215172b852aaac2e"><td class="memItemLeft" align="right" valign="top"><a id="a16d74602604563dd215172b852aaac2e"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getForceFromAction</b> (rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memitem:a16d74602604563dd215172b852aaac2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a16d74602604563dd215172b852aaac2e">getForceFromAction</a> (rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memdesc:a16d74602604563dd215172b852aaac2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション状態とその方向から加速度を得る。  <a href="class_pysical.html#a16d74602604563dd215172b852aaac2e">[詳解]</a><br /></td></tr>
 <tr class="separator:a16d74602604563dd215172b852aaac2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada38686dc8d075c2afeb1d6c2aa61ea4"><td class="memItemLeft" align="right" valign="top"><a id="ada38686dc8d075c2afeb1d6c2aa61ea4"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getLimitVelFromAction</b> (rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memitem:ada38686dc8d075c2afeb1d6c2aa61ea4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4">getLimitVelFromAction</a> (rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memdesc:ada38686dc8d075c2afeb1d6c2aa61ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション状態とその方向から速度の限界値を得る。  <a href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4">[詳解]</a><br /></td></tr>
 <tr class="separator:ada38686dc8d075c2afeb1d6c2aa61ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6570fb0ebce7a9e1b1248241f9f32842"><td class="memItemLeft" align="right" valign="top"><a id="a6570fb0ebce7a9e1b1248241f9f32842"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>calcVelocityFromAccel</b> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectAcc, rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memitem:a6570fb0ebce7a9e1b1248241f9f32842"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842">calcVelocityFromAccel</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectAcc, rollAction_Basic nowAction, bool isDireRight)</td></tr>
+<tr class="memdesc:a6570fb0ebce7a9e1b1248241f9f32842"><td class="mdescLeft">&#160;</td><td class="mdescRight">加速度から速度を計算する。  <a href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842">[詳解]</a><br /></td></tr>
 <tr class="separator:a6570fb0ebce7a9e1b1248241f9f32842"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae06ef96bccc4c278817b781510a59c80"><td class="memItemLeft" align="right" valign="top"><a id="ae06ef96bccc4c278817b781510a59c80"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>matchingVelAndDireHorizon</b> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, bool isDireRight)</td></tr>
+<tr class="memitem:ae06ef96bccc4c278817b781510a59c80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#ae06ef96bccc4c278817b781510a59c80">matchingVelAndDireHorizon</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, bool isDireRight)</td></tr>
+<tr class="memdesc:ae06ef96bccc4c278817b781510a59c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）  <a href="class_pysical.html#ae06ef96bccc4c278817b781510a59c80">[詳解]</a><br /></td></tr>
 <tr class="separator:ae06ef96bccc4c278817b781510a59c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05606a7b882dd81dea5abc0c996b6959"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959">resetByCollision</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision)</td></tr>
+<tr class="memdesc:a05606a7b882dd81dea5abc0c996b6959"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度を当たり判定によりリセットする。  <a href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959">[詳解]</a><br /></td></tr>
 <tr class="separator:a05606a7b882dd81dea5abc0c996b6959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5904155bfe5156a36a26c8f0bf983c5"><td class="memItemLeft" align="right" valign="top"><a id="ac5904155bfe5156a36a26c8f0bf983c5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSwitching</b> (<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> nowAction)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5">isSwitching</a> (<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> nowAction)</td></tr>
+<tr class="memdesc:ac5904155bfe5156a36a26c8f0bf983c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actionが切り替わった瞬間を取得する関数 <br /></td></tr>
 <tr class="separator:ac5904155bfe5156a36a26c8f0bf983c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
 <tr class="memitem:a345d387ab4db899bc1fb7e647d5172e4"><td class="memItemLeft" align="right" valign="top"><a id="a345d387ab4db899bc1fb7e647d5172e4"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>now_vel</b></td></tr>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a345d387ab4db899bc1fb7e647d5172e4">now_vel</a></td></tr>
+<tr class="memdesc:a345d387ab4db899bc1fb7e647d5172e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在の速度を管理する変数。 <br /></td></tr>
 <tr class="separator:a345d387ab4db899bc1fb7e647d5172e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569f451b881b8c402b159ad2fe676728"><td class="memItemLeft" align="right" valign="top"><a id="a569f451b881b8c402b159ad2fe676728"></a>
-<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><b>now_acc</b></td></tr>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a569f451b881b8c402b159ad2fe676728">now_acc</a></td></tr>
+<tr class="memdesc:a569f451b881b8c402b159ad2fe676728"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在の加速度を管理する変数。 <br /></td></tr>
 <tr class="separator:a569f451b881b8c402b159ad2fe676728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a188cf06b1af9ce11a32e5ef1432c61ba"><td class="memItemLeft" align="right" valign="top"><a id="a188cf06b1af9ce11a32e5ef1432c61ba"></a>
-unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><b>time</b> = 0</td></tr>
+unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a188cf06b1af9ce11a32e5ef1432c61ba">time</a> = 0</td></tr>
+<tr class="memdesc:a188cf06b1af9ce11a32e5ef1432c61ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action中の時間、Actionが切り替わると０にリセットされる。 <br /></td></tr>
 <tr class="separator:a188cf06b1af9ce11a32e5ef1432c61ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03194d5d62712f9f3cf77b0a2036c686"><td class="memItemLeft" align="right" valign="top"><a id="a03194d5d62712f9f3cf77b0a2036c686"></a>
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>addAccN</b> = 2</td></tr>
@@ -136,10 +146,12 @@ unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>addAccN</b> 
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>addAccCounter</b> = 0</td></tr>
 <tr class="separator:abd1b9e3edbffb6339d2446c7e2988ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91f0d6abab77d5b314e55dac30c09e95"><td class="memItemLeft" align="right" valign="top"><a id="a91f0d6abab77d5b314e55dac30c09e95"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>acc_gravity</b> = 1</td></tr>
+unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a91f0d6abab77d5b314e55dac30c09e95">acc_gravity</a> = 1</td></tr>
+<tr class="memdesc:a91f0d6abab77d5b314e55dac30c09e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">重力の値 <br /></td></tr>
 <tr class="separator:a91f0d6abab77d5b314e55dac30c09e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a832747e49dc29deb7e33417092d574e3"><td class="memItemLeft" align="right" valign="top"><a id="a832747e49dc29deb7e33417092d574e3"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>acc_friction</b> = 1</td></tr>
+unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a832747e49dc29deb7e33417092d574e3">acc_friction</a> = 1</td></tr>
+<tr class="memdesc:a832747e49dc29deb7e33417092d574e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">摩擦力の値 <br /></td></tr>
 <tr class="separator:a832747e49dc29deb7e33417092d574e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a2f422d7d9421d129d72106f49d8f8"><td class="memItemLeft" align="right" valign="top"><a id="aa1a2f422d7d9421d129d72106f49d8f8"></a>
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>acc_brake</b> = 1</td></tr>
@@ -163,19 +175,417 @@ unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>initVel_jump
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>initVel_jumpMidAir</b> = 3</td></tr>
 <tr class="separator:aebd19fc199b8e14c7e1b537fb7783da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7254e076b46bb8db87f876619a992ce5"><td class="memItemLeft" align="right" valign="top"><a id="a7254e076b46bb8db87f876619a992ce5"></a>
-std::vector&lt; <a class="el" href="struct_define_1_1_dimention.html">Dimention</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_isInitVelocity</b></td></tr>
+std::vector&lt; <a class="el" href="struct_define_1_1_dimention.html">Dimention</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a7254e076b46bb8db87f876619a992ce5">_isInitVelocity</a></td></tr>
+<tr class="memdesc:a7254e076b46bb8db87f876619a992ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">初速度を格納する変数。 <br /></td></tr>
 <tr class="separator:a7254e076b46bb8db87f876619a992ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c1592edf0d098889215b82df90e9faf"><td class="memItemLeft" align="right" valign="top"><a id="a0c1592edf0d098889215b82df90e9faf"></a>
-std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_validGravityAction</b></td></tr>
+std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a0c1592edf0d098889215b82df90e9faf">_validGravityAction</a></td></tr>
+<tr class="memdesc:a0c1592edf0d098889215b82df90e9faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">そのアクション状態の時に重力を有効にするかどうかを管理する変数。 <br /></td></tr>
 <tr class="separator:a0c1592edf0d098889215b82df90e9faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a2c94bdc02c1adfa608dc02c221f35a"><td class="memItemLeft" align="right" valign="top"><a id="a6a2c94bdc02c1adfa608dc02c221f35a"></a>
-std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_validFrictionAction</b></td></tr>
+std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pysical.html#a6a2c94bdc02c1adfa608dc02c221f35a">_validFrictionAction</a></td></tr>
+<tr class="memdesc:a6a2c94bdc02c1adfa608dc02c221f35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">そのアクション状態の時に摩擦力を有効にするかどうかを管理する変数。 <br /></td></tr>
 <tr class="separator:a6a2c94bdc02c1adfa608dc02c221f35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6de59238cb90d8fd97868f11c7c41bfb"><td class="memItemLeft" align="right" valign="top"><a id="a6de59238cb90d8fd97868f11c7c41bfb"></a>
 rollAction_Basic&#160;</td><td class="memItemRight" valign="bottom"><b>preIsAction</b> = rollAction_Basic::Idle</td></tr>
 <tr class="separator:a6de59238cb90d8fd97868f11c7c41bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>物理演算に置いて速度の演算を担うクラス。 </p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:12 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a0026c6422f633a3e21ffc8d514794868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0026c6422f633a3e21ffc8d514794868">&#9670;&nbsp;</a></span>affectFriction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::affectFriction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>affectedAcc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDireRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。 </p>
+<p>摩擦力を有効にする関数。扱うのは加速度が前提。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:19 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a0026c6422f633a3e21ffc8d514794868_icgraph.png" border="0" usemap="#class_pysical_a0026c6422f633a3e21ffc8d514794868_icgraph" alt=""/></div>
+<map name="class_pysical_a0026c6422f633a3e21ffc8d514794868_icgraph" id="class_pysical_a0026c6422f633a3e21ffc8d514794868_icgraph">
+<area shape="rect" title="affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。" alt="" coords="371,5,517,32"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,5,323,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3482a5b82f97f24575658a76030a58fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3482a5b82f97f24575658a76030a58fe">&#9670;&nbsp;</a></span>affectGravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::affectGravity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>affectedAcc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>affectGravity（対象の加速度）に対し、重力を加える。 </p>
+<p>重力を有効にする関数。扱うのは加速度が前提。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:19 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a3482a5b82f97f24575658a76030a58fe_icgraph.png" border="0" usemap="#class_pysical_a3482a5b82f97f24575658a76030a58fe_icgraph" alt=""/></div>
+<map name="class_pysical_a3482a5b82f97f24575658a76030a58fe_icgraph" id="class_pysical_a3482a5b82f97f24575658a76030a58fe_icgraph">
+<area shape="rect" title="affectGravity（対象の加速度）に対し、重力を加える。" alt="" coords="371,5,515,32"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,5,323,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af735f2a457cc36966c487192423c0bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af735f2a457cc36966c487192423c0bb2">&#9670;&nbsp;</a></span>affectInitVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::affectInitVelocity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>affectedVel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>nowTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>対象の速度に対し、初速度をさらに与える関数。 </p>
+<p>初速度を有効にする。nowTimeが0の時のみ速度に対し、初速度を与える。扱うのは速度が前提。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:19 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_af735f2a457cc36966c487192423c0bb2_icgraph.png" border="0" usemap="#class_pysical_af735f2a457cc36966c487192423c0bb2_icgraph" alt=""/></div>
+<map name="class_pysical_af735f2a457cc36966c487192423c0bb2_icgraph" id="class_pysical_af735f2a457cc36966c487192423c0bb2_icgraph">
+<area shape="rect" title="対象の速度に対し、初速度をさらに与える関数。" alt="" coords="371,5,539,32"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,5,323,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6570fb0ebce7a9e1b1248241f9f32842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6570fb0ebce7a9e1b1248241f9f32842">&#9670;&nbsp;</a></span>calcVelocityFromAccel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::calcVelocityFromAccel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>affectedVel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>affectAcc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDireRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>加速度から速度を計算する。 </p>
+<p>その時の加速度から、次の速度を計算する。返すのは速度。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:26 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_cgraph.png" border="0" usemap="#class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_cgraph" alt=""/></div>
+<map name="class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_cgraph" id="class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_cgraph">
+<area shape="rect" title="加速度から速度を計算する。" alt="" coords="5,5,180,47"/>
+<area shape="rect" href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4" title="アクション状態とその方向から速度の限界値を得る。" alt="" coords="228,5,396,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_icgraph.png" border="0" usemap="#class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_icgraph" alt=""/></div>
+<map name="class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_icgraph" id="class_pysical_a6570fb0ebce7a9e1b1248241f9f32842_icgraph">
+<area shape="rect" title="加速度から速度を計算する。" alt="" coords="371,5,545,47"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,13,323,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a16d74602604563dd215172b852aaac2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d74602604563dd215172b852aaac2e">&#9670;&nbsp;</a></span>getForceFromAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::getForceFromAction </td>
+          <td>(</td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDireRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アクション状態とその方向から加速度を得る。 </p>
+<p>Action状態から、その時の加速度を得る。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:19 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a16d74602604563dd215172b852aaac2e_icgraph.png" border="0" usemap="#class_pysical_a16d74602604563dd215172b852aaac2e_icgraph" alt=""/></div>
+<map name="class_pysical_a16d74602604563dd215172b852aaac2e_icgraph" id="class_pysical_a16d74602604563dd215172b852aaac2e_icgraph">
+<area shape="rect" title="アクション状態とその方向から加速度を得る。" alt="" coords="371,5,561,32"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,5,323,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ada38686dc8d075c2afeb1d6c2aa61ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada38686dc8d075c2afeb1d6c2aa61ea4">&#9670;&nbsp;</a></span>getLimitVelFromAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::getLimitVelFromAction </td>
+          <td>(</td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDireRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アクション状態とその方向から速度の限界値を得る。 </p>
+<p>Action状態から、その時の速度の限界値を得る。方向も考慮しており、扱うのは速度が前提。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:26 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_ada38686dc8d075c2afeb1d6c2aa61ea4_icgraph.png" border="0" usemap="#class_pysical_ada38686dc8d075c2afeb1d6c2aa61ea4_icgraph" alt=""/></div>
+<map name="class_pysical_ada38686dc8d075c2afeb1d6c2aa61ea4_icgraph" id="class_pysical_ada38686dc8d075c2afeb1d6c2aa61ea4_icgraph">
+<area shape="rect" title="アクション状態とその方向から速度の限界値を得る。" alt="" coords="593,5,761,47"/>
+<area shape="rect" href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842" title="加速度から速度を計算する。" alt="" coords="371,5,545,47"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,13,323,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae06ef96bccc4c278817b781510a59c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06ef96bccc4c278817b781510a59c80">&#9670;&nbsp;</a></span>matchingVelAndDireHorizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::matchingVelAndDireHorizon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>affectedVel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDireRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ） </p>
+<p>速度と向く方向が異なるとき（例えばBrake）に、加速度が逆方向にかかりすぎないように制御する関数。返すのは速度。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:26 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_ae06ef96bccc4c278817b781510a59c80_icgraph.png" border="0" usemap="#class_pysical_ae06ef96bccc4c278817b781510a59c80_icgraph" alt=""/></div>
+<map name="class_pysical_ae06ef96bccc4c278817b781510a59c80_icgraph" id="class_pysical_ae06ef96bccc4c278817b781510a59c80_icgraph">
+<area shape="rect" title="向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）" alt="" coords="371,5,561,47"/>
+<area shape="rect" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,13,323,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a05606a7b882dd81dea5abc0c996b6959"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05606a7b882dd81dea5abc0c996b6959">&#9670;&nbsp;</a></span>resetByCollision()</h2>
 
@@ -209,14 +619,138 @@ rollAction_Basic&#160;</td><td class="memItemRight" valign="bottom"><b>preIsActi
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>速度を当たり判定によりリセットする。 </p>
+<p>障壁にぶつかった時に速度をリセットする関数。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:26 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
 <p>y速度の処理</p>
 <p>x速度の処理</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a05606a7b882dd81dea5abc0c996b6959_icgraph.png" border="0" usemap="#class_pysical_a05606a7b882dd81dea5abc0c996b6959_icgraph" alt=""/></div>
+<map name="class_pysical_a05606a7b882dd81dea5abc0c996b6959_icgraph" id="class_pysical_a05606a7b882dd81dea5abc0c996b6959_icgraph">
+<area shape="rect" title="速度を当たり判定によりリセットする。" alt="" coords="408,5,575,32"/>
+<area shape="rect" href="class_pysical.html#a35978d8d8375e56bb185d87be98ff6e2" title="座標をセットした後、適切に速度をリセットする。" alt="" coords="211,5,360,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35978d8d8375e56bb185d87be98ff6e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35978d8d8375e56bb185d87be98ff6e2">&#9670;&nbsp;</a></span>resetVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::resetVelocity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>resetedVector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>座標をセットした後、適切に速度をリセットする。 </p>
+<p>速度を適切なリセット処理する。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:34 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a35978d8d8375e56bb185d87be98ff6e2_cgraph.png" border="0" usemap="#class_pysical_a35978d8d8375e56bb185d87be98ff6e2_cgraph" alt=""/></div>
+<map name="class_pysical_a35978d8d8375e56bb185d87be98ff6e2_cgraph" id="class_pysical_a35978d8d8375e56bb185d87be98ff6e2_cgraph">
+<area shape="rect" title="座標をセットした後、適切に速度をリセットする。" alt="" coords="5,5,155,32"/>
+<area shape="rect" href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959" title="速度を当たり判定によりリセットする。" alt="" coords="203,5,369,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_a35978d8d8375e56bb185d87be98ff6e2_icgraph.png" border="0" usemap="#class_pysical_a35978d8d8375e56bb185d87be98ff6e2_icgraph" alt=""/></div>
+<map name="class_pysical_a35978d8d8375e56bb185d87be98ff6e2_icgraph" id="class_pysical_a35978d8d8375e56bb185d87be98ff6e2_icgraph">
+<area shape="rect" title="座標をセットした後、適切に速度をリセットする。" alt="" coords="211,5,360,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae5bad8b4869d1de252995a6289862938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5bad8b4869d1de252995a6289862938">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> Pysical::update </td>
+          <td>(</td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDireRight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>アクション状態とその方向により速度と加速度を更新し、速度を返す。 </p>
+<p>現在のアクション状態から速度を計算し、返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/19:26 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_ae5bad8b4869d1de252995a6289862938_cgraph.png" border="0" usemap="#class_pysical_ae5bad8b4869d1de252995a6289862938_cgraph" alt=""/></div>
+<map name="class_pysical_ae5bad8b4869d1de252995a6289862938_cgraph" id="class_pysical_ae5bad8b4869d1de252995a6289862938_cgraph">
+<area shape="rect" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="5,165,117,192"/>
+<area shape="rect" href="class_pysical.html#a0026c6422f633a3e21ffc8d514794868" title="affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。" alt="" coords="187,5,334,32"/>
+<area shape="rect" href="class_pysical.html#a3482a5b82f97f24575658a76030a58fe" title="affectGravity（対象の加速度）に対し、重力を加える。" alt="" coords="189,56,333,83"/>
+<area shape="rect" href="class_pysical.html#af735f2a457cc36966c487192423c0bb2" title="対象の速度に対し、初速度をさらに与える関数。" alt="" coords="177,107,345,133"/>
+<area shape="rect" href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842" title="加速度から速度を計算する。" alt="" coords="173,158,348,199"/>
+<area shape="rect" href="class_pysical.html#a16d74602604563dd215172b852aaac2e" title="アクション状態とその方向から加速度を得る。" alt="" coords="165,224,356,251"/>
+<area shape="rect" href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5" title="Actionが切り替わった瞬間を取得する関数" alt="" coords="191,275,330,301"/>
+<area shape="rect" href="class_pysical.html#ae06ef96bccc4c278817b781510a59c80" title="向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）" alt="" coords="165,326,356,367"/>
+<area shape="rect" href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4" title="アクション状態とその方向から速度の限界値を得る。" alt="" coords="404,158,572,199"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pysical_ae5bad8b4869d1de252995a6289862938_icgraph.png" border="0" usemap="#class_pysical_ae5bad8b4869d1de252995a6289862938_icgraph" alt=""/></div>
+<map name="class_pysical_ae5bad8b4869d1de252995a6289862938_icgraph" id="class_pysical_ae5bad8b4869d1de252995a6289862938_icgraph">
+<area shape="rect" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,5,323,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_pysical_8h_source.html">Pysical.h</a></li>
-<li>C:/Users/mimur/Desktop/NewGame/Pysical.cpp</li>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_pysical_8cpp.html">Pysical.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

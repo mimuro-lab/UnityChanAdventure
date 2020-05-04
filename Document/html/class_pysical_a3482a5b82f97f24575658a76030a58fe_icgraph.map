@@ -1,0 +1,5 @@
+<map id="Pysical::affectGravity" name="Pysical::affectGravity">
+<area shape="rect" id="node1" title="affectGravity（対象の加速度）に対し、重力を加える。" alt="" coords="371,5,515,32"/>
+<area shape="rect" id="node2" href="$class_pysical.html#ae5bad8b4869d1de252995a6289862938" title="アクション状態とその方向により速度と加速度を更新し、速度を返す。" alt="" coords="211,5,323,32"/>
+<area shape="rect" id="node3" href="$class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>

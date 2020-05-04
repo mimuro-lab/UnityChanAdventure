@@ -76,6 +76,7 @@ var menudata={children:[
 {text:"n",url:"functions_vars.html#index_n"},
 {text:"p",url:"functions_vars.html#index_p"},
 {text:"s",url:"functions_vars.html#index_s"},
+{text:"t",url:"functions_vars.html#index_t"},
 {text:"u",url:"functions_vars.html#index_u"},
 {text:"w",url:"functions_vars.html#index_w"}]},
 {text:"列挙型",url:"functions_enum.html"}]}]},

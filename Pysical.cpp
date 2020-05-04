@@ -13,7 +13,7 @@
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned char nowTime)
+Dimention Pysical::affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned short nowTime)
 {
 	Dimention returnVel = affectedVel;
 

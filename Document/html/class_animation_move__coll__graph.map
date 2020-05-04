@@ -2,5 +2,5 @@
 <area shape="rect" id="node1" title="プレイヤーオブジェクトの座標位置を計算するクラス。" alt="" coords="86,216,197,243"/>
 <area shape="rect" id="node2" href="$class_predict_point.html" title="座標が適切かどうかを判断するためのクラス。" alt="" coords="95,118,188,145"/>
 <area shape="rect" id="node3" href="$struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="80,5,204,32"/>
-<area shape="rect" id="node4" href="$class_pysical.html" title=" " alt="" coords="213,118,278,145"/>
+<area shape="rect" id="node4" href="$class_pysical.html" title="物理演算に置いて速度の演算を担うクラス。" alt="" coords="213,118,278,145"/>
 </map>

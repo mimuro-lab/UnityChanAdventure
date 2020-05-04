@@ -76,6 +76,9 @@ $(function() {
 <li>_IsClosed
 : <a class="el" href="class_select_window.html#a045e557f20b422221c8eee0538d68cd8">SelectWindow</a>
 </li>
+<li>_isInitVelocity
+: <a class="el" href="class_pysical.html#a7254e076b46bb8db87f876619a992ce5">Pysical</a>
+</li>
 <li>_IsSelected
 : <a class="el" href="class_select_window.html#a6ae7d3ab6297552250b7b12d77d34572">SelectWindow</a>
 </li>
@@ -94,6 +97,12 @@ $(function() {
 <li>_stage
 : <a class="el" href="class_collision_detect.html#ae300476a3d1854ebe41b0c58a13eb91f">CollisionDetect</a>
 </li>
+<li>_validFrictionAction
+: <a class="el" href="class_pysical.html#a6a2c94bdc02c1adfa608dc02c221f35a">Pysical</a>
+</li>
+<li>_validGravityAction
+: <a class="el" href="class_pysical.html#a0c1592edf0d098889215b82df90e9faf">Pysical</a>
+</li>
 </ul>
 
 
@@ -101,11 +110,26 @@ $(function() {
 <li>AbstractScene()
 : <a class="el" href="class_abstract_scene.html#aff61f06e8b99e84898aedb6177df5819">AbstractScene</a>
 </li>
+<li>acc_friction
+: <a class="el" href="class_pysical.html#a832747e49dc29deb7e33417092d574e3">Pysical</a>
+</li>
+<li>acc_gravity
+: <a class="el" href="class_pysical.html#a91f0d6abab77d5b314e55dac30c09e95">Pysical</a>
+</li>
 <li>acceptNextAction()
 : <a class="el" href="class_animation_switch.html#a4623ed7e8ee031a544605a3db2adc317">AnimationSwitch</a>
 </li>
 <li>acceptSwitching()
 : <a class="el" href="class_animation_switch.html#a9f1dc6703c526e5228ab4613acfb7c64">AnimationSwitch</a>
+</li>
+<li>affectFriction()
+: <a class="el" href="class_pysical.html#a0026c6422f633a3e21ffc8d514794868">Pysical</a>
+</li>
+<li>affectGravity()
+: <a class="el" href="class_pysical.html#a3482a5b82f97f24575658a76030a58fe">Pysical</a>
+</li>
+<li>affectInitVelocity()
+: <a class="el" href="class_pysical.html#af735f2a457cc36966c487192423c0bb2">Pysical</a>
 </li>
 <li>Animation()
 : <a class="el" href="class_animation.html#ae6483ab8fd7539256eb3a6a637b856e1">Animation</a>
@@ -138,6 +162,9 @@ $(function() {
 </li>
 <li>calcShitingCollisionedSideVertical()
 : <a class="el" href="class_collision_detect.html#a4d29495bc9aa07af6f113255989e0077">CollisionDetect</a>
+</li>
+<li>calcVelocityFromAccel()
+: <a class="el" href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842">Pysical</a>
 </li>
 <li>changer
 : <a class="el" href="class_abstract_scene.html#adb810bc89fc8c19ef720555c4361ea26">AbstractScene</a>
@@ -243,11 +270,17 @@ $(function() {
 <li>getCounter()
 : <a class="el" href="class_abstract_scene.html#a2ae2009d95758f4836f0df22f78314f5">AbstractScene</a>
 </li>
+<li>getForceFromAction()
+: <a class="el" href="class_pysical.html#a16d74602604563dd215172b852aaac2e">Pysical</a>
+</li>
 <li>getForwardBlockNearSideHorizon()
 : <a class="el" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724">PredictPoint</a>
 </li>
 <li>getForwardBlockNearSideVertical()
 : <a class="el" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba">PredictPoint</a>
+</li>
+<li>getLimitVelFromAction()
+: <a class="el" href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4">Pysical</a>
 </li>
 <li>getNextAction()
 : <a class="el" href="class_animation_switch.html#a5e4d491c84d2ba9d3acbf047e917372b">AnimationSwitch</a>
@@ -371,6 +404,9 @@ $(function() {
 <li>IsSelectWindow_Closed()
 : <a class="el" href="class_select_window.html#a5f4ad09cc0e693de353de6327461f075">SelectWindow</a>
 </li>
+<li>isSwitching()
+: <a class="el" href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5">Pysical</a>
+</li>
 </ul>
 
 
@@ -402,6 +438,9 @@ $(function() {
 <li>main()
 : <a class="el" href="class_system_owner.html#a138299e6d03ce3cc8a1a327dd19793f5">SystemOwner</a>
 </li>
+<li>matchingVelAndDireHorizon()
+: <a class="el" href="class_pysical.html#ae06ef96bccc4c278817b781510a59c80">Pysical</a>
+</li>
 <li>maxSpeed_run
 : <a class="el" href="class_player.html#ad5fc91b2441114b1e1f0b5b8e97e5689">Player</a>
 </li>
@@ -420,6 +459,12 @@ $(function() {
 </li>
 <li>nextPoint
 : <a class="el" href="class_animation_move.html#a5208159edb4836abd3dac5bfc6d5b57e">AnimationMove</a>
+</li>
+<li>now_acc
+: <a class="el" href="class_pysical.html#a569f451b881b8c402b159ad2fe676728">Pysical</a>
+</li>
+<li>now_vel
+: <a class="el" href="class_pysical.html#a345d387ab4db899bc1fb7e647d5172e4">Pysical</a>
 </li>
 <li>nowAction
 : <a class="el" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">AnimationSwitch</a>
@@ -507,6 +552,9 @@ $(function() {
 <li>resetByCollision()
 : <a class="el" href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959">Pysical</a>
 </li>
+<li>resetVelocity()
+: <a class="el" href="class_pysical.html#a35978d8d8375e56bb185d87be98ff6e2">Pysical</a>
+</li>
 <li>rollAction_Basic
 : <a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define</a>
 </li>
@@ -550,6 +598,9 @@ $(function() {
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>time
+: <a class="el" href="class_pysical.html#a188cf06b1af9ce11a32e5ef1432c61ba">Pysical</a>
+</li>
 <li>toShiftDirect
 : <a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">CollisionDetect</a>
 </li>
@@ -574,6 +625,7 @@ $(function() {
 , <a class="el" href="class_menu_scene.html#a3f8c1a2a91f22dcb9202567f1ac59e96">MenuScene</a>
 , <a class="el" href="class_player.html#ad1ad81e5e3564dc1b4f7ba720c717025">Player</a>
 , <a class="el" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3">PredictPoint</a>
+, <a class="el" href="class_pysical.html#ae5bad8b4869d1de252995a6289862938">Pysical</a>
 , <a class="el" href="class_start_scene.html#a5ef13b44ea32ad5fee5bb59b18612855">StartScene</a>
 , <a class="el" href="class_task.html#a552c8996b9db6be1ae519b9cdbdfaeca">Task</a>
 </li>

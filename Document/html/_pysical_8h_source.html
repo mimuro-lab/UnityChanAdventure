@@ -65,123 +65,132 @@ $(function() {
 <div class="title">C:/Users/mimur/Desktop/NewGame/Pysical.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_collision_detect_8h.html">CollisionDetect.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span><a class="code" href="class_define.html">Define</a>;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_pysical.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_pysical.html">Pysical</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> now_vel;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> now_acc;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// Action中の時間、Actionが切り替わると０にリセットされる。</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <span class="keywordtype">int</span> time = 0;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// moveNコマに一回加速度を加える。</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> addAccN = 2;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> addAccCounter = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// 重力の値</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_gravity = 1;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// 摩擦力の値</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_friction = 1;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Actionごとの加速度の大きさと速度の限界値</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_brake = 1;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_walk = 2;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> limVel_walk = 6;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_run = 3;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> limVel_run = 9;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> initVel_jumpUp = 12;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> initVel_jumpMidAir = 3;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::vector&lt;Dimention&gt; _isInitVelocity;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;bool&gt; _validGravityAction;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::vector&lt;bool&gt; _validFrictionAction;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// 対象の速度に対し、初速度をさらに与える。</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectInitVelocity(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> nowTime);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// affectGravity（対象の加速度）に対し、重力を加える。</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectGravity(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectFriction(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// アクション状態とその方向から加速度を得る。</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> getForceFromAction(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// アクション状態とその方向から速度の限界値を得る。</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> getLimitVelFromAction(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// 加速度から速度を計算する。</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> calcVelocityFromAccel(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectAcc, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// 向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> matchingVelAndDireHorizon(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <span class="keywordtype">bool</span> isDireRight);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// 速度を当たり判定によりリセットする。</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetByCollision(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt;CollisionDetect&gt; _collision);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Actionが切り替わった瞬間を取得する関数</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> preIsAction = rollAction_Basic::Idle;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> isSwitching(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> nowAction) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (nowAction != preIsAction)   ret = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">else</span>                            ret = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        preIsAction = nowAction;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<a href="_pysical_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_collision_detect_8h.html">CollisionDetect.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="class_define.html">Define</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_pysical.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_pysical.html">Pysical</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_pysical.html#a345d387ab4db899bc1fb7e647d5172e4">   24</a></span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> <a class="code" href="class_pysical.html#a345d387ab4db899bc1fb7e647d5172e4">now_vel</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_pysical.html#a569f451b881b8c402b159ad2fe676728">   27</a></span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> <a class="code" href="class_pysical.html#a569f451b881b8c402b159ad2fe676728">now_acc</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_pysical.html#a188cf06b1af9ce11a32e5ef1432c61ba">   30</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <span class="keywordtype">int</span> time = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// moveNコマに一回加速度を加える。</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> addAccN = 2;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> addAccCounter = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_pysical.html#a91f0d6abab77d5b314e55dac30c09e95">   37</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_gravity = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_pysical.html#a832747e49dc29deb7e33417092d574e3">   40</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_friction = 1;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Actionごとの加速度の大きさと速度の限界値</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_brake = 1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_walk = 2;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> limVel_walk = 6;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> acc_run = 3;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> limVel_run = 9;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> initVel_jumpUp = 12;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> initVel_jumpMidAir = 3;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_pysical.html#a7254e076b46bb8db87f876619a992ce5">   55</a></span>&#160;    std::vector&lt;Dimention&gt; <a class="code" href="class_pysical.html#a7254e076b46bb8db87f876619a992ce5">_isInitVelocity</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_pysical.html#a0c1592edf0d098889215b82df90e9faf">   58</a></span>&#160;    std::vector&lt;bool&gt; <a class="code" href="class_pysical.html#a0c1592edf0d098889215b82df90e9faf">_validGravityAction</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_pysical.html#a6a2c94bdc02c1adfa608dc02c221f35a">   61</a></span>&#160;    std::vector&lt;bool&gt; <a class="code" href="class_pysical.html#a6a2c94bdc02c1adfa608dc02c221f35a">_validFrictionAction</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectInitVelocity(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> nowTime);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectGravity(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectFriction(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedAcc, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> getForceFromAction(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_pysical.html">Pysical</a>()</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        now_vel.x = now_vel.y = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        now_acc.x = now_acc.y = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> initVel;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        initVel.x = initVel.y = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        _isInitVelocity = std::vector&lt;Dimention&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::_end), initVel);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        _isInitVelocity[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_Up)].y = - initVel_jumpUp;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        _isInitVelocity[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_MidAir)].y = -initVel_jumpMidAir;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        _validGravityAction = std::vector&lt;bool&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::_end), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Fall)]</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_Up)]</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_MidAir)]</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Brake)]</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Crouch)]</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        _validFrictionAction = std::vector&lt;bool&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::_end), <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        _validFrictionAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Idle)]</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            = _validFrictionAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Brake)]</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            = _validFrictionAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Crouch)]</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    };</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ~<a class="code" href="class_pysical.html">Pysical</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> getLimitVelFromAction(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> calcVelocityFromAccel(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectAcc, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> matchingVelAndDireHorizon(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> affectedVel, <span class="keywordtype">bool</span> isDireRight);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetByCollision(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt;CollisionDetect&gt; _collision);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> preIsAction = rollAction_Basic::Idle;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5">   89</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5">isSwitching</a>(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> nowAction) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (nowAction != preIsAction)   ret = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">else</span>                            ret = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        preIsAction = nowAction;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="class_pysical.html">Pysical</a>()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        now_vel.x = now_vel.y = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        now_acc.x = now_acc.y = 0;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// アクション状態とその方向により速度と加速度を更新し、速度を返す。</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> update(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// 座標をセットした後、適切に速度をリセットする。</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetVector(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt;CollisionDetect&gt; _collision);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> initVel;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        initVel.x = initVel.y = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        _isInitVelocity = std::vector&lt;Dimention&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::_end), initVel);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        _isInitVelocity[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_Up)].y = - initVel_jumpUp;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        _isInitVelocity[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_MidAir)].y = -initVel_jumpMidAir;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        _validGravityAction = std::vector&lt;bool&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::_end), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Fall)]</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_Up)]</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Jump_MidAir)]</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Brake)]</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            = _validGravityAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Crouch)]</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        _validFrictionAction = std::vector&lt;bool&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::_end), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        _validFrictionAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Idle)]</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            = _validFrictionAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Brake)]</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            = _validFrictionAction[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Define::rollAction_Basic::Crouch)]</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ~<a class="code" href="class_pysical.html">Pysical</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> update(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <span class="keywordtype">bool</span> isDireRight);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetVelocity(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> resetedVector, std::shared_ptr&lt;CollisionDetect&gt; _collision);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_pysical_html_a0026c6422f633a3e21ffc8d514794868"><div class="ttname"><a href="class_pysical.html#a0026c6422f633a3e21ffc8d514794868">Pysical::affectFriction</a></div><div class="ttdeci">Dimention affectFriction(Dimention affectedAcc, rollAction_Basic nowAction, bool isDireRight)</div><div class="ttdoc">affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:49</div></div>
+<div class="ttc" id="aclass_pysical_html_a188cf06b1af9ce11a32e5ef1432c61ba"><div class="ttname"><a href="class_pysical.html#a188cf06b1af9ce11a32e5ef1432c61ba">Pysical::time</a></div><div class="ttdeci">unsigned short int time</div><div class="ttdoc">Action中の時間、Actionが切り替わると０にリセットされる。</div><div class="ttdef"><b>Definition:</b> Pysical.h:30</div></div>
+<div class="ttc" id="aclass_pysical_html_ae06ef96bccc4c278817b781510a59c80"><div class="ttname"><a href="class_pysical.html#ae06ef96bccc4c278817b781510a59c80">Pysical::matchingVelAndDireHorizon</a></div><div class="ttdeci">Dimention matchingVelAndDireHorizon(Dimention affectedVel, bool isDireRight)</div><div class="ttdoc">向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:157</div></div>
+<div class="ttc" id="a_pysical_8h_html"><div class="ttname"><a href="_pysical_8h.html">Pysical.h</a></div><div class="ttdoc">PredictPointクラスが定義されているヘッダファイル。</div></div>
+<div class="ttc" id="aclass_pysical_html_af735f2a457cc36966c487192423c0bb2"><div class="ttname"><a href="class_pysical.html#af735f2a457cc36966c487192423c0bb2">Pysical::affectInitVelocity</a></div><div class="ttdeci">Dimention affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned short nowTime)</div><div class="ttdoc">対象の速度に対し、初速度をさらに与える関数。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:16</div></div>
+<div class="ttc" id="aclass_pysical_html_ada38686dc8d075c2afeb1d6c2aa61ea4"><div class="ttname"><a href="class_pysical.html#ada38686dc8d075c2afeb1d6c2aa61ea4">Pysical::getLimitVelFromAction</a></div><div class="ttdeci">Dimention getLimitVelFromAction(rollAction_Basic nowAction, bool isDireRight)</div><div class="ttdoc">アクション状態とその方向から速度の限界値を得る。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:103</div></div>
+<div class="ttc" id="aclass_pysical_html_a0c1592edf0d098889215b82df90e9faf"><div class="ttname"><a href="class_pysical.html#a0c1592edf0d098889215b82df90e9faf">Pysical::_validGravityAction</a></div><div class="ttdeci">std::vector&lt; bool &gt; _validGravityAction</div><div class="ttdoc">そのアクション状態の時に重力を有効にするかどうかを管理する変数。</div><div class="ttdef"><b>Definition:</b> Pysical.h:58</div></div>
+<div class="ttc" id="aclass_pysical_html_a6570fb0ebce7a9e1b1248241f9f32842"><div class="ttname"><a href="class_pysical.html#a6570fb0ebce7a9e1b1248241f9f32842">Pysical::calcVelocityFromAccel</a></div><div class="ttdeci">Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, rollAction_Basic nowAction, bool isDireRight)</div><div class="ttdoc">加速度から速度を計算する。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:132</div></div>
 <div class="ttc" id="a_define_8h_html"><div class="ttname"><a href="_define_8h.html">Define.h</a></div><div class="ttdoc">いろいろな定義をまとまる為のヘッダファイル</div></div>
-<div class="ttc" id="aclass_pysical_html"><div class="ttname"><a href="class_pysical.html">Pysical</a></div><div class="ttdef"><b>Definition:</b> Pysical.h:7</div></div>
+<div class="ttc" id="aclass_pysical_html"><div class="ttname"><a href="class_pysical.html">Pysical</a></div><div class="ttdoc">物理演算に置いて速度の演算を担うクラス。</div><div class="ttdef"><b>Definition:</b> Pysical.h:21</div></div>
 <div class="ttc" id="a_collision_detect_8h_html"><div class="ttname"><a href="_collision_detect_8h.html">CollisionDetect.h</a></div><div class="ttdoc">CollisionDetectクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_pysical_html_a7254e076b46bb8db87f876619a992ce5"><div class="ttname"><a href="class_pysical.html#a7254e076b46bb8db87f876619a992ce5">Pysical::_isInitVelocity</a></div><div class="ttdeci">std::vector&lt; Dimention &gt; _isInitVelocity</div><div class="ttdoc">初速度を格納する変数。</div><div class="ttdef"><b>Definition:</b> Pysical.h:55</div></div>
+<div class="ttc" id="aclass_pysical_html_a35978d8d8375e56bb185d87be98ff6e2"><div class="ttname"><a href="class_pysical.html#a35978d8d8375e56bb185d87be98ff6e2">Pysical::resetVelocity</a></div><div class="ttdeci">Dimention resetVelocity(Dimention resetedVector, std::shared_ptr&lt; CollisionDetect &gt; _collision)</div><div class="ttdoc">座標をセットした後、適切に速度をリセットする。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:247</div></div>
+<div class="ttc" id="aclass_pysical_html_a16d74602604563dd215172b852aaac2e"><div class="ttname"><a href="class_pysical.html#a16d74602604563dd215172b852aaac2e">Pysical::getForceFromAction</a></div><div class="ttdeci">Dimention getForceFromAction(rollAction_Basic nowAction, bool isDireRight)</div><div class="ttdoc">アクション状態とその方向から加速度を得る。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:68</div></div>
+<div class="ttc" id="aclass_pysical_html_a91f0d6abab77d5b314e55dac30c09e95"><div class="ttname"><a href="class_pysical.html#a91f0d6abab77d5b314e55dac30c09e95">Pysical::acc_gravity</a></div><div class="ttdeci">unsigned char acc_gravity</div><div class="ttdoc">重力の値</div><div class="ttdef"><b>Definition:</b> Pysical.h:37</div></div>
+<div class="ttc" id="aclass_pysical_html_a569f451b881b8c402b159ad2fe676728"><div class="ttname"><a href="class_pysical.html#a569f451b881b8c402b159ad2fe676728">Pysical::now_acc</a></div><div class="ttdeci">Dimention now_acc</div><div class="ttdoc">現在の加速度を管理する変数。</div><div class="ttdef"><b>Definition:</b> Pysical.h:27</div></div>
+<div class="ttc" id="aclass_pysical_html_a3482a5b82f97f24575658a76030a58fe"><div class="ttname"><a href="class_pysical.html#a3482a5b82f97f24575658a76030a58fe">Pysical::affectGravity</a></div><div class="ttdeci">Dimention affectGravity(Dimention affectedAcc, rollAction_Basic nowAction)</div><div class="ttdoc">affectGravity（対象の加速度）に対し、重力を加える。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:33</div></div>
+<div class="ttc" id="aclass_pysical_html_ac5904155bfe5156a36a26c8f0bf983c5"><div class="ttname"><a href="class_pysical.html#ac5904155bfe5156a36a26c8f0bf983c5">Pysical::isSwitching</a></div><div class="ttdeci">bool isSwitching(Define::rollAction_Basic nowAction)</div><div class="ttdoc">Actionが切り替わった瞬間を取得する関数</div><div class="ttdef"><b>Definition:</b> Pysical.h:89</div></div>
 <div class="ttc" id="aclass_define_html"><div class="ttname"><a href="class_define.html">Define</a></div><div class="ttdoc">あらゆるパラメータの定義を保持するクラス</div></div>
-<div class="ttc" id="aclass_pysical_html_a05606a7b882dd81dea5abc0c996b6959"><div class="ttname"><a href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959">Pysical::resetByCollision</a></div><div class="ttdeci">Dimention resetByCollision(Dimention resetedVector, std::shared_ptr&lt; CollisionDetect &gt; _collision)</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:161</div></div>
+<div class="ttc" id="aclass_pysical_html_a6a2c94bdc02c1adfa608dc02c221f35a"><div class="ttname"><a href="class_pysical.html#a6a2c94bdc02c1adfa608dc02c221f35a">Pysical::_validFrictionAction</a></div><div class="ttdeci">std::vector&lt; bool &gt; _validFrictionAction</div><div class="ttdoc">そのアクション状態の時に摩擦力を有効にするかどうかを管理する変数。</div><div class="ttdef"><b>Definition:</b> Pysical.h:61</div></div>
+<div class="ttc" id="aclass_pysical_html_a05606a7b882dd81dea5abc0c996b6959"><div class="ttname"><a href="class_pysical.html#a05606a7b882dd81dea5abc0c996b6959">Pysical::resetByCollision</a></div><div class="ttdeci">Dimention resetByCollision(Dimention resetedVector, std::shared_ptr&lt; CollisionDetect &gt; _collision)</div><div class="ttdoc">速度を当たり判定によりリセットする。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:214</div></div>
+<div class="ttc" id="aclass_pysical_html_a832747e49dc29deb7e33417092d574e3"><div class="ttname"><a href="class_pysical.html#a832747e49dc29deb7e33417092d574e3">Pysical::acc_friction</a></div><div class="ttdeci">unsigned char acc_friction</div><div class="ttdoc">摩擦力の値</div><div class="ttdef"><b>Definition:</b> Pysical.h:40</div></div>
+<div class="ttc" id="aclass_pysical_html_ae5bad8b4869d1de252995a6289862938"><div class="ttname"><a href="class_pysical.html#ae5bad8b4869d1de252995a6289862938">Pysical::update</a></div><div class="ttdeci">Dimention update(rollAction_Basic nowAction, bool isDireRight)</div><div class="ttdoc">アクション状態とその方向により速度と加速度を更新し、速度を返す。</div><div class="ttdef"><b>Definition:</b> Pysical.cpp:176</div></div>
 <div class="ttc" id="astruct_define_1_1_dimention_html"><div class="ttname"><a href="struct_define_1_1_dimention.html">Define::Dimention</a></div><div class="ttdoc">座標を取り扱う時の次元の定義</div><div class="ttdef"><b>Definition:</b> Define.h:70</div></div>
+<div class="ttc" id="aclass_pysical_html_a345d387ab4db899bc1fb7e647d5172e4"><div class="ttname"><a href="class_pysical.html#a345d387ab4db899bc1fb7e647d5172e4">Pysical::now_vel</a></div><div class="ttdeci">Dimention now_vel</div><div class="ttdoc">現在の速度を管理する変数。</div><div class="ttdef"><b>Definition:</b> Pysical.h:24</div></div>
 <div class="ttc" id="aclass_define_html_a049aeb1a697932e5e887a0b4afa36cf7"><div class="ttname"><a href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a></div><div class="ttdeci">rollAction_Basic</div><div class="ttdoc">プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。</div><div class="ttdef"><b>Definition:</b> Define.h:65</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

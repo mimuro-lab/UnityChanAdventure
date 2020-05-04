@@ -69,61 +69,62 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Pysical.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pysical_8h.html">Pysical.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_collision_detect_8h.html">CollisionDetect.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span><a class="code" href="class_define.html">Define</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_predict_point.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_predict_point.html">PredictPoint</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">   28</a></span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> <a class="code" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">   31</a></span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> <a class="code" href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">predictPoint</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> calcPredictPoint(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowVelocity);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> fittingPointHorizon(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <span class="keywordtype">int</span> predictRange, std::shared_ptr&lt;CollisionDetect&gt; _collision, std::shared_ptr&lt;Stage&gt; _stage);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> fittingPointVertical(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <span class="keywordtype">int</span> predictRange, std::shared_ptr&lt;CollisionDetect&gt; _collision, std::shared_ptr&lt;Stage&gt; _stage);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> getForwardBlockNearSideHorizon(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> predictRange,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::shared_ptr&lt;CollisionDetect&gt; _collision,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::shared_ptr&lt;Stage&gt; _stage</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    );</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> getForwardBlockNearSideVertical(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> predictRange,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::shared_ptr&lt;CollisionDetect&gt; _collision,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::shared_ptr&lt;Stage&gt; _stage</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="class_predict_point.html">PredictPoint</a>() {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        predictPoint.x = predictPoint.y = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        nowPoint.x = nowPoint.y =  0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ~<a class="code" href="class_predict_point.html">PredictPoint</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> update(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowVelocity, std::shared_ptr&lt;CollisionDetect&gt; _collision, std::shared_ptr&lt;Stage&gt; _stage);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span><a class="code" href="class_define.html">Define</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_predict_point.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_predict_point.html">PredictPoint</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">   27</a></span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> <a class="code" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">   30</a></span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> <a class="code" href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">predictPoint</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> calcPredictPoint(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowVelocity);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> fittingPointHorizon(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <span class="keywordtype">int</span> predictRange, std::shared_ptr&lt;CollisionDetect&gt; _collision, std::shared_ptr&lt;Stage&gt; _stage);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> fittingPointVertical(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <span class="keywordtype">int</span> predictRange, std::shared_ptr&lt;CollisionDetect&gt; _collision, std::shared_ptr&lt;Stage&gt; _stage);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> getForwardBlockNearSideHorizon(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> predictRange,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::shared_ptr&lt;CollisionDetect&gt; _collision,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::shared_ptr&lt;Stage&gt; _stage</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> getForwardBlockNearSideVertical(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">int</span> predictRange,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::shared_ptr&lt;CollisionDetect&gt; _collision,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::shared_ptr&lt;Stage&gt; _stage</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_predict_point.html">PredictPoint</a>() {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        predictPoint.x = predictPoint.y = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        nowPoint.x = nowPoint.y =  0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ~<a class="code" href="class_predict_point.html">PredictPoint</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> update(<a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowPoint, <a class="code" href="struct_define_1_1_dimention.html">Dimention</a> nowVelocity, std::shared_ptr&lt;CollisionDetect&gt; _collision, std::shared_ptr&lt;Stage&gt; _stage);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_predict_point_html_ad58224b864d0218dd13ca68660db7724"><div class="ttname"><a href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724">PredictPoint::getForwardBlockNearSideHorizon</a></div><div class="ttdeci">int getForwardBlockNearSideHorizon(Dimention nowPoint, int predictRange, std::shared_ptr&lt; CollisionDetect &gt; _collision, std::shared_ptr&lt; Stage &gt; _stage)</div><div class="ttdoc">水平方向の一番近いブロックの一番近い辺のX座標を取得する。</div><div class="ttdef"><b>Definition:</b> PredictPoint.cpp:141</div></div>
-<div class="ttc" id="aclass_predict_point_html_aafa4d494d38518160b470d465dab8190"><div class="ttname"><a href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">PredictPoint::predictPoint</a></div><div class="ttdeci">Dimention predictPoint</div><div class="ttdoc">次のコマで位置するであろう座標</div><div class="ttdef"><b>Definition:</b> PredictPoint.h:31</div></div>
+<div class="ttc" id="a_pysical_8h_html"><div class="ttname"><a href="_pysical_8h.html">Pysical.h</a></div><div class="ttdoc">PredictPointクラスが定義されているヘッダファイル。</div></div>
+<div class="ttc" id="aclass_predict_point_html_aafa4d494d38518160b470d465dab8190"><div class="ttname"><a href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">PredictPoint::predictPoint</a></div><div class="ttdeci">Dimention predictPoint</div><div class="ttdoc">次のコマで位置するであろう座標</div><div class="ttdef"><b>Definition:</b> PredictPoint.h:30</div></div>
 <div class="ttc" id="aclass_predict_point_html_a80843e1a414dd0d5e0fa0121a54285d3"><div class="ttname"><a href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3">PredictPoint::update</a></div><div class="ttdeci">Dimention update(Dimention nowPoint, Dimention nowVelocity, std::shared_ptr&lt; CollisionDetect &gt; _collision, std::shared_ptr&lt; Stage &gt; _stage)</div><div class="ttdoc">更新処理を行う関数。</div><div class="ttdef"><b>Definition:</b> PredictPoint.cpp:175</div></div>
 <div class="ttc" id="a_define_8h_html"><div class="ttname"><a href="_define_8h.html">Define.h</a></div><div class="ttdoc">いろいろな定義をまとまる為のヘッダファイル</div></div>
 <div class="ttc" id="aclass_predict_point_html_a84ad6cfa5d2168d82120ca48bc77a661"><div class="ttname"><a href="class_predict_point.html#a84ad6cfa5d2168d82120ca48bc77a661">PredictPoint::calcPredictPoint</a></div><div class="ttdeci">Dimention calcPredictPoint(Dimention nowPoint, Dimention nowVelocity)</div><div class="ttdoc">今の座標から、今の速度により次の座標を計算する。</div><div class="ttdef"><b>Definition:</b> PredictPoint.cpp:16</div></div>
-<div class="ttc" id="aclass_predict_point_html_ac388beae6e02a03fbfff4bb2fd392595"><div class="ttname"><a href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">PredictPoint::nowPoint</a></div><div class="ttdeci">Dimention nowPoint</div><div class="ttdoc">更新前の位置</div><div class="ttdef"><b>Definition:</b> PredictPoint.h:28</div></div>
+<div class="ttc" id="aclass_predict_point_html_ac388beae6e02a03fbfff4bb2fd392595"><div class="ttname"><a href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">PredictPoint::nowPoint</a></div><div class="ttdeci">Dimention nowPoint</div><div class="ttdoc">更新前の位置</div><div class="ttdef"><b>Definition:</b> PredictPoint.h:27</div></div>
 <div class="ttc" id="a_collision_detect_8h_html"><div class="ttname"><a href="_collision_detect_8h.html">CollisionDetect.h</a></div><div class="ttdoc">CollisionDetectクラスが定義されているヘッダファイル</div></div>
 <div class="ttc" id="aclass_predict_point_html_a9d38faafbb42cb25fefc8db30a4c5bba"><div class="ttname"><a href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba">PredictPoint::getForwardBlockNearSideVertical</a></div><div class="ttdeci">int getForwardBlockNearSideVertical(Dimention nowPoint, int predictRange, std::shared_ptr&lt; CollisionDetect &gt; _collision, std::shared_ptr&lt; Stage &gt; _stage)</div><div class="ttdoc">垂直方向の一番近いブロックの一番近い辺のX座標を取得する。</div><div class="ttdef"><b>Definition:</b> PredictPoint.cpp:107</div></div>
 <div class="ttc" id="aclass_predict_point_html_ab9b72b61983dda273e9e195e70dcb234"><div class="ttname"><a href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234">PredictPoint::fittingPointHorizon</a></div><div class="ttdeci">int fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr&lt; CollisionDetect &gt; _collision, std::shared_ptr&lt; Stage &gt; _stage)</div><div class="ttdoc">水平方向に動く場合の適切な座標の修正を行う関数。</div><div class="ttdef"><b>Definition:</b> PredictPoint.cpp:32</div></div>
 <div class="ttc" id="aclass_define_html"><div class="ttname"><a href="class_define.html">Define</a></div><div class="ttdoc">あらゆるパラメータの定義を保持するクラス</div></div>
 <div class="ttc" id="aclass_predict_point_html_a551f0c5d0d155249b3548504148f9864"><div class="ttname"><a href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864">PredictPoint::fittingPointVertical</a></div><div class="ttdeci">int fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr&lt; CollisionDetect &gt; _collision, std::shared_ptr&lt; Stage &gt; _stage)</div><div class="ttdoc">垂直方向に動く場合の適切な座標の修正を行う関数。</div><div class="ttdef"><b>Definition:</b> PredictPoint.cpp:68</div></div>
-<div class="ttc" id="aclass_predict_point_html"><div class="ttname"><a href="class_predict_point.html">PredictPoint</a></div><div class="ttdoc">座標が適切かどうかを判断するためのクラス。</div><div class="ttdef"><b>Definition:</b> PredictPoint.h:24</div></div>
+<div class="ttc" id="aclass_predict_point_html"><div class="ttname"><a href="class_predict_point.html">PredictPoint</a></div><div class="ttdoc">座標が適切かどうかを判断するためのクラス。</div><div class="ttdef"><b>Definition:</b> PredictPoint.h:23</div></div>
 <div class="ttc" id="a_predict_point_8h_html"><div class="ttname"><a href="_predict_point_8h.html">PredictPoint.h</a></div><div class="ttdoc">PredictPointクラスが定義されているヘッダファイル。</div></div>
 <div class="ttc" id="astruct_define_1_1_dimention_html"><div class="ttname"><a href="struct_define_1_1_dimention.html">Define::Dimention</a></div><div class="ttdoc">座標を取り扱う時の次元の定義</div><div class="ttdef"><b>Definition:</b> Define.h:70</div></div>
 <!-- start footer part -->
