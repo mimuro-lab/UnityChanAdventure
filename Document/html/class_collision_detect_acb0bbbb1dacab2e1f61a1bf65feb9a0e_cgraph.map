@@ -1,0 +1,4 @@
+<map id="CollisionDetect::detectHead" name="CollisionDetect::detectHead">
+<area shape="rect" id="node1" title="head部分の衝突の有無を確認する。" alt="" coords="5,13,188,39"/>
+<area shape="rect" id="node2" href="$class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="236,5,415,47"/>
+</map>

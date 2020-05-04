@@ -1,0 +1,5 @@
+<map id="PredictPoint::fittingPointVertical" name="PredictPoint::fittingPointVertical">
+<area shape="rect" id="node1" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
+<area shape="rect" id="node2" href="$class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,13,351,39"/>
+<area shape="rect" id="node3" href="$class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>

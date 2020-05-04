@@ -1,0 +1,4 @@
+<map id="AnimationSwitch::acceptSwitching" name="AnimationSwitch::acceptSwitching">
+<area shape="rect" id="node1" title="アクション状態を切り替えてもよいかを返す。" alt="" coords="220,5,443,32"/>
+<area shape="rect" id="node2" href="$class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,5,172,32"/>
+</map>

@@ -1,5 +1,18 @@
+
+/*!
+@file PredictPoint.cpp
+@brief PredicPointクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/05/04/18:07
+@author mimuro
+*/
+
 #include "PredictPoint.h"
 
+/*!
+@brief nowPointのX,Y成分にnowVelocityのX,Y成分を足した座標を返す。
+@date 2020/05/04/18:09
+@author mimuro
+*/
 Dimention PredictPoint::calcPredictPoint(Dimention nowPoint, Dimention nowVelocity)
 {
 	Dimention returnPoint = nowPoint;
@@ -11,6 +24,11 @@ Dimention PredictPoint::calcPredictPoint(Dimention nowPoint, Dimention nowVeloci
 
 }
 
+/*!
+@brief nowPointから水平方向にpredictRange分に障壁があるなら、その障壁に合わせたX座標を返す。
+@date 2020/05/04/18:13
+@author mimuro
+*/
 int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
 {
 	// predictRangeが現在位置より右だったら
@@ -42,6 +60,11 @@ int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std:
 	return nowPoint.x + predictRange;
 }
 
+/*!
+@brief nowPointから垂直方向にpredictRange分に障壁があるなら、その障壁に合わせたY座標を返す。
+@date 2020/05/04/18:013
+@author mimuro
+*/
 int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
 {
 
@@ -76,7 +99,11 @@ int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std
 	return nowPoint.y + predictRange;
 }
 
-
+/*!
+@brief predictRange分の一番近いブロックの近い辺のY座標を返す。
+@date 2020/05/04/18:15
+@author mimuro
+*/
 int PredictPoint::getForwardBlockNearSideVertical(
 	Dimention nowPoint,
 	int predictRange,
@@ -106,7 +133,11 @@ int PredictPoint::getForwardBlockNearSideVertical(
 	return nowPoint.y;
 }
 
-
+/*!
+@brief predictRange分の一番近いブロックの近い辺のX座標を返す。
+@date 2020/05/04/18:15
+@author mimuro
+*/
 int PredictPoint::getForwardBlockNearSideHorizon(
 	Dimention nowPoint,
 	int predictRange,
@@ -136,6 +167,11 @@ int PredictPoint::getForwardBlockNearSideHorizon(
 	return nowPoint.y;
 }
 
+/*!
+@brief 受け取ったnowPointの各成分をfittingPoint処理をかけて返す。
+@date 2020/05/04/18:17
+@author mimuro
+*/
 Dimention PredictPoint::update(Dimention _nowPoint, Dimention nowVelocity, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
 {
 

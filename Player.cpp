@@ -12,7 +12,6 @@
 @brief プレイヤーオブジェクトの座標更新、アニメーションの処理などを行う。
 @date 2020/04/21/12:36
 @author mimuro
-@callergraph
 */
 void Player::update(std::shared_ptr<Stage> _stage)
 {

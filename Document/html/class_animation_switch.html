@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: AnimationSwitch クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="class_animation_switch-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">AnimationSwitch クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>アニメーションの状態を切り替える為のクラス  
+ <a href="class_animation_switch.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_animation_switch_8h_source.html">AnimationSwitch.h</a>&gt;</code></p>
+<div class="dynheader">
+AnimationSwitch 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch__coll__graph.png" border="0" usemap="#_animation_switch_coll__map" alt="Collaboration graph"/></div>
+<map name="_animation_switch_coll__map" id="_animation_switch_coll__map">
+<area shape="rect" title="アニメーションの状態を切り替える為のクラス" alt="" coords="5,95,124,121"/>
+<area shape="rect" href="struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="13,5,117,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5ad33c2ae62835862ed016fc87a718c3"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3">update</a> (shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; collision, shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; animation, <a class="el" href="struct_define_1_1_status.html">Status</a> <a class="el" href="class_animation_switch.html#afd550b8917d71fe64320719a8ce68ece">playerStatus</a>)</td></tr>
+<tr class="memdesc:a5ad33c2ae62835862ed016fc87a718c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新を行う関数。  <a href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3">[詳解]</a><br /></td></tr>
+<tr class="separator:a5ad33c2ae62835862ed016fc87a718c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea3a3234940b4dbe2470a649fdd9695"><td class="memItemLeft" align="right" valign="top"><a id="a0ea3a3234940b4dbe2470a649fdd9695"></a>
+rollAction_Basic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a0ea3a3234940b4dbe2470a649fdd9695">getNowAction</a> ()</td></tr>
+<tr class="memdesc:a0ea3a3234940b4dbe2470a649fdd9695"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在どのアクション状態かを取得する関数。 <br /></td></tr>
+<tr class="separator:a0ea3a3234940b4dbe2470a649fdd9695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9f1dc6703c526e5228ab4613acfb7c64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a9f1dc6703c526e5228ab4613acfb7c64">acceptSwitching</a> (shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; animation, rollAction_Basic <a class="el" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">nowAction</a>)</td></tr>
+<tr class="memdesc:a9f1dc6703c526e5228ab4613acfb7c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション状態を切り替えてもよいかを返す。  <a href="class_animation_switch.html#a9f1dc6703c526e5228ab4613acfb7c64">[詳解]</a><br /></td></tr>
+<tr class="separator:a9f1dc6703c526e5228ab4613acfb7c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4d491c84d2ba9d3acbf047e917372b"><td class="memItemLeft" align="right" valign="top">rollAction_Basic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a5e4d491c84d2ba9d3acbf047e917372b">getNextAction</a> (shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; <a class="el" href="class_animation_switch.html#ab55fd7b81b22f0902e31c14f90d5a382">_animation</a>, <a class="el" href="struct_define_1_1_status.html">Status</a> <a class="el" href="class_animation_switch.html#afd550b8917d71fe64320719a8ce68ece">playerStatus</a>, rollAction_Basic <a class="el" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">nowAction</a>)</td></tr>
+<tr class="memdesc:a5e4d491c84d2ba9d3acbf047e917372b"><td class="mdescLeft">&#160;</td><td class="mdescRight">コントローラの入力などに応じた次のアクションを取得する。  <a href="class_animation_switch.html#a5e4d491c84d2ba9d3acbf047e917372b">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e4d491c84d2ba9d3acbf047e917372b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4623ed7e8ee031a544605a3db2adc317"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a4623ed7e8ee031a544605a3db2adc317">acceptNextAction</a> (rollAction_Basic <a class="el" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">nowAction</a>, rollAction_Basic <a class="el" href="class_animation_switch.html#aacd4da0fcb1b92fe092fbd338138d880">nextAction</a>, <a class="el" href="struct_define_1_1_status.html">Status</a> _playerStatus)</td></tr>
+<tr class="memdesc:a4623ed7e8ee031a544605a3db2adc317"><td class="mdescLeft">&#160;</td><td class="mdescRight">getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。  <a href="class_animation_switch.html#a4623ed7e8ee031a544605a3db2adc317">[詳解]</a><br /></td></tr>
+<tr class="separator:a4623ed7e8ee031a544605a3db2adc317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48feb4fc0f7b47e64cc378aaa940de68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a48feb4fc0f7b47e64cc378aaa940de68">isRefresh</a> (rollAction_Basic <a class="el" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">nowAction</a>, shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; __animation)</td></tr>
+<tr class="memdesc:a48feb4fc0f7b47e64cc378aaa940de68"><td class="mdescLeft">&#160;</td><td class="mdescRight">animationをリフレッシュしてもよいか判断する関数。  <a href="class_animation_switch.html#a48feb4fc0f7b47e64cc378aaa940de68">[詳解]</a><br /></td></tr>
+<tr class="separator:a48feb4fc0f7b47e64cc378aaa940de68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179398b7748c22c78b0b6d73242895e0"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a179398b7748c22c78b0b6d73242895e0">switchingAnimation</a> (rollAction_Basic next, <a class="el" href="struct_define_1_1_status.html">Status</a> _playerStatus)</td></tr>
+<tr class="memdesc:a179398b7748c22c78b0b6d73242895e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションを切り替える関数。  <a href="class_animation_switch.html#a179398b7748c22c78b0b6d73242895e0">[詳解]</a><br /></td></tr>
+<tr class="separator:a179398b7748c22c78b0b6d73242895e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ab55fd7b81b22f0902e31c14f90d5a382"><td class="memItemLeft" align="right" valign="top"><a id="ab55fd7b81b22f0902e31c14f90d5a382"></a>
+shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#ab55fd7b81b22f0902e31c14f90d5a382">_animation</a></td></tr>
+<tr class="memdesc:ab55fd7b81b22f0902e31c14f90d5a382"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションの切り替えには、アニメーションの状態を受け取る必要がある。 <br /></td></tr>
+<tr class="separator:ab55fd7b81b22f0902e31c14f90d5a382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792e864d6bd1a9313e8d379a0677caec"><td class="memItemLeft" align="right" valign="top"><a id="a792e864d6bd1a9313e8d379a0677caec"></a>
+vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a792e864d6bd1a9313e8d379a0677caec">IsAction_canSwitching</a></td></tr>
+<tr class="memdesc:a792e864d6bd1a9313e8d379a0677caec"><td class="mdescLeft">&#160;</td><td class="mdescRight">アクション中に他のアクションに切り替え可能かどうか？（添え字がrollAction_Basicに対応） <br /></td></tr>
+<tr class="separator:a792e864d6bd1a9313e8d379a0677caec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863b0b73bb4ee30d2f4b571ef85f74c5"><td class="memItemLeft" align="right" valign="top"><a id="a863b0b73bb4ee30d2f4b571ef85f74c5"></a>
+rollAction_Basic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">nowAction</a></td></tr>
+<tr class="memdesc:a863b0b73bb4ee30d2f4b571ef85f74c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの現在の状態を管理。 <br /></td></tr>
+<tr class="separator:a863b0b73bb4ee30d2f4b571ef85f74c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd4da0fcb1b92fe092fbd338138d880"><td class="memItemLeft" align="right" valign="top">rollAction_Basic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#aacd4da0fcb1b92fe092fbd338138d880">nextAction</a></td></tr>
+<tr class="separator:aacd4da0fcb1b92fe092fbd338138d880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd550b8917d71fe64320719a8ce68ece"><td class="memItemLeft" align="right" valign="top"><a id="afd550b8917d71fe64320719a8ce68ece"></a>
+<a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_switch.html#afd550b8917d71fe64320719a8ce68ece">playerStatus</a></td></tr>
+<tr class="memdesc:afd550b8917d71fe64320719a8ce68ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。 <br /></td></tr>
+<tr class="separator:afd550b8917d71fe64320719a8ce68ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>アニメーションの状態を切り替える為のクラス </p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/15:03 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a4623ed7e8ee031a544605a3db2adc317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4623ed7e8ee031a544605a3db2adc317">&#9670;&nbsp;</a></span>acceptNextAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationSwitch::acceptNextAction </td>
+          <td>(</td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nextAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td>
+          <td class="paramname"><em>_playerStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。 </p>
+<p>次の状態を受け入れてよいかどうかを判断する。</p>
+<dl class="section user"><dt>次の状態が今と同じだったら継続なので切り替え処理を行わない。また、Jump_MidAirでは速度が上向きの時は切り替え処理を行わない。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/15:43 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a4623ed7e8ee031a544605a3db2adc317_icgraph.png" border="0" usemap="#class_animation_switch_a4623ed7e8ee031a544605a3db2adc317_icgraph" alt=""/></div>
+<map name="class_animation_switch_a4623ed7e8ee031a544605a3db2adc317_icgraph" id="class_animation_switch_a4623ed7e8ee031a544605a3db2adc317_icgraph">
+<area shape="rect" title="getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。" alt="" coords="220,5,413,47"/>
+<area shape="rect" href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,13,172,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f1dc6703c526e5228ab4613acfb7c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1dc6703c526e5228ab4613acfb7c64">&#9670;&nbsp;</a></span>acceptSwitching()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationSwitch::acceptSwitching </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>animation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アクション状態を切り替えてもよいかを返す。 </p>
+<p>アニメーションを切り替えても良いかを判断する。</p>
+<dl class="section user"><dt>アニメーションが終了する前に切り替えてもよい状態か、そうでなくてもアニメーションが終了した時にtrueを返す。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/15:30 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a9f1dc6703c526e5228ab4613acfb7c64_icgraph.png" border="0" usemap="#class_animation_switch_a9f1dc6703c526e5228ab4613acfb7c64_icgraph" alt=""/></div>
+<map name="class_animation_switch_a9f1dc6703c526e5228ab4613acfb7c64_icgraph" id="class_animation_switch_a9f1dc6703c526e5228ab4613acfb7c64_icgraph">
+<area shape="rect" title="アクション状態を切り替えてもよいかを返す。" alt="" coords="220,5,443,32"/>
+<area shape="rect" href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,5,172,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e4d491c84d2ba9d3acbf047e917372b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e4d491c84d2ba9d3acbf047e917372b">&#9670;&nbsp;</a></span>getNextAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rollAction_Basic AnimationSwitch::getNextAction </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>animation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td>
+          <td class="paramname"><em>playerStatus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コントローラの入力などに応じた次のアクションを取得する。 </p>
+<p>@biref コントローラの入力状態によって次のアクション状態を取得する。playerStatusの更新はここでは行わない。状態を決定する処理だけ。 </p><dl class="section date"><dt>日付</dt><dd>2020/05/04/15:49 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<p>足元が地面についている状態で、ジャンプで地面をけり上げた瞬間出ない時</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_cgraph.png" border="0" usemap="#class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_cgraph" alt=""/></div>
+<map name="class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_cgraph" id="class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_cgraph">
+<area shape="rect" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="5,23,177,65"/>
+<area shape="rect" href="class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251" title="左方向ボタン入力状態の取得（押された瞬間）" alt="" coords="230,5,371,32"/>
+<area shape="rect" href="class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0" title="右方向ボタン入力状態の取得（押された瞬間）" alt="" coords="225,56,376,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_icgraph.png" border="0" usemap="#class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_icgraph" alt=""/></div>
+<map name="class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_icgraph" id="class_animation_switch_a5e4d491c84d2ba9d3acbf047e917372b_icgraph">
+<area shape="rect" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="220,5,392,47"/>
+<area shape="rect" href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,13,172,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a48feb4fc0f7b47e64cc378aaa940de68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48feb4fc0f7b47e64cc378aaa940de68">&#9670;&nbsp;</a></span>isRefresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationSwitch::isRefresh </td>
+          <td>(</td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>animation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>animationをリフレッシュしてもよいか判断する関数。 </p>
+<p>アニメーションをリフレッシュするかどうか判断する関数。</p>
+<dl class="section user"><dt>しゃがむ・ジャンプ（空中）、アニメーションが終了していないならリフレッシュしない。それ以外ならリフレッシュする。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/15:48 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a48feb4fc0f7b47e64cc378aaa940de68_icgraph.png" border="0" usemap="#class_animation_switch_a48feb4fc0f7b47e64cc378aaa940de68_icgraph" alt=""/></div>
+<map name="class_animation_switch_a48feb4fc0f7b47e64cc378aaa940de68_icgraph" id="class_animation_switch_a48feb4fc0f7b47e64cc378aaa940de68_icgraph">
+<area shape="rect" title="animationをリフレッシュしてもよいか判断する関数。" alt="" coords="220,5,401,32"/>
+<area shape="rect" href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,5,172,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a179398b7748c22c78b0b6d73242895e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179398b7748c22c78b0b6d73242895e0">&#9670;&nbsp;</a></span>switchingAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; AnimationSwitch::switchingAnimation </td>
+          <td>(</td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>next</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td>
+          <td class="paramname"><em>nowStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アニメーションを切り替える関数。 </p>
+<p>IsActionを更新して、次のアクションのAnimation型のオブジェクトを返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/15:49 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a179398b7748c22c78b0b6d73242895e0_icgraph.png" border="0" usemap="#class_animation_switch_a179398b7748c22c78b0b6d73242895e0_icgraph" alt=""/></div>
+<map name="class_animation_switch_a179398b7748c22c78b0b6d73242895e0_icgraph" id="class_animation_switch_a179398b7748c22c78b0b6d73242895e0_icgraph">
+<area shape="rect" title="アニメーションを切り替える関数。" alt="" coords="220,5,401,47"/>
+<area shape="rect" href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,13,172,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ad33c2ae62835862ed016fc87a718c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad33c2ae62835862ed016fc87a718c3">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; AnimationSwitch::update </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>animation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td>
+          <td class="paramname"><em>playerStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更新を行う関数。 </p>
+<p>コントローラやアニメーション、ステータスや当たり判定の状態から次のアクション状態を計算する。</p>
+<dl class="section user"><dt>返すのはAnimation型の変数。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/15:30 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_switch_a5ad33c2ae62835862ed016fc87a718c3_cgraph.png" border="0" usemap="#class_animation_switch_a5ad33c2ae62835862ed016fc87a718c3_cgraph" alt=""/></div>
+<map name="class_animation_switch_a5ad33c2ae62835862ed016fc87a718c3_cgraph" id="class_animation_switch_a5ad33c2ae62835862ed016fc87a718c3_cgraph">
+<area shape="rect" title="更新を行う関数。" alt="" coords="5,130,172,157"/>
+<area shape="rect" href="class_animation_switch.html#a4623ed7e8ee031a544605a3db2adc317" title="getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。" alt="" coords="235,5,428,47"/>
+<area shape="rect" href="class_animation_switch.html#a9f1dc6703c526e5228ab4613acfb7c64" title="アクション状態を切り替えてもよいかを返す。" alt="" coords="220,71,443,98"/>
+<area shape="rect" href="class_animation_switch.html#a5e4d491c84d2ba9d3acbf047e917372b" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="245,123,417,164"/>
+<area shape="rect" href="class_animation_switch.html#a48feb4fc0f7b47e64cc378aaa940de68" title="animationをリフレッシュしてもよいか判断する関数。" alt="" coords="241,189,422,215"/>
+<area shape="rect" href="class_animation_switch.html#a179398b7748c22c78b0b6d73242895e0" title="アニメーションを切り替える関数。" alt="" coords="241,240,422,281"/>
+<area shape="rect" href="class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251" title="左方向ボタン入力状態の取得（押された瞬間）" alt="" coords="495,105,637,131"/>
+<area shape="rect" href="class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0" title="右方向ボタン入力状態の取得（押された瞬間）" alt="" coords="491,155,641,182"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="aacd4da0fcb1b92fe092fbd338138d880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd4da0fcb1b92fe092fbd338138d880">&#9670;&nbsp;</a></span>nextAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rollAction_Basic AnimationSwitch::nextAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>次のアクションを現在の条件によって選択していく。 次のアクションを格納しておく変数。 </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_animation_switch_8h_source.html">AnimationSwitch.h</a></li>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_animation_switch_8cpp.html">AnimationSwitch.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,5 +1,18 @@
+
+/*!
+@file CollisionDetect.cpp
+@brief CollisionDetectクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/05/04/16:36
+@author mimuro
+*/
+
 #include "CollisionDetect.h"
 
+/*!
+@par 頭上・足元・右側・左側の当たり判定を調べる関数。何もreturnしない。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 void CollisionDetect::update(Define::Status _nowStatus, std::shared_ptr<Stage> __stage)
 {
 	nowStatus = _nowStatus;
@@ -15,6 +28,12 @@ void CollisionDetect::update(Define::Status _nowStatus, std::shared_ptr<Stage> _
 
 }
 
+
+/*!
+@par 頭上の当たり判定を調べる関数。障壁があったらtrueを返す。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 bool CollisionDetect::detectHead()
 {
 	for (int i = 0; i < headPoints; i++) {
@@ -27,6 +46,11 @@ bool CollisionDetect::detectHead()
 	return false;
 }
 
+/*!
+@par 右側の当たり判定を調べる関数。障壁があったらtrueを返す。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 bool CollisionDetect::detectRight()
 {
 	for (int i = 0; i < headPoints; i++) {
@@ -38,6 +62,11 @@ bool CollisionDetect::detectRight()
 	return false;
 }
 
+/*!
+@par 足元の当たり判定を調べる関数。障壁があったらtrueを返す。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 bool CollisionDetect::detectBottom()
 {
 	for (int i = 0; i < rightPoints; i++) {
@@ -49,6 +78,11 @@ bool CollisionDetect::detectBottom()
 	return false;
 }
 
+/*!
+@par 左側の当たり判定を調べる関数。障壁があったらtrueを返す。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 bool CollisionDetect::detectLeft()
 {
 	for (int i = 0; i < leftPoints; i++) {
@@ -61,12 +95,17 @@ bool CollisionDetect::detectLeft()
 	return false;
 }
 
+/*!
+@par 当たり判定の描画を行う関数。何も返さない。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 void CollisionDetect::draw()
 {
 	// head
 	for (int i = 0; i < headPoints; i++) {
 		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-		int y = nowStatus._y - toHead;
+		int y = nowStatus._y - toHead - 1;
 		unsigned int color = GetColor(255, 255, 255);
 		if (IsDetectedStage(x, y))
 			color = GetColor(255, 0, 0);
@@ -95,7 +134,7 @@ void CollisionDetect::draw()
 
 	// left
 	for (int i = 0; i < leftPoints; i++) {
-		int x = nowStatus._x - toLeft;
+		int x = nowStatus._x - toLeft - 1;
 		int y = nowStatus._y - toHead + ((toHead + toBottom) / leftPoints) * i;
 		unsigned int color = GetColor(255, 255, 255);
 		if (IsDetectedStage(x, y))
@@ -105,6 +144,11 @@ void CollisionDetect::draw()
 	
 }
 
+/*!
+@par x,y座標にステージのブロックがあるかどうか。
+@date 2020/05/04/16:40
+@author mimuro
+*/
 bool CollisionDetect::IsDetectedStage(int x, int y)
 {
 	// x, y座標がステージのどのインデックスに値するか？
@@ -126,7 +170,12 @@ bool CollisionDetect::IsDetectedStage(int x, int y)
 	return false;
 }
 
-// range分さきに障壁があったらtrue
+/*!
+@par 垂直方向において、_toの方向に_range分先に障壁があるかどうかを判断する関数。
+@brief _rangeが1ブロック長を超えていたら、_toの方向から_rangeまでの間もブロックの有無を判定する。
+@date 2020/05/04/16:57
+@author mimuro
+*/
 bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char _range)
 {
 	// rangeが0だったら1先を調べる
@@ -233,6 +282,12 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 	return true;
 }
 
+/*!
+@par 水平方向において、_toの方向に_range分先に障壁があるかどうかを判断する関数。
+@brief _rangeが1ブロック長を超えていたら、_toの方向から_rangeまでの間もブロックの有無を判定する。
+@date 2020/05/04/16:58
+@author mimuro
+*/
 bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char _range)
 {
 	// rangeが0だったら、1先の座標を調べる。
@@ -298,6 +353,11 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 	return false;
 }
 
+/*!
+@par _toの方向の、中心座標からの当たり判定の範囲を返す関数。
+@date 2020/05/04/16:59
+@author mimuro
+*/
 const char CollisionDetect::getRange(toShiftDirect _to, int y_vel, int x_vel)
 {
 	switch (_to) {

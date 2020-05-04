@@ -73,14 +73,19 @@ $(function() {
 <div class="title">CollisionDetect クラス</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>当たり判定処理を行うクラス。  
+ <a href="class_collision_detect.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_collision_detect_8h_source.html">CollisionDetect.h</a>&gt;</code></p>
 <div class="dynheader">
 CollisionDetect 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_collision_detect__coll__graph.png" border="0" usemap="#_collision_detect_coll__map" alt="Collaboration graph"/></div>
 <map name="_collision_detect_coll__map" id="_collision_detect_coll__map">
-<area shape="rect" title=" " alt="" coords="225,109,334,136"/>
-<area shape="rect" href="struct_collision_detect_1_1_collision__range.html" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" href="struct_collision_detect_1_1_collision.html" title=" " alt="" coords="196,13,363,39"/>
+<area shape="rect" title="当たり判定処理を行うクラス。" alt="" coords="225,109,334,136"/>
+<area shape="rect" href="struct_collision_detect_1_1_collision__range.html" title="中心座標からどのくらいの範囲で当たり判定を置くか。その範囲の値を管理する構造体。" alt="" coords="5,5,172,47"/>
+<area shape="rect" href="struct_collision_detect_1_1_collision.html" title="当たり判定を格納する変数。Trueだと当たっている。" alt="" coords="196,13,363,39"/>
 <area shape="rect" href="struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="387,13,491,39"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
@@ -88,13 +93,15 @@ CollisionDetect 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 クラス</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">当たり判定を格納する変数。Trueだと当たっている。  <a href="struct_collision_detect_1_1_collision.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_collision_detect_1_1_collision__range.html">Collision_range</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">中心座標からどのくらいの範囲で当たり判定を置くか。その範囲の値を管理する構造体。  <a href="struct_collision_detect_1_1_collision__range.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 公開型</h2></td></tr>
-<tr class="memitem:a19970d5fade410c01d7bf057760255d2"><td class="memItemLeft" align="right" valign="top"><a id="a19970d5fade410c01d7bf057760255d2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>toShiftDirect</b> { <br />
+<tr class="memitem:a19970d5fade410c01d7bf057760255d2"><td class="memItemLeft" align="right" valign="top"><a id="a19970d5fade410c01d7bf057760255d2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a> { <br />
 &#160;&#160;<b>right</b>, 
 <b>left</b>, 
 <b>head</b>, 
@@ -105,65 +112,63 @@ CollisionDetect 連携図</div>
 <b>_none</b>
 <br />
  }</td></tr>
+<tr class="memdesc:a19970d5fade410c01d7bf057760255d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">当たり判定における、方向の定義。 <br /></td></tr>
 <tr class="separator:a19970d5fade410c01d7bf057760255d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a316b3004ccd115df86c39e39e1061f90"><td class="memItemLeft" align="right" valign="top"><a id="a316b3004ccd115df86c39e39e1061f90"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionDetect</b> (std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; __stage, <a class="el" href="struct_define_1_1_status.html">Define::Status</a> _status)</td></tr>
-<tr class="separator:a316b3004ccd115df86c39e39e1061f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6d4684061df08343ea8d4bcdb5c2f2"><td class="memItemLeft" align="right" valign="top"><a id="a5e6d4684061df08343ea8d4bcdb5c2f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> _nowStatus, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
-<tr class="separator:a5e6d4684061df08343ea8d4bcdb5c2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d29495bc9aa07af6f113255989e0077"><td class="memItemLeft" align="right" valign="top"><a id="a4d29495bc9aa07af6f113255989e0077"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>calcShitingCollisionedSideVertical</b> (toShiftDirect _to, char _range)</td></tr>
+<tr class="memitem:a402f77091441bb3e4eb19664323a8e71"><td class="memItemLeft" align="right" valign="top"><a id="a402f77091441bb3e4eb19664323a8e71"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionDetect</b> (shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; __stage, <a class="el" href="struct_define_1_1_status.html">Status</a> _status)</td></tr>
+<tr class="separator:a402f77091441bb3e4eb19664323a8e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff9da7866019685a777e4b0201200f7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d">update</a> (<a class="el" href="struct_define_1_1_status.html">Status</a> _nowStatus, shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; <a class="el" href="class_collision_detect.html#ae300476a3d1854ebe41b0c58a13eb91f">_stage</a>)</td></tr>
+<tr class="memdesc:aff9da7866019685a777e4b0201200f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理を行う関数。  <a href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d">[詳解]</a><br /></td></tr>
+<tr class="separator:aff9da7866019685a777e4b0201200f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d29495bc9aa07af6f113255989e0077"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a4d29495bc9aa07af6f113255989e0077">calcShitingCollisionedSideVertical</a> (<a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a> _to, char _range)</td></tr>
+<tr class="memdesc:a4d29495bc9aa07af6f113255989e0077"><td class="mdescLeft">&#160;</td><td class="mdescRight">水平方向で、任意の距離に障壁があるかどうかを調べる関数。  <a href="class_collision_detect.html#a4d29495bc9aa07af6f113255989e0077">[詳解]</a><br /></td></tr>
 <tr class="separator:a4d29495bc9aa07af6f113255989e0077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a278c3218aa57c23e6d42493dbeb967e9"><td class="memItemLeft" align="right" valign="top"><a id="a278c3218aa57c23e6d42493dbeb967e9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>calcShitingCollisionedSideHorizon</b> (toShiftDirect _to, char _range)</td></tr>
+<tr class="memitem:a278c3218aa57c23e6d42493dbeb967e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a278c3218aa57c23e6d42493dbeb967e9">calcShitingCollisionedSideHorizon</a> (<a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a> _to, char _range)</td></tr>
+<tr class="memdesc:a278c3218aa57c23e6d42493dbeb967e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直方向で、任意の距離に障壁があるかどうかを調べる関数。  <a href="class_collision_detect.html#a278c3218aa57c23e6d42493dbeb967e9">[詳解]</a><br /></td></tr>
 <tr class="separator:a278c3218aa57c23e6d42493dbeb967e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13771062daf4866267ab57f77e7f77bc"><td class="memItemLeft" align="right" valign="top"><a id="a13771062daf4866267ab57f77e7f77bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> ()</td></tr>
+<tr class="memitem:a13771062daf4866267ab57f77e7f77bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a13771062daf4866267ab57f77e7f77bc">draw</a> ()</td></tr>
 <tr class="separator:a13771062daf4866267ab57f77e7f77bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb33c300cc6aa634743f1b4bfbd407b3"><td class="memItemLeft" align="right" valign="top"><a id="aeb33c300cc6aa634743f1b4bfbd407b3"></a>
-const <a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getCollisionedSide</b> ()</td></tr>
-<tr class="separator:aeb33c300cc6aa634743f1b4bfbd407b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa360a570c0a4058e5e5a882e80e13e"><td class="memItemLeft" align="right" valign="top"><a id="a5aa360a570c0a4058e5e5a882e80e13e"></a>
-const char&#160;</td><td class="memItemRight" valign="bottom"><b>getRange</b> (toShiftDirect _to, int x_vel, int y_vel)</td></tr>
-<tr class="separator:a5aa360a570c0a4058e5e5a882e80e13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc6253728594e9550a787622892cb91"><td class="memItemLeft" align="right" valign="top"><a id="a1dc6253728594e9550a787622892cb91"></a>
+<a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a1dc6253728594e9550a787622892cb91">getCollisionedSide</a> ()</td></tr>
+<tr class="memdesc:a1dc6253728594e9550a787622892cb91"><td class="mdescLeft">&#160;</td><td class="mdescRight">当たり判定を取得する関数。 <br /></td></tr>
+<tr class="separator:a1dc6253728594e9550a787622892cb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519a9deb195d722bee7c7fdd69b0f56d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a519a9deb195d722bee7c7fdd69b0f56d">getRange</a> (<a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a> _to, int x_vel=0, int y_vel=0)</td></tr>
+<tr class="memdesc:a519a9deb195d722bee7c7fdd69b0f56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">中心座標からの当たり判定の範囲を返す関数。  <a href="class_collision_detect.html#a519a9deb195d722bee7c7fdd69b0f56d">[詳解]</a><br /></td></tr>
+<tr class="separator:a519a9deb195d722bee7c7fdd69b0f56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 公開変数類</h2></td></tr>
 <tr class="memitem:a2a81346c194560e6675475c44a1ba4b4"><td class="memItemLeft" align="right" valign="top"><a id="a2a81346c194560e6675475c44a1ba4b4"></a>
-<a class="el" href="struct_collision_detect_1_1_collision__range.html">Collision_range</a>&#160;</td><td class="memItemRight" valign="bottom"><b>collisionSideRange</b></td></tr>
+<a class="el" href="struct_collision_detect_1_1_collision__range.html">Collision_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a2a81346c194560e6675475c44a1ba4b4">collisionSideRange</a></td></tr>
+<tr class="memdesc:a2a81346c194560e6675475c44a1ba4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">当たり判定の範囲を格納する変数。 <br /></td></tr>
 <tr class="separator:a2a81346c194560e6675475c44a1ba4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:a012f3e3608857edf547ec71940df2abc"><td class="memItemLeft" align="right" valign="top"><a id="a012f3e3608857edf547ec71940df2abc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc">IsDetectedStage</a> (int x, int y)</td></tr>
-<tr class="memdesc:a012f3e3608857edf547ec71940df2abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">(x, y)座標は何かに当たっているかどうか <br /></td></tr>
+<tr class="memitem:a012f3e3608857edf547ec71940df2abc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc">IsDetectedStage</a> (int x, int y)</td></tr>
+<tr class="memdesc:a012f3e3608857edf547ec71940df2abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">(x, y)座標は何かに当たっているかどうか  <a href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc">[詳解]</a><br /></td></tr>
 <tr class="separator:a012f3e3608857edf547ec71940df2abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="memItemLeft" align="right" valign="top"><a id="acb0bbbb1dacab2e1f61a1bf65feb9a0e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e">detectHead</a> ()</td></tr>
-<tr class="memdesc:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">head部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="memitem:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e">detectHead</a> ()</td></tr>
+<tr class="memdesc:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">head部分の衝突の有無を確認する。  <a href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e">[詳解]</a><br /></td></tr>
 <tr class="separator:acb0bbbb1dacab2e1f61a1bf65feb9a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac83775d1f852ab21a38177776b30ce5a"><td class="memItemLeft" align="right" valign="top"><a id="ac83775d1f852ab21a38177776b30ce5a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a">detectRight</a> ()</td></tr>
-<tr class="memdesc:ac83775d1f852ab21a38177776b30ce5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">right部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="memitem:ac83775d1f852ab21a38177776b30ce5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a">detectRight</a> ()</td></tr>
+<tr class="memdesc:ac83775d1f852ab21a38177776b30ce5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">right部分の衝突の有無を確認する。  <a href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a">[詳解]</a><br /></td></tr>
 <tr class="separator:ac83775d1f852ab21a38177776b30ce5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1f529df0fa1b3d02f5831f6571b5093"><td class="memItemLeft" align="right" valign="top"><a id="aa1f529df0fa1b3d02f5831f6571b5093"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093">detectBottom</a> ()</td></tr>
-<tr class="memdesc:aa1f529df0fa1b3d02f5831f6571b5093"><td class="mdescLeft">&#160;</td><td class="mdescRight">bottom部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="memitem:aa1f529df0fa1b3d02f5831f6571b5093"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093">detectBottom</a> ()</td></tr>
+<tr class="memdesc:aa1f529df0fa1b3d02f5831f6571b5093"><td class="mdescLeft">&#160;</td><td class="mdescRight">bottom部分の衝突の有無を確認する。  <a href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093">[詳解]</a><br /></td></tr>
 <tr class="separator:aa1f529df0fa1b3d02f5831f6571b5093"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="memItemLeft" align="right" valign="top"><a id="a9c09cbad48b6d7c76a345dc7d53301aa"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa">detectLeft</a> ()</td></tr>
-<tr class="memdesc:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">left部分の衝突の有無を確認する。 <br /></td></tr>
+<tr class="memitem:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa">detectLeft</a> ()</td></tr>
+<tr class="memdesc:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">left部分の衝突の有無を確認する。  <a href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa">[詳解]</a><br /></td></tr>
 <tr class="separator:a9c09cbad48b6d7c76a345dc7d53301aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
 <tr class="memitem:ad181d4a57cbfe4fde2404f2da80e9d40"><td class="memItemLeft" align="right" valign="top"><a id="ad181d4a57cbfe4fde2404f2da80e9d40"></a>
-<a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><b>collisionedSide</b></td></tr>
+<a class="el" href="struct_collision_detect_1_1_collision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#ad181d4a57cbfe4fde2404f2da80e9d40">collisionedSide</a></td></tr>
+<tr class="memdesc:ad181d4a57cbfe4fde2404f2da80e9d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">当たり判定を管理する変数。 <br /></td></tr>
 <tr class="separator:ad181d4a57cbfe4fde2404f2da80e9d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53925555791974720ae58c594375de2"><td class="memItemLeft" align="right" valign="top"><a id="ab53925555791974720ae58c594375de2"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>toRight</b> = 20</td></tr>
@@ -189,16 +194,472 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>headPoints</b> = 10</
 <tr class="memitem:af3a4e4f46d698c26ccfde062c94fa305"><td class="memItemLeft" align="right" valign="top"><a id="af3a4e4f46d698c26ccfde062c94fa305"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>bottomPoints</b> = 10</td></tr>
 <tr class="separator:af3a4e4f46d698c26ccfde062c94fa305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6ee951a67ab67850ffc57f4df796951"><td class="memItemLeft" align="right" valign="top"><a id="ab6ee951a67ab67850ffc57f4df796951"></a>
-<a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nowStatus</b></td></tr>
-<tr class="separator:ab6ee951a67ab67850ffc57f4df796951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d40652f73257c3196d9ae973928244"><td class="memItemLeft" align="right" valign="top"><a id="a42d40652f73257c3196d9ae973928244"></a>
-std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_stage</b></td></tr>
-<tr class="separator:a42d40652f73257c3196d9ae973928244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32280b10fb3dd2db903b8372ff39765"><td class="memItemLeft" align="right" valign="top"><a id="ac32280b10fb3dd2db903b8372ff39765"></a>
+<a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#ac32280b10fb3dd2db903b8372ff39765">nowStatus</a></td></tr>
+<tr class="memdesc:ac32280b10fb3dd2db903b8372ff39765"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のプレイヤーの状態を格納する変数。 <br /></td></tr>
+<tr class="separator:ac32280b10fb3dd2db903b8372ff39765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae300476a3d1854ebe41b0c58a13eb91f"><td class="memItemLeft" align="right" valign="top"><a id="ae300476a3d1854ebe41b0c58a13eb91f"></a>
+shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detect.html#ae300476a3d1854ebe41b0c58a13eb91f">_stage</a></td></tr>
+<tr class="memdesc:ae300476a3d1854ebe41b0c58a13eb91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ステージの状態を受け取る変数。 <br /></td></tr>
+<tr class="separator:ae300476a3d1854ebe41b0c58a13eb91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>当たり判定処理を行うクラス。 </p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:21 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a278c3218aa57c23e6d42493dbeb967e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278c3218aa57c23e6d42493dbeb967e9">&#9670;&nbsp;</a></span>calcShitingCollisionedSideHorizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::calcShitingCollisionedSideHorizon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a>&#160;</td>
+          <td class="paramname"><em>_to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>_range</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>垂直方向で、任意の距離に障壁があるかどうかを調べる関数。 </p>
+<p>_rangeが1ブロック長を超えていたら、_toの方向から_rangeまでの間もブロックの有無を判定する。</p>
+<dl class="section user"><dt>水平方向において、_toの方向に_range分先に障壁があるかどうかを判断する関数。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:58 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_a278c3218aa57c23e6d42493dbeb967e9_cgraph.png" border="0" usemap="#class_collision_detect_a278c3218aa57c23e6d42493dbeb967e9_cgraph" alt=""/></div>
+<map name="class_collision_detect_a278c3218aa57c23e6d42493dbeb967e9_cgraph" id="class_collision_detect_a278c3218aa57c23e6d42493dbeb967e9_cgraph">
+<area shape="rect" title="垂直方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="235,5,413,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d29495bc9aa07af6f113255989e0077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d29495bc9aa07af6f113255989e0077">&#9670;&nbsp;</a></span>calcShitingCollisionedSideVertical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::calcShitingCollisionedSideVertical </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a>&#160;</td>
+          <td class="paramname"><em>_to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>_range</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>水平方向で、任意の距離に障壁があるかどうかを調べる関数。 </p>
+<p>_rangeが1ブロック長を超えていたら、_toの方向から_rangeまでの間もブロックの有無を判定する。</p>
+<dl class="section user"><dt>垂直方向において、_toの方向に_range分先に障壁があるかどうかを判断する関数。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:57 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_a4d29495bc9aa07af6f113255989e0077_cgraph.png" border="0" usemap="#class_collision_detect_a4d29495bc9aa07af6f113255989e0077_cgraph" alt=""/></div>
+<map name="class_collision_detect_a4d29495bc9aa07af6f113255989e0077_cgraph" id="class_collision_detect_a4d29495bc9aa07af6f113255989e0077_cgraph">
+<area shape="rect" title="水平方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="235,5,413,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa1f529df0fa1b3d02f5831f6571b5093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f529df0fa1b3d02f5831f6571b5093">&#9670;&nbsp;</a></span>detectBottom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::detectBottom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>bottom部分の衝突の有無を確認する。 </p>
+<dl class="section user"><dt>足元の当たり判定を調べる関数。障壁があったらtrueを返す。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_cgraph.png" border="0" usemap="#class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_cgraph" alt=""/></div>
+<map name="class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_cgraph" id="class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_cgraph">
+<area shape="rect" title="bottom部分の衝突の有無を確認する。" alt="" coords="5,13,200,39"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="248,5,427,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_icgraph.png" border="0" usemap="#class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_icgraph" alt=""/></div>
+<map name="class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_icgraph" id="class_collision_detect_aa1f529df0fa1b3d02f5831f6571b5093_icgraph">
+<area shape="rect" title="bottom部分の衝突の有無を確認する。" alt="" coords="209,5,404,32"/>
+<area shape="rect" href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d" title="更新処理を行う関数。" alt="" coords="5,5,161,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acb0bbbb1dacab2e1f61a1bf65feb9a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb0bbbb1dacab2e1f61a1bf65feb9a0e">&#9670;&nbsp;</a></span>detectHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::detectHead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>head部分の衝突の有無を確認する。 </p>
+<dl class="section user"><dt>頭上の当たり判定を調べる関数。障壁があったらtrueを返す。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_cgraph.png" border="0" usemap="#class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_cgraph" alt=""/></div>
+<map name="class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_cgraph" id="class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_cgraph">
+<area shape="rect" title="head部分の衝突の有無を確認する。" alt="" coords="5,13,188,39"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="236,5,415,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_icgraph.png" border="0" usemap="#class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_icgraph" alt=""/></div>
+<map name="class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_icgraph" id="class_collision_detect_acb0bbbb1dacab2e1f61a1bf65feb9a0e_icgraph">
+<area shape="rect" title="head部分の衝突の有無を確認する。" alt="" coords="209,5,392,32"/>
+<area shape="rect" href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d" title="更新処理を行う関数。" alt="" coords="5,5,161,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c09cbad48b6d7c76a345dc7d53301aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c09cbad48b6d7c76a345dc7d53301aa">&#9670;&nbsp;</a></span>detectLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::detectLeft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>left部分の衝突の有無を確認する。 </p>
+<dl class="section user"><dt>左側の当たり判定を調べる関数。障壁があったらtrueを返す。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_cgraph.png" border="0" usemap="#class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_cgraph" alt=""/></div>
+<map name="class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_cgraph" id="class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_cgraph">
+<area shape="rect" title="left部分の衝突の有無を確認する。" alt="" coords="5,13,180,39"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="228,5,407,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_icgraph.png" border="0" usemap="#class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_icgraph" alt=""/></div>
+<map name="class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_icgraph" id="class_collision_detect_a9c09cbad48b6d7c76a345dc7d53301aa_icgraph">
+<area shape="rect" title="left部分の衝突の有無を確認する。" alt="" coords="209,5,384,32"/>
+<area shape="rect" href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d" title="更新処理を行う関数。" alt="" coords="5,5,161,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac83775d1f852ab21a38177776b30ce5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac83775d1f852ab21a38177776b30ce5a">&#9670;&nbsp;</a></span>detectRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::detectRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>right部分の衝突の有無を確認する。 </p>
+<dl class="section user"><dt>右側の当たり判定を調べる関数。障壁があったらtrueを返す。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_cgraph.png" border="0" usemap="#class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_cgraph" alt=""/></div>
+<map name="class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_cgraph" id="class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_cgraph">
+<area shape="rect" title="right部分の衝突の有無を確認する。" alt="" coords="5,13,188,39"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="236,5,415,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_icgraph.png" border="0" usemap="#class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_icgraph" alt=""/></div>
+<map name="class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_icgraph" id="class_collision_detect_ac83775d1f852ab21a38177776b30ce5a_icgraph">
+<area shape="rect" title="right部分の衝突の有無を確認する。" alt="" coords="209,5,392,32"/>
+<area shape="rect" href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d" title="更新処理を行う関数。" alt="" coords="5,5,161,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a13771062daf4866267ab57f77e7f77bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13771062daf4866267ab57f77e7f77bc">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionDetect::draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section user"><dt>当たり判定の描画を行う関数。何も返さない。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_a13771062daf4866267ab57f77e7f77bc_cgraph.png" border="0" usemap="#class_collision_detect_a13771062daf4866267ab57f77e7f77bc_cgraph" alt=""/></div>
+<map name="class_collision_detect_a13771062daf4866267ab57f77e7f77bc_cgraph" id="class_collision_detect_a13771062daf4866267ab57f77e7f77bc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,149,39"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="197,5,376,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a519a9deb195d722bee7c7fdd69b0f56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519a9deb195d722bee7c7fdd69b0f56d">&#9670;&nbsp;</a></span>getRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char CollisionDetect::getRange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_collision_detect.html#a19970d5fade410c01d7bf057760255d2">toShiftDirect</a>&#160;</td>
+          <td class="paramname"><em>_to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y_vel</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x_vel</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>中心座標からの当たり判定の範囲を返す関数。 </p>
+<dl class="section user"><dt>_toの方向の、中心座標からの当たり判定の範囲を返す関数。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:59 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+</div>
+</div>
+<a id="a012f3e3608857edf547ec71940df2abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012f3e3608857edf547ec71940df2abc">&#9670;&nbsp;</a></span>IsDetectedStage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetect::IsDetectedStage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>(x, y)座標は何かに当たっているかどうか </p>
+<dl class="section user"><dt>x,y座標にステージのブロックがあるかどうか。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_a012f3e3608857edf547ec71940df2abc_icgraph.png" border="0" usemap="#class_collision_detect_a012f3e3608857edf547ec71940df2abc_icgraph" alt=""/></div>
+<map name="class_collision_detect_a012f3e3608857edf547ec71940df2abc_icgraph" id="class_collision_detect_a012f3e3608857edf547ec71940df2abc_icgraph">
+<area shape="rect" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="452,180,631,221"/>
+<area shape="rect" href="class_collision_detect.html#a278c3218aa57c23e6d42493dbeb967e9" title="垂直方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="216,5,397,47"/>
+<area shape="rect" href="class_collision_detect.html#a4d29495bc9aa07af6f113255989e0077" title="水平方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="216,71,397,112"/>
+<area shape="rect" href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093" title="bottom部分の衝突の有無を確認する。" alt="" coords="209,137,404,163"/>
+<area shape="rect" href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e" title="head部分の衝突の有無を確認する。" alt="" coords="215,187,398,214"/>
+<area shape="rect" href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa" title="left部分の衝突の有無を確認する。" alt="" coords="219,238,394,265"/>
+<area shape="rect" href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a" title="right部分の衝突の有無を確認する。" alt="" coords="215,289,398,315"/>
+<area shape="rect" href="class_collision_detect.html#a13771062daf4866267ab57f77e7f77bc" title=" " alt="" coords="235,339,379,366"/>
+<area shape="rect" href="class_collision_detect.html#aff9da7866019685a777e4b0201200f7d" title="更新処理を行う関数。" alt="" coords="5,213,161,239"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aff9da7866019685a777e4b0201200f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9da7866019685a777e4b0201200f7d">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionDetect::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td>
+          <td class="paramname"><em>_nowStatus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更新処理を行う関数。 </p>
+<dl class="section user"><dt>頭上・足元・右側・左側の当たり判定を調べる関数。何もreturnしない。</dt><dd></dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/16:40 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detect_aff9da7866019685a777e4b0201200f7d_cgraph.png" border="0" usemap="#class_collision_detect_aff9da7866019685a777e4b0201200f7d_cgraph" alt=""/></div>
+<map name="class_collision_detect_aff9da7866019685a777e4b0201200f7d_cgraph" id="class_collision_detect_aff9da7866019685a777e4b0201200f7d_cgraph">
+<area shape="rect" title="更新処理を行う関数。" alt="" coords="5,81,161,108"/>
+<area shape="rect" href="class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093" title="bottom部分の衝突の有無を確認する。" alt="" coords="209,5,404,32"/>
+<area shape="rect" href="class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e" title="head部分の衝突の有無を確認する。" alt="" coords="215,56,398,83"/>
+<area shape="rect" href="class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa" title="left部分の衝突の有無を確認する。" alt="" coords="219,107,394,133"/>
+<area shape="rect" href="class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a" title="right部分の衝突の有無を確認する。" alt="" coords="215,157,398,184"/>
+<area shape="rect" href="class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="452,74,631,115"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_collision_detect_8h_source.html">CollisionDetect.h</a></li>
-<li>C:/Users/mimur/Desktop/NewGame/CollisionDetect.cpp</li>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_collision_detect_8cpp.html">CollisionDetect.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

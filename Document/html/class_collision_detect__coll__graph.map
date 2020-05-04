@@ -1,6 +1,6 @@
 <map id="CollisionDetect" name="CollisionDetect">
-<area shape="rect" id="node1" title=" " alt="" coords="225,109,334,136"/>
-<area shape="rect" id="node2" href="$struct_collision_detect_1_1_collision__range.html" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" id="node3" href="$struct_collision_detect_1_1_collision.html" title=" " alt="" coords="196,13,363,39"/>
+<area shape="rect" id="node1" title="当たり判定処理を行うクラス。" alt="" coords="225,109,334,136"/>
+<area shape="rect" id="node2" href="$struct_collision_detect_1_1_collision__range.html" title="中心座標からどのくらいの範囲で当たり判定を置くか。その範囲の値を管理する構造体。" alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node3" href="$struct_collision_detect_1_1_collision.html" title="当たり判定を格納する変数。Trueだと当たっている。" alt="" coords="196,13,363,39"/>
 <area shape="rect" id="node4" href="$struct_define_1_1_status.html" title="プレイヤーや敵のステータス管理の構造体" alt="" coords="387,13,491,39"/>
 </map>

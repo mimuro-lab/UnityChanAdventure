@@ -67,7 +67,7 @@ public:
 
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
-		animationMove = std::make_shared<AnimationMove>(maxSpeed_walk, maxSpeed_run, jumpUp_initSpeed, jumpMid_initSpeed);
+		animationMove = std::make_shared<AnimationMove>();
 
 		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
 

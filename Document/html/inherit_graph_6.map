@@ -1,3 +1,3 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$class_collision_detect.html" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node1" href="$struct_collision_detect_1_1_collision__range.html" title="中心座標からどのくらいの範囲で当たり判定を置くか。その範囲の値を管理する構造体。" alt="" coords="5,5,172,47"/>
 </map>

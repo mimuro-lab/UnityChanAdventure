@@ -1,0 +1,10 @@
+<map id="AnimationSwitch::update" name="AnimationSwitch::update">
+<area shape="rect" id="node1" title="更新を行う関数。" alt="" coords="5,130,172,157"/>
+<area shape="rect" id="node2" href="$class_animation_switch.html#a4623ed7e8ee031a544605a3db2adc317" title="getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。" alt="" coords="235,5,428,47"/>
+<area shape="rect" id="node3" href="$class_animation_switch.html#a9f1dc6703c526e5228ab4613acfb7c64" title="アクション状態を切り替えてもよいかを返す。" alt="" coords="220,71,443,98"/>
+<area shape="rect" id="node4" href="$class_animation_switch.html#a5e4d491c84d2ba9d3acbf047e917372b" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="245,123,417,164"/>
+<area shape="rect" id="node7" href="$class_animation_switch.html#a48feb4fc0f7b47e64cc378aaa940de68" title="animationをリフレッシュしてもよいか判断する関数。" alt="" coords="241,189,422,215"/>
+<area shape="rect" id="node8" href="$class_animation_switch.html#a179398b7748c22c78b0b6d73242895e0" title="アニメーションを切り替える関数。" alt="" coords="241,240,422,281"/>
+<area shape="rect" id="node5" href="$class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251" title="左方向ボタン入力状態の取得（押された瞬間）" alt="" coords="495,105,637,131"/>
+<area shape="rect" id="node6" href="$class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0" title="右方向ボタン入力状態の取得（押された瞬間）" alt="" coords="491,155,641,182"/>
+</map>

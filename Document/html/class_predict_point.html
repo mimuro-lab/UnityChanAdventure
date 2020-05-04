@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: PredictPoint クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="class_predict_point-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PredictPoint クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>座標が適切かどうかを判断するためのクラス。  
+ <a href="class_predict_point.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_predict_point_8h_source.html">PredictPoint.h</a>&gt;</code></p>
+<div class="dynheader">
+PredictPoint 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point__coll__graph.png" border="0" usemap="#_predict_point_coll__map" alt="Collaboration graph"/></div>
+<map name="_predict_point_coll__map" id="_predict_point_coll__map">
+<area shape="rect" title="座標が適切かどうかを判断するためのクラス。" alt="" coords="21,109,114,136"/>
+<area shape="rect" href="struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="5,5,129,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a80843e1a414dd0d5e0fa0121a54285d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3">update</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> <a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>, <a class="el" href="struct_define_1_1_dimention.html">Dimention</a> nowVelocity, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="memdesc:a80843e1a414dd0d5e0fa0121a54285d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理を行う関数。  <a href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3">[詳解]</a><br /></td></tr>
+<tr class="separator:a80843e1a414dd0d5e0fa0121a54285d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a84ad6cfa5d2168d82120ca48bc77a661"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#a84ad6cfa5d2168d82120ca48bc77a661">calcPredictPoint</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> <a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>, <a class="el" href="struct_define_1_1_dimention.html">Dimention</a> nowVelocity)</td></tr>
+<tr class="memdesc:a84ad6cfa5d2168d82120ca48bc77a661"><td class="mdescLeft">&#160;</td><td class="mdescRight">今の座標から、今の速度により次の座標を計算する。  <a href="class_predict_point.html#a84ad6cfa5d2168d82120ca48bc77a661">[詳解]</a><br /></td></tr>
+<tr class="separator:a84ad6cfa5d2168d82120ca48bc77a661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b72b61983dda273e9e195e70dcb234"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234">fittingPointHorizon</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> <a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>, int predictRange, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="memdesc:ab9b72b61983dda273e9e195e70dcb234"><td class="mdescLeft">&#160;</td><td class="mdescRight">水平方向に動く場合の適切な座標の修正を行う関数。  <a href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234">[詳解]</a><br /></td></tr>
+<tr class="separator:ab9b72b61983dda273e9e195e70dcb234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a551f0c5d0d155249b3548504148f9864"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864">fittingPointVertical</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> <a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>, int predictRange, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="memdesc:a551f0c5d0d155249b3548504148f9864"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直方向に動く場合の適切な座標の修正を行う関数。  <a href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864">[詳解]</a><br /></td></tr>
+<tr class="separator:a551f0c5d0d155249b3548504148f9864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58224b864d0218dd13ca68660db7724"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724">getForwardBlockNearSideHorizon</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> <a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>, int predictRange, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="memdesc:ad58224b864d0218dd13ca68660db7724"><td class="mdescLeft">&#160;</td><td class="mdescRight">水平方向の一番近いブロックの一番近い辺のX座標を取得する。  <a href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724">[詳解]</a><br /></td></tr>
+<tr class="separator:ad58224b864d0218dd13ca68660db7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d38faafbb42cb25fefc8db30a4c5bba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba">getForwardBlockNearSideVertical</a> (<a class="el" href="struct_define_1_1_dimention.html">Dimention</a> <a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a>, int predictRange, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
+<tr class="memdesc:a9d38faafbb42cb25fefc8db30a4c5bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">垂直方向の一番近いブロックの一番近い辺のX座標を取得する。  <a href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba">[詳解]</a><br /></td></tr>
+<tr class="separator:a9d38faafbb42cb25fefc8db30a4c5bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ac388beae6e02a03fbfff4bb2fd392595"><td class="memItemLeft" align="right" valign="top"><a id="ac388beae6e02a03fbfff4bb2fd392595"></a>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#ac388beae6e02a03fbfff4bb2fd392595">nowPoint</a></td></tr>
+<tr class="memdesc:ac388beae6e02a03fbfff4bb2fd392595"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新前の位置 <br /></td></tr>
+<tr class="separator:ac388beae6e02a03fbfff4bb2fd392595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa4d494d38518160b470d465dab8190"><td class="memItemLeft" align="right" valign="top"><a id="aafa4d494d38518160b470d465dab8190"></a>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_predict_point.html#aafa4d494d38518160b470d465dab8190">predictPoint</a></td></tr>
+<tr class="memdesc:aafa4d494d38518160b470d465dab8190"><td class="mdescLeft">&#160;</td><td class="mdescRight">次のコマで位置するであろう座標 <br /></td></tr>
+<tr class="separator:aafa4d494d38518160b470d465dab8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>座標が適切かどうかを判断するためのクラス。 </p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/17:59 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a84ad6cfa5d2168d82120ca48bc77a661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ad6cfa5d2168d82120ca48bc77a661">&#9670;&nbsp;</a></span>calcPredictPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> PredictPoint::calcPredictPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowVelocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>今の座標から、今の速度により次の座標を計算する。 </p>
+<p>nowPointのX,Y成分にnowVelocityのX,Y成分を足した座標を返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/18:09 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+
+</div>
+</div>
+<a id="ab9b72b61983dda273e9e195e70dcb234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b72b61983dda273e9e195e70dcb234">&#9670;&nbsp;</a></span>fittingPointHorizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PredictPoint::fittingPointHorizon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>predictRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>水平方向に動く場合の適切な座標の修正を行う関数。 </p>
+<p>nowPointから水平方向にpredictRange分に障壁があるなら、その障壁に合わせたX座標を返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/18:13 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_ab9b72b61983dda273e9e195e70dcb234_cgraph.png" border="0" usemap="#class_predict_point_ab9b72b61983dda273e9e195e70dcb234_cgraph" alt=""/></div>
+<map name="class_predict_point_ab9b72b61983dda273e9e195e70dcb234_cgraph" id="class_predict_point_ab9b72b61983dda273e9e195e70dcb234_cgraph">
+<area shape="rect" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="5,5,168,47"/>
+<area shape="rect" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724" title="水平方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="216,5,381,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_ab9b72b61983dda273e9e195e70dcb234_icgraph.png" border="0" usemap="#class_predict_point_ab9b72b61983dda273e9e195e70dcb234_icgraph" alt=""/></div>
+<map name="class_predict_point_ab9b72b61983dda273e9e195e70dcb234_icgraph" id="class_predict_point_ab9b72b61983dda273e9e195e70dcb234_icgraph">
+<area shape="rect" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
+<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,13,351,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a551f0c5d0d155249b3548504148f9864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a551f0c5d0d155249b3548504148f9864">&#9670;&nbsp;</a></span>fittingPointVertical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PredictPoint::fittingPointVertical </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>predictRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>垂直方向に動く場合の適切な座標の修正を行う関数。 </p>
+<p>nowPointから垂直方向にpredictRange分に障壁があるなら、その障壁に合わせたY座標を返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/18:013 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_a551f0c5d0d155249b3548504148f9864_cgraph.png" border="0" usemap="#class_predict_point_a551f0c5d0d155249b3548504148f9864_cgraph" alt=""/></div>
+<map name="class_predict_point_a551f0c5d0d155249b3548504148f9864_cgraph" id="class_predict_point_a551f0c5d0d155249b3548504148f9864_cgraph">
+<area shape="rect" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="5,5,168,47"/>
+<area shape="rect" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="216,5,381,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_a551f0c5d0d155249b3548504148f9864_icgraph.png" border="0" usemap="#class_predict_point_a551f0c5d0d155249b3548504148f9864_icgraph" alt=""/></div>
+<map name="class_predict_point_a551f0c5d0d155249b3548504148f9864_icgraph" id="class_predict_point_a551f0c5d0d155249b3548504148f9864_icgraph">
+<area shape="rect" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
+<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,13,351,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad58224b864d0218dd13ca68660db7724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58224b864d0218dd13ca68660db7724">&#9670;&nbsp;</a></span>getForwardBlockNearSideHorizon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PredictPoint::getForwardBlockNearSideHorizon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>predictRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>水平方向の一番近いブロックの一番近い辺のX座標を取得する。 </p>
+<p>predictRange分の一番近いブロックの近い辺のX座標を返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/18:15 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_ad58224b864d0218dd13ca68660db7724_icgraph.png" border="0" usemap="#class_predict_point_ad58224b864d0218dd13ca68660db7724_icgraph" alt=""/></div>
+<map name="class_predict_point_ad58224b864d0218dd13ca68660db7724_icgraph" id="class_predict_point_ad58224b864d0218dd13ca68660db7724_icgraph">
+<area shape="rect" title="水平方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="609,5,775,47"/>
+<area shape="rect" href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
+<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,13,351,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9d38faafbb42cb25fefc8db30a4c5bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d38faafbb42cb25fefc8db30a4c5bba">&#9670;&nbsp;</a></span>getForwardBlockNearSideVertical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PredictPoint::getForwardBlockNearSideVertical </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>predictRange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>垂直方向の一番近いブロックの一番近い辺のX座標を取得する。 </p>
+<p>predictRange分の一番近いブロックの近い辺のY座標を返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/18:15 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_a9d38faafbb42cb25fefc8db30a4c5bba_icgraph.png" border="0" usemap="#class_predict_point_a9d38faafbb42cb25fefc8db30a4c5bba_icgraph" alt=""/></div>
+<map name="class_predict_point_a9d38faafbb42cb25fefc8db30a4c5bba_icgraph" id="class_predict_point_a9d38faafbb42cb25fefc8db30a4c5bba_icgraph">
+<area shape="rect" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="609,5,775,47"/>
+<area shape="rect" href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
+<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,13,351,39"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,13,163,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a80843e1a414dd0d5e0fa0121a54285d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80843e1a414dd0d5e0fa0121a54285d3">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a> PredictPoint::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>_nowPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td>
+          <td class="paramname"><em>nowVelocity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更新処理を行う関数。 </p>
+<p>受け取ったnowPointの各成分をfittingPoint処理をかけて返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/18:17 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_cgraph.png" border="0" usemap="#class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_cgraph" alt=""/></div>
+<map name="class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_cgraph" id="class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_cgraph">
+<area shape="rect" title="更新処理を行う関数。" alt="" coords="5,46,145,73"/>
+<area shape="rect" href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="193,5,356,47"/>
+<area shape="rect" href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="193,71,356,112"/>
+<area shape="rect" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724" title="水平方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="404,5,569,47"/>
+<area shape="rect" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="404,71,569,112"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_icgraph.png" border="0" usemap="#class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_icgraph" alt=""/></div>
+<map name="class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_icgraph" id="class_predict_point_a80843e1a414dd0d5e0fa0121a54285d3_icgraph">
+<area shape="rect" title="更新処理を行う関数。" alt="" coords="211,5,351,32"/>
+<area shape="rect" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b" title="更新を行う関数。" alt="" coords="5,5,163,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_predict_point_8h_source.html">PredictPoint.h</a></li>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_predict_point_8cpp.html">PredictPoint.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

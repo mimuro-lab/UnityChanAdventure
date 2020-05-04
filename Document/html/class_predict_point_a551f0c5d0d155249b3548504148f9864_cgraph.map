@@ -1,0 +1,4 @@
+<map id="PredictPoint::fittingPointVertical" name="PredictPoint::fittingPointVertical">
+<area shape="rect" id="node1" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="5,5,168,47"/>
+<area shape="rect" id="node2" href="$class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="216,5,381,47"/>
+</map>

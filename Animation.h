@@ -1,7 +1,7 @@
 
 /*!
 @file Animation.h
-@brief ImageDrawクラスが定義されているヘッダファイル
+@brief Animationクラスが定義されているヘッダファイル
 @date 2020/04/21/9:28
 @author mimuro
 */

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Document: C:/Users/mimur/Desktop/NewGame/AnimationSwitch.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Document
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/mimur/Desktop/NewGame/AnimationSwitch.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_animation_switch_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_collision_detect_8h.html">CollisionDetect.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_controller_8h.html">Controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_animation_8h.html">Animation.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_define_8h.html">Define.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="image_path_8h.html">imagePath.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span><a class="code" href="class_define.html">Define</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_animation_switch.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_animation_switch.html">AnimationSwitch</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_animation_switch.html#ab55fd7b81b22f0902e31c14f90d5a382">   31</a></span>&#160;    shared_ptr&lt;Animation&gt; <a class="code" href="class_animation_switch.html#ab55fd7b81b22f0902e31c14f90d5a382">_animation</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_animation_switch.html#a792e864d6bd1a9313e8d379a0677caec">   34</a></span>&#160;    vector&lt;bool&gt; <a class="code" href="class_animation_switch.html#a792e864d6bd1a9313e8d379a0677caec">IsAction_canSwitching</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">   37</a></span>&#160;    <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> <a class="code" href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">nowAction</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_animation_switch.html#aacd4da0fcb1b92fe092fbd338138d880">   41</a></span>&#160;    <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> <a class="code" href="class_animation_switch.html#aacd4da0fcb1b92fe092fbd338138d880">nextAction</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_animation_switch.html#afd550b8917d71fe64320719a8ce68ece">   44</a></span>&#160;    <a class="code" href="struct_define_1_1_status.html">Status</a> <a class="code" href="class_animation_switch.html#afd550b8917d71fe64320719a8ce68ece">playerStatus</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> acceptSwitching(shared_ptr&lt;Animation&gt; animation, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> getNextAction(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        shared_ptr&lt;CollisionDetect&gt; _collision, </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        shared_ptr&lt;Animation&gt; _animation, </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="struct_define_1_1_status.html">Status</a> playerStatus,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> acceptNextAction(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nextAction, <a class="code" href="struct_define_1_1_status.html">Status</a> _playerStatus);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> isRefresh(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> nowAction, shared_ptr&lt;Animation&gt; __animation);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    shared_ptr&lt;Animation&gt; switchingAnimation(<a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> next, <a class="code" href="struct_define_1_1_status.html">Status</a> _playerStatus);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_animation_switch.html">AnimationSwitch</a>()</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    { </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// nowActionは最初、Fallから始める。</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        nowAction = rollAction_Basic::Fall;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// IsAction_canSwitchinの初期化。 Idle, Walk, Run, Fallの状態のときは切り替え可能の状態。</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        IsAction_canSwitching = vector&lt;bool&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::_end), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        IsAction_canSwitching[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::Idle)]</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            = IsAction_canSwitching[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::Walk)]</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            = IsAction_canSwitching[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::Run)]</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            = IsAction_canSwitching[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::Fall)]</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            = IsAction_canSwitching[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::Jump_Up)]</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            = IsAction_canSwitching[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rollAction_Basic::Jump_MidAir)]</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    };</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ~<a class="code" href="class_animation_switch.html">AnimationSwitch</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    shared_ptr&lt;Animation&gt; update(</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        shared_ptr&lt;CollisionDetect&gt; collision,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        shared_ptr&lt;Animation&gt; animation,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="struct_define_1_1_status.html">Status</a> playerStatus);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_animation_switch.html#a0ea3a3234940b4dbe2470a649fdd9695">   91</a></span>&#160;    <a class="code" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">rollAction_Basic</a> <a class="code" href="class_animation_switch.html#a0ea3a3234940b4dbe2470a649fdd9695">getNowAction</a>() { <span class="keywordflow">return</span> nowAction; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_controller_html_aa6d9b2c6180dc1413b14c61285ebb251"><div class="ttname"><a href="class_controller.html#aa6d9b2c6180dc1413b14c61285ebb251">Controller::getOnLeft</a></div><div class="ttdeci">const bool getOnLeft()</div><div class="ttdoc">左方向ボタン入力状態の取得（押された瞬間）</div><div class="ttdef"><b>Definition:</b> Controller.h:88</div></div>
+<div class="ttc" id="a_animation_8h_html"><div class="ttname"><a href="_animation_8h.html">Animation.h</a></div><div class="ttdoc">Animationクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="a_controller_8h_html"><div class="ttname"><a href="_controller_8h.html">Controller.h</a></div><div class="ttdoc">Controllerクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a48feb4fc0f7b47e64cc378aaa940de68"><div class="ttname"><a href="class_animation_switch.html#a48feb4fc0f7b47e64cc378aaa940de68">AnimationSwitch::isRefresh</a></div><div class="ttdeci">bool isRefresh(rollAction_Basic nowAction, shared_ptr&lt; Animation &gt; __animation)</div><div class="ttdoc">animationをリフレッシュしてもよいか判断する関数。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.cpp:92</div></div>
+<div class="ttc" id="aimage_path_8h_html"><div class="ttname"><a href="image_path_8h.html">imagePath.h</a></div><div class="ttdoc">imagePathクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a5e4d491c84d2ba9d3acbf047e917372b"><div class="ttname"><a href="class_animation_switch.html#a5e4d491c84d2ba9d3acbf047e917372b">AnimationSwitch::getNextAction</a></div><div class="ttdeci">rollAction_Basic getNextAction(shared_ptr&lt; CollisionDetect &gt; _collision, shared_ptr&lt; Animation &gt; _animation, Status playerStatus, rollAction_Basic nowAction)</div><div class="ttdoc">コントローラの入力などに応じた次のアクションを取得する。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.cpp:116</div></div>
+<div class="ttc" id="aclass_animation_switch_html_aacd4da0fcb1b92fe092fbd338138d880"><div class="ttname"><a href="class_animation_switch.html#aacd4da0fcb1b92fe092fbd338138d880">AnimationSwitch::nextAction</a></div><div class="ttdeci">rollAction_Basic nextAction</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:41</div></div>
+<div class="ttc" id="aclass_animation_switch_html_ab55fd7b81b22f0902e31c14f90d5a382"><div class="ttname"><a href="class_animation_switch.html#ab55fd7b81b22f0902e31c14f90d5a382">AnimationSwitch::_animation</a></div><div class="ttdeci">shared_ptr&lt; Animation &gt; _animation</div><div class="ttdoc">アニメーションの切り替えには、アニメーションの状態を受け取る必要がある。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:31</div></div>
+<div class="ttc" id="aclass_animation_switch_html_afd550b8917d71fe64320719a8ce68ece"><div class="ttname"><a href="class_animation_switch.html#afd550b8917d71fe64320719a8ce68ece">AnimationSwitch::playerStatus</a></div><div class="ttdeci">Status playerStatus</div><div class="ttdoc">プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:44</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a863b0b73bb4ee30d2f4b571ef85f74c5"><div class="ttname"><a href="class_animation_switch.html#a863b0b73bb4ee30d2f4b571ef85f74c5">AnimationSwitch::nowAction</a></div><div class="ttdeci">rollAction_Basic nowAction</div><div class="ttdoc">プレイヤーオブジェクトの現在の状態を管理。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:37</div></div>
+<div class="ttc" id="a_define_8h_html"><div class="ttname"><a href="_define_8h.html">Define.h</a></div><div class="ttdoc">いろいろな定義をまとまる為のヘッダファイル</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a4623ed7e8ee031a544605a3db2adc317"><div class="ttname"><a href="class_animation_switch.html#a4623ed7e8ee031a544605a3db2adc317">AnimationSwitch::acceptNextAction</a></div><div class="ttdeci">bool acceptNextAction(rollAction_Basic nowAction, rollAction_Basic nextAction, Status _playerStatus)</div><div class="ttdoc">getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.cpp:72</div></div>
+<div class="ttc" id="aclass_controller_html_ab556114f81cbf3a6fc06a66ca49579f0"><div class="ttname"><a href="class_controller.html#ab556114f81cbf3a6fc06a66ca49579f0">Controller::getOnRight</a></div><div class="ttdeci">const bool getOnRight()</div><div class="ttdoc">右方向ボタン入力状態の取得（押された瞬間）</div><div class="ttdef"><b>Definition:</b> Controller.h:86</div></div>
+<div class="ttc" id="a_collision_detect_8h_html"><div class="ttname"><a href="_collision_detect_8h.html">CollisionDetect.h</a></div><div class="ttdoc">CollisionDetectクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_animation_switch_html"><div class="ttname"><a href="class_animation_switch.html">AnimationSwitch</a></div><div class="ttdoc">アニメーションの状態を切り替える為のクラス</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:27</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a179398b7748c22c78b0b6d73242895e0"><div class="ttname"><a href="class_animation_switch.html#a179398b7748c22c78b0b6d73242895e0">AnimationSwitch::switchingAnimation</a></div><div class="ttdeci">shared_ptr&lt; Animation &gt; switchingAnimation(rollAction_Basic next, Status _playerStatus)</div><div class="ttdoc">アニメーションを切り替える関数。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.cpp:219</div></div>
+<div class="ttc" id="a_animation_switch_8h_html"><div class="ttname"><a href="_animation_switch_8h.html">AnimationSwitch.h</a></div><div class="ttdoc">AnimationSwitchクラスが定義されているヘッダファイル</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a0ea3a3234940b4dbe2470a649fdd9695"><div class="ttname"><a href="class_animation_switch.html#a0ea3a3234940b4dbe2470a649fdd9695">AnimationSwitch::getNowAction</a></div><div class="ttdeci">rollAction_Basic getNowAction()</div><div class="ttdoc">現在どのアクション状態かを取得する関数。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:91</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a792e864d6bd1a9313e8d379a0677caec"><div class="ttname"><a href="class_animation_switch.html#a792e864d6bd1a9313e8d379a0677caec">AnimationSwitch::IsAction_canSwitching</a></div><div class="ttdeci">vector&lt; bool &gt; IsAction_canSwitching</div><div class="ttdoc">アクション中に他のアクションに切り替え可能かどうか？（添え字がrollAction_Basicに対応）</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.h:34</div></div>
+<div class="ttc" id="aclass_define_html"><div class="ttname"><a href="class_define.html">Define</a></div><div class="ttdoc">あらゆるパラメータの定義を保持するクラス</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a9f1dc6703c526e5228ab4613acfb7c64"><div class="ttname"><a href="class_animation_switch.html#a9f1dc6703c526e5228ab4613acfb7c64">AnimationSwitch::acceptSwitching</a></div><div class="ttdeci">bool acceptSwitching(shared_ptr&lt; Animation &gt; animation, rollAction_Basic nowAction)</div><div class="ttdoc">アクション状態を切り替えてもよいかを返す。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.cpp:53</div></div>
+<div class="ttc" id="astruct_define_1_1_status_html"><div class="ttname"><a href="struct_define_1_1_status.html">Define::Status</a></div><div class="ttdoc">プレイヤーや敵のステータス管理の構造体</div><div class="ttdef"><b>Definition:</b> Define.h:43</div></div>
+<div class="ttc" id="aclass_animation_switch_html_a5ad33c2ae62835862ed016fc87a718c3"><div class="ttname"><a href="class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3">AnimationSwitch::update</a></div><div class="ttdeci">shared_ptr&lt; Animation &gt; update(shared_ptr&lt; CollisionDetect &gt; collision, shared_ptr&lt; Animation &gt; animation, Status playerStatus)</div><div class="ttdoc">更新を行う関数。</div><div class="ttdef"><b>Definition:</b> AnimationSwitch.cpp:17</div></div>
+<div class="ttc" id="aclass_define_html_a049aeb1a697932e5e887a0b4afa36cf7"><div class="ttname"><a href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a></div><div class="ttdeci">rollAction_Basic</div><div class="ttdoc">プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。</div><div class="ttdef"><b>Definition:</b> Define.h:65</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

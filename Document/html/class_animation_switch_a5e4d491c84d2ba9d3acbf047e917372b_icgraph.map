@@ -1,0 +1,4 @@
+<map id="AnimationSwitch::getNextAction" name="AnimationSwitch::getNextAction">
+<area shape="rect" id="node1" title="コントローラの入力などに応じた次のアクションを取得する。" alt="" coords="220,5,392,47"/>
+<area shape="rect" id="node2" href="$class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,13,172,39"/>
+</map>

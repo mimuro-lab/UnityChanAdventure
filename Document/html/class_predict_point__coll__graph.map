@@ -1,0 +1,4 @@
+<map id="PredictPoint" name="PredictPoint">
+<area shape="rect" id="node1" title="座標が適切かどうかを判断するためのクラス。" alt="" coords="21,109,114,136"/>
+<area shape="rect" id="node2" href="$struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="5,5,129,32"/>
+</map>

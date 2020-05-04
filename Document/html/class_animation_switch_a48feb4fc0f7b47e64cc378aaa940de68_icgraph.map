@@ -1,0 +1,4 @@
+<map id="AnimationSwitch::isRefresh" name="AnimationSwitch::isRefresh">
+<area shape="rect" id="node1" title="animationをリフレッシュしてもよいか判断する関数。" alt="" coords="220,5,401,32"/>
+<area shape="rect" id="node2" href="$class_animation_switch.html#a5ad33c2ae62835862ed016fc87a718c3" title="更新を行う関数。" alt="" coords="5,5,172,32"/>
+</map>

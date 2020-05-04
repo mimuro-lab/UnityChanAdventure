@@ -1,0 +1,20 @@
+<map id="C:/Users/mimur/Desktop/NewGame/CollisionDetect.h" name="C:/Users/mimur/Desktop/NewGame/CollisionDetect.h">
+<area shape="rect" id="node1" title="CollisionDetectクラスが定義されているヘッダファイル" alt="" coords="330,5,518,47"/>
+<area shape="rect" id="node2" href="$_animation_move_8h.html" title="AnimationMoveクラスが定義されているヘッダファイル" alt="" coords="12,273,201,315"/>
+<area shape="rect" id="node4" href="$_player_8h.html" title="Playerクラスが定義されているヘッダファイル" alt="" coords="367,363,532,404"/>
+<area shape="rect" id="node13" href="$_pysical_8h_source.html" title=" " alt="" coords="196,95,361,136"/>
+<area shape="rect" id="node14" href="$_predict_point_8h.html" title="PredictPointクラスが定義されているヘッダファイル。" alt="" coords="229,184,401,225"/>
+<area shape="rect" id="node16" href="$_animation_switch_8h.html" title="AnimationSwitchクラスが定義されているヘッダファイル" alt="" coords="487,95,686,136"/>
+<area shape="rect" id="node18" href="$_collision_detect_8cpp.html" title="CollisionDetectクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="711,95,913,136"/>
+<area shape="rect" id="node3" href="$_animation_move_8cpp.html" title="AnimationMoveクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="5,363,208,404"/>
+<area shape="rect" id="node5" href="$_game_scene_8h.html" title="GameSceneクラスが定義されているヘッダファイル" alt="" coords="267,452,440,493"/>
+<area shape="rect" id="node12" href="$_player_8cpp.html" title="Playerクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="464,452,629,493"/>
+<area shape="rect" id="node6" href="$_game_scene_8cpp.html" title="GameSceneクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="155,541,341,583"/>
+<area shape="rect" id="node7" href="$_system_looper_8h.html" title="SystemLooperクラスが定義されているヘッダファイル" alt="" coords="366,541,551,583"/>
+<area shape="rect" id="node8" href="$_system_owner_8h.html" title="SystemOwnerクラスが定義されているヘッダファイル。" alt="" coords="261,631,443,672"/>
+<area shape="rect" id="node11" href="$_system_looper_8cpp.html" title="SystemLooperクラスのメンバ類の定義を行うCPPファイル" alt="" coords="467,631,666,672"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title="プロジェクトのメイン関数が定義されているCPPファイル" alt="" coords="167,720,332,761"/>
+<area shape="rect" id="node10" href="$_system_owner_8cpp.html" title="SystemOwnerクラスのメンバ類の定義を行うCPPファイル" alt="" coords="356,720,553,761"/>
+<area shape="rect" id="node15" href="$_predict_point_8cpp.html" title="PredicPointクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="225,273,412,315"/>
+<area shape="rect" id="node17" href="$_animation_switch_8cpp.html" title="AnimationSwitchクラス内のメンバ類の定義を行うCPPファイル。" alt="" coords="538,184,750,225"/>
+</map>

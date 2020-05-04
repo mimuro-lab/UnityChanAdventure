@@ -1,0 +1,4 @@
+<map id="CollisionDetect::calcShitingCollisionedSideVertical" name="CollisionDetect::calcShitingCollisionedSideVertical">
+<area shape="rect" id="node1" title="水平方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_collision_detect.html#a012f3e3608857edf547ec71940df2abc" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="235,5,413,47"/>
+</map>

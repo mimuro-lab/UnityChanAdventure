@@ -1,5 +1,18 @@
+
+/*!
+@file Pysical.cpp
+@brief Pysicalクラス内のメンバ類の定義を行うCPPファイル。
+@date 2020/05/04/19:17
+@author mimuro
+*/
+
 #include "Pysical.h"
 
+/*!
+@brief 初速度を有効にする。nowTimeが0の時のみ速度に対し、初速度を与える。扱うのは速度が前提。
+@date 2020/05/04/19:19
+@author mimuro
+*/
 Dimention Pysical::affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned char nowTime)
 {
 	Dimention returnVel = affectedVel;
@@ -12,6 +25,11 @@ Dimention Pysical::affectInitVelocity(Dimention affectedVel, rollAction_Basic no
 	return returnVel;
 }
 
+/*!
+@brief 重力を有効にする関数。扱うのは加速度が前提。
+@date 2020/05/04/19:19
+@author mimuro
+*/
 Dimention Pysical::affectGravity(Dimention affectedAcc, rollAction_Basic nowAction)
 {
 	Dimention returnAcc = affectedAcc;
@@ -23,6 +41,11 @@ Dimention Pysical::affectGravity(Dimention affectedAcc, rollAction_Basic nowActi
 
 }
 
+/*!
+@brief 摩擦力を有効にする関数。扱うのは加速度が前提。
+@date 2020/05/04/19:19
+@author mimuro
+*/
 Dimention Pysical::affectFriction(Dimention affectedAcc, rollAction_Basic nowAction, bool isDireRight)
 {
 	Dimention returnAcc = affectedAcc;
@@ -37,6 +60,11 @@ Dimention Pysical::affectFriction(Dimention affectedAcc, rollAction_Basic nowAct
 	return returnAcc;
 }
 
+/*!
+@brief Action状態から、その時の加速度を得る。
+@date 2020/05/04/19:19
+@author mimuro
+*/
 Dimention Pysical::getForceFromAction(rollAction_Basic nowAction, bool isDireRight)
 {
 	Dimention returnForce;
@@ -67,6 +95,11 @@ Dimention Pysical::getForceFromAction(rollAction_Basic nowAction, bool isDireRig
 	return returnForce;
 }
 
+/*!
+@brief Action状態から、その時の速度の限界値を得る。方向も考慮しており、扱うのは速度が前提。
+@date 2020/05/04/19:26
+@author mimuro
+*/
 Dimention Pysical::getLimitVelFromAction(rollAction_Basic nowAction, bool isDireRight)
 {
 	Dimention returnVelocity;
@@ -91,6 +124,11 @@ Dimention Pysical::getLimitVelFromAction(rollAction_Basic nowAction, bool isDire
 	return returnVelocity;
 }
 
+/*!
+@brief その時の加速度から、次の速度を計算する。返すのは速度。
+@date 2020/05/04/19:26
+@author mimuro
+*/
 Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, rollAction_Basic nowAction, bool isDireRight)
 {
 	Dimention returnVelocity = affectedVel;
@@ -111,6 +149,11 @@ Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affect
 	return returnVelocity;
 }
 
+/*!
+@brief 速度と向く方向が異なるとき（例えばBrake）に、加速度が逆方向にかかりすぎないように制御する関数。返すのは速度。
+@date 2020/05/04/19:26
+@author mimuro
+*/
 Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, bool isDireRight)
 {
 	Dimention returnVel = affectedVel;
@@ -125,6 +168,11 @@ Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, bool isDireR
 	return returnVel;
 }
 
+/*!
+@brief 現在のアクション状態から速度を計算し、返す。
+@date 2020/05/04/19:26
+@author mimuro
+*/
 Dimention Pysical::update(rollAction_Basic nowAction, bool isDireRight)
 {
 
@@ -158,6 +206,11 @@ Dimention Pysical::update(rollAction_Basic nowAction, bool isDireRight)
 	return now_vel;
 }
 
+/*!
+@brief 障壁にぶつかった時に速度をリセットする関数。
+@date 2020/05/04/19:26
+@author mimuro
+*/
 Dimention Pysical::resetByCollision(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision)
 {
 
@@ -186,7 +239,12 @@ Dimention Pysical::resetByCollision(Dimention resetedVector, std::shared_ptr<Col
 	return retVec;
 }
 
-Dimention Pysical::resetVector(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision)
+/*!
+@brief 速度を適切なリセット処理する。
+@date 2020/05/04/19:34
+@author mimuro
+*/
+Dimention Pysical::resetVelocity(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision)
 {
 	Dimention retVec = resetedVector;
 

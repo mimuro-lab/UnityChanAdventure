@@ -1,0 +1,11 @@
+<map id="CollisionDetect::IsDetectedStage" name="CollisionDetect::IsDetectedStage">
+<area shape="rect" id="node1" title="(x, y)座標は何かに当たっているかどうか" alt="" coords="452,180,631,221"/>
+<area shape="rect" id="node2" href="$class_collision_detect.html#a278c3218aa57c23e6d42493dbeb967e9" title="垂直方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="216,5,397,47"/>
+<area shape="rect" id="node3" href="$class_collision_detect.html#a4d29495bc9aa07af6f113255989e0077" title="水平方向で、任意の距離に障壁があるかどうかを調べる関数。" alt="" coords="216,71,397,112"/>
+<area shape="rect" id="node4" href="$class_collision_detect.html#aa1f529df0fa1b3d02f5831f6571b5093" title="bottom部分の衝突の有無を確認する。" alt="" coords="209,137,404,163"/>
+<area shape="rect" id="node6" href="$class_collision_detect.html#acb0bbbb1dacab2e1f61a1bf65feb9a0e" title="head部分の衝突の有無を確認する。" alt="" coords="215,187,398,214"/>
+<area shape="rect" id="node7" href="$class_collision_detect.html#a9c09cbad48b6d7c76a345dc7d53301aa" title="left部分の衝突の有無を確認する。" alt="" coords="219,238,394,265"/>
+<area shape="rect" id="node8" href="$class_collision_detect.html#ac83775d1f852ab21a38177776b30ce5a" title="right部分の衝突の有無を確認する。" alt="" coords="215,289,398,315"/>
+<area shape="rect" id="node9" href="$class_collision_detect.html#a13771062daf4866267ab57f77e7f77bc" title=" " alt="" coords="235,339,379,366"/>
+<area shape="rect" id="node5" href="$class_collision_detect.html#aff9da7866019685a777e4b0201200f7d" title="更新処理を行う関数。" alt="" coords="5,213,161,239"/>
+</map>

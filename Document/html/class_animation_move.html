@@ -62,103 +62,131 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">クラス</a> &#124;
 <a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
 <a href="class_animation_move-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
 <div class="title">AnimationMove クラス</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>プレイヤーオブジェクトの座標位置を計算するクラス。  
+ <a href="class_animation_move.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_animation_move_8h_source.html">AnimationMove.h</a>&gt;</code></p>
 <div class="dynheader">
 AnimationMove 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="class_animation_move__coll__graph.png" border="0" usemap="#_animation_move_coll__map" alt="Collaboration graph"/></div>
 <map name="_animation_move_coll__map" id="_animation_move_coll__map">
-<area shape="rect" title=" " alt="" coords="205,199,316,225"/>
-<area shape="rect" href="struct_animation_move_1_1_velocity_d_e_f.html" title=" " alt="" coords="5,109,196,136"/>
-<area shape="rect" href="struct_animation_move_1_1_velocity_d_e_f_1_1_basic.html" title=" " alt="" coords="5,5,196,47"/>
-<area shape="rect" href="class_animation_move_1_1_pysical_q_t_y.html" title=" " alt="" coords="221,109,407,136"/>
+<area shape="rect" title="プレイヤーオブジェクトの座標位置を計算するクラス。" alt="" coords="86,216,197,243"/>
+<area shape="rect" href="class_predict_point.html" title="座標が適切かどうかを判断するためのクラス。" alt="" coords="95,118,188,145"/>
+<area shape="rect" href="struct_define_1_1_dimention.html" title="座標を取り扱う時の次元の定義" alt="" coords="80,5,204,32"/>
+<area shape="rect" href="class_pysical.html" title=" " alt="" coords="213,118,278,145"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_animation_move_1_1_velocity_d_e_f.html">VelocityDEF</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a1215ea1de0502546dd599f8189c5d786"><td class="memItemLeft" align="right" valign="top"><a id="a1215ea1de0502546dd599f8189c5d786"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AnimationMove</b> (char _walk, char _run, char _jumpUp, char _jumpMidAir)</td></tr>
-<tr class="separator:a1215ea1de0502546dd599f8189c5d786"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec50bebeb6d8cad104fe13017685233"><td class="memItemLeft" align="right" valign="top"><a id="a8ec50bebeb6d8cad104fe13017685233"></a>
-<a class="el" href="struct_define_1_1_status.html">Define::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> nowStatus, <a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> _isAction, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage, std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; _animation)</td></tr>
-<tr class="separator:a8ec50bebeb6d8cad104fe13017685233"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-非公開メンバ関数</h2></td></tr>
-<tr class="memitem:a375d6bd4dbdfddd0459568e110b51908"><td class="memItemLeft" align="right" valign="top"><a id="a375d6bd4dbdfddd0459568e110b51908"></a>
-CollisionDetect::toShiftDirect&#160;</td><td class="memItemRight" valign="bottom"><b>getToShift</b> (<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> _isAction, <a class="el" href="struct_define_1_1_status.html">Define::Status</a> nowStatus)</td></tr>
-<tr class="separator:a375d6bd4dbdfddd0459568e110b51908"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25bdae1ec9070c51f615e6ed0dd11c9b"><td class="memItemLeft" align="right" valign="top"><a id="a25bdae1ec9070c51f615e6ed0dd11c9b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getForwardBlockNearSideVertical</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> nowStatus, CollisionDetect::toShiftDirect _to, <a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a> _pysic, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
-<tr class="separator:a25bdae1ec9070c51f615e6ed0dd11c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f6af42c2cafad80a32693e7bf36c83"><td class="memItemLeft" align="right" valign="top"><a id="a75f6af42c2cafad80a32693e7bf36c83"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getForwardBlockNearSideHorizon</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> nowStatus, CollisionDetect::toShiftDirect _to, <a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a> _pysic, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, std::shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage)</td></tr>
-<tr class="separator:a75f6af42c2cafad80a32693e7bf36c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a6af2d8a8fdd49e4b3f814bccb01a5a"><td class="memItemLeft" align="right" valign="top"><a id="a7a6af2d8a8fdd49e4b3f814bccb01a5a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getForwardCollisionedSide</b> (CollisionDetect::toShiftDirect _to, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision)</td></tr>
-<tr class="separator:a7a6af2d8a8fdd49e4b3f814bccb01a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae14983e2bdabcc9f7976f858ada54ed0"><td class="memItemLeft" align="right" valign="top"><a id="ae14983e2bdabcc9f7976f858ada54ed0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getRangeOfNearBlock</b> (CollisionDetect::toShiftDirect _to, <a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a> _pysic, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision)</td></tr>
-<tr class="separator:ae14983e2bdabcc9f7976f858ada54ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceedd41c4ef2f24cce3da99b2b9851fe"><td class="memItemLeft" align="right" valign="top"><a id="aceedd41c4ef2f24cce3da99b2b9851fe"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getRangeOfNearBlockHorizon</b> (CollisionDetect::toShiftDirect _to, <a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a> _pysic, std::shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision)</td></tr>
-<tr class="separator:aceedd41c4ef2f24cce3da99b2b9851fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71b3bc257f052794b341aee01eec967c"><td class="memItemLeft" align="right" valign="top"><a id="a71b3bc257f052794b341aee01eec967c"></a>
-std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAcc</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> nowStatus, <a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> _isAction, <a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a> _pysic)</td></tr>
-<tr class="separator:a71b3bc257f052794b341aee01eec967c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a273ffd1add7445e7056a949b91063bd4"><td class="memItemLeft" align="right" valign="top"><a id="a273ffd1add7445e7056a949b91063bd4"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>getUptoVelHorizon</b> (<a class="el" href="struct_define_1_1_status.html">Define::Status</a> nowStatus, <a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> _isAction)</td></tr>
-<tr class="separator:a273ffd1add7445e7056a949b91063bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4611b1b9f7b97985ef32a37765a02f69"><td class="memItemLeft" align="right" valign="top"><a id="a4611b1b9f7b97985ef32a37765a02f69"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getSwitchAction</b> (<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a> _isAction)</td></tr>
-<tr class="separator:a4611b1b9f7b97985ef32a37765a02f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3095ef96158577c2e6bbb50144f4624b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b">update</a> (<a class="el" href="struct_define_1_1_status.html">Status</a> nowStatus, rollAction_Basic _isAction, shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt; _collision, shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt; _stage, shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; _animation)</td></tr>
+<tr class="memdesc:a3095ef96158577c2e6bbb50144f4624b"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新を行う関数。  <a href="class_animation_move.html#a3095ef96158577c2e6bbb50144f4624b">[詳解]</a><br /></td></tr>
+<tr class="separator:a3095ef96158577c2e6bbb50144f4624b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
-<tr class="memitem:acb333981e44071b798e197b05fa8f7dc"><td class="memItemLeft" align="right" valign="top"><a id="acb333981e44071b798e197b05fa8f7dc"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>uptoVel_walk</b> = 0</td></tr>
-<tr class="separator:acb333981e44071b798e197b05fa8f7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bfcbd060f631955a52504db0ea808ad"><td class="memItemLeft" align="right" valign="top"><a id="a4bfcbd060f631955a52504db0ea808ad"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>uptoVel_run</b> = 0</td></tr>
-<tr class="separator:a4bfcbd060f631955a52504db0ea808ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaccdb9a6339f43d67cedaef33f991a8"><td class="memItemLeft" align="right" valign="top"><a id="adaccdb9a6339f43d67cedaef33f991a8"></a>
-std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_isInitFroce</b></td></tr>
-<tr class="separator:adaccdb9a6339f43d67cedaef33f991a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90fb699acb710b099947067e850187d5"><td class="memItemLeft" align="right" valign="top"><a id="a90fb699acb710b099947067e850187d5"></a>
-std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_validGravityAction</b></td></tr>
-<tr class="separator:a90fb699acb710b099947067e850187d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52c3038f4ddac8f247493fc25f92469"><td class="memItemLeft" align="right" valign="top"><a id="ad52c3038f4ddac8f247493fc25f92469"></a>
-std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_validStoppingAction</b></td></tr>
-<tr class="separator:ad52c3038f4ddac8f247493fc25f92469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7acba1774963ae051a742c93a479504"><td class="memItemLeft" align="right" valign="top"><a id="ae7acba1774963ae051a742c93a479504"></a>
-<a class="el" href="struct_animation_move_1_1_velocity_d_e_f.html">VelocityDEF</a>&#160;</td><td class="memItemRight" valign="bottom"><b>velDef</b></td></tr>
-<tr class="separator:ae7acba1774963ae051a742c93a479504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff28e071d46575a553c2989413c91679"><td class="memItemLeft" align="right" valign="top"><a id="aff28e071d46575a553c2989413c91679"></a>
-<a class="el" href="class_animation_move_1_1_pysical_q_t_y.html">PysicalQTY</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pysicQty</b></td></tr>
-<tr class="separator:aff28e071d46575a553c2989413c91679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac97e1c819be8d174c51e5826af2f7e"><td class="memItemLeft" align="right" valign="top"><a id="a3ac97e1c819be8d174c51e5826af2f7e"></a>
-<a class="el" href="class_define.html#a049aeb1a697932e5e887a0b4afa36cf7">Define::rollAction_Basic</a>&#160;</td><td class="memItemRight" valign="bottom"><b>preIsAction</b> = Define::rollAction_Basic::Idle</td></tr>
-<tr class="separator:a3ac97e1c819be8d174c51e5826af2f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b9176eb802f1df2e680a6c4c28bb3d"><td class="memItemLeft" align="right" valign="top"><a id="a84b9176eb802f1df2e680a6c4c28bb3d"></a>
+<a class="el" href="class_pysical.html">Pysical</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move.html#a84b9176eb802f1df2e680a6c4c28bb3d">pysical</a></td></tr>
+<tr class="memdesc:a84b9176eb802f1df2e680a6c4c28bb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">物理計算を行うオブジェクト。 <br /></td></tr>
+<tr class="separator:a84b9176eb802f1df2e680a6c4c28bb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226760d44120d1660aa34773da98b473"><td class="memItemLeft" align="right" valign="top"><a id="a226760d44120d1660aa34773da98b473"></a>
+<a class="el" href="class_predict_point.html">PredictPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move.html#a226760d44120d1660aa34773da98b473">predictPoint</a></td></tr>
+<tr class="memdesc:a226760d44120d1660aa34773da98b473"><td class="mdescLeft">&#160;</td><td class="mdescRight">計算された座標が適切であるか予測するオブジェクト。 <br /></td></tr>
+<tr class="separator:a226760d44120d1660aa34773da98b473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfe544a1a2a3af10f414f2d910e5bd6"><td class="memItemLeft" align="right" valign="top"><a id="a2cfe544a1a2a3af10f414f2d910e5bd6"></a>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move.html#a2cfe544a1a2a3af10f414f2d910e5bd6">nowVelocity</a></td></tr>
+<tr class="memdesc:a2cfe544a1a2a3af10f414f2d910e5bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在の速度を格納する変数。 <br /></td></tr>
+<tr class="separator:a2cfe544a1a2a3af10f414f2d910e5bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55493ac5ef683c04cf4fd81226101b44"><td class="memItemLeft" align="right" valign="top"><a id="a55493ac5ef683c04cf4fd81226101b44"></a>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move.html#a55493ac5ef683c04cf4fd81226101b44">nowPoint</a></td></tr>
+<tr class="memdesc:a55493ac5ef683c04cf4fd81226101b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">今の座標（更新される前の座標）を格納する変数。 <br /></td></tr>
+<tr class="separator:a55493ac5ef683c04cf4fd81226101b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5208159edb4836abd3dac5bfc6d5b57e"><td class="memItemLeft" align="right" valign="top"><a id="a5208159edb4836abd3dac5bfc6d5b57e"></a>
+<a class="el" href="struct_define_1_1_dimention.html">Dimention</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_move.html#a5208159edb4836abd3dac5bfc6d5b57e">nextPoint</a></td></tr>
+<tr class="memdesc:a5208159edb4836abd3dac5bfc6d5b57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">次の座標（実際に適応される座標）を格納する変数。 <br /></td></tr>
+<tr class="separator:a5208159edb4836abd3dac5bfc6d5b57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>プレイヤーオブジェクトの座標位置を計算するクラス。 </p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/14:16 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a3095ef96158577c2e6bbb50144f4624b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3095ef96158577c2e6bbb50144f4624b">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_define_1_1_status.html">Status</a> AnimationMove::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_define_1_1_status.html">Status</a>&#160;</td>
+          <td class="paramname"><em>nowStatus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rollAction_Basic&#160;</td>
+          <td class="paramname"><em>nowAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_collision_detect.html">CollisionDetect</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_stage.html">Stage</a> &gt;&#160;</td>
+          <td class="paramname"><em>_stage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>_animation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更新を行う関数。 </p>
+<p>Status型の現在現在の状態を入力し、次のコマの座標位置を更新しを返す。</p>
+<dl class="section date"><dt>日付</dt><dd>2020/05/04/14:38 </dd></dl>
+<dl class="section author"><dt>著者</dt><dd>mimuro </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph.png" border="0" usemap="#class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph" alt=""/></div>
+<map name="class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph" id="class_animation_move_a3095ef96158577c2e6bbb50144f4624b_cgraph">
+<area shape="rect" title="更新を行う関数。" alt="" coords="5,46,163,73"/>
+<area shape="rect" href="class_predict_point.html#a80843e1a414dd0d5e0fa0121a54285d3" title="更新処理を行う関数。" alt="" coords="211,46,351,73"/>
+<area shape="rect" href="class_predict_point.html#ab9b72b61983dda273e9e195e70dcb234" title="水平方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,5,561,47"/>
+<area shape="rect" href="class_predict_point.html#a551f0c5d0d155249b3548504148f9864" title="垂直方向に動く場合の適切な座標の修正を行う関数。" alt="" coords="399,71,561,112"/>
+<area shape="rect" href="class_predict_point.html#ad58224b864d0218dd13ca68660db7724" title="水平方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="609,5,775,47"/>
+<area shape="rect" href="class_predict_point.html#a9d38faafbb42cb25fefc8db30a4c5bba" title="垂直方向の一番近いブロックの一番近い辺のX座標を取得する。" alt="" coords="609,71,775,112"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
 <li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_animation_move_8h_source.html">AnimationMove.h</a></li>
-<li>C:/Users/mimur/Desktop/NewGame/AnimationMove.cpp</li>
+<li>C:/Users/mimur/Desktop/NewGame/<a class="el" href="_animation_move_8cpp.html">AnimationMove.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

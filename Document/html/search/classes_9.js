@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['player_185',['Player',['../class_player.html',1,'']]],
-  ['pysicalqty_186',['PysicalQTY',['../class_animation_move_1_1_pysical_q_t_y.html',1,'AnimationMove']]]
+  ['player_223',['Player',['../class_player.html',1,'']]],
+  ['playerdirect_224',['PlayerDirect',['../class_player_direct.html',1,'']]],
+  ['predictpoint_225',['PredictPoint',['../class_predict_point.html',1,'']]],
+  ['pysical_226',['Pysical',['../class_pysical.html',1,'']]]
 ];
