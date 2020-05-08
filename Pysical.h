@@ -39,14 +39,17 @@ class Pysical {
 	//! 摩擦力の値
 	unsigned char acc_friction = 1;
 
+	//! ブロックとの反発係数(割る数、大きいと速度は小さくなる)
+	float coef_block = 0.3;
+
 	// Actionごとの加速度の大きさと速度の限界値
-	unsigned char acc_brake = 1;
+	unsigned char acc_brake = 0;
 
-	unsigned char acc_walk = 2;
-	unsigned char limVel_walk = 6;
+	unsigned char acc_walk = 1;
+	unsigned char limVel_walk = 3;
 
-	unsigned char acc_run = 3;
-	unsigned char limVel_run = 9;
+	unsigned char acc_run = 1;
+	unsigned char limVel_run = 7;
 
 	unsigned char initVel_jumpUp = 12;
 	unsigned char initVel_jumpMidAir = 3;
@@ -119,6 +122,7 @@ public:
 		_validFrictionAction[static_cast<int>(Define::rollAction_Basic::Idle)]
 			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Brake)]
 			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Crouch)]
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Landing)]
 			= true;
 	};
 	~Pysical() = default;

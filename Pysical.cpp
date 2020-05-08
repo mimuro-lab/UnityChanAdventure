@@ -225,7 +225,7 @@ Dimention Pysical::resetByCollision(Dimention resetedVector, std::shared_ptr<Col
 
 	// 速度が上向き、かつ、上側が衝突しているならy速度をリセット(速度が0を含めるのは、ジャンプした時にリセットする為)
 	if (resetedVector.y <= 0 && _collision->getCollisionedSide().head)
-		retVec.y = 0;
+		retVec.y = -static_cast<int>(static_cast<float>(retVec.y) * coef_block);
 
 	/// x速度の処理
 	// 速度が右向き、かつ、右側が衝突しているならx速度をリセット

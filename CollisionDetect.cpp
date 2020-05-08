@@ -18,6 +18,8 @@ void CollisionDetect::update(Define::Status _nowStatus, std::shared_ptr<Stage> _
 	nowStatus = _nowStatus;
 	_stage = __stage;
 	
+	int a = _stage->getPointLeftUpX();
+
 	collisionedSide.head = detectHead();
 
 	collisionedSide.right = detectRight();
@@ -152,8 +154,10 @@ void CollisionDetect::draw()
 bool CollisionDetect::IsDetectedStage(int x, int y)
 {
 	// x, y座標がステージのどのインデックスに値するか？
-	char _CellXNum = (x - _stage->getPointLeftUpX()) / _stage->getBlockWidth();
-	char _CellYNum = (y - _stage->getPointLeftUpY()) / _stage->getBlockHeight();
+	int a = _stage->getPointLeftUpX();
+	int b = (x - _stage->getPointLeftUpX());
+	unsigned char _CellXNum = (x - _stage->getPointLeftUpX()) / _stage->getBlockWidth();
+	unsigned char _CellYNum = (y - _stage->getPointLeftUpY()) / _stage->getBlockHeight();
 
 	//ステージ台からはみ出るなら壁に衝突したということ。
 	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= _stage->getBlockXNum() || _CellYNum >= _stage->getBlockYNum()) {
@@ -222,14 +226,14 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 			for (int i = 0; i < bottomPoints; i++) {
 				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 				int y = nowStatus._y + toBottom + block * _stage->blockHeight; 
-				DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
+				//DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
 				if (IsDetectedStage(x, y)) {
 					collisionSideRange.bottom = block * _stage->blockHeight;
 					return true;
 				}
 			}
 
-		DrawBox(nowStatus._x - 20, nowStatus._y - 40, nowStatus._x + 20, nowStatus._y + 40, GetColor(255, 0, 0), false);
+		//DrawBox(nowStatus._x - toLeft, nowStatus._y - toHead, nowStatus._x + toRight, nowStatus._y + toBottom, GetColor(255, 0, 0), false);
 		for (int i = 0; i < rightPoints; i++) {	
 			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 			int y = nowStatus._y + toBottom + _range;
@@ -262,12 +266,10 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 						return true;
 					}
 				}
-
-			DrawBox(nowStatus._x - 20, nowStatus._y - 40, nowStatus._x + 20, nowStatus._y + 40, GetColor(255, 0, 0), false);
 			for (int i = 0; i < rightPoints; i++) {
 				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 				int y = nowStatus._y + toBottom + _range;
-				DrawCircle(x, y, 3, GetColor(255, 0, 0), false);
+				//DrawCircle(x, y, 3, GetColor(255, 0, 0), false);
 				if (IsDetectedStage(x, y)) {
 					collisionSideRange.bottom = _range;
 					return true;
@@ -329,7 +331,7 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int x = nowStatus._x + toRight + _range + Define::blockWidth * block;
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i + senceHeight / 2;
-				DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
+				//DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
 				if (IsDetectedStage(x, y))
 					return true;
 			}
@@ -342,7 +344,7 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int x = nowStatus._x - toLeft - std::abs(_range) - Define::blockWidth * block;
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i + senceHeight / 2;
-				DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
+				//DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
 				if (IsDetectedStage(x, y))
 					return true;
 			}

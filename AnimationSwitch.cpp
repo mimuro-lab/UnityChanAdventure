@@ -156,8 +156,8 @@ rollAction_Basic AnimationSwitch::getNextAction(
 		}
 	}
 
-	// Crouch
-	if (Controller::getIns()->getOnDown()) {
+	// Crouchする条件は、足元が地面についている事
+	if (Controller::getIns()->getOnDown() && collision->getCollisionedSide().bottom) {
 		return rollAction_Basic::Crouch;
 	}
 
@@ -171,8 +171,8 @@ rollAction_Basic AnimationSwitch::getNextAction(
 			return rollAction_Basic::Brake;
 	}
 
-	// Jump
-	if (Controller::getIns()->getPush_A()) {
+	// Jumpする条件は、足元が地面についている事
+	if (Controller::getIns()->getPush_A() && collision->getCollisionedSide().bottom) {
 		return rollAction_Basic::Jump_Up;
 	}
 

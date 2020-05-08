@@ -11,8 +11,8 @@ private:
 	
 	std::vector<std::vector<Define::BlockCell>> _stage;
 
-	int pointLeftUp_x = 10;
-	int pointLeftUp_y = 10;
+	int pointLeftUp_x = 0;
+	int pointLeftUp_y = 0;
 
 	char blockXNum = 20;
 	char blockYNum = 20;
@@ -29,8 +29,8 @@ public:
 	void draw();
 
 	const std::vector<std::vector<Define::BlockCell>> getStage() { return _stage; }
-	const char getPointLeftUpX() { return pointLeftUp_x; }
-	const char getPointLeftUpY() { return pointLeftUp_y; }
+	const int getPointLeftUpX() { return pointLeftUp_x; }
+	const int getPointLeftUpY() { return pointLeftUp_y; }
 	const char getBlockWidth() { return blockWidth; }
 	const char getBlockHeight() { return blockHeight; }
 	const char getBlockXNum() { return blockXNum; }

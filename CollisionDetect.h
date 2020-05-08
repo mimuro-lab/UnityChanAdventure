@@ -46,10 +46,10 @@ class CollisionDetect
 	Collision collisionedSide;
 
 	// プレイヤーオブジェクトの中心点を基準にし、どのくらいの長さで当たり判定を置くか。
-	char toRight = 20;
-	char toLeft = 20;
-	char toHead = 40;
-	char toBottom = 40;
+	char toRight = 10;
+	char toLeft = 10;
+	char toHead = 15;
+	char toBottom = 30;
 
 	// 各辺に置く当たり判定の点の数。
 	char rightPoints = 10;

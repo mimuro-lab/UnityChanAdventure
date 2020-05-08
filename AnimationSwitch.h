@@ -77,6 +77,7 @@ public:
 			= IsAction_canSwitching[static_cast<int>(rollAction_Basic::Fall)]
 			= IsAction_canSwitching[static_cast<int>(rollAction_Basic::Jump_Up)]
 			= IsAction_canSwitching[static_cast<int>(rollAction_Basic::Jump_MidAir)]
+			= IsAction_canSwitching[static_cast<int>(rollAction_Basic::Jump_Fall)]
 			= true;
 	};
 	~AnimationSwitch() = default;

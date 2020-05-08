@@ -116,17 +116,17 @@ int PredictPoint::getForwardBlockNearSideVertical(
 	{
 		// 足元＋predictRangeの座標を計算
 		int x = nowPoint.x;
-		int y = nowPoint.y + _collision->getRange(CollisionDetect::toShiftDirect::bottom) + Define::blockHeight;
+		int y = nowPoint.y + _collision->getRange(CollisionDetect::toShiftDirect::bottom) + predictRange;
 		// その座標にあるブロックの上辺のｙ座標を返す。（中心座標を返すので、getRange分引く）
-		return _stage->getBlockCell(x, y).y1;
+		return _stage->getBlockCell(x, y).y1 + _stage->getPointLeftUpY();
 	}
 	// predictRangeが上向きだったら
 	if (predictRange < 0) {
 		// 頭上＋predictRangeの座標を計算
 		int x = nowPoint.x;
-		int y = nowPoint.y - _collision->getRange(CollisionDetect::toShiftDirect::head) - Define::blockHeight;
+		int y = nowPoint.y - _collision->getRange(CollisionDetect::toShiftDirect::head) + predictRange;
 		// その座標にあるブロックの下辺のｙ座標を返す。
-		return _stage->getBlockCell(x, y).y2;
+		return _stage->getBlockCell(x, y).y2 + _stage->getPointLeftUpY();
 	}
 	// predictRangeが0だったら同じ座標を返す。
 
@@ -152,7 +152,7 @@ int PredictPoint::getForwardBlockNearSideHorizon(
 		int x = nowPoint.x + _collision->getRange(CollisionDetect::toShiftDirect::right) + predictRange;
 		int y = nowPoint.y;
 		// その座標にあるブロックの左辺のx座標を返す。
-		return _stage->getBlockCell(x, y).x1;
+		return _stage->getBlockCell(x, y).x1 + _stage->getPointLeftUpX();
 	}
 	// predictRangeが左向きだったら
 	if (predictRange < 0) {
@@ -160,7 +160,7 @@ int PredictPoint::getForwardBlockNearSideHorizon(
 		int x = nowPoint.x - _collision->getRange(CollisionDetect::toShiftDirect::left) + predictRange;
 		int y = nowPoint.y;
 		// その座標にあるブロックの右辺のx座標を返す。
-		return _stage->getBlockCell(x, y).x2;
+		return _stage->getBlockCell(x, y).x2 + _stage->getPointLeftUpX();
 	}
 	// predictRangeが0だったら同じ座標を返す。
 
