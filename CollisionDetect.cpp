@@ -13,68 +13,35 @@
 @date 2020/05/04/16:40
 @author mimuro
 */
-void CollisionDetect::update(Define::Status _nowStatus, std::shared_ptr<Stage> __stage)
+void CollisionDetect::update(Define::Status __nowStatus, std::shared_ptr<Stage> __stage)
 {
-	nowStatus = _nowStatus;
+
+	collisionedSide.head = detectHead(__stage, __nowStatus);
+
+	collisionedSide.right = detectRight(__stage, __nowStatus);
+
+	collisionedSide.bottom = detectBottom(__stage, __nowStatus);
+
+	collisionedSide.left = detectLeft(__stage, __nowStatus);
+
 	_stage = __stage;
-	
-	int a = _stage->getPointLeftUpX();
-
-	collisionedSide.head = detectHead();
-
-	collisionedSide.right = detectRight();
-
-	collisionedSide.bottom = detectBottom();
-
-	collisionedSide.left = detectLeft();
+	nowStatus = __nowStatus;
 
 }
 
 
-/*!
-@par 頭上の当たり判定を調べる関数。障壁があったらtrueを返す。
-@date 2020/05/04/16:40
-@author mimuro
-*/
-bool CollisionDetect::detectHead()
-{
-	for (int i = 0; i < headPoints; i++) {
-		// ブロックは0 ～ blockHeight - 1単位で生成されるので、左側を調べる際は-1する
-		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
-		int y = nowStatus._y - toHead - 1;
-		if (IsDetectedStage(x, y))
-			return true;
-	}
-	return false;
-}
 
 /*!
 @par 右側の当たり判定を調べる関数。障壁があったらtrueを返す。
 @date 2020/05/04/16:40
 @author mimuro
 */
-bool CollisionDetect::detectRight()
+bool CollisionDetect::detectRight(shared_ptr<Stage> stage, Status nowStatus)
 {
-	for (int i = 0; i < headPoints; i++) {
+	for (int i = 0; i <= rightPoints + 1; i++) {
 		int x = nowStatus._x + toRight;
-		int y = nowStatus._y - toHead + ((toHead + toBottom) / leftPoints) * i;
-		if (IsDetectedStage(x, y)) 
-			return true;
-	}
-	return false;
-}
-
-/*!
-@par 足元の当たり判定を調べる関数。障壁があったらtrueを返す。
-@date 2020/05/04/16:40
-@author mimuro
-*/
-bool CollisionDetect::detectBottom()
-{
-	for (int i = 0; i < rightPoints; i++) {
-		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
-		int y = nowStatus._y + toBottom;
-		if (IsDetectedStage(x, y)) 
+		int y = nowStatus._y - toHead + ((toHead + toBottom) / rightPoints) * i;
+		if (IsDetectedStage(x, y, stage)) 
 			return true;
 	}
 	return false;
@@ -85,13 +52,45 @@ bool CollisionDetect::detectBottom()
 @date 2020/05/04/16:40
 @author mimuro
 */
-bool CollisionDetect::detectLeft()
+bool CollisionDetect::detectLeft(shared_ptr<Stage> stage, Status nowStatus)
 {
-	for (int i = 0; i < leftPoints; i++) {
+	for (int i = 0; i <= leftPoints + 1; i++) {
 		// ブロックは0 ～ blockWidth - 1単位で生成されるので、左側を調べる際は-1する
 		int x = nowStatus._x - toLeft - 1;
 		int y = nowStatus._y - toHead + ((toHead + toBottom) / leftPoints) * i;
-		if (IsDetectedStage(x, y)) 
+		if (IsDetectedStage(x, y, stage)) 
+			return true;
+	}
+	return false;
+}
+
+/*!
+@par 頭上の当たり判定を調べる関数。障壁があったらtrueを返す。
+@date 2020/05/04/16:40
+@author mimuro
+*/
+bool CollisionDetect::detectHead(shared_ptr<Stage> stage, Status nowStatus)
+{
+	for (int i = 0; i < headPoints; i++) {
+		// ブロックは0 ～ blockHeight - 1単位で生成されるので、左側を調べる際は-1する
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
+		int y = nowStatus._y - toHead - 1;
+		if (IsDetectedStage(x, y, stage))
+			return true;
+	}
+	return false;
+}
+/*!
+@par 足元の当たり判定を調べる関数。障壁があったらtrueを返す。
+@date 2020/05/04/16:40
+@author mimuro
+*/
+bool CollisionDetect::detectBottom(shared_ptr<Stage> stage, Status nowStatus)
+{
+	for (int i = 0; i < rightPoints; i++) {
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
+		int y = nowStatus._y + toBottom;
+		if (IsDetectedStage(x, y, stage)) 
 			return true;
 	}
 	return false;
@@ -109,7 +108,7 @@ void CollisionDetect::draw()
 		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i + (toLeft + toRight) / (2 * headPoints);
 		int y = nowStatus._y - toHead - 1;
 		unsigned int color = GetColor(255, 255, 255);
-		if (IsDetectedStage(x, y))
+		if (IsDetectedStage(x, y, _stage))
 			color = GetColor(255, 0, 0);
 		DrawCircle(x, y, 2, color, false);
 	}
@@ -119,31 +118,30 @@ void CollisionDetect::draw()
 		int x = nowStatus._x - toLeft + ((toLeft + toRight) / bottomPoints) * i + (toLeft + toRight) / (2 * headPoints);
 		int y = nowStatus._y + toBottom;
 		unsigned int color = GetColor(255, 255, 255);
-		if (IsDetectedStage(x, y))
+		if (IsDetectedStage(x, y, _stage))
 			color = GetColor(255, 0, 0);
 		DrawCircle(x, y, 2, color, false);
 	}
 	
 	// right
-	for (int i = 0; i < rightPoints; i++) {
+	for (int i = 0; i <= rightPoints + 1; i++) {
 		int x = nowStatus._x + toRight;
 		int y = nowStatus._y - toHead + ((toHead + toBottom) / rightPoints) * i;
 		unsigned int color = GetColor(255, 255, 255);
-		if (IsDetectedStage(x, y))
+		if (IsDetectedStage(x, y, _stage))
 			color = GetColor(255, 0, 0);
 		DrawCircle(x, y, 2, color, false);
 	}
 
 	// left
-	for (int i = 0; i < leftPoints; i++) {
+	for (int i = 0; i <= leftPoints + 1; i++) {
 		int x = nowStatus._x - toLeft - 1;
 		int y = nowStatus._y - toHead + ((toHead + toBottom) / leftPoints) * i;
 		unsigned int color = GetColor(255, 255, 255);
-		if (IsDetectedStage(x, y))
+		if (IsDetectedStage(x, y, _stage))
 			color = GetColor(255, 0, 0);
 		DrawCircle(x, y, 2, color, false);
 	}
-	
 }
 
 /*!
@@ -151,22 +149,20 @@ void CollisionDetect::draw()
 @date 2020/05/04/16:40
 @author mimuro
 */
-bool CollisionDetect::IsDetectedStage(int x, int y)
+bool CollisionDetect::IsDetectedStage(int x, int y, shared_ptr<Stage> stage)
 {
 	// x, y座標がステージのどのインデックスに値するか？
-	int a = _stage->getPointLeftUpX();
-	int b = (x - _stage->getPointLeftUpX());
-	unsigned char _CellXNum = (x - _stage->getPointLeftUpX()) / _stage->getBlockWidth();
-	unsigned char _CellYNum = (y - _stage->getPointLeftUpY()) / _stage->getBlockHeight();
+	unsigned char _CellXNum = (x - stage->getPointLeftUpX()) / stage->getBlockWidth();
+	unsigned char _CellYNum = (y - stage->getPointLeftUpY()) / stage->getBlockHeight();
 
 	//ステージ台からはみ出るなら壁に衝突したということ。
-	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= _stage->getBlockXNum() || _CellYNum >= _stage->getBlockYNum()) {
+	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= stage->getBlockXNum() || _CellYNum >= stage->getBlockYNum()) {
 		DrawCircle(x, y, 30, GetColor(0, 255, 255), false);
 		return false;
 	}
 
 	// もし、x, yにあるステージの要素がblockだったら衝突と判定。
-	if (_stage->getStage()[_CellXNum][_CellYNum]._status == Define::BlockCell::cellStatus::block) {
+	if (stage->getStage()[_CellXNum][_CellYNum]._status == Define::BlockCell::cellStatus::block) {
 		return true;
 	}
 
@@ -189,7 +185,16 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 				for (int i = 0; i <= headPoints; i++) {
 					int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 					int y = nowStatus._y - toHead - 1;
-					if (IsDetectedStage(x, y)) 
+					if (IsDetectedStage(x, y, _stage)) 
+						return true;
+				}
+				return false;
+				break;
+			case toShiftDirect::bottom:
+				for (int i = 0; i < bottomPoints - 1; i++) {
+					int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+					int y = nowStatus._y + toBottom + 1;
+					if (IsDetectedStage(x, y, _stage))
 						return true;
 				}
 				return false;
@@ -198,26 +203,24 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 		return false;
 	}
 
-	if (_to != toShiftDirect::_vertical)
-		_range = std::abs(_range);
-
-	collisionSideRange.bottom = collisionSideRange.head = collisionSideRange.right = collisionSideRange.left = 0;
-	
 	// _rangeがブロックの幅を超えてしまっていたら、プレイヤーオブジェクトのBottonから_stage->blockHeight分ずつ壁の有無を調べる。
 
-	unsigned char BlocksIn_range = 0;//_rangeの中にいくつのブロックが入るか？
+	unsigned char BlocksIn_range = 1;//_rangeの中にいくつのブロックが入るか？
 
 	if (_range > _stage->blockHeight)
 		BlocksIn_range = _range / _stage->blockHeight;
 
 	switch (_to) {
 	case toShiftDirect::head:
-		for (int i = 0; i < headPoints; i++) {
-			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-			int y = nowStatus._y - toBottom - _range;
-			if (IsDetectedStage(x, y))
-				return true;
-		}
+		// _rangeの中に障壁がないか調べる。BlocksIn_rangeを用いる。
+		for (int block = 0; block < BlocksIn_range; block++)
+			for (int i = 0; i < headPoints; i++) {
+				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+				int y = nowStatus._y - toHead - block * _stage->blockHeight - std::abs(_range);
+				//DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
+				if (IsDetectedStage(x, y, _stage))
+					return true;
+			}
 		return false;
 		break;
 	case toShiftDirect::bottom:
@@ -225,57 +228,13 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 		for(int block = 0; block < BlocksIn_range; block++)
 			for (int i = 0; i < bottomPoints; i++) {
 				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-				int y = nowStatus._y + toBottom + block * _stage->blockHeight; 
+				int y = nowStatus._y + toBottom + block * _stage->blockHeight + std::abs(_range);
 				//DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
-				if (IsDetectedStage(x, y)) {
+				if (IsDetectedStage(x, y, _stage)) {
 					collisionSideRange.bottom = block * _stage->blockHeight;
 					return true;
 				}
 			}
-
-		//DrawBox(nowStatus._x - toLeft, nowStatus._y - toHead, nowStatus._x + toRight, nowStatus._y + toBottom, GetColor(255, 0, 0), false);
-		for (int i = 0; i < rightPoints; i++) {	
-			int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-			int y = nowStatus._y + toBottom + _range;
-			
-			if (IsDetectedStage(x, y)) {
-				collisionSideRange.bottom = _range;
-				return true;
-			}
-		}
-		return false;
-		break;
-	case toShiftDirect::_vertical://_rangeの向きによって、上か下を調べる
-		//上向きの場合
-		if (_range < 0) {
-			for (int i = 0; i < headPoints; i++) {
-				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-				int y = nowStatus._y - toBottom - _range;
-				if (IsDetectedStage(x, y))
-					return true;
-			}
-		}
-		//下向けの場合
-		if (_range > 0) {
-			for (int block = 0; block < BlocksIn_range; block++)
-				for (int i = 0; i < bottomPoints; i++) {
-					int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-					int y = nowStatus._y + toBottom + block * _stage->blockHeight;
-					if (IsDetectedStage(x, y)) {
-						collisionSideRange.bottom = block * _stage->blockHeight;
-						return true;
-					}
-				}
-			for (int i = 0; i < rightPoints; i++) {
-				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
-				int y = nowStatus._y + toBottom + _range;
-				//DrawCircle(x, y, 3, GetColor(255, 0, 0), false);
-				if (IsDetectedStage(x, y)) {
-					collisionSideRange.bottom = _range;
-					return true;
-				}
-			}
-		}
 		return false;
 		break;
 	}
@@ -300,7 +259,7 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int x = nowStatus._x - toLeft - 1;
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i + senceHeight / 2;
-				if (IsDetectedStage(x, y))
+				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 			break;
@@ -309,13 +268,12 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int x = nowStatus._x + toLeft + 1;
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i + senceHeight / 2;
-				if (IsDetectedStage(x, y))
+				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 			break;
 		}
 	}
-
 
 	// _rangeがブロックの幅を超えてしまっていたら、プレイヤーオブジェクトのBottonから_stage->blockWidth分ずつ壁の有無を調べる。
 	unsigned char BlocksIn_range = 1;//_rangeの中にいくつのブロックが入るか？
@@ -332,7 +290,7 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i + senceHeight / 2;
 				//DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
-				if (IsDetectedStage(x, y))
+				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 		break;
@@ -345,7 +303,7 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i + senceHeight / 2;
 				//DrawCircle(x, y, 1, GetColor(0, 255, 0), true);
-				if (IsDetectedStage(x, y))
+				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 		break;
@@ -360,7 +318,7 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 @date 2020/05/04/16:59
 @author mimuro
 */
-const char CollisionDetect::getRange(toShiftDirect _to, int y_vel, int x_vel)
+const char CollisionDetect::getRange(toShiftDirect _to)
 {
 	switch (_to) {
 	case toShiftDirect::head:
@@ -375,21 +333,6 @@ const char CollisionDetect::getRange(toShiftDirect _to, int y_vel, int x_vel)
 	case toShiftDirect::left:
 		return toLeft;
 		break;
-	case toShiftDirect::_vertical://垂直だったら座標がどっちに動いているかで判断（速度０はどっちでも構わないが上に合わせる）
-		if (y_vel <= 0)
-			return toHead;
-		else
-			return toBottom;
-
-	case toShiftDirect::_holizen://水平だったら座標がどっちに動いているかで判断（速度０はどっちでも構わないが左に合わせる）
-		if (x_vel <= 0)
-			return toLeft;
-		else
-			return toRight;
-	case toShiftDirect::_none://停止状態であるべき時は下のブロックに合わせる
-		return toBottom;
-		break;
 	}
-
 	return 0;
 }

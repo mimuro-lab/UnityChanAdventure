@@ -64,19 +64,19 @@ class CollisionDetect
 	shared_ptr<Stage> _stage;
 
 	//! (x, y)座標は何かに当たっているかどうか
-	bool IsDetectedStage(int x, int y);
+	bool IsDetectedStage(int x, int y, shared_ptr<Stage> stage);
 
 	//! head部分の衝突の有無を確認する。
-	bool detectHead();
+	bool detectHead(shared_ptr<Stage> stage, Status nowStatus);
 
 	//! right部分の衝突の有無を確認する。
-	bool detectRight();
+	bool detectRight(shared_ptr<Stage> stage, Status nowStatus);
 
 	//! bottom部分の衝突の有無を確認する。
-	bool detectBottom();
+	bool detectBottom(shared_ptr<Stage> stage, Status nowStatus);
 
 	//! left部分の衝突の有無を確認する。
-	bool detectLeft();
+	bool detectLeft(shared_ptr<Stage> stage, Status nowStatus);
 
 public:
 	CollisionDetect(shared_ptr<Stage> __stage, Status _status) {
@@ -98,7 +98,7 @@ public:
 
 	//! 当たり判定における、方向の定義。
 	enum class toShiftDirect{
-		right, left, head, bottom, _vertical, _holizen, _none
+		right, left, head, bottom
 	};
 
 	//! 水平方向で、任意の距離に障壁があるかどうかを調べる関数。
@@ -114,6 +114,6 @@ public:
 		return collisionedSide; 
 	}
 	//! 中心座標からの当たり判定の範囲を返す関数。
-	const char getRange(toShiftDirect _to, int x_vel = 0, int y_vel = 0);
+	const char getRange(toShiftDirect _to);
 
 };

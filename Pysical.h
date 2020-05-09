@@ -40,7 +40,7 @@ class Pysical {
 	unsigned char acc_friction = 1;
 
 	//! ブロックとの反発係数(割る数、大きいと速度は小さくなる)
-	float coef_block = 0.3;
+	double coef_block = 0.3;
 
 	// Actionごとの加速度の大きさと速度の限界値
 	unsigned char acc_brake = 0;

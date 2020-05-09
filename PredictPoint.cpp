@@ -117,6 +117,7 @@ int PredictPoint::getForwardBlockNearSideVertical(
 		// 足元＋predictRangeの座標を計算
 		int x = nowPoint.x;
 		int y = nowPoint.y + _collision->getRange(CollisionDetect::toShiftDirect::bottom) + predictRange;
+		DrawCircle(x, y, 6, GetColor(0, 0, 255), true);
 		// その座標にあるブロックの上辺のｙ座標を返す。（中心座標を返すので、getRange分引く）
 		return _stage->getBlockCell(x, y).y1 + _stage->getPointLeftUpY();
 	}
@@ -125,6 +126,7 @@ int PredictPoint::getForwardBlockNearSideVertical(
 		// 頭上＋predictRangeの座標を計算
 		int x = nowPoint.x;
 		int y = nowPoint.y - _collision->getRange(CollisionDetect::toShiftDirect::head) + predictRange;
+		DrawCircle(x, y, 6, GetColor(0, 0, 255), true);
 		// その座標にあるブロックの下辺のｙ座標を返す。
 		return _stage->getBlockCell(x, y).y2 + _stage->getPointLeftUpY();
 	}
