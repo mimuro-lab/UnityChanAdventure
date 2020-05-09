@@ -35,7 +35,7 @@ Status AnimationMove::update(
 	nextPoint = predictPoint.update(nowPoint ,nowVelocity, _collision, _stage);
 
 	// RestrictPointクラスにより、画面上で動きを制限する。
-	nextPoint = restrictPoint.update(nextPoint, _collision);
+	nextPoint = restrictPoint.update(nextPoint, nowVelocity, _collision);
 
 	restrictPoint.draw();
 
@@ -49,4 +49,41 @@ Status AnimationMove::update(
 
 	return _nextStatus;
 	
+}
+
+Dimention AnimationMove::getShiftingStage(shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage)
+{
+
+	Dimention returnShifting;
+
+	returnShifting.x = returnShifting.y = 0;
+
+	if (restrictPoint.isRestricVertice())
+	{
+		if (nowVelocity.x > 0) {
+			if (_collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::right, std::abs(nowVelocity.x))) 
+			{
+				int fittingX = predictPoint.fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage);
+				int shiftingXRange = fittingX - nowPoint.x;
+				returnShifting.x = -std::abs(shiftingXRange);
+				return returnShifting;
+			}
+		}
+
+		if (nowVelocity.x < 0) {
+			if (_collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::left, std::abs(nowVelocity.x))) 
+			{
+				int fittingX = predictPoint.fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage);
+				int shiftingXRange = fittingX - nowPoint.x;
+				returnShifting.x = std::abs(shiftingXRange);
+				return returnShifting;
+			}
+		}
+
+		returnShifting.x = -nowVelocity.x;
+
+	}
+
+	return returnShifting;
+
 }

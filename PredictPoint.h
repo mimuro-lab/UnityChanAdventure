@@ -32,12 +32,6 @@ class PredictPoint
 	//! 今の座標から、今の速度により次の座標を計算する。
 	Dimention calcPredictPoint(Dimention nowPoint, Dimention nowVelocity);
 
-	//! 水平方向に動く場合の適切な座標の修正を行う関数。
-	int fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
-
-	//! 垂直方向に動く場合の適切な座標の修正を行う関数。
-	int fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
-
 	//! 水平方向の一番近いブロックの一番近い辺のX座標を取得する。
 	int getForwardBlockNearSideHorizon(
 		Dimention nowPoint,
@@ -63,5 +57,11 @@ public:
 
 	//! 更新処理を行う関数。
 	Dimention update(Dimention nowPoint, Dimention nowVelocity, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+
+	//! 水平方向に動く場合の適切な座標の修正を行う関数。
+	int fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
+
+	//! 垂直方向に動く場合の適切な座標の修正を行う関数。
+	int fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage);
 
 };

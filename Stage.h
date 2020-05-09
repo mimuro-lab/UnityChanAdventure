@@ -25,7 +25,7 @@ public:
 	Stage(unsigned char blockWidth, unsigned char blockHeight);
 	~Stage() = default;
 
-	void update();
+	void update(Define::Dimention shifting);
 	void draw();
 
 	const std::vector<std::vector<Define::BlockCell>> getStage() { return _stage; }

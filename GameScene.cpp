@@ -28,7 +28,7 @@ void GameScene::update()
 		Controller::getIns()->update();
 	
 	// ステージ処理
-	stage->update();
+	stage->update(player->getShiftingState());
 
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);

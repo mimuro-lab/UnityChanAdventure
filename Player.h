@@ -31,6 +31,9 @@ class Player
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
 	Define::Status playerStatus;
 
+	//! ステージを移動させる速度
+	Dimention shiftingStage;
+
 	//! アニメーションの処理をまとめて行うオブジェクト。
 	std::shared_ptr<Animation> animation;
 
@@ -58,6 +61,8 @@ public:
 
 		playerStatus.directRight = true;
 
+		shiftingStage.x = shiftingStage.y = 0;
+
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
 
 		animationMove = std::make_shared<AnimationMove>();
@@ -79,5 +84,7 @@ public:
 	void draw();
 
 	const Define::Status getStatus() { return playerStatus; }
+
+	const Dimention getShiftingState() { return shiftingStage; }
 
 };

@@ -22,6 +22,9 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// Statusの更新処理を行う。
 	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation);
 
+	// shiftingStageの更新処理も行う。
+	shiftingStage = animationMove->getShiftingStage(collision, _stage);
+
 	// アニメーションの下処理を行う。
 	animation->update(playerStatus);
 	
