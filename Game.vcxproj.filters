@@ -110,6 +110,9 @@
     <ClCompile Include="PlayerDirect.cpp">
       <Filter>ソース ファイル\GameScene\Player</Filter>
     </ClCompile>
+    <ClCompile Include="RestrictPoint.cpp">
+      <Filter>ソース ファイル\GameScene\Player\AnimationMove</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -192,6 +195,9 @@
     </ClInclude>
     <ClInclude Include="PlayerDirect.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="RestrictPoint.h">
+      <Filter>ソース ファイル\GameScene\Player\AnimationMove</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -102,6 +102,7 @@
     <ClCompile Include="PlayerDirect.cpp" />
     <ClCompile Include="PredictPoint.cpp" />
     <ClCompile Include="Pysical.cpp" />
+    <ClCompile Include="RestrictPoint.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="PlayerDirect.h" />
     <ClInclude Include="PredictPoint.h" />
     <ClInclude Include="Pysical.h" />
+    <ClInclude Include="RestrictPoint.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stage.h" />

@@ -34,9 +34,18 @@ Status AnimationMove::update(
 	// PredictPointクラスにより、その速度の座標位置が妥当であるか判断し、妥当な座標位置を計算する。
 	nextPoint = predictPoint.update(nowPoint ,nowVelocity, _collision, _stage);
 
+	// RestrictPointクラスにより、画面上で動きを制限する。
+	nextPoint = restrictPoint.update(nextPoint, _collision);
+
+	restrictPoint.draw();
+
 	// nextPointをStatus型変数の座標位置に代入し、返す。
 	_nextStatus._x = nextPoint.x;
 	_nextStatus._y = nextPoint.y;
+
+	// 速度も代入する
+	_nextStatus._x_speed = nowVelocity.x;
+	_nextStatus._y_speed = nowVelocity.y;
 
 	return _nextStatus;
 	

@@ -28,15 +28,6 @@
 class Player
 {
 
-	//! 歩く速度
-	char maxSpeed_walk = 5;
-	//! 走る速度
-	char maxSpeed_run = 10;
-	//! Jump_Upの初速度
-	char jumpUp_initSpeed = 20;
-	//! Jump_MidAirの初速度
-	char jumpMid_initSpeed = 15;
-
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
 	Define::Status playerStatus;
 
@@ -63,6 +54,8 @@ public:
 		playerStatus._x = Define::WIN_W / 2;
 		playerStatus._y = Define::WIN_H / 2;
 
+		playerStatus._x_speed = playerStatus._y_speed = 0;
+
 		playerStatus.directRight = true;
 
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
@@ -84,4 +77,7 @@ public:
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
+
+	const Define::Status getStatus() { return playerStatus; }
+
 };

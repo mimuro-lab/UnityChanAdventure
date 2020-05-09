@@ -14,6 +14,7 @@
 #include "Animation.h"
 #include "Pysical.h"
 #include "PredictPoint.h"
+#include "RestrictPoint.h"
 
 /*!
 @class AnimationMove
@@ -32,6 +33,9 @@ class AnimationMove
 
 	//! 計算された座標が適切であるか予測するオブジェクト。
 	PredictPoint predictPoint;
+
+	//! 画面上の動きを制限する。
+	RestrictPoint restrictPoint;
 
 	//! 現在の速度を格納する変数。
 	Dimention nowVelocity;
