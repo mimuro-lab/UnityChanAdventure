@@ -26,7 +26,7 @@ Stage::Stage(unsigned char _blockWidth, unsigned char _blockHeight)
 	}
 
 	for (int y = 0; y < blockYNum; y++) {
-		_stage[0][y]._status = _stage[19][y]._status = Define::BlockCell::cellStatus::block;
+		//_stage[0][y]._status = _stage[19][y]._status = Define::BlockCell::cellStatus::block;
 	}
 	
 	_stage[5][14]._status = _stage[6][14]._status = _stage[7][14]._status = _stage[8][14]._status =
@@ -40,6 +40,7 @@ Stage::Stage(unsigned char _blockWidth, unsigned char _blockHeight)
 void Stage::update(Define::Dimention shifting)
 {
 	pointLeftUp_x += shifting.x;
+	pointLeftUp_y += shifting.y;
 }
 
 void Stage::draw()

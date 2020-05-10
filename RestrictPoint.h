@@ -10,11 +10,17 @@ using namespace std;
 class RestrictPoint
 {
 
-	int restrictVerticeLeft = 150;
-	int restrictVerticeRight = 500;
+	int restrictVerticeLeft = 200;
+	int restrictVerticeRight = 400;
+
+	int restrictHorizonHead = 300;
+	int restrictHorizonBottom = 400;
 	
-	bool isRestricRight = false;
-	bool isRestricLeft = false;
+	bool isRestrictRight = false;
+	bool isRestrictLeft = false;
+
+	bool isRestrictHead = false;
+	bool isRestrictBottom = false;
 
 public:
 	RestrictPoint() {}
@@ -24,6 +30,7 @@ public:
 
 	void draw();
 
-	bool isRestricVertice();
+	bool isRestrictVertice();
+	bool isRestrictHorizon();
 
 };

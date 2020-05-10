@@ -157,7 +157,6 @@ bool CollisionDetect::IsDetectedStage(int x, int y, shared_ptr<Stage> stage)
 
 	//ステージ台からはみ出るなら壁に衝突したということ。
 	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= stage->getBlockXNum() || _CellYNum >= stage->getBlockYNum()) {
-		DrawCircle(x, y, 30, GetColor(0, 255, 255), false);
 		return false;
 	}
 

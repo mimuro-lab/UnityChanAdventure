@@ -58,7 +58,7 @@ Dimention AnimationMove::getShiftingStage(shared_ptr<CollisionDetect> _collision
 
 	returnShifting.x = returnShifting.y = 0;
 
-	if (restrictPoint.isRestricVertice())
+	if (restrictPoint.isRestrictVertice())
 	{
 		if (nowVelocity.x > 0) {
 			if (_collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::right, std::abs(nowVelocity.x))) 
@@ -81,6 +81,34 @@ Dimention AnimationMove::getShiftingStage(shared_ptr<CollisionDetect> _collision
 		}
 
 		returnShifting.x = -nowVelocity.x;
+
+	}
+
+	if (restrictPoint.isRestrictHorizon())
+	{
+		// â∫ÇÃèàóù
+		if (nowVelocity.y > 0) {
+			if (_collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::bottom, std::abs(nowVelocity.y)))
+			{
+				int fittingY = predictPoint.fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage);
+				int shiftingYRange = fittingY - nowPoint.y;
+				returnShifting.y = -std::abs(shiftingYRange);
+				return returnShifting;
+			}
+		}
+
+		// è„ÇÃèàóù
+		if (nowVelocity.y < 0) {
+			if (_collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::head, std::abs(nowVelocity.y)))
+			{
+				int fittingY = predictPoint.fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage);
+				int shiftingYRange = fittingY - nowPoint.y;
+				returnShifting.y = std::abs(shiftingYRange);
+				return returnShifting;
+			}
+		}
+
+		returnShifting.y = -nowVelocity.y;
 
 	}
 
