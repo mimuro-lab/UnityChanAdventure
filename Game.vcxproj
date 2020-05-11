@@ -105,6 +105,7 @@
     <ClCompile Include="RestrictPoint.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StageLoad.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="SystemLooper.cpp" />
     <ClCompile Include="SystemOwner.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="StageLoad.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="SystemLooper.h" />
     <ClInclude Include="SystemOwner.h" />

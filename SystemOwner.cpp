@@ -19,7 +19,7 @@ bool SystemOwner::initialize() const
 	SetWindowSizeChangeEnableFlag(TRUE);		//ウィンドウサイズを自由に変更できるようにする
 	SetOutApplicationLogValidFlag(FALSE);		//ログ出力しない
 	SetFullScreenResolutionMode(DX_FSRESOLUTIONMODE_DESKTOP);	//フルスクリーン時に縦横比を維持する
-	SetWindowText("NewGame");				//ウィンドウタイトルを付ける
+	SetWindowText("NewGame");					//ウィンドウタイトルを付ける
 	ChangeWindowMode(TRUE);						//ウィンドウモードに変更
 //	SetWindowSizeExtendRate(1.0);				//ウィンドウサイズを変更したい時はここに倍率を指定する
 	const int COLOR_BIT = 32;					//色のbit数。通常32で良いが軽くするなら16にする

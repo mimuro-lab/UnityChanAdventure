@@ -52,9 +52,13 @@ namespace Define{
 	unsigned static char blockWidth = 30;
 	unsigned static char blockHeight = 30;
 
+	//! ステージのブロックの数
+	static unsigned char blockXNum = 40;
+	static unsigned char blockYNum = 40;
+
 	//! ステージのブロック一つ一つのステータス
 	struct BlockCell {
-		enum cellStatus {
+		enum class cellStatus {
 			none, block,
 		};
 		int x1, y1, x2, y2;

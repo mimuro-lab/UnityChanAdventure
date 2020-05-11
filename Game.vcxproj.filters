@@ -36,6 +36,9 @@
     <Filter Include="ソース ファイル\GameScene\Player\AnimationMove">
       <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameScene\Stage">
+      <UniqueIdentifier>{8255607b-3624-4b44-8674-70297ab265bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,9 +86,6 @@
     <ClCompile Include="CalcUtils.cpp">
       <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Stage.cpp">
-      <Filter>ソース ファイル\GameScene</Filter>
-    </ClCompile>
     <ClCompile Include="Pysical.cpp">
       <Filter>ソース ファイル\GameScene\Player\AnimationMove</Filter>
     </ClCompile>
@@ -112,6 +112,12 @@
     </ClCompile>
     <ClCompile Include="RestrictPoint.cpp">
       <Filter>ソース ファイル\GameScene\Player\AnimationMove</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="StageLoad.cpp">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +175,6 @@
     <ClInclude Include="CalcUtils.h">
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.h">
-      <Filter>ソース ファイル\GameScene</Filter>
-    </ClInclude>
     <ClInclude Include="Pysical.h">
       <Filter>ソース ファイル\GameScene\Player\AnimationMove</Filter>
     </ClInclude>
@@ -198,6 +201,12 @@
     </ClInclude>
     <ClInclude Include="RestrictPoint.h">
       <Filter>ソース ファイル\GameScene\Player\AnimationMove</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="StageLoad.h">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

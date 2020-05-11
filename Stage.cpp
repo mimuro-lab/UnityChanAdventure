@@ -8,36 +8,15 @@ Stage::Stage(unsigned char _blockWidth, unsigned char _blockHeight)
 
 	// _stage‚Ì‰Šú‰»
 	initCell.x1 = initCell.y1 = initCell.x2 = initCell.y2 = 0;
-	initCell._status = Define::BlockCell::cellStatus::none;
+	initCell._status = BlockCell::cellStatus::none;
 
-	_stage.assign(blockXNum, std::vector<Define::BlockCell>(blockYNum, initCell));
+	_stage.assign(blockXNum, vector<BlockCell>(blockYNum, initCell));
 
-	for (char x = 0; x < blockXNum; x++) {
-		for (char y = 0; y < blockYNum; y++) {
-			_stage[x][y].x1 = x * blockWidth;
-			_stage[x][y].x2 = x * blockWidth + blockWidth;
-			_stage[x][y].y1 = y * blockHeight;
-			_stage[x][y].y2 = _stage[x][y].y1 + blockHeight;
-		}
-	}
-	for (int x = 0; x < blockXNum; x++) {
-		_stage[x][19]._status = _stage[x][0]._status = _stage[x][14]._status
-			= Define::BlockCell::cellStatus::block;
-	}
+	_stage = _load.loadFromFile();
 
-	for (int y = 0; y < blockYNum; y++) {
-		//_stage[0][y]._status = _stage[19][y]._status = Define::BlockCell::cellStatus::block;
-	}
-	
-	_stage[5][14]._status = _stage[6][14]._status = _stage[7][14]._status = _stage[8][14]._status =
-		_stage[1][14]._status = _stage[2][14]._status = _stage[3][14]._status = _stage[4][14]._status
-		= Define::BlockCell::cellStatus::none;
-
-	_stage[19][11]._status = _stage[18][11]._status = _stage[17][11]._status = Define::BlockCell::cellStatus::block;
-	
 }
 
-void Stage::update(Define::Dimention shifting)
+void Stage::update(Dimention shifting)
 {
 	pointLeftUp_x += shifting.x;
 	pointLeftUp_y += shifting.y;
@@ -48,11 +27,11 @@ void Stage::draw()
 	for (char x = 0; x < blockXNum; x++) {
 		for (char y = 0; y < blockYNum; y++) {
 			unsigned int color = GetColor(0, 0, 0);
-			if (_stage[x][y]._status == Define::BlockCell::cellStatus::none) {
+			if (_stage[x][y]._status == BlockCell::cellStatus::none) {
 				//color = GetColor(255, 255, 255);
 				continue;
 			}
-			if (_stage[x][y]._status == Define::BlockCell::cellStatus::block)
+			if (_stage[x][y]._status == BlockCell::cellStatus::block)
 				color = GetColor(255, 0, 0);
 			DrawBox(_stage[x][y].x1 + pointLeftUp_x, _stage[x][y].y1 + pointLeftUp_y,
 				_stage[x][y].x2 + pointLeftUp_x, _stage[x][y].y2 + pointLeftUp_y, color, false);
@@ -61,7 +40,7 @@ void Stage::draw()
 	}
 }
 
-const Define::BlockCell Stage::getBlockCell(int x, int y)
+const BlockCell Stage::getBlockCell(int x, int y)
 {
 	int _CellXNum = (x - pointLeftUp_x) / blockWidth;
 	int _CellYNum = (y - pointLeftUp_y) / blockHeight;

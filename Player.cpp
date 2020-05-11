@@ -39,5 +39,5 @@ void Player::update(std::shared_ptr<Stage> _stage)
 void Player::draw()
 {
 	animation->draw();
-	collision->draw();
+	//collision->draw();
 }

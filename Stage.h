@@ -3,19 +3,22 @@
 #include <vector>
 #include <DxLib.h>
 #include "Define.h"
+#include "StageLoad.h"
+
+using namespace std;
+using namespace Define;
 
 class Stage
 {
 private:
-	Define::BlockCell initCell;
+	BlockCell initCell;
 	
-	std::vector<std::vector<Define::BlockCell>> _stage;
+	vector<vector<BlockCell>> _stage;
 
 	int pointLeftUp_x = 0;
 	int pointLeftUp_y = 0;
 
-	char blockXNum = 20;
-	char blockYNum = 20;
+	StageLoad _load;
 
 public:
 	
@@ -25,10 +28,10 @@ public:
 	Stage(unsigned char blockWidth, unsigned char blockHeight);
 	~Stage() = default;
 
-	void update(Define::Dimention shifting);
+	void update(Dimention shifting);
 	void draw();
 
-	const std::vector<std::vector<Define::BlockCell>> getStage() { return _stage; }
+	const vector<vector<BlockCell>> getStage() { return _stage; }
 	const int getPointLeftUpX() { return pointLeftUp_x; }
 	const int getPointLeftUpY() { return pointLeftUp_y; }
 	const char getBlockWidth() { return blockWidth; }
@@ -36,6 +39,6 @@ public:
 	const char getBlockXNum() { return blockXNum; }
 	const char getBlockYNum() { return blockYNum; }
 
-	const Define::BlockCell getBlockCell(int x, int y);
+	const BlockCell getBlockCell(int x, int y);
 
 };

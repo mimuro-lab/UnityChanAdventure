@@ -10,11 +10,11 @@ using namespace std;
 class RestrictPoint
 {
 
-	int restrictVerticeLeft = 200;
-	int restrictVerticeRight = 400;
+	int restrictVerticeLeft = 150;
+	int restrictVerticeRight = 500;
 
-	int restrictHorizonHead = 300;
-	int restrictHorizonBottom = 400;
+	int restrictHorizonHead = 150;
+	int restrictHorizonBottom = 500;
 	
 	bool isRestrictRight = false;
 	bool isRestrictLeft = false;
