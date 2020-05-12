@@ -12,14 +12,28 @@ Stage::Stage(unsigned char _blockWidth, unsigned char _blockHeight)
 
 	_stage.assign(blockXNum, vector<BlockCell>(blockYNum, initCell));
 
-	_stage = _load.loadFromFile();
+	_stage = _load.loadFromFileInit();
 
 }
 
-void Stage::update(Dimention shifting)
+void Stage::update(Dimention shifting, Status nowStatus)
 {
 	pointLeftUp_x += shifting.x;
 	pointLeftUp_y += shifting.y;
+
+	nowAbsoluteX = nowStatus._x - pointLeftUp_x;
+	nowAbsoluteY = nowStatus._y - pointLeftUp_y;
+
+	nowPointOnDrawingX = nowAbsoluteX - _load.getLoadInitAbsX();
+	nowPointOnDrawingY = nowAbsoluteY - _load.getLoadInitAbsY();
+
+	if (nowPointOnDrawingX > blockWidth * 39) {
+  		_stage = _load.loadFromFileForward(1);
+	}
+
+	if (nowPointOnDrawingX < blockWidth) {
+		_stage = _load.loadFromFileBackward(1);
+	}
 }
 
 void Stage::draw()
@@ -42,7 +56,7 @@ void Stage::draw()
 
 const BlockCell Stage::getBlockCell(int x, int y)
 {
-	int _CellXNum = (x - pointLeftUp_x) / blockWidth;
+	int _CellXNum = (x - pointLeftUp_x) / blockWidth - _load.getLoadInitIndX();
 	int _CellYNum = (y - pointLeftUp_y) / blockHeight;
 
 	DrawBox(_stage[_CellXNum][_CellYNum].x1 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y1 + pointLeftUp_y

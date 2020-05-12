@@ -20,6 +20,13 @@ private:
 
 	StageLoad _load;
 
+	int nowAbsoluteX = 0;
+	int nowAbsoluteY = 0;
+
+	// ï\é¶ÇµÇƒÇ¢ÇÈ_stageè„ÇÃç¿ïW
+	int nowPointOnDrawingX = 0;
+	int nowPointOnDrawingY = 0;
+
 public:
 	
 	unsigned char blockWidth;
@@ -28,7 +35,7 @@ public:
 	Stage(unsigned char blockWidth, unsigned char blockHeight);
 	~Stage() = default;
 
-	void update(Dimention shifting);
+	void update(Dimention shifting, Status nowStatus);
 	void draw();
 
 	const vector<vector<BlockCell>> getStage() { return _stage; }
@@ -40,5 +47,7 @@ public:
 	const char getBlockYNum() { return blockYNum; }
 
 	const BlockCell getBlockCell(int x, int y);
+
+	const unsigned int getAbsIndInitDrawingLeftUpX() { return _load.getLoadInitIndX(); }
 
 };

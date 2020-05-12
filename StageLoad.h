@@ -17,6 +17,9 @@ class StageLoad
 
 	BlockCell::cellStatus getCellFromInt(int inputInt);
 
+	unsigned int nowLoadInitXInd = 0;
+	unsigned int nowLoadInitYInd = 0;
+
 public:
 	StageLoad() {
 		BlockCell initCell;
@@ -28,6 +31,16 @@ public:
 	}
 	~StageLoad() = default;
 
-	vector<vector<BlockCell>> loadFromFile();
+	vector<vector<BlockCell>> loadFromFileInit();
+
+	vector<vector<BlockCell>> loadFromFileForward(unsigned int XInd);
+
+	vector<vector<BlockCell>> loadFromFileBackward(unsigned int XInd);
+
+ 	const unsigned int getLoadInitAbsX() { return nowLoadInitXInd * blockWidth; }
+	const unsigned int getLoadInitAbsY() { return nowLoadInitYInd * blockHeight; }
+
+	const unsigned int getLoadInitIndX() { return nowLoadInitXInd; }
+	const unsigned int getLoadInitIndY() { return nowLoadInitYInd; }
 
 };

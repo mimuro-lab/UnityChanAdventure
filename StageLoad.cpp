@@ -90,11 +90,46 @@ BlockCell::cellStatus StageLoad::getCellFromInt(int inputInt)
 	return BlockCell::cellStatus::none;
 }
 
-vector<vector<BlockCell>> StageLoad::loadFromFile()
+vector<vector<BlockCell>> StageLoad::loadFromFileInit()
 {
 	vector<vector<BlockCell>> _stage = _nowStage;
 
-	_stage = loadCsv("./Stage/sample_stage.csv", 0, 0, 40, 40);
+	_stage = loadCsv("./Stage/sample_stage.csv", 0, 0, blockXNum, blockYNum);
+
+	nowLoadInitXInd = 0;
+	nowLoadInitYInd = 0;
+
+	nextLoadInitXInd = 0;
+	nextLoadInitYInd = 0;
+
+	_nowStage = _stage;
+
+	return _stage;
+
+}
+
+vector<vector<BlockCell>> StageLoad::loadFromFileForward(unsigned int XInd)
+{
+	vector<vector<BlockCell>> _stage = _nowStage;
+
+	nowLoadInitXInd += XInd;
+	
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, 0, blockXNum, blockYNum);
+
+ 	_nowStage = _stage;
+
+	return _stage;
+
+}
+
+vector<vector<BlockCell>> StageLoad::loadFromFileBackward(unsigned int XInd)
+{
+	vector<vector<BlockCell>> _stage = _nowStage;
+
+	// ç∂å¸Ç´ÇÃéûì_Ç≈ÅAnowÇ∆nextÇÊÇËblockXNumï™è¨Ç≥Ç¢ÅB
+	nowLoadInitXInd -= XInd;
+	
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, 0, blockXNum, blockYNum);
 
 	_nowStage = _stage;
 
