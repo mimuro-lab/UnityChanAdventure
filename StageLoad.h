@@ -13,12 +13,12 @@ class StageLoad
 {
 	vector<vector<BlockCell>> _nowStage;
 
-	vector<vector<BlockCell>> loadCsv(const char * cavName ,unsigned int loadInitX, unsigned int loadInitY, unsigned char loadWidth, unsigned char loadHeight);
+	vector<vector<BlockCell>> loadCsv(const char * cavName ,int loadInitX, int loadInitY, unsigned char loadWidth, unsigned char loadHeight);
 
 	BlockCell::cellStatus getCellFromInt(int inputInt);
 
-	unsigned int nowLoadInitXInd = 0;
-	unsigned int nowLoadInitYInd = 0;
+	int nowLoadInitXInd = 0;
+	int nowLoadInitYInd = 0;
 
 public:
 	StageLoad() {

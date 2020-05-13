@@ -1,7 +1,10 @@
 #include "StageLoad.h"
 
-vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, unsigned int loadInitXInd, unsigned int loadInitYInd, unsigned char loadWidth, unsigned char loadHeight)
+vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitXInd, int loadInitYInd, unsigned char loadWidth, unsigned char loadHeight)
 {
+
+	if (loadInitXInd < 0)
+		return _nowStage;
 
 	vector<vector<BlockCell>> _stage;
 
@@ -99,9 +102,6 @@ vector<vector<BlockCell>> StageLoad::loadFromFileInit()
 	nowLoadInitXInd = 0;
 	nowLoadInitYInd = 0;
 
-	nextLoadInitXInd = 0;
-	nextLoadInitYInd = 0;
-
 	_nowStage = _stage;
 
 	return _stage;
@@ -129,6 +129,9 @@ vector<vector<BlockCell>> StageLoad::loadFromFileBackward(unsigned int XInd)
 	// ¶Œü‚«‚Ì“_‚ÅAnow‚Ænext‚æ‚èblockXNum•ª¬‚³‚¢B
 	nowLoadInitXInd -= XInd;
 	
+	if (nowLoadInitXInd < 0)
+		nowLoadInitXInd = 0;
+
 	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, 0, blockXNum, blockYNum);
 
 	_nowStage = _stage;

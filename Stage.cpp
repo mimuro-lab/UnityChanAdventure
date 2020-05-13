@@ -27,12 +27,12 @@ void Stage::update(Dimention shifting, Status nowStatus)
 	nowPointOnDrawingX = nowAbsoluteX - _load.getLoadInitAbsX();
 	nowPointOnDrawingY = nowAbsoluteY - _load.getLoadInitAbsY();
 
-	if (nowPointOnDrawingX > blockWidth * 39) {
-  		_stage = _load.loadFromFileForward(1);
+	if (nowPointOnDrawingX > blockWidth * 30) {
+  		_stage = _load.loadFromFileForward(10);
 	}
 
-	if (nowPointOnDrawingX < blockWidth) {
-		_stage = _load.loadFromFileBackward(1);
+	if (nowPointOnDrawingX < blockWidth * 10) {
+		_stage = _load.loadFromFileBackward(10);
 	}
 }
 
@@ -52,6 +52,8 @@ void Stage::draw()
 			
 		}
 	}
+
+
 }
 
 const BlockCell Stage::getBlockCell(int x, int y)
