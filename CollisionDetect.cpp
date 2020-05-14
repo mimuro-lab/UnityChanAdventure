@@ -153,7 +153,7 @@ bool CollisionDetect::IsDetectedStage(int x, int y, shared_ptr<Stage> stage)
 {
 	// x, y座標がステージのどのインデックスに値するか？
 	unsigned int _CellXNum = (x - stage->getPointLeftUpX()) / stage->getBlockWidth() - stage->getAbsIndInitDrawingLeftUpX();
-	unsigned int _CellYNum = (y - stage->getPointLeftUpY()) / stage->getBlockHeight();
+	unsigned int _CellYNum = (y - stage->getPointLeftUpY()) / stage->getBlockHeight() - stage->getAbsIndInitDrawingLeftUpY();
 
 	//ステージ台からはみ出るなら壁に衝突したということ。
 	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= stage->getBlockXNum() || _CellYNum >= stage->getBlockYNum()) {

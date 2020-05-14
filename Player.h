@@ -55,7 +55,7 @@ public:
 	{
 		// ‰Šúî•ñ‚Ìİ’èB
 		playerStatus._x = Define::WIN_W / 2;
-		playerStatus._y = Define::WIN_H / 2;
+		playerStatus._y = 100;
 
 		playerStatus._x_speed = playerStatus._y_speed = 0;
 

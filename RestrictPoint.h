@@ -13,7 +13,7 @@ class RestrictPoint
 	int restrictVerticeLeft = 150;
 	int restrictVerticeRight = 500;
 
-	int restrictHorizonHead = 150;
+	int restrictHorizonHead = 150 + 200;
 	int restrictHorizonBottom = 500;
 	
 	bool isRestrictRight = false;

@@ -31,9 +31,18 @@ void Stage::update(Dimention shifting, Status nowStatus)
   		_stage = _load.loadFromFileForward(10);
 	}
 
-	if (nowPointOnDrawingX < blockWidth * 10) {
+	if (nowPointOnDrawingX < blockWidth * 10 && nowAbsoluteX > blockWidth * 10) {
 		_stage = _load.loadFromFileBackward(10);
 	}
+
+	if (nowPointOnDrawingY > blockHeight * 30) {
+		_stage = _load.loadFromFileDwonSide(10);
+	}
+
+	if (nowPointOnDrawingY < blockHeight * 10 && nowAbsoluteY > blockHeight * 10) {
+		_stage = _load.loadFromFileUpSide(10);
+	}
+
 }
 
 void Stage::draw()
@@ -53,13 +62,12 @@ void Stage::draw()
 		}
 	}
 
-
 }
 
 const BlockCell Stage::getBlockCell(int x, int y)
 {
 	int _CellXNum = (x - pointLeftUp_x) / blockWidth - _load.getLoadInitIndX();
-	int _CellYNum = (y - pointLeftUp_y) / blockHeight;
+	int _CellYNum = (y - pointLeftUp_y) / blockHeight - _load.getLoadInitIndY();
 
 	DrawBox(_stage[_CellXNum][_CellYNum].x1 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y1 + pointLeftUp_y
 		, _stage[_CellXNum][_CellYNum].x2 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y2 + pointLeftUp_y, GetColor(0, 0, 255), true);

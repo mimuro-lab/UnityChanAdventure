@@ -37,6 +37,10 @@ public:
 
 	vector<vector<BlockCell>> loadFromFileBackward(unsigned int XInd);
 
+	vector<vector<BlockCell>> loadFromFileDwonSide(unsigned int YInd);
+
+	vector<vector<BlockCell>> loadFromFileUpSide(unsigned int YInd);
+
  	const unsigned int getLoadInitAbsX() { return nowLoadInitXInd * blockWidth; }
 	const unsigned int getLoadInitAbsY() { return nowLoadInitYInd * blockHeight; }
 

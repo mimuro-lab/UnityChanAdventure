@@ -209,4 +209,7 @@
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Stage\sample_stage.csv" />
+  </ItemGroup>
 </Project>

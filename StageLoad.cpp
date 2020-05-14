@@ -28,6 +28,7 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 
 	FILE* fp;
 	fopen_s(&fp, csvFile, "r");
+	rewind(fp);
 
 	if (fp == NULL) {
 		printfDx("ファイルが開けませんでした(in StageLoad::loadCsv)");
@@ -56,7 +57,8 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 			x = 0;
 			y++;
 			elementInd = 0;
-			_stageYInd++;
+			if(y > loadInitYInd)
+				_stageYInd++;
 			_stageXInd = 0;
 		}
 		else {// ，でも改行でもない時、要素を読み込んだという事なので、
@@ -68,7 +70,8 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 				
 				if (y >= loadInitYInd && y < (loadInitYInd + loadHeight)) {
 
-					_stage[_stageXInd][_stageYInd]._status = getCellFromInt(correctInt);
+					if(_stageXInd < blockXNum && _stageYInd < blockYNum)
+						_stage[_stageXInd][_stageYInd]._status = getCellFromInt(correctInt);
 
 					_stageXInd++;
 
@@ -76,6 +79,8 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 			}
 		}
 	}
+
+	printfDx("x : %d, y : %d", x, y);
 	return _stage;
 
 	fclose(fp);
@@ -97,10 +102,10 @@ vector<vector<BlockCell>> StageLoad::loadFromFileInit()
 {
 	vector<vector<BlockCell>> _stage = _nowStage;
 
-	_stage = loadCsv("./Stage/sample_stage.csv", 0, 0, blockXNum, blockYNum);
-
 	nowLoadInitXInd = 0;
 	nowLoadInitYInd = 0;
+	
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, nowLoadInitYInd, blockXNum, blockYNum);
 
 	_nowStage = _stage;
 
@@ -114,7 +119,7 @@ vector<vector<BlockCell>> StageLoad::loadFromFileForward(unsigned int XInd)
 
 	nowLoadInitXInd += XInd;
 	
-	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, 0, blockXNum, blockYNum);
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, nowLoadInitYInd, blockXNum, blockYNum);
 
  	_nowStage = _stage;
 
@@ -132,7 +137,38 @@ vector<vector<BlockCell>> StageLoad::loadFromFileBackward(unsigned int XInd)
 	if (nowLoadInitXInd < 0)
 		nowLoadInitXInd = 0;
 
-	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, 0, blockXNum, blockYNum);
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, nowLoadInitYInd, blockXNum, blockYNum);
+
+	_nowStage = _stage;
+
+	return _stage;
+
+}
+
+vector<vector<BlockCell>> StageLoad::loadFromFileDwonSide(unsigned int YInd)
+{
+	vector<vector<BlockCell>> _stage = _nowStage;
+
+	nowLoadInitYInd += YInd;
+
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, nowLoadInitYInd, blockXNum, blockYNum);
+
+	_nowStage = _stage;
+
+	return _stage;
+}
+
+vector<vector<BlockCell>> StageLoad::loadFromFileUpSide(unsigned int YInd)
+{
+	vector<vector<BlockCell>> _stage = _nowStage;
+
+	// 左向きの時点で、nowとnextよりblockXNum分小さい。
+	nowLoadInitYInd -= YInd;
+
+	if (nowLoadInitYInd < 0)
+		nowLoadInitYInd = 0;
+
+	_stage = loadCsv("./Stage/sample_stage.csv", nowLoadInitXInd, nowLoadInitYInd, blockXNum, blockYNum);
 
 	_nowStage = _stage;
 

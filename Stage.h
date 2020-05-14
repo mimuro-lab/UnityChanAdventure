@@ -49,5 +49,6 @@ public:
 	const BlockCell getBlockCell(int x, int y);
 
 	const unsigned int getAbsIndInitDrawingLeftUpX() { return _load.getLoadInitIndX(); }
+	const unsigned int getAbsIndInitDrawingLeftUpY() { return _load.getLoadInitIndY(); }
 
 };
