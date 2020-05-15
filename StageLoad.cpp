@@ -28,10 +28,10 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 
 	FILE* fp;
 	fopen_s(&fp, csvFile, "r");
-	rewind(fp);
 
 	if (fp == NULL) {
-		printfDx("ファイルが開けませんでした(in StageLoad::loadCsv)");
+		
+		("ファイルが開けませんでした(in StageLoad::loadCsv)");
 		exit(1);
 	}
 
@@ -80,7 +80,6 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 		}
 	}
 
-	printfDx("x : %d, y : %d", x, y);
 	return _stage;
 
 	fclose(fp);

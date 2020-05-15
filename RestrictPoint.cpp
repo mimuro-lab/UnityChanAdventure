@@ -58,6 +58,42 @@ bool RestrictPoint::isRestrictHorizon()
 	return isRestrictHead || isRestrictBottom;
 }
 
+int RestrictPoint::getShiftingVelVertical(Dimention nowVelocity, Dimention nowPoint, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, PredictPoint predictPoint)
+{
+
+	Dimention returnShifting;
+
+	returnShifting.x = returnShifting.y = 0;
+
+	if (isRestrictHorizon())
+	{
+		// â∫ÇÃèàóù
+		if (nowVelocity.y > 0) {
+			if (_collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::bottom, std::abs(nowVelocity.y), nowVelocity.x))
+			{
+				int fittingY = predictPoint.fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage, nowVelocity.x);
+				int shiftingYRange = fittingY - nowPoint.y;
+				returnShifting.y = -std::abs(shiftingYRange);
+				return returnShifting.y;
+			}
+		}
+
+		// è„ÇÃèàóù
+		if (nowVelocity.y < 0) {
+			if (_collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::head, std::abs(nowVelocity.y), nowVelocity.x))
+			{
+				int fittingY = predictPoint.fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage, nowVelocity.x);
+				int shiftingYRange = fittingY - nowPoint.y;
+				returnShifting.y = std::abs(shiftingYRange);
+				return returnShifting.y;
+			}
+		}
+
+		returnShifting.y = -nowVelocity.y;
+
+	}
+}
+
 void RestrictPoint::draw()
 {
 	DrawLine(restrictVerticeRight, 0, restrictVerticeRight, 1000, GetColor(255, 0, 0));

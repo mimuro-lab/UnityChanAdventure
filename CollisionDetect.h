@@ -46,10 +46,10 @@ class CollisionDetect
 	Collision collisionedSide;
 
 	// プレイヤーオブジェクトの中心点を基準にし、どのくらいの長さで当たり判定を置くか。
-	char toRight = 10;
-	char toLeft = 10;
-	char toHead = 15;
-	char toBottom = 30;
+	char toRight = 10 * 1;
+	char toLeft = 10 * 1;
+	char toHead = 15 * 1;
+	char toBottom = 30 * 1;
 
 	// 各辺に置く当たり判定の点の数。
 	char rightPoints = 10;
@@ -62,6 +62,9 @@ class CollisionDetect
 
 	//! ステージの状態を受け取る変数。
 	shared_ptr<Stage> _stage;
+
+	//! 角が障壁に当たっているかのフラグ
+	bool isCollisionedEdge = false;
 
 	//! (x, y)座標は何かに当たっているかどうか
 	bool IsDetectedStage(int x, int y, shared_ptr<Stage> stage);
@@ -102,10 +105,10 @@ public:
 	};
 
 	//! 水平方向で、任意の距離に障壁があるかどうかを調べる関数。
-	bool calcShitingCollisionedSideVertical(toShiftDirect _to, char _range);
+	bool calcShitingCollisionedSideVertical(toShiftDirect _to, char _range, char _horizonal_range);
 
 	//! 垂直方向で、任意の距離に障壁があるかどうかを調べる関数。
-	bool calcShitingCollisionedSideHorizon(toShiftDirect _to, char _range);
+	bool calcShitingCollisionedSideHorizon(toShiftDirect _to, char _range, char _vertical_range);
 
 	void draw();
 
@@ -115,5 +118,7 @@ public:
 	}
 	//! 中心座標からの当たり判定の範囲を返す関数。
 	const char getRange(toShiftDirect _to);
+
+	const bool getIsCollisionedEdge() { return isCollisionedEdge; }
 
 };

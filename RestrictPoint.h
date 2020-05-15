@@ -3,6 +3,7 @@
 #include "Define.h"
 #include "DxLib.h"
 #include "CollisionDetect.h"
+#include "PredictPoint.h"
 
 using namespace Define;
 using namespace std;
@@ -13,7 +14,7 @@ class RestrictPoint
 	int restrictVerticeLeft = 150;
 	int restrictVerticeRight = 500;
 
-	int restrictHorizonHead = 150 + 200;
+	int restrictHorizonHead = 150;
 	int restrictHorizonBottom = 500;
 	
 	bool isRestrictRight = false;
@@ -32,5 +33,7 @@ public:
 
 	bool isRestrictVertice();
 	bool isRestrictHorizon();
+
+	int getShiftingVelVertical(Dimention nowVelocity, Dimention nowPoint, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, PredictPoint _predict);
 
 };

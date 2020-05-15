@@ -34,7 +34,7 @@ namespace Define{
 	const static int WIN_W = 640;
 
 	//! ウィンドウサイズ縦
-	const static int WIN_H = 2640;
+	const static int WIN_H = 640;
 	
 	//! 円周率
 	const static float PI = 3.141592654f; 

@@ -29,12 +29,13 @@ Dimention PredictPoint::calcPredictPoint(Dimention nowPoint, Dimention nowVeloci
 @date 2020/05/04/18:13
 @author mimuro
 */
-int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
+int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage, char _verticalRange)
 {
 	// predictRangeが現在位置より右だったら
 	if (predictRange > 0) {
 		// predictRange分右にブロックがあるかどうか？
-		bool isCollisionedPredictRight = _collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::right, predictRange);
+		bool isCollisionedPredictRight = _collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::right, predictRange, _verticalRange);
+		bool isCollisionedEdge = _collision->getIsCollisionedEdge();
 		if (isCollisionedPredictRight) {
 			// もしあったら、右のブロック左辺に合わせる。（中心座標を返すので、getRange分引く）
 			return getForwardBlockNearSideHorizon(nowPoint, predictRange, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::right);
@@ -43,7 +44,7 @@ int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std:
 
 	// predictRangeが現在位置より左だったら
 	if (predictRange < 0) {
-		bool isCollisionedPredictLeft = _collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::left, predictRange);
+		bool isCollisionedPredictLeft = _collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::left, predictRange, _verticalRange);
 		if (isCollisionedPredictLeft) {
 			// もしあったら、左のブロック右辺に合わせる。（中心座標を返すので、getRange分足す）
 			return getForwardBlockNearSideHorizon(nowPoint, predictRange, _collision, _stage) + _collision->getRange(CollisionDetect::toShiftDirect::left);
@@ -65,9 +66,10 @@ int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std:
 @date 2020/05/04/18:013
 @author mimuro
 */
-int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage)
+int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std::shared_ptr<CollisionDetect> _collision, std::shared_ptr<Stage> _stage, char _horizonalRange)
 {
 
+	
 	// もし、下が壁にぶつかっていて、下を調べるようだったら、座標を変えない。
 	if(_collision->getCollisionedSide().bottom && predictRange > 0)
 		return nowPoint.y;
@@ -75,20 +77,27 @@ int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std
 	// もし、上が壁にぶつかっていて、上を調べるようだったら、座標を変えない。
 	if (_collision->getCollisionedSide().head && predictRange < 0)
 		return nowPoint.y;
-
+		
 	// predictYが現在位置より下だったら
 	if (predictRange > 0) {
 		// predictRange分下にブロックがあるかどうか？
-		bool isCollisionedPredictBottom = _collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::bottom, predictRange);
-		if (isCollisionedPredictBottom) {
+		bool isCollisionedPredictBottom = _collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::bottom, predictRange, _horizonalRange);
+		bool isCollisionedEdge = _collision->getIsCollisionedEdge();
+		if (isCollisionedPredictBottom && !isCollisionedEdge
+			//||
+			//!isCollisionedPredictBottom && isCollisionedEdge
+			) {
 			// もしあったら、下のブロック上辺に合わせる。（中心座標を返すので、getRange分引く）
 			return getForwardBlockNearSideVertical(nowPoint, predictRange, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::bottom);
+		}
+		if (isCollisionedEdge && isCollisionedPredictBottom) {
+
 		}
 	}
 
 	// predictYが現在位置より上だったら
 	if (predictRange < 0) {
-		bool isCollisionedPredictHead = _collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::head, predictRange);
+		bool isCollisionedPredictHead = _collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::head, predictRange, _horizonalRange);
 		if (isCollisionedPredictHead) {
 			// もしあったら、上のブロック下辺に合わせる。（中心座標を返すので、getRange分足す）
 			return getForwardBlockNearSideVertical(nowPoint, predictRange, _collision, _stage) + _collision->getRange(CollisionDetect::toShiftDirect::head);
@@ -179,9 +188,9 @@ Dimention PredictPoint::update(Dimention _nowPoint, Dimention nowVelocity, std::
 
 	nowPoint = _nowPoint;
 
-	predictPoint.x = fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage);
+	predictPoint.x = fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage, nowVelocity.y);
 
-	predictPoint.y = fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage);
+	predictPoint.y = fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage, nowVelocity.x);
 
 	return predictPoint;
 }
