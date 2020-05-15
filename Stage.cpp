@@ -72,8 +72,8 @@ const BlockCell Stage::getBlockCell(int x, int y)
 	int _CellXNum = (x - pointLeftUp_x) / blockWidth - _load.getLoadInitIndX();
 	int _CellYNum = (y - pointLeftUp_y) / blockHeight - _load.getLoadInitIndY();
 
-	DrawBox(_stage[_CellXNum][_CellYNum].x1 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y1 + pointLeftUp_y
-		, _stage[_CellXNum][_CellYNum].x2 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y2 + pointLeftUp_y, GetColor(0, 0, 255), true);
+	//DrawBox(_stage[_CellXNum][_CellYNum].x1 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y1 + pointLeftUp_y
+		//, _stage[_CellXNum][_CellYNum].x2 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y2 + pointLeftUp_y, GetColor(0, 0, 255), true);
 
 	return _stage[_CellXNum][_CellYNum];
 

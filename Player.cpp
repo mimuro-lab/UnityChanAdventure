@@ -39,7 +39,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 void Player::draw()
 {
 	animation->draw();
-	collision->draw();
+	//collision->draw();
 
 	DrawFormatString(100, 20, GetColor(255, 255, 255), "y : %d", playerStatus._y);
 }

@@ -194,8 +194,8 @@ void CollisionDetect::draw()
 bool CollisionDetect::IsDetectedStage(int x, int y, shared_ptr<Stage> stage)
 {
 	// x, y座標がステージのどのインデックスに値するか？
-	unsigned int _CellXNum = (x - stage->getPointLeftUpX()) / stage->getBlockWidth() - stage->getAbsIndInitDrawingLeftUpX();
-	unsigned int _CellYNum = (y - stage->getPointLeftUpY()) / stage->getBlockHeight() - stage->getAbsIndInitDrawingLeftUpY();
+	unsigned char _CellXNum = (x - stage->getPointLeftUpX()) / stage->getBlockWidth() - stage->getAbsIndInitDrawingLeftUpX();
+	unsigned char _CellYNum = (y - stage->getPointLeftUpY()) / stage->getBlockHeight() - stage->getAbsIndInitDrawingLeftUpY();
 
 	//ステージ台からはみ出るなら壁に衝突したということ。
 	if (_CellXNum < 0 || _CellYNum < 0 || _CellXNum >= stage->getBlockXNum() || _CellYNum >= stage->getBlockYNum()) {
@@ -270,13 +270,13 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 			for (int i = 0; i < headPoints; i++) {
 				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 				int y = nowStatus._y - toHead - block * _stage->blockHeight - std::abs(_range);
-				DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
+				//DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
 				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 			int x = nowStatus._x + toRight - 1;
 			int y = nowStatus._y - toHead - block * _stage->blockHeight - std::abs(_range);
-			DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
+			//DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
 			if (IsDetectedStage(x, y, _stage))
 				return true;
 
@@ -295,7 +295,7 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 			for (int i = 0; i < bottomPoints; i++) {
 				int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 				int y = nowStatus._y + toBottom + block * _stage->blockHeight + std::abs(_range);
-				DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
+				//DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
 				if (IsDetectedStage(x, y, _stage)) {
 					collisionSideRange.bottom = block * _stage->blockHeight;
 					return true;
@@ -303,7 +303,7 @@ bool CollisionDetect::calcShitingCollisionedSideVertical(toShiftDirect _to, char
 			}	
 			int x = nowStatus._x + toRight - 1;
 			int y = nowStatus._y + toBottom + block * _stage->blockHeight + std::abs(_range);
-			DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
+			//DrawCircle(x, y, 3, GetColor(255, 255, 255), true);
 			if (IsDetectedStage(x, y, _stage))
 				return true;
 			// 角を調べる
@@ -381,18 +381,18 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int x = nowStatus._x + toRight + _range + Define::blockWidth * block;
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i;
-				DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
+				//DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
 				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 			int x = nowStatus._x + toRight + std::abs(_range) - Define::blockWidth * block;
 			int y = nowStatus._y + toBottom - 1;
-			DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
+			//DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
 			if (IsDetectedStage(x, y, _stage))
 				return true;
 
 			//角を調べる
-			DrawCircle(x, edge_y, 3, GetColor(0, 255, 0), true);
+			//DrawCircle(x, edge_y, 3, GetColor(0, 255, 0), true);
 			if (IsDetectedStage(x, edge_y, _stage)) {
 				//return true;
 				isCollisionedEdge = true;
@@ -407,18 +407,18 @@ bool CollisionDetect::calcShitingCollisionedSideHorizon(toShiftDirect _to, char 
 				int x = nowStatus._x - toLeft - std::abs(_range) - Define::blockWidth * block;
 				int senceHeight = (toHead + toBottom) / rightPoints;
 				int y = nowStatus._y - toHead + senceHeight * i;
-				DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
+				//DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
 				if (IsDetectedStage(x, y, _stage))
 					return true;
 			}
 			int x = nowStatus._x - toLeft - std::abs(_range) - Define::blockWidth * block;
 			int y = nowStatus._y + toBottom - 1;
-			DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
+			//DrawCircle(x, y, 3, GetColor(0, 255, 0), true);
 			if (IsDetectedStage(x, y, _stage))
 				return true;
 
 			//角を調べる
-			DrawCircle(x, edge_y, 3, GetColor(0, 255, 0), true);
+			//DrawCircle(x, edge_y, 3, GetColor(0, 255, 0), true);
 			if (IsDetectedStage(x, edge_y, _stage)) {
 				//return true;
 				isCollisionedEdge = true;

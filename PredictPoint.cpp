@@ -35,7 +35,6 @@ int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std:
 	if (predictRange > 0) {
 		// predictRange分右にブロックがあるかどうか？
 		bool isCollisionedPredictRight = _collision->calcShitingCollisionedSideHorizon(CollisionDetect::toShiftDirect::right, predictRange, _verticalRange);
-		bool isCollisionedEdge = _collision->getIsCollisionedEdge();
 		if (isCollisionedPredictRight) {
 			// もしあったら、右のブロック左辺に合わせる。（中心座標を返すので、getRange分引く）
 			return getForwardBlockNearSideHorizon(nowPoint, predictRange, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::right);
@@ -57,6 +56,16 @@ int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std:
 	// もし、左が壁にぶつかっていて、左を調べるようだったら、座標を変えない。
 	if (_collision->getCollisionedSide().left && predictRange < 0)
 		return nowPoint.x;
+
+
+	// 当たり判定が複数あったら
+	if (_collision->getCollisionedSide().bottom && _collision->getCollisionedSide().right) {
+		return getForwardBlockNearSideHorizon(nowPoint, 1, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::right) - 1;
+	}
+	if (_collision->getCollisionedSide().bottom && _collision->getCollisionedSide().left) {
+		return getForwardBlockNearSideHorizon(nowPoint, -1, _collision, _stage) + _collision->getRange(CollisionDetect::toShiftDirect::left) + 1;
+	}
+
 	// 以上の条件に当てはまらなかったらpredictRangeに移動してもよい。
 	return nowPoint.x + predictRange;
 }
@@ -83,10 +92,7 @@ int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std
 		// predictRange分下にブロックがあるかどうか？
 		bool isCollisionedPredictBottom = _collision->calcShitingCollisionedSideVertical(CollisionDetect::toShiftDirect::bottom, predictRange, _horizonalRange);
 		bool isCollisionedEdge = _collision->getIsCollisionedEdge();
-		if (isCollisionedPredictBottom && !isCollisionedEdge
-			//||
-			//!isCollisionedPredictBottom && isCollisionedEdge
-			) {
+		if (isCollisionedPredictBottom && !isCollisionedEdge) {
 			// もしあったら、下のブロック上辺に合わせる。（中心座標を返すので、getRange分引く）
 			return getForwardBlockNearSideVertical(nowPoint, predictRange, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::bottom);
 		}
@@ -103,6 +109,7 @@ int PredictPoint::fittingPointVertical(Dimention nowPoint, int predictRange, std
 			return getForwardBlockNearSideVertical(nowPoint, predictRange, _collision, _stage) + _collision->getRange(CollisionDetect::toShiftDirect::head);
 		}
 	}
+
 
 	// 以上の条件に当てはまらなかったらpredictRangeに移動してもよい。
 	return nowPoint.y + predictRange;
