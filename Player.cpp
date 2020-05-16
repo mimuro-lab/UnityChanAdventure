@@ -32,7 +32,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	animation = animationSwitch->update(collision, animation, playerStatus);
 
 	// •ûŒü‚ðXV‚·‚éB
-	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight);
+	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight, playerStatus);
 
 }
 
@@ -41,5 +41,4 @@ void Player::draw()
 	animation->draw();
 	//collision->draw();
 
-	DrawFormatString(100, 20, GetColor(255, 255, 255), "y : %d", playerStatus._y);
 }

@@ -47,6 +47,8 @@ Status AnimationMove::update(
 	_nextStatus._x_speed = nowVelocity.x;
 	_nextStatus._y_speed = nowVelocity.y;
 
+	//DrawFormatString(100, 50, GetColor(255, 255, 255), "now vel x:%d, y:%d",nowVelocity.x, nowVelocity.y);
+
 	return _nextStatus;
 	
 }

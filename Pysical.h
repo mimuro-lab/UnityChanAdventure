@@ -9,6 +9,7 @@
 #pragma once
 #include "Define.h"
 #include "CollisionDetect.h"
+#include "Controller.h"
 
 /*!
 @class Pysical
@@ -54,6 +55,16 @@ class Pysical {
 	unsigned char initVel_jumpUp = 12;
 	unsigned char initVel_jumpMidAir = 3;
 
+	unsigned char acc_inAir = 2;
+	char limVel_inAir_jumpUp = 0;
+	unsigned char limVel_inAir_afterJump = limVel_walk;
+	char limVel_inAir = 0;
+
+	bool preJumpingDireRight = false;
+	bool nowJumpingDireRight = false;
+
+	rollAction_Basic preAction;
+
 	//! 初速度を格納する変数。
 	std::vector<Dimention> _isInitVelocity;
 
@@ -82,7 +93,7 @@ class Pysical {
 	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, rollAction_Basic nowAction, bool isDireRight);
 
 	//! 向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）
-	Dimention matchingVelAndDireHorizon(Dimention affectedVel, bool isDireRight);
+	Dimention matchingVelAndDireHorizon(Dimention affectedVel, rollAction_Basic nowAction, bool isDireRight);
 
 	//! 速度を当たり判定によりリセットする。
 	Dimention resetByCollision(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);
@@ -123,6 +134,12 @@ public:
 			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Brake)]
 			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Crouch)]
 			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Landing)]
+			
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Fall)]
+			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Fall)]
+			
 			= true;
 	};
 	~Pysical() = default;

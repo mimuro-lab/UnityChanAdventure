@@ -63,7 +63,7 @@ public:
 
 		shiftingStage.x = shiftingStage.y = 0;
 
-		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Idle, playerStatus);
+		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Fall, playerStatus);
 
 		animationMove = std::make_shared<AnimationMove>();
 

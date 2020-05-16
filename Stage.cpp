@@ -22,8 +22,6 @@ void Stage::update(Dimention shifting, Status nowStatus)
 
 	pointLeftUp_y += shifting.y;
 
-	DrawFormatString(100, 40, GetColor(255, 255, 255), "pointLeftup_y : %d", pointLeftUp_y);
-
 	nowAbsoluteX = nowStatus._x - pointLeftUp_x;
 	nowAbsoluteY = nowStatus._y - pointLeftUp_y;
 

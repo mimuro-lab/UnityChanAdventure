@@ -50,12 +50,22 @@ Dimention Pysical::affectFriction(Dimention affectedAcc, rollAction_Basic nowAct
 {
 	Dimention returnAcc = affectedAcc;
 
+	if (nowAction == rollAction_Basic::Jump_Up ||
+		nowAction == rollAction_Basic::Jump_MidAir ||
+		nowAction == rollAction_Basic::Jump_Fall ||
+		nowAction == rollAction_Basic::Fall) {
+		if (now_vel.x == 0)
+			return returnAcc;
+	}
+	
 	if (_validFrictionAction[static_cast<int>(nowAction)]) {
 		if (isDireRight)
 			returnAcc.x -= acc_friction;
 		if (!isDireRight)
 			returnAcc.x += acc_friction;
 	}
+
+
 
 	return returnAcc;
 }
@@ -70,6 +80,9 @@ Dimention Pysical::getForceFromAction(rollAction_Basic nowAction, bool isDireRig
 	Dimention returnForce;
 
 	returnForce.x = returnForce.y = 0;
+
+	bool inputtingRight = Controller::getIns()->getOnRight();
+	bool inputtingLeft = Controller::getIns()->getOnLeft();
 
 	switch (nowAction) {
 	case rollAction_Basic::Brake:
@@ -90,6 +103,26 @@ Dimention Pysical::getForceFromAction(rollAction_Basic nowAction, bool isDireRig
 		else
 			returnForce.x = -acc_run;
 		break;
+		
+	case rollAction_Basic::Jump_Up:
+		if (inputtingRight)
+			returnForce.x = acc_inAir;
+		else if(inputtingLeft)
+			returnForce.x = -acc_inAir;
+		break;
+	case rollAction_Basic::Jump_MidAir:
+		if (inputtingRight)
+			returnForce.x = acc_inAir;
+		else if (inputtingLeft)
+			returnForce.x = -acc_inAir;
+		break;
+	case rollAction_Basic::Fall:
+		if (inputtingRight)
+			returnForce.x = acc_inAir;
+		else if (inputtingLeft)
+			returnForce.x = -acc_inAir;
+		break;
+		
 	}
 
 	return returnForce;
@@ -106,6 +139,55 @@ Dimention Pysical::getLimitVelFromAction(rollAction_Basic nowAction, bool isDire
 
 	returnVelocity.x = returnVelocity.y = 128;
 
+	bool inputtingRight = Controller::getIns()->getOnRight();
+	bool inputtingLeft = Controller::getIns()->getOnLeft();
+
+	// 歩く・走るの時は常に空中の速度の上限を代入し続ける。
+	if (nowAction == rollAction_Basic::Run || nowAction == rollAction_Basic::Walk) {
+		if (isDireRight)
+			limVel_inAir_jumpUp = std::abs(now_vel.x);
+		else
+			limVel_inAir_jumpUp = -std::abs(now_vel.x);
+		if (now_vel.x == 0) {
+			if (isDireRight)
+				limVel_inAir_jumpUp = limVel_walk;
+			else
+				limVel_inAir_jumpUp = -limVel_walk;
+		}
+	}
+	if (nowAction == rollAction_Basic::Idle) {
+		if (isDireRight)
+			limVel_inAir_jumpUp = limVel_walk;
+		else
+			limVel_inAir_jumpUp = -limVel_walk;
+	}
+
+	if(preAction == rollAction_Basic::Walk || preAction == rollAction_Basic::Run)
+		limVel_inAir = limVel_inAir_jumpUp;
+
+	if (nowAction == rollAction_Basic::Jump_Up || nowAction == rollAction_Basic::Jump_MidAir ||
+		nowAction == rollAction_Basic::Jump_Fall || nowAction == rollAction_Basic::Fall) {
+		// 
+
+	}
+
+	// 空中で方向転換したかどうか。
+	if (nowAction == rollAction_Basic::Jump_Up || nowAction == rollAction_Basic::Jump_MidAir ||
+		nowAction == rollAction_Basic::Jump_Fall || nowAction == rollAction_Basic::Fall) {
+		preJumpingDireRight = isDireRight;
+
+		if (preJumpingDireRight != nowJumpingDireRight) {
+			if (inputtingRight) {
+				limVel_inAir = limVel_inAir_afterJump;
+			}
+			if (inputtingLeft) {
+				limVel_inAir = -limVel_inAir_afterJump;
+			}
+		}
+
+		nowJumpingDireRight = preJumpingDireRight;
+	}
+
 	switch (nowAction) {
 	case rollAction_Basic::Walk:
 		if(isDireRight)
@@ -119,7 +201,22 @@ Dimention Pysical::getLimitVelFromAction(rollAction_Basic nowAction, bool isDire
 		else
 			returnVelocity.x = -limVel_run;
 		break;
+		
+	case rollAction_Basic::Jump_Up:
+		returnVelocity.x = limVel_inAir;
+		break;
+	case rollAction_Basic::Jump_MidAir:
+		returnVelocity.x = limVel_inAir;
+		break;
+	case rollAction_Basic::Fall:
+		returnVelocity.x = limVel_inAir;
+		break;
+		
 	}
+
+	//DrawFormatString(100, 20, GetColor(255, 255, 255), "vel_lim x:%d, y:%d", returnVelocity.x, returnVelocity.y);
+
+	preAction = nowAction;
 
 	return returnVelocity;
 }
@@ -154,9 +251,16 @@ Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affect
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, bool isDireRight)
+Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, rollAction_Basic nowAction, bool isDireRight)
 {
 	Dimention returnVel = affectedVel;
+
+	if (nowAction == rollAction_Basic::Jump_Up ||
+		nowAction == rollAction_Basic::Jump_MidAir ||
+		nowAction == rollAction_Basic::Jump_Fall ||
+		nowAction == rollAction_Basic::Fall) {
+		return returnVel;
+	}
 
 	// 右を向いて、速度が０より小さいなら速度を０にする。
 	if (isDireRight && returnVel.x < 0) 
@@ -199,10 +303,10 @@ Dimention Pysical::update(rollAction_Basic nowAction, bool isDireRight)
 	now_vel = calcVelocityFromAccel(now_vel, now_acc, nowAction, isDireRight);
 
 	// 向いている方向と水平方向の速度方向の調和をとる。
-	now_vel = matchingVelAndDireHorizon(now_vel, isDireRight);
+	now_vel = matchingVelAndDireHorizon(now_vel, nowAction, isDireRight);
 
 	time++;
-
+	//DrawFormatString(100, 70, GetColor(255, 255, 255), "now acc x:%d, y:%d", now_acc.x, now_acc.y);
 	return now_vel;
 }
 
