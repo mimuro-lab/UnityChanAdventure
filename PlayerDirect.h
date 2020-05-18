@@ -23,5 +23,5 @@ public:
 	~PlayerDirect() = default;
 
 	//! 更新処理を行う関数。
-	bool updateDirect(Define::rollAction_Basic nowAction, bool nowDirectRight, Define::Status nowStatus);
+	bool updateDirect(Define::unityChan_Basic nowAction, bool nowDirectRight, Define::Status nowStatus);
 };

@@ -44,7 +44,7 @@ class Pysical {
 	double coef_block = 0.3;
 
 	// Actionごとの加速度の大きさと速度の限界値
-	unsigned char acc_brake = 0;
+	unsigned char acc_brake = 1;
 
 	unsigned char acc_walk = 1;
 	unsigned char limVel_walk = 3;
@@ -63,7 +63,7 @@ class Pysical {
 	bool preJumpingDireRight = false;
 	bool nowJumpingDireRight = false;
 
-	rollAction_Basic preAction;
+	unityChan_Basic preAction;
 
 	//! 初速度を格納する変数。
 	std::vector<Dimention> _isInitVelocity;
@@ -75,32 +75,32 @@ class Pysical {
 	std::vector<bool> _validFrictionAction;
 
 	//! 対象の速度に対し、初速度をさらに与える関数。
-	Dimention affectInitVelocity(Dimention affectedVel, rollAction_Basic nowAction, unsigned short nowTime);
+	Dimention affectInitVelocity(Dimention affectedVel, unityChan_Basic nowAction, unsigned short nowTime);
 
 	//! affectGravity（対象の加速度）に対し、重力を加える。
-	Dimention affectGravity(Dimention affectedAcc, rollAction_Basic nowAction);
+	Dimention affectGravity(Dimention affectedAcc, unityChan_Basic nowAction);
 
 	//! affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。
-	Dimention affectFriction(Dimention affectedAcc, rollAction_Basic nowAction, bool isDireRight);
+	Dimention affectFriction(Dimention affectedAcc, unityChan_Basic nowAction, bool isDireRight);
 
 	//! アクション状態とその方向から加速度を得る。
-	Dimention getForceFromAction(rollAction_Basic nowAction, bool isDireRight);
+	Dimention getForceFromAction(unityChan_Basic nowAction, bool isDireRight);
 
 	//! アクション状態とその方向から速度の限界値を得る。
-	Dimention getLimitVelFromAction(rollAction_Basic nowAction, bool isDireRight);
+	Dimention getLimitVelFromAction(unityChan_Basic nowAction, bool isDireRight);
 	
 	//! 加速度から速度を計算する。
-	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, rollAction_Basic nowAction, bool isDireRight);
+	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, unityChan_Basic nowAction, bool isDireRight);
 
 	//! 向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）
-	Dimention matchingVelAndDireHorizon(Dimention affectedVel, rollAction_Basic nowAction, bool isDireRight);
+	Dimention matchingVelAndDireHorizon(Dimention affectedVel, unityChan_Basic nowAction, bool isDireRight);
 
 	//! 速度を当たり判定によりリセットする。
 	Dimention resetByCollision(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);
 		
-	rollAction_Basic preIsAction = rollAction_Basic::Idle;
+	unityChan_Basic preIsAction = unityChan_Basic::Idle;
 	//! Actionが切り替わった瞬間を取得する関数
-	bool isSwitching(Define::rollAction_Basic nowAction) {
+	bool isSwitching(Define::unityChan_Basic nowAction) {
 		bool ret = false;
 		if (nowAction != preIsAction)	ret = true;
 		else							ret = false;
@@ -117,28 +117,40 @@ public:
 
 		Dimention initVel;
 		initVel.x = initVel.y = 0;
-		_isInitVelocity = std::vector<Dimention>(static_cast<int>(Define::rollAction_Basic::_end), initVel);
-		_isInitVelocity[static_cast<int>(Define::rollAction_Basic::Jump_Up)].y = - initVel_jumpUp;
-		_isInitVelocity[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)].y = -initVel_jumpMidAir;
+		_isInitVelocity = std::vector<Dimention>(static_cast<int>(Define::unityChan_Basic::_end), initVel);
+		_isInitVelocity[static_cast<int>(Define::unityChan_Basic::Jump_Up)].y = - initVel_jumpUp;
+		_isInitVelocity[static_cast<int>(Define::unityChan_Basic::Jump_MidAir)].y = -initVel_jumpMidAir;
 
-		_validGravityAction = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
-		_validGravityAction[static_cast<int>(Define::rollAction_Basic::Fall)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Brake)]
-			= _validGravityAction[static_cast<int>(Define::rollAction_Basic::Crouch)]
+		_validGravityAction = std::vector<bool>(static_cast<int>(Define::unityChan_Basic::_end), false);
+		_validGravityAction[static_cast<int>(Define::unityChan_Basic::Fall)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Jump_Up)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Jump_MidAir)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Brake)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Crouch)]
+
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Hundgun_init)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Hundgun_horizonal)]
+
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Soard1_init)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Soard1_end)]
 			= true;
 
-		_validFrictionAction = std::vector<bool>(static_cast<int>(Define::rollAction_Basic::_end), false);
-		_validFrictionAction[static_cast<int>(Define::rollAction_Basic::Idle)]
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Brake)]
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Crouch)]
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Landing)]
+		_validFrictionAction = std::vector<bool>(static_cast<int>(Define::unityChan_Basic::_end), false);
+		_validFrictionAction[static_cast<int>(Define::unityChan_Basic::Idle)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Brake)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Crouch)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Jump_Landing)]
 			
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Up)]
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_MidAir)]
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Jump_Fall)]
-			= _validFrictionAction[static_cast<int>(Define::rollAction_Basic::Fall)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Jump_Up)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Jump_MidAir)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Jump_Fall)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Fall)]
+
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Hundgun_init)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Hundgun_horizonal)]
+
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Soard1_init)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Soard1_end)]
 			
 			= true;
 	};
@@ -146,7 +158,7 @@ public:
 
 
 	//! アクション状態とその方向により速度と加速度を更新し、速度を返す。
-	Dimention update(rollAction_Basic nowAction, bool isDireRight);
+	Dimention update(unityChan_Basic nowAction, bool isDireRight);
 
 	//! 座標をセットした後、適切に速度をリセットする。
 	Dimention resetVelocity(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);

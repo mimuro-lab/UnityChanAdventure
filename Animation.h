@@ -32,6 +32,10 @@ class Animation
 	char DrawingSteps;
 	//! DrawingStepsを数えるためのカウンター。
 	char DrawingSteps_counter = 0;
+	//! アニメーションを描画するとき、水平方向にずらす座標量。
+	char DrawingShiftX = 0;
+	//! アニメーションを描画するとき、垂直方向にずらす座標量。
+	char DrawingShiftY = 0;
 	//! アニメーションが終わったかどうか。
 	bool IsEnd = false;
 	//! アニメーション終了時に画像を表示し続けるか？
@@ -45,10 +49,13 @@ public:
 	@date 2020/04/21/9:51
 	@author mimuro
 	*/
-	Animation(std::vector<int> _imageHandles, Define::Status _status , char _DrawingSteps = 6, char IndexEnd = 99, bool _IsEndDrawing = true) :
+	Animation(std::vector<int> _imageHandles, Define::Status _status , char _DrwaingShiftX = 0, char _DrawingShiftY = 0
+		, char _DrawingSteps = 6, char IndexEnd = 99, bool _IsEndDrawing = true) :
 		imageHandles(_imageHandles)
 		, NowDrawingImageHandle(_imageHandles[0])
 		, status(_status)
+		, DrawingShiftX(_DrwaingShiftX)
+		, DrawingShiftY(_DrawingShiftY)
 		, DrawingIndexEnd(IndexEnd)
 		, DrawingSteps(_DrawingSteps)
 		, IsEndDrawing(_IsEndDrawing)

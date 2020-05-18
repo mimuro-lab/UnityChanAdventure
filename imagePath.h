@@ -143,4 +143,68 @@ public:
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Walk_13.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Walk_14.png"),
 	};
+
+	const vector<int> unityChan_Hundgun_init = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_1.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_2.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_3.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_4.png"),
+	};
+
+	const vector<int> unityChan_Hundgun_end = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_4.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_3.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_2.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun1_1.png"),
+	};
+
+	const vector<int> unityChan_Hundgun_horizonal = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_5.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_6.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_7.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_8.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_9.png"),
+	};
+
+	const vector<int> unityChan_Soard1_init = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_1.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_2.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_3.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_4.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_5.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_6.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_7.png"),
+	};
+
+	const vector<int> unityChan_Soard2_init = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_8.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_9.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_10.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_11.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_12.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_13.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_14.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_15.png"),
+	};
+
+	const vector<int> unityChan_Soard3_init = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_16.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_17.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_18.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_19.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_20.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_21.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_22.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_23.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_24.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_25.png"),
+	};
+
+	const vector<int> unityChan_Soard1_end = {
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_4.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_3.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_2.png"),
+		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_1.png"),
+	};
+
 };

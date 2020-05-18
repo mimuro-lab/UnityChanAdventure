@@ -54,7 +54,7 @@ public:
 	~AnimationMove() = default;
 	
 	//! 更新を行う関数。
-	Status update(Status nowStatus, rollAction_Basic _isAction, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, shared_ptr<Animation> _animation);
+	Status update(Status nowStatus, unityChan_Basic _isAction, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, shared_ptr<Animation> _animation);
 
 	//! shiftingStageの更新を行う関数。
 	Dimention getShiftingStage(shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage);

@@ -13,15 +13,15 @@
 @date 2020/05/04/17:47
 @author mimuro
 */
-bool PlayerDirect::updateDirect(Define::rollAction_Basic nowAction, bool nowDirectRight, Define::Status nowStatus)
+bool PlayerDirect::updateDirect(Define::unityChan_Basic nowAction, bool nowDirectRight, Define::Status nowStatus)
 {
 	// 今のアクション状態がwalkだったらコントローラの入力状態で向きを変える。
-	if (nowAction == Define::rollAction_Basic::Walk ||
-		nowAction == Define::rollAction_Basic::Run /*||
-		nowAction == Define::rollAction_Basic::Jump_Up ||
-		nowAction == Define::rollAction_Basic::Jump_MidAir ||
-		nowAction == Define::rollAction_Basic::Jump_Fall ||
-		nowAction == Define::rollAction_Basic::Fall*/
+	if (nowAction == Define::unityChan_Basic::Walk ||
+		nowAction == Define::unityChan_Basic::Run /*||
+		nowAction == Define::unityChan_Basic::Jump_Up ||
+		nowAction == Define::unityChan_Basic::Jump_MidAir ||
+		nowAction == Define::unityChan_Basic::Jump_Fall ||
+		nowAction == Define::unityChan_Basic::Fall*/
 		) {
 		if (Controller::getIns()->getOnRight())
 			return true;
@@ -29,10 +29,10 @@ bool PlayerDirect::updateDirect(Define::rollAction_Basic nowAction, bool nowDire
 			return false;
 	}
 
-	if (nowAction == Define::rollAction_Basic::Jump_Up ||
-		nowAction == Define::rollAction_Basic::Jump_MidAir ||
-		nowAction == Define::rollAction_Basic::Jump_Fall ||
-		nowAction == Define::rollAction_Basic::Fall) {
+	if (nowAction == Define::unityChan_Basic::Jump_Up ||
+		nowAction == Define::unityChan_Basic::Jump_MidAir ||
+		nowAction == Define::unityChan_Basic::Jump_Fall ||
+		nowAction == Define::unityChan_Basic::Fall) {
 		if (nowStatus._x_speed > 0)
 			return true;
 		else if (nowStatus._x_speed < 0)

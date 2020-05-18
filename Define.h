@@ -66,8 +66,11 @@ namespace Define{
 	};
 
 	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。
-	enum class rollAction_Basic {
-		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk, _end
+	enum class unityChan_Basic {
+		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk
+		, Hundgun_init, Hundgun_end, Hundgun_horizonal
+		, Soard1_init, Soard1_end, Soard2_init, Soard3_init
+		, _end
 	};
 
 	//! 座標を取り扱う時の次元の定義
