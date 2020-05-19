@@ -230,7 +230,7 @@ unityChan_Basic AnimationSwitch::getNextAction(
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
 			soardCombContinue = false;
-			return unityChan_Basic::Soard1_init;
+			return unityChan_Basic::Soard2_init;
 		}
 
 		// コンボを続けないなら終了描画
@@ -252,7 +252,7 @@ unityChan_Basic AnimationSwitch::getNextAction(
 	if (collision->getCollisionedSide().bottom && nowAction != unityChan_Basic::Jump_Up) {
 
 		// 剣攻撃１はじめ
-		if (Controller::getIns()->getOn_X())
+		if (Controller::getIns()->getPush_X())
 			return unityChan_Basic::Soard1_init;
 
 		// ハンドガン撃ち始め
@@ -349,7 +349,7 @@ shared_ptr<Animation> AnimationSwitch::switchingAnimation(unityChan_Basic next, 
 		break;
 	case unityChan_Basic::Hundgun_init:
 		nowAction = unityChan_Basic::Hundgun_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 3);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 4);
 		break;
 	case unityChan_Basic::Hundgun_end:
 		nowAction = unityChan_Basic::Hundgun_end;
@@ -357,23 +357,23 @@ shared_ptr<Animation> AnimationSwitch::switchingAnimation(unityChan_Basic next, 
 		break;
 	case unityChan_Basic::Hundgun_horizonal:
 		nowAction = unityChan_Basic::Hundgun_horizonal;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_horizonal, nowStatus, 0, -3, 3);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_horizonal, nowStatus, 0, -3, 4);
 		break;
 	case unityChan_Basic::Soard1_init:
 		nowAction = unityChan_Basic::Soard1_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_init, nowStatus, 0, -59, 3);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_init, nowStatus, 0, -59, 5);
 		break;
 	case unityChan_Basic::Soard1_end:
 		nowAction = unityChan_Basic::Soard1_end;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_end, nowStatus, 0, -59, 5);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_end, nowStatus, 0, -59, 3);
 		break;
 	case unityChan_Basic::Soard2_init:
 		nowAction = unityChan_Basic::Soard2_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard2_init, nowStatus, 0, -59, 3);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard2_init, nowStatus, 0, -59, 4);
 		break;
 	case unityChan_Basic::Soard3_init:
 		nowAction = unityChan_Basic::Soard3_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard3_init, nowStatus, 0, -59, 3);
+		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard3_init, nowStatus, 0, -59, 4);
 		break;
 	}
 

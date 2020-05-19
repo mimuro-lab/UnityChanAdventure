@@ -42,3 +42,15 @@ void Player::draw()
 	//collision->draw();
 
 }
+
+vector<shared_ptr<DamageObj>> Player::generateDamageObj(vector<shared_ptr<DamageObj>> _nowDmg)
+{
+	vector<shared_ptr<DamageObj>> returnDmg = _nowDmg;
+
+	if (Controller::getIns()->getPushUp()) {
+		shared_ptr<DamageObj> pushObj = make_shared<DamageObj>(playerStatus._x, playerStatus._y, 10);
+		returnDmg.push_back(pushObj);
+	}
+
+	return returnDmg;
+}

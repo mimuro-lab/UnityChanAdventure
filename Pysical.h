@@ -132,6 +132,8 @@ public:
 			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Hundgun_horizonal)]
 
 			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Soard1_init)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Soard2_init)]
+			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Soard3_init)]
 			= _validGravityAction[static_cast<int>(Define::unityChan_Basic::Soard1_end)]
 			= true;
 
@@ -150,6 +152,8 @@ public:
 			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Hundgun_horizonal)]
 
 			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Soard1_init)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Soard2_init)]
+			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Soard3_init)]
 			= _validFrictionAction[static_cast<int>(Define::unityChan_Basic::Soard1_end)]
 			
 			= true;

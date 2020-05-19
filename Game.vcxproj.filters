@@ -39,6 +39,9 @@
     <Filter Include="ソース ファイル\GameScene\Stage">
       <UniqueIdentifier>{8255607b-3624-4b44-8674-70297ab265bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameScene\DamageObj">
+      <UniqueIdentifier>{e611a5db-2dc1-4f1f-a0a2-4576f43d93f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="StageLoad.cpp">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageObj.cpp">
+      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +213,9 @@
     </ClInclude>
     <ClInclude Include="StageLoad.h">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageObj.h">
+      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

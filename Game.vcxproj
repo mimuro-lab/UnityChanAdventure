@@ -90,6 +90,7 @@
     <ClCompile Include="CollisionDetect.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="DamageObj.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="Fps.cpp" />
     <ClCompile Include="Gamepad.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="DamageObj.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Fps.h" />
     <ClInclude Include="Gamepad.h" />

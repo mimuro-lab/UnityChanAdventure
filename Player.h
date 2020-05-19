@@ -17,7 +17,9 @@
 #include "CollisionDetect.h"
 #include "PlayerDirect.h"
 #include "Stage.h"
+#include "DamageObj.h"
 #include <memory>
+#include <vector>
 
 /*!
 @class Player
@@ -86,5 +88,7 @@ public:
 	const Define::Status getStatus() { return playerStatus; }
 
 	const Dimention getShiftingState() { return shiftingStage; }
+
+	vector<shared_ptr<DamageObj>> generateDamageObj(vector<shared_ptr<DamageObj>> _nowDmg);
 
 };

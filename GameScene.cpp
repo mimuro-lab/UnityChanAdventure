@@ -32,6 +32,15 @@ void GameScene::update()
 
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);
+
+	// playerによるダメージ要素の生成
+	damageObjs = player->generateDamageObj(damageObjs);
+
+	// ダメージ要素の更新。
+	for (int i = 0; i < damageObjs.size(); i++) {
+		damageObjs[i]->update(player->getShiftingState().x, player->getShiftingState().y);
+	}
+
 }
 
 void GameScene::draw()
@@ -41,6 +50,10 @@ void GameScene::draw()
 	player->draw();
 
 	stage->draw();
+
+	for (int i = 0; i < damageObjs.size(); i++) {
+		damageObjs[i]->draw();
+	}
 
 	SelectWindow::drawSelectWindow();
 }

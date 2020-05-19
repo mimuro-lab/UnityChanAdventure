@@ -161,8 +161,8 @@ public:
 	const vector<int> unityChan_Hundgun_horizonal = {
 		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_5.png"),
 		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_6.png"),
-		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_7.png"),
-		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_8.png"),
+		//LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_7.png"),
+		//LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_8.png"),
 		LoadGraph("images/Unitychan/Attack/Unitychan_Hundgun2_9.png"),
 	};
 
@@ -174,6 +174,7 @@ public:
 		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_5.png"),
 		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_6.png"),
 		LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_7.png"),
+		//LoadGraph("images/Unitychan/Attack/Unitychan_Soard_Combo_7.png"),
 	};
 
 	const vector<int> unityChan_Soard2_init = {

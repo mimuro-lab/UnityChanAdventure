@@ -9,12 +9,16 @@
 #pragma once
 #include <DxLib.h>
 #include <memory>
+#include <vector>
 #include "AbstractScene.h"
 #include "Controller.h"
 #include "SelectWindow.h"
 #include "imagePath.h"
 #include "Player.h"
 #include "Stage.h"
+#include "DamageObj.h"
+
+using namespace std;
 
 /*!
 @class GameScene
@@ -27,18 +31,21 @@ class GameScene :
 	private SelectWindow
 {
 	//! 背景のStageの処理を行うオブジェクト
-	std::shared_ptr<Stage> stage;
+	shared_ptr<Stage> stage;
 
 	//! Playerの処理をになうオブジェクト
-	std::shared_ptr<Player> player;
+	shared_ptr<Player> player;
+
+	//! 画面上のダメージ要素
+	vector<shared_ptr<DamageObj>> damageObjs;
 
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
 	GameScene(shared_ptr<ISceneChanger> _changer) : 
 		AbstractScene(_changer), 
 		SelectWindow(_changer), 
-		stage(std::make_shared<Stage>(Define::blockWidth, Define::blockHeight)), 
-		player(std::make_shared<Player>(stage)) 
+		stage(make_shared<Stage>(Define::blockWidth, Define::blockHeight)), 
+		player(make_shared<Player>(stage)) 
 	{};
 	~GameScene() = default;
 
