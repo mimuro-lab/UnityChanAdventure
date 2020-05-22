@@ -17,10 +17,11 @@
 shared_ptr<Animation> AnimationSwitch::update(
 	shared_ptr<CollisionDetect> collision, 
 	shared_ptr<Animation> animation, 
-	Status playerStatus)
+	Status playerStatus,
+	VirtualController controller)
 {
 
-	soardCombContinue = getSoardComb(nowAction, animation, soardCombContinue);
+	soardCombContinue = getSoardComb(nowAction, animation, soardCombContinue, controller);
 
 	//DrawFormatString(100, 100, GetColor(255, 255, 255), "comb : %d", soardCombContinue);
 	
@@ -28,7 +29,7 @@ shared_ptr<Animation> AnimationSwitch::update(
 	if (acceptSwitching(animation, nowAction)) 
 	{
 		// _nextへ次のシーンを取得する。
-		nextAction = getNextAction(collision, animation, playerStatus, nowAction);
+		nextAction = getNextAction(collision, animation, playerStatus, nowAction, controller);
 		if(acceptNextAction(nowAction, nextAction, playerStatus)) {
 			// アニメーションオブジェクトを更新し、終了。
 			nowAction = nextAction;
@@ -112,9 +113,9 @@ bool AnimationSwitch::isRefresh(unityChan_Basic nowAction, shared_ptr<Animation>
 	return true;
 }
 
-bool AnimationSwitch::getSoardComb(unityChan_Basic nowAction, shared_ptr<Animation> animation, bool nowCombContinue)
+bool AnimationSwitch::getSoardComb(unityChan_Basic nowAction, shared_ptr<Animation> animation, bool nowCombContinue, VirtualController controller)
 {
-	if (Controller::getIns()->getPush_X()) {
+	if (controller.push_X) {
 		if (nowAction == unityChan_Basic::Soard1_init)
 			return true;
 		if (nowAction == unityChan_Basic::Soard2_init)
@@ -136,7 +137,8 @@ unityChan_Basic AnimationSwitch::getNextAction(
 	shared_ptr<CollisionDetect> collision, 
 	shared_ptr<Animation> animation, 
 	Status playerStatus,
-	unityChan_Basic nowAction)
+	unityChan_Basic nowAction
+	, VirtualController controller)
 {
 
 	// Brakeが終わったら強制的にアイドリング状態に変更する
@@ -176,22 +178,22 @@ unityChan_Basic AnimationSwitch::getNextAction(
 	}
 
 	// Crouchする条件は、足元が地面についている事
-	if (Controller::getIns()->getOnDown() && collision->getCollisionedSide().bottom) {
+	if (controller.on_down && collision->getCollisionedSide().bottom) {
 		return unityChan_Basic::Crouch;
 	}
 
 	// Brake
 	if (nowAction == unityChan_Basic::Run) {
 		// R
-		if (playerStatus.directRight && !Controller::getIns()->getOnRight())
+		if (playerStatus.directRight && !controller.on_right)
 			return unityChan_Basic::Brake;
 		// L
-		if (!playerStatus.directRight && !Controller::getIns()->getOnLeft())
+		if (!playerStatus.directRight && !controller.on_left)
 			return unityChan_Basic::Brake;
 	}
 
 	// Jumpする条件は、足元が地面についている事
-	if (Controller::getIns()->getPush_A() && collision->getCollisionedSide().bottom) {
+	if (controller.push_A && collision->getCollisionedSide().bottom) {
 		return unityChan_Basic::Jump_Up;
 	}
 
@@ -239,7 +241,7 @@ unityChan_Basic AnimationSwitch::getNextAction(
 
 	// ハンドガンの撃ち続ける処理
 	if (nowAction == unityChan_Basic::Hundgun_init || nowAction==unityChan_Basic::Hundgun_horizonal
-		&& Controller::getIns()->getOn_Y()) {
+		&& controller.on_Y) {
 		return unityChan_Basic::Hundgun_horizonal;
 	}
 
@@ -252,33 +254,33 @@ unityChan_Basic AnimationSwitch::getNextAction(
 	if (collision->getCollisionedSide().bottom && nowAction != unityChan_Basic::Jump_Up) {
 
 		// 剣攻撃１はじめ
-		if (Controller::getIns()->getPush_X())
+		if (controller.push_X)
 			return unityChan_Basic::Soard1_init;
 
 		// ハンドガン撃ち始め
-		if (Controller::getIns()->getOn_Y())
+		if (controller.on_Y)
 			return unityChan_Basic::Hundgun_init;
 
 		// Run R
-		if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnRight()) {
+		if (controller.on_B && controller.on_right) {
 			playerStatus.directRight = true;
 			return unityChan_Basic::Run;
 		}
 
 		// Run L
-		if (Controller::getIns()->getOn_B() && Controller::getIns()->getOnLeft()) {
+		if (controller.on_B && controller.on_left) {
 			playerStatus.directRight = false;
 			return unityChan_Basic::Run;
 		}
 
 		// Walk R
-		if (Controller::getIns()->getOnRight()) {
+		if (controller.on_right) {
 			playerStatus.directRight = true;
 			return unityChan_Basic::Walk;
 		}
 
 		// Walk L
-		if (Controller::getIns()->getOnLeft()) {
+		if (controller.on_left) {
 			playerStatus.directRight = false;
 			return unityChan_Basic::Walk;
 		}

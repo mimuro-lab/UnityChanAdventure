@@ -12,6 +12,7 @@
 #include "Animation.h"
 #include "Define.h"
 #include "imagePath.h"
+#include "VirtualController.h"
 #include <memory>
 
 /*!
@@ -54,7 +55,8 @@ class AnimationSwitch
 		shared_ptr<CollisionDetect> _collision, 
 		shared_ptr<Animation> _animation, 
 		Status playerStatus,
-		unityChan_Basic nowAction);
+		unityChan_Basic nowAction
+		, VirtualController controller);
 	
 	//! getNextActionにより得た次のアクション状態を適応されてよいかどうかを返す関数。
 	bool acceptNextAction(unityChan_Basic nowAction, unityChan_Basic nextAction, Status _playerStatus);
@@ -66,7 +68,7 @@ class AnimationSwitch
 	shared_ptr<Animation> switchingAnimation(unityChan_Basic next, Status _playerStatus);
 
 	//! 剣攻撃のコンボ数処理
-	bool getSoardComb(unityChan_Basic nowAction, shared_ptr<Animation> __animation, bool nowCombContinue);
+	bool getSoardComb(unityChan_Basic nowAction, shared_ptr<Animation> __animation, bool nowCombContinue, VirtualController controller);
 
 public:
 	AnimationSwitch()
@@ -92,7 +94,8 @@ public:
 	shared_ptr<Animation> update(
 		shared_ptr<CollisionDetect> collision,
 		shared_ptr<Animation> animation,
-		Status playerStatus);
+		Status playerStatus,
+		VirtualController controller);
 
 	//! 現在どのアクション状態かを取得する関数。
 	unityChan_Basic getNowAction() { return nowAction; }

@@ -27,17 +27,17 @@ void GameScene::update()
 	if(IsSelectWindow_Closed())
 		Controller::getIns()->update();
 	
-	// ステージ処理
-	stage->update(player->getShiftingState(), player->getStatus());
-
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);
+
+	// ステージ処理
+	stage->update(player->getShiftingState(), player->getStatus());
 
 	// playerによるダメージ要素の生成
 	damageObjs = player->generateDamageObj(damageObjs);
 
 	// ダメージ要素の更新。
-	for (int i = 0; i < damageObjs.size(); i++) {
+	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		damageObjs[i]->update(player->getShiftingState().x, player->getShiftingState().y);
 	}
 
@@ -51,7 +51,7 @@ void GameScene::draw()
 
 	stage->draw();
 
-	for (int i = 0; i < damageObjs.size(); i++) {
+	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		damageObjs[i]->draw();
 	}
 

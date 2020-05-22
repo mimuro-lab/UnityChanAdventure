@@ -11,11 +11,12 @@
 #include "Define.h"
 #include "imagePath.h"
 #include "Controller.h"
+#include "VirtualController.h"
 #include "Animation.h"
 #include "AnimationMove.h"
 #include "AnimationSwitch.h"
 #include "CollisionDetect.h"
-#include "PlayerDirect.h"
+#include "CharacterDirect.h"
 #include "Stage.h"
 #include "DamageObj.h"
 #include <memory>
@@ -29,6 +30,9 @@
 */
 class Player
 {
+
+	//! コントローラ
+	VirtualController controller;
 
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
 	Define::Status playerStatus;
@@ -49,7 +53,9 @@ class Player
 	std::shared_ptr<AnimationSwitch> animationSwitch;
 
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
-	std::shared_ptr<PlayerDirect> playerDirect;
+	std::shared_ptr<CharacterDirect> playerDirect;
+
+	VirtualController updateController();
 
 public:
 
@@ -73,7 +79,7 @@ public:
 
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
-		playerDirect = std::make_shared<PlayerDirect>();
+		playerDirect = std::make_shared<CharacterDirect>();
 
 	};
 

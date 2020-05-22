@@ -1,19 +1,19 @@
 
 /*!
-@file PlayerDirect.cpp
-@brief PlayerDirectクラス内のメンバ類の定義を行うCPPファイル。
+@file CharacterDirect.cpp
+@brief CharacterDirectクラス内のメンバ類の定義を行うCPPファイル。
 @date 2020/05/04/17:47
 @author mimuro
 */
 
-#include "PlayerDirect.h"
+#include "CharacterDirect.h"
 
 /*!
 @brief アクション状態がrunかwalkの時のみ方向の変換を受け付けるようにする。
 @date 2020/05/04/17:47
 @author mimuro
 */
-bool PlayerDirect::updateDirect(Define::unityChan_Basic nowAction, bool nowDirectRight, Define::Status nowStatus)
+bool CharacterDirect::updateDirect(Define::unityChan_Basic nowAction, bool nowDirectRight, Define::Status nowStatus, VirtualController controller)
 {
 	// 今のアクション状態がwalkだったらコントローラの入力状態で向きを変える。
 	if (nowAction == Define::unityChan_Basic::Walk ||
@@ -23,9 +23,9 @@ bool PlayerDirect::updateDirect(Define::unityChan_Basic nowAction, bool nowDirec
 		nowAction == Define::unityChan_Basic::Jump_Fall ||
 		nowAction == Define::unityChan_Basic::Fall*/
 		) {
-		if (Controller::getIns()->getOnRight())
+		if (controller.on_right)
 			return true;
-		if (Controller::getIns()->getOnLeft())
+		if (controller.on_left)
 			return false;
 	}
 
@@ -38,9 +38,9 @@ bool PlayerDirect::updateDirect(Define::unityChan_Basic nowAction, bool nowDirec
 		else if (nowStatus._x_speed < 0)
 			return false;
 		// x速度が0の時、コントローラの入力で判断する。
-		if (Controller::getIns()->getOnRight())
+		if (controller.on_right)
 			return true;
-		if (Controller::getIns()->getOnLeft())
+		if (controller.on_left)
 			return false;
 	}
 

@@ -34,6 +34,7 @@ public:
 	bool isRestrictVertice();
 	bool isRestrictHorizon();
 
-	int getShiftingVelVertical(Dimention nowVelocity, Dimention nowPoint, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, PredictPoint _predict);
+	int getShiftingVelVertical(Dimention nowVelocity, 
+		Dimention nowPoint, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, PredictPoint _predict);
 
 };

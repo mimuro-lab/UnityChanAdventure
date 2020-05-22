@@ -35,7 +35,7 @@ class Pysical {
 	unsigned char addAccCounter = 0;
 
 	//! d—Í‚Ì’l
-	unsigned char acc_gravity = 1;
+	unsigned char acc_gravity = Accel_gravity;
 
 	//! –€C—Í‚Ì’l
 	unsigned char acc_friction = 1;
@@ -99,6 +99,7 @@ class Pysical {
 	Dimention resetByCollision(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);
 		
 	unityChan_Basic preIsAction = unityChan_Basic::Idle;
+
 	//! Action‚ªØ‚è‘Ö‚í‚Á‚½uŠÔ‚ğæ“¾‚·‚éŠÖ”
 	bool isSwitching(Define::unityChan_Basic nowAction) {
 		bool ret = false;

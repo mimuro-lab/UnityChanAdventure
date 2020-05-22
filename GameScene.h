@@ -36,6 +36,7 @@ class GameScene :
 	//! Playerの処理をになうオブジェクト
 	shared_ptr<Player> player;
 
+
 	//! 画面上のダメージ要素
 	vector<shared_ptr<DamageObj>> damageObjs;
 

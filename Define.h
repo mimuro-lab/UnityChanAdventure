@@ -79,4 +79,6 @@ namespace Define{
 		int y = 0;
 	};
 
+	static unsigned char Accel_gravity = 1;
+
 };
