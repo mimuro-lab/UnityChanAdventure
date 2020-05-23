@@ -86,13 +86,14 @@
   <ItemGroup>
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="AnimationMove.cpp" />
+    <ClCompile Include="AnimationMovePlayer.cpp" />
     <ClCompile Include="AnimationSwitch.cpp" />
     <ClCompile Include="CollisionDetect.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DamageObj.cpp" />
     <ClCompile Include="DamagePysical.cpp" />
-    <ClCompile Include="Define.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Fps.cpp" />
     <ClCompile Include="Gamepad.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -117,6 +118,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="AnimationMove.h" />
+    <ClInclude Include="AnimationMovePlayer.h" />
     <ClInclude Include="AnimationSwitch.h" />
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="ConfigScene.h" />
@@ -124,6 +126,7 @@
     <ClInclude Include="DamageObj.h" />
     <ClInclude Include="DamagePysical.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Fps.h" />
     <ClInclude Include="Gamepad.h" />
     <ClInclude Include="GameScene.h" />

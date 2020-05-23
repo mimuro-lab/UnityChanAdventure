@@ -23,5 +23,5 @@ public:
 	~CharacterDirect() = default;
 
 	//! 更新処理を行う関数。
-	bool updateDirect(Define::unityChan_Basic nowAction, bool nowDirectRight, Define::Status nowStatus, VirtualController _controller);
+	bool updateDirect(Define::characterAction nowAction, bool nowDirectRight, Define::Status nowStatus, VirtualController _controller);
 };

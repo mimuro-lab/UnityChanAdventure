@@ -70,8 +70,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 void Player::draw()
 {
 	animation->draw();
-	collision->draw();
-
+	//collision->draw();
 }
 
 vector<shared_ptr<DamageObj>> Player::generateDamageObj(vector<shared_ptr<DamageObj>> _nowDmg)

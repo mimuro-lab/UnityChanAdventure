@@ -1,7 +1,7 @@
 
 /*!
-@file imagePath.h
-@brief imagePathクラスが定義されているヘッダファイル
+@file Unitychan_imagePath.h
+@brief Unitychan_imagePathクラスが定義されているヘッダファイル
 @date 2020/04/18/23:09
 @author mimuro
 */
@@ -12,19 +12,19 @@
 
 using namespace std;
 /*!
-@class imagePath
+@class Unitychan_imagePath
 @brief 使用する画像のパスをまとめて管理するクラス。Singletonクラスになっている。
 @date 2020/04/16/20:00
 @author mimuro
 */
-class imagePath : 
-	public Singleton<imagePath>
+class Unitychan_imagePath : 
+	public Singleton<Unitychan_imagePath>
 {
-	imagePath() = default;
-	friend Singleton< imagePath >;
+	Unitychan_imagePath() = default;
+	friend Singleton< Unitychan_imagePath >;
 public:
 
-	//! characterActionActionの画像へのパスをまとめた変数。
+	//! characterAction_BasicActionの画像へのパスをまとめた変数。
 	const vector<int> unityChan_Brake = {
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_1.png"),
 		LoadGraph("images/Unitychan/BasicActions/Unitychan_Brake_2.png"),

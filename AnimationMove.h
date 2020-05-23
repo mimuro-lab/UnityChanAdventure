@@ -14,7 +14,6 @@
 #include "Animation.h"
 #include "Pysical.h"
 #include "PredictPoint.h"
-#include "RestrictPoint.h"
 
 /*!
 @class AnimationMove
@@ -28,14 +27,14 @@ using namespace std;
 
 class AnimationMove
 {
+
+protected:
+
 	//! 物理計算を行うオブジェクト。
 	Pysical pysical;
 
 	//! 計算された座標が適切であるか予測するオブジェクト。
 	PredictPoint predictPoint;
-
-	//! 画面上の動きを制限する。
-	RestrictPoint restrictPoint;
 
 	//! 現在の速度を格納する変数。
 	Dimention nowVelocity;
@@ -54,9 +53,13 @@ public:
 	~AnimationMove() = default;
 	
 	//! 更新を行う関数。
-	Status update(Status nowStatus, unityChan_Basic _isAction, shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage, shared_ptr<Animation> _animation);
+	virtual Status update(
+		Status nowStatus, 
+		characterAction _isAction, 
+		shared_ptr<CollisionDetect> _collision, 
+		shared_ptr<Stage> _stage, 
+		shared_ptr<Animation> _animation);
 
-	//! shiftingStageの更新を行う関数。
-	Dimention getShiftingStage(shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage);
+
 };
 

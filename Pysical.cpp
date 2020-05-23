@@ -13,7 +13,7 @@
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::affectInitVelocity(Dimention affectedVel, unityChan_Basic nowAction, unsigned short nowTime)
+Dimention Pysical::affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime)
 {
 	Dimention returnVel = affectedVel;
 
@@ -30,7 +30,7 @@ Dimention Pysical::affectInitVelocity(Dimention affectedVel, unityChan_Basic now
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::affectGravity(Dimention affectedAcc, unityChan_Basic nowAction)
+Dimention Pysical::affectGravity(Dimention affectedAcc, characterAction nowAction)
 {
 	Dimention returnAcc = affectedAcc;
 
@@ -46,14 +46,14 @@ Dimention Pysical::affectGravity(Dimention affectedAcc, unityChan_Basic nowActio
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::affectFriction(Dimention affectedAcc, unityChan_Basic nowAction, bool isDireRight)
+Dimention Pysical::affectFriction(Dimention affectedAcc, characterAction nowAction, bool isDireRight)
 {
 	Dimention returnAcc = affectedAcc;
 
-	if (nowAction == unityChan_Basic::Jump_Up ||
-		nowAction == unityChan_Basic::Jump_MidAir ||
-		nowAction == unityChan_Basic::Jump_Fall ||
-		nowAction == unityChan_Basic::Fall) {
+	if (nowAction == characterAction::Jump_Up ||
+		nowAction == characterAction::Jump_MidAir ||
+		nowAction == characterAction::Jump_Fall ||
+		nowAction == characterAction::Fall) {
 		if (now_vel.x == 0)
 			return returnAcc;
 	}
@@ -75,7 +75,7 @@ Dimention Pysical::affectFriction(Dimention affectedAcc, unityChan_Basic nowActi
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::getForceFromAction(unityChan_Basic nowAction, bool isDireRight)
+Dimention Pysical::getForceFromAction(characterAction nowAction, bool isDireRight)
 {
 	Dimention returnForce;
 
@@ -85,38 +85,38 @@ Dimention Pysical::getForceFromAction(unityChan_Basic nowAction, bool isDireRigh
 	bool inputtingLeft = Controller::getIns()->getOnLeft();
 
 	switch (nowAction) {
-	case unityChan_Basic::Brake:
+	case characterAction::Brake:
 		if (isDireRight)
 			returnForce.x = -acc_brake;
 		else
 			returnForce.x = acc_brake;
 		break;
-	case unityChan_Basic::Walk:
+	case characterAction::Walk:
 		if (isDireRight)
 			returnForce.x = acc_walk;
 		else
 			returnForce.x = -acc_walk;
 		break;
-	case unityChan_Basic::Run:
+	case characterAction::Run:
 		if (isDireRight)
 			returnForce.x = acc_run;
 		else
 			returnForce.x = -acc_run;
 		break;
 		
-	case unityChan_Basic::Jump_Up:
+	case characterAction::Jump_Up:
 		if (inputtingRight)
 			returnForce.x = acc_inAir;
 		else if(inputtingLeft)
 			returnForce.x = -acc_inAir;
 		break;
-	case unityChan_Basic::Jump_MidAir:
+	case characterAction::Jump_MidAir:
 		if (inputtingRight)
 			returnForce.x = acc_inAir;
 		else if (inputtingLeft)
 			returnForce.x = -acc_inAir;
 		break;
-	case unityChan_Basic::Fall:
+	case characterAction::Fall:
 		if (inputtingRight)
 			returnForce.x = acc_inAir;
 		else if (inputtingLeft)
@@ -133,7 +133,7 @@ Dimention Pysical::getForceFromAction(unityChan_Basic nowAction, bool isDireRigh
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::getLimitVelFromAction(unityChan_Basic nowAction, bool isDireRight)
+Dimention Pysical::getLimitVelFromAction(characterAction nowAction, bool isDireRight)
 {
 	Dimention returnVelocity;
 
@@ -143,7 +143,7 @@ Dimention Pysical::getLimitVelFromAction(unityChan_Basic nowAction, bool isDireR
 	bool inputtingLeft = Controller::getIns()->getOnLeft();
 
 	// 歩く・走るの時は常に空中の速度の上限を代入し続ける。
-	if (nowAction == unityChan_Basic::Run || nowAction == unityChan_Basic::Walk) {
+	if (nowAction == characterAction::Run || nowAction == characterAction::Walk) {
 		if (isDireRight) {
 			limVel_inAir_jumpUp = std::abs(now_vel.x);
 			if(std::abs(now_vel.x) < limVel_walk)
@@ -161,19 +161,19 @@ Dimention Pysical::getLimitVelFromAction(unityChan_Basic nowAction, bool isDireR
 				limVel_inAir_jumpUp = -limVel_walk;
 		}
 	}
-	if (nowAction == unityChan_Basic::Idle) {
+	if (nowAction == characterAction::Idle) {
 		if (isDireRight)
 			limVel_inAir_jumpUp = limVel_walk;
 		else
 			limVel_inAir_jumpUp = -limVel_walk;
 	}
 
-	if(preAction == unityChan_Basic::Walk || preAction == unityChan_Basic::Run)
+	if(preAction == characterAction::Walk || preAction == characterAction::Run)
 		limVel_inAir = limVel_inAir_jumpUp;
 
 	// 空中で方向転換したかどうか。
-	if (nowAction == unityChan_Basic::Jump_Up || nowAction == unityChan_Basic::Jump_MidAir ||
-		nowAction == unityChan_Basic::Jump_Fall || nowAction == unityChan_Basic::Fall) {
+	if (nowAction == characterAction::Jump_Up || nowAction == characterAction::Jump_MidAir ||
+		nowAction == characterAction::Jump_Fall || nowAction == characterAction::Fall) {
 		preJumpingDireRight = isDireRight;
 
 		if (preJumpingDireRight != nowJumpingDireRight) {
@@ -191,26 +191,26 @@ Dimention Pysical::getLimitVelFromAction(unityChan_Basic nowAction, bool isDireR
 	nowJumpingDireRight = preJumpingDireRight = isDireRight;
 
 	switch (nowAction) {
-	case unityChan_Basic::Walk:
+	case characterAction::Walk:
 		if(isDireRight)
 			returnVelocity.x = limVel_walk;
 		else
 			returnVelocity.x = -limVel_walk;
 		break;
-	case unityChan_Basic::Run:
+	case characterAction::Run:
 		if (isDireRight)
 			returnVelocity.x = limVel_run;
 		else
 			returnVelocity.x = -limVel_run;
 		break;
 		
-	case unityChan_Basic::Jump_Up:
+	case characterAction::Jump_Up:
 		returnVelocity.x = limVel_inAir;
 		break;
-	case unityChan_Basic::Jump_MidAir:
+	case characterAction::Jump_MidAir:
 		returnVelocity.x = limVel_inAir;
 		break;
-	case unityChan_Basic::Fall:
+	case characterAction::Fall:
 		returnVelocity.x = limVel_inAir;
 		break;
 		
@@ -228,7 +228,7 @@ Dimention Pysical::getLimitVelFromAction(unityChan_Basic nowAction, bool isDireR
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, unityChan_Basic nowAction, bool isDireRight)
+Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, characterAction nowAction, bool isDireRight)
 {
 	Dimention returnVelocity = affectedVel;
 	
@@ -253,14 +253,14 @@ Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affect
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, unityChan_Basic nowAction, bool isDireRight)
+Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, characterAction nowAction, bool isDireRight)
 {
 	Dimention returnVel = affectedVel;
 
-	if (nowAction == unityChan_Basic::Jump_Up ||
-		nowAction == unityChan_Basic::Jump_MidAir ||
-		nowAction == unityChan_Basic::Jump_Fall ||
-		nowAction == unityChan_Basic::Fall) {
+	if (nowAction == characterAction::Jump_Up ||
+		nowAction == characterAction::Jump_MidAir ||
+		nowAction == characterAction::Jump_Fall ||
+		nowAction == characterAction::Fall) {
 		return returnVel;
 	}
 
@@ -279,7 +279,7 @@ Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, unityChan_Ba
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::update(unityChan_Basic nowAction, bool isDireRight)
+Dimention Pysical::update(characterAction nowAction, bool isDireRight)
 {
 
 	// Actionが切り替わったら時間を０にする。

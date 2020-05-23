@@ -55,7 +55,7 @@ shared_ptr<Animation> AnimationSwitch::update(
 @date 2020/05/04/15:30
 @author mimuro
 */
-bool AnimationSwitch::acceptSwitching(shared_ptr<Animation> animation, unityChan_Basic nowAction)
+bool AnimationSwitch::acceptSwitching(shared_ptr<Animation> animation, characterAction nowAction)
 {
 	// 今の状態が途中切り替えＯＫだったら切り替えＯＫ
 	if (IsAction_canSwitching[static_cast<int>(nowAction)])
@@ -74,14 +74,14 @@ bool AnimationSwitch::acceptSwitching(shared_ptr<Animation> animation, unityChan
 @date 2020/05/04/15:43
 @author mimuro
 */
-bool AnimationSwitch::acceptNextAction(unityChan_Basic nowAction, unityChan_Basic nextAction, Status _playerStatus)
+bool AnimationSwitch::acceptNextAction(characterAction nowAction, characterAction nextAction, Status _playerStatus)
 {
 	// 現在のアクションと同じアクションが次のアクションだったら切り替えない。
 	if (nowAction == nextAction)
 		return false;
 
 	//Jump_MidAirの時は、速度上向きの間はアニメーションを切り替えない。
-	if (nowAction == unityChan_Basic::Jump_MidAir && playerStatus._y_speed < 0)
+	if (nowAction == characterAction::Jump_MidAir && playerStatus._y_speed < 0)
 		return false;
 
 	// 上記の条件に当てはまらないのなら切り替える。
@@ -94,14 +94,14 @@ bool AnimationSwitch::acceptNextAction(unityChan_Basic nowAction, unityChan_Basi
 @date 2020/05/04/15:48
 @author mimuro
 */
-bool AnimationSwitch::isRefresh(unityChan_Basic nowAction, shared_ptr<Animation> animation)
+bool AnimationSwitch::isRefresh(characterAction nowAction, shared_ptr<Animation> animation)
 {
 	// 途中切り替えＮＧかつアニメーションが終了したら、さらに、同じアクションが入力され続けて、Crouch（しゃがむ）だったら、、、
 	// switchingAnimation()を実行せずに関数を終了。(refreshせずに終了)
-	if (nowAction == unityChan_Basic::Crouch )
+	if (nowAction == characterAction::Crouch )
 		return false;
 	
-	if (nowAction == unityChan_Basic::Jump_MidAir)
+	if (nowAction == characterAction::Jump_MidAir)
 		return false;
 
 	// 同じアクションが入力され続けて、現在のアニメーションが終了したら現在のアニメーションをリフレッシュする。
@@ -113,14 +113,14 @@ bool AnimationSwitch::isRefresh(unityChan_Basic nowAction, shared_ptr<Animation>
 	return true;
 }
 
-bool AnimationSwitch::getSoardComb(unityChan_Basic nowAction, shared_ptr<Animation> animation, bool nowCombContinue, VirtualController controller)
+bool AnimationSwitch::getSoardComb(characterAction nowAction, shared_ptr<Animation> animation, bool nowCombContinue, VirtualController controller)
 {
 	if (controller.push_X) {
-		if (nowAction == unityChan_Basic::Soard1_init)
+		if (nowAction == characterAction::Soard1_init)
 			return true;
-		if (nowAction == unityChan_Basic::Soard2_init)
+		if (nowAction == characterAction::Soard2_init)
 			return true;
-		if (nowAction == unityChan_Basic::Soard3_init)
+		if (nowAction == characterAction::Soard3_init)
 			return true;
 	}
 
@@ -133,163 +133,163 @@ bool AnimationSwitch::getSoardComb(unityChan_Basic nowAction, shared_ptr<Animati
 @date 2020/05/04/15:49
 @author mimuro
 */
-unityChan_Basic AnimationSwitch::getNextAction(
+characterAction AnimationSwitch::getNextAction(
 	shared_ptr<CollisionDetect> collision, 
 	shared_ptr<Animation> animation, 
 	Status playerStatus,
-	unityChan_Basic nowAction
+	characterAction nowAction
 	, VirtualController controller)
 {
 
 	// Brakeが終わったら強制的にアイドリング状態に変更する
-	if (nowAction == unityChan_Basic::Brake && animation->isEnd()) {
-		return unityChan_Basic::Idle;
+	if (nowAction == characterAction::Brake && animation->isEnd()) {
+		return characterAction::Idle;
 	}
 
 	// Jump_Up to Jump_MidAir
-	if (nowAction == unityChan_Basic::Jump_Up && animation->isEnd()) {
+	if (nowAction == characterAction::Jump_Up && animation->isEnd()) {
 		//printfDx("JumpUp to JumpMidAir\n");
-		return unityChan_Basic::Jump_MidAir;
+		return characterAction::Jump_MidAir;
 	}
 
 	// Jump_MidAir to Fall
-	if (nowAction == unityChan_Basic::Jump_MidAir && animation->isEnd()) {
+	if (nowAction == characterAction::Jump_MidAir && animation->isEnd()) {
 		//printfDx("JumpMidAir to Fall\n");
-		return unityChan_Basic::Fall;
+		return characterAction::Fall;
 	}
 
 	// ジャンプ中に頭上に障壁があったらFallに強制変更
-	if (nowAction == unityChan_Basic::Jump_Up || nowAction == unityChan_Basic::Jump_MidAir) {
+	if (nowAction == characterAction::Jump_Up || nowAction == characterAction::Jump_MidAir) {
 		if(collision->getCollisionedSide().head)
-			return unityChan_Basic::Jump_Fall;
+			return characterAction::Jump_Fall;
 	}
 
 	// Jump_Landing
-	if (nowAction == unityChan_Basic::Fall && collision->getCollisionedSide().bottom) {
+	if (nowAction == characterAction::Fall && collision->getCollisionedSide().bottom) {
 		//printfDx("Fall to Jump_Landing\n");
-		return unityChan_Basic::Jump_Landing;
+		return characterAction::Jump_Landing;
 	}
 
 	// ジャンプで浮き上がっているとき以外で、足元に障壁が無ければFallに強制変更
-	if (nowAction != unityChan_Basic::Jump_Up && nowAction != unityChan_Basic::Jump_MidAir) {
+	if (nowAction != characterAction::Jump_Up && nowAction != characterAction::Jump_MidAir) {
 		if (!collision->getCollisionedSide().bottom) {
-			return unityChan_Basic::Fall;
+			return characterAction::Fall;
 		}
 	}
 
 	// Crouchする条件は、足元が地面についている事
 	if (controller.on_down && collision->getCollisionedSide().bottom) {
-		return unityChan_Basic::Crouch;
+		return characterAction::Crouch;
 	}
 
 	// Brake
-	if (nowAction == unityChan_Basic::Run) {
+	if (nowAction == characterAction::Run) {
 		// R
 		if (playerStatus.directRight && !controller.on_right)
-			return unityChan_Basic::Brake;
+			return characterAction::Brake;
 		// L
 		if (!playerStatus.directRight && !controller.on_left)
-			return unityChan_Basic::Brake;
+			return characterAction::Brake;
 	}
 
 	// Jumpする条件は、足元が地面についている事
 	if (controller.push_A && collision->getCollisionedSide().bottom) {
-		return unityChan_Basic::Jump_Up;
+		return characterAction::Jump_Up;
 	}
 
 	// 剣攻撃コンボ1
-	if (nowAction == unityChan_Basic::Soard1_init) {
+	if (nowAction == characterAction::Soard1_init) {
 
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
 			soardCombContinue = false;
-			return unityChan_Basic::Soard2_init;
+			return characterAction::Soard2_init;
 			
 		}
 
 		// コンボしないならsoardCombContinueをfalseにして終了描画
-		return unityChan_Basic::Soard1_end;
+		return characterAction::Soard1_end;
 
 	}
 
 	// 剣攻撃コンボ2
-	if (nowAction == unityChan_Basic::Soard2_init) {
+	if (nowAction == characterAction::Soard2_init) {
 
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
 			soardCombContinue = false;
-			return unityChan_Basic::Soard3_init;
+			return characterAction::Soard3_init;
 
 		}
 
 		// コンボを続けないなら終了描画
-		return unityChan_Basic::Soard1_end;
+		return characterAction::Soard1_end;
 	}
 
 	// 剣攻撃コンボ3
-	if (nowAction == unityChan_Basic::Soard3_init) {
+	if (nowAction == characterAction::Soard3_init) {
 
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
 			soardCombContinue = false;
-			return unityChan_Basic::Soard2_init;
+			return characterAction::Soard2_init;
 		}
 
 		// コンボを続けないなら終了描画
-		return unityChan_Basic::Soard1_end;
+		return characterAction::Soard1_end;
 	}
 
 	// ハンドガンの撃ち続ける処理
-	if (nowAction == unityChan_Basic::Hundgun_init || nowAction==unityChan_Basic::Hundgun_horizonal
+	if (nowAction == characterAction::Hundgun_init || nowAction==characterAction::Hundgun_horizonal
 		&& controller.on_Y) {
-		return unityChan_Basic::Hundgun_horizonal;
+		return characterAction::Hundgun_horizonal;
 	}
 
 	// ハンドガンを打ち終える処理
-	if (nowAction == unityChan_Basic::Hundgun_horizonal) {
-		return unityChan_Basic::Hundgun_end;
+	if (nowAction == characterAction::Hundgun_horizonal) {
+		return characterAction::Hundgun_end;
 	}
 
 	/// 足元が地面についている状態で、ジャンプで地面をけり上げた瞬間出ない時
-	if (collision->getCollisionedSide().bottom && nowAction != unityChan_Basic::Jump_Up) {
+	if (collision->getCollisionedSide().bottom && nowAction != characterAction::Jump_Up) {
 
 		// 剣攻撃１はじめ
 		if (controller.push_X)
-			return unityChan_Basic::Soard1_init;
+			return characterAction::Soard1_init;
 
 		// ハンドガン撃ち始め
 		if (controller.on_Y)
-			return unityChan_Basic::Hundgun_init;
+			return characterAction::Hundgun_init;
 
 		// Run R
 		if (controller.on_B && controller.on_right) {
 			playerStatus.directRight = true;
-			return unityChan_Basic::Run;
+			return characterAction::Run;
 		}
 
 		// Run L
 		if (controller.on_B && controller.on_left) {
 			playerStatus.directRight = false;
-			return unityChan_Basic::Run;
+			return characterAction::Run;
 		}
 
 		// Walk R
 		if (controller.on_right) {
 			playerStatus.directRight = true;
-			return unityChan_Basic::Walk;
+			return characterAction::Walk;
 		}
 
 		// Walk L
 		if (controller.on_left) {
 			playerStatus.directRight = false;
-			return unityChan_Basic::Walk;
+			return characterAction::Walk;
 		}
 	}
 
 	// 何も入力されなければIdling状態にする。
-	if (nowAction != unityChan_Basic::Jump_Up && nowAction != unityChan_Basic::Jump_MidAir) {
+	if (nowAction != characterAction::Jump_Up && nowAction != characterAction::Jump_MidAir) {
 
-		return unityChan_Basic::Idle;
+		return characterAction::Idle;
 	}
 
 	return nowAction;
@@ -301,80 +301,80 @@ unityChan_Basic AnimationSwitch::getNextAction(
 @date 2020/05/04/15:49
 @author mimuro
 */
-shared_ptr<Animation> AnimationSwitch::switchingAnimation(unityChan_Basic next, Status nowStatus)
+shared_ptr<Animation> AnimationSwitch::switchingAnimation(characterAction next, Status nowStatus)
 {
 	using namespace std;
 	switch (next) {
-	case unityChan_Basic::Brake:
-		nowAction = unityChan_Basic::Brake;
+	case characterAction::Brake:
+		nowAction = characterAction::Brake;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Brake, nowStatus);
 		break;
-	case unityChan_Basic::Crouch:
-		nowAction = unityChan_Basic::Crouch;
+	case characterAction::Crouch:
+		nowAction = characterAction::Crouch;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, nowStatus);
 		break;
-	case unityChan_Basic::Damage:
-		nowAction = unityChan_Basic::Damage;
+	case characterAction::Damage:
+		nowAction = characterAction::Damage;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Damage, nowStatus);
 		break;
-	case unityChan_Basic::Idle:
-		nowAction = unityChan_Basic::Idle;
+	case characterAction::Idle:
+		nowAction = characterAction::Idle;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Idle, nowStatus);
 		break;
-	case unityChan_Basic::Jump_Fall:
-		nowAction = unityChan_Basic::Jump_Fall;
+	case characterAction::Jump_Fall:
+		nowAction = characterAction::Jump_Fall;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Fall, nowStatus);
 		break;
-	case unityChan_Basic::Jump_Landing:
-		nowAction = unityChan_Basic::Jump_Landing;
+	case characterAction::Jump_Landing:
+		nowAction = characterAction::Jump_Landing;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Landing, nowStatus);
 		break;
-	case unityChan_Basic::Jump_MidAir:
-		nowAction = unityChan_Basic::Jump_MidAir;
+	case characterAction::Jump_MidAir:
+		nowAction = characterAction::Jump_MidAir;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, nowStatus, 3);
 		break;
-	case unityChan_Basic::Jump_Up:
-		nowAction = unityChan_Basic::Jump_Up;
+	case characterAction::Jump_Up:
+		nowAction = characterAction::Jump_Up;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Up, nowStatus);
 		break;
-	case unityChan_Basic::Fall:
-		nowAction = unityChan_Basic::Fall;
+	case characterAction::Fall:
+		nowAction = characterAction::Fall;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Fall, nowStatus);
 		break;
-	case unityChan_Basic::Run:
-		nowAction = unityChan_Basic::Run;
+	case characterAction::Run:
+		nowAction = characterAction::Run;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Run, nowStatus);
 		break;
-	case unityChan_Basic::Walk:
-		nowAction = unityChan_Basic::Walk;
+	case characterAction::Walk:
+		nowAction = characterAction::Walk;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Walk, nowStatus);
 		break;
-	case unityChan_Basic::Hundgun_init:
-		nowAction = unityChan_Basic::Hundgun_init;
+	case characterAction::Hundgun_init:
+		nowAction = characterAction::Hundgun_init;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 4);
 		break;
-	case unityChan_Basic::Hundgun_end:
-		nowAction = unityChan_Basic::Hundgun_end;
+	case characterAction::Hundgun_end:
+		nowAction = characterAction::Hundgun_end;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_end, nowStatus, 0, -3, 5);
 		break;
-	case unityChan_Basic::Hundgun_horizonal:
-		nowAction = unityChan_Basic::Hundgun_horizonal;
+	case characterAction::Hundgun_horizonal:
+		nowAction = characterAction::Hundgun_horizonal;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_horizonal, nowStatus, 0, -3, 4);
 		break;
-	case unityChan_Basic::Soard1_init:
-		nowAction = unityChan_Basic::Soard1_init;
+	case characterAction::Soard1_init:
+		nowAction = characterAction::Soard1_init;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_init, nowStatus, 0, -59, 5);
 		break;
-	case unityChan_Basic::Soard1_end:
-		nowAction = unityChan_Basic::Soard1_end;
+	case characterAction::Soard1_end:
+		nowAction = characterAction::Soard1_end;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_end, nowStatus, 0, -59, 3);
 		break;
-	case unityChan_Basic::Soard2_init:
-		nowAction = unityChan_Basic::Soard2_init;
+	case characterAction::Soard2_init:
+		nowAction = characterAction::Soard2_init;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard2_init, nowStatus, 0, -59, 4);
 		break;
-	case unityChan_Basic::Soard3_init:
-		nowAction = unityChan_Basic::Soard3_init;
+	case characterAction::Soard3_init:
+		nowAction = characterAction::Soard3_init;
 		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard3_init, nowStatus, 0, -59, 4);
 		break;
 	}

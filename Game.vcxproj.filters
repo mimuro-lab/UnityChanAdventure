@@ -45,13 +45,13 @@
     <Filter Include="ソース ファイル\Character\AnimationMove">
       <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameScene\Enemy">
+      <UniqueIdentifier>{2461a9f0-ee11-4d73-abfa-6852520163a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Define.cpp">
-      <Filter>ソース ファイル\Define</Filter>
     </ClCompile>
     <ClCompile Include="SystemLooper.cpp">
       <Filter>ソース ファイル\System</Filter>
@@ -104,9 +104,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\GameScene\Player</Filter>
     </ClCompile>
-    <ClCompile Include="RestrictPoint.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
-    </ClCompile>
     <ClCompile Include="Stage.cpp">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClCompile>
@@ -133,6 +130,15 @@
     </ClCompile>
     <ClCompile Include="VirtualController.cpp">
       <Filter>ソース ファイル\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="RestrictPoint.cpp">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationMovePlayer.cpp">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -202,9 +208,6 @@
     <ClInclude Include="Player.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>
     </ClInclude>
-    <ClInclude Include="RestrictPoint.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
-    </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
@@ -231,6 +234,15 @@
     </ClInclude>
     <ClInclude Include="VirtualController.h">
       <Filter>ソース ファイル\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="RestrictPoint.h">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationMovePlayer.h">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

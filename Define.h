@@ -66,7 +66,7 @@ namespace Define{
 	};
 
 	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。
-	enum class unityChan_Basic {
+	enum class characterAction {
 		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk
 		, Hundgun_init, Hundgun_end, Hundgun_horizonal
 		, Soard1_init, Soard1_end, Soard2_init, Soard3_init

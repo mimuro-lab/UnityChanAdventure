@@ -13,7 +13,7 @@
 #include "Controller.h"
 #include "VirtualController.h"
 #include "Animation.h"
-#include "AnimationMove.h"
+#include "AnimationMovePlayer.h"
 #include "AnimationSwitch.h"
 #include "CollisionDetect.h"
 #include "CharacterDirect.h"
@@ -44,7 +44,7 @@ class Player
 	std::shared_ptr<Animation> animation;
 
 	//! アニメーション時のStatusの座標の更新をするオブジェクト。
-	std::shared_ptr<AnimationMove> animationMove;
+	std::shared_ptr<AnimationMovePlayer> animationMove;
 
 	//! プレイヤーオブジェクトの当たり判定処理をまとめて行うオブジェクト。
 	std::shared_ptr<CollisionDetect> collision;
@@ -54,7 +54,7 @@ class Player
 
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
 	std::shared_ptr<CharacterDirect> playerDirect;
-
+	
 	VirtualController updateController();
 
 public:
@@ -73,14 +73,14 @@ public:
 
 		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Fall, playerStatus);
 
-		animationMove = std::make_shared<AnimationMove>();
+		animationMove = std::make_shared<AnimationMovePlayer>();
 
 		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
 
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
 		playerDirect = std::make_shared<CharacterDirect>();
-
+		
 	};
 
 	~Player() = default;

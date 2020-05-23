@@ -26,6 +26,7 @@ using namespace std;
 
 class CollisionDetect
 {
+protected:
 	//! “–‚½‚è”»’è‚ğŠi”[‚·‚é•Ï”BTrue‚¾‚Æ“–‚½‚Á‚Ä‚¢‚éB
 	struct Collision {
 		bool head;
