@@ -50,5 +50,5 @@ void Animation::draw() const
 	if (IsEnd && !IsEndDrawing)
 		return;
 	//printfDx("%d\n", NowDraiwngImageIndex);
-	DrawRotaGraph(status._x + DrawingShiftX, status._y + DrawingShiftY, 1.0, 0, NowDrawingImageHandle, true, !status.directRight);
+	DrawRotaGraph(status._x + DrawingShiftX, status._y + DrawingShiftY, scaleRate, 0, NowDrawingImageHandle, true, !status.directRight);
 }

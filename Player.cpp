@@ -51,7 +51,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	collision->update(playerStatus, _stage);
 
 	// Statusの更新処理を行う。
-	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation);
+	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
 
 	// shiftingStageの更新処理も行う。
 	shiftingStage = animationMove->getShiftingStage(collision, _stage);
@@ -73,13 +73,17 @@ void Player::draw()
 	//collision->draw();
 }
 
-vector<shared_ptr<DamageObj>> Player::generateDamageObj(vector<shared_ptr<DamageObj>> _nowDmg)
+vector<shared_ptr<Bullet>> Player::generateDamageObj(vector<shared_ptr<Bullet>> _nowDmg, shared_ptr<Stage> stage)
 {
-	vector<shared_ptr<DamageObj>> returnDmg = _nowDmg;
+	vector<shared_ptr<Bullet>> returnDmg = _nowDmg;
 
-	if (controller.on_up) {
-		shared_ptr<DamageObj> pushObj = make_shared<DamageObj>(playerStatus._x, playerStatus._y, 10);
+	if (animationSwitch->getNowAction() == characterAction::Hundgun_horizonal
+		&& animation->getNowDrawingImageIndex() == 1
+		&& animation->getDRawingStepsCounter() == 1
+		) {
+		shared_ptr<Bullet> pushObj = make_shared<Bullet>(stage, playerStatus._x, playerStatus._y, 20, playerStatus.directRight);
 		returnDmg.push_back(pushObj);
+		//printfDx("%d\n", returnDmg.size());
 	}
 
 	return returnDmg;

@@ -35,16 +35,16 @@ void GameScene::update()
 	// ステージ処理
 	stage->update(player->getShiftingState(), player->getStatus());
 	
-	enemy->update(stage, player->getShiftingState());
+	//enemy->update(stage, player->getShiftingState());
 
-	enemy1->update(stage, player->getShiftingState());
+	//enemy1->update(stage, player->getShiftingState());
 	
 	// playerによるダメージ要素の生成
-	damageObjs = player->generateDamageObj(damageObjs);
+	damageObjs = player->generateDamageObj(damageObjs,stage);
 
 	// ダメージ要素の更新。
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
-		damageObjs[i]->update(player->getShiftingState().x, player->getShiftingState().y);
+		damageObjs[i]->update(stage, player->getShiftingState());
 	}
 
 }
@@ -55,8 +55,8 @@ void GameScene::draw()
 	
 	player->draw();
 
-	enemy->draw();
-	enemy1->draw();
+	//enemy->draw();
+	//enemy1->draw();
 
 	stage->draw();
 

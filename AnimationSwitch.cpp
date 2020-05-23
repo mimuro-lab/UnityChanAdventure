@@ -307,78 +307,78 @@ shared_ptr<Animation> AnimationSwitch::switchingAnimation(characterAction next, 
 	switch (next) {
 	case characterAction::Brake:
 		nowAction = characterAction::Brake;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Brake, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Brake, nowStatus);
 		break;
 	case characterAction::Crouch:
 		nowAction = characterAction::Crouch;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Crouch, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Crouch, nowStatus);
 		break;
 	case characterAction::Damage:
 		nowAction = characterAction::Damage;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Damage, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Damage, nowStatus);
 		break;
 	case characterAction::Idle:
 		nowAction = characterAction::Idle;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Idle, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Idle, nowStatus);
 		break;
 	case characterAction::Jump_Fall:
 		nowAction = characterAction::Jump_Fall;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Fall, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Jump_Fall, nowStatus);
 		break;
 	case characterAction::Jump_Landing:
 		nowAction = characterAction::Jump_Landing;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Landing, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Jump_Landing, nowStatus);
 		break;
 	case characterAction::Jump_MidAir:
 		nowAction = characterAction::Jump_MidAir;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_MidAir, nowStatus, 3);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Jump_MidAir, nowStatus, 3);
 		break;
 	case characterAction::Jump_Up:
 		nowAction = characterAction::Jump_Up;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Jump_Up, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Jump_Up, nowStatus);
 		break;
 	case characterAction::Fall:
 		nowAction = characterAction::Fall;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Fall, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, nowStatus);
 		break;
 	case characterAction::Run:
 		nowAction = characterAction::Run;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Run, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Run, nowStatus);
 		break;
 	case characterAction::Walk:
 		nowAction = characterAction::Walk;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Walk, nowStatus);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Walk, nowStatus);
 		break;
 	case characterAction::Hundgun_init:
 		nowAction = characterAction::Hundgun_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 4);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 4);
 		break;
 	case characterAction::Hundgun_end:
 		nowAction = characterAction::Hundgun_end;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_end, nowStatus, 0, -3, 5);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Hundgun_end, nowStatus, 0, -3, 5);
 		break;
 	case characterAction::Hundgun_horizonal:
 		nowAction = characterAction::Hundgun_horizonal;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Hundgun_horizonal, nowStatus, 0, -3, 4);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Hundgun_horizonal, nowStatus, 0, -3, 4);
 		break;
 	case characterAction::Soard1_init:
 		nowAction = characterAction::Soard1_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_init, nowStatus, 0, -59, 5);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Soard1_init, nowStatus, 0, -59, 5);
 		break;
 	case characterAction::Soard1_end:
 		nowAction = characterAction::Soard1_end;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard1_end, nowStatus, 0, -59, 3);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Soard1_end, nowStatus, 0, -59, 3);
 		break;
 	case characterAction::Soard2_init:
 		nowAction = characterAction::Soard2_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard2_init, nowStatus, 0, -59, 4);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Soard2_init, nowStatus, 0, -59, 4);
 		break;
 	case characterAction::Soard3_init:
 		nowAction = characterAction::Soard3_init;
-		return make_shared <Animation>(imagePath::getIns()->unityChan_Soard3_init, nowStatus, 0, -59, 4);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Soard3_init, nowStatus, 0, -59, 4);
 		break;
 	}
 
 	// エラー処理、何も選択されなかったら取り合えずアイドリング状態にする。
-	return make_shared <Animation>(imagePath::getIns()->unityChan_Idle, nowStatus);
+	return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Idle, nowStatus);
 }

@@ -2,7 +2,7 @@
 
 #include <DxLib.h>
 #include "Define.h"
-#include "imagePath.h"
+#include "ImagePath_Unitychan.h"
 #include "Controller.h"
 #include "VirtualController.h"
 #include "Animation.h"
@@ -11,7 +11,6 @@
 #include "CollisionDetect.h"
 #include "CharacterDirect.h"
 #include "Stage.h"
-#include "DamageObj.h"
 #include <memory>
 #include <vector>
 
@@ -53,11 +52,11 @@ public:
 		enemyStatus.directRight = true;
 
 
-		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Fall, enemyStatus);
+		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, enemyStatus);
 
 		animationMove = std::make_shared<AnimationMove>();
 
-		collision = std::make_shared<CollisionDetect>(_stage, enemyStatus);
+		collision = std::make_shared<CollisionDetect>(_stage, enemyStatus, 10, 10, 10, 10, 15, 30, 10, 10);
 
 		animationSwitch = std::make_shared<AnimationSwitch>();
 

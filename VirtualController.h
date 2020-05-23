@@ -1,7 +1,13 @@
 #pragma once
 
-struct VirtualController
+class VirtualController
 {
+public:
+	VirtualController() = default;
+	~VirtualController() = default;
+
+	void clear();
+
 	//! ‰E•ûŒüƒ{ƒ^ƒ““ü—Íó‘Ô
 	bool push_right = false;
 	bool on_right = false;

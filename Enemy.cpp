@@ -10,7 +10,7 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage)
 	collision->update(enemyStatus, _stage);
 
 	// Statusの更新処理を行う。
-	enemyStatus = animationMove->update(enemyStatus, animationSwitch->getNowAction(), collision, _stage, animation);
+	enemyStatus = animationMove->update(enemyStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
 
 	// アニメーションの下処理を行う。
 	animation->update(enemyStatus);

@@ -42,6 +42,8 @@ class Animation
 	bool IsEndDrawing = false;
 	//! アニメーションさせる為のステータス。
 	Define::Status status;
+	//! 画像の拡大・縮小の倍率
+	double scaleRate = 1.0;
 public:
 
 	/*!
@@ -50,7 +52,7 @@ public:
 	@author mimuro
 	*/
 	Animation(std::vector<int> _imageHandles, Define::Status _status , char _DrwaingShiftX = 0, char _DrawingShiftY = 0
-		, char _DrawingSteps = 6, char IndexEnd = 99, bool _IsEndDrawing = true) :
+		, char _DrawingSteps = 6, char IndexEnd = 99, bool _IsEndDrawing = true, double _scaleRate = 1.0) :
 		imageHandles(_imageHandles)
 		, NowDrawingImageHandle(_imageHandles[0])
 		, status(_status)
@@ -59,6 +61,7 @@ public:
 		, DrawingIndexEnd(IndexEnd)
 		, DrawingSteps(_DrawingSteps)
 		, IsEndDrawing(_IsEndDrawing)
+		, scaleRate(_scaleRate)
 	{};
 	~Animation() = default;
 
@@ -72,7 +75,13 @@ public:
 	void refreshing();
 
 	const char getDrawingSteps() { return DrawingSteps; }
+	const char getDRawingStepsCounter() { return DrawingSteps_counter; }
+	const char getNowDrawingImageIndex() { return NowDraiwngImageIndex; }
 	const int getImagesSize() { return imageHandles.size(); }
+
+	void arrangeScale(double rate) {
+		scaleRate = rate;
+	};
 
 };
 

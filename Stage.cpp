@@ -73,6 +73,13 @@ const BlockCell Stage::getBlockCell(int x, int y)
 	//DrawBox(_stage[_CellXNum][_CellYNum].x1 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y1 + pointLeftUp_y
 		//, _stage[_CellXNum][_CellYNum].x2 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y2 + pointLeftUp_y, GetColor(0, 0, 255), true);
 
+	if (_CellXNum < 0 || _CellXNum >= blockXNum) {
+		return _stage[0][0];
+	}
+	if (_CellYNum < 0 || _CellYNum >= blockXNum) {
+		return _stage[0][0];
+	}
+
 	return _stage[_CellXNum][_CellYNum];
 
 }

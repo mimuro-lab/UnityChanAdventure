@@ -11,7 +11,7 @@
 #include "Controller.h"
 #include "Animation.h"
 #include "Define.h"
-#include "imagePath.h"
+#include "ImagePath_Unitychan.h"
 #include "VirtualController.h"
 #include <memory>
 
@@ -34,8 +34,6 @@ class AnimationSwitch
 	//! アクション中に他のアクションに切り替え可能かどうか？（添え字がcharacterActionに対応）
 	vector<bool> IsAction_canSwitching;
 
-	//! プレイヤーオブジェクトの現在の状態を管理。
-	characterAction nowAction;
 
 	//// 次のアクションを現在の条件によって選択していく。
 	//! 次のアクションを格納しておく変数。
@@ -64,17 +62,23 @@ class AnimationSwitch
 	//! animationをリフレッシュしてもよいか判断する関数。
 	bool isRefresh(characterAction nowAction, shared_ptr<Animation> __animation);
 	
-	//! アニメーションを切り替える関数。
-	shared_ptr<Animation> switchingAnimation(characterAction next, Status _playerStatus);
 
 	//! 剣攻撃のコンボ数処理
 	bool getSoardComb(characterAction nowAction, shared_ptr<Animation> __animation, bool nowCombContinue, VirtualController controller);
 
+protected:
+
+	//! プレイヤーオブジェクトの現在の状態を管理。
+	characterAction nowAction;
+
+	//! アニメーションを切り替える関数。
+	virtual shared_ptr<Animation> switchingAnimation(characterAction next, Status _playerStatus);
+
 public:
-	AnimationSwitch()
+	AnimationSwitch(characterAction initAction = characterAction::Walk)
 	{ 
 		// nowActionは最初、Fallから始める。
-		nowAction = characterAction::Fall;
+		nowAction = initAction;
 		
 		// IsAction_canSwitchinの初期化。 Idle, Walk, Run, Fallの状態のときは切り替え可能の状態。
 		IsAction_canSwitching = vector<bool>(static_cast<int>(characterAction::_end), false);

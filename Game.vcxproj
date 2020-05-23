@@ -86,13 +86,14 @@
   <ItemGroup>
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="AnimationMove.cpp" />
+    <ClCompile Include="AnimationMoveDamageObj.cpp" />
     <ClCompile Include="AnimationMovePlayer.cpp" />
     <ClCompile Include="AnimationSwitch.cpp" />
+    <ClCompile Include="AnimationSwitchBullet.cpp" />
     <ClCompile Include="CollisionDetect.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="DamageObj.cpp" />
-    <ClCompile Include="DamagePysical.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Fps.cpp" />
     <ClCompile Include="Gamepad.cpp" />
@@ -105,6 +106,7 @@
     <ClCompile Include="CharacterDirect.cpp" />
     <ClCompile Include="PredictPoint.cpp" />
     <ClCompile Include="Pysical.cpp" />
+    <ClCompile Include="PysicalDamageObj.cpp" />
     <ClCompile Include="RestrictPoint.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -118,20 +120,22 @@
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="AnimationMove.h" />
+    <ClInclude Include="AnimationMoveDamageObj.h" />
     <ClInclude Include="AnimationMovePlayer.h" />
     <ClInclude Include="AnimationSwitch.h" />
+    <ClInclude Include="AnimationSwitchBullet.h" />
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Controller.h" />
-    <ClInclude Include="DamageObj.h" />
-    <ClInclude Include="DamagePysical.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Fps.h" />
     <ClInclude Include="Gamepad.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Animation.h" />
-    <ClInclude Include="imagePath.h" />
+    <ClInclude Include="ImagePath_Object.h" />
+    <ClInclude Include="ImagePath_Unitychan.h" />
     <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="MenuScene.h" />
@@ -139,6 +143,7 @@
     <ClInclude Include="CharacterDirect.h" />
     <ClInclude Include="PredictPoint.h" />
     <ClInclude Include="Pysical.h" />
+    <ClInclude Include="PysicalDamageObj.h" />
     <ClInclude Include="RestrictPoint.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />

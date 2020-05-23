@@ -9,19 +9,20 @@
 #pragma once
 #include "Singleton.h"
 #include <vector>
+#include <DxLib.h>
 
 using namespace std;
 /*!
 @class imagePath
-@brief 使用する画像のパスをまとめて管理するクラス。Singletonクラスになっている。
+@brief 使用する画像のパスをまとめて管理するクラス。SingletonクラスにSなっている。
 @date 2020/04/16/20:00
 @author mimuro
 */
-class imagePath : 
-	public Singleton<imagePath>
+class ImagePath_Unitychan : 
+	public Singleton<ImagePath_Unitychan>
 {
-	imagePath() = default;
-	friend Singleton< imagePath >;
+	ImagePath_Unitychan() = default;
+	friend Singleton< ImagePath_Unitychan >;
 public:
 
 	//! characterActionActionの画像へのパスをまとめた変数。

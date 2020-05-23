@@ -75,14 +75,14 @@ Dimention Pysical::affectFriction(Dimention affectedAcc, characterAction nowActi
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::getForceFromAction(characterAction nowAction, bool isDireRight)
+Dimention Pysical::getForceFromAction(characterAction nowAction, bool isDireRight, VirtualController controller)
 {
 	Dimention returnForce;
 
 	returnForce.x = returnForce.y = 0;
 
-	bool inputtingRight = Controller::getIns()->getOnRight();
-	bool inputtingLeft = Controller::getIns()->getOnLeft();
+	bool inputtingRight = controller.on_right;
+	bool inputtingLeft = controller.on_left;
 
 	switch (nowAction) {
 	case characterAction::Brake:
@@ -133,14 +133,14 @@ Dimention Pysical::getForceFromAction(characterAction nowAction, bool isDireRigh
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::getLimitVelFromAction(characterAction nowAction, bool isDireRight)
+Dimention Pysical::getLimitVelFromAction(characterAction nowAction, bool isDireRight, VirtualController controller)
 {
 	Dimention returnVelocity;
 
 	returnVelocity.x = returnVelocity.y = 128;
 
-	bool inputtingRight = Controller::getIns()->getOnRight();
-	bool inputtingLeft = Controller::getIns()->getOnLeft();
+	bool inputtingRight = controller.on_right;
+	bool inputtingLeft = controller.on_left;
 
 	// 歩く・走るの時は常に空中の速度の上限を代入し続ける。
 	if (nowAction == characterAction::Run || nowAction == characterAction::Walk) {
@@ -228,11 +228,11 @@ Dimention Pysical::getLimitVelFromAction(characterAction nowAction, bool isDireR
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, characterAction nowAction, bool isDireRight)
+Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, characterAction nowAction, bool isDireRight, VirtualController controller)
 {
 	Dimention returnVelocity = affectedVel;
 	
-	int limitX = std::abs(getLimitVelFromAction(nowAction, isDireRight).x);
+	int limitX = std::abs(getLimitVelFromAction(nowAction, isDireRight, controller).x);
 	int nextVelAbs = std::abs(returnVelocity.x + affectAcc.x);
 
 	// 更新後の速度が限界値を超えないようであれば速度に加速度を足す
@@ -241,7 +241,7 @@ Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affect
 	}
 	// 超えるようであれば限界値に設定する。(向きによって)
 	else
-		returnVelocity.x = getLimitVelFromAction(nowAction, isDireRight).x;
+		returnVelocity.x = getLimitVelFromAction(nowAction, isDireRight,controller).x;
 
 	returnVelocity.y += affectAcc.y;
 
@@ -279,7 +279,7 @@ Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, characterAct
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::update(characterAction nowAction, bool isDireRight)
+Dimention Pysical::update(characterAction nowAction, bool isDireRight, VirtualController controller)
 {
 
 	// Actionが切り替わったら時間を０にする。
@@ -291,7 +291,7 @@ Dimention Pysical::update(characterAction nowAction, bool isDireRight)
 
 	// 加速度を計算する。
 	if (addAccCounter == 0) {
-		now_acc = getForceFromAction(nowAction, isDireRight);
+		now_acc = getForceFromAction(nowAction, isDireRight, controller);
 		now_acc = affectGravity(now_acc, nowAction);
 		now_acc = affectFriction(now_acc, nowAction, isDireRight);
 	}
@@ -302,7 +302,7 @@ Dimention Pysical::update(characterAction nowAction, bool isDireRight)
 	addAccCounter %= addAccN;
 
 	// 加速度から速度を更新する。
-	now_vel = calcVelocityFromAccel(now_vel, now_acc, nowAction, isDireRight);
+	now_vel = calcVelocityFromAccel(now_vel, now_acc, nowAction, isDireRight, controller);
 
 	// 向いている方向と水平方向の速度方向の調和をとる。
 	now_vel = matchingVelAndDireHorizon(now_vel, nowAction, isDireRight);

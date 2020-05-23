@@ -9,7 +9,7 @@
 #pragma once
 #include "Define.h"
 #include "CollisionDetect.h"
-#include "Controller.h"
+#include "VirtualController.h"
 
 /*!
 @class Pysical
@@ -21,6 +21,7 @@ using namespace Define;
 
 class Pysical {
 
+protected:
 	//! 現在の速度を管理する変数。
 	Dimention now_vel;
 
@@ -75,22 +76,22 @@ class Pysical {
 	std::vector<bool> _validFrictionAction;
 
 	//! 対象の速度に対し、初速度をさらに与える関数。
-	Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime);
+	virtual Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime);
 
 	//! affectGravity（対象の加速度）に対し、重力を加える。
-	Dimention affectGravity(Dimention affectedAcc, characterAction nowAction);
+	virtual Dimention affectGravity(Dimention affectedAcc, characterAction nowAction);
 
 	//! affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。
 	Dimention affectFriction(Dimention affectedAcc, characterAction nowAction, bool isDireRight);
 
 	//! アクション状態とその方向から加速度を得る。
-	Dimention getForceFromAction(characterAction nowAction, bool isDireRight);
+	Dimention getForceFromAction(characterAction nowAction, bool isDireRight, VirtualController controller);
 
 	//! アクション状態とその方向から速度の限界値を得る。
-	Dimention getLimitVelFromAction(characterAction nowAction, bool isDireRight);
+	virtual Dimention getLimitVelFromAction(characterAction nowAction, bool isDireRight, VirtualController controller);
 	
 	//! 加速度から速度を計算する。
-	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, characterAction nowAction, bool isDireRight);
+	virtual Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, characterAction nowAction, bool isDireRight, VirtualController controller);
 
 	//! 向いている方向と速度方向が違うときは速度を0にする。（水平方向のみ）
 	Dimention matchingVelAndDireHorizon(Dimention affectedVel, characterAction nowAction, bool isDireRight);
@@ -111,9 +112,10 @@ class Pysical {
 
 public:
 
-	Pysical()
+	Pysical(int initVelX = 0, int initVelY = 0)
 	{
-		now_vel.x = now_vel.y = 0;
+		now_vel.x = initVelX;
+		now_vel.y = initVelY;
 		now_acc.x = now_acc.y = 0;
 
 		Dimention initVel;
@@ -162,7 +164,7 @@ public:
 	~Pysical() = default;
 
 	//! アクション状態とその方向により速度と加速度を更新し、速度を返す。
-	Dimention update(characterAction nowAction, bool isDireRight);
+	Dimention update(characterAction nowAction, bool isDireRight, VirtualController controller);
 
 	//! 座標をセットした後、適切に速度をリセットする。
 	Dimention resetVelocity(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);

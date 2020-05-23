@@ -53,10 +53,10 @@ protected:
 	char toBottom = 30;
 
 	// 各辺に置く当たり判定の点の数。
-	char rightPoints = 10;
-	char leftPoints = 10;
-	char headPoints = 10;
-	char bottomPoints = 10;
+	char rightPoints;
+	char leftPoints;
+	char headPoints;
+	char bottomPoints;
 
 	//! 現在のプレイヤーの状態を格納する変数。
 	Status nowStatus;
@@ -83,7 +83,9 @@ protected:
 	bool detectLeft(shared_ptr<Stage> stage, Status nowStatus);
 
 public:
-	CollisionDetect(shared_ptr<Stage> __stage, Status _status) {
+	CollisionDetect(shared_ptr<Stage> __stage, Status _status,
+		char HeadPoints, char BottomPoints, char RightPoints, char LeftPoints,
+		char ToHead, char ToBottom, char ToRight, char ToLeft) {
 		// 当たり判定処理は最初無しにする。
 		collisionedSide.head = false;
 		collisionedSide.bottom = false;
@@ -91,6 +93,16 @@ public:
 		collisionedSide.left = false;
 		_stage = __stage;
 		nowStatus = _status;
+		
+		headPoints = HeadPoints;
+		bottomPoints = BottomPoints;
+		rightPoints = RightPoints;
+		leftPoints = LeftPoints;
+		
+		toHead = ToHead;
+		toBottom = ToBottom;
+		toRight = ToRight;
+		toLeft = ToLeft;
 	};
 	~CollisionDetect() = default;
 

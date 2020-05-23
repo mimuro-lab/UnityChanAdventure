@@ -48,6 +48,9 @@
     <Filter Include="ソース ファイル\GameScene\Enemy">
       <UniqueIdentifier>{2461a9f0-ee11-4d73-abfa-6852520163a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameScene\DamageObj\Bullet">
+      <UniqueIdentifier>{cd10abff-ef7e-4fb7-aa05-de0a13c44395}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -110,12 +113,6 @@
     <ClCompile Include="StageLoad.cpp">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClCompile>
-    <ClCompile Include="DamageObj.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
-    </ClCompile>
-    <ClCompile Include="DamagePysical.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionDetect.cpp">
       <Filter>ソース ファイル\Character</Filter>
     </ClCompile>
@@ -139,6 +136,18 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSwitchBullet.cpp">
+      <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationMoveDamageObj.cpp">
+      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
+    </ClCompile>
+    <ClCompile Include="PysicalDamageObj.cpp">
+      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -174,9 +183,6 @@
     </ClInclude>
     <ClInclude Include="StartScene.h">
       <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="imagePath.h">
-      <Filter>ソース ファイル\Define</Filter>
     </ClInclude>
     <ClInclude Include="Fps.h">
       <Filter>ソース ファイル\Resource</Filter>
@@ -214,12 +220,6 @@
     <ClInclude Include="StageLoad.h">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
-    <ClInclude Include="DamageObj.h">
-      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
-    </ClInclude>
-    <ClInclude Include="DamagePysical.h">
-      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionDetect.h">
       <Filter>ソース ファイル\Character</Filter>
     </ClInclude>
@@ -243,6 +243,24 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ImagePath_Object.h">
+      <Filter>ソース ファイル\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="ImagePath_Unitychan.h">
+      <Filter>ソース ファイル\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSwitchBullet.h">
+      <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationMoveDamageObj.h">
+      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
+    </ClInclude>
+    <ClInclude Include="PysicalDamageObj.h">
+      <Filter>ソース ファイル\GameScene\DamageObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

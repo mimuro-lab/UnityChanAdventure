@@ -9,7 +9,7 @@
 #pragma once
 #include <DxLib.h>
 #include "Define.h"
-#include "imagePath.h"
+#include "ImagePath_Unitychan.h"
 #include "Controller.h"
 #include "VirtualController.h"
 #include "Animation.h"
@@ -18,7 +18,7 @@
 #include "CollisionDetect.h"
 #include "CharacterDirect.h"
 #include "Stage.h"
-#include "DamageObj.h"
+#include "Bullet.h"
 #include <memory>
 #include <vector>
 
@@ -71,11 +71,11 @@ public:
 
 		shiftingStage.x = shiftingStage.y = 0;
 
-		animation = std::make_shared<Animation>(imagePath::getIns()->unityChan_Fall, playerStatus);
+		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, playerStatus);
 
 		animationMove = std::make_shared<AnimationMovePlayer>();
 
-		collision = std::make_shared<CollisionDetect>(_stage, playerStatus);
+		collision = std::make_shared<CollisionDetect>(_stage, playerStatus, 10, 10, 10, 10, 15, 30, 10, 10);
 
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
@@ -95,6 +95,6 @@ public:
 
 	const Dimention getShiftingState() { return shiftingStage; }
 
-	vector<shared_ptr<DamageObj>> generateDamageObj(vector<shared_ptr<DamageObj>> _nowDmg);
+	vector<shared_ptr<Bullet>> generateDamageObj(vector<shared_ptr<Bullet>> _nowDmg, shared_ptr<Stage> stage);
 
 };

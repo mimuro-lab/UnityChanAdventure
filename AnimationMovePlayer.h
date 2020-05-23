@@ -19,7 +19,8 @@ public:
 		characterAction _isAction, 
 		shared_ptr<CollisionDetect> _collision, 
 		shared_ptr<Stage> _stage, 
-		shared_ptr<Animation> _animation) override;
+		shared_ptr<Animation> _animation, 
+		VirtualController controller) override;
 
 	//! shiftingStageの更新を行う関数。
 	Dimention getShiftingStage(shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage);

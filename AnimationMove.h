@@ -46,8 +46,9 @@ protected:
 	Dimention nextPoint;
 
 public:
-	AnimationMove(){
-		nowVelocity.x = nowVelocity.y = 0;
+	AnimationMove(int initVelX = 0, int initVelY = 0){
+		nowVelocity.x = initVelX;
+		nowVelocity.y = initVelY;
 	};
 
 	~AnimationMove() = default;
@@ -58,7 +59,8 @@ public:
 		characterAction _isAction, 
 		shared_ptr<CollisionDetect> _collision, 
 		shared_ptr<Stage> _stage, 
-		shared_ptr<Animation> _animation);
+		shared_ptr<Animation> _animation, 
+		VirtualController controller);
 
 
 };
