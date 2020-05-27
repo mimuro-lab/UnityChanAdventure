@@ -1,6 +1,6 @@
 #pragma once
 #include "Pysical.h"
-class PysicalDamageObj :
+class PysicalBullet :
 	public Pysical
 {
 	int initVelX;
@@ -18,12 +18,12 @@ class PysicalDamageObj :
 	Dimention affectGravity(Dimention affectedAcc, characterAction nowAction) override;
 
 public:
-	PysicalDamageObj(int _initVelX, int _initVelY, bool __isDireRight) {
+	PysicalBullet(int _initVelX, int _initVelY, bool __isDireRight) {
 		initVelX = _initVelX;
 		initVelY = _initVelY;
 		_isDireRight = __isDireRight;
 	}
-	~PysicalDamageObj() = default;
+	~PysicalBullet() = default;
 
 	//! アクション状態とその方向により速度と加速度を更新し、速度を返す。
 	Dimention update(characterAction nowAction, bool isDireRight, shared_ptr<CollisionDetect> _collision, VirtualController controller);

@@ -44,9 +44,22 @@ void GameScene::update()
 
 	// ダメージ要素の更新。
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
-		damageObjs[i]->update(stage, player->getShiftingState());
+		damageObjs[i]->update(stage, player->getShiftingState(), player->getStatus());
 	}
 
+	
+	vector<shared_ptr<AbsDamageObj>> refreshedObjs;
+	
+	// 無駄なダメージ要素の消去
+	for (unsigned int i = 0; i < damageObjs.size(); i++) {
+		if (damageObjs[i]->getIsLive())
+			refreshedObjs.push_back(damageObjs[i]);
+	}
+
+	damageObjs = refreshedObjs;
+
+	DrawFormatString(100, 200, GetColor(255, 255, 255), "number of object : %d", damageObjs.size());
+	
 }
 
 void GameScene::draw()
@@ -61,7 +74,8 @@ void GameScene::draw()
 	stage->draw();
 
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
-		damageObjs[i]->draw();
+		//if (damageObjs[i]->getIsLive())
+			damageObjs[i]->draw();
 	}
 
 	SelectWindow::drawSelectWindow();

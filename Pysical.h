@@ -112,10 +112,10 @@ protected:
 
 public:
 
-	Pysical(int initVelX = 0, int initVelY = 0)
+	Pysical()
 	{
-		now_vel.x = initVelX;
-		now_vel.y = initVelY;
+		now_vel.x = 0;
+		now_vel.y = 0;
 		now_acc.x = now_acc.y = 0;
 
 		Dimention initVel;

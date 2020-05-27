@@ -1,24 +1,26 @@
-#include "AnimationMoveDamageObj.h"
+#include "AnimationMoveSword.h"
+
 
 /*!
 @brief Status型の現在現在の状態を入力し、次のコマの座標位置を更新しを返す。
 @date 2020/05/04/14:38
 @author mimuro
 */
-Status AnimationMoveDamageObj::update(
+Status AnimationMoveSword::update(
 	Status nowStatus,
 	characterAction nowAction,
 	shared_ptr<CollisionDetect> _collision,
 	shared_ptr<Stage> _stage,
-	shared_ptr<Animation> _animation, 
-	VirtualController controller
+	shared_ptr<Animation> _animation,
+	VirtualController controller,
+	Status playerStatus
 )
 {
 	Status _nextStatus = nowStatus;
 
 	// クラス内変数のnowPointを更新
-	nowPoint.x = nowStatus._x;
-	nowPoint.y = nowStatus._y;
+	nowPoint.x = nowStatus._x + playerStatus._x_speed;
+	nowPoint.y = nowStatus._y + playerStatus._y_speed;
 
 	// Pysicalクラスにより、現在の状態から現在の速度を計算する。
 	nowVelocity = damagePysic->update(nowAction, nowStatus.directRight, _collision, controller);

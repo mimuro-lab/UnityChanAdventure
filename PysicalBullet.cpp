@@ -1,6 +1,6 @@
-#include "PysicalDamageObj.h"
+#include "PysicalBullet.h"
 
-Dimention PysicalDamageObj::affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime, shared_ptr<CollisionDetect> collision, bool isDireRight)
+Dimention PysicalBullet::affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime, shared_ptr<CollisionDetect> collision, bool isDireRight)
 {
 	Dimention returnVel = affectedVel;
 
@@ -21,7 +21,7 @@ Dimention PysicalDamageObj::affectInitVelocity(Dimention affectedVel, characterA
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention PysicalDamageObj::affectGravity(Dimention affectedAcc, characterAction nowAction)
+Dimention PysicalBullet::affectGravity(Dimention affectedAcc, characterAction nowAction)
 {
 	Dimention returnAcc = affectedAcc;
 
@@ -43,7 +43,7 @@ Dimention PysicalDamageObj::affectGravity(Dimention affectedAcc, characterAction
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention PysicalDamageObj::update(characterAction nowAction, bool isDireRight, shared_ptr<CollisionDetect> collision, VirtualController controller)
+Dimention PysicalBullet::update(characterAction nowAction, bool isDireRight, shared_ptr<CollisionDetect> collision, VirtualController controller)
 {
 
 	// ActionÇ™êÿÇËë÷ÇÌÇ¡ÇΩÇÁéûä‘ÇÇOÇ…Ç∑ÇÈÅB

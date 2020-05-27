@@ -74,9 +74,11 @@ public:
 	//! アニメーションを元に戻す関数。
 	void refreshing();
 
-	const char getDrawingSteps() { return DrawingSteps; }
-	const char getDRawingStepsCounter() { return DrawingSteps_counter; }
+	//! ある画像における、同じ画像を一定時間表示するために数えるカウンター
+	const char getDrawingStepsCounter() { return DrawingSteps_counter; }
+	//! アニメーションにおける、表示する画像の番号
 	const char getNowDrawingImageIndex() { return NowDraiwngImageIndex; }
+	//! 画像の枚数
 	const int getImagesSize() { return imageHandles.size(); }
 
 	void arrangeScale(double rate) {

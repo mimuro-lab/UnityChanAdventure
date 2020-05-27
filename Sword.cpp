@@ -1,7 +1,8 @@
-#include "Bullet.h"
+#include "Sword.h"
 
-void Bullet::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Status playerStatus)
+void Sword::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Status playerStatus)
 {
+
 	livingCounter++;
 
 	if (livingCounter < livingTime)
@@ -17,7 +18,7 @@ void Bullet::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Stat
 	collision->update(damageStatus, _stage);
 
 	// Statusの更新処理を行う。
-	damageStatus = animationMove->update(damageStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
+	damageStatus = animationMove->update(damageStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller, playerStatus);
 
 	// アニメーションの下処理を行う。
 	animation->update(damageStatus);
@@ -30,7 +31,7 @@ void Bullet::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Stat
 
 }
 
-void Bullet::draw()
+void Sword::draw()
 {
 	animation->draw();
 	//collision->draw();

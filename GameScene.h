@@ -17,7 +17,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Stage.h"
-#include "Bullet.h"
+#include "AbsDamageObj.h"
 
 using namespace std;
 
@@ -42,7 +42,7 @@ class GameScene :
 	shared_ptr<Enemy> enemy1;
 
 	//! 画面上のダメージ要素
-	vector<shared_ptr<Bullet>> damageObjs;
+	vector<shared_ptr<AbsDamageObj>> damageObjs;
 
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。

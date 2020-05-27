@@ -86,10 +86,12 @@
   <ItemGroup>
     <ClCompile Include="AbstractScene.cpp" />
     <ClCompile Include="AnimationMove.cpp" />
-    <ClCompile Include="AnimationMoveDamageObj.cpp" />
+    <ClCompile Include="AnimationMoveBullet.cpp" />
     <ClCompile Include="AnimationMovePlayer.cpp" />
+    <ClCompile Include="AnimationMoveSword.cpp" />
     <ClCompile Include="AnimationSwitch.cpp" />
     <ClCompile Include="AnimationSwitchBullet.cpp" />
+    <ClCompile Include="AnimationSwitchSword.cpp" />
     <ClCompile Include="CollisionDetect.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
@@ -106,9 +108,11 @@
     <ClCompile Include="CharacterDirect.cpp" />
     <ClCompile Include="PredictPoint.cpp" />
     <ClCompile Include="Pysical.cpp" />
-    <ClCompile Include="PysicalDamageObj.cpp" />
+    <ClCompile Include="PysicalBullet.cpp" />
+    <ClCompile Include="PysicalSword.cpp" />
     <ClCompile Include="RestrictPoint.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
+    <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageLoad.cpp" />
     <ClCompile Include="StartScene.cpp" />
@@ -118,12 +122,15 @@
     <ClCompile Include="VirtualController.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbsDamageObj.h" />
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="AnimationMove.h" />
-    <ClInclude Include="AnimationMoveDamageObj.h" />
+    <ClInclude Include="AnimationMoveBullet.h" />
     <ClInclude Include="AnimationMovePlayer.h" />
+    <ClInclude Include="AnimationMoveSword.h" />
     <ClInclude Include="AnimationSwitch.h" />
     <ClInclude Include="AnimationSwitchBullet.h" />
+    <ClInclude Include="AnimationSwitchSword.h" />
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Controller.h" />
@@ -143,10 +150,12 @@
     <ClInclude Include="CharacterDirect.h" />
     <ClInclude Include="PredictPoint.h" />
     <ClInclude Include="Pysical.h" />
-    <ClInclude Include="PysicalDamageObj.h" />
+    <ClInclude Include="PysicalBullet.h" />
+    <ClInclude Include="PysicalSword.h" />
     <ClInclude Include="RestrictPoint.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Sword.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageLoad.h" />
     <ClInclude Include="StartScene.h" />

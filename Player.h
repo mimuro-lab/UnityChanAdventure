@@ -19,6 +19,8 @@
 #include "CharacterDirect.h"
 #include "Stage.h"
 #include "Bullet.h"
+#include "Sword.h"
+#include "AbsDamageObj.h"
 #include <memory>
 #include <vector>
 
@@ -95,6 +97,6 @@ public:
 
 	const Dimention getShiftingState() { return shiftingStage; }
 
-	vector<shared_ptr<Bullet>> generateDamageObj(vector<shared_ptr<Bullet>> _nowDmg, shared_ptr<Stage> stage);
+	vector<shared_ptr<AbsDamageObj>> generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage);
 
 };

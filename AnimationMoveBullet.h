@@ -1,19 +1,19 @@
 #pragma once
 #include "AnimationMove.h"
-#include "PysicalDamageObj.h"
+#include "PysicalBullet.h"
 #include <memory>
 
 using namespace std;
 
-class AnimationMoveDamageObj :
+class AnimationMoveBullet :
 	public AnimationMove
 {
-	shared_ptr<PysicalDamageObj> damagePysic;
+	shared_ptr<PysicalBullet> damagePysic;
 public:
-	AnimationMoveDamageObj(int initVelX, int initVelY, bool isDireRight) {
-		damagePysic = make_shared<PysicalDamageObj>(initVelX, initVelY, isDireRight);
+	AnimationMoveBullet(int initVelX, int initVelY, bool isDireRight) {
+		damagePysic = make_shared<PysicalBullet>(initVelX, initVelY, isDireRight);
 	}
-	~AnimationMoveDamageObj() = default;
+	~AnimationMoveBullet() = default;
 
 	Status update(
 		Status nowStatus,
