@@ -156,7 +156,7 @@ public:
 
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Hundgun_init)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Hundgun_horizonal)]
-
+		
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Soard1_init)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Soard2_init)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Soard3_init)]
@@ -167,7 +167,7 @@ public:
 	~Pysical() = default;
 
 	//! アクション状態とその方向により速度と加速度を更新し、速度を返す。
-	Dimention update(characterAction nowAction, bool isDireRight, VirtualController controller);
+	Dimention update(characterAction nowAction, bool isDireRight, VirtualController controller, std::shared_ptr<CollisionDetect> _collision);
 
 	//! 座標をセットした後、適切に速度をリセットする。
 	Dimention resetVelocity(Dimention resetedVector, std::shared_ptr<CollisionDetect> _collision);

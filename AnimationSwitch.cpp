@@ -152,6 +152,25 @@ characterAction AnimationSwitch::getNextAction(
 		return characterAction::Jump_MidAir;
 	}
 
+	// 剣攻撃１はじめ
+	if (controller.push_X)
+		return characterAction::Soard1_init;
+
+
+
+	// ハンドガンの撃ち続ける処理
+	if (nowAction == characterAction::Hundgun_init || nowAction == characterAction::Hundgun_horizonal
+		&& controller.on_Y) {
+		return characterAction::Hundgun_horizonal;
+	}
+
+	// ハンドガンを打ち終える処理
+	if (nowAction == characterAction::Hundgun_horizonal) {
+		return characterAction::Hundgun_end;
+	}
+	// ハンドガン撃ち始め
+	if (controller.on_Y)
+		return characterAction::Hundgun_init;
 	// Jump_MidAir to Fall
 	if (nowAction == characterAction::Jump_MidAir && animation->isEnd()) {
 		//printfDx("JumpMidAir to Fall\n");
@@ -239,27 +258,10 @@ characterAction AnimationSwitch::getNextAction(
 		return characterAction::Soard1_end;
 	}
 
-	// ハンドガンの撃ち続ける処理
-	if (nowAction == characterAction::Hundgun_init || nowAction==characterAction::Hundgun_horizonal
-		&& controller.on_Y) {
-		return characterAction::Hundgun_horizonal;
-	}
 
-	// ハンドガンを打ち終える処理
-	if (nowAction == characterAction::Hundgun_horizonal) {
-		return characterAction::Hundgun_end;
-	}
 
 	/// 足元が地面についている状態で、ジャンプで地面をけり上げた瞬間出ない時
 	if (collision->getCollisionedSide().bottom && nowAction != characterAction::Jump_Up) {
-
-		// 剣攻撃１はじめ
-		if (controller.push_X)
-			return characterAction::Soard1_init;
-
-		// ハンドガン撃ち始め
-		if (controller.on_Y)
-			return characterAction::Hundgun_init;
 
 		// Run R
 		if (controller.on_B && controller.on_right) {

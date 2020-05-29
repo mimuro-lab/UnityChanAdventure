@@ -59,13 +59,16 @@ Dimention Pysical::affectFriction(Dimention affectedAcc, characterAction nowActi
 	}
 	
 	if (_validFrictionAction[static_cast<int>(nowAction)]) {
+		
 		if (isDireRight) {
 			returnAcc.x -= acc_friction;
 		}
 		if (!isDireRight) {
 			returnAcc.x += acc_friction;
 		}
+		
 	}
+
 	return returnAcc;
 }
 
@@ -278,7 +281,7 @@ Dimention Pysical::matchingVelAndDireHorizon(Dimention affectedVel, characterAct
 @date 2020/05/04/19:26
 @author mimuro
 */
-Dimention Pysical::update(characterAction nowAction, bool isDireRight, VirtualController controller)
+Dimention Pysical::update(characterAction nowAction, bool isDireRight, VirtualController controller, std::shared_ptr<CollisionDetect> _collision)
 {
 
 	// ActionÇ™êÿÇËë÷ÇÌÇ¡ÇΩÇÁéûä‘ÇÇOÇ…Ç∑ÇÈÅB

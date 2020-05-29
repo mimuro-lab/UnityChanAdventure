@@ -29,7 +29,7 @@ Status AnimationMove::update(
 	nowPoint.y = nowStatus._y;
 
 	// Pysicalクラスにより、現在の状態から現在の速度を計算する。
-	nowVelocity = pysical.update(nowAction, nowStatus.directRight, controller);
+	nowVelocity = pysical.update(nowAction, nowStatus.directRight, controller, _collision);
 	nowVelocity = pysical.resetVelocity(nowVelocity, _collision);
 
 	// PredictPointクラスにより、その速度の座標位置が妥当であるか判断し、妥当な座標位置を計算する。
