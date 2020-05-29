@@ -157,6 +157,47 @@ characterAction AnimationSwitch::getNextAction(
 		return characterAction::Soard1_init;
 
 
+	// 剣攻撃コンボ1
+	if (nowAction == characterAction::Soard1_init) {
+
+		// コンボするなら、次のコンボを返す。
+		if (soardCombContinue) {
+			soardCombContinue = false;
+			return characterAction::Soard2_init;
+
+		}
+
+		// コンボしないならsoardCombContinueをfalseにして終了描画
+		return characterAction::Soard1_end;
+
+	}
+
+	// 剣攻撃コンボ2
+	if (nowAction == characterAction::Soard2_init) {
+
+		// コンボするなら、次のコンボを返す。
+		if (soardCombContinue) {
+			soardCombContinue = false;
+			return characterAction::Soard3_init;
+
+		}
+
+		// コンボを続けないなら終了描画
+		return characterAction::Soard1_end;
+	}
+
+	// 剣攻撃コンボ3
+	if (nowAction == characterAction::Soard3_init) {
+
+		// コンボするなら、次のコンボを返す。
+		if (soardCombContinue) {
+			soardCombContinue = false;
+			return characterAction::Soard2_init;
+		}
+
+		// コンボを続けないなら終了描画
+		return characterAction::Soard1_end;
+	}
 
 	// ハンドガンの撃ち続ける処理
 	if (nowAction == characterAction::Hundgun_init || nowAction == characterAction::Hundgun_horizonal
@@ -216,47 +257,6 @@ characterAction AnimationSwitch::getNextAction(
 		return characterAction::Jump_Up;
 	}
 
-	// 剣攻撃コンボ1
-	if (nowAction == characterAction::Soard1_init) {
-
-		// コンボするなら、次のコンボを返す。
-		if (soardCombContinue) {
-			soardCombContinue = false;
-			return characterAction::Soard2_init;
-			
-		}
-
-		// コンボしないならsoardCombContinueをfalseにして終了描画
-		return characterAction::Soard1_end;
-
-	}
-
-	// 剣攻撃コンボ2
-	if (nowAction == characterAction::Soard2_init) {
-
-		// コンボするなら、次のコンボを返す。
-		if (soardCombContinue) {
-			soardCombContinue = false;
-			return characterAction::Soard3_init;
-
-		}
-
-		// コンボを続けないなら終了描画
-		return characterAction::Soard1_end;
-	}
-
-	// 剣攻撃コンボ3
-	if (nowAction == characterAction::Soard3_init) {
-
-		// コンボするなら、次のコンボを返す。
-		if (soardCombContinue) {
-			soardCombContinue = false;
-			return characterAction::Soard2_init;
-		}
-
-		// コンボを続けないなら終了描画
-		return characterAction::Soard1_end;
-	}
 
 
 
