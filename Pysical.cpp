@@ -59,14 +59,13 @@ Dimention Pysical::affectFriction(Dimention affectedAcc, characterAction nowActi
 	}
 	
 	if (_validFrictionAction[static_cast<int>(nowAction)]) {
-		if (isDireRight)
+		if (isDireRight) {
 			returnAcc.x -= acc_friction;
-		if (!isDireRight)
+		}
+		if (!isDireRight) {
 			returnAcc.x += acc_friction;
+		}
 	}
-
-
-
 	return returnAcc;
 }
 
@@ -284,10 +283,10 @@ Dimention Pysical::update(characterAction nowAction, bool isDireRight, VirtualCo
 
 	// Actionが切り替わったら時間を０にする。
 	if (isSwitching(nowAction))
-		time = 0;
+		timeInAction = 0;
 
 	// 初速度を有効にする。
-	now_vel = affectInitVelocity(now_vel, nowAction, time);
+	now_vel = affectInitVelocity(now_vel, nowAction, timeInAction);
 
 	// 加速度を計算する。
 	if (addAccCounter == 0) {
@@ -307,7 +306,9 @@ Dimention Pysical::update(characterAction nowAction, bool isDireRight, VirtualCo
 	// 向いている方向と水平方向の速度方向の調和をとる。
 	now_vel = matchingVelAndDireHorizon(now_vel, nowAction, isDireRight);
 
-	time++;
+	timeInAction++;
+	timeFromBorn++;
+
 	//DrawFormatString(100, 70, GetColor(255, 255, 255), "now acc x:%d, y:%d", now_acc.x, now_acc.y);
 	return now_vel;
 }

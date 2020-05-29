@@ -27,7 +27,8 @@ Status AnimationMoveSword::update(
 	nowVelocity = damagePysic->resetVelocity(nowVelocity, _collision);
 
 	// PredictPointクラスにより、その速度の座標位置が妥当であるか判断し、妥当な座標位置を計算する。
-	nextPoint = predictPoint.update(nowPoint, nowVelocity, _collision, _stage);
+	//nextPoint = predictPoint.update(nowPoint, nowVelocity, _collision, _stage);
+	nextPoint = nowPoint;
 
 	// nextPointをStatus型変数の座標位置に代入し、返す。
 	_nextStatus._x = nextPoint.x;

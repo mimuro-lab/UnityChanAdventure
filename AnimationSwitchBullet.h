@@ -6,7 +6,8 @@ class AnimationSwitchBullet :
 	public AnimationSwitch
 {
 public:
-	AnimationSwitchBullet(){}
+	AnimationSwitchBullet() : AnimationSwitch(characterAction::Fall){
+	}
 	~AnimationSwitchBullet() = default;
 
 	shared_ptr<Animation> switchingAnimation(characterAction next, Status _playerStatus) override;

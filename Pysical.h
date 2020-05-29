@@ -29,7 +29,10 @@ protected:
 	Dimention now_acc;
 
 	//! Action中の時間、Actionが切り替わると０にリセットされる。
-	unsigned short int time = 0;
+	unsigned short int timeInAction = 0;
+
+	//! オブジェクトが生成されてからの絶対時間
+	unsigned short int timeFromBorn = 0;
 
 	// moveNコマに一回加速度を加える。
 	unsigned char addAccN = 2;
@@ -82,7 +85,7 @@ protected:
 	virtual Dimention affectGravity(Dimention affectedAcc, characterAction nowAction);
 
 	//! affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。
-	Dimention affectFriction(Dimention affectedAcc, characterAction nowAction, bool isDireRight);
+	virtual Dimention affectFriction(Dimention affectedAcc, characterAction nowAction, bool isDireRight);
 
 	//! アクション状態とその方向から加速度を得る。
 	Dimention getForceFromAction(characterAction nowAction, bool isDireRight, VirtualController controller);

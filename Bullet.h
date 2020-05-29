@@ -56,7 +56,7 @@ public:
 		damageStatus._x = init_x;
 		damageStatus._y = init_y;
 
-		damageStatus.directRight = true;
+		damageStatus.directRight = isDireRight;
 
 
 		animation = make_shared<Animation>(ImagePath_Object::getIns()->bulletNormal, damageStatus, 0, 0, 6, 99, true, 0.2);

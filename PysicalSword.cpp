@@ -10,7 +10,7 @@ Dimention PysicalSword::update(characterAction nowAction, bool isDireRight, shar
 
 	// Actionが切り替わったら時間を０にする。
 	if (isSwitching(nowAction))
-		time = 0;
+		timeInAction = 0;
 
 	// 加速度を計算する。
 	if (addAccCounter == 0) {
@@ -30,7 +30,8 @@ Dimention PysicalSword::update(characterAction nowAction, bool isDireRight, shar
 	// 向いている方向と水平方向の速度方向の調和をとる。
 	now_vel = matchingVelAndDireHorizon(now_vel, nowAction, isDireRight);
 
-	time++;
+	timeInAction++;
+	timeFromBorn++;
 	//DrawFormatString(100, 70, GetColor(255, 255, 255), "now acc x:%d, y:%d", now_acc.x, now_acc.y);
 	return now_vel;
 }

@@ -11,11 +11,22 @@ class PysicalBullet :
 	unsigned char validGravityN = 6;
 	unsigned char validGravityCounter = 0;
 
+	// 空中の最小速度
+	unsigned char minVel_inAir = 5;
+
+	//! アクション状態とその方向から速度の限界値を得る。
+	Dimention getLimitVelFromAction(characterAction nowAction, bool isDireRight, VirtualController controller) override;
+
+	//! 加速度から速度を計算する。
+	Dimention calcVelocityFromAccel(Dimention affectedVel, Dimention affectAcc, characterAction nowAction, bool isDireRight, VirtualController controller) override;
 
 	Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime, shared_ptr<CollisionDetect> collision, bool isDireRight);
 
 	//! affectGravity（対象の加速度）に対し、重力を加える。
 	Dimention affectGravity(Dimention affectedAcc, characterAction nowAction) override;
+
+	//! affectGravity（対象の加速度）に対し、さらに地面との摩擦を加える。
+	Dimention affectFriction(Dimention affectedAcc, Dimention nowVelocity, characterAction nowAction, bool isDireRight);
 
 public:
 	PysicalBullet(int _initVelX, int _initVelY, bool __isDireRight) {
