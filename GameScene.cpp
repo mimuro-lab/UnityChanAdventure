@@ -73,7 +73,8 @@ void GameScene::draw()
 	stage->draw();
 
 	for (unsigned int i = 0; i < enemys.size(); i++) {
-		enemys[i]->draw();
+		if(enemys[i]->getStatusAsParameter()->isActive)
+			enemys[i]->draw();
 	}
 
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {

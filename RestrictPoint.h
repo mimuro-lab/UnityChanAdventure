@@ -11,11 +11,11 @@ using namespace std;
 class RestrictPoint
 {
 
-	int restrictVerticeLeft = 150;
-	int restrictVerticeRight = 500;
+	int restrictVerticeLeft = scrollVerticeLeft;
+	int restrictVerticeRight = scrollVerticeRight;
 
-	int restrictHorizonHead = 350;
-	int restrictHorizonBottom = 500;
+	int restrictHorizonHead = scrollHorizonHead;
+	int restrictHorizonBottom = scrollHorizonBottom;
 	
 	bool isRestrictRight = false;
 	bool isRestrictLeft = false;

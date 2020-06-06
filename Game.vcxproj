@@ -170,6 +170,9 @@
     <ClInclude Include="CalcUtils.h" />
     <ClInclude Include="VirtualController.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Stage\Enemy\sample_enemy.csv" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

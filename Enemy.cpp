@@ -2,31 +2,36 @@
 
 void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::vector<std::shared_ptr<AbsDamageObj>> _damages)
 {
+	statusAsChara._y += shiftingStage.y;
+	statusAsChara._x += shiftingStage.x;
+
+	if (statusAsChara._x < 0 + deActiveLeft 
+		|| statusAsChara._x > WIN_W + deActiveRight
+		|| statusAsChara._y < 0 + deActiveHead
+		|| statusAsChara._y > WIN_H + deActiveBottom)
+		statusAsPara->isActive = false;
+	else
+		statusAsPara->isActive = true;
+
+	if (!statusAsPara->isActive)
+		return;
+
 
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
 	// Collisionの更新を行う。
-	enemyStatus._y += shiftingStage.y;
-	enemyStatus._x += shiftingStage.x;
-	collision->update(enemyStatus, _stage);
+	collision->update(statusAsChara, _stage);
 
 	// Statusの更新処理を行う。
-	enemyStatus = animationMove->update(enemyStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
+	statusAsChara = animationMove->update(statusAsChara, animationSwitch->getNowAction(), collision, _stage, animation, controller);
 
 	// アニメーションの下処理を行う。
-	animation->update(enemyStatus);
+	animation->update(statusAsChara);
 
 	// アニメーションの切り替えを行う。もし切り替えなければ同じanimationオブジェクトを返す。
-	animation = animationSwitch->update(collision, animation, enemyStatus, controller);
+	animation = animationSwitch->update(collision, animation, statusAsChara, controller);
 
 	// 方向を更新する。
-	enemyStatus.directRight = enemyDirect->updateDirect(animationSwitch->getNowAction(), enemyStatus.directRight, enemyStatus, controller);
-
-	if(_damages.size() == 0) {
-		isAlive = true;
-	}
-	else {
-		isAlive = false;
-	}
+	statusAsChara.directRight = enemyDirect->updateDirect(animationSwitch->getNowAction(), statusAsChara.directRight, statusAsChara, controller);
 
 }
 
