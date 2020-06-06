@@ -353,7 +353,7 @@ shared_ptr<Animation> AnimationSwitch::switchingAnimation(characterAction next, 
 		break;
 	case characterAction::Hundgun_init:
 		nowAction = characterAction::Hundgun_init;
-		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 4);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Hundgun_init, nowStatus, 0, -3, 1);
 		break;
 	case characterAction::Hundgun_end:
 		nowAction = characterAction::Hundgun_end;

@@ -136,6 +136,7 @@ public:
 
 			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_horizonal)]
+			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_end)]
 
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard1_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard2_init)]

@@ -164,6 +164,12 @@
     <ClCompile Include="PysicalSword.cpp">
       <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyLoad.cpp">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyStatus.cpp">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -291,6 +297,15 @@
     </ClInclude>
     <ClInclude Include="AbsDamageObj.h">
       <Filter>ソース ファイル\GameScene\DamageObj</Filter>
+    </ClInclude>
+    <ClInclude Include="ImagePath_Effect.h">
+      <Filter>ソース ファイル\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyLoad.h">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyStatus.h">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

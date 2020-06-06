@@ -65,6 +65,8 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// •ûŒü‚ðXV‚·‚éB
 	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight, playerStatus, controller);
 
+	DrawFormatString(100, 150, GetColor(255, 255, 255), "player %d, %d", playerStatus._x, playerStatus._y);
+
 }
 
 void Player::draw()

@@ -16,6 +16,7 @@
 #include "ImagePath_Unitychan.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "EnemyLoad.h"
 #include "Stage.h"
 #include "AbsDamageObj.h"
 
@@ -37,10 +38,10 @@ class GameScene :
 	//! Playerの処理をになうオブジェクト
 	shared_ptr<Player> player;
 
-	shared_ptr<Enemy> enemy;
+	vector<shared_ptr<Enemy>> enemys;
 
-	shared_ptr<Enemy> enemy1;
-
+	shared_ptr<EnemyLoad> enemyLoad;
+	
 	//! 画面上のダメージ要素
 	vector<shared_ptr<AbsDamageObj>> damageObjs;
 
@@ -53,9 +54,13 @@ public:
 		player(make_shared<Player>(stage))
 
 	{
-		enemy = make_shared<Enemy>(stage, 100,100);
-		enemy1 = make_shared<Enemy>(stage, 150, 100);
 
+		enemyLoad = make_shared<EnemyLoad>();
+
+		for (unsigned int i = 0; i < enemyLoad->getElements().size(); i++) {
+			shared_ptr<Enemy> ene = make_shared<Enemy>(stage, enemyLoad->getElements()[i].x, enemyLoad->getElements()[i].y);
+			enemys.push_back(ene);
+		}
 	};
 	~GameScene() = default;
 

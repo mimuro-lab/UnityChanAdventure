@@ -35,10 +35,6 @@ void GameScene::update()
 	// ステージ処理
 	stage->update(player->getShiftingState(), player->getStatus());
 	
-	//enemy->update(stage, player->getShiftingState());
-
-	//enemy1->update(stage, player->getShiftingState());
-	
 	// playerによるダメージ要素の生成
 	damageObjs = player->generateDamageObj(damageObjs,stage);
 
@@ -46,7 +42,6 @@ void GameScene::update()
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		damageObjs[i]->update(stage, player->getShiftingState(), player->getStatus());
 	}
-
 	
 	vector<shared_ptr<AbsDamageObj>> refreshedObjs;
 	
@@ -57,6 +52,10 @@ void GameScene::update()
 	}
 
 	damageObjs = refreshedObjs;
+
+	for (unsigned int i = 0; i < enemys.size(); i++) {
+		enemys[i]->update(stage, player->getShiftingState(), damageObjs);
+	}
 
 	DrawFormatString(100, 200, GetColor(255, 255, 255), "number of object : %d", damageObjs.size());
 	
@@ -72,6 +71,10 @@ void GameScene::draw()
 	//enemy1->draw();
 
 	stage->draw();
+
+	for (unsigned int i = 0; i < enemys.size(); i++) {
+		enemys[i]->draw();
+	}
 
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		//if (damageObjs[i]->getIsLive())

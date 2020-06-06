@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage)
+void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::vector<std::shared_ptr<AbsDamageObj>> _damages)
 {
 
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
@@ -20,6 +20,13 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage)
 
 	// 方向を更新する。
 	enemyStatus.directRight = enemyDirect->updateDirect(animationSwitch->getNowAction(), enemyStatus.directRight, enemyStatus, controller);
+
+	if(_damages.size() == 0) {
+		isAlive = true;
+	}
+	else {
+		isAlive = false;
+	}
 
 }
 

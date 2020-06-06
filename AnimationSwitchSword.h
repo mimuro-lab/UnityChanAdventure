@@ -2,8 +2,6 @@
 #include "AnimationSwitch.h"
 #include "ImagePath_Object.h"
 
-
-
 class AnimationSwitchSword 
 	:	public AnimationSwitch
 {

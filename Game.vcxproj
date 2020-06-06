@@ -97,6 +97,8 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyLoad.cpp" />
+    <ClCompile Include="EnemyStatus.cpp" />
     <ClCompile Include="Fps.cpp" />
     <ClCompile Include="Gamepad.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -137,10 +139,13 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyLoad.h" />
+    <ClInclude Include="EnemyStatus.h" />
     <ClInclude Include="Fps.h" />
     <ClInclude Include="Gamepad.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="ImagePath_Effect.h" />
     <ClInclude Include="ImagePath_Object.h" />
     <ClInclude Include="ImagePath_Unitychan.h" />
     <ClInclude Include="ISceneChanger.h" />

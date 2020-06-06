@@ -5,7 +5,8 @@ shared_ptr<Animation> AnimationSwitchSword::switchingAnimation(characterAction n
 	using namespace std;
 
 	shared_ptr<Animation> retObj;
-
+	
+	
 	switch (next) {
 	case characterAction::Brake:
 		nowAction = characterAction::Brake;
@@ -85,6 +86,6 @@ shared_ptr<Animation> AnimationSwitchSword::switchingAnimation(characterAction n
 	}
 
 	retObj->arrangeScale(0.2);
-
+	
 	return retObj;
 }

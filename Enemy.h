@@ -10,6 +10,7 @@
 #include "AnimationSwitch.h"
 #include "CollisionDetect.h"
 #include "CharacterDirect.h"
+#include "AbsDamageObj.h"
 #include "Stage.h"
 #include <memory>
 #include <vector>
@@ -40,9 +41,12 @@ class Enemy
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
 	std::shared_ptr<CharacterDirect> enemyDirect;
 
+	bool isAlive = true;
+
 public:
 	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y)
 	{
+
 		// 初期情報の設定。
 		enemyStatus._x = init_x;
 		enemyStatus._y = init_y;
@@ -65,10 +69,12 @@ public:
 	};
 
 	//! Playerオブジェクトの前処理全般を行う関数。
-	void update(std::shared_ptr<Stage> _stage, Dimention shiftingStage);
+	void update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::vector<std::shared_ptr<AbsDamageObj>> _damages);
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
+
+	const bool getIsAlive() { return isAlive; }
 
 };
 

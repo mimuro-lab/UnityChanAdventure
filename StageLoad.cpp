@@ -25,7 +25,6 @@ vector<vector<BlockCell>> StageLoad::loadCsv(const char * csvFile, int loadInitX
 		}
 	}
 
-
 	FILE* fp;
 	fopen_s(&fp, csvFile, "r");
 
