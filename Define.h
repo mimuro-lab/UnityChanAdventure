@@ -66,11 +66,11 @@ namespace Define{
 	};
 
 	//! スクロール画面の端っこの座標
-	static int scrollVerticeLeft = 150;
-	static int scrollVerticeRight = 500;
+	static int scrollVerticeLeft = 200;
+	static int scrollVerticeRight = 400;
 
-	static int scrollHorizonHead = 150;
-	static int scrollHorizonBottom = 400;
+	static int scrollHorizonHead = 100;
+	static int scrollHorizonBottom = 450;
 
 	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。
 	enum class characterAction {

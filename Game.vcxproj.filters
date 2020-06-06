@@ -312,5 +312,8 @@
     <None Include="Stage\Enemy\sample_enemy.csv">
       <Filter>リソース ファイル</Filter>
     </None>
+    <None Include="Stage\sample_stage.csv">
+      <Filter>リソース ファイル</Filter>
+    </None>
   </ItemGroup>
 </Project>

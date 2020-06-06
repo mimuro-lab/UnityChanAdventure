@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Stage\Enemy\sample_enemy.csv" />
+    <None Include="Stage\sample_stage.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

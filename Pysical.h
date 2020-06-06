@@ -79,7 +79,7 @@ protected:
 	std::vector<bool> _validFrictionAction;
 
 	//! 対象の速度に対し、初速度をさらに与える関数。
-	virtual Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime);
+	virtual Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime, VirtualController controller);
 
 	//! affectGravity（対象の加速度）に対し、重力を加える。
 	virtual Dimention affectGravity(Dimention affectedAcc, characterAction nowAction);

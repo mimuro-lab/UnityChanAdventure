@@ -13,13 +13,21 @@
 @date 2020/05/04/19:19
 @author mimuro
 */
-Dimention Pysical::affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime)
+Dimention Pysical::affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime, VirtualController controller)
 {
 	Dimention returnVel = affectedVel;
 
 	if (nowTime == 0) {
 		returnVel.x += _isInitVelocity[static_cast<int>(nowAction)].x;
-		returnVel.y += _isInitVelocity[static_cast<int>(nowAction)].y;
+		if (nowAction == characterAction::Jump_MidAir) {
+			if (controller.on_A) {
+				returnVel.y += _isInitVelocity[static_cast<int>(nowAction)].y;
+			}
+		}
+		else {
+			returnVel.y += _isInitVelocity[static_cast<int>(nowAction)].y;
+		}
+		
 	}
 
 	return returnVel;
@@ -245,7 +253,10 @@ Dimention Pysical::calcVelocityFromAccel(Dimention affectedVel, Dimention affect
 	else
 		returnVelocity.x = getLimitVelFromAction(nowAction, isDireRight,controller).x;
 
-	returnVelocity.y += affectAcc.y;
+	if (returnVelocity.y > blockHeight)
+		returnVelocity.y = blockHeight;
+	else
+		returnVelocity.y += affectAcc.y;
 
 	return returnVelocity;
 }
@@ -289,7 +300,7 @@ Dimention Pysical::update(characterAction nowAction, bool isDireRight, VirtualCo
 		timeInAction = 0;
 
 	// 初速度を有効にする。
-	now_vel = affectInitVelocity(now_vel, nowAction, timeInAction);
+	now_vel = affectInitVelocity(now_vel, nowAction, timeInAction, controller);
 
 	// 加速度を計算する。
 	if (addAccCounter == 0) {
