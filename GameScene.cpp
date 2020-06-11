@@ -26,14 +26,15 @@ void GameScene::update()
 	// セレクトウィンドウが閉じた瞬間のみコントローラの更新を行う。この瞬間はコントローラのpush（押された瞬間の状態）は無視したい。
 	if(IsSelectWindow_Closed())
 		Controller::getIns()->update();
-
-	
+		
 
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);	
 
 	// ステージ処理
 	stage->update(player->getShiftingState(), player->getStatus());
+
+	player->pushPlayerFromStage(stage);
 	
 	// playerによるダメージ要素の生成
 	damageObjs = player->generateDamageObj(damageObjs,stage);
@@ -57,7 +58,7 @@ void GameScene::update()
 		enemys[i]->update(stage, player->getShiftingState(), damageObjs);
 	}
 
-	DrawFormatString(100, 200, GetColor(255, 255, 255), "number of object : %d", damageObjs.size());
+
 	
 }
 

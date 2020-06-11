@@ -195,7 +195,8 @@ Dimention PredictPoint::update(Dimention _nowPoint, Dimention nowVelocity, std::
 
 	nowPoint = _nowPoint;
 
-	predictPoint.x = fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage, nowVelocity.y);
+	if(!_collision->getCollisionedInSide().bottom)
+		predictPoint.x = fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage, nowVelocity.y);
 
 	predictPoint.y = fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage, nowVelocity.x);
 

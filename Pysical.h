@@ -56,8 +56,8 @@ protected:
 	unsigned char acc_run = 1;
 	unsigned char limVel_run = 7;
 
-	unsigned char initVel_jumpUp = 12;
-	unsigned char initVel_jumpMidAir = 3;
+	unsigned char initVel_jumpUp = 15;
+	unsigned char initVel_jumpMidAir = 0;
 
 	unsigned char acc_inAir = 2;
 	char limVel_inAir_jumpUp = 0;

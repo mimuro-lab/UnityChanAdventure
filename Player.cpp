@@ -65,8 +65,25 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// 方向を更新する。
 	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight, playerStatus, controller);
 
-	DrawFormatString(100, 150, GetColor(255, 255, 255), "player %d, %d", playerStatus._x, playerStatus._y);
 
+
+}
+
+/*!
+@brief プレイヤーオブジェクトの座標更新、ステージを動かした後に、プレイヤーがめり込むことがある。ステージから押し出す処理。
+@date 2020/04/21/12:36
+@author mimuro
+*/
+void Player::pushPlayerFromStage(std::shared_ptr<Stage> _stage)
+{
+	if (collision->getCollisionedInSide().bottom) {
+		int y =	_stage->getBlockCell(playerStatus._x, playerStatus._y + collision->getRange(CollisionDetect::toShiftDirect::bottom)).y1;
+		y = y + _stage->getPointLeftUpY() - collision->getRange(CollisionDetect::toShiftDirect::bottom);
+		//DrawCircle(playerStatus._x, y, 3, GetColor(255,255,255), false);
+		DrawBox(playerStatus._x - 20, y-2, playerStatus._x + 20, y ,GetColor(255, 255, 255), true);
+		playerStatus._y = y ;
+		printfDx("");
+	}
 }
 
 void Player::draw()

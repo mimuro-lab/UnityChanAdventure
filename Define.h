@@ -69,7 +69,7 @@ namespace Define{
 	static int scrollVerticeLeft = 200;
 	static int scrollVerticeRight = 400;
 
-	static int scrollHorizonHead = 100;
+	static int scrollHorizonHead = 200;
 	static int scrollHorizonBottom = 450;
 
 	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。

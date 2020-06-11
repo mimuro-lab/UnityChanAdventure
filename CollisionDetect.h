@@ -29,10 +29,10 @@ class CollisionDetect
 protected:
 	//! 当たり判定を格納する変数。Trueだと当たっている。
 	struct Collision {
-		bool head;
-		bool bottom;
-		bool right;
-		bool left;
+		bool head = false;
+		bool bottom = false;
+		bool right = false;
+		bool left = false;
 	};
 
 	//! 中心座標からどのくらいの範囲で当たり判定を置くか。その範囲の値を管理する構造体。
@@ -45,6 +45,9 @@ protected:
 
 	//! 当たり判定を管理する変数。
 	Collision collisionedSide;
+
+	//! 内側の当たり判定を管理する変数。（プレイヤーがステージにめり込む時に使用する）
+	Collision collisionedInSide;
 
 	// プレイヤーオブジェクトの中心点を基準にし、どのくらいの長さで当たり判定を置くか。
 	char toRight = 10;
@@ -129,6 +132,12 @@ public:
 	Collision getCollisionedSide() { 
 		return collisionedSide; 
 	}
+
+	//! めり込み当たり判定を取得する関数。
+	Collision getCollisionedInSide() {
+		return collisionedInSide;
+	}
+
 	//! 中心座標からの当たり判定の範囲を返す関数。
 	const char getRange(toShiftDirect _to);
 

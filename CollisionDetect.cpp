@@ -16,17 +16,49 @@
 void CollisionDetect::update(Define::Status __nowStatus, std::shared_ptr<Stage> __stage)
 {
 
-	collisionedSide.head = detectHead(__stage, __nowStatus);
+	Define::Status statusForInside = __nowStatus;
+	//上のめり込みを調べる
+	statusForInside._y++;
 
-	collisionedSide.right = detectRight(__stage, __nowStatus);
+	collisionedInSide.head = detectHead(__stage, statusForInside);
 
-	collisionedSide.bottom = detectBottom(__stage, __nowStatus);
+	statusForInside._y--;
 
-	collisionedSide.left = detectLeft(__stage, __nowStatus);
+	//下のめり込みを調べる
+	statusForInside._y--;
+
+	collisionedInSide.bottom = detectBottom(__stage, statusForInside);
+
+	statusForInside._y++;
+	//右のめり込みを調べる
+	statusForInside._x++;
+
+	collisionedInSide.right = detectHead(__stage, statusForInside);
+
+	statusForInside._x--;
+
+	//左のめり込みを調べる
+	statusForInside._x--;
+
+	collisionedInSide.left = detectBottom(__stage, statusForInside);
+
+	statusForInside._x++;
 
 	_stage = __stage;
 	nowStatus = __nowStatus;
 
+
+	collisionedSide.head = detectHead(__stage, __nowStatus);
+
+	collisionedSide.bottom = detectBottom(__stage, __nowStatus);
+
+	// もし、下か上にめり込んでいたら、左右の当たり判定はなし。（めり込んだ状態で更新されるから絶対に当たった判定になってしまう）
+	if (!collisionedInSide.bottom) {
+
+		collisionedSide.right = detectRight(__stage, __nowStatus);
+
+		collisionedSide.left = detectLeft(__stage, __nowStatus);
+	}
 }
 
 

@@ -93,6 +93,8 @@ public:
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
 
+	void pushPlayerFromStage(std::shared_ptr<Stage> _stage);
+
 	const Define::Status getStatus() { return playerStatus; }
 
 	const Dimention getShiftingState() { return shiftingStage; }
