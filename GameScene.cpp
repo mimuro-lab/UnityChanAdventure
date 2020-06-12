@@ -30,10 +30,13 @@ void GameScene::update()
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);	
 
-	// ステージ処理
-	stage->update(player->getShiftingState(), player->getStatus());
+	Dimention shiftingStage = predictStageShift->update(stage, player, player->getShiftingState());
 
-	int deffOfStageAndBottom = player->adjustStageAndBottom(stage);
+	// ステージ処理
+	stage->update(shiftingStage, player->getStatus());
+
+	// プレイヤーの底がめり込んでいたら発動（０以外の値を返す）
+	deffOfStageAndBottom = player->adjustStageAndBottom(stage);
 
 	stage->adjustBottom(deffOfStageAndBottom);
 
@@ -45,7 +48,7 @@ void GameScene::update()
 	// ダメージ要素の更新。
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		damageObjs[i]->adjustBottom(deffOfStageAndBottom);
-		damageObjs[i]->update(stage, player->getShiftingState(), player->getStatus());
+		damageObjs[i]->update(stage, shiftingStage, player->getStatus());
 	}
 	
 	vector<shared_ptr<AbsDamageObj>> refreshedObjs;
@@ -60,11 +63,9 @@ void GameScene::update()
 
 	for (unsigned int i = 0; i < enemys.size(); i++) {
 		enemys[i]->adjustBottom(deffOfStageAndBottom);
-		enemys[i]->update(stage, player->getShiftingState(), damageObjs);
+		enemys[i]->update(stage, shiftingStage, damageObjs);
 		
 	}
-
-
 	
 }
 
@@ -74,10 +75,7 @@ void GameScene::draw()
 	
 	player->draw();
 
-	//enemy->draw();
-	//enemy1->draw();
-
-	stage->draw();
+		stage->draw();
 
 	for (unsigned int i = 0; i < enemys.size(); i++) {
 		if(enemys[i]->getStatusAsParameter()->isActive)

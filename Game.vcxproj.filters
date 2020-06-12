@@ -170,6 +170,9 @@
     <ClCompile Include="EnemyStatus.cpp">
       <Filter>ソース ファイル\GameScene\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="PredictStageShift.cpp">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -306,6 +309,9 @@
     </ClInclude>
     <ClInclude Include="EnemyStatus.h">
       <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="PredictStageShift.h">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

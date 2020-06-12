@@ -26,7 +26,7 @@ class Bullet : public AbsDamageObj
 
 	int damage = 0;
 
-	int livingTime = 1000;
+	int livingTime = 100;
 	int livingCounter = 0;
 	
 	//! 仮想コントローラ

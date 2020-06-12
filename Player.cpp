@@ -102,7 +102,7 @@ int Player::adjustStageAndBottom(std::shared_ptr<Stage> _stage)
 void Player::draw()
 {
 	animation->draw();
-	//collision->draw();
+	collision->draw();
 }
 
 vector<shared_ptr<AbsDamageObj>> Player::generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage)

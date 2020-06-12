@@ -200,5 +200,7 @@ Dimention PredictPoint::update(Dimention _nowPoint, Dimention nowVelocity, std::
 
 	predictPoint.y = fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage, nowVelocity.x);
 
+	int deffOfNowYAndPredictY = predictPoint.y - (nowPoint.y + nowVelocity.y);
+
 	return predictPoint;
 }

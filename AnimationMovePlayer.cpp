@@ -25,7 +25,7 @@ Status AnimationMovePlayer::update(
 	// RestrictPointクラスにより、画面上で動きを制限する。
 	nextPoint = restrictPoint.update(nextPoint, nowVelocity, _collision);
 
-	//restrictPoint.draw();
+	restrictPoint.draw();
 
 	// nextPointをStatus型変数の座標位置に代入し、返す。
 	_nextStatus._x = nextPoint.x;

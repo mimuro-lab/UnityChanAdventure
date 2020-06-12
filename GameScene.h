@@ -18,6 +18,7 @@
 #include "Enemy.h"
 #include "EnemyLoad.h"
 #include "Stage.h"
+#include "PredictStageShift.h"
 #include "AbsDamageObj.h"
 
 using namespace std;
@@ -35,6 +36,8 @@ class GameScene :
 	//! 背景のStageの処理を行うオブジェクト
 	shared_ptr<Stage> stage;
 
+	shared_ptr<PredictStageShift> predictStageShift;
+
 	//! Playerの処理をになうオブジェクト
 	shared_ptr<Player> player;
 
@@ -45,14 +48,16 @@ class GameScene :
 	//! 画面上のダメージ要素
 	vector<shared_ptr<AbsDamageObj>> damageObjs;
 
+	int deffOfStageAndBottom = 0;
+
 public:
 	//! コンストラクタ呼び出し時にshared_ptr<ISceneChanger>型のオブジェクトを受け取り、親のAbstractSceneクラスのコンストラクタに代入する。
 	GameScene(shared_ptr<ISceneChanger> _changer) :
 		AbstractScene(_changer),
 		SelectWindow(_changer),
 		stage(make_shared<Stage>(Define::blockWidth, Define::blockHeight)),
-		player(make_shared<Player>(stage))
-
+		player(make_shared<Player>(stage)),
+		predictStageShift(make_shared<PredictStageShift>())
 	{
 
 		enemyLoad = make_shared<EnemyLoad>();
