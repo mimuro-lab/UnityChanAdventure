@@ -77,13 +77,26 @@ void Player::update(std::shared_ptr<Stage> _stage)
 void Player::pushPlayerFromStage(std::shared_ptr<Stage> _stage)
 {
 	if (collision->getCollisionedInSide().bottom) {
+		
 		int y =	_stage->getBlockCell(playerStatus._x, playerStatus._y + collision->getRange(CollisionDetect::toShiftDirect::bottom)).y1;
 		y = y + _stage->getPointLeftUpY() - collision->getRange(CollisionDetect::toShiftDirect::bottom);
-		//DrawCircle(playerStatus._x, y, 3, GetColor(255,255,255), false);
-		DrawBox(playerStatus._x - 20, y-2, playerStatus._x + 20, y ,GetColor(255, 255, 255), true);
 		playerStatus._y = y ;
-		printfDx("");
+		
 	}
+}
+
+int Player::adjustStageAndBottom(std::shared_ptr<Stage> _stage)
+{
+	if (collision->getCollisionedInSide().bottom) {
+		
+		int block_y =	_stage->getBlockCell(playerStatus._x, playerStatus._y + collision->getRange(CollisionDetect::toShiftDirect::bottom)).y1;
+		block_y = block_y + _stage->getPointLeftUpY();
+		int defBottomAndBlock = playerStatus._y + collision->getRange(CollisionDetect::toShiftDirect::bottom) - block_y;
+
+		return defBottomAndBlock;
+		
+	}
+	return 0;
 }
 
 void Player::draw()

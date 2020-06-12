@@ -87,5 +87,7 @@ public:
 
 	const std::shared_ptr<EnemyStatus> getStatusAsParameter() { return statusAsPara; }
 
+	void adjustBottom(int AdjustRange);
+
 };
 

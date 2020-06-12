@@ -35,3 +35,8 @@ void Bullet::draw()
 	animation->draw();
 	//collision->draw();
 }
+
+void Bullet::adjustBottom(int AdjustRange)
+{
+	damageStatus._y += AdjustRange;
+}

@@ -32,7 +32,7 @@ public:
 	EnemyLoad();
 	~EnemyLoad() = default;
 
-	const vector<EnemyElement> const getElements() { return elements; }
+	const vector<EnemyElement> getElements() { return elements; }
 
 };
 

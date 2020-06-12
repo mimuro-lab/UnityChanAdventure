@@ -48,6 +48,11 @@ void Stage::update(Dimention shifting, Status nowStatus)
 
 }
 
+void Stage::adjustBottom(int AdjustRange)
+{
+	pointLeftUp_y += AdjustRange;
+}
+
 void Stage::draw()
 {
 	for (char x = 0; x < blockXNum; x++) {

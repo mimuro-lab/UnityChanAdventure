@@ -26,21 +26,25 @@ void GameScene::update()
 	// セレクトウィンドウが閉じた瞬間のみコントローラの更新を行う。この瞬間はコントローラのpush（押された瞬間の状態）は無視したい。
 	if(IsSelectWindow_Closed())
 		Controller::getIns()->update();
-		
-
+	
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);	
 
 	// ステージ処理
 	stage->update(player->getShiftingState(), player->getStatus());
 
-	player->pushPlayerFromStage(stage);
+	int deffOfStageAndBottom = player->adjustStageAndBottom(stage);
+
+	stage->adjustBottom(deffOfStageAndBottom);
+
+	player->adjustStageAndBottom(stage);
 	
 	// playerによるダメージ要素の生成
 	damageObjs = player->generateDamageObj(damageObjs,stage);
 
 	// ダメージ要素の更新。
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
+		damageObjs[i]->adjustBottom(deffOfStageAndBottom);
 		damageObjs[i]->update(stage, player->getShiftingState(), player->getStatus());
 	}
 	
@@ -55,7 +59,9 @@ void GameScene::update()
 	damageObjs = refreshedObjs;
 
 	for (unsigned int i = 0; i < enemys.size(); i++) {
+		enemys[i]->adjustBottom(deffOfStageAndBottom);
 		enemys[i]->update(stage, player->getShiftingState(), damageObjs);
+		
 	}
 
 

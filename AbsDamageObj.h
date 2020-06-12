@@ -18,5 +18,7 @@ public:
 	virtual void draw() = 0;
 
 	const bool getIsLive() { return isLive; }
+
+	virtual void adjustBottom(int AdjustRange) = 0;
 };
 

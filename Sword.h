@@ -75,5 +75,6 @@ public:
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw() override;
 
+	void adjustBottom(int AdjustRange) override;
 };
 

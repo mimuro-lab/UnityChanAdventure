@@ -26,7 +26,7 @@ class Bullet : public AbsDamageObj
 
 	int damage = 0;
 
-	int livingTime = 100;
+	int livingTime = 1000;
 	int livingCounter = 0;
 	
 	//! 仮想コントローラ
@@ -76,6 +76,8 @@ public:
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw() override;
+
+	void adjustBottom(int AdjustRange) override;
 
 };
 

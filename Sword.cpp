@@ -36,3 +36,8 @@ void Sword::draw()
 	animation->draw();
 	//collision->draw();
 }
+
+void Sword::adjustBottom(int AdjustRange)
+{
+	damageStatus._y += AdjustRange;
+}

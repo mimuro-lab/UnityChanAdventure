@@ -35,8 +35,16 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 
 }
 
+void Enemy::adjustBottom(int AdjustRange)
+{
+	statusAsChara._y += AdjustRange;
+}
+
 void Enemy::draw()
 {
 	animation->draw();
-	//collision->draw();
+	collision->draw();
+
+	//DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "%d %d", statusAsChara._x, statusAsChara._y);
+
 }

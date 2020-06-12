@@ -95,6 +95,8 @@ public:
 
 	void pushPlayerFromStage(std::shared_ptr<Stage> _stage);
 
+	int adjustStageAndBottom(std::shared_ptr<Stage> _stage);
+
 	const Define::Status getStatus() { return playerStatus; }
 
 	const Dimention getShiftingState() { return shiftingStage; }
