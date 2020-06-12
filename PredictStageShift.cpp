@@ -13,33 +13,36 @@ Dimention PredictStageShift::update(shared_ptr<Stage> stage, shared_ptr<Player> 
 	int centralX = player->getStatus()._x + shiftinStage.x;
 
 	// 中央の底を調べる
-	DrawCircle(centralX, predictBottom, 3, GetColor(0, 255, 0), false);
+	//DrawCircle(centralX, predictBottom, 3, GetColor(0, 255, 0), false);
 	if (IsDetectedStage(centralX, predictBottom - 1, stage)) {//y座標は1上を見る
 		int blockHead = stage->getBlockCell(centralX, predictBottom).y1 + stage->getPointLeftUpY();
 		deffOfPredictBottomAndBlockHead = playerBottom - blockHead - 2;//計算のための座標は「y座標は1上を見る」のさらに2下（後に引くので下向き）
 		fixedShiftingStage.y -= deffOfPredictBottomAndBlockHead;
-		DrawCircle(centralX, predictBottom, 3, GetColor(0, 255, 0), true);
-		printfDx("fixed\n");
+		//DrawCircle(centralX, predictBottom, 3, GetColor(0, 255, 0), true);
+		//printfDx("fixed\n");
+		return fixedShiftingStage;
 	}
 	
 	// 右の底を調べる
-	DrawCircle(centralX + player->getToRight() - 1, predictBottom, 3, GetColor(0, 255, 0), false);
+	//DrawCircle(centralX + player->getToRight() - 1, predictBottom, 3, GetColor(0, 255, 0), false);
 	if (IsDetectedStage(centralX + player->getToRight() - 1, predictBottom - 1, stage)) {
 		int blockHead = stage->getBlockCell(centralX + player->getToRight() - 1, predictBottom).y1 + stage->getPointLeftUpY();
 		deffOfPredictBottomAndBlockHead = playerBottom - blockHead - 2;
 		fixedShiftingStage.y -= deffOfPredictBottomAndBlockHead;
-		DrawCircle(centralX + player->getToRight() -1, predictBottom, 3, GetColor(0, 255, 0), true);
-		printfDx("fixed\n");
+		//DrawCircle(centralX + player->getToRight() -1, predictBottom, 3, GetColor(0, 255, 0), true);
+		//printfDx("fixed\n");
+		return fixedShiftingStage;
 	}
 
 	// 左の底を調べる
-	DrawCircle(centralX - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), false);
+	//DrawCircle(centralX - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), false);
 	if (IsDetectedStage(centralX - player->getToLeft(), predictBottom - 1, stage)) {
 		int blockHead = stage->getBlockCell(centralX - player->getToLeft(), predictBottom).y1 + stage->getPointLeftUpY();
 		deffOfPredictBottomAndBlockHead = playerBottom - blockHead - 2;
 		fixedShiftingStage.y -= deffOfPredictBottomAndBlockHead;
-		DrawCircle(centralX - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), true);
-		printfDx("fixed\n");
+		//DrawCircle(centralX - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), true);
+		//printfDx("fixed\n");
+		return fixedShiftingStage;
 	}
 	
 	return fixedShiftingStage;
