@@ -38,16 +38,18 @@ void GameScene::update()
 	// プレイヤーの底がめり込んでいたら発動（０以外の値を返す）
 	deffOfStageAndBottom = player->adjustStageAndBottom(stage);
 
-	stage->adjustBottom(deffOfStageAndBottom);
+	//adjustがついている関数はプレイヤーがめり込んだ際の「押し出し」に関する処理
 
-	player->adjustStageAndBottom(stage);
+	//stage->adjustBottom(deffOfStageAndBottom);
+
+	//player->adjustStageAndBottom(stage);
 	
 	// playerによるダメージ要素の生成
 	damageObjs = player->generateDamageObj(damageObjs,stage);
 
 	// ダメージ要素の更新。
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
-		damageObjs[i]->adjustBottom(deffOfStageAndBottom);
+		//damageObjs[i]->adjustBottom(deffOfStageAndBottom);
 		damageObjs[i]->update(stage, shiftingStage, player->getStatus());
 	}
 	
@@ -62,7 +64,7 @@ void GameScene::update()
 	damageObjs = refreshedObjs;
 
 	for (unsigned int i = 0; i < enemys.size(); i++) {
-		enemys[i]->adjustBottom(deffOfStageAndBottom);
+		//enemys[i]->adjustBottom(deffOfStageAndBottom);
 		enemys[i]->update(stage, shiftingStage, damageObjs);
 		
 	}

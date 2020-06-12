@@ -65,8 +65,6 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// •ûŒü‚ðXV‚·‚éB
 	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight, playerStatus, controller);
 
-
-
 }
 
 /*!

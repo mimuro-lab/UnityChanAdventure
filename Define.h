@@ -67,7 +67,7 @@ namespace Define{
 
 	//! スクロール画面の端っこの座標
 	static int scrollVerticeLeft = 200;
-	static int scrollVerticeRight = 400;
+	static int scrollVerticeRight = 450;
 
 	static int scrollHorizonHead = 200;
 	static int scrollHorizonBottom = 450;

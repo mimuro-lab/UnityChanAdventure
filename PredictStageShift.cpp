@@ -8,41 +8,40 @@ Dimention PredictStageShift::update(shared_ptr<Stage> stage, shared_ptr<Player> 
 	int playerBottom = player->getStatus()._y + player->getToBottom();
 	int predictBottom = playerBottom - shiftinStage.y;
 
-	
-
 	int deffOfPredictBottomAndBlockHead = 0;
-	
+
+	int centralX = player->getStatus()._x + shiftinStage.x;
 
 	// 中央の底を調べる
-	DrawCircle(player->getStatus()._x, predictBottom, 3, GetColor(0, 255, 0), false);
-	if (IsDetectedStage(player->getStatus()._x, predictBottom - 1, stage)) {
-		int blockHead = stage->getBlockCell(player->getStatus()._x, predictBottom).y1 + stage->getPointLeftUpY();
-		deffOfPredictBottomAndBlockHead = playerBottom - blockHead;
+	DrawCircle(centralX, predictBottom, 3, GetColor(0, 255, 0), false);
+	if (IsDetectedStage(centralX, predictBottom - 1, stage)) {//y座標は1上を見る
+		int blockHead = stage->getBlockCell(centralX, predictBottom).y1 + stage->getPointLeftUpY();
+		deffOfPredictBottomAndBlockHead = playerBottom - blockHead - 2;//計算のための座標は「y座標は1上を見る」のさらに2下（後に引くので下向き）
 		fixedShiftingStage.y -= deffOfPredictBottomAndBlockHead;
-		DrawCircle(player->getStatus()._x, predictBottom, 3, GetColor(0, 255, 0), true);
+		DrawCircle(centralX, predictBottom, 3, GetColor(0, 255, 0), true);
 		printfDx("fixed\n");
 	}
-
+	
 	// 右の底を調べる
-	DrawCircle(player->getStatus()._x + player->getToRight() - 1, predictBottom, 3, GetColor(0, 255, 0), false);
-	if (IsDetectedStage(player->getStatus()._x + player->getToRight() - 1, predictBottom - 1, stage)) {
-		int blockHead = stage->getBlockCell(player->getStatus()._x, predictBottom).y1 + stage->getPointLeftUpY();
-		deffOfPredictBottomAndBlockHead = playerBottom - blockHead;
+	DrawCircle(centralX + player->getToRight() - 1, predictBottom, 3, GetColor(0, 255, 0), false);
+	if (IsDetectedStage(centralX + player->getToRight() - 1, predictBottom - 1, stage)) {
+		int blockHead = stage->getBlockCell(centralX + player->getToRight() - 1, predictBottom).y1 + stage->getPointLeftUpY();
+		deffOfPredictBottomAndBlockHead = playerBottom - blockHead - 2;
 		fixedShiftingStage.y -= deffOfPredictBottomAndBlockHead;
-		DrawCircle(player->getStatus()._x + player->getToRight() -1, predictBottom, 3, GetColor(0, 255, 0), true);
+		DrawCircle(centralX + player->getToRight() -1, predictBottom, 3, GetColor(0, 255, 0), true);
 		printfDx("fixed\n");
 	}
 
 	// 左の底を調べる
-	DrawCircle(player->getStatus()._x - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), false);
-	if (IsDetectedStage(player->getStatus()._x - player->getToLeft(), predictBottom - 1, stage)) {
-		int blockHead = stage->getBlockCell(player->getStatus()._x, predictBottom).y1 + stage->getPointLeftUpY();
-		deffOfPredictBottomAndBlockHead = playerBottom - blockHead;
+	DrawCircle(centralX - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), false);
+	if (IsDetectedStage(centralX - player->getToLeft(), predictBottom - 1, stage)) {
+		int blockHead = stage->getBlockCell(centralX - player->getToLeft(), predictBottom).y1 + stage->getPointLeftUpY();
+		deffOfPredictBottomAndBlockHead = playerBottom - blockHead - 2;
 		fixedShiftingStage.y -= deffOfPredictBottomAndBlockHead;
-		DrawCircle(player->getStatus()._x - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), true);
+		DrawCircle(centralX - player->getToLeft(), predictBottom, 3, GetColor(0, 255, 0), true);
 		printfDx("fixed\n");
 	}
-
+	
 	return fixedShiftingStage;
 
 }
