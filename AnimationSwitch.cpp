@@ -80,7 +80,7 @@ bool AnimationSwitch::acceptNextAction(characterAction nowAction, characterActio
 	if (nowAction == nextAction)
 		return false;
 
-	//Jump_MidAirの時は、速度上向きの間はアニメーションを切り替えない。
+	//Jump_MidAirの時、かつ、速度上向きの間はアニメーションを切り替えない。
 	if (nowAction == characterAction::Jump_MidAir && playerStatus._y_speed < 0)
 		return false;
 
@@ -212,6 +212,9 @@ characterAction AnimationSwitch::getNextAction(
 	// ハンドガン撃ち始め
 	if (controller.on_Y)
 		return characterAction::Hundgun_init;
+
+
+
 	// Jump_MidAir to Fall
 	if (nowAction == characterAction::Jump_MidAir && animation->isEnd()) {
 		//printfDx("JumpMidAir to Fall\n");
@@ -221,7 +224,11 @@ characterAction AnimationSwitch::getNextAction(
 	// ジャンプ中に頭上に障壁があったらFallに強制変更
 	if (nowAction == characterAction::Jump_Up || nowAction == characterAction::Jump_MidAir) {
 		if(collision->getCollisionedSide().head)
-			return characterAction::Jump_Fall;
+			return characterAction::Fall;
+	}
+
+	if (playerStatus._y_speed > 0) {
+		return characterAction::Fall;
 	}
 
 	// Jump_Landing
@@ -256,8 +263,6 @@ characterAction AnimationSwitch::getNextAction(
 	if (controller.push_A && collision->getCollisionedSide().bottom) {
 		return characterAction::Jump_Up;
 	}
-
-
 
 
 	/// 足元が地面についている状態で、ジャンプで地面をけり上げた瞬間出ない時
