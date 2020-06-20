@@ -7,6 +7,7 @@
 */
 
 #include "Player.h"
+#include "PlayerGenerateDamageObj.h"
 
 VirtualController Player::updateController()
 {
@@ -120,193 +121,21 @@ vector<shared_ptr<AbsDamageObj>> Player::generateDamageObj(vector<shared_ptr<Abs
 	int cnt = animation->getDrawingStepsCounter();
 
 	// 剣攻撃1のダメージオブジェクトの生成
-	if (animationSwitch->getNowAction() == characterAction::Soard1_init
-		&& animation->getNowDrawingImageIndex() == 4
-		&& animation->getDrawingStepsCounter() == 1
-		) {
+	if (animationSwitch->getNowAction() == characterAction::Soard1_init	) {
 
-		int initShiftX = 0;
-		if (playerStatus.directRight)
-			initShiftX = 30;
-		else
-			initShiftX = -30;
-		int initShiftY = 10;
-
-		shared_ptr<AbsDamageObj> pushObj1 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-		
-		returnDmg.push_back(pushObj1);
-		
-		initShiftX = 0;
-		if (playerStatus.directRight)
-			initShiftX = 25;
-		else
-			initShiftX = -25;
-		initShiftY = 14;
-
-		shared_ptr<AbsDamageObj> pushObj2 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj2);
-
-		initShiftX = 0;
-		if (playerStatus.directRight)
-			initShiftX = 18;
-		else
-			initShiftX = -18;
-		initShiftY = 17;
-
-		shared_ptr<AbsDamageObj> pushObj3 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj3);
-
-		initShiftX = 0;
-		if (playerStatus.directRight)
-			initShiftX = 25;
-		else
-			initShiftX = -25;
-		initShiftY = 2;
-
-		shared_ptr<AbsDamageObj> pushObj4 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj4);
+		returnDmg = Sword1(playerStatus, stage, animation, returnDmg);
 
 	}
 
-	if (animationSwitch->getNowAction() == characterAction::Soard2_init
-		&& animation->getNowDrawingImageIndex() == 4
-		&& animation->getDrawingStepsCounter() == 1
-		) {
+	if (animationSwitch->getNowAction() == characterAction::Soard2_init	) {
 
-		int initShiftX = 0;
-		if (playerStatus.directRight)
-			initShiftX = 35;
-		else
-			initShiftX = -35;
-		int initShiftY = 10;
-
-		shared_ptr<AbsDamageObj> pushObj1 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj1);
-
-		if (playerStatus.directRight)
-			initShiftX = 30;
-		else
-			initShiftX = -30;
-		initShiftY = 14;
-
-		shared_ptr<AbsDamageObj> pushObj2 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj2);
-
-		if (playerStatus.directRight)
-			initShiftX = 23;
-		else
-			initShiftX = -23;
-		initShiftY = 17;
-
-		shared_ptr<AbsDamageObj> pushObj3 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj3);
-
-		if (playerStatus.directRight)
-			initShiftX = 38;
-		else
-			initShiftX = -38;
-		initShiftY = 0;
-
-		shared_ptr<AbsDamageObj> pushObj4 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj4);
-
-		if (playerStatus.directRight)
-			initShiftX = 35;
-		else
-			initShiftX = -35;
-		initShiftY = -10;
-
-		shared_ptr<AbsDamageObj> pushObj5 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj5);
-
-		if (playerStatus.directRight)
-			initShiftX = 25;
-		else
-			initShiftX = -25;
-		initShiftY = -20;
-
-		shared_ptr<AbsDamageObj> pushObj6 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj6);
+		returnDmg = Sword2(playerStatus, stage, animation, returnDmg);
 
 	}
+		
+	if (animationSwitch->getNowAction() == characterAction::Soard3_init	) {
 
-	int z = animation->getNowDrawingImageIndex();
-	int y = animation->getDrawingStepsCounter();
-	
-	if (animationSwitch->getNowAction() == characterAction::Soard3_init
-		&& animation->getNowDrawingImageIndex() == 4
-		&& animation->getDrawingStepsCounter() == 1
-		) {
-
-		int initShiftX = 0;
-		if (playerStatus.directRight)
-			initShiftX = 35;
-		else
-			initShiftX = -35;
-		int initShiftY = 10;
-
-		shared_ptr<AbsDamageObj> pushObj1 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj1);
-
-		if (playerStatus.directRight)
-			initShiftX = 44;
-		else
-			initShiftX = -44;
-		initShiftY = 14;
-
-		shared_ptr<AbsDamageObj> pushObj2 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj2);
-
-		if (playerStatus.directRight)
-			initShiftX = 46;
-		else
-			initShiftX = -46;
-		initShiftY = 25;
-
-		shared_ptr<AbsDamageObj> pushObj3 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj3);
-
-		if (playerStatus.directRight)
-			initShiftX = 40;
-		else
-			initShiftX = -40;
-		initShiftY = 0;
-
-		shared_ptr<AbsDamageObj> pushObj4 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj4);
-
-		if (playerStatus.directRight)
-			initShiftX = 35;
-		else
-			initShiftX = -35;
-		initShiftY = -10;
-
-		shared_ptr<AbsDamageObj> pushObj5 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj5);
-
-		if (playerStatus.directRight)
-			initShiftX = 25;
-		else
-			initShiftX = -25;
-		initShiftY = -20;
-
-		shared_ptr<AbsDamageObj> pushObj6 = make_shared<Sword>(stage, playerStatus._x + initShiftX, playerStatus._y + initShiftY, playerStatus.directRight);
-
-		returnDmg.push_back(pushObj6);
+		returnDmg = Sword3(playerStatus, stage, animation, returnDmg);
 
 	}
 

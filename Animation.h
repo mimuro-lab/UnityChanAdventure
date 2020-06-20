@@ -44,6 +44,8 @@ class Animation
 	Define::Status status;
 	//! 画像の拡大・縮小の倍率
 	double scaleRate = 1.0;
+
+	double rotation = 0;
 public:
 
 	/*!
@@ -84,6 +86,15 @@ public:
 	void arrangeScale(double rate) {
 		scaleRate = rate;
 	};
+
+	double getScale() {
+		return scaleRate;
+	}
+
+	//!　ラジアンではなく、360度表示で入力
+	void arrangeRotation(double rota) {
+		rotation = rota;
+	}
 
 };
 

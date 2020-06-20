@@ -51,7 +51,7 @@
     <Filter Include="ソース ファイル\GameScene\DamageObj\Bullet">
       <UniqueIdentifier>{cd10abff-ef7e-4fb7-aa05-de0a13c44395}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameScene\DamageObj\Sorad">
+    <Filter Include="ソース ファイル\GameScene\DamageObj\Sword">
       <UniqueIdentifier>{fba9c91a-2914-4ed6-8fae-17db964dc183}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -147,7 +147,7 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="Sword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="AnimationMoveBullet.cpp">
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
@@ -156,13 +156,13 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="AnimationMoveSword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="AnimationSwitchSword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="PysicalSword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="EnemyLoad.cpp">
       <Filter>ソース ファイル\GameScene\Enemy</Filter>
@@ -281,7 +281,7 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="Sword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="AnimationMoveBullet.h">
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
@@ -290,13 +290,13 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="AnimationMoveSword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="AnimationSwitchSword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="PysicalSword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="AbsDamageObj.h">
       <Filter>ソース ファイル\GameScene\DamageObj</Filter>
@@ -312,6 +312,9 @@
     </ClInclude>
     <ClInclude Include="PredictStageShift.h">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGenerateDamageObj.h">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

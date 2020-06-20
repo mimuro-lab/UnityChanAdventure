@@ -10,6 +10,7 @@
 #include "CharacterDirect.h"
 #include "Stage.h"
 #include "AbsDamageObj.h"
+#include "ImagePath_Effect.h"
 #include <memory>
 #include <vector>
 
@@ -55,8 +56,7 @@ public:
 
 		damageStatus.directRight = true;
 
-
-		animation = make_shared<Animation>(ImagePath_Object::getIns()->bulletNormal, damageStatus, 0, 0, 6, 99, isDireRight, 0.2);
+		animation = make_shared<Animation>(ImagePath_Effect::getIns()->bulletNormal, damageStatus, 0, 0, 6, 99, isDireRight, 0.2);
 
 		animationMove = make_shared<AnimationMoveSword>(0, 0, isDireRight);
 

@@ -75,9 +75,7 @@ void GameScene::draw()
 {
 	DrawFormatString(10, 50, GetColor(255, 255, 255), "Game");
 	
-	player->draw();
-
-		stage->draw();
+	stage->draw();
 
 	for (unsigned int i = 0; i < enemys.size(); i++) {
 		if(enemys[i]->getStatusAsParameter()->isActive)
@@ -88,6 +86,8 @@ void GameScene::draw()
 		//if (damageObjs[i]->getIsLive())
 			damageObjs[i]->draw();
 	}
-
+	
+	player->draw();
+	
 	SelectWindow::drawSelectWindow();
 }

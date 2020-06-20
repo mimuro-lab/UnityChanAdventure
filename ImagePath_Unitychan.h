@@ -142,7 +142,7 @@ public:
 		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Walk_11.png"),
 		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Walk_12.png"),
 		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Walk_13.png"),
-		LoadGraph("images/Character/UnityChan/BasicActions/Character/UnityChan_Walk_14.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Walk_14.png"),
 	};
 
 	const vector<int> unityChan_Hundgun_init = {
