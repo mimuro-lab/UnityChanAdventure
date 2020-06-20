@@ -20,6 +20,7 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
 	// Collisionの更新を行う。
 	collision->update(statusAsChara, _stage);
+	collisionPoints = collision->getCollisionPoints();
 
 	// Statusの更新処理を行う。
 	statusAsChara = animationMove->update(statusAsChara, animationSwitch->getNowAction(), collision, _stage, animation, controller);

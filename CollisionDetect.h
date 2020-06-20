@@ -143,4 +143,7 @@ public:
 
 	const bool getIsCollisionedEdge() { return isCollisionedEdge; }
 
+	//! “–‚½‚è”»’è‚·‚×‚Ä‚ÌÀ•W‚ğæ“¾‚·‚é
+	vector<vector<Dimention>> getCollisionPoints();
+
 };

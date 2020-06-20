@@ -39,12 +39,6 @@
     <Filter Include="ソース ファイル\GameScene\DamageObj">
       <UniqueIdentifier>{e611a5db-2dc1-4f1f-a0a2-4576f43d93f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Character">
-      <UniqueIdentifier>{c64d1f43-d0f7-44f9-85ce-c327f83f1b6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Character\AnimationMove">
-      <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\GameScene\Enemy">
       <UniqueIdentifier>{2461a9f0-ee11-4d73-abfa-6852520163a6}</UniqueIdentifier>
     </Filter>
@@ -53,6 +47,12 @@
     </Filter>
     <Filter Include="ソース ファイル\GameScene\DamageObj\Sword">
       <UniqueIdentifier>{fba9c91a-2914-4ed6-8fae-17db964dc183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\Character">
+      <UniqueIdentifier>{c64d1f43-d0f7-44f9-85ce-c327f83f1b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\Character\AnimationMove">
+      <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,13 +99,13 @@
       <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Pysical.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClCompile>
     <ClCompile Include="AnimationMove.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClCompile>
     <ClCompile Include="PredictPoint.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -117,19 +117,19 @@
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClCompile>
     <ClCompile Include="CollisionDetect.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="CharacterDirect.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="AnimationSwitch.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="VirtualController.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="RestrictPoint.cpp">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -227,13 +227,13 @@
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Pysical.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClInclude>
     <ClInclude Include="AnimationMove.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClInclude>
     <ClInclude Include="PredictPoint.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -245,19 +245,19 @@
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
     <ClInclude Include="CollisionDetect.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="CharacterDirect.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="AnimationSwitch.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="VirtualController.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="RestrictPoint.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>

@@ -18,6 +18,8 @@ void Sword::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Statu
 	damageStatus._x += shiftingStage.x;
 	collision->update(damageStatus, _stage);
 
+	collisionPoints = collision->getCollisionPoints();
+
 	// Statusの更新処理を行う。
 	damageStatus = animationMove->update(damageStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller, playerStatus);
 

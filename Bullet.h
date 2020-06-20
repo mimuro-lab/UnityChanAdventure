@@ -63,7 +63,14 @@ public:
 
 		animationMove = make_shared<AnimationMoveBullet>(initVel, 0, isDireRight);
 
-		collision = make_shared<CollisionDetect>(_stage, damageStatus, 3, 3, 3, 3, 5, 2, 5, 5);
+		int heads, bottoms, rights, lefts;
+		heads = bottoms = rights = lefts = 4;
+
+		int toHead, toBottom, toRight, toLeft;
+		toHead = toRight = toLeft = 5;
+		toBottom = 2;
+
+		collision = make_shared<CollisionDetect>(_stage, damageStatus, heads, bottoms, rights, lefts, toHead, toBottom, toRight, toLeft);
 
 		animationSwitch = make_shared<AnimationSwitchBullet>();
 
@@ -79,5 +86,8 @@ public:
 
 	void adjustBottom(int AdjustRange) override;
 
+	vector<vector<Dimention>> getCollisionPoints() override {
+		return collisionPoints;
+	}
 };
 

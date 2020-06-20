@@ -61,7 +61,80 @@ void CollisionDetect::update(Define::Status __nowStatus, std::shared_ptr<Stage> 
 	}
 }
 
+vector<vector<Dimention>> CollisionDetect::getCollisionPoints()
+{
+	vector<vector<Dimention>> returnPoints;
 
+	Dimention initCell;
+	initCell.x = initCell.y = 0;
+
+	vector<Dimention> Head(headPoints+1, initCell);
+	returnPoints.push_back(Head);
+
+	vector<Dimention> Bottom(bottomPoints+1, initCell);
+	returnPoints.push_back(Bottom);
+
+	vector<Dimention> Right(rightPoints+1, initCell);
+	returnPoints.push_back(Right);
+
+	vector<Dimention> Left(leftPoints+1, initCell);
+	returnPoints.push_back(Left);
+
+
+
+	//head
+	for (int i = 0; i < headPoints; i++) {
+		// ブロックは0 ～ blockHeight - 1単位で生成されるので、左側を調べる際は-1する
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+		int y = nowStatus._y - toHead - 1;
+		returnPoints[0][i].x = x;
+		returnPoints[0][i].y = y;
+	}
+	int x = nowStatus._x + toRight - 1;
+	int y = nowStatus._y - toHead - 1;
+	returnPoints[0][headPoints].x = x;
+	returnPoints[0][headPoints].y = y;
+
+	//bottom
+	for (int i = 0; i < bottomPoints; i++) {
+		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
+		int y = nowStatus._y + toBottom;
+		returnPoints[1][i].x = x;
+		returnPoints[1][i].y = y;
+	}
+
+	x = nowStatus._x + toRight - 1;
+	y = nowStatus._y + toBottom;
+	returnPoints[1][bottomPoints].x = x;
+	returnPoints[1][bottomPoints].y = y;
+
+	//right
+	for (int i = 0; i <= rightPoints; i++) {
+		int x = nowStatus._x + toRight;
+		int y = nowStatus._y - toHead + ((toHead + toBottom) / rightPoints) * i;
+		returnPoints[2][i].x = x;
+		returnPoints[2][i].y = y;
+	}
+	x = nowStatus._x + toRight;
+	y = nowStatus._y + toBottom - 1;
+	returnPoints[2][rightPoints].x = x;
+	returnPoints[2][rightPoints].y = y;
+
+	//left
+	for (int i = 0; i <= leftPoints; i++) {
+		// ブロックは0 ～ blockWidth - 1単位で生成されるので、左側を調べる際は-1する
+		int x = nowStatus._x - toLeft - 1;
+		int y = nowStatus._y - toHead + ((toHead + toBottom) / leftPoints) * i;
+		returnPoints[3][i].x = x;
+		returnPoints[3][i].y = y;
+	}
+	x = nowStatus._x - toLeft - 1;
+	y = nowStatus._y + toBottom - 1;
+	returnPoints[3][leftPoints].x = x;
+	returnPoints[3][leftPoints].y = y;
+
+	return returnPoints;
+}
 
 /*!
 @par 右側の当たり判定を調べる関数。障壁があったらtrueを返す。
@@ -131,7 +204,7 @@ bool CollisionDetect::detectHead(shared_ptr<Stage> stage, Status nowStatus)
 */
 bool CollisionDetect::detectBottom(shared_ptr<Stage> stage, Status nowStatus)
 {
-	for (int i = 0; i < rightPoints; i++) {
+	for (int i = 0; i < bottomPoints; i++) {
 		int x = nowStatus._x - toLeft + ((toLeft + toRight) / headPoints) * i;
 		int y = nowStatus._y + toBottom;
 		if (IsDetectedStage(x, y, stage)) 

@@ -49,6 +49,8 @@ class Enemy
 
 	std::shared_ptr<EnemyStatus> statusAsPara;
 
+	vector<vector<Define::Dimention>> collisionPoints;
+
 public:
 	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y)
 	{
@@ -88,6 +90,10 @@ public:
 	const std::shared_ptr<EnemyStatus> getStatusAsParameter() { return statusAsPara; }
 
 	void adjustBottom(int AdjustRange);
+
+	vector<vector<Dimention>> getCollisionPoints() {
+		return collisionPoints;
+	}
 
 };
 
