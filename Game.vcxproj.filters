@@ -54,6 +54,9 @@
     <Filter Include="ソース ファイル\GameScene\Character\AnimationMove">
       <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameScene\CalcDamagesOverlap">
+      <UniqueIdentifier>{0101b53a-bb99-40c8-9b47-f44cf6d809a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -172,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="PredictStageShift.cpp">
       <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="CalcDamagesOverlap.cpp">
+      <Filter>ソース ファイル\GameScene\CalcDamagesOverlap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +321,9 @@
     </ClInclude>
     <ClInclude Include="PlayerGenerateDamageObj.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CalcDamagesOverlap.h">
+      <Filter>ソース ファイル\GameScene\CalcDamagesOverlap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

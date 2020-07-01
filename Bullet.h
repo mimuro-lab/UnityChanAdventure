@@ -50,6 +50,8 @@ class Bullet : public AbsDamageObj
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
 	shared_ptr<CharacterDirect> damageDirect;
 
+	int toHead, toBottom, toRight, toLeft;
+
 public:
 	Bullet(shared_ptr<Stage> _stage, int init_x, int init_y, int initVel, bool isDireRight) {
 		// 初期情報の設定。
@@ -63,10 +65,12 @@ public:
 
 		animationMove = make_shared<AnimationMoveBullet>(initVel, 0, isDireRight);
 
+
 		int heads, bottoms, rights, lefts;
+
 		heads = bottoms = rights = lefts = 4;
 
-		int toHead, toBottom, toRight, toLeft;
+		
 		toHead = toRight = toLeft = 5;
 		toBottom = 2;
 
@@ -88,6 +92,15 @@ public:
 
 	vector<vector<Dimention>> getCollisionPoints() override {
 		return collisionPoints;
+	}
+
+	vector<int> getRange() override {
+		vector<int> retRange;
+		retRange.push_back(toHead);
+		retRange.push_back(toBottom);
+		retRange.push_back(toRight);
+		retRange.push_back(toLeft);
+		return retRange;
 	}
 };
 

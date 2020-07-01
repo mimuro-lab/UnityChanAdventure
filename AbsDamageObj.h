@@ -26,5 +26,7 @@ public:
 	virtual void adjustBottom(int AdjustRange) = 0;
 
 	virtual vector<vector<Dimention>> getCollisionPoints() = 0;
+
+	virtual vector<int> getRange() = 0;
 };
 

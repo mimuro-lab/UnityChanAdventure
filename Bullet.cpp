@@ -35,7 +35,7 @@ void Bullet::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Stat
 void Bullet::draw()
 {
 	animation->draw();
-	collision->draw();
+	//collision->draw();
 }
 
 void Bullet::adjustBottom(int AdjustRange)

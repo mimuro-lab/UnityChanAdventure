@@ -11,6 +11,7 @@
 #include "CollisionDetect.h"
 #include "CharacterDirect.h"
 #include "AbsDamageObj.h"
+#include "CalcDamagesOverlap.h"
 #include "Stage.h"
 #include "EnemyStatus.h"
 #include <memory>
@@ -49,6 +50,9 @@ class Enemy
 
 	std::shared_ptr<EnemyStatus> statusAsPara;
 
+	//! Playerからのダメージオブジェクトが当たっているかを判定するオブジェクト。
+	std::shared_ptr<CalcDamagesOverlap> damagesOverlap;
+
 	vector<vector<Define::Dimention>> collisionPoints;
 
 public:
@@ -78,6 +82,8 @@ public:
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
 		enemyDirect = std::make_shared<CharacterDirect>();
+
+		damagesOverlap = std::make_shared<CalcDamagesOverlap>();
 
 	};
 

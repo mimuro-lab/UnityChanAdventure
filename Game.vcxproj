@@ -92,6 +92,7 @@
     <ClCompile Include="AnimationSwitch.cpp" />
     <ClCompile Include="AnimationSwitchBullet.cpp" />
     <ClCompile Include="AnimationSwitchSword.cpp" />
+    <ClCompile Include="CalcDamagesOverlap.cpp" />
     <ClCompile Include="CollisionDetect.cpp" />
     <ClCompile Include="ConfigScene.cpp" />
     <ClCompile Include="Controller.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="AnimationSwitch.h" />
     <ClInclude Include="AnimationSwitchBullet.h" />
     <ClInclude Include="AnimationSwitchSword.h" />
+    <ClInclude Include="CalcDamagesOverlap.h" />
     <ClInclude Include="CollisionDetect.h" />
     <ClInclude Include="ConfigScene.h" />
     <ClInclude Include="Controller.h" />

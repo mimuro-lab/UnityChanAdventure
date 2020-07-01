@@ -22,6 +22,9 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 	collision->update(statusAsChara, _stage);
 	collisionPoints = collision->getCollisionPoints();
 
+	bool isDetectedDamages = false;
+	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damages);
+
 	// Statusの更新処理を行う。
 	statusAsChara = animationMove->update(statusAsChara, animationSwitch->getNowAction(), collision, _stage, animation, controller);
 

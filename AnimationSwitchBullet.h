@@ -1,6 +1,7 @@
 #pragma once
 #include "AnimationSwitch.h"
 #include "ImagePath_Object.h"
+#include "ImagePath_Effect.h"
 
 class AnimationSwitchBullet :
 	public AnimationSwitch

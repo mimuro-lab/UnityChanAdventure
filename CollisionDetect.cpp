@@ -47,17 +47,19 @@ void CollisionDetect::update(Define::Status __nowStatus, std::shared_ptr<Stage> 
 	_stage = __stage;
 	nowStatus = __nowStatus;
 
-
 	collisionedSide.head = detectHead(__stage, __nowStatus);
 
 	collisionedSide.bottom = detectBottom(__stage, __nowStatus);
 
 	// もし、下か上にめり込んでいたら、左右の当たり判定はなし。（めり込んだ状態で更新されるから絶対に当たった判定になってしまう）
-	if (!collisionedInSide.bottom) {
+	if (!collisionedInSide.bottom ) {
 
 		collisionedSide.right = detectRight(__stage, __nowStatus);
 
 		collisionedSide.left = detectLeft(__stage, __nowStatus);
+	}
+	else {
+		printfDx("");
 	}
 }
 
