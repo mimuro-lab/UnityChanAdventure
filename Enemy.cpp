@@ -24,6 +24,8 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 
 	bool isDetectedDamages = false;
 	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damages);
+	if(isDetectedDamages)
+		DrawCircle(statusAsChara._x, statusAsChara._y, 50, GetColor(255, 255, 255), false);
 
 	// Statusの更新処理を行う。
 	statusAsChara = animationMove->update(statusAsChara, animationSwitch->getNowAction(), collision, _stage, animation, controller);

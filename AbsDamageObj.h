@@ -9,6 +9,9 @@ class AbsDamageObj
 protected:
 	bool isLive = true;
 
+	// [side][number]
+	// sideは0,1,2,3があり、head,bottom,right,left
+	// numberは、head,bottomは左から右、right,leftは上から下
 	vector<vector<Define::Dimention>> collisionPoints;
 
 public:

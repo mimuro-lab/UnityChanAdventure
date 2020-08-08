@@ -70,8 +70,8 @@ public:
 
 		heads = bottoms = rights = lefts = 4;
 
-		
-		toHead = toRight = toLeft = 5;
+		toRight = toLeft = 5;
+		toHead = 5;
 		toBottom = 2;
 
 		collision = make_shared<CollisionDetect>(_stage, damageStatus, heads, bottoms, rights, lefts, toHead, toBottom, toRight, toLeft);

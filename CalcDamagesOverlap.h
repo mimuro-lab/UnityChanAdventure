@@ -10,10 +10,10 @@ using namespace Define;
 
 class CalcDamagesOverlap
 {
-	bool calcHeadOverlap(vector<Dimention> characterHeadPoints, vector<shared_ptr<AbsDamageObj>> _damages);
-	bool calcBottomOverlap(vector<Dimention> characterBottomPoints, vector<shared_ptr<AbsDamageObj>> _damages);
-	bool calcRightOverlap(vector<Dimention> characterRightPoints, vector<shared_ptr<AbsDamageObj>> _damages);
-	bool calcLeftOverlap(vector<Dimention> characterLeftPoints, vector<shared_ptr<AbsDamageObj>> _damages);
+	bool calcVerticalOverlap(vector<Dimention> characterHeadPoints, vector<Dimention> characterBottomPoints, vector<shared_ptr<AbsDamageObj>> _damages);
+
+	bool calcHorizonalOverlap(vector<Dimention> characterRightPoints, vector<Dimention> characterLeftPoints, vector<shared_ptr<AbsDamageObj>> _damages);
+
 public:
 	CalcDamagesOverlap() {};
 	~CalcDamagesOverlap() = default;
