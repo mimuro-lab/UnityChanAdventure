@@ -63,11 +63,13 @@ void GameScene::update()
 
 	damageObjs = refreshedObjs;
 
+	// 敵オブジェクトの更新
 	for (unsigned int i = 0; i < enemys.size(); i++) {
 		//enemys[i]->adjustBottom(deffOfStageAndBottom);
 		enemys[i]->update(stage, shiftingStage, damageObjs);
-		
 	}
+
+	// 攻撃オブジェクトが敵に当たっていたら、
 	
 }
 

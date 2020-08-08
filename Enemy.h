@@ -18,6 +18,7 @@
 #include <vector>
 
 using namespace Define;
+using namespace std;
 
 class Enemy
 {
@@ -54,6 +55,8 @@ class Enemy
 	std::shared_ptr<CalcDamagesOverlap> damagesOverlap;
 
 	vector<vector<Define::Dimention>> collisionPoints;
+
+	vector<int> detectDmsInd;
 
 public:
 	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y)
@@ -99,6 +102,10 @@ public:
 
 	vector<vector<Dimention>> getCollisionPoints() {
 		return collisionPoints;
+	}
+
+	vector<int> getDetectedDamagesIndex() {
+		return detectDmsInd;
 	}
 
 };
