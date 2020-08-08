@@ -2,11 +2,18 @@
 #include "Stage.h"
 #include "Define.h"
 #include <memory>
+#include <vector>
 
 class AbsDamageObj
 {
 protected:
 	bool isLive = true;
+
+	// [side][number]
+	// sideは0,1,2,3があり、head,bottom,right,left
+	// numberは、head,bottomは左から右、right,leftは上から下
+	vector<vector<Define::Dimention>> collisionPoints;
+
 public:
 	AbsDamageObj() = default;
 	~AbsDamageObj() = default;
@@ -18,5 +25,11 @@ public:
 	virtual void draw() = 0;
 
 	const bool getIsLive() { return isLive; }
+
+	virtual void adjustBottom(int AdjustRange) = 0;
+
+	virtual vector<vector<Dimention>> getCollisionPoints() = 0;
+
+	virtual vector<int> getRange() = 0;
 };
 

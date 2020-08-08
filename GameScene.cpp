@@ -26,27 +26,32 @@ void GameScene::update()
 	// セレクトウィンドウが閉じた瞬間のみコントローラの更新を行う。この瞬間はコントローラのpush（押された瞬間の状態）は無視したい。
 	if(IsSelectWindow_Closed())
 		Controller::getIns()->update();
-
 	
-
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
 	player->update(stage);	
 
-	// ステージ処理
-	stage->update(player->getShiftingState(), player->getStatus());
-	
-	//enemy->update(stage, player->getShiftingState());
+	Dimention shiftingStage = predictStageShift->update(stage, player, player->getShiftingState());
 
-	//enemy1->update(stage, player->getShiftingState());
+	// ステージ処理
+	stage->update(shiftingStage, player->getStatus());
+
+	// プレイヤーの底がめり込んでいたら発動（０以外の値を返す）
+	deffOfStageAndBottom = player->adjustStageAndBottom(stage);
+
+	//adjustがついている関数はプレイヤーがめり込んだ際の「押し出し」に関する処理
+
+	//stage->adjustBottom(deffOfStageAndBottom);
+
+	//player->adjustStageAndBottom(stage);
 	
 	// playerによるダメージ要素の生成
 	damageObjs = player->generateDamageObj(damageObjs,stage);
 
 	// ダメージ要素の更新。
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
-		damageObjs[i]->update(stage, player->getShiftingState(), player->getStatus());
+		//damageObjs[i]->adjustBottom(deffOfStageAndBottom);
+		damageObjs[i]->update(stage, shiftingStage, player->getStatus());
 	}
-
 	
 	vector<shared_ptr<AbsDamageObj>> refreshedObjs;
 	
@@ -58,7 +63,11 @@ void GameScene::update()
 
 	damageObjs = refreshedObjs;
 
-	DrawFormatString(100, 200, GetColor(255, 255, 255), "number of object : %d", damageObjs.size());
+	for (unsigned int i = 0; i < enemys.size(); i++) {
+		//enemys[i]->adjustBottom(deffOfStageAndBottom);
+		enemys[i]->update(stage, shiftingStage, damageObjs);
+		
+	}
 	
 }
 
@@ -66,17 +75,19 @@ void GameScene::draw()
 {
 	DrawFormatString(10, 50, GetColor(255, 255, 255), "Game");
 	
-	player->draw();
-
-	//enemy->draw();
-	//enemy1->draw();
-
 	stage->draw();
+
+	for (unsigned int i = 0; i < enemys.size(); i++) {
+		if(enemys[i]->getStatusAsParameter()->isActive)
+			enemys[i]->draw();
+	}
 
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		//if (damageObjs[i]->getIsLive())
 			damageObjs[i]->draw();
 	}
-
+	
+	player->draw();
+	
 	SelectWindow::drawSelectWindow();
 }

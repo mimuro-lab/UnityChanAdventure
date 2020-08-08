@@ -56,8 +56,8 @@ protected:
 	unsigned char acc_run = 1;
 	unsigned char limVel_run = 7;
 
-	unsigned char initVel_jumpUp = 12;
-	unsigned char initVel_jumpMidAir = 3;
+	unsigned char initVel_jumpUp = 15;
+	unsigned char initVel_jumpMidAir = 0;
 
 	unsigned char acc_inAir = 2;
 	char limVel_inAir_jumpUp = 0;
@@ -79,7 +79,7 @@ protected:
 	std::vector<bool> _validFrictionAction;
 
 	//! 対象の速度に対し、初速度をさらに与える関数。
-	virtual Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime);
+	virtual Dimention affectInitVelocity(Dimention affectedVel, characterAction nowAction, unsigned short nowTime, VirtualController controller);
 
 	//! affectGravity（対象の加速度）に対し、重力を加える。
 	virtual Dimention affectGravity(Dimention affectedAcc, characterAction nowAction);
@@ -136,6 +136,7 @@ public:
 
 			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_horizonal)]
+			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_end)]
 
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard1_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard2_init)]

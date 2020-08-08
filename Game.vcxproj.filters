@@ -39,20 +39,23 @@
     <Filter Include="ソース ファイル\GameScene\DamageObj">
       <UniqueIdentifier>{e611a5db-2dc1-4f1f-a0a2-4576f43d93f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Character">
-      <UniqueIdentifier>{c64d1f43-d0f7-44f9-85ce-c327f83f1b6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Character\AnimationMove">
-      <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\GameScene\Enemy">
       <UniqueIdentifier>{2461a9f0-ee11-4d73-abfa-6852520163a6}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\GameScene\DamageObj\Bullet">
       <UniqueIdentifier>{cd10abff-ef7e-4fb7-aa05-de0a13c44395}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameScene\DamageObj\Sorad">
+    <Filter Include="ソース ファイル\GameScene\DamageObj\Sword">
       <UniqueIdentifier>{fba9c91a-2914-4ed6-8fae-17db964dc183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\Character">
+      <UniqueIdentifier>{c64d1f43-d0f7-44f9-85ce-c327f83f1b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\Character\AnimationMove">
+      <UniqueIdentifier>{6d8c47c1-3cd7-4e63-aa18-7bcc3cfcfa1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\CalcDamagesOverlap">
+      <UniqueIdentifier>{0101b53a-bb99-40c8-9b47-f44cf6d809a3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,13 +102,13 @@
       <Filter>ソース ファイル\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Pysical.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClCompile>
     <ClCompile Include="AnimationMove.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClCompile>
     <ClCompile Include="PredictPoint.cpp">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -117,19 +120,19 @@
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClCompile>
     <ClCompile Include="CollisionDetect.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="CharacterDirect.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="AnimationSwitch.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="VirtualController.cpp">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClCompile>
     <ClCompile Include="RestrictPoint.cpp">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -147,7 +150,7 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="Sword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="AnimationMoveBullet.cpp">
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
@@ -156,13 +159,25 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="AnimationMoveSword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="AnimationSwitchSword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClCompile>
     <ClCompile Include="PysicalSword.cpp">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyLoad.cpp">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyStatus.cpp">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="PredictStageShift.cpp">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="CalcDamagesOverlap.cpp">
+      <Filter>ソース ファイル\GameScene\CalcDamagesOverlap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,13 +233,13 @@
       <Filter>ソース ファイル\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Pysical.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClInclude>
     <ClInclude Include="AnimationMove.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClInclude>
     <ClInclude Include="PredictPoint.h">
-      <Filter>ソース ファイル\Character\AnimationMove</Filter>
+      <Filter>ソース ファイル\GameScene\Character\AnimationMove</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -236,19 +251,19 @@
       <Filter>ソース ファイル\GameScene\Stage</Filter>
     </ClInclude>
     <ClInclude Include="CollisionDetect.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="CharacterDirect.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="AnimationSwitch.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="VirtualController.h">
-      <Filter>ソース ファイル\Character</Filter>
+      <Filter>ソース ファイル\GameScene\Character</Filter>
     </ClInclude>
     <ClInclude Include="RestrictPoint.h">
       <Filter>ソース ファイル\GameScene\Player</Filter>
@@ -272,7 +287,7 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="Sword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="AnimationMoveBullet.h">
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
@@ -281,16 +296,42 @@
       <Filter>ソース ファイル\GameScene\DamageObj\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="AnimationMoveSword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="AnimationSwitchSword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="PysicalSword.h">
-      <Filter>ソース ファイル\GameScene\DamageObj\Sorad</Filter>
+      <Filter>ソース ファイル\GameScene\DamageObj\Sword</Filter>
     </ClInclude>
     <ClInclude Include="AbsDamageObj.h">
       <Filter>ソース ファイル\GameScene\DamageObj</Filter>
     </ClInclude>
+    <ClInclude Include="ImagePath_Effect.h">
+      <Filter>ソース ファイル\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyLoad.h">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyStatus.h">
+      <Filter>ソース ファイル\GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="PredictStageShift.h">
+      <Filter>ソース ファイル\GameScene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGenerateDamageObj.h">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CalcDamagesOverlap.h">
+      <Filter>ソース ファイル\GameScene\CalcDamagesOverlap</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stage\Enemy\sample_enemy.csv">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="Stage\sample_stage.csv">
+      <Filter>リソース ファイル</Filter>
+    </None>
   </ItemGroup>
 </Project>

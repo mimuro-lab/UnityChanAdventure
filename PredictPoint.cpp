@@ -58,12 +58,12 @@ int PredictPoint::fittingPointHorizon(Dimention nowPoint, int predictRange, std:
 		return nowPoint.x;
 
 
-	// “–‚½‚è”»’è‚ª•¡”‚ ‚Á‚½‚ç
+	// “–‚½‚è”»’è‚ª•¡”‚ ‚Á‚½‚ç(2020/06/20íœj
 	if (_collision->getCollisionedSide().bottom && _collision->getCollisionedSide().right) {
-		return getForwardBlockNearSideHorizon(nowPoint, 1, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::right) - 1;
+		//return getForwardBlockNearSideHorizon(nowPoint, 1, _collision, _stage) - _collision->getRange(CollisionDetect::toShiftDirect::right) - 1;
 	}
 	if (_collision->getCollisionedSide().bottom && _collision->getCollisionedSide().left) {
-		return getForwardBlockNearSideHorizon(nowPoint, -1, _collision, _stage) + _collision->getRange(CollisionDetect::toShiftDirect::left) + 1;
+		//return getForwardBlockNearSideHorizon(nowPoint, -1, _collision, _stage) + _collision->getRange(CollisionDetect::toShiftDirect::left) + 1;
 	}
 
 	// ˆÈã‚ÌğŒ‚É“–‚Ä‚Í‚Ü‚ç‚È‚©‚Á‚½‚çpredictRange‚ÉˆÚ“®‚µ‚Ä‚à‚æ‚¢B
@@ -198,6 +198,8 @@ Dimention PredictPoint::update(Dimention _nowPoint, Dimention nowVelocity, std::
 	predictPoint.x = fittingPointHorizon(nowPoint, nowVelocity.x, _collision, _stage, nowVelocity.y);
 
 	predictPoint.y = fittingPointVertical(nowPoint, nowVelocity.y, _collision, _stage, nowVelocity.x);
+
+	int deffOfNowYAndPredictY = predictPoint.y - (nowPoint.y + nowVelocity.y);
 
 	return predictPoint;
 }

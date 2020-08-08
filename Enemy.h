@@ -10,7 +10,10 @@
 #include "AnimationSwitch.h"
 #include "CollisionDetect.h"
 #include "CharacterDirect.h"
+#include "AbsDamageObj.h"
+#include "CalcDamagesOverlap.h"
 #include "Stage.h"
+#include "EnemyStatus.h"
 #include <memory>
 #include <vector>
 
@@ -19,11 +22,16 @@ using namespace Define;
 class Enemy
 {
 
+	char deActiveLeft = -50;
+	char deActiveRight = 50;
+	char deActiveHead = -50;
+	char deActiveBottom = 50;
+
 	//! コントローラ
 	VirtualController controller;
 
 	//! プレイヤーオブジェクトの座標などの情報をまとめるオブジェクト。
-	Define::Status enemyStatus;
+	Define::Status statusAsChara;
 
 	//! アニメーションの処理をまとめて行うオブジェクト。
 	std::shared_ptr<Animation> animation;
@@ -40,35 +48,58 @@ class Enemy
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
 	std::shared_ptr<CharacterDirect> enemyDirect;
 
+	std::shared_ptr<EnemyStatus> statusAsPara;
+
+	//! Playerからのダメージオブジェクトが当たっているかを判定するオブジェクト。
+	std::shared_ptr<CalcDamagesOverlap> damagesOverlap;
+
+	vector<vector<Define::Dimention>> collisionPoints;
+
 public:
 	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y)
 	{
+
 		// 初期情報の設定。
-		enemyStatus._x = init_x;
-		enemyStatus._y = init_y;
+		statusAsChara._x = init_x;
+		statusAsChara._y = init_y;
 
-		enemyStatus._x_speed = enemyStatus._y_speed = 0;
+		statusAsChara._x_speed = statusAsChara._y_speed = 0;
 
-		enemyStatus.directRight = true;
+		statusAsChara.directRight = true;
 
+		
+		statusAsPara = std::make_shared<EnemyStatus>();
 
-		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, enemyStatus);
+		statusAsPara->isActive = true;
+		statusAsPara->isAlive = true;
+
+		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, statusAsChara);
 
 		animationMove = std::make_shared<AnimationMove>();
 
-		collision = std::make_shared<CollisionDetect>(_stage, enemyStatus, 10, 10, 10, 10, 15, 30, 10, 10);
+		collision = std::make_shared<CollisionDetect>(_stage, statusAsChara, 10, 10, 10, 10, 15, 30, 10, 10);
 
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
 		enemyDirect = std::make_shared<CharacterDirect>();
 
+		damagesOverlap = std::make_shared<CalcDamagesOverlap>();
+
 	};
 
 	//! Playerオブジェクトの前処理全般を行う関数。
-	void update(std::shared_ptr<Stage> _stage, Dimention shiftingStage);
+	void update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::vector<std::shared_ptr<AbsDamageObj>> _damages);
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
+
+	const std::shared_ptr<EnemyStatus> getStatusAsParameter() { return statusAsPara; }
+
+	void adjustBottom(int AdjustRange);
+
+	vector<vector<Dimention>> getCollisionPoints() {
+		return collisionPoints;
+	}
 
 };
 

@@ -59,6 +59,10 @@ class Player
 	
 	VirtualController updateController();
 
+	int toBottom = 30;
+	int toRight = 10;
+	int toLeft = 10;
+
 public:
 
 	Player(std::shared_ptr<Stage> _stage)
@@ -77,7 +81,7 @@ public:
 
 		animationMove = std::make_shared<AnimationMovePlayer>();
 
-		collision = std::make_shared<CollisionDetect>(_stage, playerStatus, 10, 10, 10, 10, 15, 30, 10, 10);
+		collision = std::make_shared<CollisionDetect>(_stage, playerStatus, 10, 10, 10, 10, 15, toBottom, toRight, toLeft);
 
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
@@ -93,10 +97,22 @@ public:
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
 
+	void pushPlayerFromStage(std::shared_ptr<Stage> _stage);
+
+	int adjustStageAndBottom(std::shared_ptr<Stage> _stage);
+
 	const Define::Status getStatus() { return playerStatus; }
 
 	const Dimention getShiftingState() { return shiftingStage; }
 
 	vector<shared_ptr<AbsDamageObj>> generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage);
+
+	bool isCollisionedInSideBottom() {
+		return collision->getCollisionedInSide().bottom;
+	}
+
+	int getToBottom() { return toBottom; }
+	int getToRight() { return toRight; }
+	int getToLeft() { return toLeft; }
 
 };

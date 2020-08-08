@@ -29,6 +29,9 @@ bool SystemOwner::initialize() const
 	}
 	SetDrawScreen(DX_SCREEN_BACK);				//裏画面処理を設定する
 	SetWindowPosition(-1000, 100);					//ウィンドウの初期位置を設定する
+
+	ImagePath_Effect::getIns()->load();
+
 	return true;
 }
 

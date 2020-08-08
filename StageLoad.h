@@ -9,6 +9,9 @@
 using namespace std;
 using namespace Define;
 
+
+
+
 class StageLoad
 {
 	vector<vector<BlockCell>> _nowStage;

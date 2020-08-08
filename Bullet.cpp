@@ -16,6 +16,8 @@ void Bullet::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Stat
 	damageStatus._x += shiftingStage.x;
 	collision->update(damageStatus, _stage);
 
+	collisionPoints = collision->getCollisionPoints();
+
 	// Statusの更新処理を行う。
 	damageStatus = animationMove->update(damageStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
 
@@ -34,4 +36,9 @@ void Bullet::draw()
 {
 	animation->draw();
 	//collision->draw();
+}
+
+void Bullet::adjustBottom(int AdjustRange)
+{
+	damageStatus._y += AdjustRange;
 }

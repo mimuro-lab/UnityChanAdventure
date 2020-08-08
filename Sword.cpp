@@ -1,4 +1,5 @@
 #include "Sword.h"
+#include "ImagePath_Effect.h"
 
 void Sword::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Status playerStatus)
 {
@@ -17,17 +18,19 @@ void Sword::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Statu
 	damageStatus._x += shiftingStage.x;
 	collision->update(damageStatus, _stage);
 
+	collisionPoints = collision->getCollisionPoints();
+
 	// Statusの更新処理を行う。
 	damageStatus = animationMove->update(damageStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller, playerStatus);
 
 	// アニメーションの下処理を行う。
 	animation->update(damageStatus);
 
+	animation->arrangeScale(animation->getScale() / 1.2);
+	
+	damageStatus.directRight = !playerStatus.directRight;
 	// アニメーションの切り替えを行う。もし切り替えなければ同じanimationオブジェクトを返す。
 	animation = animationSwitch->update(collision, animation, damageStatus, controller);
-
-	// 方向を更新する。
-	damageStatus.directRight = damageDirect->updateDirect(animationSwitch->getNowAction(), damageStatus.directRight, damageStatus, controller);
 
 }
 
@@ -35,4 +38,9 @@ void Sword::draw()
 {
 	animation->draw();
 	//collision->draw();
+}
+
+void Sword::adjustBottom(int AdjustRange)
+{
+	damageStatus._y += AdjustRange;
 }

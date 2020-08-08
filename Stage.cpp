@@ -22,6 +22,8 @@ void Stage::update(Dimention shifting, Status nowStatus)
 
 	pointLeftUp_y += shifting.y;
 
+	//DrawFormatString(100, 100, GetColor(255, 255, 255), "point left up %d , %d", pointLeftUp_x, pointLeftUp_y);
+
 	nowAbsoluteX = nowStatus._x - pointLeftUp_x;
 	nowAbsoluteY = nowStatus._y - pointLeftUp_y;
 
@@ -44,6 +46,11 @@ void Stage::update(Dimention shifting, Status nowStatus)
 		_stage = _load.loadFromFileUpSide(10);
 	}
 
+}
+
+void Stage::adjustBottom(int AdjustRange)
+{
+	pointLeftUp_y += AdjustRange;
 }
 
 void Stage::draw()
@@ -69,7 +76,7 @@ const BlockCell Stage::getBlockCell(int x, int y)
 {
 	int _CellXNum = (x - pointLeftUp_x) / blockWidth - _load.getLoadInitIndX();
 	int _CellYNum = (y - pointLeftUp_y) / blockHeight - _load.getLoadInitIndY();
-
+	
 	//DrawBox(_stage[_CellXNum][_CellYNum].x1 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y1 + pointLeftUp_y
 		//, _stage[_CellXNum][_CellYNum].x2 + pointLeftUp_x, _stage[_CellXNum][_CellYNum].y2 + pointLeftUp_y, GetColor(0, 0, 255), true);
 

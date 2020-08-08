@@ -11,6 +11,7 @@
 #include "Define.h"
 #include "SystemLooper.h"
 #include <memory>
+#include "ImagePath_Effect.h"
 
 using namespace std;
 

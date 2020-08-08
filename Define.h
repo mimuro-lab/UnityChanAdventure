@@ -65,6 +65,13 @@ namespace Define{
 		cellStatus _status;
 	};
 
+	//! スクロール画面の端っこの座標
+	static int scrollVerticeLeft = 200;
+	static int scrollVerticeRight = 450;
+
+	static int scrollHorizonHead = 200;
+	static int scrollHorizonBottom = 450;
+
 	//! プレイヤーオブジェクトや敵オブジェクトの基本行動の分類。
 	enum class characterAction {
 		Brake, Crouch, Damage, Idle, Jump_Fall, Jump_Landing, Jump_MidAir, Jump_Up, Fall, Run, Walk
