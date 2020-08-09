@@ -31,5 +31,7 @@ public:
 	virtual vector<vector<Dimention>> getCollisionPoints() = 0;
 
 	virtual vector<int> getRange() = 0;
+
+	virtual void detectEnemy() = 0;
 };
 

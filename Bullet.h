@@ -102,5 +102,9 @@ public:
 		retRange.push_back(toLeft);
 		return retRange;
 	}
+
+	void detectEnemy() override {
+		DrawCircle(damageStatus._x, damageStatus._y, 5, GetColor(255, 0, 0), true);
+	}
 };
 
