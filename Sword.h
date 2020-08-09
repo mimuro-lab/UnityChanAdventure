@@ -98,7 +98,7 @@ public:
 	}
 
 	void detectEnemy() override {
-
+		// Swordオブジェクトは敵にぶつかっても消えない。
 	}
 
 };

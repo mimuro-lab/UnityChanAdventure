@@ -8,6 +8,7 @@ class AbsDamageObj
 {
 protected:
 	bool isLive = true;
+	bool isDetectEnemy = false;
 
 	// [side][number]
 	// side‚Í0,1,2,3‚ª‚ ‚èAhead,bottom,right,left
