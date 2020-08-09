@@ -5,13 +5,15 @@ bool CalcDamagesOverlap::calcVerticalOverlap(
 	vector<Dimention> characterBottomPoints,
 	vector<shared_ptr<AbsDamageObj>> _damages)
 {
+	detectedDamageIndex.clear();
+
 	bool isOverlaped = false;
 	
 	int headLeft = characterHeadPoints[0].x;
 	int headRight = characterHeadPoints[characterHeadPoints.size() - 1].x;
 
-	DrawLine(headLeft, 0, headLeft, 640, GetColor(0, 255, 255));
-	DrawLine(headRight, 0, headRight, 640, GetColor(0, 255, 255));
+	//DrawLine(headLeft, 0, headLeft, 640, GetColor(0, 255, 255));
+	//DrawLine(headRight, 0, headRight, 640, GetColor(0, 255, 255));
 
 	//扱うdamageオブジェクトの選別を行う
 
@@ -46,7 +48,7 @@ bool CalcDamagesOverlap::calcVerticalOverlap(
 				int headX = characterHeadPoints[headNum].x;
 				int headY = characterHeadPoints[headNum].y;
 				if (dmgYBottom > headY) {// headより下にある
-					DrawLine(headX, headY, dmgXBottom, dmgYBottom, GetColor(255, 0, 0));
+					//DrawLine(headX, headY, dmgXBottom, dmgYBottom, GetColor(255, 0, 0));
 					isOverlapedHead = true;
 					//break;
 				}
@@ -63,7 +65,7 @@ bool CalcDamagesOverlap::calcVerticalOverlap(
 				int bottomX = characterBottomPoints[bottomNum].x;
 				int bottomY = characterBottomPoints[bottomNum].y;
 				if (dmgYHead < bottomY) {// bottomより下にある
-					DrawLine(bottomX, bottomY, dmgXHead, dmgYHead, GetColor(255, 255, 0));
+					//DrawLine(bottomX, bottomY, dmgXHead, dmgYHead, GetColor(255, 255, 0));
 					isOverlapedBottom = true;
 					//break;
 				}
@@ -74,8 +76,10 @@ bool CalcDamagesOverlap::calcVerticalOverlap(
 
 			isOverlaped = isOverlapedHead && isOverlapedBottom;
 
-			if (isOverlaped)
-				;//break;
+			if (isOverlaped) {
+				detectedDamageIndex.push_back(i);
+				break;
+			}
 		}
 	}
 
@@ -87,12 +91,14 @@ bool CalcDamagesOverlap::calcHorizonalOverlap(
 	vector<Dimention> characterLeftPoints,
 	vector<shared_ptr<AbsDamageObj>> _damages)
 {
+	detectedDamageIndex.clear();
+
 	bool isOverlaped = false;
 	int rightHead = characterRightPoints[0].y;
 	int rightBottom = characterRightPoints[characterRightPoints.size() - 1].y;
 
-	DrawLine(0, rightHead, 640, rightHead, GetColor(0, 255, 0));
-	DrawLine(0, rightBottom, 640, rightBottom, GetColor(0, 255, 0));
+	//DrawLine(0, rightHead, 640, rightHead, GetColor(0, 255, 0));
+	//DrawLine(0, rightBottom, 640, rightBottom, GetColor(0, 255, 0));
 
 	//扱うdamageオブジェクトの選別を行う
 
@@ -131,12 +137,11 @@ bool CalcDamagesOverlap::calcHorizonalOverlap(
 			for (int RightNum = 0; RightNum < characterRightPoints.size(); RightNum++) {
 				int RightX = characterRightPoints[RightNum].x;
 				int RightY = characterRightPoints[RightNum].y;
-				DrawCircle(RightX, RightY, 2, GetColor(255, 0, 0));
+				//DrawCircle(RightX, RightY, 2, GetColor(255, 0, 0));
 				//DrawLine(RightX, RightY, dmgX, dmgY, GetColor(255, 0, 0));
 				if (dmgXLeft < RightX) {// Rightより下にある
-					DrawLine(RightX, RightY, dmgXLeft, dmgYLeft, GetColor(0, 0, 255));
+					//DrawLine(RightX, RightY, dmgXLeft, dmgYLeft, GetColor(0, 0, 255));
 					isOverlapedLeft = true;
-					//break;
 				}
 				else {
 					//DrawLine(RightX, RightY, dmgX, dmgY, GetColor(255, 255, 255));
@@ -151,12 +156,11 @@ bool CalcDamagesOverlap::calcHorizonalOverlap(
 			for (int LeftNum = 0; LeftNum < characterLeftPoints.size(); LeftNum++) {
 				int LeftX = characterLeftPoints[LeftNum].x;
 				int LeftY = characterLeftPoints[LeftNum].y;
-				DrawCircle(LeftX, LeftY, 2, GetColor(255, 0, 0));
+				//DrawCircle(LeftX, LeftY, 2, GetColor(255, 0, 0));
 				//DrawLine(LeftX, LeftY, dmgX, dmgY, GetColor(255, 0, 0));
 				if (dmgXRight > LeftX) {// Leftより下にある
-					DrawLine(LeftX, LeftY, dmgXRight, dmgYRight, GetColor(255, 0, 0));
+					//DrawLine(LeftX, LeftY, dmgXRight, dmgYRight, GetColor(255, 0, 0));
 					isOverlapedRight = true;
-					//break;
 				}
 				else {
 					//DrawLine(LeftX, LeftY, dmgX, dmgY, GetColor(255, 255, 255));
@@ -165,8 +169,10 @@ bool CalcDamagesOverlap::calcHorizonalOverlap(
 
 			isOverlaped = isOverlapedLeft && isOverlapedRight;
 
-			if (isOverlaped)
+			if (isOverlaped) {
+				detectedDamageIndex.push_back(i);
 				break;
+			}
 		}
 	}
 
@@ -188,4 +194,16 @@ bool CalcDamagesOverlap::isOverlaped(
 	isOverlapedHorizonal = calcHorizonalOverlap(charcterCollisionPoints[2], charcterCollisionPoints[3], _damages);
 
 	return isOverlapedVertical || isOverlapedHorizonal;
+}
+
+void CalcDamagesOverlap::refreshDetectedDamageIndex()
+{
+	std::sort(detectedDamageIndex.begin(), detectedDamageIndex.end());
+	detectedDamageIndex.erase(std::unique(detectedDamageIndex.begin(), detectedDamageIndex.end()), detectedDamageIndex.end());
+
+}
+
+void CalcDamagesOverlap::update()
+{
+
 }

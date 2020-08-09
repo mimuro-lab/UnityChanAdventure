@@ -102,5 +102,7 @@ public:
 		retRange.push_back(toLeft);
 		return retRange;
 	}
+
+	void detectEnemy() override;
 };
 

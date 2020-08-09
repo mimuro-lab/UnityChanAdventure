@@ -4,7 +4,7 @@ void Bullet::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, Stat
 {
 	livingCounter++;
 
-	if (livingCounter < livingTime)
+	if (livingCounter < livingTime && !isDetectEnemy)
 		isLive = true;
 	else
 		isLive = false;
@@ -41,4 +41,8 @@ void Bullet::draw()
 void Bullet::adjustBottom(int AdjustRange)
 {
 	damageStatus._y += AdjustRange;
+}
+
+void Bullet::detectEnemy() {
+	isDetectEnemy = true;
 }

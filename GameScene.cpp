@@ -52,10 +52,10 @@ void GameScene::update()
 		//damageObjs[i]->adjustBottom(deffOfStageAndBottom);
 		damageObjs[i]->update(stage, shiftingStage, player->getStatus());
 	}
-	
-	vector<shared_ptr<AbsDamageObj>> refreshedObjs;
-	
+
+
 	// 無駄なダメージ要素の消去
+	vector<shared_ptr<AbsDamageObj>> refreshedObjs;
 	for (unsigned int i = 0; i < damageObjs.size(); i++) {
 		if (damageObjs[i]->getIsLive())
 			refreshedObjs.push_back(damageObjs[i]);
@@ -63,12 +63,29 @@ void GameScene::update()
 
 	damageObjs = refreshedObjs;
 
+	// 敵オブジェクトの更新
 	for (unsigned int i = 0; i < enemys.size(); i++) {
 		//enemys[i]->adjustBottom(deffOfStageAndBottom);
 		enemys[i]->update(stage, shiftingStage, damageObjs);
-		
 	}
-	
+
+	//// 敵オブジェクトにぶつかったダメージ要素は削除
+	vector<shared_ptr<AbsDamageObj>> nonDetectEnemyDmgs;// 消去後のダメージ要素
+	vector<int> deleteInd;// 削除対象のインデックスを格納する変数
+	// 削除対象のインデックスを抽出する。
+	for (unsigned int i = 0; i < enemys.size(); i++)
+	{
+		for (unsigned int j = 0; j < enemys[i]->getDetectedDamagesIndex().size(); j++) {
+			deleteInd.push_back(enemys[i]->getDetectedDamagesIndex()[j]);
+		}
+	}
+	sort(deleteInd.begin(), deleteInd.end());
+	deleteInd.erase(std::unique(deleteInd.begin(), deleteInd.end()), deleteInd.end());
+	// インデックスのダメージ要素にぶつかった処理を行わせる。
+	for (unsigned int i = 0; i < deleteInd.size(); i++) {
+		damageObjs[deleteInd[i]]->detectEnemy();
+	}
+
 }
 
 void GameScene::draw()

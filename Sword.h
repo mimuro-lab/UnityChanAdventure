@@ -97,5 +97,9 @@ public:
 		return retRange;
 	}
 
+	void detectEnemy() override {
+		// Swordオブジェクトは敵にぶつかっても消えない。
+	}
+
 };
 

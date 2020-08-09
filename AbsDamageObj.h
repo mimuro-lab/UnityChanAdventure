@@ -8,6 +8,7 @@ class AbsDamageObj
 {
 protected:
 	bool isLive = true;
+	bool isDetectEnemy = false;
 
 	// [side][number]
 	// side‚Í0,1,2,3‚ª‚ ‚èAhead,bottom,right,left
@@ -31,5 +32,7 @@ public:
 	virtual vector<vector<Dimention>> getCollisionPoints() = 0;
 
 	virtual vector<int> getRange() = 0;
+
+	virtual void detectEnemy() = 0;
 };
 
