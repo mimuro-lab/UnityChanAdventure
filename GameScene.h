@@ -63,7 +63,7 @@ public:
 		enemyLoad = make_shared<EnemyLoad>();
 
 		for (unsigned int i = 0; i < enemyLoad->getElements().size(); i++) {
-			shared_ptr<Enemy> ene = make_shared<Enemy>(stage, enemyLoad->getElements()[i].x, enemyLoad->getElements()[i].y);
+			shared_ptr<Enemy> ene = make_shared<Enemy>(stage, enemyLoad->getElements()[i].x, enemyLoad->getElements()[i].y, enemyLoad->getElements()[i].hitPoint);
 			enemys.push_back(ene);
 		}
 	};

@@ -2,6 +2,9 @@
 
 void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::vector<std::shared_ptr<AbsDamageObj>> _damages)
 {
+
+	
+
 	statusAsChara._y += shiftingStage.y;
 	statusAsChara._x += shiftingStage.x;
 
@@ -25,7 +28,7 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 	bool isDetectedDamages = false;
 	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damages);
 	damagesOverlap->refreshDetectedDamageIndex();
-	detectDmsInd = damagesOverlap->getDetectedDamageIndex();;
+	detectDmsInd = damagesOverlap->getDetectedDamageIndex();
 	if(isDetectedDamages)
 		DrawCircle(statusAsChara._x, statusAsChara._y, 30*detectDmsInd.size(), GetColor(255, 255, 255), false);
 
@@ -53,6 +56,6 @@ void Enemy::draw()
 	animation->draw();
 	//collision->draw();
 
-	//DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "%d %d", statusAsChara._x, statusAsChara._y);
+	DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
 
 }

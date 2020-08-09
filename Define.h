@@ -31,10 +31,10 @@ enum class eScene {
 namespace Define{
 
 	//! ウィンドウサイズ横
-	const static int WIN_W = 640;
+	const static int WIN_W = 1080;
 
 	//! ウィンドウサイズ縦
-	const static int WIN_H = 640;
+	const static int WIN_H = 608;
 	
 	//! 円周率
 	const static float PI = 3.141592654f; 
@@ -53,7 +53,7 @@ namespace Define{
 	unsigned static char blockHeight = 30;
 
 	//! ステージのブロックの数
-	static unsigned char blockXNum = 40;
+	static unsigned char blockXNum = 80;
 	static unsigned char blockYNum = 40;
 
 	//! ステージのブロック一つ一つのステータス
