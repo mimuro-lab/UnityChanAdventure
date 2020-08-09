@@ -34,5 +34,8 @@ public:
 	virtual vector<int> getRange() = 0;
 
 	virtual void detectEnemy() = 0;
+
+	virtual int getDamage() = 0;
+
 };
 

@@ -24,7 +24,7 @@ class Bullet : public AbsDamageObj
 	int damagePointLeftUp_x = 0;
 	int damagePointLeftUp_y = 0;
 
-	int damage = 0;
+	int damage = 5;
 
 	int livingTime = 100;
 	int livingCounter = 0;
@@ -104,5 +104,9 @@ public:
 	}
 
 	void detectEnemy() override;
+
+	int getDamage() override {
+		return damage;
+	}
 };
 

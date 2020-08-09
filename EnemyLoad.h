@@ -18,6 +18,7 @@ struct EnemyElement {
 	EnemyType type = EnemyType::_end;
 	int x = 0;
 	int y = 0;
+	int hitPoint = 0;
 	bool isAlive = false;
 };
 

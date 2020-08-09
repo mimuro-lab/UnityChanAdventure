@@ -59,7 +59,7 @@ class Enemy
 	vector<int> detectDmsInd;
 
 public:
-	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y)
+	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y, int init_hitpoint)
 	{
 
 		// ‰Šúî•ñ‚ÌÝ’èB
@@ -75,6 +75,8 @@ public:
 
 		statusAsPara->isActive = true;
 		statusAsPara->isAlive = true;
+
+		statusAsPara->HitPoint = init_hitpoint;
 
 		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, statusAsChara);
 

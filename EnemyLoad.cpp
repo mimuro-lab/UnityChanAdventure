@@ -38,7 +38,7 @@ EnemyLoad::EnemyLoad()
 
 	string csvCell = {};
 
-	int cellEnemy[4] = {};
+	int cellEnemy[5] = {};
 
 	int ind = 0;
 
@@ -58,6 +58,7 @@ EnemyLoad::EnemyLoad()
 			ele.x = cellEnemy[1];
 			ele.y = cellEnemy[2];
 			ele.isAlive = getAlive(cellEnemy[3]);
+			ele.hitPoint = cellEnemy[4];
 			elements.push_back(ele);
 			ind = 0;
 		}
