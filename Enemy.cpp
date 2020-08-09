@@ -3,8 +3,6 @@
 void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::vector<std::shared_ptr<AbsDamageObj>> _damages)
 {
 
-	
-
 	statusAsChara._y += shiftingStage.y;
 	statusAsChara._x += shiftingStage.x;
 
@@ -26,11 +24,15 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 	collisionPoints = collision->getCollisionPoints();
 
 	bool isDetectedDamages = false;
-	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damages);
+	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damages, statusAsPara->isAlive);
 	damagesOverlap->refreshDetectedDamageIndex();
 	detectDmsInd = damagesOverlap->getDetectedDamageIndex();
-	if(isDetectedDamages)
-		DrawCircle(statusAsChara._x, statusAsChara._y, 30*detectDmsInd.size(), GetColor(255, 255, 255), false);
+	if (isDetectedDamages) {
+		for (int i = 0;i < detectDmsInd.size(); i++) {
+			//printfDx("%d\n",_damages[i]->getDamage());
+			statusAsPara->acceptDamage(_damages[i]->getDamage());
+		}
+	}
 
 	// Statusの更新処理を行う。
 	statusAsChara = animationMove->update(statusAsChara, animationSwitch->getNowAction(), collision, _stage, animation, controller);
@@ -57,5 +59,8 @@ void Enemy::draw()
 	//collision->draw();
 
 	DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
+	if (!statusAsPara->isAlive) {
+		DrawFormatString(statusAsChara._x, statusAsChara._y - 30, GetColor(255, 0, 0), "dead");
+	}
 
 }

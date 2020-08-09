@@ -22,7 +22,7 @@ class Sword : public AbsDamageObj
 	int damagePointLeftUp_x = 0;
 	int damagePointLeftUp_y = 0;
 
-	int damage = 0;
+	int damage = 1;
 
 	int livingTime = 10;
 	int livingCounter = 0;
@@ -99,6 +99,10 @@ public:
 
 	void detectEnemy() override {
 		// Swordオブジェクトは敵にぶつかっても消えない。
+	}
+
+	int getDamage() override {
+		return damage;
 	}
 
 };
