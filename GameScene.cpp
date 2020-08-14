@@ -104,6 +104,20 @@ void GameScene::update()
 		damageObjs[deleteInd[i]]->detectEnemy();
 	}
 
+	//// プレイヤーにぶつかったダメージ要素（敵が生成したもの）は削除
+	vector<shared_ptr<AbsDamageObj>> nonDetectEnemyDmgsFromEnemy;// 消去後のダメージ要素
+	vector<int> deleteIndFromEnemy;// 削除対象のインデックスを格納する変数
+	// 削除対象のインデックスを抽出する。
+	for (unsigned int j = 0; j < player->getDetectedDamagesIndex().size(); j++) {
+		deleteIndFromEnemy.push_back(player->getDetectedDamagesIndex()[j]);
+	}
+	sort(deleteIndFromEnemy.begin(), deleteIndFromEnemy.end());
+	deleteIndFromEnemy.erase(std::unique(deleteIndFromEnemy.begin(), deleteIndFromEnemy.end()), deleteIndFromEnemy.end());
+	// インデックスのダメージ要素にぶつかった処理を行わせる。
+	for (unsigned int i = 0; i < deleteIndFromEnemy.size(); i++) {
+		dmgObjFromEnemy[deleteIndFromEnemy[i]]->detectPlayer();
+	}
+
 }
 
 void GameScene::draw()

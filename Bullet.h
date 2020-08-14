@@ -105,6 +105,8 @@ public:
 
 	void detectEnemy() override;
 
+	void detectPlayer() override;
+
 	int getDamage() override {
 		return damage;
 	}

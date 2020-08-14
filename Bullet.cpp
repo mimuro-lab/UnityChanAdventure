@@ -46,3 +46,7 @@ void Bullet::adjustBottom(int AdjustRange)
 void Bullet::detectEnemy() {
 	isDetectEnemy = true;
 }
+
+void Bullet::detectPlayer() {
+	isDetectEnemy = true;
+}

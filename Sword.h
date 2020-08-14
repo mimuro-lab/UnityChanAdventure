@@ -101,6 +101,10 @@ public:
 		// Swordオブジェクトは敵にぶつかっても消えない。
 	}
 
+	void detectPlayer() override {
+		// Swordオブジェクトは敵にぶつかっても消えない。
+	}
+
 	int getDamage() override {
 		return damage;
 	}

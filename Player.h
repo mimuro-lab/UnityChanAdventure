@@ -125,4 +125,8 @@ public:
 	int getToRight() { return toRight; }
 	int getToLeft() { return toLeft; }
 
+	vector<int> getDetectedDamagesIndex() {
+		return detectDmsInd;
+	}
+
 };
