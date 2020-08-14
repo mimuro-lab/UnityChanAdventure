@@ -28,7 +28,7 @@ void GameScene::update()
 		Controller::getIns()->update();
 	
 	// 必ずセレクトウィンドウが開かれていない事を前提とする。オブジェクトの参照エラーが出る。
-	player->update(stage);	
+	player->update(stage, dmgObjFromEnemy);	
 
 	Dimention shiftingStage = predictStageShift->update(stage, player, player->getShiftingState());
 

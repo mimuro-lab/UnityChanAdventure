@@ -42,7 +42,7 @@ VirtualController Player::updateController()
 @date 2020/04/21/12:36
 @author mimuro
 */
-void Player::update(std::shared_ptr<Stage> _stage)
+void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<AbsDamageObj>> _damagesFromEnemys)
 {
 
 	controller = updateController();
@@ -50,6 +50,21 @@ void Player::update(std::shared_ptr<Stage> _stage)
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
 	// Collisionの更新を行う。
 	collision->update(playerStatus, _stage);
+
+	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
+	// Collisionの更新を行う。
+	collision->update(playerStatus, _stage);
+	collisionPoints = collision->getCollisionPoints();
+
+	bool isDetectedDamages = false;
+	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damagesFromEnemys, true/*statusAsPara->isAlive*/);
+	damagesOverlap->refreshDetectedDamageIndex();
+	detectDmsInd = damagesOverlap->getDetectedDamageIndex();
+	if (isDetectedDamages) {
+		for (int i = 0;i < detectDmsInd.size(); i++) {
+			DrawFormatString(playerStatus._x, playerStatus._y - 30, GetColor(255, 0, 0), "%d", _damagesFromEnemys[i]->getDamage());
+		}
+	}
 
 	// Statusの更新処理を行う。
 	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
@@ -65,6 +80,7 @@ void Player::update(std::shared_ptr<Stage> _stage)
 
 	// 方向を更新する。
 	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight, playerStatus, controller);
+
 
 }
 

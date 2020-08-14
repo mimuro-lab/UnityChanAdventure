@@ -182,12 +182,12 @@ bool CalcDamagesOverlap::calcHorizonalOverlap(
 bool CalcDamagesOverlap::isOverlaped(
 	vector<vector<Dimention>> charcterCollisionPoints, 
 	vector<shared_ptr<AbsDamageObj>> _damages,
-	bool isEnemyAlive
+	bool isCharacterAlive
 )
 {
 	// 敵が死んでいる状態だったら、ダメージオブジェクトが敵に当たる事はあり得ない。
 	// よって、常にFalseを返す。
-	if (!isEnemyAlive) {
+	if (!isCharacterAlive) {
 		// 消去対象のダメージオブジェクトはない。
 		detectedDamageIndex.clear();
 		return false;

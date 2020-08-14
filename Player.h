@@ -21,6 +21,7 @@
 #include "Bullet.h"
 #include "Sword.h"
 #include "AbsDamageObj.h"
+#include "CalcDamagesOverlap.h"
 #include <memory>
 #include <vector>
 
@@ -56,6 +57,13 @@ class Player
 
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
 	std::shared_ptr<CharacterDirect> playerDirect;
+
+	//! Playerからのダメージオブジェクトが当たっているかを判定するオブジェクト。
+	std::shared_ptr<CalcDamagesOverlap> damagesOverlap;
+
+	vector<vector<Define::Dimention>> collisionPoints;
+
+	vector<int> detectDmsInd;
 	
 	VirtualController updateController();
 
@@ -86,13 +94,15 @@ public:
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
 		playerDirect = std::make_shared<CharacterDirect>();
+
+		damagesOverlap = std::make_shared<CalcDamagesOverlap>();
 		
 	};
 
 	~Player() = default;
 
 	//! Playerオブジェクトの前処理全般を行う関数。
-	void update(std::shared_ptr<Stage> _stage);
+	void update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<AbsDamageObj>> _damagesFromEnemys);
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
