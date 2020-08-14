@@ -17,6 +17,8 @@
 #include <memory>
 #include <vector>
 
+#include "Bullet.h"
+
 using namespace Define;
 using namespace std;
 
@@ -90,6 +92,8 @@ public:
 
 		damagesOverlap = std::make_shared<CalcDamagesOverlap>();
 
+		controller.on_Y = true;
+
 	};
 
 	//! Playerオブジェクトの前処理全般を行う関数。
@@ -105,6 +109,8 @@ public:
 	vector<vector<Dimention>> getCollisionPoints() {
 		return collisionPoints;
 	}
+
+	vector<shared_ptr<AbsDamageObj>> generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage);
 
 	vector<int> getDetectedDamagesIndex() {
 		return detectDmsInd;

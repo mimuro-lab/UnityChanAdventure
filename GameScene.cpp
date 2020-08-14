@@ -67,7 +67,25 @@ void GameScene::update()
 	for (unsigned int i = 0; i < enemys.size(); i++) {
 		//enemys[i]->adjustBottom(deffOfStageAndBottom);
 		enemys[i]->update(stage, shiftingStage, damageObjs);
+		vector<shared_ptr<AbsDamageObj>> addDmg;
+		addDmg = enemys[i]->generateDamageObj(addDmg, stage);
+		for (unsigned int j = 0; j < addDmg.size(); j++) {
+			dmgObjFromEnemy.push_back(addDmg[j]);
+		}
 	}
+
+	// 敵が生成した攻撃要素を更新
+	for (unsigned int i = 0; i < dmgObjFromEnemy.size(); i++) {
+		dmgObjFromEnemy[i]->update(stage, shiftingStage, player->getStatus());
+	}
+	// 無駄な攻撃要素の削除
+	vector<shared_ptr<AbsDamageObj>> deletedDmg;
+	for (unsigned int i = 0; i < dmgObjFromEnemy.size(); i++) {
+		if (dmgObjFromEnemy[i]->getIsLive())
+			deletedDmg.push_back(dmgObjFromEnemy[i]);
+	}
+	dmgObjFromEnemy = deletedDmg;
+
 
 	//// 敵オブジェクトにぶつかったダメージ要素は削除
 	vector<shared_ptr<AbsDamageObj>> nonDetectEnemyDmgs;// 消去後のダメージ要素
@@ -104,6 +122,10 @@ void GameScene::draw()
 			damageObjs[i]->draw();
 	}
 	
+	for (unsigned int i = 0; i < dmgObjFromEnemy.size();i++) {
+		dmgObjFromEnemy[i]->draw();
+	}
+
 	player->draw();
 	
 	SelectWindow::drawSelectWindow();
