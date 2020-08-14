@@ -35,6 +35,8 @@ public:
 
 	virtual void detectEnemy() = 0;
 
+	virtual void detectPlayer() = 0;
+
 	virtual int getDamage() = 0;
 
 };

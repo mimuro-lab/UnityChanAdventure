@@ -21,6 +21,8 @@
 #include "Bullet.h"
 #include "Sword.h"
 #include "AbsDamageObj.h"
+#include "CalcDamagesOverlap.h"
+#include "PlayerStatus.h"
 #include <memory>
 #include <vector>
 
@@ -56,6 +58,15 @@ class Player
 
 	//! プレイヤーオブジェクトがどっちの方向に向くか決定するオブジェクト。
 	std::shared_ptr<CharacterDirect> playerDirect;
+
+	//! Playerからのダメージオブジェクトが当たっているかを判定するオブジェクト。
+	std::shared_ptr<CalcDamagesOverlap> damagesOverlap;
+
+	vector<vector<Define::Dimention>> collisionPoints;
+
+	vector<int> detectDmsInd;
+
+	std::shared_ptr<PlayerStatus> statusAsPara;
 	
 	VirtualController updateController();
 
@@ -77,6 +88,10 @@ public:
 
 		shiftingStage.x = shiftingStage.y = 0;
 
+		statusAsPara = std::make_shared<PlayerStatus>();
+		statusAsPara->HitPoint = 10000;
+		statusAsPara->isAlive = true;
+
 		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, playerStatus);
 
 		animationMove = std::make_shared<AnimationMovePlayer>();
@@ -86,13 +101,15 @@ public:
 		animationSwitch = std::make_shared<AnimationSwitch>();
 
 		playerDirect = std::make_shared<CharacterDirect>();
+
+		damagesOverlap = std::make_shared<CalcDamagesOverlap>();
 		
 	};
 
 	~Player() = default;
 
 	//! Playerオブジェクトの前処理全般を行う関数。
-	void update(std::shared_ptr<Stage> _stage);
+	void update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<AbsDamageObj>> _damagesFromEnemys);
 
 	//! Playerオブジェクトの描画処理全般を行う関数。
 	void draw();
@@ -114,5 +131,9 @@ public:
 	int getToBottom() { return toBottom; }
 	int getToRight() { return toRight; }
 	int getToLeft() { return toLeft; }
+
+	vector<int> getDetectedDamagesIndex() {
+		return detectDmsInd;
+	}
 
 };

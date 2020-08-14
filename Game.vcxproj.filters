@@ -179,6 +179,9 @@
     <ClCompile Include="CalcDamagesOverlap.cpp">
       <Filter>ソース ファイル\GameScene\CalcDamagesOverlap</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerStatus.cpp">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -324,6 +327,9 @@
     </ClInclude>
     <ClInclude Include="CalcDamagesOverlap.h">
       <Filter>ソース ファイル\GameScene\CalcDamagesOverlap</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStatus.h">
+      <Filter>ソース ファイル\GameScene\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

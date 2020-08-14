@@ -19,7 +19,7 @@ public:
 	CalcDamagesOverlap() {};
 	~CalcDamagesOverlap() = default;
 
-	bool isOverlaped(vector<vector<Dimention>> charcterCollisionPoints, vector<shared_ptr<AbsDamageObj>> _damages, bool isEnemyAlive);
+	bool isOverlaped(vector<vector<Dimention>> charcterCollisionPoints, vector<shared_ptr<AbsDamageObj>> _damages, bool isCharacterAlive);
 	void refreshDetectedDamageIndex();
 
 	void update();

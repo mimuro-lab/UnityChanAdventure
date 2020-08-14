@@ -64,3 +64,42 @@ void Enemy::draw()
 	}
 
 }
+
+vector<shared_ptr<AbsDamageObj>> Enemy::generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage)
+{
+	vector<shared_ptr<AbsDamageObj>> returnDmg = _nowDmg;
+
+	if (animationSwitch->getNowAction() == characterAction::Hundgun_horizonal
+		&& animation->getNowDrawingImageIndex() == 1
+		&& animation->getDrawingStepsCounter() == 1
+		) {
+		shared_ptr<AbsDamageObj> pushObj = make_shared<Bullet>(stage, statusAsChara._x, statusAsChara._y, 20, statusAsChara.directRight);
+		returnDmg.push_back(pushObj);
+		//printfDx("%d\n", returnDmg.size());
+	}
+
+	int ind = animation->getNowDrawingImageIndex();
+	int cnt = animation->getDrawingStepsCounter();
+	/*
+	// 剣攻撃1のダメージオブジェクトの生成
+	if (animationSwitch->getNowAction() == characterAction::Soard1_init) {
+
+		returnDmg = Sword1(playerStatus, stage, animation, returnDmg);
+
+	}
+
+	if (animationSwitch->getNowAction() == characterAction::Soard2_init) {
+
+		returnDmg = Sword2(playerStatus, stage, animation, returnDmg);
+
+	}
+
+	if (animationSwitch->getNowAction() == characterAction::Soard3_init) {
+
+		returnDmg = Sword3(playerStatus, stage, animation, returnDmg);
+
+	}
+	*/
+
+	return returnDmg;
+}

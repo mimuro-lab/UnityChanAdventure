@@ -48,6 +48,9 @@ class GameScene :
 	//! 画面上のダメージ要素
 	vector<shared_ptr<AbsDamageObj>> damageObjs;
 
+	//! 敵が生成したダメージ要素
+	vector<shared_ptr<AbsDamageObj>> dmgObjFromEnemy;
+
 	int deffOfStageAndBottom = 0;
 
 public:
