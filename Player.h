@@ -22,6 +22,7 @@
 #include "Sword.h"
 #include "AbsDamageObj.h"
 #include "CalcDamagesOverlap.h"
+#include "PlayerStatus.h"
 #include <memory>
 #include <vector>
 
@@ -64,6 +65,8 @@ class Player
 	vector<vector<Define::Dimention>> collisionPoints;
 
 	vector<int> detectDmsInd;
+
+	std::shared_ptr<PlayerStatus> statusAsPara;
 	
 	VirtualController updateController();
 
@@ -84,6 +87,10 @@ public:
 		playerStatus.directRight = true;
 
 		shiftingStage.x = shiftingStage.y = 0;
+
+		statusAsPara = std::make_shared<PlayerStatus>();
+		statusAsPara->HitPoint = 10000;
+		statusAsPara->isAlive = true;
 
 		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, playerStatus);
 

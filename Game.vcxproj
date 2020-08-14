@@ -109,6 +109,7 @@
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="CharacterDirect.cpp" />
+    <ClCompile Include="PlayerStatus.cpp" />
     <ClCompile Include="PredictPoint.cpp" />
     <ClCompile Include="PredictStageShift.cpp" />
     <ClCompile Include="Pysical.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="CharacterDirect.h" />
     <ClInclude Include="PlayerGenerateDamageObj.h" />
+    <ClInclude Include="PlayerStatus.h" />
     <ClInclude Include="PredictPoint.h" />
     <ClInclude Include="PredictStageShift.h" />
     <ClInclude Include="Pysical.h" />

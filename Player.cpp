@@ -63,6 +63,7 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 	if (isDetectedDamages) {
 		for (int i = 0;i < detectDmsInd.size(); i++) {
 			DrawFormatString(playerStatus._x, playerStatus._y - 30, GetColor(255, 0, 0), "%d", _damagesFromEnemys[i]->getDamage());
+			statusAsPara->acceptDamage(_damagesFromEnemys[i]->getDamage());
 		}
 	}
 
@@ -118,6 +119,8 @@ void Player::draw()
 {
 	animation->draw();
 	//collision->draw();
+
+	DrawFormatString(playerStatus._x, playerStatus._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
 }
 
 vector<shared_ptr<AbsDamageObj>> Player::generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage)
