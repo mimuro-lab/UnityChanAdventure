@@ -79,6 +79,8 @@ public:
 		statusAsPara->isAlive = true;
 
 		statusAsPara->HitPoint = init_hitpoint;
+		statusAsPara->AllHitPoint = init_hitpoint;
+		statusAsPara->lessHitPoint = init_hitpoint / 4;
 
 		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, statusAsChara);
 

@@ -55,10 +55,13 @@ void Enemy::adjustBottom(int AdjustRange)
 
 void Enemy::draw()
 {
+	//ステータス関係の描画処理
+	statusAsPara->draw(statusAsChara._x + 20, statusAsChara._y - 50, 10, 60);
+
 	animation->draw();
 	//collision->draw();
 
-	DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
+	//DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
 	if (!statusAsPara->isAlive) {
 		DrawFormatString(statusAsChara._x, statusAsChara._y - 30, GetColor(255, 0, 0), "dead");
 	}

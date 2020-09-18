@@ -66,6 +66,8 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 			statusAsPara->acceptDamage(_damagesFromEnemys[i]->getDamage());
 		}
 	}
+	
+
 
 	// Statusの更新処理を行う。
 	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
@@ -117,10 +119,14 @@ int Player::adjustStageAndBottom(std::shared_ptr<Stage> _stage)
 
 void Player::draw()
 {
+
+	// ステータス関係の描画処理
+	statusAsPara->draw(playerStatus._x + 20, playerStatus._y - 50, 10, 60);
+
 	animation->draw();
 	//collision->draw();
 
-	DrawFormatString(playerStatus._x, playerStatus._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
+	//DrawFormatString(playerStatus._x, playerStatus._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
 }
 
 vector<shared_ptr<AbsDamageObj>> Player::generateDamageObj(vector<shared_ptr<AbsDamageObj>> _nowDmg, shared_ptr<Stage> stage)

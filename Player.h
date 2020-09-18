@@ -90,6 +90,8 @@ public:
 
 		statusAsPara = std::make_shared<PlayerStatus>();
 		statusAsPara->HitPoint = 10000;
+		statusAsPara->AllHitPoint = 10000;
+		statusAsPara->lessHitPoint = statusAsPara->AllHitPoint / 4;
 		statusAsPara->isAlive = true;
 
 		animation = std::make_shared<Animation>(ImagePath_Unitychan::getIns()->unityChan_Fall, playerStatus);
