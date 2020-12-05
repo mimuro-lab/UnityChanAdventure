@@ -57,7 +57,13 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 	collisionPoints = collision->getCollisionPoints();
 
 	bool isDetectedDamages = false;
+	
 	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damagesFromEnemys, true/*statusAsPara->isAlive*/);
+	
+	if (playerStatus.isDamaging) {
+		isDetectedDamages = false;
+	}
+
 	damagesOverlap->refreshDetectedDamageIndex();
 	detectDmsInd = damagesOverlap->getDetectedDamageIndex();
 	if (isDetectedDamages) {
@@ -66,16 +72,20 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 			statusAsPara->acceptDamage(_damagesFromEnemys[i]->getDamage());
 		}
 	}
-	
 
 	// Statusの更新処理を行う。
 	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
 
-	// playerStatusのisDamagingの更新
+	// playerStatusのisDamageの更新
 	if (statusAsPara->getIsNowDamage()) {
-		playerStatus.isDamaging = true;
+		playerStatus.isDamage = true;
+	}else {
+		playerStatus.isDamage = false;
 	}
-	else {
+	// playerStatusのisDamagingの更新
+	if (animationSwitch->getNowAction() == characterAction::Damage) {
+		playerStatus.isDamaging = true;
+	}else {
 		playerStatus.isDamaging = false;
 	}
 

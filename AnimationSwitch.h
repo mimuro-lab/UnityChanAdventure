@@ -91,6 +91,9 @@ public:
 			= IsAction_canSwitching[static_cast<int>(characterAction::Jump_Up)]
 			= IsAction_canSwitching[static_cast<int>(characterAction::Jump_MidAir)]
 			= IsAction_canSwitching[static_cast<int>(characterAction::Jump_Fall)]
+			= IsAction_canSwitching[static_cast<int>(characterAction::Hundgun_init)]
+			= IsAction_canSwitching[static_cast<int>(characterAction::Hundgun_horizonal)]
+			= IsAction_canSwitching[static_cast<int>(characterAction::Hundgun_end)]
 			= true;
 	};
 	~AnimationSwitch() = default;

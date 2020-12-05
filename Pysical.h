@@ -133,6 +133,7 @@ public:
 			= _validGravityAction[static_cast<int>(Define::characterAction::Jump_MidAir)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Brake)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Crouch)]
+			= _validGravityAction[static_cast<int>(Define::characterAction::Damage)]
 
 			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Hundgun_horizonal)]
@@ -149,6 +150,7 @@ public:
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Brake)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Crouch)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Jump_Landing)]
+			= _validFrictionAction[static_cast<int>(Define::characterAction::Damage)]
 			
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Jump_Up)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Jump_MidAir)]

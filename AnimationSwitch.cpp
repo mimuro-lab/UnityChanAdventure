@@ -142,7 +142,7 @@ characterAction AnimationSwitch::getNextAction(
 	, VirtualController controller)
 {
 
-	if (playerStatus.isDamaging) {
+	if (playerStatus.isDamage) {
 		return characterAction::Damage;
 	}
 
