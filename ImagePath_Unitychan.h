@@ -55,6 +55,22 @@ public:
 		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Crouch_4.png"),
 		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Crouch_5.png"),
 	};
+	
+
+	const vector<int> unityChan_Death = {
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_1.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_2.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_3.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_4.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_5.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_6.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_7.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_8.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_9.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_10.png"),
+		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_11.png"),
+	};
+
 
 	const vector<int> unityChan_Damage = {
 		LoadGraph("images/Character/UnityChan/BasicActions/UnityChan_Damage_1.png"),

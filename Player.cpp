@@ -45,6 +45,10 @@ VirtualController Player::updateController()
 void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<AbsDamageObj>> _damagesFromEnemys)
 {
 
+	if (isEnd) {
+		return;
+	}
+
 	controller = updateController();
 
 	// プレイヤーの座標を決定してから当たり判定をする。※順序を逆にするとエラー。
@@ -63,6 +67,10 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 	if (playerStatus.isDamaging) {
 		isDetectedDamages = false;
 	}
+
+	playerStatus.isDead = !statusAsPara->isAlive;
+	
+	//printfDx("%d\n", playerStatus.isDead);
 
 	damagesOverlap->refreshDetectedDamageIndex();
 	detectDmsInd = damagesOverlap->getDetectedDamageIndex();
@@ -94,7 +102,13 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 
 	// アニメーションの下処理を行う。
 	animation->update(playerStatus);
-	
+
+	if (/*animation->isEnd() &&*/ playerStatus.isDead) {
+		isDead = true;
+	}
+	if (animation->isEnd() && animationSwitch->getNowAction() == characterAction::Death) {
+		isEnd = true;
+	}
 	// アニメーションの切り替えを行う。もし切り替えなければ同じanimationオブジェクトを返す。
 	animation = animationSwitch->update(collision, animation, playerStatus, controller);
 

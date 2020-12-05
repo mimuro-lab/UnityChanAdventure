@@ -74,6 +74,9 @@ class Player
 	int toRight = 10;
 	int toLeft = 10;
 
+	bool isDead = false;
+	bool isEnd = false;
+
 public:
 
 	Player(std::shared_ptr<Stage> _stage)
@@ -90,7 +93,7 @@ public:
 		shiftingStage.x = shiftingStage.y = 0;
 
 		statusAsPara = std::make_shared<PlayerStatus>();
-		statusAsPara->HitPoint = 1000;
+		statusAsPara->HitPoint = 100;
 		statusAsPara->AllHitPoint = 1000;
 		statusAsPara->lessHitPoint = statusAsPara->AllHitPoint / 4;
 		statusAsPara->isAlive = true;
@@ -138,5 +141,7 @@ public:
 	vector<int> getDetectedDamagesIndex() {
 		return detectDmsInd;
 	}
+
+	bool getIsEnd() { return isEnd; }
 
 };

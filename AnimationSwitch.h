@@ -35,7 +35,6 @@ class AnimationSwitch
 	//! アクション中に他のアクションに切り替え可能かどうか？（添え字がcharacterActionに対応）
 	vector<bool> IsAction_canSwitching;
 
-
 	//// 次のアクションを現在の条件によって選択していく。
 	//! 次のアクションを格納しておく変数。
 	characterAction nextAction;
@@ -93,7 +92,6 @@ public:
 			= IsAction_canSwitching[static_cast<int>(characterAction::Jump_Fall)]
 			= IsAction_canSwitching[static_cast<int>(characterAction::Hundgun_init)]
 			= IsAction_canSwitching[static_cast<int>(characterAction::Hundgun_horizonal)]
-			= IsAction_canSwitching[static_cast<int>(characterAction::Hundgun_end)]
 			= true;
 	};
 	~AnimationSwitch() = default;

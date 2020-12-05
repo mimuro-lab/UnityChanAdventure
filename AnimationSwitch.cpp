@@ -142,6 +142,10 @@ characterAction AnimationSwitch::getNextAction(
 	, VirtualController controller)
 {
 
+	if (playerStatus.isDead) {
+		return characterAction::Death;
+	}
+
 	if (playerStatus.isDamage) {
 		return characterAction::Damage;
 	}
@@ -163,7 +167,7 @@ characterAction AnimationSwitch::getNextAction(
 
 
 	// 剣攻撃コンボ1
-	if (nowAction == characterAction::Soard1_init) {
+	if (nowAction == characterAction::Soard1_init && nowAction != characterAction::Death) {
 
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
@@ -178,7 +182,7 @@ characterAction AnimationSwitch::getNextAction(
 	}
 
 	// 剣攻撃コンボ2
-	if (nowAction == characterAction::Soard2_init) {
+	if (nowAction == characterAction::Soard2_init && nowAction != characterAction::Death) {
 
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
@@ -192,7 +196,7 @@ characterAction AnimationSwitch::getNextAction(
 	}
 
 	// 剣攻撃コンボ3
-	if (nowAction == characterAction::Soard3_init) {
+	if (nowAction == characterAction::Soard3_init && nowAction != characterAction::Death) {
 
 		// コンボするなら、次のコンボを返す。
 		if (soardCombContinue) {
@@ -297,7 +301,6 @@ characterAction AnimationSwitch::getNextAction(
 			return characterAction::Walk;
 		}
 	}
-
 	// 何も入力されなければIdling状態にする。
 	if (nowAction != characterAction::Jump_Up && nowAction != characterAction::Jump_MidAir) {
 
@@ -324,6 +327,10 @@ shared_ptr<Animation> AnimationSwitch::switchingAnimation(characterAction next, 
 	case characterAction::Crouch:
 		nowAction = characterAction::Crouch;
 		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Crouch, nowStatus);
+		break;
+	case characterAction::Death:
+		nowAction = characterAction::Death;
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Death, nowStatus, 0, 0, 18, 99, false);
 		break;
 	case characterAction::Damage:
 		nowAction = characterAction::Damage;

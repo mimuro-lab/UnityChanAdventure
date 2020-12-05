@@ -143,6 +143,7 @@ public:
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard2_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard3_init)]
 			= _validGravityAction[static_cast<int>(Define::characterAction::Soard1_end)]
+			= _validGravityAction[static_cast<int>(Define::characterAction::Death)]
 			= true;
 
 		_validFrictionAction = std::vector<bool>(static_cast<int>(Define::characterAction::_end), false);
@@ -164,6 +165,7 @@ public:
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Soard2_init)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Soard3_init)]
 			= _validFrictionAction[static_cast<int>(Define::characterAction::Soard1_end)]
+			= _validFrictionAction[static_cast<int>(Define::characterAction::Death)]
 			
 			= true;
 	};

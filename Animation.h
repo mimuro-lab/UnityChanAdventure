@@ -46,6 +46,7 @@ class Animation
 	double scaleRate = 1.0;
 
 	double rotation = 0;
+
 public:
 
 	/*!
