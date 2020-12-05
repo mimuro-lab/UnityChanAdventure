@@ -68,9 +68,16 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 	}
 	
 
-
 	// Statusの更新処理を行う。
 	playerStatus = animationMove->update(playerStatus, animationSwitch->getNowAction(), collision, _stage, animation, controller);
+
+	// playerStatusのisDamagingの更新
+	if (statusAsPara->getIsNowDamage()) {
+		playerStatus.isDamaging = true;
+	}
+	else {
+		playerStatus.isDamaging = false;
+	}
 
 	// shiftingStageの更新処理も行う。
 	shiftingStage = animationMove->getShiftingStage(collision, _stage);

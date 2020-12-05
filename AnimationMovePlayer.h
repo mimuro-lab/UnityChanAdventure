@@ -22,6 +22,8 @@ public:
 		shared_ptr<Animation> _animation, 
 		VirtualController controller) override;
 
+	//! ダメージによる更新。
+	
 	//! shiftingStageの更新を行う関数。
 	Dimention getShiftingStage(shared_ptr<CollisionDetect> _collision, shared_ptr<Stage> _stage);
 };

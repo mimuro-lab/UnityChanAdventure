@@ -3,6 +3,7 @@
 
 class PlayerStatus
 {
+	int pre_hp_kaisou = -1;
 public:
 	bool isAlive = false;
 	bool isActive = false;
@@ -12,5 +13,6 @@ public:
 
 	void acceptDamage(int damage);
 	void draw(int leftUp_x, int leftUp_y, int width, int height);
+	bool getIsNowDamage();
 };
 

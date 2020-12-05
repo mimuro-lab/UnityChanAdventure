@@ -85,12 +85,13 @@ public:
 		playerStatus._x_speed = playerStatus._y_speed = 0;
 
 		playerStatus.directRight = true;
+		playerStatus.isDamaging = false;
 
 		shiftingStage.x = shiftingStage.y = 0;
 
 		statusAsPara = std::make_shared<PlayerStatus>();
-		statusAsPara->HitPoint = 10000;
-		statusAsPara->AllHitPoint = 10000;
+		statusAsPara->HitPoint = 1000;
+		statusAsPara->AllHitPoint = 1000;
 		statusAsPara->lessHitPoint = statusAsPara->AllHitPoint / 4;
 		statusAsPara->isAlive = true;
 

@@ -21,6 +21,7 @@ shared_ptr<Animation> AnimationSwitch::update(
 	VirtualController controller)
 {
 
+	//DrawFormatString(100, 100, GetColor(255, 255, 255), "damaging %d", playerStatus.isDamaging);
 	soardCombContinue = getSoardComb(nowAction, animation, soardCombContinue, controller);
 
 	//DrawFormatString(100, 100, GetColor(255, 255, 255), "comb : %d", soardCombContinue);
@@ -140,6 +141,10 @@ characterAction AnimationSwitch::getNextAction(
 	characterAction nowAction
 	, VirtualController controller)
 {
+
+	if (playerStatus.isDamaging) {
+		return characterAction::Damage;
+	}
 
 	// Brakeが終わったら強制的にアイドリング状態に変更する
 	if (nowAction == characterAction::Brake && animation->isEnd()) {

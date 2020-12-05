@@ -45,6 +45,8 @@ namespace Define{
 		int _y = 0;
 		int _y_speed = 0;
 		int _x_speed = 0;
+		bool isDamaging = false;
+		bool isDead = false;
 		bool directRight = true;
 	};
 	

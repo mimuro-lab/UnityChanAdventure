@@ -12,6 +12,7 @@
 #include "Animation.h"
 #include "Define.h"
 #include "ImagePath_Unitychan.h"
+#include "PlayerStatus.h"
 #include "VirtualController.h"
 #include <memory>
 
