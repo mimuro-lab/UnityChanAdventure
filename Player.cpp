@@ -115,7 +115,6 @@ void Player::update(std::shared_ptr<Stage> _stage, std::vector<std::shared_ptr<A
 	// •ûŒü‚ðXV‚·‚éB
 	playerStatus.directRight = playerDirect->updateDirect(animationSwitch->getNowAction(), playerStatus.directRight, playerStatus, controller);
 
-
 }
 
 /*!

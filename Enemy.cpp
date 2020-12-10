@@ -23,6 +23,8 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 	collision->update(statusAsChara, _stage);
 	collisionPoints = collision->getCollisionPoints();
 
+	statusAsChara.isDead = !statusAsPara->isAlive;
+
 	bool isDetectedDamages = false;
 	isDetectedDamages = damagesOverlap->isOverlaped(collisionPoints, _damages, statusAsPara->isAlive);
 	damagesOverlap->refreshDetectedDamageIndex();
@@ -40,8 +42,15 @@ void Enemy::update(std::shared_ptr<Stage> _stage, Dimention shiftingStage, std::
 	// アニメーションの下処理を行う。
 	animation->update(statusAsChara);
 
+	if (animation->isEnd() && animationSwitch->getNowAction() == characterAction::Death) {
+		isEnd = true;
+	}
+
+
 	// アニメーションの切り替えを行う。もし切り替えなければ同じanimationオブジェクトを返す。
-	animation = animationSwitch->update(collision, animation, statusAsChara, controller);
+	if (!isEnd) {
+		animation = animationSwitch->update(collision, animation, statusAsChara, controller);
+	}
 
 	// 方向を更新する。
 	statusAsChara.directRight = enemyDirect->updateDirect(animationSwitch->getNowAction(), statusAsChara.directRight, statusAsChara, controller);
@@ -56,15 +65,14 @@ void Enemy::adjustBottom(int AdjustRange)
 void Enemy::draw()
 {
 	//ステータス関係の描画処理
-	statusAsPara->draw(statusAsChara._x + 20, statusAsChara._y - 50, 10, 60);
+	if (!isEnd) {
+		statusAsPara->draw(statusAsChara._x + 20, statusAsChara._y - 50, 10, 60);
+	}
 
 	animation->draw();
 	//collision->draw();
 
 	//DrawFormatString(statusAsChara._x, statusAsChara._y, GetColor(255, 255, 255), "hp:%d", statusAsPara->HitPoint);
-	if (!statusAsPara->isAlive) {
-		DrawFormatString(statusAsChara._x, statusAsChara._y - 30, GetColor(255, 0, 0), "dead");
-	}
 
 }
 

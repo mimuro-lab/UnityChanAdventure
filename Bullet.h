@@ -68,7 +68,9 @@ public:
 
 		int heads, bottoms, rights, lefts;
 
-		heads = bottoms = rights = lefts = 4;
+		heads = bottoms = 1;
+		rights = 3;
+		lefts = 3;
 
 		toRight = toLeft = 5;
 		toHead = 5;

@@ -330,7 +330,7 @@ shared_ptr<Animation> AnimationSwitch::switchingAnimation(characterAction next, 
 		break;
 	case characterAction::Death:
 		nowAction = characterAction::Death;
-		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Death, nowStatus, 0, 0, 18, 99, false);
+		return make_shared <Animation>(ImagePath_Unitychan::getIns()->unityChan_Death, nowStatus, 0, 0, 18, 99, true);
 		break;
 	case characterAction::Damage:
 		nowAction = characterAction::Damage;

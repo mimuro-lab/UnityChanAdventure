@@ -60,6 +60,9 @@ class Enemy
 
 	vector<int> detectDmsInd;
 
+	bool isDead = false;
+	bool isEnd = false;
+
 public:
 	Enemy(std::shared_ptr<Stage> _stage, int init_x, int init_y, int init_hitpoint)
 	{
