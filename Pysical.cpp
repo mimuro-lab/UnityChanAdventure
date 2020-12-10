@@ -17,6 +17,7 @@ Dimention Pysical::affectInitVelocity(Dimention affectedVel, characterAction now
 {
 	Dimention returnVel = affectedVel;
 
+
 	if (nowTime == 0) {
 		returnVel.x += _isInitVelocity[static_cast<int>(nowAction)].x;
 		if (nowAction == characterAction::Jump_MidAir) {
@@ -30,6 +31,11 @@ Dimention Pysical::affectInitVelocity(Dimention affectedVel, characterAction now
 		
 	}
 
+	bool jump_continue = (nowAction == characterAction::Jump_Up) && (controller.on_A);
+
+	if (jump_continue) {
+		returnVel.y = _isInitVelocity[static_cast<int>(nowAction)].y;
+	}
 	return returnVel;
 }
 
